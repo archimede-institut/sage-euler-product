@@ -23,8 +23,8 @@ setup(
     name = "euler_product",
     version = readfile("VERSION"), # the VERSION file is shared with the documentation
     description='Euler Product perform number theorie of euler product',
-    long_description = readfile("README.rst"), # get the long description from the README
-    url='https://github.com/coulbois/sage-euler-product',
+    long_description = readfile("README.md"), # get the long description from the README
+    url='https://github.com/archimede-institut/sage-euler-product',
     author='Olivier Ramaré, Dominique Benielli',
     author_email='dominique.benielli@univ-amu.fr', # choose a main contact email
     license='GPLv3.0', # This should be consistent with the LICENCE file
