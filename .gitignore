@@ -1,0 +1,16 @@
+*.out
+*.aux
+*.log
+*.idx
+*.pyc
+*.tex~
+*.py~
+.rope*
+*.bbl
+*.blg
+*.ilg
+*.ind
+euler_product.egg-info
+dist
+*.yml~
+*.in~
