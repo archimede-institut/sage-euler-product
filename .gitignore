@@ -14,3 +14,5 @@ euler_product.egg-info
 dist
 *.yml~
 *.in~
+.idea
+.idea/*
