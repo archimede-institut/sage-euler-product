@@ -4,9 +4,46 @@
 ##################################################
 #####  Computing some structural invariants ######
 ##################################################
+from __future__ import print_function, absolute_import
+from sage.arith.misc import euler_phi
+
 
 def SubgroupGenerated(n, q):
     return frozenset(n^j % q for j in range(1, euler_phi(q)+1))
+
+
+class LatticeInvariantClasses():
+    def __init__(self):
+        pass
+
+    def __call__(self, q,  *args, **kwargs):
+        the_sg_list = []
+        for n in filter(lambda w: gcd(w, q) == 1, range(1, q)):
+            mysub = SubgroupGenerated(n, q)
+            # print mysub
+            if mysub not in theSGList:
+                theSGList.append(mysub)
+
+        theSGList.sort(key=len)
+        theSGTuple = tuple(theSGList)
+
+        ## Then get the classes:
+        ## Create a copy:
+        theClassList = list(theSGList)
+
+        for n in range(0, len(theClassList)):
+            aux = theClassList[n]
+            for m in range(n + 1, len(theClassList)):
+                if aux.issubset(theSGList[m]):
+                    theClassList[m] = frozenset(theClassList[m].difference(aux))
+
+        ## Create immutable tuples from the mutable lists:
+        theSGTuple = tuple(sg for sg in theSGList)
+        theClassTuple = tuple(cl for cl in theClassList)
+
+        return (theSGTuple, theClassTuple)
+
+
 
 def GetLatticeInvariantClasses(q):
     ## First get the subgroups: 
