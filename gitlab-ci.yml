@@ -1,0 +1,30 @@
+before_script:
+  - export MAKEFLAGS="-j2"
+
+test:10.1: &test
+  image: sagemath/sagemath
+  when: manual
+  artifacts:
+    paths:
+      - htmlcov/
+  script:
+    - sudo apt update 
+    - echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
+    - sudo apt-get install -qy
+    - sudo apt install -qy texlive texlive-latex-extra texlive-luatex texlive-fonts-extra pdf2svg
+    # - sage -i dot2tex glucose
+    - sage -pip install pytimeparse roman
+    - sage -pip install .
+    - sage -c 'import sage.env; print(sage.env.SAGE_VERSION)'
+    - sage -python -V
+    #- dot -V
+    - lualatex --version
+    - pdflatex --version
+    - convert --version
+    - sage -c 'import euler_prod
+    - export DIRECTORY=`pwd`
+    - cd
+    - sage -t --force-lib --long --show-skipped ${DIRECTORY}
+    - cd ${DIRECTORY}/doc && sage -sh -c "make html"
+  sage -pip install -e .[doc]  
+sage -python setup.py build_sphinx
