@@ -1,0 +1,31 @@
+before_script:
+  - export MAKEFLAGS="-j2"
+
+test:9.0:
+test:9.0: &test
+  image: sagemath/sagemath-dev:9.0
+  when: manual
+  artifacts:
+    expire_in: 1 month
+  script:
+    #- sudo apt update # broken on non LTS debian
+    # https://github.com/moby/moby/issues/27988
+    - echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
+    - sudo apt-get install -qy
+    #- DEBIAN_FRONTEND="noninteractive" TZ="Europe/Paris" 
+    - sudo apt install -qy texlive texlive-latex-extra texlive-luatex texlive-fonts-extra graphviz imagemagick pdf2svg
+    - sudo sed -i '/PDF/s/none/read|write/' /etc/ImageMagick-6/policy.xml
+    - sage -i dot2tex glucose
+    - sage -pip install pytimeparse roman
+    - sage -pip install .
+    - sage -c 'import sage.env; print(sage.env.SAGE_VERSION)'
+    - sage -python -V
+    - dot -V
+    - lualatex --version
+    - pdflatex --version
+    - convert --version
+    - sage -c 'import slabbe'
+    - export DIRECTORY=`pwd`
+    - cd
+    - sage -t --force-lib --long --show-skipped ${DIRECTORY}
+    - cd ${DIRECTORY}/docs && sage -sh -c "make html"
