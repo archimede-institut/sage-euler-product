@@ -3,12 +3,22 @@
 
 Euler Product
 ==================================================
-**sage-euler-product** is a Python **SageMath** package implementing Eulerian Product for Number Théory 
 
 General content
 ---------------
 
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
 
+
+
+
+
+
+
+     LoeschianConstant-NS-04-MCOMP
+     
 
 Usage
 -----
