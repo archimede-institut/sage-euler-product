@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="78288d4d-4cc8-499e-9d21-34a52b11ac3c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/euler_product/lattice_invariant_euler_products.py" beforeDir="false" afterPath="$PROJECT_DIR$/euler_product/lattice_invariant_euler_products.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="ef7d09f4-e00f-4a6d-83df-7799e8431b9f" />
+  <component name="ProjectId" id="2Vu4MDEllNmMYJflezCwSBLx7sx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78288d4d-4cc8-499e-9d21-34a52b11ac3c" name="Default Changelist" comment="" />
+      <created>1695672581431</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695672581431</updated>
+      <workItem from="1695672590291" duration="890000" />
+      <workItem from="1696611185135" duration="663000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="550" y="350" width="424" height="520" key="FileChooserDialogImpl" timestamp="1696611210608">
+      <screen x="338" y="0" width="2222" height="1440" />
+    </state>
+    <state x="550" y="350" width="424" height="520" key="FileChooserDialogImpl/266.1440.1920.1080/338.0.2222.1440@338.0.2222.1440" timestamp="1696611210608" />
+  </component>
+</project>

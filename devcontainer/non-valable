@@ -1,0 +1,19 @@
+version: '3'
+services:
+    euler_product_container:
+    build:
+      context: ./
+      dockerFile: ./Dockerfile
+    volumes:
+      - ..: /app_demo:rw
+    networks:
+      - demo_netxork
+
+do:
+  image: "docker.io/sagemath/sagmath"
+  networks:
+    - demo_netxork   
+
+networks:
+  demo_netxork:
+  driver: "bridge"

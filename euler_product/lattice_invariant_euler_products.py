@@ -1,246 +1,52 @@
-## Needs Sage version at least 9.0
-## CAREFUL, this is Python 3 code!
+"""
+Lattice Invariant
 
-##################################################
-#####  Computing some structural invariants ######
-##################################################
+lattice_invariant_euler_product.py defines  class.
+Computing some structural invariants 
+ 
+ 
+AUTHORS:
+
+- Olivier Ramaré (2023-01-008) : initial version
+- Dominique Benielli (2023-02_15) :
+  AMU University <dominique.benielli@univ-amu.fr>,
+  Integration as  SageMath package. 
+  Cellule de developpement Institut Archimède
+
+WARNING:
+
+  Needs Sage version at least 9.0
+  CAREFUL, this is Python 3 code!
+  
+EXAMPLES::
+
+    sage: from euler_product import lattice_ivariant_euler_product as euler_p
+    
+"""
+# *****************************************************************************
+#       Copyright (C) 2023 Olivier Ramare
+#       < olivier . ramare @univ-amu.fr>
+#
+#  Distributed under the terms of the GNU General Public License (GPL)
+#                  http://www.gnu.org/licenses/
+# *****************************************************************************
 from __future__ import print_function, absolute_import
+import sys
+from timeit import default_timer as timer
+
 from sage.arith.misc import euler_phi
+from sage.arith.misc import gcd
+from sage.arith.misc import sigma
+from sage.arith.misc import divisors
+from sage.arith.functions import lcm
+from sage.rings.real_mpfi import RealIntervalField
+from sage.rings.complex_interval_field import ComplexIntervalField
+from sage.rings.complex_mpfr import ComplexField
+from sage.modular.dirichlet import DirichletGroup
 
-
-def SubgroupGenerated(n, q):
-    return frozenset(n^j % q for j in range(1, euler_phi(q)+1))
-
-class LatticeInvariantClasses():
-    def __init__(self):
-        pass
-
-    def __call__(self, q,  *args, **kwargs):
-        the_sg_list = []
-        for n in filter(lambda w: gcd(w, q) == 1, range(1, q)):
-            mysub = SubgroupGenerated(n, q)
-            # print mysub
-            if mysub not in theSGList:
-                theSGList.append(mysub)
-
-        theSGList.sort(key=len)
-        theSGTuple = tuple(theSGList)
-
-        ## Then get the classes:
-        ## Create a copy:
-        theClassList = list(theSGList)
-
-        for n in range(0, len(theClassList)):
-            aux = theClassList[n]
-            for m in range(n + 1, len(theClassList)):
-                if aux.issubset(theSGList[m]):
-                    theClassList[m] = frozenset(theClassList[m].difference(aux))
-
-        ## Create immutable tuples from the mutable lists:
-        theSGTuple = tuple(sg for sg in theSGList)
-        theClassTuple = tuple(cl for cl in theClassList)
-
-        return (theSGTuple, theClassTuple)
-
-
-
-def GetLatticeInvariantClasses(q):
-    ## First get the subgroups: 
-    theSGList = []
-    for n in filter(lambda w: gcd(w,q)==1, range(1, q)):
-        mysub = SubgroupGenerated(n, q)
-        #print mysub
-        if mysub not in theSGList:
-            theSGList.append(mysub)
-
-    theSGList.sort(key = len)
-    theSGTuple = tuple(theSGList)
-    
-    ## Then get the classes: 
-    ## Create a copy: 
-    theClassList = list(theSGList)
-
-    for n in range(0, len(theClassList)):
-        aux = theClassList[n]
-        for m in range(n+1, len(theClassList)):
-            if aux.issubset(theSGList[m]):
-                theClassList[m] = frozenset(theClassList[m].difference(aux))
-
-    ## Create immutable tuples from the mutable lists:
-    theSGTuple = tuple(sg for sg in theSGList)
-    theClassTuple = tuple(cl for cl in theClassList)
-    
-    return(theSGTuple, theClassTuple)
-
-def GetStructure(q):
-    (theSGTuple, theClassTuple) = GetLatticeInvariantClasses(q)
-    ## size of our matrices:
-    nbclasses = len(theSGTuple)
-    ## Getting the exponent:
-    theExponent = 1
-    for i in range(0, nbclasses):
-        theExponent = lcm(theExponent, len(theSGTuple[i]))
-    ## Now the character group:
-    characterGroup = DirichletGroup(q)
-    ## The range of invertible classes
-    invertibles = tuple(n for n in filter(lambda w: gcd(w, q)==1, range(1, q)))
-    if q==1:
-        invertibles = (1)
-    ## For each cyclic subgroup G0, we need the list of characters for G0perp:
-    invariantCharacters = tuple(tuple(ind_e for ind_e in range(0, len(characterGroup))
-                                      if theSGTuple[n].issubset(characterGroup[ind_e].kernel()))
-                                 for n in range(0, nbclasses))
-    ##
-    return(theSGTuple, theClassTuple, nbclasses, theExponent,
-           euler_phi(q), characterGroup, invertibles, invariantCharacters)
-
-def GetrAKt(q, structure, myindices):
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
-    rAKt = {}
-    for ind_A in range(0, nbclasses):
-        # TRICK ! The subgroup generated by A is at the same index!
-        sgrA = theSGTuple[ind_A]
-        for ind_K in range(0, nbclasses):
-            K = theSGTuple[ind_K]
-            for t in myindices:
-                rAKt[ind_A, ind_K, t] = 0
-                for L in theSGTuple:
-                    if K.issubset(L):
-                        Lt = {x^t % q for x in L}
-                        if Lt == sgrA:
-                            ## In Python 3, len(..)/len(...) is a real number, say 2.0
-                            ## and the value of moebius becomes ... 1!
-                            rAKt[ind_A, ind_K, t] += moebius(t)*moebius(int(len(L)/len(K)))*len(K)/phiq
-
-    return rAKt
-
-def GetCAKm(q, structure, myindices):
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
-
-    rAKt = GetrAKt(q, structure, myindices)
-    CAKm = {}
-    for ind_A in range(0, nbclasses):
-        for ind_K in range(0, nbclasses):
-            for m in myindices:
-                CAKm[ind_A, ind_K, m] = 0
-                for t in divisors(m):
-                    CAKm[ind_A, ind_K, m] += rAKt[ind_A, ind_K, t]
-
-    return CAKm
-    
-##################################################
-#######  Computing Gamma  ########################
-##################################################
-
-def GetLvalues(q, m, structure, bigP, CIF, CF):
-    # m belongs to CIF
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
-
-    CG = characterGroup.change_ring(CF)
-    hurwitzvalues = tuple(hurwitz_zeta(s = m, x = CIF(a/q))/CIF(q)^m for a in invertibles)
-
-    aux0 = [[1-CIF(e(p))/CIF(p)^m
-             for p in filter(lambda w: (w in Primes()), range(2, bigP))]
-            for e in CG]
-    aux1 = [prod(v) for v in aux0]
-    aux2 = [sum([CIF(e(invertibles[ind_invert]))*hurwitzvalues[ind_invert]
-                 for ind_invert in range(0, phiq)]) for e in CG]
-
-    res = tuple(aux1[ind_e]*aux2[ind_e] for ind_e in range(0, phiq))
-    return res
-
-# strut = GetStructure(30)
-# GetLvalues(30 ,1 ,strut,2, 200, 212)
-def checkGetLvalues(q, m, bigP, prec):
-    structure = GetStructure(q)
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
-    CIF = ComplexIntervalField( prec )
-    
-    Lval = GetLvalues(m , structure , bigP, CIF)
-    return tuple(CIF(u) for u in [Lval[index]
-                                  /prod([1-characterGroup[index](p)/p^s
-                                         for p in filter(lambda w: (w in Primes()), range(2, bigP))])
-                                  for index in range(0, phiq)])
-
-# checkGetLvalues(30, 2, 200, 212)
-def GetGamma(q, t, structure, s, bigP, prec):
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
-    CIF = ComplexIntervalField( prec )
-    CF = ComplexField( prec + 1)
-    ##
-    if s*t*log(bigP) > (prec+10)*log(2):
-        one = RealIntervalField(prec+10)(1-2^(-prec-9), 1+2^(-prec-9))
-        Lvalues = tuple(one for e in characterGroup)
-    else:
-        m = CIF(t*s)
-        Lvalues = GetLvalues(q, m, structure, bigP, CIF, CF)
-    #print(q, t, s, bigP, prec, Lvalues)
-    return vector([log(CIF(prod([Lvalues[ind_e]
-                                 for ind_e in invariantCharacters[ind_G0]])).real())
-                   for ind_G0 in range(0, nbclasses)])
-
-# myCIF = ComplexIntervalField(200)
-# [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
-################################################
-############  Witt Decomposition  ##############
-################################################
-
-def GetVectorsF(coeffsF, howmany):
-    Ai = coeffsF + ((howmany-len(coeffsF))*[0])
-    sF = [0 for i in range(0,howmany)]
-    sF[0] = len(coeffsF)-1 ## = deg F
-    for k in range(1, howmany):
-        sF[k] = -k*Ai[k]-add(Ai[i]*sF[k-i] for i in range(1, k))
-    return sF
-
-# Not used in the main program:
-def GetVectorbF(coeffsF, howmany):
-    bF = [0 for i in range(0,howmany)] ## bf[0] is not used
-    sF = GetVectorsF(coeffsF, howmany)
-    for k in range(1, howmany):
-        bF[k] = add(moebius(k/d)*sF[d] for d in divisors(k))/k
-    return bF
-
-# GetVectorbF([1, -4, 4, 2, -4, 1], 11)
-# [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]
-
-def GetCAKmFsurH(q, structure, myindices, coeffsF, coeffsH):
-    # myindices should be divisor-closed (and include 1) and ordered
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
-
-    #print(q, structure, myindices, coeffsF, coeffsH)
-    rAKt = GetrAKt(q, structure, myindices) # same indices as myindices is divisor-closed
-
-    maxindex = myindices[ len(myindices)-1] 
-    sF = GetVectorsF(coeffsF, maxindex+1)
-    sH = GetVectorsF(coeffsH, maxindex+1)
-    
-    CAKmFsurH = {}
-    for ind_A in range(0, nbclasses):
-        for ind_K in range(0, nbclasses):
-            for m in myindices:
-                CAKmFsurH[ind_A, ind_K, m] = 0
-                for t in divisors(m):
-                    #print("add",  rAKt[ind_A, ind_K, t]*(sH[m/t] - sF[m/t]))
-                    CAKmFsurH[ind_A, ind_K, m] += rAKt[ind_A, ind_K, t]*(sH[m/t] - sF[m/t])
-
-    return CAKmFsurH
-    
-def GetBeta(F):
-    myroots = F.roots(multiplicities = False)
-    if len(myroots) == 0:
-        return 1
-    else:
-        return max(1, max([1/abs(c) for c in myroots]))
-
-def GetBetaRough(coeffsF):
-    return max(1, max([abs(c) for c in coeffsF]))
+from euler_product.utils_euler_product import ComponentStructure
+from euler_product.utils_euler_product import get_BetaRough
+# def GetLatticeInvariantClasses(q):
 
 ################################################
 ############  Checking Engines  ################
@@ -249,206 +55,234 @@ def GetBetaRough(coeffsF):
 def GetVsChecker(q, s, borne = 10000):
     ### Computes an approximate value of the list (zeta(s; q, A))
     ### for A in the lattice-invariant classes.
-    structure = GetStructure(q)
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
+    structure = ComponentStructure(q)
+    #(theSGTuple, theClassTuple, nbclasses, theExponent,
+    #  phiq, characterGroup, invertibles, invariantCharacters) = structure
     Vsapprox = [1/prod([1.0-1/p^s
-                        for p in filter(lambda w: (w in Primes()) and (w%q in theClassTuple[i]),
+                        for p in filter(lambda w: (w in Primes()) and (w%q in structure.the_Class_tuple[i]),
                                         range(2, borne))])
-                for i in range(0, nbclasses)]
+                for i in range(0, structure.nb_class)]
 
-    for i in range(0, nbclasses):
+    for i in range(0, structure.nb_class):
             print("-------------------")
-            print("For p mod ", q, " in ",  theClassTuple[i])
+            print("For p mod ", q, " in ",  structure.the_Class_tuple[i])
             print("the product of 1/(1-p^{-", s, "}) is about", Vsapprox[i])
 
 ################################################
 ############  Formatting outputs  ##############
 ################################################
 
-def NbCommonDigits(a, b):
-    #Returns -1 if floor(a) != floor(b)
-    # This is tailored for positive inputs
-    if floor(a) != floor(b):
-        return(-1)
-    a = a - floor(a)
-    b = b - floor(b)
-    nb = 0
-    while floor(10*a)==floor(10*b):
-        a = 10*a - floor(10*a)
-        b = 10*b - floor(10*b)
-        nb += 1
+
     return(nb)
 
-def LaTeXForNumber(w, howmany, nbblockstocut):
-    # w is a real number with a (short) integer part and a floating point
-    # Returns a character string int(w).digits where digits concerns the first
-    # howmany decimals, separated every 5 of them by '\,' et every block of nbblockstocut
-    # on a different line. '\cdots' ends the string.
-    thelen = 5
-    listchar = list(str(w))
-    begpos = listchar.index('.') + 1
-    listchar.insert(begpos, '&')
 
-    if len(listchar) > howmany + begpos:
-        listchar = listchar[0:howmany + begpos +1]
-
-    n = thelen + begpos + 1
-    while n < len(listchar):
-        if (n - begpos)/(thelen +1) % nbblockstocut == 0:
-            listchar.insert(n, '\n')
-        else:
-            listchar.insert(n, '\\,')
-        n += 1 + thelen
-
-    listchar.append('\\cdots')
-    return ''.join(listchar)
-
-# LaTeXForNumber(22.01234567812345, 100, 8)
-# 
 ################################################
 ############  Main Engines  #####################
 ################################################
 
-import sys
-from timeit import default_timer as timer
 
-def GetVs(q, s, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0, digitsoffset = 10):
-    ### Computes an approximate value of the list (zeta(s; q, A))
-    ### for A in the lattice-invariant classes.
-    ### We compute directly what happens for primes < bigP.
-    ### Don't try me and avoid to select a prime number for bigP.
+
+
+def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX 0, digits_offset=10):
+    """summary for get_vs
+    Computes an approximate value of the list (zeta(s; q, A))
+    for A in the lattice-invariant classes.
+    We compute directly what happens for primes < big_p.
+    
+    ... WARNING ...
+       Don't try me and avoid to select a prime number for bigP.
+    
+    INPUT:
+
+    - ''q'' -- [type]
+        [description]
+
+    - ''s'' -- [type]
+        [description]
+
+    - ''nb_decimals'' -- [type]
+        [description]
+
+    - ''big_p'' : int, optional
+        [description], by default 100
+
+    - ''verbose'' : int, optional
+        [description], by default 2
+
+    - ''with_laTeX'' : int, optional
+        [description], by default 0
+
+    - ''digits_offset'' : int, optional
+        [description], by default 10
+
+    OUTPUT:
+
+    [type]
+        [description]
+    """
     start = timer()
     ## Compute the structural invariants:
-    if Verbose >= 2:
+    if verbose >= 2:
         sys.stdout.write("Computing the structural invariants ... ")
     ##
-    structure = GetStructure(q)
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
+    structure = ComponentStructure(q)
+    # (theSGTuple, theClassTuple, nbclasses, theExponent,
+    # phiq, characterGroup, invertibles, invariantCharacters) = structure
     ##
-    if Verbose >= 2:
+    if verbose >= 2:
         print(" done.")
     #############
     ## Getting bigM:
-    if Verbose >= 2:
-        sys.stdout.write("Computing bigM ... ")
+    if verbose >= 2:
+        sys.stdout.write("Computing big m ... ")
     ##
-    allowed_primes = set(prime_factors(phiq))
-    cte = nbclasses*prod([1 + 2/(p-1) for p in allowed_primes])
-    bigM = 10
-    while (float(log(cte)+log(1+bigP/(bigM*s))-s*bigM*log(bigP)
-                 + (nbdecimals + 1)*log(10)) > 0):
-        bigM = bigM + 1
+    allowed_primes = set(prime_factors(structure.phi_q))
+    cte = structure.nb_class * prod([1 + 2/(p-1) for p in allowed_primes])
+    big_m = 10
+    while (float(log(cte) + log(1 + big_p/(big_m*s))-s*bigM*log(big_p)
+                    + (nb_decimals + 1)*log(10)) > 0):
+        big_m = big_m + 1
     ## Initial computations:
-    if Verbose >= 2:
-        sys.stdout.write("Computing the finite product for p < " + str(bigP) + " ... ")
+    if verbose >= 2:
+        sys.stdout.write("Computing the finite product for p < " + str(big_p) + " ... ")
     ##
-    prec = ceil(nbdecimals * log(10)/log(2) + 10 + ceil(bigM))
+    prec = ceil(nb_decimals * log(10)/log(2) + 10 + ceil(big_m))
     R = RealIntervalField( prec )
     ## Empty initial products are allowed:
-    eulerProdIni = tuple([R(1/prod(flatten([1,
-                                            [R(1-1/p^s)
-                                             for p in filter(lambda w: (w in Primes())
-                                                             and (w%q in theClassTuple[i]),
-                                                             range(2, bigP))]])))
-                          for i in range(0, nbclasses)])
-    if Verbose >= 2:
+    euler_prod_ini = tuple([R(1/prod(flatten([1,
+                                            [R(1-1/p^s) for p in filter(lambda w: (w in Primes())
+                                                            and (w%q in structure.the_Class_tuple[i]), range(2, big_p))]])))
+                            for i in range(0, structure.nb_class)])
+    if verbose >= 2:
         print(" done.")
-    logerr = R(cte*(1+bigP/(bigM*s))/bigP^(s*bigM))
+    logerr = R(cte*(1 + big_p/(big_m*s))/big_p^(s*big_m))
     ##
-    if Verbose >= 2:
-        print("done: we use bigM =", bigM, ".") 
+    if verbose >= 2:
+        print("done: we use bigM =", big_m, ".") 
     ##############
     ## Build the set of indices di:
-    if Verbose >= 2:
+    if verbose >= 2:
         sys.stdout.write("Building indices ... ")
     #
-    myindices = [m for m in
-                 filter(lambda w:
+    my_indices = [m for m in filter(lambda w:
                         set(prime_factors(w)).issubset(allowed_primes),
                         range(1, bigM))]
     ## 1 is indeed in myindices.
-    CAKm = GetCAKm(q, structure, myindices)
+    CAKm = structure.getC_A_Km(q, my_indices)
     
-    if Verbose >= 2:
-        print("done: there are", len(myindices), "summands.")
+    if verbose >= 2:
+        print("done: there are", len(my_indices), "summands.")
 
-    Vsapprox = [R(0) for ind_A in range(0, nbclasses)]
+    Vsapprox = [R(0) for ind_A in range(0, structure.nb_class)]
 
-    for m in myindices:
-        #print(q, m, s, bigP, prec)
-        aux = GetGamma(q, m, structure, s, bigP, prec)
-        #print(q,m,s, bigP, prec, aux)
-        for ind_A in range(0, nbclasses):
-             for ind_K in range(0, nbclasses):
-                 Vsapprox[ind_A] += aux[ind_K]*CAKm[ind_A, ind_K, m]/m 
+    for m in my_indices:
+        # print(q, m, s, bigP, prec)
+        aux = GetGamma(q, m, structure, s, big_p, prec)
+        #print(q, m, s, bigP, prec, aux)
+        for ind_A in range(0, structure.nb_class):
+            for ind_k in range(0, structure.nb_class):
+                Vsapprox[ind_A] += aux[ind_k]*CAKm[ind_A, ind_k, m]/m 
 
     ## We now have to get the Euler products:
-    eulerProds = tuple([(R(eulerProdIni[i]*exp(Vsapprox[i]-logerr)).lower(),
-                         R(eulerProdIni[i]*exp(Vsapprox[i]+logerr)).upper())
-                        for i in range(0, nbclasses)])
+    eulerProds = tuple([(R(euler_prod_ini[i] * exp(Vsapprox[i]-logerr)).lower(), R(euler_prod_ini[i] * exp(Vsapprox[i]+logerr)).upper())
+                        for i in range(0, structure.nb_class)])
     ##
-    if Verbose >= 2:
-        for i in range(0, nbclasses):
-            nbdigits = NbCommonDigits(eulerProds[i][1], eulerProds[i][0])
+    if verbose >= 2:
+        for i in range(0, structure.nb_class):
+            nb_digits = NbCommonDigits(eulerProds[i][1], eulerProds[i][0])
             print("-------------------")
-            print("For p+" + str(q) + "ZZ in",  theClassTuple[i])
+            print("For p+" + str(q) + "ZZ in",  structure.the_Class_tuple[i])
             print("the product of 1/(1-p^{-"+ str(s) + "}) is between")
             print(eulerProds[i][0])
             print("and")
             print(eulerProds[i][1])
-            if WithLaTeX == 1:
+            if with_laTeX == 1:
                 print("LaTeX format:")
-                howmany = min(nbdecimals, nbdigits)
-                print(LaTeXForNumber(eulerProds[i][0], howmany, 10))
-            print("(Obtained: ", nbdigits, " correct decimal digits)")
+                how_many = min(nb_decimals, nb_digits)
+                print(LaTeXForNumber(eulerProds[i][0], how_many, 10))
+            print("(Obtained: ", nb_digits, " correct decimal digits)")
     ##
-
     end = timer()
     ##
-    if Verbose >= 1:
+    if verbose >= 1:
         print("Time taken:", end - start, "seconds.")
     # print myindices
-    if Verbose == -1:
-        return([bigP, phiq, len(myindices), nbclasses, bigM, end-start,
-                -floor(log(eulerProds[0][1]-eulerProds[0][0])/log(10))])
+    if verbose == -1:
+        return([big_p, structure.phi_q, len(my_indices), structure.nb_class, big_m, end-start,
+                -floor(log(eulerProds[0][1] - eulerProds[0][0])/log(10))])
     else:
-        return theClassTuple, eulerProds
+        return the_Class_tuple, eulerProds
+    
 
-##############################################################
+def get_Euler_Prods(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, with_laTeX=0):
+    """Summary for get_Euler_Prods
+    Computes an approximate value of the list ()
+    for A in the lattice-invariant classes, ''LatticeInvariantClasses''.
+    Careful! bigP may increase in the proof!
+    We compute directly what happens for primes < big_p.
+    
+    INPUT:
 
-def GetEulerProds(q, s, Finit, Hinit, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0):
-    ### Computes an approximate value of the list ()
-    ### for A in the lattice-invariant classes.
-    ### Careful! bigP may increase in the proof!
-    ### We compute directly what happens for primes < bigP.
+    - ''q'' -- [type]
+        [description]
+
+    - ''s'' -- [type]
+        [description]
+
+    - ''f_init'' -- [type]
+        [description]
+
+    - ''h_init'' -- [type]
+        [description]
+
+    - ''nb_decimals'' -- [type]
+        [description]
+
+    - ''big_p'' : int, optional
+        [description], by default 100
+
+    - ''verbose'' : int, optional
+        [description], by default 2
+
+    - ''with_laTeX'' : int, optional
+        [description], by default 0
+
+    OUTPUT:
+
+    [tuple]
+        [return tuple of (the_Class_tuple, euler_prods)]
+        
+    EXAMPLE:
+    
+        sage:
+        sage: GetEulerProds(3, 1, 1-x^2, 100)
+    """
     start = timer()
     ## Compute the structural invariants:
-    if Verbose >= 2:
+    if verbose >= 2:
         sys.stdout.write("Computing the structural invariants ... ")
     ##
-    structure = GetStructure(q)
-    (theSGTuple, theClassTuple, nbclasses, theExponent,
-     phiq, characterGroup, invertibles, invariantCharacters) = structure
+    structure = ComponentStructure(q)
+    # (theSGTuple, theClassTuple, nbclasses, theExponent,
+    # phiq, characterGroup, invertibles, invariantCharacters) = structure
     ##
-    if Verbose >= 2:
+    if verbose >= 2:
         print(" done.")
     #############
     # A small precision is enough:
-    R0 = RealField( 30 )
+    R0 = RealField(30)
     R0X.<x> = R0[]
-    F0, H0 = R0X(Finit), R0X(Hinit)
+    F0, H0 = R0X(f_init), R0X(h_init)
     myDelta = (F0-H0).valuation()
     ## Get mybeta, myDelta and bigP:
-    mybeta = max(2, GetBeta(F0) , GetBeta(H0))
+    mybeta = max(2, get_Beta(F0) , get_Beta(H0))
     ###########"
-    if Verbose >= 2:
+    if verbose >= 2:
         print("We have Delta  =", myDelta, "and beta =", mybeta)
     #############
     ## Getting bigM, prec and bigP:
     bigP = max(bigP, 2*mybeta)
-    cte = 4*nbclasses^2*(F0.degree() + H0.degree())*(s + bigP)
+    cte = 4 * structure.nb_class^2 * (F0.degree() + H0.degree()) * (s + bigP)
     bigM = bigP + 10
 
     while (float(log(cte) + (bigM+1)*log(bigP^s/mybeta) - (nbdecimals+1)*log(10)) < 0):
@@ -458,7 +292,7 @@ def GetEulerProds(q, s, Finit, Hinit, nbdecimals, bigP = 100, Verbose = 2, WithL
     ## This spoils the accuracy and has to be recovered:
     prec = ceil(nbdecimals * log(10)/log(2)+ 10) + ceil(float(bigM*log(mybeta)/log(2))) 
     ##
-    if Verbose >= 2:
+    if verbose >= 2:
         print("We use bigM =", bigM, ", bigP =", bigP, "and working prec =", prec, ".")
     ## The precision has changed! Change the ring:
     R = RealIntervalField( prec )
@@ -467,20 +301,19 @@ def GetEulerProds(q, s, Finit, Hinit, nbdecimals, bigP = 100, Verbose = 2, WithL
     F, H = RX(Finit), RX(Hinit)
     #############
     ## Initial computations:
-    if Verbose >= 2:
+    if verbose >= 2:
         sys.stdout.write("Computing the finite products for p < " + str(bigP) + " ... ")
     ## Empty initial products are allowed:
     eulerProdIni = tuple([prod(flatten([1, [R(F(1/p^s)/H(1/p^s))
                                             for p in filter(lambda w: (w in Primes())
-                                                            and (w%q in theClassTuple[i]),
-                                                            range(2, bigP))]]))
-                          for i in range(0, nbclasses)])
+                                                            and (w%q in structure.the_Class_tuple[i]),
+                                                            range(2, bigP))]])) for i in range(0, structure.nb_class)])
     ##
-    if Verbose >= 2:
+    if verbose >= 2:
         print(" done.")
     #############
     ## Compute CA(K, m, F/H):
-    if Verbose >= 1:
+    if verbose >= 1:
         sys.stdout.write("Computing C_A(K, m, F/H) ... ")
     ##
     myindices = [i for i in range(1, bigM+1)]
@@ -500,16 +333,16 @@ def GetEulerProds(q, s, Finit, Hinit, nbdecimals, bigP = 100, Verbose = 2, WithL
     
     ## We now have to complete the Euler products:
     eulerProds = tuple([(R(eulerProdIni[i]*exp(logZsapprox[i]-logerr)).lower(),
-                         R(eulerProdIni[i]*exp(logZsapprox[i]+logerr)).upper())
-                        for i in range(0, nbclasses)])
+                        R(eulerProdIni[i]*exp(logZsapprox[i]+logerr)).upper())
+                        for i in range(0, structure.nb_class)])
     ##
-    if Verbose >=2:
-        for i in range(0, nbclasses):
+    if verbose >=2:
+        for i in range(0, structure.nb_class):
             nbdigits = NbCommonDigits(eulerProds[i][1], eulerProds[i][0])
             print("-------------------")
-            print("For p+" + str(q) + "ZZ in ",  theClassTuple[i])
-            print("For F(x) =", Finit)
-            print("and H(x) =", Hinit)
+            print("For p+" + str(q) + "ZZ in ",  the_Class_tuple[i])
+            print("For F(x) =", f_init)
+            print("and H(x) =", h_init)
             if s == 1:
                 print("the product of F(1/p)/H(1/p) is between")
             else:
@@ -522,39 +355,52 @@ def GetEulerProds(q, s, Finit, Hinit, nbdecimals, bigP = 100, Verbose = 2, WithL
                 howmany = min(nbdecimals, nbdigits)
                 print(LaTeXForNumber(eulerProds[i][0], howmany, 10))
             print("(Obtained: ", nbdigits, " correct decimal digits)")
-    ##
 
     end = timer()
-    ##
-    if Verbose >= 1:
+    if verbose >= 1:
         print("Time taken: ", end - start, "seconds.")
     # print myindices
+    return the_Class_tuple, eulerProds
     
-    return theClassTuple, eulerProds
-    
-# GetEulerProds(3, 1, 1-x^2, 100)
-#####################################################
-#####################################################
-#########  Table Makers #############################
-#####################################################
-#####################################################
 
-def TablePerformance(minq, maxq, nbdecimals=100, bigP=300):
-    reftime = 0.1 # approximate time is s for q = 3
+def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
+    """Summary for table_performance
+    Table Makers
+    
+    INPUT:
+
+    - ''min_q'' -- [type]
+        [description]
+
+    - ''max_q'' -- [type]
+        [description]
+
+    - ''nb_decimals'' : int, optional
+        [description], by default 100
+
+    - ''big_p'' : int, optional
+        [description], by default 300
+        
+    EXAMPLE:
+    
+        sage:
+        sage:
+        
+    """
+    ref_time = 0.1 # approximate time is s for q = 3
     res = {}
-    for q in range(minq, maxq+1):
+    for q in range(min_q, max_q + 1):
         if (q%2 == 0) and (q%4 !=0):
             pass
         else:
             sys.stdout.write(str(q) + " ")
             sys.stdout.flush()
-
-            aux = GetVs(q, 2, nbdecimals, bigP, -1)
+            aux = GetVs(q, 2, nb_decimals, big_p, -1)
             sys.stdout.write(str(aux[6]) + " digits for the first product\n")
-            aux[5] = ceil(aux[5]*1000/reftime)
+            aux[5] = ceil(aux[5] * 1000/ref_time)
             res[q] = aux
             
-    for q in range(minq, maxq +1):
+    for q in range(min_q, max_q + 1):
         if q in res:
             str_res = str(q) + "& " + str(res[q][1])
             str_res = str_res + "& " + str(len(prime_divisors(res[q][1]))) 
