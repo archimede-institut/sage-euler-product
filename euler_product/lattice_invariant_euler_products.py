@@ -20,7 +20,7 @@ WARNING:
   
 EXAMPLES::
 
-    sage: from euler_product import lattice_ivariant_euler_product as euler_p
+    sage: from euler_product.lattice_ivariant_euler_products import get_euler_products
     
 """
 # *****************************************************************************
@@ -34,6 +34,7 @@ from __future__ import print_function, absolute_import
 import sys
 from timeit import default_timer as timer
 
+from sage.functions.other import ceil, floor
 from sage.arith.misc import euler_phi
 from sage.arith.misc import gcd
 from sage.arith.misc import sigma
@@ -46,42 +47,10 @@ from sage.modular.dirichlet import DirichletGroup
 
 from euler_product.utils_euler_product import ComponentStructure
 from euler_product.utils_euler_product import get_BetaRough
-# def GetLatticeInvariantClasses(q):
-
-################################################
-############  Checking Engines  ################
-################################################
-
-def GetVsChecker(q, s, borne = 10000):
-    ### Computes an approximate value of the list (zeta(s; q, A))
-    ### for A in the lattice-invariant classes.
-    structure = ComponentStructure(q)
-    #(theSGTuple, theClassTuple, nbclasses, theExponent,
-    #  phiq, characterGroup, invertibles, invariantCharacters) = structure
-    Vsapprox = [1/prod([1.0-1/p^s
-                        for p in filter(lambda w: (w in Primes()) and (w%q in structure.the_Class_tuple[i]),
-                                        range(2, borne))])
-                for i in range(0, structure.nb_class)]
-
-    for i in range(0, structure.nb_class):
-            print("-------------------")
-            print("For p mod ", q, " in ",  structure.the_Class_tuple[i])
-            print("the product of 1/(1-p^{-", s, "}) is about", Vsapprox[i])
-
-################################################
-############  Formatting outputs  ##############
-################################################
-
-
-    return(nb)
-
 
 ################################################
 ############  Main Engines  #####################
 ################################################
-
-
-
 
 def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX 0, digits_offset=10):
     """summary for get_vs
@@ -214,8 +183,8 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX 0, digits_offset=
         return the_Class_tuple, eulerProds
     
 
-def get_Euler_Prods(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, with_laTeX=0):
-    """Summary for get_Euler_Prods
+def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, with_laTeX=0):
+    """Summary for get_euler_products
     Computes an approximate value of the list ()
     for A in the lattice-invariant classes, ''LatticeInvariantClasses''.
     Careful! bigP may increase in the proof!
@@ -254,8 +223,8 @@ def get_Euler_Prods(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, wit
         
     EXAMPLE:
     
-        sage:
-        sage: GetEulerProds(3, 1, 1-x^2, 100)
+        sage: from euler_product.lattice_ivariant_euler_products import get_euler_products
+        sage: get_euler_products(3, 1, 1-x^2, 100)
     """
     start = timer()
     ## Compute the structural invariants:
@@ -412,3 +381,35 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
     return
 
 
+
+################################################
+############  Checking Engines  ################
+################################################
+
+def get_vs_checker(q, s, borne=10000):
+    """summary for get_vs_checker
+
+    INPUT:
+
+    - ''q'' -- [type]
+        [description]
+
+    - ''s'' -- [type]
+        [description]
+
+    - ''borne'' : int, optional
+        [description], by default 10000
+    """
+    ### Computes an approximate value of the list (zeta(s; q, A))
+    ### for A in the lattice-invariant classes.
+    structure = ComponentStructure(q)
+    #(theSGTuple, theClassTuple, nbclasses, theExponent,
+    #  phiq, characterGroup, invertibles, invariantCharacters) = structure
+    vs_approx = [1/prod([1.0-1/p^s
+                        for p in filter(lambda w: (w in Primes()) and (w%q in structure.the_Class_tuple[i]),
+                                        range(2, borne))])
+                for i in range(0, structure.nb_class)]
+    for i in range(0, structure.nb_class):
+            print("-------------------")
+            print("For p mod ", q, " in ",  structure.the_Class_tuple[i])
+            print("the product of 1/(1-p^{-", s, "}) is about", vs_approx[i])

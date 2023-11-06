@@ -20,7 +20,6 @@ WARNING:
 EXAMPLES::
 
     sage: from euler_product.utils_euler_product import  LatticeInvariantClasses
-    sage: 
     
 """
 # *****************************************************************************
@@ -36,9 +35,8 @@ from collections import namedtuple
 from timeit import default_timer as timer
 
 from sage.symbolic.function import GinacFunction, BuiltinFunction
-from sage.symbolic.symbols import register_symbol, symbol_table
-from sage.functions.other import ceil
-from sage.rings.arith import prime_divisors
+from sage.functions.other import ceil, floor
+from sage.arith.misc import prime_divisors
 from sage.arith.misc import euler_phi
 from sage.arith.misc import gcd
 from sage.arith.misc import sigma
@@ -48,7 +46,7 @@ from sage.rings.real_mpfi import RealIntervalField
 from sage.rings.complex_interval_field import ComplexIntervalField
 from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
-from sage.arith.misc.Moebius import moebius
+from sage.arith.misc import moebius
 
 def NbCommonDigits(a, b):
     #Returns -1 if floor(a) != floor(b)
@@ -62,6 +60,7 @@ def NbCommonDigits(a, b):
         a = 10*a - floor(10*a)
         b = 10*b - floor(10*b)
         nb += 1
+    return(nb)
 
 def laTeX_for_number(w, how_many, nb_block_sto_cut):
     """summary for laTeX_for_number
@@ -73,7 +72,7 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
         [w is a real number with a (short) integer part and a floating point]
 
     - ''how_many'' -- [int]
-        [number of decimal,decimals, separated every 5 of them by '\,' 
+        [number of decimal,decimals, separated every 5 of them by \'\,\' 
          et every block of ''nb_block_sto_cut'', on a different line. '\cdots' ends the string]
 
     - ''nb_block_sto_cut'' -- [type]
@@ -85,10 +84,11 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
         [a character string int(w).digits where digits concerns the first]
         
         
-    EXAMPLE:
+    EXAMPLES:
     
        sage: from euler_product.utils_euler_product import laTeX_for_number
        sage: laTeX_for_number(22.01234567812345, 100, 8) 
+       '22.&01234\\,56781\\,235\\cdots'
        
     """
     thelen = 5
@@ -110,8 +110,8 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
     listchar.append('\\cdots')
     return ''.join(listchar)
 
-def SubgroupGenerated(n, q):
-    """summary for SubgroupGenerated
+def sub_group_generated(n, q):
+    """summary for sub_group_generated
     Main Engines function
     
     INPUT:
@@ -126,8 +126,13 @@ def SubgroupGenerated(n, q):
 
     frozenset
         immutable set of 
-    """
+        
+    EXAMPLES:
     
+        sage: from euler_product.utils_euler_product import sub_group_generated
+        sage: sub_group_generated(5, 3) 
+        frozenset({4, 7})
+    """
     return frozenset(n^j % q for j in range(1, euler_phi(q)+1))
 
 class LatticeInvariantClasses():
@@ -136,16 +141,31 @@ class LatticeInvariantClasses():
     
     EXAMPLE:
     
-        sage: from euler_product.utils_euler_product import laTeX_for_number
-        sage: LatticeInvariantClasses(30)
+        sage: from euler_product.utils_euler_product import LatticeInvariant
+        sage: LatticeInvariant(30)
+        ((frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
+          frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
+          frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
+          frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
+          frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
+          frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
+          frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
+          frozenset({21, 24, 25, 26, 27, 28, 30, 31})),
+         (frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
+          frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
+          frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
+          frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
+          frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
+          frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
+          frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
+          frozenset({21, 24, 25, 26, 27, 28, 30, 31})))
         
     """
-
     def __init__(self):
         pass
 
     def __call__(self, q):
-        """summary for __call__ for usage of Claas like function
+        """summary for __call__ for usage of Class like function
 
         INPUT:
 
@@ -156,34 +176,77 @@ class LatticeInvariantClasses():
 
         [tuple]
             [tuple of tuple, the_SG_tuple, the_Class_tuple]
+            
+        EXAMPLES:
+        
+            sage: from euler_product.utils_euler_product import LatticeInvariant
+            sage: LatticeInvariant(10)
+            ((frozenset({0, 2, 3, 5}),
+              frozenset({0, 1, 2, 7}),
+              frozenset({3, 4, 5, 6}),
+              frozenset({8, 10, 11, 13})),
+             (frozenset({0, 2, 3, 5}),
+              frozenset({0, 1, 2, 7}),
+              frozenset({3, 4, 5, 6}),
+              frozenset({8, 10, 11, 13})))
+             sage: LatticeInvariant(10)
+            ((frozenset({0, 2, 3, 5}),
+              frozenset({0, 1, 2, 7}),
+              frozenset({3, 4, 5, 6}),
+              frozenset({8, 10, 11, 13})),
+            (frozenset({0, 2, 3, 5}),
+             frozenset({0, 1, 2, 7}),
+             frozenset({3, 4, 5, 6}),
+             frozenset({8, 10, 11, 13})))
+             sage: LatticeInvariant(20)
+            ((frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
+              frozenset({0, 1, 2, 4, 5, 6, 7, 11}),
+              frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
+              frozenset({1, 8, 10, 11, 12, 13, 14, 15}),
+              frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
+              frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
+              frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
+              frozenset({16, 17, 18, 20, 21, 22, 23, 27})),
+             (frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
+              frozenset({0, 1, 2, 4, 5, 6, 7, 11}),
+              frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
+              frozenset({1, 8, 10, 11, 12, 13, 14, 15}),
+              frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
+              frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
+              frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
+              frozenset({16, 17, 18, 20, 21, 22, 23, 27})))
+        
         """
-        self.q = q
-        the_SG_list = []
-        for n in filter(lambda w: gcd(w, q) == 1, range(1, q)):
-            my_sub = SubgroupGenerated(n, q)
-            # print my_sub
-            if my_sub not in the_SG_list:
-                the_SG_list.append(my_sub)
+        if  hasattr(self, 'q') and  q == self.q:
+            return (self.the_SG_tuple, self.the_Class_tuple)
+        else:
+            self.q = q
+            the_SG_list = []
+            for n in filter(lambda w: gcd(w, q) == 1, range(1, q)):
+                my_sub = sub_group_generated(n, q)
+                # print my_sub
+                if my_sub not in the_SG_list:
+                    the_SG_list.append(my_sub)
 
-        the_SG_list.sort(key=len)
-        the_SG_tuple = tuple(the_SG_list)
+            the_SG_list.sort(key=len)
+            the_SG_tuple = tuple(the_SG_list)
 
-        ## Then get the classes:
-        ## Create a copy:
-        the_Class_list = the_SG_list.deepcopy()
+            ## Then get the classes:
+            ## Create a copy:
+            the_Class_list = the_SG_list.copy()
 
-        for n in range(0, len(the_Class_list)):
-            aux = the_Class_list[n]
-            for m in range(n + 1, len(the_Class_list)):
-                if aux.issubset(the_SG_list[m]):
-                    the_Class_list[m] = frozenset(the_Class_list[m].difference(aux))
+            for n in range(0, len(the_Class_list)):
+                aux = the_Class_list[n]
+                for m in range(n + 1, len(the_Class_list)):
+                    if aux.issubset(the_SG_list[m]):
+                        the_Class_list[m] = frozenset(the_Class_list[m].difference(aux))
 
-        ## Create immutable tuples from the mutable lists:
-        the_SG_tuple = tuple(the_SG_list)
-        the_Class_tuple = tuple(the_Class_list)
+            ## Create immutable tuples from the mutable lists:
+            self.the_SG_tuple = tuple(the_SG_list)
+            self.the_Class_tuple = tuple(the_Class_list)
+        return (self.the_SG_tuple, self.the_Class_tuple)
 
-        return (the_SG_tuple, the_Class_tuple)
-
+LatticeInvariant = LatticeInvariantClasses()
 
 BaseComponentStructure = namedtuple('BaseComponentStructure', ['the_SG_tuple', 'the_Class_tuple', 'nb_class', 'the_exponent',
                                                             'phi_q', 'character_group', 'invertibles', 'invariant_characters'])
@@ -217,7 +280,7 @@ class ComponentStructure(BaseComponentStructure):
         namedtuple
             [description]
         """
-        (the_SG_tuple, the_Class_tuple) = LatticeInvariantClasses(q)
+        (the_SG_tuple, the_Class_tuple) = LatticeInvariant(q)
         ## size of our matrices:
         nb_class = len(the_SG_tuple)
         ## Getting the exponent:
@@ -523,7 +586,7 @@ def get_vector_bf(coeffs_f, how_many):
 
 # strut = GetStructure(30)
 # GetLvalues(30 ,1 ,strut,2, 200, 212)
-def checkGetLvalues(q, m, big_p, prec):
+def check_get_L_values(q, m, big_p, prec):
     """AI is creating summary for checkGetLvalues
 
     INPUT:
@@ -547,7 +610,7 @@ def checkGetLvalues(q, m, big_p, prec):
         
     EXAMPLE:
 
-        sage:
+        sage: from euler_product.utils_euler_product import check_get_L_values
         sage: check_get_L_values(30, 2, 200, 212)
     """
     structure = ComponentStructure(q)

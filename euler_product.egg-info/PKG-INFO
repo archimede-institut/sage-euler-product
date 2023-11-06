@@ -16,4 +16,4 @@ Classifier: Programming Language :: Python :: 3.8
 License-File: LICENSE
 
 # euler_product
-SageMath external package for Euler product computation
+SageMath external paackage for Euler product computation
