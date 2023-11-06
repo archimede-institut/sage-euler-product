@@ -35,31 +35,43 @@ import sys
 from timeit import default_timer as timer
 
 from sage.functions.other import ceil, floor
+from sage.sets.primes import Primes
+from sage.modules.free_module_element import vector
+from sage.symbolic.expression_conversions import exp
+from sage.misc.misc_c import prod
+from sage.misc.functional import log
+from sage.misc.flatten import flatten
 from sage.arith.misc import euler_phi
 from sage.arith.misc import gcd
 from sage.arith.misc import sigma
 from sage.arith.misc import divisors
+from sage.arith.misc import prime_factors
+from sage.arith.misc import prime_divisors
 from sage.arith.functions import lcm
 from sage.rings.real_mpfi import RealIntervalField
 from sage.rings.complex_interval_field import ComplexIntervalField
+from sage.rings.abc import RealField
 from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
 
 from euler_product.utils_euler_product import ComponentStructure
-from euler_product.utils_euler_product import get_BetaRough
+from euler_product.utils_euler_product import get_beta, get_BetaRough
+from euler_product.utils_euler_product import laTeX_for_number
+from euler_product.utils_euler_product import get_gamma
+from euler_product.utils_euler_product import nb_common_digits
 
 ################################################
 ############  Main Engines  #####################
 ################################################
 
-def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX 0, digits_offset=10):
+def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=10):
     """summary for get_vs
     Computes an approximate value of the list (zeta(s; q, A))
     for A in the lattice-invariant classes.
     We compute directly what happens for primes < big_p.
     
     ... WARNING ...
-       Don't try me and avoid to select a prime number for bigP.
+        Don't try me and avoid to select a prime number for bigP.
     
     INPUT:
 
@@ -158,7 +170,7 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX 0, digits_offset=
     ##
     if verbose >= 2:
         for i in range(0, structure.nb_class):
-            nb_digits = NbCommonDigits(eulerProds[i][1], eulerProds[i][0])
+            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])
             print("-------------------")
             print("For p+" + str(q) + "ZZ in",  structure.the_Class_tuple[i])
             print("the product of 1/(1-p^{-"+ str(s) + "}) is between")
@@ -223,7 +235,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
         
     EXAMPLE:
     
-        sage: from euler_product.lattice_ivariant_euler_products import get_euler_products
+        sage: from euler_product.lattice_invariant_euler_products import get_euler_products
         sage: get_euler_products(3, 1, 1-x^2, 100)
     """
     start = timer()
@@ -232,8 +244,8 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
         sys.stdout.write("Computing the structural invariants ... ")
     ##
     structure = ComponentStructure(q)
-    # (theSGTuple, theClassTuple, nbclasses, theExponent,
-    # phiq, characterGroup, invertibles, invariantCharacters) = structure
+    # (theSGTuple, theClassTuple, nb_classes, theExponent,
+    # phi_q, characterGroup, invertibles, invariantCharacters) = structure
     ##
     if verbose >= 2:
         print(" done.")
@@ -242,41 +254,41 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
     R0 = RealField(30)
     R0X.<x> = R0[]
     F0, H0 = R0X(f_init), R0X(h_init)
-    myDelta = (F0-H0).valuation()
-    ## Get mybeta, myDelta and bigP:
-    mybeta = max(2, get_Beta(F0) , get_Beta(H0))
+    my_delta = (F0-H0).valuation()
+    ## Get my_beta, myDelta and big_p:
+    my_beta = max(2, get_beta(F0) , get_beta(H0))
     ###########"
     if verbose >= 2:
-        print("We have Delta  =", myDelta, "and beta =", mybeta)
+        print("We have Delta  =", my_delta, "and beta =", my_beta)
     #############
     ## Getting bigM, prec and bigP:
-    bigP = max(bigP, 2*mybeta)
-    cte = 4 * structure.nb_class^2 * (F0.degree() + H0.degree()) * (s + bigP)
-    bigM = bigP + 10
+    big_p = max(big_p, 2*my_beta)
+    cte = 4 * structure.nb_class^2 * (F0.degree() + H0.degree()) * (s + big_p)
+    big_m = big_p + 10
 
-    while (float(log(cte) + (bigM+1)*log(bigP^s/mybeta) - (nbdecimals+1)*log(10)) < 0):
-        bigM = bigM + 10
+    while (float(log(cte) + (big_m + 1)*log(big_p^s / my_beta) - (nb_decimals+1)*log(10)) < 0):
+        big_m = big_m + 10
 
     ## The coefficients CA(K,m,F/H) may increase like beta^m,
     ## This spoils the accuracy and has to be recovered:
-    prec = ceil(nbdecimals * log(10)/log(2)+ 10) + ceil(float(bigM*log(mybeta)/log(2))) 
+    prec = ceil(nb_decimals * log(10)/log(2)+ 10) + ceil(float(big_m*log(my_beta)/log(2))) 
     ##
     if verbose >= 2:
-        print("We use bigM =", bigM, ", bigP =", bigP, "and working prec =", prec, ".")
+        print("We use big_m =", big_m, ", big_p =", big_p, "and working prec =", prec, ".")
     ## The precision has changed! Change the ring:
-    R = RealIntervalField( prec )
-    logerr = R( cte *(mybeta/bigP^s)^(bigM+1))
+    R = RealIntervalField(prec)
+    log_err = R( cte *(my_beta/big_p^s)^(big_m+1))
     RX.<x> = R[]
-    F, H = RX(Finit), RX(Hinit)
+    F, H = RX(f_init), RX(h_init)
     #############
     ## Initial computations:
     if verbose >= 2:
-        sys.stdout.write("Computing the finite products for p < " + str(bigP) + " ... ")
+        sys.stdout.write("Computing the finite products for p < " + str(big_p) + " ... ")
     ## Empty initial products are allowed:
-    eulerProdIni = tuple([prod(flatten([1, [R(F(1/p^s)/H(1/p^s))
+    eulerProdIni = tuple([prod(flatten([1, [R(F(1/p^s) / H(1/p^s))
                                             for p in filter(lambda w: (w in Primes())
                                                             and (w%q in structure.the_Class_tuple[i]),
-                                                            range(2, bigP))]])) for i in range(0, structure.nb_class)])
+                                                            range(2, big_p))]])) for i in range(0, structure.nb_class)])
     ##
     if verbose >= 2:
         print(" done.")
@@ -285,31 +297,31 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
     if verbose >= 1:
         sys.stdout.write("Computing C_A(K, m, F/H) ... ")
     ##
-    myindices = [i for i in range(1, bigM+1)]
-    CAKmFsurH = GetCAKmFsurH(q, structure, myindices, F.list(), H.list())
-    logZsapprox = vector([R(0) for ind_A in range(0, nbclasses)])
+    my_indices = [i for i in range(1, big_m+1)]
+    CAKmFsurH = structure.get_CA_Km_F_sur_H(q, my_indices, F.list(), H.list())
+    logZs_approx = vector([R(0)] * structure.nb_classes)
 
     ######################################
     ## Most of time is spent here.
     ## The main loop in m:
-    for m in range(myDelta, bigM+1):
-        aux = GetGamma(q, m, structure, s, bigP, prec)
-        for ind_A in range(0, nbclasses):
-            for ind_K in range(0, nbclasses):
-                logZsapprox[ind_A] += aux[ind_K]*CAKmFsurH[ind_A, ind_K, m]/m
+    for m in range(my_delta, big_m+1):
+        aux = get_gamma(q, m, structure, s, big_p, prec)
+        for ind_A in range(0, structure.nb_classes):
+            for ind_K in range(0, structure.nbclasses):
+                logZs_approx[ind_A] += aux[ind_K] * CAKmFsurH[ind_A, ind_K, m]/m
     ## End of the main loop in m
     #######################################
     
     ## We now have to complete the Euler products:
-    eulerProds = tuple([(R(eulerProdIni[i]*exp(logZsapprox[i]-logerr)).lower(),
-                        R(eulerProdIni[i]*exp(logZsapprox[i]+logerr)).upper())
+    eulerProds = tuple([(R(eulerProdIni[i] * exp(logZs_approx[i] - log_err)).lower(),
+                        R(eulerProdIni[i] * exp(logZs_approx[i] + log_err)).upper())
                         for i in range(0, structure.nb_class)])
     ##
     if verbose >=2:
         for i in range(0, structure.nb_class):
-            nbdigits = NbCommonDigits(eulerProds[i][1], eulerProds[i][0])
+            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])
             print("-------------------")
-            print("For p+" + str(q) + "ZZ in ",  the_Class_tuple[i])
+            print("For p+" + str(q) + "ZZ in ",  structure.the_Class_tuple[i])
             print("For F(x) =", f_init)
             print("and H(x) =", h_init)
             if s == 1:
@@ -319,16 +331,16 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
             print(eulerProds[i][0])
             print("and")
             print(eulerProds[i][1])
-            if WithLaTeX == 1:
+            if with_laTeX == 1:
                 print("LaTeX format:")
-                howmany = min(nbdecimals, nbdigits)
-                print(LaTeXForNumber(eulerProds[i][0], howmany, 10))
-            print("(Obtained: ", nbdigits, " correct decimal digits)")
+                how_many = min(nb_decimals, nb_digits)
+                print(laTeX_for_number(eulerProds[i][0], how_many, 10))
+            print("(Obtained: ", nb_digits, " correct decimal digits)")
 
     end = timer()
     if verbose >= 1:
         print("Time taken: ", end - start, "seconds.")
-    # print myindices
+    # print my_indices
     return the_Class_tuple, eulerProds
     
 
@@ -352,8 +364,8 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
         
     EXAMPLE:
     
-        sage:
-        sage:
+        sage: from euler_product.lattice_invariant_euler_products import table_performance
+        sage: table_performance(1, 5)
         
     """
     ref_time = 0.1 # approximate time is s for q = 3
@@ -364,7 +376,7 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
         else:
             sys.stdout.write(str(q) + " ")
             sys.stdout.flush()
-            aux = GetVs(q, 2, nb_decimals, big_p, -1)
+            aux = get_vs(q, 2, nb_decimals, big_p, -1)
             sys.stdout.write(str(aux[6]) + " digits for the first product\n")
             aux[5] = ceil(aux[5] * 1000/ref_time)
             res[q] = aux
@@ -379,7 +391,6 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
             str_res = str_res + "& " + str(ceil(res[q][5]/1000)) + " \\\\"
             print(str_res)
     return
-
 
 
 ################################################
@@ -405,7 +416,7 @@ def get_vs_checker(q, s, borne=10000):
     structure = ComponentStructure(q)
     #(theSGTuple, theClassTuple, nbclasses, theExponent,
     #  phiq, characterGroup, invertibles, invariantCharacters) = structure
-    vs_approx = [1/prod([1.0-1/p^s
+    vs_approx = [1/prod([1.0 - 1 /p^s
                         for p in filter(lambda w: (w in Primes()) and (w%q in structure.the_Class_tuple[i]),
                                         range(2, borne))])
                 for i in range(0, structure.nb_class)]

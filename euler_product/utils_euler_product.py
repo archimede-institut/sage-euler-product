@@ -14,8 +14,8 @@ AUTHORS:
 
 WARNING:
 
-  Needs Sage version at least 9.0
-  CAREFUL, this is Python 3 code!
+    Needs Sage version at least 9.0
+    CAREFUL, this is Python 3 code!
   
 EXAMPLES::
 
@@ -41,6 +41,7 @@ from sage.arith.misc import euler_phi
 from sage.arith.misc import gcd
 from sage.arith.misc import sigma
 from sage.arith.misc import divisors
+from sage.arith.misc import prime_factors
 from sage.arith.functions import lcm
 from sage.rings.real_mpfi import RealIntervalField
 from sage.rings.complex_interval_field import ComplexIntervalField
@@ -48,7 +49,26 @@ from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
 from sage.arith.misc import moebius
 
-def NbCommonDigits(a, b):
+
+def nb_common_digits(a, b):
+    """summary for nb_common_digits
+    Returns -1 if floor(a) != floor(b)
+    
+    INPUT:
+
+    - ''a'' -- [float]
+        [first float to compare]
+
+    - ''b'' -- [float]
+        [second float to compare]
+        
+    
+    OUTPUT:
+    
+    [int]
+        [Returns -1 if floor(a) != floor(b), or number of common digit]
+    
+    """
     #Returns -1 if floor(a) != floor(b)
     # This is tailored for positive inputs
     if floor(a) != floor(b):
@@ -73,7 +93,7 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
 
     - ''how_many'' -- [int]
         [number of decimal,decimals, separated every 5 of them by \'\,\' 
-         et every block of ''nb_block_sto_cut'', on a different line. '\cdots' ends the string]
+        et every block of ''nb_block_sto_cut'', on a different line. '\cdots' ends the string]
 
     - ''nb_block_sto_cut'' -- [type]
         [description]
@@ -86,10 +106,10 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
         
     EXAMPLES:
     
-       sage: from euler_product.utils_euler_product import laTeX_for_number
-       sage: laTeX_for_number(22.01234567812345, 100, 8) 
-       '22.&01234\\,56781\\,235\\cdots'
-       
+        sage: from euler_product.utils_euler_product import laTeX_for_number
+        sage: laTeX_for_number(22.01234567812345, 100, 8) 
+        '22.&01234\\,56781\\,235\\cdots'
+    
     """
     thelen = 5
     listchar = list(str(w))
@@ -623,7 +643,7 @@ def check_get_L_values(q, m, big_p, prec):
                                 for index in range(0, structure.phi_q)])
 
     
-def GetBeta(F):
+def get_beta(F):
     """AI is creating summary for GetBeta
 
     INPUT:
@@ -636,11 +656,11 @@ def GetBeta(F):
     [type]
         [description]
     """
-    myroots = F.roots(multiplicities = False)
-    if len(myroots) == 0:
+    my_roots = F.roots(multiplicities=False)
+    if len(my_roots) == 0:
         return 1
     else:
-        return max(1, max([1/abs(c) for c in myroots]))
+        return max(1, max([1/abs(c) for c in my_roots]))
 
 def get_BetaRough(coeffs_f):
     """summary for get_BetaRough
