@@ -107,8 +107,8 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
         sys.stdout.write("Computing the structural invariants ... ")
     ##
     structure = ComponentStructure(q)
-    # (theSGTuple, theClassTuple, nbclasses, theExponent,
-    # phiq, characterGroup, invertibles, invariantCharacters) = structure
+    # (theSGTuple, theClassTuple, nb_classes, theExponent,
+    # phi_q, characterGroup, invertibles, invariantCharacters) = structure
     ##
     if verbose >= 2:
         print(" done.")
@@ -120,7 +120,7 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
     allowed_primes = set(prime_factors(structure.phi_q))
     cte = structure.nb_class * prod([1 + 2/(p-1) for p in allowed_primes])
     big_m = 10
-    while (float(log(cte) + log(1 + big_p/(big_m*s))-s*bigM*log(big_p)
+    while (float(log(cte) + log(1 + big_p/(big_m*s))-s*big_m*log(big_p)
                     + (nb_decimals + 1)*log(10)) > 0):
         big_m = big_m + 1
     ## Initial computations:
@@ -180,19 +180,19 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
             if with_laTeX == 1:
                 print("LaTeX format:")
                 how_many = min(nb_decimals, nb_digits)
-                print(LaTeXForNumber(eulerProds[i][0], how_many, 10))
+                print(laTeX_for_number(eulerProds[i][0], how_many, 10))
             print("(Obtained: ", nb_digits, " correct decimal digits)")
     ##
     end = timer()
     ##
     if verbose >= 1:
         print("Time taken:", end - start, "seconds.")
-    # print myindices
+    # print(my_indices)
     if verbose == -1:
         return([big_p, structure.phi_q, len(my_indices), structure.nb_class, big_m, end-start,
                 -floor(log(eulerProds[0][1] - eulerProds[0][0])/log(10))])
     else:
-        return the_Class_tuple, eulerProds
+        return structure.the_Class_tuple, eulerProds
     
 
 def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, with_laTeX=0):
@@ -298,7 +298,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
         sys.stdout.write("Computing C_A(K, m, F/H) ... ")
     ##
     my_indices = [i for i in range(1, big_m+1)]
-    CAKmFsurH = structure.get_CA_Km_F_sur_H(q, my_indices, F.list(), H.list())
+    CAKmF_sur_H = structure.get_CA_Km_F_sur_H(q, my_indices, F.list(), H.list())
     logZs_approx = vector([R(0)] * structure.nb_classes)
 
     ######################################
@@ -307,8 +307,8 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
     for m in range(my_delta, big_m+1):
         aux = get_gamma(q, m, structure, s, big_p, prec)
         for ind_A in range(0, structure.nb_classes):
-            for ind_K in range(0, structure.nbclasses):
-                logZs_approx[ind_A] += aux[ind_K] * CAKmFsurH[ind_A, ind_K, m]/m
+            for ind_K in range(0, structure.nb_classes):
+                logZs_approx[ind_A] += aux[ind_K] * CAKmF_sur_H[ind_A, ind_K, m]/m
     ## End of the main loop in m
     #######################################
     
@@ -341,7 +341,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
     if verbose >= 1:
         print("Time taken: ", end - start, "seconds.")
     # print my_indices
-    return the_Class_tuple, eulerProds
+    return structure.the_Class_tuple, eulerProds
     
 
 def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
