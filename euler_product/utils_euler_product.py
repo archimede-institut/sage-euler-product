@@ -6,8 +6,8 @@ Main Engines
 
 AUTHORS:
 
-- Olivier Ramré (2023-01-008) : initial version
-- Dominique BENIELLI (2023-02_15) :
+- Olivier Ramaré (2023-01-008) : initial version
+- Dominique Benielli(2023-02_15) :
   AMU University <dominique.benielli@univ-amu.fr>,
   Integration as  SageMath package. 
   Cellule de developpement Institut Archimède
@@ -48,6 +48,11 @@ from sage.rings.complex_interval_field import ComplexIntervalField
 from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
 from sage.arith.misc import moebius
+from sage.misc.misc_c import prod
+from sage.misc.functional import log
+from sage.functions.transcendental import hurwitz_zeta
+from sage.sets.primes import Primes
+from sage.modules.free_module_element import vector
 
 
 def nb_common_digits(a, b):
@@ -323,7 +328,7 @@ class ComponentStructure(BaseComponentStructure):
         self.nb_class = nb_class
         self.the_exponent = the_exponent
         self.phi_q = euler_phi(q)
-        self.characters_group = character_group
+        self.character_group = character_group
         self.invertibles = invertibles
         self.invariant_characters = invariant_characters 
         self.q = q
@@ -395,8 +400,6 @@ class ComponentStructure(BaseComponentStructure):
 
         INPUT:
 
-        - ''q'' -- [int]
-            [description]
 
         - ''m'' -- [int]
             [description]
@@ -411,19 +414,27 @@ class ComponentStructure(BaseComponentStructure):
 
         [type]
             [description]
+            
+        EXAMPLES:
+        
+            sage: from 
+            # checkGetLvalues(30, 2, 200, 212)
+            
+            
+            
         """
         # m belongs to CIF
         # (theSGTuple, theClassTuple, nb_classes, theExponent,
-        # phiq, characterGroup, invertibles, invariantCharacters) = structure
+        # phi_q, characterGroup, invertibles, invariantCharacters) = structure
 
-        CG = characterGroup.change_ring(CF)
-        hurwitzvalues = tuple(hurwitz_zeta(s = m, x = CIF(a/q))/CIF(q)^m for a in self.invertibles)
+        CG = self.characterGroup.change_ring(CF)
+        hurwitz_values = tuple(hurwitz_zeta(s=m, x=CIF(a / self.q)) / CIF(self.q)^m for a in self.invertibles)
 
         aux0 = [[1-CIF(e(p))/CIF(p)^m
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
                 for e in CG]
         aux1 = [prod(v) for v in aux0]
-        aux2 = [sum([CIF(e(invertibles[ind_invert])) * hurwitzvalues[ind_invert]
+        aux2 = [sum([CIF(e(self.invertibles[ind_invert])) * hurwitz_values[ind_invert]
                     for ind_invert in range(0, self.phi_q)]) for e in CG]
 
         res = tuple(aux1[ind_e]*aux2[ind_e] for ind_e in range(0, self.phi_q))
@@ -479,52 +490,51 @@ class ComponentStructure(BaseComponentStructure):
 
         return CAKmF_sur_H
 
-# checkGetLvalues(30, 2, 200, 212)
-def get_gamma(q, t, structure, s, big_p, prec):
-    """summary for get_gamma
+    def get_gamma(self, t, s, big_p, prec):
+        """summary for get_gamma
 
-    INPUT:
+        INPUT:
 
-    - ''q'' -- [type]
-        [description]
+        - ''q'' -- [type]
+            [description]
 
-    - ''t'' -- [type]
-        [description]
+        - ''t'' -- [type]
+            [description]
 
-    - ''structure'' -- [type]
-        [description]
+        - ''structure'' -- [type]
+            [description]
 
-    - ''s'' -- [type]
-        [description]
+        - ''s'' -- [type]
+            [description]
 
-    - ''big_p'' -- [type]
-        [description]
+        - ''big_p'' -- [type]
+            [description]
 
-    - ''prec'' -- [type]
-        [description]
+        - ''prec'' -- [type]
+            [description]
 
-    OUTPUT:
+        OUTPUT:
 
-    [type]
-        [description]
+        [type]
+            [description]
+            
+        EXAMPLE:
         
-    EXAMPLE:
-    
-         sage: check_get_L_values(30, 2, 200, 212)
-    """
-    #(theSGTuple, theClassTuple, nbclasses, theExponent,
-    #             phiq, characterGroup, invertibles, invariantCharacters) = structure
-    CIF = ComplexIntervalField(prec)
-    CF = ComplexField(prec + 1)
-    ##
-    if s*t*log(big_p) > (prec + 10) * log(2):
-        one = RealIntervalField(prec + 10)(1 - 2^(-prec-9), 1 + 2^(-prec - 9))
-        Lvalues = (one, ) * len(characterGroup)
-    else:
-        m = CIF(t * s)
-        Lvalues = GetLvalues(q, m, structure, big_p, CIF, CF)
-    #print(q, t, s, bigP, prec, Lvalues)
-    return vector([log(CIF(prod([Lvalues[ind_e] for ind_e in invariantCharacters[ind_G0]])).real())for ind_G0 in range(0, structure.nb_class)])
+            sage: check_get_L_values(30, 2, 200, 212)
+        """
+        #(theSGTuple, theClassTuple, nb_classes, theExponent,
+        #             phi_q, characterGroup, invertibles, invariantCharacters) = structure
+        CIF = ComplexIntervalField(prec)
+        CF = ComplexField(prec + 1)
+        ##
+        if s*t*log(big_p) > (prec + 10) * log(2):
+            one = RealIntervalField(prec + 10)(1 - 2^(-prec-9), 1 + 2^(-prec - 9))
+            L_values = (one, ) * len(self.character_group)
+        else:
+            m = CIF(t * s)
+            L_values = self.get_L_values(m, big_p, CIF, CF)
+        # print(q, t, s, bigP, prec, L_values)
+        return vector([log(CIF(prod([L_values[ind_e] for ind_e in self.invariant_characters[ind_G0]])).real())for ind_G0 in range(0, self.nb_class)])
 
 # myCIF = ComplexIntervalField(200)
 # [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
@@ -552,6 +562,9 @@ def get_vector_sf(coeffs_f, how_many):
     ann_i = coeffs_f  + ((how_many - len(coeffs_f)) * [0])
     s_f = [0 for i in range(0, how_many)]
     s_f[0] = len(coeffs_f)-1  # = degres of F
+    
+    ####
+    # TROUVER add method
     for k in range(1, how_many):
         s_f[k] = -k * ann_i[k] - add(ann_i[i] * s_f[k-i] for i in range(1, k))
     return s_f
@@ -585,7 +598,7 @@ def get_vector_bf(coeffs_f, how_many):
     b_f = [0 for i in range(0, how_many)] ## bf[0] is not used
     s_f = get_vector_sf(coeffs_f, how_many)
     for k in range(1, how_many):
-        b_f[k] = add(moebius(k/d)*s_f[d] for d in divisors(k))/k
+        b_f[k] = add(moebius(k/d) * s_f[d] for d in divisors(k)) / k
     return b_f
 
 
@@ -593,7 +606,7 @@ def get_vector_bf(coeffs_f, how_many):
 # strut = GetStructure(30)
 # GetLvalues(30 ,1 ,strut,2, 200, 212)
 def check_get_L_values(q, m, big_p, prec):
-    """AI is creating summary for checkGetLvalues
+    """summary for check_get_Lvalues
 
     INPUT:
 
@@ -620,11 +633,14 @@ def check_get_L_values(q, m, big_p, prec):
         sage: check_get_L_values(30, 2, 200, 212)
     """
     structure = ComponentStructure(q)
-    #(theSGTuple, theClassTuple, nbclasses, theExponent,
-    # phiq, characterGroup, invertibles, invariantCharacters) = structure
+    #(theSGTuple, theClassTuple, nb_classes, theExponent,
+    # phi_q, characterGroup, invertibles, invariantCharacters) = structure
     CIF = ComplexIntervalField(prec)   
-    Lval = GetLvalues(m , structure , big_p, CIF)
-    return tuple(CIF(u) for u in [Lval[index] / prod([1 - characterGroup[index](p)/p^s
+    L_val = structure.get_L_values(m , big_p, CIF)
+    #
+    # probleme s not defined !!!!
+    #
+    return tuple(CIF(u) for u in [L_val[index] / prod([1 - structure.character_group[index](p)/p^s
                                         for p in filter(lambda w: (w in Primes()), range(2, big_p))])
                                 for index in range(0, structure.phi_q)])
 
