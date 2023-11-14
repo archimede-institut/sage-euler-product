@@ -49,6 +49,7 @@ from sage.arith.misc import prime_factors
 from sage.arith.misc import prime_divisors
 from sage.arith.functions import lcm
 from sage.rings.real_mpfi import RealIntervalField
+from sage.rings.real_mpfr import RealField
 from sage.rings.complex_interval_field import ComplexIntervalField
 from sage.rings.abc import RealField
 from sage.rings.complex_mpfr import ComplexField
@@ -57,7 +58,6 @@ from sage.modular.dirichlet import DirichletGroup
 from euler_product.utils_euler_product import ComponentStructure
 from euler_product.utils_euler_product import get_beta, get_BetaRough
 from euler_product.utils_euler_product import laTeX_for_number
-from euler_product.utils_euler_product import get_gamma
 from euler_product.utils_euler_product import nb_common_digits
 
 ################################################
@@ -131,7 +131,7 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
     R = RealIntervalField( prec )
     ## Empty initial products are allowed:
     euler_prod_ini = tuple([R(1/prod(flatten([1,
-                                            [R(1-1/p^s) for p in filter(lambda w: (w in Primes())
+                                            [R(1-1/p**s) for p in filter(lambda w: (w in Primes())
                                                             and (w%q in structure.the_Class_tuple[i]), range(2, big_p))]])))
                             for i in range(0, structure.nb_class)])
     if verbose >= 2:
@@ -147,9 +147,9 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
     #
     my_indices = [m for m in filter(lambda w:
                         set(prime_factors(w)).issubset(allowed_primes),
-                        range(1, bigM))]
-    ## 1 is indeed in myindices.
-    CAKm = structure.getC_A_Km(q, my_indices)
+                        range(1, big_m))]
+    ## 1 is indeed in my_indices.
+    CAKm = structure.get_CA_Km(q, my_indices)
     
     if verbose >= 2:
         print("done: there are", len(my_indices), "summands.")
@@ -158,7 +158,7 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
 
     for m in my_indices:
         # print(q, m, s, bigP, prec)
-        aux = GetGamma(q, m, structure, s, big_p, prec)
+        aux = structure.get_gamma(m, s, big_p, prec)
         #print(q, m, s, bigP, prec, aux)
         for ind_A in range(0, structure.nb_class):
             for ind_k in range(0, structure.nb_class):
@@ -195,12 +195,15 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
         return structure.the_Class_tuple, eulerProds
     
 
-def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, with_laTeX=0):
+def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose=2, with_laTeX=0):
     """Summary for get_euler_products
     Computes an approximate value of the list ()
     for A in the lattice-invariant classes, ''LatticeInvariantClasses''.
     Careful! bigP may increase in the proof!
     We compute directly what happens for primes < big_p.
+    
+    GetEulerProds(3, 1, 1-x^2, 100)
+    (q, s, Finit, Hinit, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0)
     
     INPUT:
 
@@ -252,7 +255,8 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
     #############
     # A small precision is enough:
     R0 = RealField(30)
-    R0X.<x> = R0[]
+    R0X = R0['x']
+    (x,) = R0X._first_ngens(1)
     F0, H0 = R0X(f_init), R0X(h_init)
     my_delta = (F0-H0).valuation()
     ## Get my_beta, myDelta and big_p:
@@ -278,7 +282,8 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals, big_p=100, verbose=2, 
     ## The precision has changed! Change the ring:
     R = RealIntervalField(prec)
     log_err = R( cte *(my_beta/big_p^s)^(big_m+1))
-    RX.<x> = R[]
+    RX = R['x']
+    (x,) = RX._first_ngens(1)
     F, H = RX(f_init), RX(h_init)
     #############
     ## Initial computations:
@@ -416,7 +421,7 @@ def get_vs_checker(q, s, borne=10000):
     structure = ComponentStructure(q)
     #(theSGTuple, theClassTuple, nbclasses, theExponent,
     #  phiq, characterGroup, invertibles, invariantCharacters) = structure
-    vs_approx = [1/prod([1.0 - 1 /p^s
+    vs_approx = [1/prod([1.0 - 1 /p**s
                         for p in filter(lambda w: (w in Primes()) and (w%q in structure.the_Class_tuple[i]),
                                         range(2, borne))])
                 for i in range(0, structure.nb_class)]

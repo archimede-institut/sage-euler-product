@@ -32,6 +32,7 @@ EXAMPLES::
 from __future__ import print_function, absolute_import
 import sys
 from collections import namedtuple
+from dataclasses import dataclass
 from timeit import default_timer as timer
 
 from sage.symbolic.function import GinacFunction, BuiltinFunction
@@ -56,7 +57,7 @@ from sage.modules.free_module_element import vector
 
 
 def nb_common_digits(a, b):
-    """summary for nb_common_digits
+    r"""summary for nb_common_digits
     Returns -1 if floor(a) != floor(b)
     
     INPUT:
@@ -88,7 +89,7 @@ def nb_common_digits(a, b):
     return(nb)
 
 def laTeX_for_number(w, how_many, nb_block_sto_cut):
-    """summary for laTeX_for_number
+    r"""summary for laTeX_for_number
     Return a character string int(w).digits where digits concerns the first
     
     INPUT:
@@ -97,7 +98,7 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
         [w is a real number with a (short) integer part and a floating point]
 
     - ''how_many'' -- [int]
-        [number of decimal,decimals, separated every 5 of them by \'\,\' 
+        [number of decimal,decimals, separated every 5 of them by \'\\,\' 
         et every block of ''nb_block_sto_cut'', on a different line. '\cdots' ends the string]
 
     - ''nb_block_sto_cut'' -- [type]
@@ -245,7 +246,6 @@ class LatticeInvariantClasses():
         if  hasattr(self, 'q') and  q == self.q:
             return (self.the_SG_tuple, self.the_Class_tuple)
         else:
-            self.q = q
             the_SG_list = []
             for n in filter(lambda w: gcd(w, q) == 1, range(1, q)):
                 my_sub = sub_group_generated(n, q)
@@ -254,7 +254,7 @@ class LatticeInvariantClasses():
                     the_SG_list.append(my_sub)
 
             the_SG_list.sort(key=len)
-            t# he_SG_tuple = tuple(the_SG_list)
+            # the_SG_tuple = tuple(the_SG_list)
 
             ## Then get the classes:
             ## Create a copy:
@@ -265,33 +265,35 @@ class LatticeInvariantClasses():
                 for m in range(n + 1, len(the_Class_list)):
                     if aux.issubset(the_SG_list[m]):
                         the_Class_list[m] = frozenset(the_Class_list[m].difference(aux))
-
+            self.q = q
             ## Create immutable tuples from the mutable lists:
             self.the_SG_tuple = tuple(the_SG_list)
             self.the_Class_tuple = tuple(the_Class_list)
         return (self.the_SG_tuple, self.the_Class_tuple)
 
 LatticeInvariant = LatticeInvariantClasses()
-
-BaseComponentStructure = namedtuple('BaseComponentStructure', ['the_SG_tuple', 'the_Class_tuple', 'nb_class', 'the_exponent',
-                                                            'phi_q', 'character_group', 'invertibles', 'invariant_characters'])
-
-
-class ComponentStructure(BaseComponentStructure):
-    """summary for ComponentStructure inherit from  ''BaseComponentStructure''
-    
-    EXAMPLE:
-
-        sage: from from euler_product.utils_euler_product import ComponentStructure
-        sage: my_structure = ComponentStructure(30)
-
+# 
+#BaseTupledname = namedtuple('BaseComponentStructure', ['the_SG_tuple', 'the_Class_tuple', 'nb_class', 'the_exponent',
+#                                                            'phi_q', 'character_group', 'invertibles', 'invariant_characters'])
+"""
+@dataclass
+class BaseDataClass:
+    the_SG_tuple : tuple
+    the_Class_tuple : tuple
+    nb_class : int
+    the_exponent : tuple
+    phi_q : tuple
+    character_group : tuple
+    invertibles : tuple
+    invariant_characters : tuple
+"""
+class ComponentStructure:
+    """AI is creating summary for 
     """
-    __slots__ = ()  # " the_SG_tuple, the_Class_tuple, nb_class, the_exponent, phi_q, character_group, invertibles, invariant_characters):
-
     def __init__(self, q):
-        super(ComponentStructure, self).__init__()
         self._get_structure(q)
-
+        self.q = q
+    
     def _get_structure(self, q):
         """summary for _get_structure
 
@@ -322,17 +324,19 @@ class ComponentStructure(BaseComponentStructure):
         invariant_characters = tuple(tuple(ind_e for ind_e in range(0, len(character_group))
                                         if the_SG_tuple[n].issubset(character_group[ind_e].kernel()))
                                                                 for n in range(0, nb_class))
-        
+        phi_q = euler_phi(q)
         self.the_SG_tuple = the_SG_tuple
         self.the_Class_tuple = the_Class_tuple
         self.nb_class = nb_class
         self.the_exponent = the_exponent
-        self.phi_q = euler_phi(q)
+        self.phi_q = phi_q
         self.character_group = character_group
         self.invertibles = invertibles
         self.invariant_characters = invariant_characters 
         self.q = q
-        
+        #return (the_SG_tuple, the_Class_tuple, nb_class, the_exponent, phi_q, 
+        #        character_group, invertibles, invariant_characters)
+    
     def getr_A_Kt(self, my_indices):
         """ summary for getr_A_Kt
 
@@ -346,6 +350,14 @@ class ComponentStructure(BaseComponentStructure):
 
         [set]
             [description]
+            
+        EXAMPLES:
+        
+            sage: from euler_product.utils_euler_product import ComponentStructure
+            sage: structure = ComponentStructure(3)            
+            sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
+            {(0, 0, 1): 0, (0, 0, -4): 0, (0, 0, 4): 0, (0, 0, 2): 0}   
+            
         """
         # (theSGTuple, theClassTuple, nb_classes, theExponent,
         # phi_q, characterGroup, invertibles, invariantCharacters) = structure
@@ -353,7 +365,7 @@ class ComponentStructure(BaseComponentStructure):
         for ind_A in range(0, self.nb_class):
             # TRICK ! The subgroup generated by A is at the same index!
             sgrA = self.the_SG_tuple[ind_A]
-            for ind_K in range(0, self.nb_classes):
+            for ind_K in range(0, self.nb_class):
                 K = self.the_SG_tuple[ind_K]
                 for t in my_indices:
                     r_A_Kt[ind_A, ind_K, t] = 0
@@ -364,7 +376,6 @@ class ComponentStructure(BaseComponentStructure):
                                 ## In Python 3, len(..)/len(...) is a real number, say 2.0
                                 ## and the value of moebius becomes ... 1!
                                 r_A_Kt[ind_A, ind_K, t] += moebius(t) * moebius(int(len(L)/len(K)))*len(K)/self.phi_q
-
         return r_A_Kt
 
     def get_CA_Km(self, my_indices):
@@ -379,14 +390,22 @@ class ComponentStructure(BaseComponentStructure):
 
         [set]
             [description]
+            
+        EXAMPLES:
+        
+            sage: from euler_product.utils_euler_product import ComponentStructure
+            sage: structure = ComponentStructure(3)
+            sage: structure.get_CA_Km([1, -4, 4, 2, -4, 1])
+            {(0, 0, 1): 0, (0, 0, -4): 0, (0, 0, 4): 0, (0, 0, 2): 0}
+            
         """
         # (theSGTuple, theClassTuple, nb_classes, theExponent,
         # phi_q, characterGroup, invertibles, invariantCharacters) = structure
 
         r_A_Kt = self.getr_A_Kt(my_indices)
         C_A_Km = {}
-        for ind_A in range(0, self.nb_classes):
-            for ind_K in range(0, self.nb_classes):
+        for ind_A in range(0, self.nb_class):
+            for ind_K in range(0, self.nb_class):
                 for m in my_indices:
                     C_A_Km[ind_A, ind_K, m] = 0
                     for t in divisors(m):
@@ -404,9 +423,12 @@ class ComponentStructure(BaseComponentStructure):
         - ''m'' -- [int]
             [description]
 
-        - ''big_pCIF'' -- [type]
+        - ''big_p'' -- [type]
             [description]
-
+    
+        - ''CIF'' -- [type]
+            [description]
+                        
         - ''CF'' -- [type]
             [description]
 
@@ -417,8 +439,10 @@ class ComponentStructure(BaseComponentStructure):
             
         EXAMPLES:
         
-            sage: from 
-            # checkGetLvalues(30, 2, 200, 212)
+            sage: from euler_product.utils_euler_product import ComponentStructure
+            sage: structure = ComponentStructure(3)
+            sage: myCIF = ComplexIntervalField(200)
+            sage: structure.get_L_values(m, big_p, CIF, CF)
             
             
             
@@ -427,10 +451,10 @@ class ComponentStructure(BaseComponentStructure):
         # (theSGTuple, theClassTuple, nb_classes, theExponent,
         # phi_q, characterGroup, invertibles, invariantCharacters) = structure
 
-        CG = self.characterGroup.change_ring(CF)
-        hurwitz_values = tuple(hurwitz_zeta(s=m, x=CIF(a / self.q)) / CIF(self.q)^m for a in self.invertibles)
+        CG = self.character_group.change_ring(CF)
+        hurwitz_values = tuple(hurwitz_zeta(s=m, x=CIF(a / self.q)) / CIF(self.q)**m for a in self.invertibles)
 
-        aux0 = [[1-CIF(e(p))/CIF(p)^m
+        aux0 = [[1-CIF(e(p))/CIF(p)**m
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
                 for e in CG]
         aux1 = [prod(v) for v in aux0]
@@ -450,8 +474,8 @@ class ComponentStructure(BaseComponentStructure):
         
             [description]
 
-        - ''my_indices'' -- [type]
-            [description]
+        - ''my_indices'' -- [list]
+            [list of indices]
 
         - ''coeff_sf'' -- [type]
             [description]
@@ -466,7 +490,9 @@ class ComponentStructure(BaseComponentStructure):
             
         EXAMPLES:
         
-            sage: get_CA_Km_F_sur_H[1, -4, 4, 2, -4, 1], 11)
+            sage: from euler_product.utils_euler_product import ComponentStructure
+            sage: structure = ComponentStructure(3)
+            sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11)
             [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]
                 
         """
@@ -474,14 +500,15 @@ class ComponentStructure(BaseComponentStructure):
         #(the_SG_tuple, the_Class_tuple, nb_classes, the_exponent,
         # phi_q, character_group, invertibles, invariant_characters) = structure
         # print(q, structure, my_indices, coeffsF, coeffsH)
+        assert isinstance(my_indices, list), "my_indice must be a list"
         r_A_Kt = self.getr_A_Kt(my_indices)  # same indices as my_indices is divisor-closed
         max_index = my_indices[len(my_indices) - 1] 
         s_f = get_vector_sf(coeff_sf, max_index+1)
         s_h = get_vector_sf(coeff_sh, max_index+1)
         
         CAKmF_sur_H = {}
-        for ind_a in range(0, self.nb_classes):
-            for ind_k in range(0, self.nb_classes):
+        for ind_a in range(0, self.nb_class):
+            for ind_k in range(0, self.nb_class):
                 for m in my_indices:
                     CAKmF_sur_H[ind_a, ind_k, m] = 0
                     for t in divisors(m):
@@ -495,13 +522,7 @@ class ComponentStructure(BaseComponentStructure):
 
         INPUT:
 
-        - ''q'' -- [type]
-            [description]
-
         - ''t'' -- [type]
-            [description]
-
-        - ''structure'' -- [type]
             [description]
 
         - ''s'' -- [type]
@@ -520,7 +541,12 @@ class ComponentStructure(BaseComponentStructure):
             
         EXAMPLE:
         
+            sage: from euler_product.utils_euler_product import ComponentStructure
+            sage: structure  = ComponentStructure(3)
+            sage: structure.get_gamma(30, 2, 200, 212)
+            (0)
             sage: check_get_L_values(30, 2, 200, 212)
+            
         """
         #(theSGTuple, theClassTuple, nb_classes, theExponent,
         #             phi_q, characterGroup, invertibles, invariantCharacters) = structure
@@ -528,7 +554,7 @@ class ComponentStructure(BaseComponentStructure):
         CF = ComplexField(prec + 1)
         ##
         if s*t*log(big_p) > (prec + 10) * log(2):
-            one = RealIntervalField(prec + 10)(1 - 2^(-prec-9), 1 + 2^(-prec - 9))
+            one = RealIntervalField(prec + 10)(1 - 2**(-prec-9), 1 + 2**(-prec - 9))
             L_values = (one, ) * len(self.character_group)
         else:
             m = CIF(t * s)
@@ -536,6 +562,7 @@ class ComponentStructure(BaseComponentStructure):
         # print(q, t, s, bigP, prec, L_values)
         return vector([log(CIF(prod([L_values[ind_e] for ind_e in self.invariant_characters[ind_G0]])).real())for ind_G0 in range(0, self.nb_class)])
 
+        
 # myCIF = ComplexIntervalField(200)
 # [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
 ################################################
@@ -605,7 +632,7 @@ def get_vector_bf(coeffs_f, how_many):
 
 # strut = GetStructure(30)
 # GetLvalues(30 ,1 ,strut,2, 200, 212)
-def check_get_L_values(q, m, big_p, prec):
+def check_get_L_values(q, m, s, big_p, prec):
     """summary for check_get_Lvalues
 
     INPUT:
@@ -616,6 +643,9 @@ def check_get_L_values(q, m, big_p, prec):
     - ''m'' -- [type]
         [description]
 
+    - ''s'' -- [type]
+        [description]
+        
     - ''big_p'' -- [type]
         [description]
 
@@ -630,21 +660,28 @@ def check_get_L_values(q, m, big_p, prec):
     EXAMPLE:
 
         sage: from euler_product.utils_euler_product import check_get_L_values
-        sage: check_get_L_values(30, 2, 200, 212)
+        sage: check_get_L_values(30, 1, 2, 200, 212)
+        ([+infinity .. +infinity],
+         [.. NaN ..] + [.. NaN ..]*I,
+         [.. NaN ..] + [.. NaN ..]*I,
+         [.. NaN ..] + [.. NaN ..]*I,
+         [.. NaN ..] + [.. NaN ..]*I,
+         [.. NaN ..] + [.. NaN ..]*I,
+         [.. NaN ..] + [.. NaN ..]*I,
+         [.. NaN ..] + [.. NaN ..]*I)
+         
     """
     structure = ComponentStructure(q)
     #(theSGTuple, theClassTuple, nb_classes, theExponent,
     # phi_q, characterGroup, invertibles, invariantCharacters) = structure
     CIF = ComplexIntervalField(prec)   
-    L_val = structure.get_L_values(m , big_p, CIF)
-    #
-    # probleme s not defined !!!!
-    #
-    return tuple(CIF(u) for u in [L_val[index] / prod([1 - structure.character_group[index](p)/p^s
+    CF = ComplexField(prec + 1)
+    L_val = structure.get_L_values(m, big_p, CIF, CF)
+    return tuple(CIF(u) for u in [L_val[index] / prod([1 - structure.character_group[index](p)/p**s
                                         for p in filter(lambda w: (w in Primes()), range(2, big_p))])
                                 for index in range(0, structure.phi_q)])
 
-    
+
 def get_beta(F):
     """AI is creating summary for GetBeta
 
