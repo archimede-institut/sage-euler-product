@@ -64,7 +64,7 @@ from euler_product.utils_euler_product import nb_common_digits
 ############  Main Engines  #####################
 ################################################
 
-def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=10):
+def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10):
     """summary for get_vs
     Computes an approximate value of the list (zeta(s; q, A))
     for A in the lattice-invariant classes.
@@ -82,7 +82,7 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
         [description]
 
     - ''nb_decimals'' -- [type]
-        [description]
+        [description], by default 100
 
     - ''big_p'' : int, optional
         [description], by default 100
@@ -100,6 +100,12 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
 
     [type]
         [description]
+        
+    EXAMPLES:
+    
+        sage: from euler_product.lattice_invariant_euler_products import get_vs
+        sage: get_vs(3, 1, 100)
+    
     """
     start = timer()
     ## Compute the structural invariants:
@@ -136,7 +142,7 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
                             for i in range(0, structure.nb_class)])
     if verbose >= 2:
         print(" done.")
-    logerr = R(cte*(1 + big_p/(big_m*s))/big_p^(s*big_m))
+    logerr = R(cte*(1 + big_p/(big_m*s))/big_p**(s*big_m))
     ##
     if verbose >= 2:
         print("done: we use bigM =", big_m, ".") 
@@ -149,7 +155,7 @@ def get_vs(q, s, nb_decimals, big_p=100, verbose=2, with_laTeX=0, digits_offset=
                         set(prime_factors(w)).issubset(allowed_primes),
                         range(1, big_m))]
     ## 1 is indeed in my_indices.
-    CAKm = structure.get_CA_Km(q, my_indices)
+    CAKm = structure.get_CA_Km(my_indices)
     
     if verbose >= 2:
         print("done: there are", len(my_indices), "summands.")
@@ -270,7 +276,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     cte = 4 * structure.nb_class^2 * (F0.degree() + H0.degree()) * (s + big_p)
     big_m = big_p + 10
 
-    while (float(log(cte) + (big_m + 1)*log(big_p^s / my_beta) - (nb_decimals+1)*log(10)) < 0):
+    while (float(log(cte) + (big_m + 1)*log(big_p**s / my_beta) - (nb_decimals+1)*log(10)) < 0):
         big_m = big_m + 10
 
     ## The coefficients CA(K,m,F/H) may increase like beta^m,
@@ -281,7 +287,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
         print("We use big_m =", big_m, ", big_p =", big_p, "and working prec =", prec, ".")
     ## The precision has changed! Change the ring:
     R = RealIntervalField(prec)
-    log_err = R( cte *(my_beta/big_p^s)^(big_m+1))
+    log_err = R( cte *(my_beta/big_p**s)^(big_m+1))
     RX = R['x']
     (x,) = RX._first_ngens(1)
     F, H = RX(f_init), RX(h_init)
@@ -290,7 +296,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     if verbose >= 2:
         sys.stdout.write("Computing the finite products for p < " + str(big_p) + " ... ")
     ## Empty initial products are allowed:
-    eulerProdIni = tuple([prod(flatten([1, [R(F(1/p^s) / H(1/p^s))
+    eulerProdIni = tuple([prod(flatten([1, [R(F(1/p**s) / H(1/p**s))
                                             for p in filter(lambda w: (w in Primes())
                                                             and (w%q in structure.the_Class_tuple[i]),
                                                             range(2, big_p))]])) for i in range(0, structure.nb_class)])
@@ -303,7 +309,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
         sys.stdout.write("Computing C_A(K, m, F/H) ... ")
     ##
     my_indices = [i for i in range(1, big_m+1)]
-    CAKmF_sur_H = structure.get_CA_Km_F_sur_H(q, my_indices, F.list(), H.list())
+    CAKmF_sur_H = structure.get_CA_Km_F_sur_H(my_indices, F.list(), H.list())
     logZs_approx = vector([R(0)] * structure.nb_classes)
 
     ######################################
