@@ -7,6 +7,7 @@ doc/index.rst
 doc/reference/api.rst
 doc/tutorial/index.rst
 euler_product/__init__.py
+euler_product/from euler_product.py
 euler_product/lattice_invariant_euler_products.py
 euler_product/utils_euler_product.py
 euler_product.egg-info/PKG-INFO

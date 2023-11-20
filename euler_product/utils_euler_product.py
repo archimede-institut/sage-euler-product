@@ -51,6 +51,7 @@ from sage.modular.dirichlet import DirichletGroup
 from sage.arith.misc import moebius
 from sage.misc.misc_c import prod
 from sage.misc.functional import log
+from sage.rings.integer_ring import IntegerRing, ZZ
 from sage.functions.transcendental import hurwitz_zeta
 from sage.sets.primes import Primes
 from sage.modules.free_module_element import vector
@@ -288,7 +289,14 @@ class BaseDataClass:
     invariant_characters : tuple
 """
 class ComponentStructure:
-    """AI is creating summary for 
+    """AI is creating summary for
+    
+    
+    EXAMPLES:
+    
+        sage: from euler_product.utils_euler_product import ComponentStructure
+        sage: structure = ComponentStructure(3)
+        
     """
     def __init__(self, q):
         self._get_structure(q)
@@ -420,7 +428,7 @@ class ComponentStructure:
         INPUT:
 
 
-        - ''m'' -- [int]
+        - ''m'' -- [ComplexIntervalFieldElement>]
             [description]
 
         - ''big_p'' -- [type]
@@ -452,7 +460,11 @@ class ComponentStructure:
         # phi_q, characterGroup, invertibles, invariantCharacters) = structure
 
         CG = self.character_group.change_ring(CF)
-        hurwitz_values = tuple(hurwitz_zeta(s=m, x=CIF(a / self.q)) / CIF(self.q)**m for a in self.invertibles)
+        if m in ZZ:
+            m_new = ZZ(m)
+        else:
+            m_new = m
+        hurwitz_values = tuple(hurwitz_zeta(s=m_new, x=CIF(a / self.q)) / CIF(self.q)**m for a in self.invertibles)
 
         aux0 = [[1-CIF(e(p))/CIF(p)**m
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
