@@ -20,7 +20,7 @@ WARNING:
   
 EXAMPLES::
 
-    sage: from euler_product.lattice_ivariant_euler_products import get_euler_products
+    sage: from euler_product.lattice_invariant_euler_products import get_euler_products
     
 """
 # *****************************************************************************
@@ -37,10 +37,10 @@ from timeit import default_timer as timer
 from sage.functions.other import ceil, floor
 from sage.sets.primes import Primes
 from sage.modules.free_module_element import vector
-from sage.symbolic.expression_conversions import exp
+from sage.functions.log import exp
+from sage.functions.log import log
 from sage.misc.misc_c import prod
-from sage.misc.functional import log
-from sage.misc.flatten import flatten
+from sage.misc.flatten import flatten 
 from sage.arith.misc import euler_phi
 from sage.arith.misc import gcd
 from sage.arith.misc import sigma
@@ -48,13 +48,12 @@ from sage.arith.misc import divisors
 from sage.arith.misc import prime_factors
 from sage.arith.misc import prime_divisors
 from sage.arith.functions import lcm
-from sage.rings.real_mpfi import RealIntervalField
-from sage.rings.real_mpfr import RealField
+from sage.rings.integer import Integer
+from sage.rings.real_mpfi import RealIntervalField  
 from sage.rings.complex_interval_field import ComplexIntervalField
-from sage.rings.abc import RealField
+from sage.rings.real_mpfr import  RealField
 from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
-
 from euler_product.utils_euler_product import ComponentStructure
 from euler_product.utils_euler_product import get_beta, get_BetaRough
 from euler_product.utils_euler_product import laTeX_for_number
@@ -105,7 +104,24 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     
         sage: from euler_product.lattice_invariant_euler_products import get_vs
         sage: get_vs(3, 1, 100)
-    
+        Computing the structural invariants ...  done.
+        Computing big m ... Computing the finite product for p < 100 ...  done.
+        done: we use bigM = 51 .
+        Building indices ... done: there are 6 summands.
+        -------------------
+        For p+3ZZ in frozenset({0, 3})
+        the product of 1/(1-p^{-1}) is between
+        1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601
+        and
+        1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011
+        (Obtained:  100  correct decimal digits)
+        Time taken: 0.06389763701008633 seconds.
+        ((frozenset({0, 3}),),
+        ((1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601,
+        1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011),))
+
+GetVs(12, 2, 100, 110)
+
     """
     start = timer()
     ## Compute the structural invariants:
@@ -202,14 +218,20 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     
 
 def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose=2, with_laTeX=0):
-    """Summary for get_euler_products
+    r"""Summary for get_euler_products
     Computes an approximate value of the list ()
     for A in the lattice-invariant classes, ''LatticeInvariantClasses''.
     Careful! bigP may increase in the proof!
     We compute directly what happens for primes < big_p.
     
+    to do
+    
+    assert F[0] = H[0] = 1
+    
     GetEulerProds(3, 1, 1-x^2, 100)
-    (q, s, Finit, Hinit, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0)
+    (q, s, Finit, Hinit, nbdecimals, bigP= 00, Verbose=2, WithLaTeX=0)
+    (q, s, F, H, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0)
+    
     
     INPUT:
 
@@ -242,12 +264,14 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     [tuple]
         [return tuple of (the_Class_tuple, euler_prods)]
         
-    EXAMPLE:
+    EXAMPLES:
     
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
         sage: get_euler_products(3, 1, 1-x^2, 100)
+        GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)
     """
     start = timer()
+    #assert F[0] = H[0] = 1
     ## Compute the structural invariants:
     if verbose >= 2:
         sys.stdout.write("Computing the structural invariants ... ")
@@ -266,14 +290,15 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     F0, H0 = R0X(f_init), R0X(h_init)
     my_delta = (F0-H0).valuation()
     ## Get my_beta, myDelta and big_p:
-    my_beta = max(2, get_beta(F0) , get_beta(H0))
+
+    my_beta = max(2, get_beta(F0), get_beta(H0))
     ###########"
     if verbose >= 2:
         print("We have Delta  =", my_delta, "and beta =", my_beta)
     #############
     ## Getting bigM, prec and bigP:
     big_p = max(big_p, 2*my_beta)
-    cte = 4 * structure.nb_class^2 * (F0.degree() + H0.degree()) * (s + big_p)
+    cte = 4 * structure.nb_class**2 * (F0.degree() + H0.degree()) * (s + big_p)
     big_m = big_p + 10
 
     while (float(log(cte) + (big_m + 1)*log(big_p**s / my_beta) - (nb_decimals+1)*log(10)) < 0):
@@ -287,20 +312,37 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
         print("We use big_m =", big_m, ", big_p =", big_p, "and working prec =", prec, ".")
     ## The precision has changed! Change the ring:
     R = RealIntervalField(prec)
-    log_err = R( cte *(my_beta/big_p**s)^(big_m+1))
+    RF = RealField(prec + 1)
+    log_err = R(cte * (my_beta/(big_p**s))**(big_m+1))
     RX = R['x']
     (x,) = RX._first_ngens(1)
     F, H = RX(f_init), RX(h_init)
+    print(F)
+    print(H)
     #############
     ## Initial computations:
     if verbose >= 2:
         sys.stdout.write("Computing the finite products for p < " + str(big_p) + " ... ")
     ## Empty initial products are allowed:
-    eulerProdIni = tuple([prod(flatten([1, [R(F(1/p**s) / H(1/p**s))
+    #print([ p for p in range(2, big_p)])
+    #print([F(1/Integer(p)**s) for p in range(2, big_p)])
+    #print([H(1/Integer(p)**s) for p in range(2, big_p)])
+    #print([F(1/p**s)/H(1/p**s) for p in range(2, big_p)])
+    #print([R(F(1/p**s)/H(1/p**s)) for p in Primes()])
+    #prod_list = [1]
+    #for i in range(0, structure.nb_class):
+    #    prod_list.append([R(F(1/Integer(p)**s) / H(1/Integer(p)**s))
+    #                                       for p in filter(lambda w: (w in Primes())
+    #                                                        and (w%q in structure.the_Class_tuple[i]),
+    #                                                        range(2, big_p))])
+    #eulerProdIni = tuple(prod(flatten(prod_list)))
+    
+    eulerProdIni = tuple(prod(flatten([1, [R(F(1/Integer(p)**s) / H(1/Integer(p)**s))
                                             for p in filter(lambda w: (w in Primes())
                                                             and (w%q in structure.the_Class_tuple[i]),
-                                                            range(2, big_p))]])) for i in range(0, structure.nb_class)])
+                                                            range(2, big_p))]])) for i in range(0, structure.nb_class))
     ##
+    
     if verbose >= 2:
         print(" done.")
     #############
@@ -310,16 +352,16 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     ##
     my_indices = [i for i in range(1, big_m+1)]
     CAKmF_sur_H = structure.get_CA_Km_F_sur_H(my_indices, F.list(), H.list())
-    logZs_approx = vector([R(0)] * structure.nb_classes)
+    logZs_approx = vector([R(0)] * structure.nb_class)
 
     ######################################
     ## Most of time is spent here.
     ## The main loop in m:
-    for m in range(my_delta, big_m+1):
-        aux = get_gamma(q, m, structure, s, big_p, prec)
-        for ind_A in range(0, structure.nb_classes):
-            for ind_K in range(0, structure.nb_classes):
-                logZs_approx[ind_A] += aux[ind_K] * CAKmF_sur_H[ind_A, ind_K, m]/m
+    for mm in range(my_delta, big_m+1):
+        aux = structure.get_gamma(mm, s, big_p, prec)
+        for ind_A in range(0, structure.nb_class):
+            for ind_K in range(0, structure.nb_class):
+                logZs_approx[ind_A] += aux[ind_K] * CAKmF_sur_H[ind_A, ind_K, mm]/mm
     ## End of the main loop in m
     #######################################
     

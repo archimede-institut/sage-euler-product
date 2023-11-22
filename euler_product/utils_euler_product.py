@@ -36,6 +36,8 @@ from dataclasses import dataclass
 from timeit import default_timer as timer
 
 from sage.symbolic.function import GinacFunction, BuiltinFunction
+from sage.symbolic.operators import arithmetic_operators
+from builtins import sum as add
 from sage.functions.other import ceil, floor
 from sage.arith.misc import prime_divisors
 from sage.arith.misc import euler_phi
@@ -50,7 +52,7 @@ from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
 from sage.arith.misc import moebius
 from sage.misc.misc_c import prod
-from sage.misc.functional import log
+from sage.functions.log import log
 from sage.rings.integer_ring import IntegerRing, ZZ
 from sage.functions.transcendental import hurwitz_zeta
 from sage.sets.primes import Primes
@@ -464,7 +466,7 @@ class ComponentStructure:
             m_new = ZZ(m)
         else:
             m_new = m
-        hurwitz_values = tuple(hurwitz_zeta(s=m_new, x=CIF(a / self.q)) / CIF(self.q)**m for a in self.invertibles)
+        hurwitz_values = tuple(CIF(hurwitz_zeta(s=m_new, x=CIF(a / self.q))._complex_mpfi_(CF)) / CIF(self.q)**m for a in self.invertibles)
 
         aux0 = [[1-CIF(e(p))/CIF(p)**m
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
@@ -708,10 +710,8 @@ def get_beta(F):
         [description]
     """
     my_roots = F.roots(multiplicities=False)
-    if len(my_roots) == 0:
-        return 1
-    else:
-        return max(1, max([1/abs(c) for c in my_roots]))
+    # my_root must be never 0
+    return max(1, max([1/abs(c) for c in my_roots if c != 0.0], default=1))
 
 def get_BetaRough(coeffs_f):
     """summary for get_BetaRough
