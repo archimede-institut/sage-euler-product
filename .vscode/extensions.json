@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "franneck94.vscode-python-dev-extension-pack"
+        "franneck94.vscode-python-dev-extension-pack",
+        "ms-python.pylint"
     ]
 }

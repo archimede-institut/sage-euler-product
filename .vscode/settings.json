@@ -1,8 +1,13 @@
 {
     "cSpell.words": [
+        "coeff",
         "coeffs",
+        "getr",
+        "hurwitz",
         "invertibles",
+        "moebius",
         "mpfi",
         "mpfr"
-    ]
+    ],
+    "application.experimental.rendererProfiling": false
 }
