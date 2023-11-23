@@ -18,7 +18,7 @@ Documentation
 
    tutorial/index
    tutorial/install_devel
-   tutorial/doc/tutorial/LoeschianConstant-NS-04-MCOMP
+   tutorial/LoeschianConstant-NS-04-MCOMP
    reference/api
    tutorial/credits
 
