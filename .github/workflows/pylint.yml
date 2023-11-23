@@ -20,12 +20,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
-    - name: Merge CI fixes from sage-euleer-prod
-      run: |
-        .ci/merge-fixes.sh
-      env:
-        GH_TOKEN: ${{ github.token }}
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
