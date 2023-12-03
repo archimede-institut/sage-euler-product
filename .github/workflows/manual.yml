@@ -48,9 +48,9 @@ jobs:
     - cd ${DIRECTORY}/doc && sage -sh -c "make html"
     - sage -pip install -e .[doc]  
     - sage -python setup.py build_sphinx
-
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+  steps:
     # Runs a single command using the runners shell
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
