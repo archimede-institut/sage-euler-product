@@ -106,6 +106,12 @@ div.sphinxsidebar #searchbox input[type="submit"] {
     box-sizing: border-box;
 }
 
+div.documentwrapper div.bodywrapper { margin-left: 350px;}
+div.document div.sphinxsidebar { width: 350px; }
+
+div.sphinxsidebarwrapper div {
+    overflow: auto;
+}
 
 img {
     border: 0;

@@ -11,12 +11,11 @@ Documentation
 :Date: |today|
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
 
 
 
-   tutorial/index
    tutorial/install_dev
    tutorial/LoeschianConstant-NS-04-MCOMP
 

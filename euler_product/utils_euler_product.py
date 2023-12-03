@@ -160,7 +160,7 @@ class LatticeInvariantClasses():
     """
     Summary for LatticeInvariantClasses
     
-    EXAMPLE:
+    EXAMPLES::
     
         sage: from euler_product.utils_euler_product import LatticeInvariant
         sage: LatticeInvariant(30)
@@ -267,15 +267,16 @@ class LatticeInvariantClasses():
         return (self.the_SG_tuple, self.the_Class_tuple)
 
 LatticeInvariant = LatticeInvariantClasses()
-# 
+
 # BaseTupledname = namedtuple('BaseComponentStructure', ['the_SG_tuple', 'the_Class_tuple', 'nb_class', 'the_exponent',
 #                                                            'phi_q', 'character_group', 'invertibles', 'invariant_characters'])
 
-class ComponentStructure:
-    """creating summary for ComponentStructure
-    
-    
-    EXAMPLES:
+class ComponentStructure():
+    """
+    creating summary for ComponentStructure
+
+
+    EXAMPLES::
     
         sage: from euler_product.utils_euler_product import ComponentStructure
         sage: structure = ComponentStructure(3)

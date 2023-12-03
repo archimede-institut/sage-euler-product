@@ -19,7 +19,8 @@
     <script src="../_static/sphinx_highlight.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Fast multi-precision computation of some Euler products" href="../tutorial/LoeschianConstant-NS-04-MCOMP.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -30,6 +31,9 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="../tutorial/LoeschianConstant-NS-04-MCOMP.html" title="Fast multi-precision computation of some Euler products"
+             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">sage-euler-product sage package 0.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">API Documentation</a></li> 
       </ul>
@@ -43,7 +47,7 @@
   <section id="api-documentation">
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading">¶</a></h1>
 <section id="module-euler_product.lattice_invariant_euler_products">
-<span id="euler-product"></span><h2>euler_product<a class="headerlink" href="#module-euler_product.lattice_invariant_euler_products" title="Permalink to this heading">¶</a></h2>
+<span id="euler-product-lattice-invariant-euler-products"></span><h2>euler_product.lattice_invariant_euler_products<a class="headerlink" href="#module-euler_product.lattice_invariant_euler_products" title="Permalink to this heading">¶</a></h2>
 <p>Lattice Invariant</p>
 <p>lattice_invariant_euler_product.py defines  class.
 Computing some structural invariants</p>
@@ -271,16 +275,22 @@ sage: table_performance(1, 5)</p>
 </div></blockquote>
 </dd></dl>
 
-<span class="target" id="module-euler_product.utils_euler_product"></span><p>Utils for Euler Product</p>
+</section>
+<section id="module-euler_product.utils_euler_product">
+<span id="euler-product-utils-euler-product"></span><h2>euler_product.utils_euler_product<a class="headerlink" href="#module-euler_product.utils_euler_product" title="Permalink to this heading">¶</a></h2>
+<p>Utils_euler_product utilities  for Euler Product</p>
 <p>utils_euler_product.py defines  functions
 Main Engines</p>
 <p>AUTHORS:</p>
 <ul class="simple">
 <li><p>Olivier Ramaré (2023-01-008) : initial version</p></li>
-<li><p>Dominique Benielli(2023-02_15) :
-AMU University &lt;<a class="reference external" href="mailto:dominique&#46;benielli&#37;&#52;&#48;univ-amu&#46;fr">dominique<span>&#46;</span>benielli<span>&#64;</span>univ-amu<span>&#46;</span>fr</a>&gt;,
+<li><dl class="simple">
+<dt>Dominique Benielli(2023-02_15) :</dt><dd><p>AMU University &lt;<a class="reference external" href="mailto:dominique&#46;benielli&#37;&#52;&#48;univ-amu&#46;fr">dominique<span>&#46;</span>benielli<span>&#64;</span>univ-amu<span>&#46;</span>fr</a>&gt;,
 Integration as  SageMath package. 
-Cellule de developpement Institut Archimède</p></li>
+Cellule de developpement Institut Archimède</p>
+</dd>
+</dl>
+</li>
 </ul>
 <p>WARNING:</p>
 <blockquote>
@@ -289,24 +299,17 @@ CAREFUL, this is Python 3 code!</p>
 </div></blockquote>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span>  <span class="n">LatticeInvariantClasses</span>
-<span class="c1"># *****************************************************************************</span>
 </pre></div>
 </div>
-<p>#       Copyright (C) 2023 Olivier Ramare
-#       &lt; olivier . ramare &#64;univ-amu.fr&gt;
-#
-#  Distributed under the terms of the GNU General Public License (GPL)
-#                  <a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>
-# <strong>*************************************************************************</strong></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">ComponentStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure" title="Permalink to this definition">¶</a></dt>
 <dd><p>creating summary for ComponentStructure</p>
 <p>EXAMPLES:</p>
-<blockquote>
-<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
-sage: structure = ComponentStructure(3)</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_CA_Km">
 <span class="sig-name descname"><span class="pre">get_CA_Km</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km" title="Permalink to this definition">¶</a></dt>
@@ -490,33 +493,27 @@ sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.LatticeInvariantClasses">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">LatticeInvariantClasses</span></span><a class="headerlink" href="#euler_product.utils_euler_product.LatticeInvariantClasses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Summary for LatticeInvariantClasses</p>
-<p>EXAMPLE:</p>
-<blockquote>
-<div><p>sage: from euler_product.utils_euler_product import LatticeInvariant
-sage: LatticeInvariant(30)
-((frozenset({0, 2, 3, 4, 5, 6, 7, 9}),</p>
-<blockquote>
-<div><blockquote>
-<div><p>frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
-frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
-frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
-frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
-frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
-frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
-frozenset({21, 24, 25, 26, 27, 28, 30, 31})),</p>
-</div></blockquote>
-<dl class="simple">
-<dt>(frozenset({0, 2, 3, 4, 5, 6, 7, 9}),</dt><dd><p>frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
-frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
-frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
-frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
-frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
-frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
-frozenset({21, 24, 25, 26, 27, 28, 30, 31})))</p>
-</dd>
-</dl>
-</div></blockquote>
-</div></blockquote>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">LatticeInvariant</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">LatticeInvariant</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">27</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">31</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">})),</span>
+ <span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">27</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">31</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">})))</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -695,11 +692,11 @@ et every block of ‘’nb_block_sto_cut’’, on a different line. ‘cdots’
 </dd>
 </dl>
 <p>EXAMPLES:</p>
-<blockquote>
-<div><p>sage: from euler_product.utils_euler_product import laTeX_for_number
-sage: laTeX_for_number(22.01234567812345, 100, 8) 
-‘22.&amp;01234\,56781\,235\cdots’</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">laTeX_for_number</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">laTeX_for_number</span><span class="p">(</span><span class="mf">22.01234567812345</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> 
+<span class="s1">&#39;22.&amp;01234</span><span class="se">\\</span><span class="s1">,56781</span><span class="se">\\</span><span class="s1">,235</span><span class="se">\\</span><span class="s1">cdots&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -772,11 +769,14 @@ frozenset({4, 7})</p>
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">API Documentation</a><ul>
-<li><a class="reference internal" href="#module-euler_product.lattice_invariant_euler_products">euler_product</a><ul>
+<li><a class="reference internal" href="#module-euler_product.lattice_invariant_euler_products">euler_product.lattice_invariant_euler_products</a><ul>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.get_euler_products"><code class="docutils literal notranslate"><span class="pre">get_euler_products()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.get_vs"><code class="docutils literal notranslate"><span class="pre">get_vs()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.get_vs_checker"><code class="docutils literal notranslate"><span class="pre">get_vs_checker()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.table_performance"><code class="docutils literal notranslate"><span class="pre">table_performance()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-euler_product.utils_euler_product">euler_product.utils_euler_product</a><ul>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure"><code class="docutils literal notranslate"><span class="pre">ComponentStructure</span></code></a><ul>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km"><code class="docutils literal notranslate"><span class="pre">ComponentStructure.get_CA_Km()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H"><code class="docutils literal notranslate"><span class="pre">ComponentStructure.get_CA_Km_F_sur_H()</span></code></a></li>
@@ -800,6 +800,11 @@ frozenset({4, 7})</p>
 </li>
 </ul>
 
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../tutorial/LoeschianConstant-NS-04-MCOMP.html"
+                          title="previous chapter">Fast multi-precision computation of some Euler products</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -831,6 +836,9 @@ frozenset({4, 7})</p>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="../tutorial/LoeschianConstant-NS-04-MCOMP.html" title="Fast multi-precision computation of some Euler products"
+             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">sage-euler-product sage package 0.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">API Documentation</a></li> 
       </ul>
