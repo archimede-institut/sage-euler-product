@@ -46,8 +46,8 @@ jobs:
     - cd
     - sage -t --force-lib --long --show-skipped ${DIRECTORY}
     - cd ${DIRECTORY}/doc && sage -sh -c "make html"
-  sage -pip install -e .[doc]  
-sage -python setup.py build_sphinx
+    - sage -pip install -e .[doc]  
+    - sage -python setup.py build_sphinx
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
