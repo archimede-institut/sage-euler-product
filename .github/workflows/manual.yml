@@ -11,7 +11,7 @@ on:
 before_script:
   - export MAKEFLAGS="-j2"
 jobs:
-  image: sagemath/sagemath
+  image: sagemath/sagemath:latest
   when: manual
   artifacts:
     paths:
