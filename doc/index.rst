@@ -16,10 +16,13 @@ Documentation
 
 
 
-   tutorial/index
-   tutorial/install_devel
+   tutorial/install_dev
    tutorial/LoeschianConstant-NS-04-MCOMP
+
+
+
    reference/api
+
    tutorial/credits
 
 

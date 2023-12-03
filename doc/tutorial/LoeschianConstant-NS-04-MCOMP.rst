@@ -1,4 +1,4 @@
-.. _LoeschianConstant-NS-04-MCOMP:
+.. LoeschianConstant-NS-04-MCOMP:
 
 
 

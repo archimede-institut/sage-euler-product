@@ -1,5 +1,5 @@
 """
-Utils for Euler Product
+Utils_euler_product utilities  for Euler Product
 
 utils_euler_product.py defines  functions
 Main Engines
@@ -8,26 +8,28 @@ AUTHORS:
 
 - Olivier Ramaré (2023-01-008) : initial version
 - Dominique Benielli(2023-02_15) :
-  AMU University <dominique.benielli@univ-amu.fr>,
-  Integration as  SageMath package. 
-  Cellule de developpement Institut Archimède
+    AMU University <dominique.benielli@univ-amu.fr>,
+    Integration as  SageMath package. 
+    Cellule de developpement Institut Archimède
 
 WARNING:
 
     Needs Sage version at least 9.0
     CAREFUL, this is Python 3 code!
-  
+
 EXAMPLES::
 
     sage: from euler_product.utils_euler_product import  LatticeInvariantClasses
-    # *****************************************************************************
+
+"""
+# *****************************************************************************
 #       Copyright (C) 2023 Olivier Ramare
 #       < olivier . ramare @univ-amu.fr>
 #
 #  Distributed under the terms of the GNU General Public License (GPL)
 #                  http://www.gnu.org/licenses/
 # *****************************************************************************
-"""
+
 from __future__ import print_function, absolute_import
 
 from builtins import sum as add
@@ -103,7 +105,7 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
     [str]
         [a character string int(w).digits where digits concerns the first]        
         
-    EXAMPLES:
+    EXAMPLES::
     
         sage: from euler_product.utils_euler_product import laTeX_for_number
         sage: laTeX_for_number(22.01234567812345, 100, 8) 

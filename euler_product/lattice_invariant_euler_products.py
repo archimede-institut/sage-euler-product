@@ -252,7 +252,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     [tuple]
         [return tuple of (the_Class_tuple, euler_prods)]
         
-    EXAMPLES:
+    EXAMPLES::
     
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
         sage: get_euler_products(3, 1, 1-x^2, 100)
@@ -401,7 +401,7 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
     - ''big_p'' : int, optional
         [description], by default 300
         
-    EXAMPLE:
+    EXAMPLES:
     
         sage: from euler_product.lattice_invariant_euler_products import table_performance
         sage: table_performance(1, 5)

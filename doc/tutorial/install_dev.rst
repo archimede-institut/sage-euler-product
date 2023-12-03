@@ -1,8 +1,8 @@
-.. _install_dec:
+.. _install_dev:
 
 
 Installation EULER_PRODUCT
-==================================================
+==========================
 
 
 Usage

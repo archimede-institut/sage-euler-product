@@ -19,8 +19,7 @@
     <script src="../_static/sphinx_highlight.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Fast multi-precision computation of some Euler products" href="../tutorial/LoeschianConstant-NS-04-MCOMP.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -31,9 +30,6 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="../tutorial/LoeschianConstant-NS-04-MCOMP.html" title="Fast multi-precision computation of some Euler products"
-             accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">sage-euler-product sage package 0.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">API Documentation</a></li> 
       </ul>
@@ -47,7 +43,7 @@
   <section id="api-documentation">
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading">¶</a></h1>
 <section id="module-euler_product.lattice_invariant_euler_products">
-<span id="datasets"></span><h2>datasets<a class="headerlink" href="#module-euler_product.lattice_invariant_euler_products" title="Permalink to this heading">¶</a></h2>
+<span id="euler-product"></span><h2>euler_product<a class="headerlink" href="#module-euler_product.lattice_invariant_euler_products" title="Permalink to this heading">¶</a></h2>
 <p>Lattice Invariant</p>
 <p>lattice_invariant_euler_product.py defines  class.
 Computing some structural invariants</p>
@@ -130,11 +126,11 @@ We compute directly what happens for primes &lt; big_p.</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
-<blockquote>
-<div><p>sage: from euler_product.lattice_invariant_euler_products import get_euler_products
-sage: get_euler_products(3, 1, 1-x^2, 100)
-GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">GetEulerProds</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -268,10 +264,497 @@ Table Makers</p>
 </dl>
 </li>
 </ul>
-<p>EXAMPLE:</p>
+<p>EXAMPLES:</p>
 <blockquote>
 <div><p>sage: from euler_product.lattice_invariant_euler_products import table_performance
 sage: table_performance(1, 5)</p>
+</div></blockquote>
+</dd></dl>
+
+<span class="target" id="module-euler_product.utils_euler_product"></span><p>Utils for Euler Product</p>
+<p>utils_euler_product.py defines  functions
+Main Engines</p>
+<p>AUTHORS:</p>
+<ul class="simple">
+<li><p>Olivier Ramaré (2023-01-008) : initial version</p></li>
+<li><p>Dominique Benielli(2023-02_15) :
+AMU University &lt;<a class="reference external" href="mailto:dominique&#46;benielli&#37;&#52;&#48;univ-amu&#46;fr">dominique<span>&#46;</span>benielli<span>&#64;</span>univ-amu<span>&#46;</span>fr</a>&gt;,
+Integration as  SageMath package. 
+Cellule de developpement Institut Archimède</p></li>
+</ul>
+<p>WARNING:</p>
+<blockquote>
+<div><p>Needs Sage version at least 9.0
+CAREFUL, this is Python 3 code!</p>
+</div></blockquote>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span>  <span class="n">LatticeInvariantClasses</span>
+<span class="c1"># *****************************************************************************</span>
+</pre></div>
+</div>
+<p>#       Copyright (C) 2023 Olivier Ramare
+#       &lt; olivier . ramare &#64;univ-amu.fr&gt;
+#
+#  Distributed under the terms of the GNU General Public License (GPL)
+#                  <a class="reference external" href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>
+# <strong>*************************************************************************</strong></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">ComponentStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure" title="Permalink to this definition">¶</a></dt>
+<dd><p>creating summary for ComponentStructure</p>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+sage: structure = ComponentStructure(3)</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_CA_Km">
+<span class="sig-name descname"><span class="pre">get_CA_Km</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for get_CA_Km</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’my_indices’’ – [int]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[set]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+sage: structure = ComponentStructure(3)
+sage: structure.get_CA_Km([1, -4, 4, 2, -4, 1])
+{(0, 0, 1): 0, (0, 0, -4): 0, (0, 0, 4): 0, (0, 0, 2): 0}</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H">
+<span class="sig-name descname"><span class="pre">get_CA_Km_F_sur_H</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sh</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for get_CA_Km_F_sur_H</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’structure’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’my_indices’’ – [list]</dt><dd><p>[list of indices]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’coeff_sf’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’coeff_sh’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT</p>
+<dl class="simple">
+<dt>[type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+sage: structure = ComponentStructure(3)
+sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11)
+[0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_L_values">
+<span class="sig-name descname"><span class="pre">get_L_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CIF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_L_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for get_L_values
+Computing Gamma</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’m’’ – [ComplexIntervalFieldElement&gt;]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’big_p’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’CIF’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’CF’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+sage: structure = ComponentStructure(3)
+sage: myCIF = ComplexIntervalField(200)
+sage: structure.get_L_values(m, big_p, CIF, CF)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_gamma">
+<span class="sig-name descname"><span class="pre">get_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_gamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for get_gamma</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’t’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’s’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’big_p’’ – [int]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’prec’’ – [int]</dt><dd><p>[number of digits]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+<p>EXAMPLE:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+sage: structure  = ComponentStructure(3)
+sage: structure.get_gamma(30, 2, 200, 212)
+(0)
+sage: check_get_L_values(30, 2, 200, 212)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.getr_A_Kt">
+<span class="sig-name descname"><span class="pre">getr_A_Kt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.getr_A_Kt" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for getr_A_Kt</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’my_indices’’ – list</dt><dd><p>[list of indices]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[set]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+sage: structure = ComponentStructure(3)            
+sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
+{(0, 0, 1): 0, (0, 0, -4): 0, (0, 0, 4): 0, (0, 0, 2): 0}</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.LatticeInvariantClasses">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">LatticeInvariantClasses</span></span><a class="headerlink" href="#euler_product.utils_euler_product.LatticeInvariantClasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Summary for LatticeInvariantClasses</p>
+<p>EXAMPLE:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import LatticeInvariant
+sage: LatticeInvariant(30)
+((frozenset({0, 2, 3, 4, 5, 6, 7, 9}),</p>
+<blockquote>
+<div><blockquote>
+<div><p>frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
+frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
+frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
+frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
+frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
+frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
+frozenset({21, 24, 25, 26, 27, 28, 30, 31})),</p>
+</div></blockquote>
+<dl class="simple">
+<dt>(frozenset({0, 2, 3, 4, 5, 6, 7, 9}),</dt><dd><p>frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
+frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
+frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
+frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
+frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
+frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
+frozenset({21, 24, 25, 26, 27, 28, 30, 31})))</p>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.check_get_L_values">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">check_get_L_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.check_get_L_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for check_get_L_values</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’q’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’m’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’s’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’big_p’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’prec’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+<p>EXAMPLE:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import check_get_L_values
+sage: check_get_L_values(30, 1, 2, 200, 212)
+([+infinity .. +infinity],</p>
+<blockquote>
+<div><p>[.. NaN ..] + [.. NaN ..]*I,
+[.. NaN ..] + [.. NaN ..]*I,
+[.. NaN ..] + [.. NaN ..]*I,
+[.. NaN ..] + [.. NaN ..]*I,
+[.. NaN ..] + [.. NaN ..]*I,
+[.. NaN ..] + [.. NaN ..]*I,
+[.. NaN ..] + [.. NaN ..]*I)</p>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.get_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for get_beta</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’F’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta_rough">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta_rough</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.get_beta_rough" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for get_BetaRough</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’coeffs_f’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.get_vector_bf">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_vector_bf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.get_vector_bf" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_vector_bf give the vector of coefficient bf
+Not used in the main program</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’coeffs_f’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’how_many’’ – int</dt><dd><p>number of coefficients bf</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT</p>
+<dl class="simple">
+<dt>[list]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import get_vector_bf
+sage: get_vector_bf([1, -4, 4, 2, -4, 1], 11)
+[0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.get_vector_sf">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_vector_sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.get_vector_sf" title="Permalink to this definition">¶</a></dt>
+<dd><p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’coeffs_f’’ – [type]</dt><dd><p>coefficient f</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’how_many’’ – [type]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT</p>
+<dl class="simple">
+<dt>list </dt><dd><p>list des coefficient f</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.laTeX_for_number">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">laTeX_for_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_block_sto_cut</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.laTeX_for_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for laTeX_for_number
+Return a character string int(w).digits where digits concerns the first</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’w’’ – [float]</dt><dd><p>[w is a real number with a (short) integer part and a floating point]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’how_many’’ – [int]</dt><dd><p>[number of decimal,decimals, separated every 5 of them by '\,' 
+et every block of ‘’nb_block_sto_cut’’, on a different line. ‘cdots’ ends the string]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’nb_block_sto_cut’’ – [int]</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[str]</dt><dd><p>[a character string int(w).digits where digits concerns the first]</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import laTeX_for_number
+sage: laTeX_for_number(22.01234567812345, 100, 8) 
+‘22.&amp;01234\,56781\,235\cdots’</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.nb_common_digits">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">nb_common_digits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.nb_common_digits" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for nb_common_digits
+Returns -1 if floor(a) != floor(b)</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’a’’ – [float]</dt><dd><p>[first float to compare]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’b’’ – [float]</dt><dd><p>[second float to compare]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>[int]</dt><dd><p>[Returns -1 if floor(a) != floor(b), or number of common digit]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="euler_product.utils_euler_product.sub_group_generated">
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">sub_group_generated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#euler_product.utils_euler_product.sub_group_generated" title="Permalink to this definition">¶</a></dt>
+<dd><p>summary for sub_group_generated
+Main Engines function</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘’n’’ – int</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘’q’’ – int</dt><dd><p>[description]</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>frozenset</dt><dd><p>immutable set of</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<blockquote>
+<div><p>sage: from euler_product.utils_euler_product import sub_group_generated
+sage: sub_group_generated(5, 3) 
+frozenset({4, 7})</p>
 </div></blockquote>
 </dd></dl>
 
@@ -289,22 +772,34 @@ sage: table_performance(1, 5)</p>
     <h3><a href="../index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">API Documentation</a><ul>
-<li><a class="reference internal" href="#module-euler_product.lattice_invariant_euler_products">datasets</a><ul>
+<li><a class="reference internal" href="#module-euler_product.lattice_invariant_euler_products">euler_product</a><ul>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.get_euler_products"><code class="docutils literal notranslate"><span class="pre">get_euler_products()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.get_vs"><code class="docutils literal notranslate"><span class="pre">get_vs()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.get_vs_checker"><code class="docutils literal notranslate"><span class="pre">get_vs_checker()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.lattice_invariant_euler_products.table_performance"><code class="docutils literal notranslate"><span class="pre">table_performance()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure"><code class="docutils literal notranslate"><span class="pre">ComponentStructure</span></code></a><ul>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km"><code class="docutils literal notranslate"><span class="pre">ComponentStructure.get_CA_Km()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H"><code class="docutils literal notranslate"><span class="pre">ComponentStructure.get_CA_Km_F_sur_H()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure.get_L_values"><code class="docutils literal notranslate"><span class="pre">ComponentStructure.get_L_values()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure.get_gamma"><code class="docutils literal notranslate"><span class="pre">ComponentStructure.get_gamma()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.ComponentStructure.getr_A_Kt"><code class="docutils literal notranslate"><span class="pre">ComponentStructure.getr_A_Kt()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.LatticeInvariantClasses"><code class="docutils literal notranslate"><span class="pre">LatticeInvariantClasses</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.check_get_L_values"><code class="docutils literal notranslate"><span class="pre">check_get_L_values()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.get_beta"><code class="docutils literal notranslate"><span class="pre">get_beta()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.get_beta_rough"><code class="docutils literal notranslate"><span class="pre">get_beta_rough()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.get_vector_bf"><code class="docutils literal notranslate"><span class="pre">get_vector_bf()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.get_vector_sf"><code class="docutils literal notranslate"><span class="pre">get_vector_sf()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.laTeX_for_number"><code class="docutils literal notranslate"><span class="pre">laTeX_for_number()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.nb_common_digits"><code class="docutils literal notranslate"><span class="pre">nb_common_digits()</span></code></a></li>
+<li><a class="reference internal" href="#euler_product.utils_euler_product.sub_group_generated"><code class="docutils literal notranslate"><span class="pre">sub_group_generated()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="../tutorial/LoeschianConstant-NS-04-MCOMP.html"
-                          title="previous chapter">Fast multi-precision computation of some Euler products</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -336,9 +831,6 @@ sage: table_performance(1, 5)</p>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="../tutorial/LoeschianConstant-NS-04-MCOMP.html" title="Fast multi-precision computation of some Euler products"
-             >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">sage-euler-product sage package 0.2 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">API Documentation</a></li> 
       </ul>
