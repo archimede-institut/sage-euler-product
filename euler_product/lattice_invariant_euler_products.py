@@ -41,21 +41,13 @@ from sage.functions.log import exp
 from sage.functions.log import log
 from sage.misc.misc_c import prod
 from sage.misc.flatten import flatten 
-from sage.arith.misc import euler_phi
-from sage.arith.misc import gcd
-from sage.arith.misc import sigma
-from sage.arith.misc import divisors
 from sage.arith.misc import prime_factors
 from sage.arith.misc import prime_divisors
-from sage.arith.functions import lcm
 from sage.rings.integer import Integer
 from sage.rings.real_mpfi import RealIntervalField  
-from sage.rings.complex_interval_field import ComplexIntervalField
-from sage.rings.real_mpfr import  RealField
-from sage.rings.complex_mpfr import ComplexField
-from sage.modular.dirichlet import DirichletGroup
+from sage.rings.real_mpfr import RealField
 from euler_product.utils_euler_product import ComponentStructure
-from euler_product.utils_euler_product import get_beta, get_BetaRough
+from euler_product.utils_euler_product import get_beta
 from euler_product.utils_euler_product import laTeX_for_number
 from euler_product.utils_euler_product import nb_common_digits
 
@@ -70,7 +62,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     We compute directly what happens for primes < big_p.
     
     ... WARNING ...
-        Don't try me and avoid to select a prime number for bigP.
+        Don't try me and avoid to select a prime number for big_p.
     
     INPUT:
 
@@ -158,7 +150,7 @@ GetVs(12, 2, 100, 110)
                             for i in range(0, structure.nb_class)])
     if verbose >= 2:
         print(" done.")
-    logerr = R(cte*(1 + big_p/(big_m*s))/big_p**(s*big_m))
+    log_err = R(cte*(1 + big_p/(big_m*s))/big_p**(s*big_m))
     ##
     if verbose >= 2:
         print("done: we use bigM =", big_m, ".") 
@@ -171,38 +163,34 @@ GetVs(12, 2, 100, 110)
                         set(prime_factors(w)).issubset(allowed_primes),
                         range(1, big_m))]
     ## 1 is indeed in my_indices.
-    CAKm = structure.get_CA_Km(my_indices)
-    
+    CAKm = structure.get_CA_Km(my_indices=my_indices)
     if verbose >= 2:
         print("done: there are", len(my_indices), "summands.")
-
-    Vsapprox = [R(0) for ind_A in range(0, structure.nb_class)]
-
+    vs_approx = [R(0)] * structure.nb_class 
     for m in my_indices:
         # print(q, m, s, bigP, prec)
         aux = structure.get_gamma(m, s, big_p, prec)
-        #print(q, m, s, bigP, prec, aux)
-        for ind_A in range(0, structure.nb_class):
+        for ind_a in range(0, structure.nb_class):
             for ind_k in range(0, structure.nb_class):
-                Vsapprox[ind_A] += aux[ind_k]*CAKm[ind_A, ind_k, m]/m 
-
+                vs_approx[ind_a] += aux[ind_k]*CAKm[ind_a, ind_k, m]/m 
     ## We now have to get the Euler products:
-    eulerProds = tuple([(R(euler_prod_ini[i] * exp(Vsapprox[i]-logerr)).lower(), R(euler_prod_ini[i] * exp(Vsapprox[i]+logerr)).upper())
-                        for i in range(0, structure.nb_class)])
+    eulerProds = ((R(euler_prod_ini[i] * exp(vs_approx[i]-log_err)).lower(), 
+                   R(euler_prod_ini[i] * exp(vs_approx[i]+log_err)).upper())
+                        for i in range(0, structure.nb_class))
     ##
     if verbose >= 2:
         for i in range(0, structure.nb_class):
-            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])
+            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0]) # type: ignore
             print("-------------------")
             print("For p+" + str(q) + "ZZ in",  structure.the_Class_tuple[i])
             print("the product of 1/(1-p^{-"+ str(s) + "}) is between")
-            print(eulerProds[i][0])
+            print(eulerProds[i][0]) # type: ignore
             print("and")
-            print(eulerProds[i][1])
+            print(eulerProds[i][1]) # type: ignore
             if with_laTeX == 1:
                 print("LaTeX format:")
                 how_many = min(nb_decimals, nb_digits)
-                print(laTeX_for_number(eulerProds[i][0], how_many, 10))
+                print(laTeX_for_number(eulerProds[i][0], how_many, 10)) # type: ignore
             print("(Obtained: ", nb_digits, " correct decimal digits)")
     ##
     end = timer()
@@ -212,7 +200,7 @@ GetVs(12, 2, 100, 110)
     # print(my_indices)
     if verbose == -1:
         return([big_p, structure.phi_q, len(my_indices), structure.nb_class, big_m, end-start,
-                -floor(log(eulerProds[0][1] - eulerProds[0][0])/log(10))])
+                -floor(log(eulerProds[0][1] - eulerProds[0][0])/log(10))]) # type: ignore
     else:
         return structure.the_Class_tuple, eulerProds
     
@@ -276,7 +264,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     if verbose >= 2:
         sys.stdout.write("Computing the structural invariants ... ")
     ##
-    structure = ComponentStructure(q)
+    structure = ComponentStructure(q=q)
     # (theSGTuple, theClassTuple, nb_classes, theExponent,
     # phi_q, characterGroup, invertibles, invariantCharacters) = structure
     ##
@@ -333,16 +321,16 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     #for i in range(0, structure.nb_class):
     #    prod_list.append([R(F(1/Integer(p)**s) / H(1/Integer(p)**s))
     #                                       for p in filter(lambda w: (w in Primes())
-    #                                                        and (w%q in structure.the_Class_tuple[i]),
-    #                                                        range(2, big_p))])
+    #                                       and (w%q in structure.the_Class_tuple[i]),
+    #                                       range(2, big_p))])
     #eulerProdIni = tuple(prod(flatten(prod_list)))
     
     eulerProdIni = tuple(prod(flatten([1, [R(F(1/Integer(p)**s) / H(1/Integer(p)**s))
-                                            for p in filter(lambda w: (w in Primes())
-                                                            and (w%q in structure.the_Class_tuple[i]),
-                                                            range(2, big_p))]])) for i in range(0, structure.nb_class))
+                                for p in filter(lambda w: (w in Primes())
+                                                and (w%q in structure.the_Class_tuple[i]),
+                                                range(2, big_p))]])) 
+                            for i in range(0, structure.nb_class))
     ##
-    
     if verbose >= 2:
         print(" done.")
     #############
@@ -359,12 +347,11 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     ## The main loop in m:
     for mm in range(my_delta, big_m+1):
         aux = structure.get_gamma(mm, s, big_p, prec)
-        for ind_A in range(0, structure.nb_class):
-            for ind_K in range(0, structure.nb_class):
-                logZs_approx[ind_A] += aux[ind_K] * CAKmF_sur_H[ind_A, ind_K, mm]/mm
+        for ind_a in range(0, structure.nb_class):
+            for ind_k in range(0, structure.nb_class):
+                logZs_approx[ind_a] += aux[ind_k] * CAKmF_sur_H[ind_a, ind_k, mm]/mm
     ## End of the main loop in m
     #######################################
-    
     ## We now have to complete the Euler products:
     eulerProds = tuple([(R(eulerProdIni[i] * exp(logZs_approx[i] - log_err)).lower(),
                         R(eulerProdIni[i] * exp(logZs_approx[i] + log_err)).upper())
@@ -389,7 +376,6 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
                 how_many = min(nb_decimals, nb_digits)
                 print(laTeX_for_number(eulerProds[i][0], how_many, 10))
             print("(Obtained: ", nb_digits, " correct decimal digits)")
-
     end = timer()
     if verbose >= 1:
         print("Time taken: ", end - start, "seconds.")
@@ -430,8 +416,8 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
             sys.stdout.write(str(q) + " ")
             sys.stdout.flush()
             aux = get_vs(q, 2, nb_decimals, big_p, -1)
-            sys.stdout.write(str(aux[6]) + " digits for the first product\n")
-            aux[5] = ceil(aux[5] * 1000/ref_time)
+            sys.stdout.write(str(aux[6]) + " digits for the first product\n") # type: ignore
+            aux[5] = ceil(aux[5] * 1000/ref_time) # type: ignore
             res[q] = aux
             
     for q in range(min_q, max_q + 1):
