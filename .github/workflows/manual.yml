@@ -1,42 +1,27 @@
----
-name: Manual workflow
-on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: Person to greet
-        default: World
-        required: true
-        type: string
-before_script:
-  - export MAKEFLAGS="-j2"
+name: documentation
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: write
+
 jobs:
-  image: sagemath/sagemath:latest
-  when: manual
-  artifacts:
-    paths:
-      - htmlcov/
-  script:
-    - sudo apt update
-    - echo 'debconf debconf/frontend select Noninteractive' | sudo
-      debconf-set-selections
-    - sudo apt-get install -qy
-    - sudo apt install -qy texlive texlive-latex-extra texlive-luatex
-      texlive-fonts-extra pdf2svg
-    - sage -pip install pytimeparse roman
-    - sage -pip install .
-    - sage -c 'import sage.env; print(sage.env.SAGE_VERSION)'
-    - sage -python -V
-    - lualatex --version
-    - pdflatex --version
-    - convert --version
-    - sage -c 'import euler_prod
-    - export DIRECTORY=`pwd`
-    - cd
-    - sage -t --force-lib --long --show-skipped ${DIRECTORY}
-    - cd ${DIRECTORY}/doc && sage -sh -c "make html"
-    - sage -pip install -e .[doc]
-    - sage -python setup.py build_sphinx
-  steps:
-    - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          pip install sphinx sphinx_rtd_theme myst_parser
+      - name: Sphinx build
+        run: |
+          sphinx-build doc _build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: _build/
+          force_orphan: true
