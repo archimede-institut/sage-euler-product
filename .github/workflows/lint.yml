@@ -1,49 +1,27 @@
 name: Lint
-
-on: 
-  push:
-    branches:
-      - master
-      - develop
-  pull_request: 
-  merge_group:
+on:
+  push: { branches: [ "main" ] }
+  pull_request: { branches: [ "main" ] }
 
 concurrency:
-  # Cancel previous runs of this workflow for the same branch
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: lint-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   lint:
-    name: Lint
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-
-    - name: Merge CI fixes from sagemath/sage
-      run: |
-        .ci/merge-fixes.sh
-      env:
-        GH_TOKEN: ${{ github.token }}
-
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
-
-    - name: Install dependencies
-      id: deps
-      run: pip install tox
-
-    - name: Code style check with pycodestyle
-      if: (success() || failure()) && steps.deps.outcome == 'success'
-      run: tox -e pycodestyle-minimal
-
-    - name: Code style check with relint
-      if: (success() || failure()) && steps.deps.outcome == 'success'
-      run: tox -e relint -- src/sage/
-
-    - name: Validate docstring markup as RST
-      if: (success() || failure()) && steps.deps.outcome == 'success'
-      run: tox -e rst
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with: { miniforge-variant: "Mambaforge", miniforge-version: "latest" }
+      - name: Install dependencies
+        shell: bash -l {0}
+        run: |
+          mamba install -y codespell pycodestyle
+      - name: Run codespell
+        shell: bash -l {0}
+        run: codespell `git ls-files`
+      - name: Run pycodestyle
+        shell: bash -l {0}
+        # We currently only check for some warnings. We should enable & fix more of them.
+        run: pycodestyle --select=W2,W3 euler_product/
