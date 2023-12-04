@@ -77,8 +77,8 @@ and correspondingly :math:`\zeta_P(s)=\prod_{p\ge P}(1-1/p^s)^{-1}`.
 Given :math:`K` a subgroup of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`,
 we denote by :math:`K^\perp` the subgroup of Dirichlet characters
 modulo :math:`q` that take the value 1 on :math:`K`. When :math:`s` is a
-real number, the number :math:`\prod_{\chi\in
-  K^\perp}L_P(s,\chi)` is indeed a positive real number because, when
+real number, the number :math:`\prod_{\chi\in K^\perp}L_P(s,\chi)` 
+is indeed a positive real number because, when
 :math:`\chi` belongs to :math:`K^\perp`, so does
 :math:`\overline{\chi}`.
 
