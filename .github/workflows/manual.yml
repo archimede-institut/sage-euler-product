@@ -10,20 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
-      - name: Install dependencies
+      - uses: conda-incubator/setup-miniconda@v3
+        with: { miniforge-variant: "Mambaforge", miniforge-version: "latest", python-version: "3.10" }
+      - name: install dependencies
+        shell: bash -l {0}
         run: |
-          pip install --upgrade pip
-          pip install sphinx sphinx_rtd_theme myst_parser
-          pip install sagelib
-      - name: install euler_product
+          mamba env update --quiet -n test -f environment.yml
+          mamba env update --quiet -n test -f doc/environment.yml
+          conda list
+      - name: install sage-euler-product
+        shell: bash -l {0}
         run: |
-          pip install -e  . 
-      - name: Sphinx build
+          pip install --no-index .        
+      - name: build documentation
+        shell: bash -l {0}
         run: |
-          pip install --upgrade pip
-          pip install six
-          sphinx-build doc _build
+          sphinx-build -b html -n doc html/sage-euler-product --color -a -E -W
+          touch html/sage-euler-product/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
