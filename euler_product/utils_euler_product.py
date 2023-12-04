@@ -656,13 +656,13 @@ def check_get_L_values(q, m, s, big_p, prec):
         sage: from euler_product.utils_euler_product import check_get_L_values
         sage: check_get_L_values(30, 1, 2, 200, 212)
         ([+infinity .. +infinity],
-         [.. NaN ..] + [.. NaN ..]*I,
-         [.. NaN ..] + [.. NaN ..]*I,
-         [.. NaN ..] + [.. NaN ..]*I,
-         [.. NaN ..] + [.. NaN ..]*I,
-         [.. NaN ..] + [.. NaN ..]*I,
-         [.. NaN ..] + [.. NaN ..]*I,
-         [.. NaN ..] + [.. NaN ..]*I)
+        [.. NaN ..] + [.. NaN ..]*I,
+        [.. NaN ..] + [.. NaN ..]*I,
+        [.. NaN ..] + [.. NaN ..]*I,
+        [.. NaN ..] + [.. NaN ..]*I,
+        [.. NaN ..] + [.. NaN ..]*I,
+        [.. NaN ..] + [.. NaN ..]*I,
+        [.. NaN ..] + [.. NaN ..]*I)
          
     """
     structure = ComponentStructure(q)
