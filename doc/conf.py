@@ -4,7 +4,7 @@ import sage_docbuild.conf
 
 project = 'sage-euler-product'
 copyright = '2023-2024, the sage-euler-product authors'
-author = 'the sage-euler-productauthors'
+author = 'the sage-euler-product authors'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -67,10 +67,10 @@ if html_css_files != ["custom-furo.css"]:
 html_css_files = ["https://doc.sagemath.org/html/en/reference/_static/custom-furo.css"]
 
 # There is no surface-dynamics logo yet.
-html_theme_options["light_logo"] = html_theme_options["dark_logo"] = "logo.svg"
+html_theme_options["light_logo"] = html_theme_options["dark_logo"] = "nntdm-small.jpg"
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "sage-eulerproductdoc"
+htmlhelp_basename = "sage-euler-productdoc"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
