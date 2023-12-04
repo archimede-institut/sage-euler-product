@@ -23,7 +23,6 @@ Documentation
 
    reference/api
 
-   tutorial/credits
 
 
 Indices and tables
