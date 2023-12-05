@@ -486,7 +486,6 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
             \end{aligned}
         \end{aligned}
 
-   *
 
 We deduce this Corollary from Theorem `Theorem 2 <#PM1>`__ by selecting
 the parameters :math:`q=8`, :math:`\mathcal{A}=\{1\}`,
@@ -525,17 +524,17 @@ digits), see the implementation notes at the end of this paper.
    .. math::
 
       \prod_{p\equiv 1[8]}\frac{p(p-8)}{(p-4)^2}
-          =
-          % (1/x)*(1/x-8)/(1/x-4)^2 = (1-8*x)/(1-8*x+16*x^2)
-          %% 0.88307
-          %% 
-         ll=RR(0.883071004743946671417834299003108534676888834880973470719295159395211946990656596885799383286037916462)
-          \begin{aligned}[t]
-            0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768
-          \\&88834\,88097
-          \,34707\,19295\,15939\,52119\,46990\,65659
-          \\&68857\,99383\,28603\,79164\cdots
-          \end{aligned}
+      =
+      % (1/x)*(1/x-8)/(1/x-4)^2 = (1-8*x)/(1-8*x+16*x^2)
+      %% 0.88307
+      %% 
+      ll=RR(0.883071004743946671417834299003108534676888834880973470719295159395211946990656596885799383286037916462)
+      \begin{aligned}[t]
+      0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768
+      \\&88834\,88097
+      \,34707\,19295\,15939\,52119\,46990\,65659
+      \\&68857\,99383\,28603\,79164\cdots
+      \end{aligned}
 
    As a consequence Lal’s constant satisfies
 
@@ -559,7 +558,6 @@ digits), see the implementation notes at the end of this paper.
      % *pi^4/2^7/(log(1+sqrt(2)))^2), 100,10)
      \end{aligned}
 
-   *
 
 We deduce the first value given in this Corollary by using
 Theorem `Theorem 2 <#PM1>`__ with the parameters :math:`q=8`,
@@ -611,7 +609,7 @@ power.
 
 .. container:: cor
 
-   **Corollary 12**. *Let :math:`\mathscr{A}_0` be the subset of
+   **Corollary 12**. Let :math:`\mathscr{A}_0` be the subset of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` consisting of all the
    multiplicative generators of :math:`G`. Assume :math:`q` is such that
    such an :math:`\mathscr{A}_0` is not empty. For any real parameter
@@ -627,13 +625,13 @@ power.
 
    where :math:`m|q^\infty` means that all the prime factors of
    :math:`m` divide :math:`q` and where
-   :math:`e(m,q,S)=\frac{|S|\varphi(q/|S|)}{m\varphi(q)}`.*
+   :math:`e(m,q,S)=\frac{|S|\varphi(q/|S|)}{m\varphi(q)}`.
 
 .. container:: proof
 
    *Proof.* Indeed, since :math:`\mathscr{A}_0` generates :math:`G`, the
    only index :math:`t` in `[defCAKkbiscirc] <#defCAKkbiscirc>`__ is
-   :math:`t=1`. Hence, only :math:`L=G` is possible. ◻
+   :math:`t=1`. Hence, only :math:`L=G` is possible. 
 
 Thanks
 ------
@@ -677,7 +675,7 @@ subgroup of :math:`G`. Let us first note a simple property.
 
    *Proof.* We can assume that :math:`L=(\mathbb{Z}/\ell\mathbb{Z}, +)`.
    For each :math:`d|\ell`, the unique subgroup of order :math:`d` is
-   :math:`\{(\ell/d)n, 0\le n\le d-1\}`. ◻
+   :math:`\{(\ell/d)n, 0\le n\le d-1\}`. 
 
 Here is the fundamental property satisfied by these coefficients.
 
@@ -694,7 +692,7 @@ Here is the fundamental property satisfied by these coefficients.
       K^\perp}}
       \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
 
-   *
+
 
 .. container:: proof
 
@@ -736,12 +734,12 @@ Here is the fundamental property satisfied by these coefficients.
       =\sum_{\substack{ab=\ell,\\B^{[b]}=\langle{A}\rangle{}}}
       \sum_{t|b}\mu(t)=1\!\!\!1_{B=\langle{A}\rangle{}},
 
-      concluding the proof . ◻
+   concluding the proof . 
 
 .. container:: cor
    :name: life
 
-   **Corollary 15**. *For any prime :math:`p`, any positive real number
+   **Corollary 15**. For any prime :math:`p`, any positive real number
    :math:`s` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
@@ -755,7 +753,6 @@ Here is the fundamental property satisfied by these coefficients.
       1&\text{otherwise.}
       \end{cases}
 
-   *
 
 .. container:: proof
 
@@ -790,7 +787,7 @@ Here is the fundamental property satisfied by these coefficients.
    :name: simpi
 
    **Lemma 16**. *If :math:`m` has a prime factor that does not divide
-   :math:`\varphi(q)`, we have :math:`C_{\mathscr{A}}(K,m,1-X)=0`.*
+   :math:`\varphi(q)`, we have :math:`C_{\mathscr{A}}(K,m,1-X)=0`.
 
 .. container:: proof
 
@@ -839,18 +836,17 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: thm
    :name: mainspe
 
-   **Theorem 18**. *For every :math:`s>1` and every :math:`P\ge2`, we
+   **Theorem 18**. For every :math:`s>1` and every :math:`P\ge2`, we
    have
 
    .. math::
 
       \zeta_P(s;q,\mathcal{A})
-          =
-          \prod_{\substack{p+q\mathbb{Z}\in\mathcal{A},\\ p\ge P}}(1-p^{-s})^{-1}
-          = \prod_{m\ge1}\prod_{K\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^\perp}L_P(ms,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,1-X)}/{m}}.
+      =
+      \prod_{\substack{p+q\mathbb{Z}\in\mathcal{A},\\ p\ge P}}(1-p^{-s})^{-1}
+      = \prod_{m\ge1}\prod_{K\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^\perp}L_P(ms,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,1-X)}/{m}}.
 
-   *
 
 .. container:: proof
 
@@ -860,7 +856,7 @@ Here is the fundamental property satisfied by these coefficients.
    :math:`s>1` and the bounds :math:`|C_{\mathscr{A}}(K,k)/k|\le |G|`,
    as well as :math:`|\mathscr{G}|\le |G|`. This last bound follows from
    the fact that there are at most as many cyclic subgroups as there are
-   possible generators. ◻
+   possible generators. 
 
 .. _proof-of-theorem-pm1-in-general:
 
@@ -875,7 +871,7 @@ having real numbers for coefficients.
 .. container:: lem
    :name: Wittpoly
 
-   **Lemma 19**. *Let
+   **Lemma 19**. Let
    :math:`F(t) = 1+a_1 t+\ldots+a_{\delta}t^{\delta} \in \mathbb{R}[t]`
    be a polynomial of degree :math:`\delta`. Let
    :math:`\alpha_{1},\ldots,\alpha_{\delta}` be the inverses of its
@@ -905,7 +901,7 @@ having real numbers for coefficients.
       \label{Fhatb}
       F(t)=\prod_{j=1}^{\infty}(1-t^{j})^{b_{F}(j)}
 
-   where the convergence is uniform in the given segment.*
+   where the convergence is uniform in the given segment.
 
 .. container:: proof
 
@@ -917,7 +913,7 @@ having real numbers for coefficients.
    .. math::
 
       \frac{tF'(t)}{F(t)}=\sum_i\frac{\alpha_i t}{1-\alpha_it}
-          =\sum_{k\ge1}s_F(k)t^k.
+      =\sum_{k\ge1}s_F(k)t^k.
 
    This series is absolutely convergent in any disc
    :math:`|t|\le b<1/\beta` where :math:`\beta=\max_j(1/|\alpha_j|)`. We
@@ -925,9 +921,11 @@ having real numbers for coefficients.
    via `[bfk] <#bfk>`__ in a disc of radius :math:`b<1/\beta`. After
    some shuffling of the terms, we reach the expression
 
-   .. math:: \frac{tF'(t)}{F(t)}=\sum_{j\ge1}b_F(j)\frac{jt^j}{1-t^j}.
+   .. math:: 
+ 
+      \frac{tF'(t)}{F(t)}=\sum_{j\ge1}b_F(j)\frac{jt^j}{1-t^j}.
 
-   The lemma follows readily by integrating the above relation. ◻
+   The lemma follows readily by integrating the above relation.
 
 How does the mathematician E. Witt enter the scene? In the paper
 :raw-latex:`\cite{Witt*37}` on Lie algebras, Witt produced in equation
@@ -937,14 +935,13 @@ expansion.
 .. container:: lem
    :name: apriorimaj
 
-   **Lemma 20**. *We use the hypotheses and notation of
+   **Lemma 20**. We use the hypotheses and notation of
    Lemma *\ `Lemma 19 <#Wittpoly>`__\ *. Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
    .. math:: |b_F(k)|\le2\deg F \cdot \beta^k/k.
 
-   *
 
 .. container:: proof
 
@@ -961,7 +958,6 @@ expansion.
          \le 2\deg F\frac{\beta^k}{k}.\qedhere
        \end{aligned}
 
-    ◻
 
 There are numerous easy upper estimates for the inverse of the modulus
 of all the roots of :math:`F(t)` in terms of its coefficients. Here is a
@@ -973,7 +969,7 @@ simplistic one.
    **Lemma 21**. *Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
    polynomial of degree :math:`\delta`. Let :math:`\rho` be one of its
    roots. Then either :math:`|\rho|\ge 1` or
-   :math:`1/|\rho|\le |a_1|+|a_2|+\ldots+|a_\delta|`.*
+   :math:`1/|\rho|\le |a_1|+|a_2|+\ldots+|a_\delta|`.
 
 .. container:: proof
 
@@ -982,17 +978,17 @@ simplistic one.
    .. math::
 
       (1/\rho)^\delta =
-          -a_1(1/\rho)^{\delta-1}
-          -a_2(1/\rho)^{\delta-2}-\ldots -a_\delta,
+      -a_1(1/\rho)^{\delta-1}
+      -a_2(1/\rho)^{\delta-2}-\ldots -a_\delta,
 
-   the conclusion follows. ◻
+   the conclusion follows.
 
 .. container:: lem
    :name: boundedt
 
-   **Lemma 22**. *The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
+   **Lemma 22**. The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
    where :math:`\mathcal{L}=\{L\in
-           \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
+   \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
    depends only on :math:`\gcd(t,\varphi(q))`.*
 
 .. container:: proof
@@ -1005,7 +1001,7 @@ simplistic one.
    :math:`t`, i.e. :math:`r_0(t)=r_0(t/p')`: the map
    :math:`x\mapsto x^{p'}` is one-to-one in :math:`L`.
 
-   The lemma is an immediate consequence of these two remarks. ◻
+   The lemma is an immediate consequence of these two remarks.
 
 .. container:: proof
 
@@ -1030,9 +1026,9 @@ simplistic one.
    .. math::
 
       \label{tailJ}
-          \sum_{j\ge J+1}|t^j||b_F(j)-b_H(j)|
-          \le
-          4\max(\deg F,\deg H)\frac{|t\beta|^{J+1}}{(1-|t\beta|)(J+1)},
+      \sum_{j\ge J+1}|t^j||b_F(j)-b_H(j)|
+      \le
+      4\max(\deg F,\deg H)\frac{|t\beta|^{J+1}}{(1-|t\beta|)(J+1)},
 
    as soon as :math:`|t|<1/\beta`. We thus have
 
@@ -1049,23 +1045,23 @@ simplistic one.
    .. math::
 
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-          =
-          \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\prod_{\Delta\le j\le J}(1-p^{-js})^{b_F(j)-b_H(j)}\times I_2,
+      =
+      \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\prod_{\Delta\le j\le J}(1-p^{-js})^{b_F(j)-b_H(j)}\times I_2,
 
    where :math:`I_2` satisfies
 
    .. math::
 
       \begin{aligned}
-          |\log I_2|
-          &\le
-          4\max(\deg F,\deg H)\sum_{p\ge P}\frac{\beta^{J+1}}{1-\beta/P^s}\frac{1}{(J+1)p^{(J+1)s}}
-          \\&\le
-          \frac{4\max(\deg F,\deg H)\beta^{J+1}}{(1-\beta/P^s)(J+1)}\biggl(
-          \frac{1}{P^{(J+1)s}}+\int_{P}^{\infty}\frac{dt}{t^{(J+1)s}}\biggr)
-          \\&\le
-        \frac{4\max(\deg F,\deg H)
-        (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),\end{aligned}
+      \log I_2|
+      &\le
+      4\max(\deg F,\deg H)\sum_{p\ge P}\frac{\beta^{J+1}}{1-\beta/P^s}\frac{1}{(J+1)p^{(J+1)s}}
+      \\&\le
+      \frac{4\max(\deg F,\deg H)\beta^{J+1}}{(1-\beta/P^s)(J+1)}\biggl(
+      \frac{1}{P^{(J+1)s}}+\int_{P}^{\infty}\frac{dt}{t^{(J+1)s}}\biggr)
+      \\&\le
+      \frac{4\max(\deg F,\deg H)
+      (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),\end{aligned}
 
    since :math:`P\ge2` and :math:`J\ge3`. Letting :math:`J` go to
    infinity, we see that when :math:`P^s>\beta` and :math:`s>1/\Delta`,
@@ -1073,10 +1069,10 @@ simplistic one.
    .. math::
 
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-        =
-        \prod_{ j\ge \Delta}\prod_{\substack{p\ge P,\\
-            p+q\mathbb{Z}\in\mathcal{A}}}(1-p^{-js})^{b_F(j)-b_H(j)}=
-        \prod_{ j\ge 2}\zeta_P(js;q,\mathscr{A})^{b_H(j)-b_F(j)}
+      =
+      \prod_{ j\ge \Delta}\prod_{\substack{p\ge P,\\
+      p+q\mathbb{Z}\in\mathcal{A}}}(1-p^{-js})^{b_F(j)-b_H(j)}=
+      \prod_{ j\ge 2}\zeta_P(js;q,\mathscr{A})^{b_H(j)-b_F(j)}
 
    in the notation of Theorem `Theorem 18 <#mainspe>`__. We use this
    theorem to infer that
@@ -1084,8 +1080,8 @@ simplistic one.
    .. math::
 
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-        =\prod_{ j\ge \Delta}\prod_{m\ge1}\prod_{K\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^\perp}L_P(mjs,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,1-X)}{m}(b_H(j)-b_F(j))}.
+      =\prod_{ j\ge \Delta}\prod_{m\ge1}\prod_{K\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^\perp}L_P(mjs,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,1-X)}{m}(b_H(j)-b_F(j))}.
 
    Notice that we have :math:`s_H(j)-s_F(j)=0` (and hence
    :math:`b_H(j)-b_F(j)=0`) when :math:`j<\Delta` by our assumption on
@@ -1100,7 +1096,7 @@ simplistic one.
    .. math::
 
       n\sum_{jm=n}\frac{C_{\mathscr{A}}(K,m,1-X)}{m}(b_H(j)-b_F(j))
-        =\sum_{td=n}r(t)\bigl(s_{H}(d)-s_F(d)\bigr).
+      =\sum_{td=n}r(t)\bigl(s_{H}(d)-s_F(d)\bigr).
 
    We replace :math:`r(t)` by its value to conclude that this sum is
    :math:`C_{\mathscr{A}}(K,m,F/H)`, as defined
@@ -1109,9 +1105,9 @@ simplistic one.
    .. math::
 
       \label{aux}
-        \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-        =\prod_{ n\ge \Delta}\prod_{K\in\mathscr{G}}
-        \biggl(\prod_{\chi\in K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}.
+      \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
+      =\prod_{ n\ge \Delta}\prod_{K\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}.
 
    The final task is to control the tail of this product, but prior to
    that, we change the variable :math:`n` in `[aux] <#aux>`__ in
@@ -1121,33 +1117,31 @@ simplistic one.
    .. math::
 
       \begin{aligned}
-        \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
-        \biggl(&\prod_{\chi\in
-        K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
-        \\&\le \sum_{m\ge M+1}\sum_{K\in\mathscr{G}}\frac{|C_{\mathscr{A}}(K,m,F/H)|}{m}
-        |G/K|\frac{ms-1+P}{P^{ms}}
-        \\&\le \sum_{m\ge M+1}
-        \sum_{K\in\mathscr{G}}\sum_{t|m}\mu^2(t)|\mathscr{G}|
-        (\deg F+\deg H)\beta^{m/t}
-        \frac{ms-1+P}{mP^{ms}}
-        \\&\le (\deg F+\deg H)|\mathscr{G}|^2
-        \sum_{m\ge M+1}
-        \frac{\beta^m}{1-(1/\beta)}
-        \frac{s+P}{P^{ms}}
+      \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
+      \biggl(&\prod_{\chi\in
+      K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
+      \\&\le \sum_{m\ge M+1}\sum_{K\in\mathscr{G}}\frac{|C_{\mathscr{A}}(K,m,F/H)|}{m}
+      |G/K|\frac{ms-1+P}{P^{ms}}
+      \\&\le \sum_{m\ge M+1}
+      \sum_{K\in\mathscr{G}}\sum_{t|m}\mu^2(t)|\mathscr{G}|
+      (\deg F+\deg H)\beta^{m/t}
+      \frac{ms-1+P}{mP^{ms}}
+      \\&\le (\deg F+\deg H)|\mathscr{G}|^2
+      \sum_{m\ge M+1}
+      \frac{\beta^m}{1-(1/\beta)}
+      \frac{s+P}{P^{ms}}
       % \end{align*}
       % We swiftly simplify this bound in
       % \begin{align*}
       %   \pm\log\prod_{ n\ge N+1}\prod_{K\in\mathscr{G}}
       %   \biggl(&\prod_{\chi\in
       %            K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}
-        \\&\le (\deg F+\deg H)|\mathscr{G}|^2
-        \frac{\beta(s+P)}{\beta-1}\frac{1}{1-(\beta/P^s)}
-        \biggl(\frac{\beta}{P^s}\biggr)^{M+1}
-        \\&\le 4(\deg F+\deg H)|\mathscr{G}|^2
-        (s+P)
-        \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{aligned}
-
-    ◻
+      \\&\le (\deg F+\deg H)|\mathscr{G}|^2
+      \frac{\beta(s+P)}{\beta-1}\frac{1}{1-(\beta/P^s)}
+      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}
+      \\&\le 4(\deg F+\deg H)|\mathscr{G}|^2
+      (s+P)
+      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{aligned}
 
 .. _More:
 
