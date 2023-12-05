@@ -226,10 +226,10 @@ Super fast evaluations
 .. container:: cor
    :name: superfast
 
-   **Corollary 8**. *For every positive integer :math:`m`, the constant
+   **Corollary 8**. *For every positive integer :math:`m` , the constant
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor of
-   :math:`m` is coprime with :math:`\varphi(q)`. As a consequence and
-   under the hypotheses of Theorem *\ `Theorem 2 <#PM1>`__\ *with
+   :math:`m` is coprime with :math:`\varphi(q)` . As a consequence and
+   under the hypotheses of Theorem * \ `Theorem 2 <#PM1>`__\ *with
    :math:`\Delta=1`, the products
 
    .. math::
@@ -238,9 +238,9 @@ Super fast evaluations
       p+q\mathbb{Z}\in\mathcal{A}}}\biggl(1-\frac1{p^s}\biggr)
 
 may be computed by :math:`\mathcal{O}((\log D)^{r})` computations of
-:math:`L`-functions to get :math:`D`-decimal digits, where :math:`r` 
-is the number of prime factors of :math:`\varphi(q)`. The implied
-constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q`.*
+:math:`L` -functions to get :math:`D`-decimal digits, where :math:`r` 
+is the number of prime factors of :math:`\varphi(q)` . The implied
+constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q` .
 
 This leads to very fast computations, and we were for instance able to
 produce 100 (resp. 1000, resp. 5000) digits of these products when
