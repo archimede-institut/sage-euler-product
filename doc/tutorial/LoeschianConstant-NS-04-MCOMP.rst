@@ -935,7 +935,7 @@ expansion.
    :name: apriorimaj
 
    **Lemma 20**. We use the hypotheses and notation of
-   Lemma *\ `Lemma 19 <#Wittpoly>`__\ *. Let :math:`\beta\ge2` be larger
+   Lemma *\ `Lemma 19 <#Wittpoly>`\__\* . Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
