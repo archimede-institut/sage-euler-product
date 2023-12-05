@@ -177,8 +177,8 @@ Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
    *Remark 5*. We prove in Lemma `Lemma 22 <#boundedt>`__ that, when
    :math:`K` and :math:`\mathscr{A}` are fixed, the quantity
    :math:`\sum_{\substack{L\in
-           \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
-       \mu(|L|/|K|)` depends only on :math:`\gcd(t,\varphi(q))`.
+   \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
+   \mu(|L|/|K|)` depends only on :math:`\gcd(t,\varphi(q))` .
 
 .. container:: remark
 
