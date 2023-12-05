@@ -226,10 +226,10 @@ Super fast evaluations
 .. container:: cor
    :name: superfast
 
-   **Corollary 8**. *For every positive integer :math:`m` , the constant
+   **Corollary 8**. For every positive integer :math:`m` , the constant
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor of
    :math:`m` is coprime with :math:`\varphi(q)` . As a consequence and
-   under the hypotheses of Theorem * \ `Theorem 2 <#PM1>`__\ *with
+   under the hypotheses of Theorem  \ `Theorem 2 <#PM1>`\__\  with
    :math:`\Delta=1`, the products
 
    .. math::
