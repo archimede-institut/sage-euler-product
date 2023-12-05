@@ -189,25 +189,25 @@ Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
 .. container:: remark
 
    *Remark 7*. There is some redundancy in our formula as a same
-   character :math:`\chi` may appear in several sets :math:`K^\perp`
+   character :math:`\chi` may appear in several sets :math:`K^\perp` 
    (for instance, the principal character appears in all of them).
    Disentangling these contributions leads to a slightly more
    complicated formula. We first have to introduce, for any cyclic
-   subgroup :math:`S`, the subset :math:`S^{\perp\circ}\subset S^\perp`
+   subgroup :math:`S` , the subset :math:`S^{\perp\circ}\subset S^\perp` 
    constituted of those elements that do not belong to any
-   :math:`T^\perp`, for :math:`T\varsubsetneq S`. It can be readily
+   :math:`T^\perp` , for :math:`T\varsubsetneq S`. It can be readily
    checked that any :math:`K^\perp` is the union of
    :math:`S^{\perp\circ}` where :math:`S` ranges the subgroups that are
-   included in :math:`K`. We then define
+   included in :math:`K` . We then define
 
    .. math::
 
       \label{defCAKkbiscirc}
-          C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
-              \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
-          \frac{\varphi(|L|/|S|)}{|G/S|}.
+      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
+      \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
+      \frac{\varphi(|L|/|S|)}{|G/S|}.
 
-   Formula `[exact] <#exact>`__ becomes:
+      Formula `[exact] <#exact>`\_\_ becomes:
 
    .. math::
 
