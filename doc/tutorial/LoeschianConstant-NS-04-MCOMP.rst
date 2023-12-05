@@ -87,7 +87,7 @@ Here is the central theorem of this paper.
 .. container:: thm
    :name: PM1
 
-   **Theorem 2**. *Let :math:`q` be some modulus and :math:`\mathcal{A}`
+   **Theorem 2**. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
    be a lattice-invariant class of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. Let
    :math:`F,H\in \mathbb R[X]` be two polynomials satisfying
