@@ -1004,7 +1004,7 @@ simplistic one.
 
 .. container:: proof
 
-   *Proof of Theorem *\ `Theorem 2 <#PM1>`__\ * .  The proof requires
+   *Proof of Theorem *  `Theorem 2 <#PM1>`__\ * .  The proof requires
    several steps. The very first one is a direct consequence
    of `[Fhatb] <#Fhatb>`__, which leads to the identity
 
