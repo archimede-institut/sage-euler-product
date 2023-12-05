@@ -207,15 +207,15 @@ Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
       \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
       \frac{\varphi(|L|/|S|)}{|G/S|}.
 
-      Formula `[exact] <#exact>`\_\_ becomes:
+   Formula `[exact] <#exact>`\_\_ becomes:
 
    .. math::
 
       \prod_{\substack{p\ge P,\\
-              p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-          = \prod_{m\ge\Delta}\prod_{S\in\mathscr{G}}
-          \biggl(\prod_{\chi\in S^{\perp\circ}}L_P(ms,\chi)
-          \biggr)^{{C^\circ_{\mathscr{A}}(S,m,F/H)}/{m}}
+      p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
+      = \prod_{m\ge\Delta}\prod_{S\in\mathscr{G}}
+      \biggl(\prod_{\chi\in S^{\perp\circ}}L_P(ms,\chi)
+      \biggr)^{{C^\circ_{\mathscr{A}}(S,m,F/H)}/{m}}
 
    and the bound `[fineq] <#fineq>`__ holds to estimate the tail of this
    product, as we only shuffled terms with a fixed index :math:`m`.
@@ -235,12 +235,12 @@ Super fast evaluations
    .. math::
 
       \prod_{\substack{p\ge P,\\
-          p+q\mathbb{Z}\in\mathcal{A}}}\biggl(1-\frac1{p^s}\biggr)
+      p+q\mathbb{Z}\in\mathcal{A}}}\biggl(1-\frac1{p^s}\biggr)
 
-   may be computed by :math:`\mathcal{O}((\log D)^{r})` computations of
-   :math:`L`-functions to get :math:`D`-decimal digits, where :math:`r`
-   is the number of prime factors of :math:`\varphi(q)`. The implied
-   constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q`.*
+may be computed by :math:`\mathcal{O}((\log D)^{r})` computations of
+:math:`L`-functions to get :math:`D`-decimal digits, where :math:`r` 
+is the number of prime factors of :math:`\varphi(q)`. The implied
+constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q`.*
 
 This leads to very fast computations, and we were for instance able to
 produce 100 (resp. 1000, resp. 5000) digits of these products when
@@ -262,10 +262,10 @@ data at the end of this paper.
    of :math:`m` is coprime with :math:`\varphi(q)`. Let us decompose
    :math:`\varphi(q)` in prime factors:
    :math:`\varphi(q)=p_1^{\alpha_1}\cdots
-     p_r^{\alpha_r}`. Any integer :math:`m\le M` such that all its prime
+   p_r^{\alpha_r}`. Any integer :math:`m\le M` such that all its prime
    factors divide :math:`q`, can be written as
    :math:`m=p_1^{\beta_1}\cdots
-     p_r^{\beta_r}` with :math:`\beta_i\le (\log M)/\log p_i` for
+   p_r^{\beta_r}` with :math:`\beta_i\le (\log M)/\log p_i` for
    :math:`i\le r`. In particular, there are at most
    :math:`((\log M)/\log 2)^r` such integers. By `[fineq] <#fineq>`__,
    the contribution of the integers :math:`m>M` to the Euler product to
@@ -529,7 +529,8 @@ digits), see the implementation notes at the end of this paper.
           =
           % (1/x)*(1/x-8)/(1/x-4)^2 = (1-8*x)/(1-8*x+16*x^2)
           %% 0.88307
-          %% ll=RR(0.883071004743946671417834299003108534676888834880973470719295159395211946990656596885799383286037916462)
+          %% 
+         ll=RR(0.883071004743946671417834299003108534676888834880973470719295159395211946990656596885799383286037916462)
           \begin{aligned}[t]
             0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768
           \\&88834\,88097
@@ -541,24 +542,23 @@ digits), see the implementation notes at the end of this paper.
 
    .. math::
 
-      \begin{aligned}
-          \lambda
-          &= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
-            1[8]}\biggl(\frac{p+1}{p-1}\biggr)^4\biggl(1-\frac{8}{p}\biggr)
-          \\&= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
-            1[8]}\biggl(1-\frac{4}{p}\biggr)^2\biggl(\frac{p+1}{p-1}\biggr)^4\prod_{p\equiv
-            1[8]}\frac{p(p-8)}{(p-4)^2}
-            %(1-4*x)^2*(1/x+1)^4/(1/x-1)^4*(1/x)*(1/x-8)/(1/x-4)^2
-          \\&=%0.7922082381
-          \begin{aligned}[t]
-            0.&79220\,82381\,67541\,66877\,54555\,66579\,02410\,11289\,32250\,98622
-            \\&11172\,27973\,45256\,95141\,54944\,12490\,66029\,53883\,98027\,52927\cdots
-          \end{aligned} %%%%
-      % LaTeXForNumber(RR(ll
-      %*
-      % (ss)^2
-      % *pi^4/2^7/(log(1+sqrt(2)))^2), 100,10)
-        \end{aligned}
+     \begin{aligned}
+     \lambda &= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
+     1[8]}\biggl(\frac{p+1}{p-1}\biggr)^4\biggl(1-\frac{8}{p}\biggr)
+     \\&= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
+     1[8]}\biggl(1-\frac{4}{p}\biggr)^2\biggl(\frac{p+1}{p-1}\biggr)^4\prod_{p\equiv
+     1[8]}\frac{p(p-8)}{(p-4)^2}
+     %(1-4*x)^2*(1/x+1)^4/(1/x-1)^4*(1/x)*(1/x-8)/(1/x-4)^2
+     \\&=%0.7922082381
+     \begin{aligned}[t]
+     0.&79220\,82381\,67541\,66877\,54555\,66579\,02410\,11289\,32250\,98622
+     \\&11172\,27973\,45256\,95141\,54944\,12490\,66029\,53883\,98027\,52927\cdots
+     \end{aligned} %%%%
+     % LaTeXForNumber(RR(ll
+     %*
+     % (ss)^2
+     % *pi^4/2^7/(log(1+sqrt(2)))^2), 100,10)
+     \end{aligned}
 
    *
 
@@ -595,7 +595,7 @@ Lemma 3, page 452, by
 .. math::
 
    \label{eq:3}
-     A_\chi= \prod_{p\ge2}\biggl(1+\frac{(\chi(p)-1)p}{(p^2-\chi(p))(p-1)}\biggr),
+   A_\chi= \prod_{p\ge2}\biggl(1+\frac{(\chi(p)-1)p}{(p^2-\chi(p))(p-1)}\biggr),
 
 where :math:`\chi` is a Dirichlet character. Our theory applies only
 when :math:`\chi` is real valued.
@@ -621,10 +621,10 @@ power.
    .. math::
 
       \zeta_P(s;q,\mathscr{A}_0)=
-          \prod_{m|q^\infty}
-          \prod_{S\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^{\perp\circ}}L_P(m s,\chi)
-          \biggr)^{e(m,q,S)},
+      \prod_{m|q^\infty}
+      \prod_{S\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^{\perp\circ}}L_P(m s,\chi)
+      \biggr)^{e(m,q,S)},
 
    where :math:`m|q^\infty` means that all the prime factors of
    :math:`m` divide :math:`q` and where
@@ -659,9 +659,9 @@ in :math:`G^\sharp` and any positive integer :math:`m`, the coefficient
 .. math::
 
    \label{defCAKk}
-     C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)\sum_{\substack{L\in
-         \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
-     \frac{\mu(|L|/|K|)}{|G/K|}
+   C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)\sum_{\substack{L\in
+   \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+   \frac{\mu(|L|/|K|)}{|G/K|}
 
 where :math:`L^{[t]}=\{x^t, x\in L\}`. Notice that it is also a cyclic
 subgroup of :math:`G`. Let us first note a simple property.
@@ -692,8 +692,8 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       \sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ \chi\in
-              K^\perp}}
-          \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
+      K^\perp}}
+      \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
 
    *
 
@@ -705,20 +705,19 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ B^{[h]}\subset
-              K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
+      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ B^{[h]}
+      \subset  K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
 
    Next, we introduce the expression given in `[defCAKk] <#defCAKk>`__,
    shuffle the summations and get
 
    .. math::
 
-      S=
-          \sum_{hm=\ell}
-          \sum_{t|m}\mu(t)\sum_{\substack{L\in
-              \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
-          \sum_{\substack{K\in \mathscr{G},\\ B^{[h]}\subset
-              K}}\mu(|L|/|K|).
+      S= \sum_{hm=\ell}
+      \sum_{t|m}\mu(t)\sum_{\substack{L\in
+      \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+      \sum_{\substack{K\in \mathscr{G},\\ B^{[h]} \subset
+      K}}\mu(|L|/|K|).
 
    By Lemma `Lemma 13 <#cyclic>`__ and the Möbius function
    characteristic property, the last summation vanishes when
@@ -727,20 +726,18 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      S=
-          \sum_{hm=\ell}
-          \sum_{\substack{t|m,\\ B^{[ht]}=\langle{A}\rangle{}}}\mu(t).
+      S= \sum_{hm=\ell}
+      \sum_{\substack{t|m,\\ B^{[ht]}=\langle{A}\rangle{}}}\mu(t).
 
    We continue in a more classical way:
 
    .. math::
 
-      S
-          =
-            \sum_{\substack{ath=\ell,\\B^{[ht]}=\langle{A}\rangle{}}}\mu(t)
-          =\sum_{\substack{ab=\ell,\\B^{[b]}=\langle{A}\rangle{}}}\sum_{t|b}\mu(t)=1\!\!\!1_{B=\langle{A}\rangle{}},
+      S = \sum_{\substack{ath=\ell,\\B^{[ht]}=\langle{A}\rangle{}}}\mu(t)
+      =\sum_{\substack{ab=\ell,\\B^{[b]}=\langle{A}\rangle{}}}
+      \sum_{t|b}\mu(t)=1\!\!\!1_{B=\langle{A}\rangle{}},
 
-   concluding the proof. ◻
+      concluding the proof . ◻
 
 .. container:: cor
    :name: life
@@ -752,12 +749,12 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       \prod_{m\ge1}\prod_{K\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^\perp}\bigl(1-\chi(p)p^{-ms}\bigr)
-          \biggr)^{-C_{\mathscr{A}}(K,m,1-X)/m}=
-          \begin{cases}
-            (1-p^{-s})^{-1}&\text{when $p\in\langle{\mathscr{A}}\rangle{}$,}\\
-            1&\text{otherwise.}
-          \end{cases}
+      \biggl(\prod_{\chi\in K^\perp}\bigl(1-\chi(p)p^{-ms}\bigr)
+      \biggr)^{-C_{\mathscr{A}}(K,m,1-X)/m}=
+      \begin{cases}
+      (1-p^{-s})^{-1}&\text{when $p\in\langle{\mathscr{A}}\rangle{}$,}\\
+      1&\text{otherwise.}
+      \end{cases}
 
    *
 
@@ -769,7 +766,7 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       \exp\sum_{\chi\in K^\perp}\sum_{h\ge1}\frac{\chi(p^h)}{hp^{mhs}}
-          =\prod_{\chi\in K^\perp}\biggl(1-\frac{\chi(p)}{p^{ms}}\biggr)^{-1}.
+      =\prod_{\chi\in K^\perp}\biggl(1-\frac{\chi(p)}{p^{ms}}\biggr)^{-1}.
 
    Since :math:`s` is a positive real number, the right-hand side is
    also positive, and so can be raised to some rational power, say
@@ -781,7 +778,7 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       S(p)=\sum_{m\ge1}\sum_{K\in\mathscr{G}}
-          \sum_{\chi\in K^\perp}\sum_{h\ge1}\frac{\chi(p^h)C_{\mathscr{A}}(K,m,1-X)}{mhp^{mhs}}.
+      \sum_{\chi\in K^\perp}\sum_{h\ge1}\frac{\chi(p^h)C_{\mathscr{A}}(K,m,1-X)}{mhp^{mhs}}.
 
    We set :math:`\ell=mh` and appeal to
    Proposition `Proposition 14 <#funda>`__ to infer that
@@ -818,7 +815,7 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       \bigl|\log \zeta_P(f)\bigr|\le
-          \frac{1+P/(f-1)}{P^{f}}.
+      \frac{1+P/(f-1)}{P^{f}}.
 
    *
 
@@ -829,20 +826,16 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       \log \zeta_P(f)
-          =-\sum_{ p\ge
-              P}\sum_{k\ge1}\frac{1}{k p^{kf}}
+      =-\sum_{ p \ge P}\sum_{k\ge1}\frac{1}{k p^{kf}}
 
-   hence, by using a comparison to an integral, we find that
+      hence, by using a comparison to an integral, we find that
 
    .. math::
 
       \Bigl|\log \zeta_P(f)\Bigr|
-           \le
-           \sum_{n\ge P}\frac{1}{n^f}\le
-           \frac{1}{P^f}+\int_{P}^\infty\frac{dt}{t^f}
-           =\biggl(\frac{f-1}{P}+1\biggr)\frac{1}{(f-1)P^{f-1}}.\qedhere
-
-    ◻
+      \le \sum_{n\ge P}\frac{1}{n^f}\le
+      \frac{1}{P^f}+\int_{P}^\infty\frac{dt}{t^f}
+      =\biggl(\frac{f-1}{P}+1\biggr)\frac{1}{(f-1)P^{f-1}}.\qedhere
 
 .. container:: thm
    :name: mainspe
