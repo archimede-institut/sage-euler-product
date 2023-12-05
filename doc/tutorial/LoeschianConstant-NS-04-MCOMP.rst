@@ -1510,7 +1510,7 @@ required, a value that is on the whole controlled by
       +---------+---------+---------+---------+---------+---------+------+
       | :m      | :mat    | :m      | :math:  | :mat    | :m      | time |
       | ath:`q` | h:`\var | ath:`r` | `\#m's` | h:`|G^\ | ath:`M` | s/10 |
-      |         | phi(q)` |         |         | sharp|` |         |      |
+      |         | `phi(q)` |        |         | `sharp|`|         |      |
       +---------+---------+---------+---------+---------+---------+------+
 
  
@@ -1523,7 +1523,7 @@ required, a value that is on the whole controlled by
       +---------+---------+---------+---------+---------+---------+------+
       | :m      | :mat    | :m      | :math:  | :mat    | :m      | time |
       | ath:`q` | h:`\var | ath:`r` | `\#m's` | h:`|G^\ | ath:`M` | s/10 |
-      |         | phi(q)` |         |         | sharp|` |         |      |
+      |         | `phi(q)` |        |         | `sharp|`|         |      |
       +---------+---------+---------+---------+---------+---------+------+
 
 .. container::
