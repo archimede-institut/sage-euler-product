@@ -378,25 +378,25 @@ Levesque and M. Waldschmidt. In the notation of that paper, they are
 .. math::
 
    \alpha_0^{(3)}
-     =\frac{1}{3^{1/4}\sqrt{2}}\prod_{p\equiv
-       2[3]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}
-     % RR=RealIntervalField(400)
-     % aa=RR(1.41406439089214763756550181907982937990769506939316217503992496242392810699208849945375485850247511419)
-     % LaTeXForNumber(RR(sqrt(aa/2)/3^(1/4)), 100,10)
-     % GetVs(3, 2, 100, 100, 2, 1)
+   =\frac{1}{3^{1/4}\sqrt{2}}\prod_{p\equiv
+   2[3]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}
+   % RR=RealIntervalField(400)
+   % aa=RR(1.41406439089214763756550181907982937990769506939316217503992496242392810699208849945375485850247511419)
+   % LaTeXForNumber(RR(sqrt(aa/2)/3^(1/4)), 100,10)
+   % GetVs(3, 2, 100, 100, 2, 1)
 
 and
 
 .. math::
 
    \label{eq:12}
-     \beta_0=\frac{3^{1/4}\sqrt{\pi}}{2^{5/4}}\frac{\log(2+\sqrt{3})^{1/4}}{\Gamma(1/4)}
-     \prod_{p\equiv
-       5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
-     % aa5=RR(1.04820190360076993683493743489579267348041367449481525810737614495241617157143788235940499088566949682)
-     % aa7=RR(1.02620214683123370070720186696636157236110932131334951481040066496546032939386454192999178263867916092)
-     % aa11=R(1.01177863685033258370511941026733127805840123089520870283595940756150164170456300544421959132980627277)
-     %RR(sqrt(aa5*aa7*aa11*RR(pi))*3^(1/4)/2^(5/4)*(log(2+sqrt(3)))^(1/4)/gamma(1/4))
+   \beta_0=\frac{3^{1/4}\sqrt{\pi}}{2^{5/4}}\frac{\log(2+\sqrt{3})^{1/4}}{\Gamma(1/4)}
+   \prod_{p\equiv
+   5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
+   % aa5=RR(1.04820190360076993683493743489579267348041367449481525810737614495241617157143788235940499088566949682)
+   % aa7=RR(1.02620214683123370070720186696636157236110932131334951481040066496546032939386454192999178263867916092)
+   % aa11=R(1.01177863685033258370511941026733127805840123089520870283595940756150164170456300544421959132980627277)
+   %RR(sqrt(aa5*aa7*aa11*RR(pi))*3^(1/4)/2^(5/4)*(log(2+sqrt(3)))^(1/4)/gamma(1/4))
 
 Both occur in number theory as densities. The number of integers
 :math:`n` of the shape :math:`n=x^2-xy+y^2`, where :math:`x` and
@@ -407,7 +407,7 @@ asymptotically approximated by
 .. math::
 
    \label{eq:1}
-     N(x)=\alpha_0^{(3)}\frac{x(1+o(1))}{\sqrt{\log x}}.
+   N(x)=\alpha_0^{(3)}\frac{x(1+o(1))}{\sqrt{\log x}}.
 
 This motivates our interest in the first constant. The second one arises
 in counting the number of Loeschian numbers that are also sums of two
@@ -452,20 +452,20 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
 .. container:: cor
    :name: sha
 
-   **Corollary 10** (Shanks’ Constant). *We have
+   **Corollary 10** (Shanks’ Constant). We have
 
    .. math::
 
       \prod_{p\equiv
-            1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
-          =\,\begin{aligned}[t]
-            0.&95694\,53478\,51601\,18343\,69670\,57273\,89182\,87531
-            \\&74977\,29139
-            14789\,05432\,60424\,60170\,16444\,88885
-            \\&94814\,40512\,03907\,95084\cdots
-          %% (1-4*x)*(1/x+1)^2/(1/x-1)^2=(1-2*x-7*x^2-4*x^3)/(1-2*x+x^2)
-          %% GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50,2,1)
-            %% ss=RR(0.9569453478516011834369670572738918287531749772913914789054326042460170164448888594814405120390795084312069)
+      1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
+      =\,\begin{aligned}[t]
+      0.&95694\,53478\,51601\,18343\,69670\,57273\,89182\,87531
+      \\&74977\,29139
+      14789\,05432\,60424\,60170\,16444\,88885
+      \\&94814\,40512\,03907\,95084\cdots
+      %% (1-4*x)*(1/x+1)^2/(1/x-1)^2=(1-2*x-7*x^2-4*x^3)/(1-2*x+x^2)
+      %% GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50,2,1)
+      %% ss=RR(0.9569453478516011834369670572738918287531749772913914789054326042460170164448888594814405120390795084312069)
       \end{aligned}
 
    As a consequence Shanks’ constant satisfies
@@ -473,18 +473,18 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
    .. math::
 
       \begin{aligned}
-          I
-          &= \frac{\pi^2}{16\log(1+\sqrt{2})}\prod_{p\equiv
-            1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
-          \\&=\begin{aligned}[t]
-            0.&66974\,09699\,37071\,22053\,89224\,31571\,76440\,66883\,
-            70157\,43648
-            \\& \,24185\,73298\,52284\,52467\,99956\,45714
-            \,72731\,50621\,02143\,59373\cdots
-            % RR=RealIntervalField(1000)
-            % LaTeXForNumber(RR(pi^2/16/log(1+sqrt(2))*ss), 100,8)
-            \end{aligned}
-        \end{aligned}
+      I
+      &= \frac{\pi^2}{16\log(1+\sqrt{2})}\prod_{p\equiv
+      1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
+      \\&=\begin{aligned}[t]
+      0.&66974\,09699\,37071\,22053\,89224\,31571\,76440\,66883\,
+      70157\,43648
+      \\& \,24185\,73298\,52284\,52467\,99956\,45714
+      \,72731\,50621\,02143\,59373\cdots
+      % RR=RealIntervalField(1000)
+      % LaTeXForNumber(RR(pi^2/16/log(1+sqrt(2))*ss), 100,8)
+      \end{aligned}
+      \end{aligned}
 
 
 We deduce this Corollary from Theorem `Theorem 2 <#PM1>`__ by selecting
