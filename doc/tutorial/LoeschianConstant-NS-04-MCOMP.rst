@@ -682,7 +682,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: prop
    :name: funda
 
-   **Proposition 14**. *For any positive integer :math:`\ell`, any prime
+   **Proposition 14**. For any positive integer :math:`\ell`, any prime
    :math:`p` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
@@ -786,7 +786,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: simpi
 
-   **Lemma 16**. *If :math:`m` has a prime factor that does not divide
+   **Lemma 16**. If :math:`m` has a prime factor that does not divide
    :math:`\varphi(q)`, we have :math:`C_{\mathscr{A}}(K,m,1-X)=0`.
 
 .. container:: proof
@@ -806,14 +806,13 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: basic
 
-   **Lemma 17**. *Let :math:`f>1` be a real parameter. We have
+   **Lemma 17**. Let :math:`f>1` be a real parameter. We have
 
    .. math::
 
       \bigl|\log \zeta_P(f)\bigr|\le
       \frac{1+P/(f-1)}{P^{f}}.
 
-   *
 
 .. container:: proof
 
@@ -966,7 +965,7 @@ simplistic one.
 .. container:: lem
    :name: easybeta
 
-   **Lemma 21**. *Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
+   **Lemma 21**. Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
    polynomial of degree :math:`\delta`. Let :math:`\rho` be one of its
    roots. Then either :math:`|\rho|\ge 1` or
    :math:`1/|\rho|\le |a_1|+|a_2|+\ldots+|a_\delta|`.
@@ -989,7 +988,7 @@ simplistic one.
    **Lemma 22**. The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
    where :math:`\mathcal{L}=\{L\in
    \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
-   depends only on :math:`\gcd(t,\varphi(q))`.*
+   depends only on :math:`\gcd(t,\varphi(q))`.
 
 .. container:: proof
 
@@ -1005,7 +1004,7 @@ simplistic one.
 
 .. container:: proof
 
-   *Proof of Theorem *\ `Theorem 2 <#PM1>`__\ *.* The proof requires
+   *Proof of Theorem *\ `Theorem 2 <#PM1>`__\ * .  The proof requires
    several steps. The very first one is a direct consequence
    of `[Fhatb] <#Fhatb>`__, which leads to the identity
 
@@ -1157,7 +1156,7 @@ A formula
 .. container:: lem
    :name: dede
 
-   **Lemma 23**. *Let :math:`q>1` be a modulus. We set :math:`G_0` to be
+   **Lemma 23**. Let :math:`q>1` be a modulus. We set :math:`G_0` to be
    a subgroup of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` and
    :math:`G_0^\perp` be the subgroup of characters that take the value 1
    on :math:`G_0`. For any integer :math:`b`, we define
