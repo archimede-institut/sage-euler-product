@@ -520,7 +520,7 @@ digits), see the implementation notes at the end of this paper.
 
 .. container:: cor
 
-   **Corollary 11** (Lal’s Constant). *We have
+   **Corollary 11** (Lal’s Constant). We have
 
    .. math::
 
