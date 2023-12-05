@@ -935,7 +935,7 @@ expansion.
    :name: apriorimaj
 
    **Lemma 20**. We use the hypotheses and notation of
-   Lemma *\ `Lemma 19 <#Wittpoly>`\__\* . Let :math:`\beta\ge2` be larger
+   Lemma * `Lemma 19 <#Wittpoly>` \__ * . Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
@@ -950,12 +950,12 @@ expansion.
    .. math::
 
       \begin{aligned}
-         |b_F(k)|
-         &\le \frac{\deg F}{k}\sum_{1\le j\le k}\beta^j
-         \le \frac{\deg F}{k}\beta\frac{\beta^k-1}{\beta-1}
-         \\&\le\frac{\deg F}{k}\frac{\beta^k}{1-1/\beta}
-         \le 2\deg F\frac{\beta^k}{k}.\qedhere
-       \end{aligned}
+      |b_F(k)|
+      &\le \frac{\deg F}{k}\sum_{1\le j\le k}\beta^j
+      \le \frac{\deg F}{k}\beta\frac{\beta^k-1}{\beta-1}
+      \\&\le\frac{\deg F}{k}\frac{\beta^k}{1-1/\beta}
+      \le 2\deg F\frac{\beta^k}{k}.\qedhere
+      \end{aligned}
 
 
 There are numerous easy upper estimates for the inverse of the modulus
