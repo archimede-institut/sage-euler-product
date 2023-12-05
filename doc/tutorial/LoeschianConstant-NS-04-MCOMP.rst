@@ -1167,12 +1167,11 @@ A formula
    .. math::
 
       \prod_{\chi\in G_0^\perp}L_P(s,\chi)
-          =
-          \prod_{\substack{G_0\subset K\subset G}}
-          \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{} G_0=K}}
-          \Bigl(1-p^{-|K/G_0|s}\Bigr)^{-|G/K|}.
+       =
+      \prod_{\substack{G_0\subset K\subset G}}
+      \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{} G_0=K}}
+      \Bigl(1-p^{-|K/G_0|s}\Bigr)^{-|G/K|}.
 
-   *
 
 The right-hand side of this formula contains products of the kind we
 seek and, if we were to start from such a set of formulas, the problem
@@ -1187,23 +1186,23 @@ would be to *invert* them in some sense.
    .. math::
 
       \label{eq:6}
-          f(\psi)=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L = \psi}}\chi(a).
+      f(\psi)=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L = \psi}}\chi(a).
 
    The condition :math:`\chi\in G_0^\perp` can also be written as
    :math:`\chi|G_0=1`, hence we can assume that :math:`\psi|(L\cap
-     G_0)=1`. We write
+   G_0)=1`. We write
 
    .. math::
 
       \prod_{\chi\in G_0^\perp}(1-\chi(p)z)^{\chi(a)}
-          =\prod_{\substack{\psi'\in\widehat{L{} G_0},\\ \psi'|G_0=1}}(1-\psi(p)z)^{f'(\psi')},
+      =\prod_{\substack{\psi'\in\widehat{L{} G_0},\\ \psi'|G_0=1}}(1-\psi(p)z)^{f'(\psi')},
 
    where
 
    .. math::
 
       \label{eq:76}
-          f'(\psi')=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L{} G_0 = \psi}}\chi(a).
+      f'(\psi')=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L{} G_0 = \psi}}\chi(a).
 
    When :math:`a` lies outside :math:`L{} G_0`, this sum vanishes;
    otherwise it equals :math:`|G/(L{} G_0)|\psi'(a)`. The characters of
@@ -1214,8 +1213,8 @@ would be to *invert* them in some sense.
    .. math::
 
       \prod_{\substack{\psi'\in\widehat{L{} G_0},\\ \psi'|G_0=1}}(1-\psi(p)z)
-          =
-          1-z^{|(L{} G_0)/G_0|},
+      =
+      1-z^{|(L{} G_0)/G_0|},
 
    and this proves our formula. ◻
 
@@ -1253,7 +1252,7 @@ zeta-function associated with an abelian field :math:`K` is given by
 .. math::
 
    \label{defZetaDedekind}
-     \zeta_K(s)=\prod_{\chi\in X(K)}L(s,\chi)
+   \zeta_K(s)=\prod_{\chi\in X(K)}L(s,\chi)
 
 as per :raw-latex:`\cite[Theorem 8.6]{Narkiewicz*04}`. The group
 :math:`X(K)` is the group of characters attached to :math:`K`, see
@@ -1276,10 +1275,10 @@ factors of :math:`q` are all at most :math:`P`, that
 .. math::
 
    \prod_{\chi\in X(K)}L_P(s,\chi)
-     =
-     \prod_{\substack{H_q(K)\subset K\subset G_q}}
-     \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{H_q(K)} =K}}
-     \Bigl(1-p^{-|K/H_q(K)|s}\Bigr)^{-|G_q/K|}.
+   =
+   \prod_{\substack{H_q(K)\subset K\subset G_q}}
+   \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{H_q(K)} =K}}
+   \Bigl(1-p^{-|K/H_q(K)|s}\Bigr)^{-|G_q/K|}.
 
 The proof we provide of Lemma `Lemma 23 <#dede>`__ is much simpler, but
 the above analysis establishes that the identities stemming from both
@@ -1294,7 +1293,7 @@ consider the vector, for any positive integer :math:`t`:
 .. math::
 
    \label{defGammaoft}
-     \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in G_0^\perp}L_P(ts,\chi)\Bigr)_{G_0\in\mathscr{G}}.
+   \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in G_0^\perp}L_P(ts,\chi)\Bigr)_{G_0\in\mathscr{G}}.
 
 The rows of :math:`\Gamma_{P,s}(t)` are indexed by the cyclic subgroups
 of :math:`G`. An approximate value of this vector is provided by the
@@ -1304,14 +1303,14 @@ Hurwitz zeta function. We next define
 .. math::
 
    \label{defVsoft}
-     V_s(t)=\bigl(\log\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
+   V_s(t)=\bigl(\log\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
 
 The rows of :math:`V_s(t)` are indexed by classes. We also define
 
 .. math::
 
    \label{defGammaoft}
-     \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in K^\perp}L_P(ts,\chi)\Bigr)_{K\in\mathscr{G}}.
+   \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in K^\perp}L_P(ts,\chi)\Bigr)_{K\in\mathscr{G}}.
 
 The function ``GetLatticeInvariantClasses`` of the script ``LIEP.sage``
 gives the two lists: the one of the cyclic subgroups and the one of
@@ -1418,7 +1417,6 @@ The computations of the Euler products of Theorem `Theorem 2 <#PM1>`__
 which point onwards we use the usual Euler product or the expression of
 the theorem) is implemented in:
 
-.
 
 The parameter ``bigP`` may be increased by the script to ensure that
 :math:`P\ge2\beta` (a condition that is usually satisfied). We reused
@@ -1448,15 +1446,16 @@ first fifty digits of the constant they call :math:`A` and which are
 .. math::
 
    \begin{aligned}
-     \label{eq:7}  \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
-     = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
-           \\&25267
-     \,08497\,71894\,30550\,80726\,33188\,94627
-     \\&61381\,60369
-     \,39924\,26646\,98594\,38665\cdots
-     %Gourdon-Sebah:1.9504911124462870744465855658095536925267084977189
-     %GetEulerProds(4,1, 1-2*x-7*x\^2-4*x\^3, 1-2*x+x\^2, 200, 400) %%aa=RR(0.395252136393835889460756928905363164796388518074402091654243254249709985041953055656738117362419073310)
-     %% LaTeXForNumber(RR(aa*pi^2/2),100,8)\end{aligned}
+   \label{eq:7}  \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
+   = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
+   \\&25267
+   \,08497\,71894\,30550\,80726\,33188\,94627
+   \\&61381\,60369
+   \,39924\,26646\,98594\,38665\cdots
+   %Gourdon-Sebah:1.9504911124462870744465855658095536925267084977189
+   %GetEulerProds(4,1, 1-2*x-7*x\^2-4*x\^3, 1-2*x+x\^2, 200, 400) 
+   %%aa=RR(0.395252136393835889460756928905363164796388518074402091654243254249709985041953055656738117362419073310)
+   %% LaTeXForNumber(RR(aa*pi^2/2),100,8)\end{aligned}
 
 Our result matches that of :raw-latex:`\cite{Gourdon-Sebah*10}`.
 
