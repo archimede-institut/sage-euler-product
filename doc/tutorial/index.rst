@@ -8,7 +8,7 @@ General content
 ---------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
 
    LoeschianConstant-NS-04-MCOMP
