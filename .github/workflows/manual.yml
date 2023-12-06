@@ -31,6 +31,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.7.1
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
-          publish_branch: gh-pages
+          branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
           folder:  html/sage-euler-product
+          target_folder: docs/
