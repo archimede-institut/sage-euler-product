@@ -450,16 +450,16 @@ def get_vs_checker(q, s, borne=10000):
     - ''borne'' : int, optional
         [description], by default 10000
     """
-    ### Computes an approximate value of the list (zeta(s; q, A))
-    ### for A in the lattice-invariant classes.
+    #  Computes an approximate value of the list (zeta(s; q, A))
+    #  for A in the lattice-invariant classes.
     structure = ComponentStructure(q)
-    #(theSGTuple, theClassTuple, nbclasses, theExponent,
+    #  (theSGTuple, theClassTuple, nbclasses, theExponent,
     #  phiq, characterGroup, invertibles, invariantCharacters) = structure
     vs_approx = [1/prod([1.0 - 1 /p**s
                         for p in filter(lambda w: (w in Primes()) and (w%q in structure.the_Class_tuple[i]),
                                         range(2, borne))])
                 for i in range(0, structure.nb_class)]
     for i in range(0, structure.nb_class):
-            print("-------------------")
-            print("For p mod ", q, " in ",  structure.the_Class_tuple[i])
-            print("the product of 1/(1-p^{-", s, "}) is about", vs_approx[i])
+        print("-------------------")
+        print("For p mod ", q, " in ", structure.the_Class_tuple[i])
+        print("the product of 1/(1-p^{-", s, "}) is about", vs_approx[i])
