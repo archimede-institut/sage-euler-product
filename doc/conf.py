@@ -61,7 +61,7 @@ html_css_files = sage_docbuild.conf.html_css_files
 
 if html_css_files != ["custom-furo.css"]:
     raise NotImplementedError(
-        "CSS customization has changed in SageMath. The configuration of surface-dynamics documentation build needs to be updated."
+        "CSS customization has changed in SageMath. The configuration of  documentation build needs to be updated."
     )
 
 html_css_files = ["https://doc.sagemath.org/html/en/reference/_static/custom-furo.css"]

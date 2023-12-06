@@ -1,9 +1,9 @@
 # This file lists the minimal dependencies needed to build the documentation
 # for surface-dynamics. Create a conda environment with these dependencies
 # preinstalled with:
-# conda env create -n surface-dynamics-docbuild -f ../environment.yml
-# conda env update -n surface-dynamics-docbuild -f environment.yml
-name: surface-dynamics-docbuild
+# conda env create -n sage-euler-product-docbuild -f ../environment.yml
+# conda env update -n sage-euler-product-docbuild -f environment.yml
+name: sage-euler-product-docbuild
 channels:
   - conda-forge
 dependencies:

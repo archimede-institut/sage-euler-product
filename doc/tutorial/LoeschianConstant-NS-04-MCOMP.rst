@@ -177,8 +177,8 @@ Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
    *Remark 5*. We prove in Lemma `Lemma 22 <#boundedt>`__ that, when
    :math:`K` and :math:`\mathscr{A}` are fixed, the quantity
    :math:`\sum_{\substack{L\in
-           \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
-       \mu(|L|/|K|)` depends only on :math:`\gcd(t,\varphi(q))`.
+   \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
+   \mu(|L|/|K|)` depends only on :math:`\gcd(t,\varphi(q))` .
 
 .. container:: remark
 
@@ -189,33 +189,33 @@ Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
 .. container:: remark
 
    *Remark 7*. There is some redundancy in our formula as a same
-   character :math:`\chi` may appear in several sets :math:`K^\perp`
+   character :math:`\chi` may appear in several sets :math:`K^\perp` 
    (for instance, the principal character appears in all of them).
    Disentangling these contributions leads to a slightly more
    complicated formula. We first have to introduce, for any cyclic
-   subgroup :math:`S`, the subset :math:`S^{\perp\circ}\subset S^\perp`
+   subgroup :math:`S` , the subset :math:`S^{\perp\circ}\subset S^\perp` 
    constituted of those elements that do not belong to any
-   :math:`T^\perp`, for :math:`T\varsubsetneq S`. It can be readily
+   :math:`T^\perp` , for :math:`T\varsubsetneq S`. It can be readily
    checked that any :math:`K^\perp` is the union of
    :math:`S^{\perp\circ}` where :math:`S` ranges the subgroups that are
-   included in :math:`K`. We then define
+   included in :math:`K` . We then define
 
    .. math::
 
       \label{defCAKkbiscirc}
-          C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
-              \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
-          \frac{\varphi(|L|/|S|)}{|G/S|}.
+      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
+      \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
+      \frac{\varphi(|L|/|S|)}{|G/S|}.
 
-   Formula `[exact] <#exact>`__ becomes:
+   Formula `[exact] <#exact>`\_\_ becomes:
 
    .. math::
 
       \prod_{\substack{p\ge P,\\
-              p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-          = \prod_{m\ge\Delta}\prod_{S\in\mathscr{G}}
-          \biggl(\prod_{\chi\in S^{\perp\circ}}L_P(ms,\chi)
-          \biggr)^{{C^\circ_{\mathscr{A}}(S,m,F/H)}/{m}}
+      p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
+      = \prod_{m\ge\Delta}\prod_{S\in\mathscr{G}}
+      \biggl(\prod_{\chi\in S^{\perp\circ}}L_P(ms,\chi)
+      \biggr)^{{C^\circ_{\mathscr{A}}(S,m,F/H)}/{m}}
 
    and the bound `[fineq] <#fineq>`__ holds to estimate the tail of this
    product, as we only shuffled terms with a fixed index :math:`m`.
@@ -226,21 +226,21 @@ Super fast evaluations
 .. container:: cor
    :name: superfast
 
-   **Corollary 8**. *For every positive integer :math:`m`, the constant
+   **Corollary 8**. For every positive integer :math:`m` , the constant
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor of
-   :math:`m` is coprime with :math:`\varphi(q)`. As a consequence and
-   under the hypotheses of Theorem *\ `Theorem 2 <#PM1>`__\ *with
+   :math:`m` is coprime with :math:`\varphi(q)` . As a consequence and
+   under the hypotheses of Theorem  \ `Theorem 2 <#PM1>`\__\  with
    :math:`\Delta=1`, the products
 
    .. math::
 
       \prod_{\substack{p\ge P,\\
-          p+q\mathbb{Z}\in\mathcal{A}}}\biggl(1-\frac1{p^s}\biggr)
+      p+q\mathbb{Z}\in\mathcal{A}}}\biggl(1-\frac1{p^s}\biggr)
 
-   may be computed by :math:`\mathcal{O}((\log D)^{r})` computations of
-   :math:`L`-functions to get :math:`D`-decimal digits, where :math:`r`
-   is the number of prime factors of :math:`\varphi(q)`. The implied
-   constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q`.*
+may be computed by :math:`\mathcal{O}((\log D)^{r})` computations of
+:math:`L` -functions to get :math:`D`-decimal digits, where :math:`r` 
+is the number of prime factors of :math:`\varphi(q)` . The implied
+constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q` .
 
 This leads to very fast computations, and we were for instance able to
 produce 100 (resp. 1000, resp. 5000) digits of these products when
@@ -262,10 +262,10 @@ data at the end of this paper.
    of :math:`m` is coprime with :math:`\varphi(q)`. Let us decompose
    :math:`\varphi(q)` in prime factors:
    :math:`\varphi(q)=p_1^{\alpha_1}\cdots
-     p_r^{\alpha_r}`. Any integer :math:`m\le M` such that all its prime
+   p_r^{\alpha_r}`. Any integer :math:`m\le M` such that all its prime
    factors divide :math:`q`, can be written as
    :math:`m=p_1^{\beta_1}\cdots
-     p_r^{\beta_r}` with :math:`\beta_i\le (\log M)/\log p_i` for
+   p_r^{\beta_r}` with :math:`\beta_i\le (\log M)/\log p_i` for
    :math:`i\le r`. In particular, there are at most
    :math:`((\log M)/\log 2)^r` such integers. By `[fineq] <#fineq>`__,
    the contribution of the integers :math:`m>M` to the Euler product to
@@ -378,25 +378,25 @@ Levesque and M. Waldschmidt. In the notation of that paper, they are
 .. math::
 
    \alpha_0^{(3)}
-     =\frac{1}{3^{1/4}\sqrt{2}}\prod_{p\equiv
-       2[3]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}
-     % RR=RealIntervalField(400)
-     % aa=RR(1.41406439089214763756550181907982937990769506939316217503992496242392810699208849945375485850247511419)
-     % LaTeXForNumber(RR(sqrt(aa/2)/3^(1/4)), 100,10)
-     % GetVs(3, 2, 100, 100, 2, 1)
+   =\frac{1}{3^{1/4}\sqrt{2}}\prod_{p\equiv
+   2[3]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}
+   % RR=RealIntervalField(400)
+   % aa=RR(1.41406439089214763756550181907982937990769506939316217503992496242392810699208849945375485850247511419)
+   % LaTeXForNumber(RR(sqrt(aa/2)/3^(1/4)), 100,10)
+   % GetVs(3, 2, 100, 100, 2, 1)
 
 and
 
 .. math::
 
    \label{eq:12}
-     \beta_0=\frac{3^{1/4}\sqrt{\pi}}{2^{5/4}}\frac{\log(2+\sqrt{3})^{1/4}}{\Gamma(1/4)}
-     \prod_{p\equiv
-       5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
-     % aa5=RR(1.04820190360076993683493743489579267348041367449481525810737614495241617157143788235940499088566949682)
-     % aa7=RR(1.02620214683123370070720186696636157236110932131334951481040066496546032939386454192999178263867916092)
-     % aa11=R(1.01177863685033258370511941026733127805840123089520870283595940756150164170456300544421959132980627277)
-     %RR(sqrt(aa5*aa7*aa11*RR(pi))*3^(1/4)/2^(5/4)*(log(2+sqrt(3)))^(1/4)/gamma(1/4))
+   \beta_0=\frac{3^{1/4}\sqrt{\pi}}{2^{5/4}}\frac{\log(2+\sqrt{3})^{1/4}}{\Gamma(1/4)}
+   \prod_{p\equiv
+   5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
+   % aa5=RR(1.04820190360076993683493743489579267348041367449481525810737614495241617157143788235940499088566949682)
+   % aa7=RR(1.02620214683123370070720186696636157236110932131334951481040066496546032939386454192999178263867916092)
+   % aa11=R(1.01177863685033258370511941026733127805840123089520870283595940756150164170456300544421959132980627277)
+   %RR(sqrt(aa5*aa7*aa11*RR(pi))*3^(1/4)/2^(5/4)*(log(2+sqrt(3)))^(1/4)/gamma(1/4))
 
 Both occur in number theory as densities. The number of integers
 :math:`n` of the shape :math:`n=x^2-xy+y^2`, where :math:`x` and
@@ -407,7 +407,7 @@ asymptotically approximated by
 .. math::
 
    \label{eq:1}
-     N(x)=\alpha_0^{(3)}\frac{x(1+o(1))}{\sqrt{\log x}}.
+   N(x)=\alpha_0^{(3)}\frac{x(1+o(1))}{\sqrt{\log x}}.
 
 This motivates our interest in the first constant. The second one arises
 in counting the number of Loeschian numbers that are also sums of two
@@ -423,26 +423,25 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
 
 .. container:: cor
 
-   **Corollary 9**. *We have
+   **Corollary 9**. We have
 
    .. math::
 
       \begin{aligned}
-          \alpha_0^{(3)}=
-          0.&63890\,94054\,45343\,88225\,49426\,74928\,24509\,37549\,75508\,02912
-          \\&33454\,21692\,36570\,80763\,10027\,64965\,82468\,97179\,11252\,86643\cdots
-        \end{aligned}
+      \alpha_0^{(3)}=
+      0.&63890\,94054\,45343\,88225\,49426\,74928\,24509\,37549\,75508\,02912
+      \\&33454\,21692\,36570\,80763\,10027\,64965\,82468\,97179\,11252\,86643\cdots
+      \end{aligned}
 
    and
 
    .. math::
 
       \begin{aligned}
-          \beta_0=0.&30231\,61423\,57065\,63794\,77699\,00480\,19971\,56024\,12795\,18936
-          \\&96454\,58867\,84128\,88654\,48752\,41051\,08994\,87467\,81397\,92727\cdots
-        \end{aligned}
+      \beta_0=0.&30231\,61423\,57065\,63794\,77699\,00480\,19971\,56024\,12795\,18936
+      \\&96454\,58867\,84128\,88654\,48752\,41051\,08994\,87467\,81397\,92727\cdots
+      \end{aligned}
 
-   *
 
 This follows from Theorem `Theorem 2 <#PM1>`__ with the choices
 :math:`q=3` and :math:`\mathcal{A}=\{2\}` for :math:`\alpha_0^{(3)}`,
@@ -453,20 +452,20 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
 .. container:: cor
    :name: sha
 
-   **Corollary 10** (Shanks’ Constant). *We have
+   **Corollary 10** (Shanks’ Constant). We have
 
    .. math::
 
       \prod_{p\equiv
-            1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
-          =\,\begin{aligned}[t]
-            0.&95694\,53478\,51601\,18343\,69670\,57273\,89182\,87531
-            \\&74977\,29139
-            14789\,05432\,60424\,60170\,16444\,88885
-            \\&94814\,40512\,03907\,95084\cdots
-          %% (1-4*x)*(1/x+1)^2/(1/x-1)^2=(1-2*x-7*x^2-4*x^3)/(1-2*x+x^2)
-          %% GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50,2,1)
-            %% ss=RR(0.9569453478516011834369670572738918287531749772913914789054326042460170164448888594814405120390795084312069)
+      1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
+      =\,\begin{aligned}[t]
+      0.&95694\,53478\,51601\,18343\,69670\,57273\,89182\,87531
+      \\&74977\,29139
+      14789\,05432\,60424\,60170\,16444\,88885
+      \\&94814\,40512\,03907\,95084\cdots
+      %% (1-4*x)*(1/x+1)^2/(1/x-1)^2=(1-2*x-7*x^2-4*x^3)/(1-2*x+x^2)
+      %% GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50,2,1)
+      %% ss=RR(0.9569453478516011834369670572738918287531749772913914789054326042460170164448888594814405120390795084312069)
       \end{aligned}
 
    As a consequence Shanks’ constant satisfies
@@ -474,20 +473,19 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
    .. math::
 
       \begin{aligned}
-          I
-          &= \frac{\pi^2}{16\log(1+\sqrt{2})}\prod_{p\equiv
-            1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
-          \\&=\begin{aligned}[t]
-            0.&66974\,09699\,37071\,22053\,89224\,31571\,76440\,66883\,
-            70157\,43648
-            \\& \,24185\,73298\,52284\,52467\,99956\,45714
-            \,72731\,50621\,02143\,59373\cdots
-            % RR=RealIntervalField(1000)
-            % LaTeXForNumber(RR(pi^2/16/log(1+sqrt(2))*ss), 100,8)
-            \end{aligned}
-        \end{aligned}
+      I
+      &= \frac{\pi^2}{16\log(1+\sqrt{2})}\prod_{p\equiv
+      1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
+      \\&=\begin{aligned}[t]
+      0.&66974\,09699\,37071\,22053\,89224\,31571\,76440\,66883\,
+      70157\,43648
+      \\& \,24185\,73298\,52284\,52467\,99956\,45714
+      \,72731\,50621\,02143\,59373\cdots
+      % RR=RealIntervalField(1000)
+      % LaTeXForNumber(RR(pi^2/16/log(1+sqrt(2))*ss), 100,8)
+      \end{aligned}
+      \end{aligned}
 
-   *
 
 We deduce this Corollary from Theorem `Theorem 2 <#PM1>`__ by selecting
 the parameters :math:`q=8`, :math:`\mathcal{A}=\{1\}`,
@@ -521,46 +519,45 @@ digits), see the implementation notes at the end of this paper.
 
 .. container:: cor
 
-   **Corollary 11** (Lal’s Constant). *We have
+   **Corollary 11** (Lal’s Constant). We have
 
    .. math::
 
       \prod_{p\equiv 1[8]}\frac{p(p-8)}{(p-4)^2}
-          =
-          % (1/x)*(1/x-8)/(1/x-4)^2 = (1-8*x)/(1-8*x+16*x^2)
-          %% 0.88307
-          %% ll=RR(0.883071004743946671417834299003108534676888834880973470719295159395211946990656596885799383286037916462)
-          \begin{aligned}[t]
-            0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768
-          \\&88834\,88097
-          \,34707\,19295\,15939\,52119\,46990\,65659
-          \\&68857\,99383\,28603\,79164\cdots
-          \end{aligned}
+      =
+      % (1/x)*(1/x-8)/(1/x-4)^2 = (1-8*x)/(1-8*x+16*x^2)
+      %% 0.88307
+      %% 
+      ll=RR(0.883071004743946671417834299003108534676888834880973470719295159395211946990656596885799383286037916462)
+      \begin{aligned}[t]
+      0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768
+      \\&88834\,88097
+      \,34707\,19295\,15939\,52119\,46990\,65659
+      \\&68857\,99383\,28603\,79164\cdots
+      \end{aligned}
 
    As a consequence Lal’s constant satisfies
 
    .. math::
 
-      \begin{aligned}
-          \lambda
-          &= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
-            1[8]}\biggl(\frac{p+1}{p-1}\biggr)^4\biggl(1-\frac{8}{p}\biggr)
-          \\&= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
-            1[8]}\biggl(1-\frac{4}{p}\biggr)^2\biggl(\frac{p+1}{p-1}\biggr)^4\prod_{p\equiv
-            1[8]}\frac{p(p-8)}{(p-4)^2}
-            %(1-4*x)^2*(1/x+1)^4/(1/x-1)^4*(1/x)*(1/x-8)/(1/x-4)^2
-          \\&=%0.7922082381
-          \begin{aligned}[t]
-            0.&79220\,82381\,67541\,66877\,54555\,66579\,02410\,11289\,32250\,98622
-            \\&11172\,27973\,45256\,95141\,54944\,12490\,66029\,53883\,98027\,52927\cdots
-          \end{aligned} %%%%
-      % LaTeXForNumber(RR(ll
-      %*
-      % (ss)^2
-      % *pi^4/2^7/(log(1+sqrt(2)))^2), 100,10)
-        \end{aligned}
+     \begin{aligned}
+     \lambda &= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
+     1[8]}\biggl(\frac{p+1}{p-1}\biggr)^4\biggl(1-\frac{8}{p}\biggr)
+     \\&= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
+     1[8]}\biggl(1-\frac{4}{p}\biggr)^2\biggl(\frac{p+1}{p-1}\biggr)^4\prod_{p\equiv
+     1[8]}\frac{p(p-8)}{(p-4)^2}
+     %(1-4*x)^2*(1/x+1)^4/(1/x-1)^4*(1/x)*(1/x-8)/(1/x-4)^2
+     \\&=%0.7922082381
+     \begin{aligned}[t]
+     0.&79220\,82381\,67541\,66877\,54555\,66579\,02410\,11289\,32250\,98622
+     \\&11172\,27973\,45256\,95141\,54944\,12490\,66029\,53883\,98027\,52927\cdots
+     \end{aligned} %%%%
+     % LaTeXForNumber(RR(ll
+     %*
+     % (ss)^2
+     % *pi^4/2^7/(log(1+sqrt(2)))^2), 100,10)
+     \end{aligned}
 
-   *
 
 We deduce the first value given in this Corollary by using
 Theorem `Theorem 2 <#PM1>`__ with the parameters :math:`q=8`,
@@ -595,7 +592,7 @@ Lemma 3, page 452, by
 .. math::
 
    \label{eq:3}
-     A_\chi= \prod_{p\ge2}\biggl(1+\frac{(\chi(p)-1)p}{(p^2-\chi(p))(p-1)}\biggr),
+   A_\chi= \prod_{p\ge2}\biggl(1+\frac{(\chi(p)-1)p}{(p^2-\chi(p))(p-1)}\biggr),
 
 where :math:`\chi` is a Dirichlet character. Our theory applies only
 when :math:`\chi` is real valued.
@@ -612,7 +609,7 @@ power.
 
 .. container:: cor
 
-   **Corollary 12**. *Let :math:`\mathscr{A}_0` be the subset of
+   **Corollary 12**. Let :math:`\mathscr{A}_0` be the subset of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` consisting of all the
    multiplicative generators of :math:`G`. Assume :math:`q` is such that
    such an :math:`\mathscr{A}_0` is not empty. For any real parameter
@@ -621,20 +618,20 @@ power.
    .. math::
 
       \zeta_P(s;q,\mathscr{A}_0)=
-          \prod_{m|q^\infty}
-          \prod_{S\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^{\perp\circ}}L_P(m s,\chi)
-          \biggr)^{e(m,q,S)},
+      \prod_{m|q^\infty}
+      \prod_{S\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^{\perp\circ}}L_P(m s,\chi)
+      \biggr)^{e(m,q,S)},
 
    where :math:`m|q^\infty` means that all the prime factors of
    :math:`m` divide :math:`q` and where
-   :math:`e(m,q,S)=\frac{|S|\varphi(q/|S|)}{m\varphi(q)}`.*
+   :math:`e(m,q,S)=\frac{|S|\varphi(q/|S|)}{m\varphi(q)}`.
 
 .. container:: proof
 
    *Proof.* Indeed, since :math:`\mathscr{A}_0` generates :math:`G`, the
    only index :math:`t` in `[defCAKkbiscirc] <#defCAKkbiscirc>`__ is
-   :math:`t=1`. Hence, only :math:`L=G` is possible. ◻
+   :math:`t=1`. Hence, only :math:`L=G` is possible. 
 
 Thanks
 ------
@@ -659,9 +656,9 @@ in :math:`G^\sharp` and any positive integer :math:`m`, the coefficient
 .. math::
 
    \label{defCAKk}
-     C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)\sum_{\substack{L\in
-         \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
-     \frac{\mu(|L|/|K|)}{|G/K|}
+   C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)\sum_{\substack{L\in
+   \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+   \frac{\mu(|L|/|K|)}{|G/K|}
 
 where :math:`L^{[t]}=\{x^t, x\in L\}`. Notice that it is also a cyclic
 subgroup of :math:`G`. Let us first note a simple property.
@@ -678,24 +675,24 @@ subgroup of :math:`G`. Let us first note a simple property.
 
    *Proof.* We can assume that :math:`L=(\mathbb{Z}/\ell\mathbb{Z}, +)`.
    For each :math:`d|\ell`, the unique subgroup of order :math:`d` is
-   :math:`\{(\ell/d)n, 0\le n\le d-1\}`. ◻
+   :math:`\{(\ell/d)n, 0\le n\le d-1\}`. 
 
 Here is the fundamental property satisfied by these coefficients.
 
 .. container:: prop
    :name: funda
 
-   **Proposition 14**. *For any positive integer :math:`\ell`, any prime
+   **Proposition 14**. For any positive integer :math:`\ell`, any prime
    :math:`p` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
    .. math::
 
       \sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ \chi\in
-              K^\perp}}
-          \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
+      K^\perp}}
+      \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
 
-   *
+
 
 .. container:: proof
 
@@ -705,20 +702,19 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ B^{[h]}\subset
-              K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
+      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ B^{[h]}
+      \subset  K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
 
    Next, we introduce the expression given in `[defCAKk] <#defCAKk>`__,
    shuffle the summations and get
 
    .. math::
 
-      S=
-          \sum_{hm=\ell}
-          \sum_{t|m}\mu(t)\sum_{\substack{L\in
-              \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
-          \sum_{\substack{K\in \mathscr{G},\\ B^{[h]}\subset
-              K}}\mu(|L|/|K|).
+      S= \sum_{hm=\ell}
+      \sum_{t|m}\mu(t)\sum_{\substack{L\in
+      \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+      \sum_{\substack{K\in \mathscr{G},\\ B^{[h]} \subset
+      K}}\mu(|L|/|K|).
 
    By Lemma `Lemma 13 <#cyclic>`__ and the Möbius function
    characteristic property, the last summation vanishes when
@@ -727,39 +723,36 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      S=
-          \sum_{hm=\ell}
-          \sum_{\substack{t|m,\\ B^{[ht]}=\langle{A}\rangle{}}}\mu(t).
+      S= \sum_{hm=\ell}
+      \sum_{\substack{t|m,\\ B^{[ht]}=\langle{A}\rangle{}}}\mu(t).
 
    We continue in a more classical way:
 
    .. math::
 
-      S
-          =
-            \sum_{\substack{ath=\ell,\\B^{[ht]}=\langle{A}\rangle{}}}\mu(t)
-          =\sum_{\substack{ab=\ell,\\B^{[b]}=\langle{A}\rangle{}}}\sum_{t|b}\mu(t)=1\!\!\!1_{B=\langle{A}\rangle{}},
+      S = \sum_{\substack{ath=\ell,\\B^{[ht]}=\langle{A}\rangle{}}}\mu(t)
+      =\sum_{\substack{ab=\ell,\\B^{[b]}=\langle{A}\rangle{}}}
+      \sum_{t|b}\mu(t)=1\!\!\!1_{B=\langle{A}\rangle{}},
 
-   concluding the proof. ◻
+   concluding the proof . 
 
 .. container:: cor
    :name: life
 
-   **Corollary 15**. *For any prime :math:`p`, any positive real number
+   **Corollary 15**. For any prime :math:`p`, any positive real number
    :math:`s` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
    .. math::
 
       \prod_{m\ge1}\prod_{K\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^\perp}\bigl(1-\chi(p)p^{-ms}\bigr)
-          \biggr)^{-C_{\mathscr{A}}(K,m,1-X)/m}=
-          \begin{cases}
-            (1-p^{-s})^{-1}&\text{when $p\in\langle{\mathscr{A}}\rangle{}$,}\\
-            1&\text{otherwise.}
-          \end{cases}
+      \biggl(\prod_{\chi\in K^\perp}\bigl(1-\chi(p)p^{-ms}\bigr)
+      \biggr)^{-C_{\mathscr{A}}(K,m,1-X)/m}=
+      \begin{cases}
+      (1-p^{-s})^{-1}&\text{when $p\in\langle{\mathscr{A}}\rangle{}$,}\\
+      1&\text{otherwise.}
+      \end{cases}
 
-   *
 
 .. container:: proof
 
@@ -769,7 +762,7 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       \exp\sum_{\chi\in K^\perp}\sum_{h\ge1}\frac{\chi(p^h)}{hp^{mhs}}
-          =\prod_{\chi\in K^\perp}\biggl(1-\frac{\chi(p)}{p^{ms}}\biggr)^{-1}.
+      =\prod_{\chi\in K^\perp}\biggl(1-\frac{\chi(p)}{p^{ms}}\biggr)^{-1}.
 
    Since :math:`s` is a positive real number, the right-hand side is
    also positive, and so can be raised to some rational power, say
@@ -781,7 +774,7 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       S(p)=\sum_{m\ge1}\sum_{K\in\mathscr{G}}
-          \sum_{\chi\in K^\perp}\sum_{h\ge1}\frac{\chi(p^h)C_{\mathscr{A}}(K,m,1-X)}{mhp^{mhs}}.
+      \sum_{\chi\in K^\perp}\sum_{h\ge1}\frac{\chi(p^h)C_{\mathscr{A}}(K,m,1-X)}{mhp^{mhs}}.
 
    We set :math:`\ell=mh` and appeal to
    Proposition `Proposition 14 <#funda>`__ to infer that
@@ -793,8 +786,8 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: simpi
 
-   **Lemma 16**. *If :math:`m` has a prime factor that does not divide
-   :math:`\varphi(q)`, we have :math:`C_{\mathscr{A}}(K,m,1-X)=0`.*
+   **Lemma 16**. If :math:`m` has a prime factor that does not divide
+   :math:`\varphi(q)`, we have :math:`C_{\mathscr{A}}(K,m,1-X)=0`.
 
 .. container:: proof
 
@@ -813,14 +806,13 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: basic
 
-   **Lemma 17**. *Let :math:`f>1` be a real parameter. We have
+   **Lemma 17**. Let :math:`f>1` be a real parameter. We have
 
    .. math::
 
       \bigl|\log \zeta_P(f)\bigr|\le
-          \frac{1+P/(f-1)}{P^{f}}.
+      \frac{1+P/(f-1)}{P^{f}}.
 
-   *
 
 .. container:: proof
 
@@ -829,36 +821,31 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       \log \zeta_P(f)
-          =-\sum_{ p\ge
-              P}\sum_{k\ge1}\frac{1}{k p^{kf}}
+      =-\sum_{ p \ge P}\sum_{k\ge1}\frac{1}{k p^{kf}}
 
-   hence, by using a comparison to an integral, we find that
+      hence, by using a comparison to an integral, we find that
 
    .. math::
 
       \Bigl|\log \zeta_P(f)\Bigr|
-           \le
-           \sum_{n\ge P}\frac{1}{n^f}\le
-           \frac{1}{P^f}+\int_{P}^\infty\frac{dt}{t^f}
-           =\biggl(\frac{f-1}{P}+1\biggr)\frac{1}{(f-1)P^{f-1}}.\qedhere
-
-    ◻
+      \le \sum_{n\ge P}\frac{1}{n^f}\le
+      \frac{1}{P^f}+\int_{P}^\infty\frac{dt}{t^f}
+      =\biggl(\frac{f-1}{P}+1\biggr)\frac{1}{(f-1)P^{f-1}}.\qedhere
 
 .. container:: thm
    :name: mainspe
 
-   **Theorem 18**. *For every :math:`s>1` and every :math:`P\ge2`, we
+   **Theorem 18**. For every :math:`s>1` and every :math:`P\ge2`, we
    have
 
    .. math::
 
       \zeta_P(s;q,\mathcal{A})
-          =
-          \prod_{\substack{p+q\mathbb{Z}\in\mathcal{A},\\ p\ge P}}(1-p^{-s})^{-1}
-          = \prod_{m\ge1}\prod_{K\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^\perp}L_P(ms,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,1-X)}/{m}}.
+      =
+      \prod_{\substack{p+q\mathbb{Z}\in\mathcal{A},\\ p\ge P}}(1-p^{-s})^{-1}
+      = \prod_{m\ge1}\prod_{K\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^\perp}L_P(ms,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,1-X)}/{m}}.
 
-   *
 
 .. container:: proof
 
@@ -868,7 +855,7 @@ Here is the fundamental property satisfied by these coefficients.
    :math:`s>1` and the bounds :math:`|C_{\mathscr{A}}(K,k)/k|\le |G|`,
    as well as :math:`|\mathscr{G}|\le |G|`. This last bound follows from
    the fact that there are at most as many cyclic subgroups as there are
-   possible generators. ◻
+   possible generators. 
 
 .. _proof-of-theorem-pm1-in-general:
 
@@ -883,7 +870,7 @@ having real numbers for coefficients.
 .. container:: lem
    :name: Wittpoly
 
-   **Lemma 19**. *Let
+   **Lemma 19**. Let
    :math:`F(t) = 1+a_1 t+\ldots+a_{\delta}t^{\delta} \in \mathbb{R}[t]`
    be a polynomial of degree :math:`\delta`. Let
    :math:`\alpha_{1},\ldots,\alpha_{\delta}` be the inverses of its
@@ -913,7 +900,7 @@ having real numbers for coefficients.
       \label{Fhatb}
       F(t)=\prod_{j=1}^{\infty}(1-t^{j})^{b_{F}(j)}
 
-   where the convergence is uniform in the given segment.*
+   where the convergence is uniform in the given segment.
 
 .. container:: proof
 
@@ -925,7 +912,7 @@ having real numbers for coefficients.
    .. math::
 
       \frac{tF'(t)}{F(t)}=\sum_i\frac{\alpha_i t}{1-\alpha_it}
-          =\sum_{k\ge1}s_F(k)t^k.
+      =\sum_{k\ge1}s_F(k)t^k.
 
    This series is absolutely convergent in any disc
    :math:`|t|\le b<1/\beta` where :math:`\beta=\max_j(1/|\alpha_j|)`. We
@@ -933,9 +920,11 @@ having real numbers for coefficients.
    via `[bfk] <#bfk>`__ in a disc of radius :math:`b<1/\beta`. After
    some shuffling of the terms, we reach the expression
 
-   .. math:: \frac{tF'(t)}{F(t)}=\sum_{j\ge1}b_F(j)\frac{jt^j}{1-t^j}.
+   .. math:: 
+ 
+      \frac{tF'(t)}{F(t)}=\sum_{j\ge1}b_F(j)\frac{jt^j}{1-t^j}.
 
-   The lemma follows readily by integrating the above relation. ◻
+   The lemma follows readily by integrating the above relation.
 
 How does the mathematician E. Witt enter the scene? In the paper
 :raw-latex:`\cite{Witt*37}` on Lie algebras, Witt produced in equation
@@ -945,14 +934,13 @@ expansion.
 .. container:: lem
    :name: apriorimaj
 
-   **Lemma 20**. *We use the hypotheses and notation of
-   Lemma *\ `Lemma 19 <#Wittpoly>`__\ *. Let :math:`\beta\ge2` be larger
+   **Lemma 20**. We use the hypotheses and notation of
+   Lemma * `Lemma 19 <#Wittpoly>` \__ * . Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
    .. math:: |b_F(k)|\le2\deg F \cdot \beta^k/k.
 
-   *
 
 .. container:: proof
 
@@ -962,14 +950,13 @@ expansion.
    .. math::
 
       \begin{aligned}
-         |b_F(k)|
-         &\le \frac{\deg F}{k}\sum_{1\le j\le k}\beta^j
-         \le \frac{\deg F}{k}\beta\frac{\beta^k-1}{\beta-1}
-         \\&\le\frac{\deg F}{k}\frac{\beta^k}{1-1/\beta}
-         \le 2\deg F\frac{\beta^k}{k}.\qedhere
-       \end{aligned}
+      |b_F(k)|
+      &\le \frac{\deg F}{k}\sum_{1\le j\le k}\beta^j
+      \le \frac{\deg F}{k}\beta\frac{\beta^k-1}{\beta-1}
+      \\&\le\frac{\deg F}{k}\frac{\beta^k}{1-1/\beta}
+      \le 2\deg F\frac{\beta^k}{k}.\qedhere
+      \end{aligned}
 
-    ◻
 
 There are numerous easy upper estimates for the inverse of the modulus
 of all the roots of :math:`F(t)` in terms of its coefficients. Here is a
@@ -978,10 +965,10 @@ simplistic one.
 .. container:: lem
    :name: easybeta
 
-   **Lemma 21**. *Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
+   **Lemma 21**. Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
    polynomial of degree :math:`\delta`. Let :math:`\rho` be one of its
    roots. Then either :math:`|\rho|\ge 1` or
-   :math:`1/|\rho|\le |a_1|+|a_2|+\ldots+|a_\delta|`.*
+   :math:`1/|\rho|\le |a_1|+|a_2|+\ldots+|a_\delta|`.
 
 .. container:: proof
 
@@ -990,18 +977,18 @@ simplistic one.
    .. math::
 
       (1/\rho)^\delta =
-          -a_1(1/\rho)^{\delta-1}
-          -a_2(1/\rho)^{\delta-2}-\ldots -a_\delta,
+      -a_1(1/\rho)^{\delta-1}
+      -a_2(1/\rho)^{\delta-2}-\ldots -a_\delta,
 
-   the conclusion follows. ◻
+   the conclusion follows.
 
 .. container:: lem
    :name: boundedt
 
-   **Lemma 22**. *The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
+   **Lemma 22**. The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
    where :math:`\mathcal{L}=\{L\in
-           \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
-   depends only on :math:`\gcd(t,\varphi(q))`.*
+   \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
+   depends only on :math:`\gcd(t,\varphi(q))`.
 
 .. container:: proof
 
@@ -1013,11 +1000,11 @@ simplistic one.
    :math:`t`, i.e. :math:`r_0(t)=r_0(t/p')`: the map
    :math:`x\mapsto x^{p'}` is one-to-one in :math:`L`.
 
-   The lemma is an immediate consequence of these two remarks. ◻
+   The lemma is an immediate consequence of these two remarks.
 
 .. container:: proof
 
-   *Proof of Theorem *\ `Theorem 2 <#PM1>`__\ *.* The proof requires
+   *Proof of Theorem*  `Theorem 2 <#PM1>`__\  .  The proof requires
    several steps. The very first one is a direct consequence
    of `[Fhatb] <#Fhatb>`__, which leads to the identity
 
@@ -1038,9 +1025,9 @@ simplistic one.
    .. math::
 
       \label{tailJ}
-          \sum_{j\ge J+1}|t^j||b_F(j)-b_H(j)|
-          \le
-          4\max(\deg F,\deg H)\frac{|t\beta|^{J+1}}{(1-|t\beta|)(J+1)},
+      \sum_{j\ge J+1}|t^j||b_F(j)-b_H(j)|
+      \le
+      4\max(\deg F,\deg H)\frac{|t\beta|^{J+1}}{(1-|t\beta|)(J+1)},
 
    as soon as :math:`|t|<1/\beta`. We thus have
 
@@ -1057,23 +1044,23 @@ simplistic one.
    .. math::
 
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-          =
-          \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\prod_{\Delta\le j\le J}(1-p^{-js})^{b_F(j)-b_H(j)}\times I_2,
+      =
+      \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\prod_{\Delta\le j\le J}(1-p^{-js})^{b_F(j)-b_H(j)}\times I_2,
 
    where :math:`I_2` satisfies
 
    .. math::
 
       \begin{aligned}
-          |\log I_2|
-          &\le
-          4\max(\deg F,\deg H)\sum_{p\ge P}\frac{\beta^{J+1}}{1-\beta/P^s}\frac{1}{(J+1)p^{(J+1)s}}
-          \\&\le
-          \frac{4\max(\deg F,\deg H)\beta^{J+1}}{(1-\beta/P^s)(J+1)}\biggl(
-          \frac{1}{P^{(J+1)s}}+\int_{P}^{\infty}\frac{dt}{t^{(J+1)s}}\biggr)
-          \\&\le
-        \frac{4\max(\deg F,\deg H)
-        (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),\end{aligned}
+      \log I_2|
+      &\le
+      4\max(\deg F,\deg H)\sum_{p\ge P}\frac{\beta^{J+1}}{1-\beta/P^s}\frac{1}{(J+1)p^{(J+1)s}}
+      \\&\le
+      \frac{4\max(\deg F,\deg H)\beta^{J+1}}{(1-\beta/P^s)(J+1)}\biggl(
+      \frac{1}{P^{(J+1)s}}+\int_{P}^{\infty}\frac{dt}{t^{(J+1)s}}\biggr)
+      \\&\le
+      \frac{4\max(\deg F,\deg H)
+      (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),\end{aligned}
 
    since :math:`P\ge2` and :math:`J\ge3`. Letting :math:`J` go to
    infinity, we see that when :math:`P^s>\beta` and :math:`s>1/\Delta`,
@@ -1081,10 +1068,10 @@ simplistic one.
    .. math::
 
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-        =
-        \prod_{ j\ge \Delta}\prod_{\substack{p\ge P,\\
-            p+q\mathbb{Z}\in\mathcal{A}}}(1-p^{-js})^{b_F(j)-b_H(j)}=
-        \prod_{ j\ge 2}\zeta_P(js;q,\mathscr{A})^{b_H(j)-b_F(j)}
+      =
+      \prod_{ j\ge \Delta}\prod_{\substack{p\ge P,\\
+      p+q\mathbb{Z}\in\mathcal{A}}}(1-p^{-js})^{b_F(j)-b_H(j)}=
+      \prod_{ j\ge 2}\zeta_P(js;q,\mathscr{A})^{b_H(j)-b_F(j)}
 
    in the notation of Theorem `Theorem 18 <#mainspe>`__. We use this
    theorem to infer that
@@ -1092,8 +1079,8 @@ simplistic one.
    .. math::
 
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-        =\prod_{ j\ge \Delta}\prod_{m\ge1}\prod_{K\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^\perp}L_P(mjs,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,1-X)}{m}(b_H(j)-b_F(j))}.
+      =\prod_{ j\ge \Delta}\prod_{m\ge1}\prod_{K\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^\perp}L_P(mjs,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,1-X)}{m}(b_H(j)-b_F(j))}.
 
    Notice that we have :math:`s_H(j)-s_F(j)=0` (and hence
    :math:`b_H(j)-b_F(j)=0`) when :math:`j<\Delta` by our assumption on
@@ -1108,7 +1095,7 @@ simplistic one.
    .. math::
 
       n\sum_{jm=n}\frac{C_{\mathscr{A}}(K,m,1-X)}{m}(b_H(j)-b_F(j))
-        =\sum_{td=n}r(t)\bigl(s_{H}(d)-s_F(d)\bigr).
+      =\sum_{td=n}r(t)\bigl(s_{H}(d)-s_F(d)\bigr).
 
    We replace :math:`r(t)` by its value to conclude that this sum is
    :math:`C_{\mathscr{A}}(K,m,F/H)`, as defined
@@ -1117,9 +1104,9 @@ simplistic one.
    .. math::
 
       \label{aux}
-        \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-        =\prod_{ n\ge \Delta}\prod_{K\in\mathscr{G}}
-        \biggl(\prod_{\chi\in K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}.
+      \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
+      =\prod_{ n\ge \Delta}\prod_{K\in\mathscr{G}}
+      \biggl(\prod_{\chi\in K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}.
 
    The final task is to control the tail of this product, but prior to
    that, we change the variable :math:`n` in `[aux] <#aux>`__ in
@@ -1129,33 +1116,31 @@ simplistic one.
    .. math::
 
       \begin{aligned}
-        \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
-        \biggl(&\prod_{\chi\in
-        K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
-        \\&\le \sum_{m\ge M+1}\sum_{K\in\mathscr{G}}\frac{|C_{\mathscr{A}}(K,m,F/H)|}{m}
-        |G/K|\frac{ms-1+P}{P^{ms}}
-        \\&\le \sum_{m\ge M+1}
-        \sum_{K\in\mathscr{G}}\sum_{t|m}\mu^2(t)|\mathscr{G}|
-        (\deg F+\deg H)\beta^{m/t}
-        \frac{ms-1+P}{mP^{ms}}
-        \\&\le (\deg F+\deg H)|\mathscr{G}|^2
-        \sum_{m\ge M+1}
-        \frac{\beta^m}{1-(1/\beta)}
-        \frac{s+P}{P^{ms}}
+      \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
+      \biggl(&\prod_{\chi\in
+      K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
+      \\&\le \sum_{m\ge M+1}\sum_{K\in\mathscr{G}}\frac{|C_{\mathscr{A}}(K,m,F/H)|}{m}
+      |G/K|\frac{ms-1+P}{P^{ms}}
+      \\&\le \sum_{m\ge M+1}
+      \sum_{K\in\mathscr{G}}\sum_{t|m}\mu^2(t)|\mathscr{G}|
+      (\deg F+\deg H)\beta^{m/t}
+      \frac{ms-1+P}{mP^{ms}}
+      \\&\le (\deg F+\deg H)|\mathscr{G}|^2
+      \sum_{m\ge M+1}
+      \frac{\beta^m}{1-(1/\beta)}
+      \frac{s+P}{P^{ms}}
       % \end{align*}
       % We swiftly simplify this bound in
       % \begin{align*}
       %   \pm\log\prod_{ n\ge N+1}\prod_{K\in\mathscr{G}}
       %   \biggl(&\prod_{\chi\in
       %            K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}
-        \\&\le (\deg F+\deg H)|\mathscr{G}|^2
-        \frac{\beta(s+P)}{\beta-1}\frac{1}{1-(\beta/P^s)}
-        \biggl(\frac{\beta}{P^s}\biggr)^{M+1}
-        \\&\le 4(\deg F+\deg H)|\mathscr{G}|^2
-        (s+P)
-        \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{aligned}
-
-    ◻
+      \\&\le (\deg F+\deg H)|\mathscr{G}|^2
+      \frac{\beta(s+P)}{\beta-1}\frac{1}{1-(\beta/P^s)}
+      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}
+      \\&\le 4(\deg F+\deg H)|\mathscr{G}|^2
+      (s+P)
+      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{aligned}
 
 .. _More:
 
@@ -1171,7 +1156,7 @@ A formula
 .. container:: lem
    :name: dede
 
-   **Lemma 23**. *Let :math:`q>1` be a modulus. We set :math:`G_0` to be
+   **Lemma 23**. Let :math:`q>1` be a modulus. We set :math:`G_0` to be
    a subgroup of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` and
    :math:`G_0^\perp` be the subgroup of characters that take the value 1
    on :math:`G_0`. For any integer :math:`b`, we define
@@ -1181,12 +1166,11 @@ A formula
    .. math::
 
       \prod_{\chi\in G_0^\perp}L_P(s,\chi)
-          =
-          \prod_{\substack{G_0\subset K\subset G}}
-          \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{} G_0=K}}
-          \Bigl(1-p^{-|K/G_0|s}\Bigr)^{-|G/K|}.
+       =
+      \prod_{\substack{G_0\subset K\subset G}}
+      \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{} G_0=K}}
+      \Bigl(1-p^{-|K/G_0|s}\Bigr)^{-|G/K|}.
 
-   *
 
 The right-hand side of this formula contains products of the kind we
 seek and, if we were to start from such a set of formulas, the problem
@@ -1201,23 +1185,23 @@ would be to *invert* them in some sense.
    .. math::
 
       \label{eq:6}
-          f(\psi)=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L = \psi}}\chi(a).
+      f(\psi)=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L = \psi}}\chi(a).
 
    The condition :math:`\chi\in G_0^\perp` can also be written as
    :math:`\chi|G_0=1`, hence we can assume that :math:`\psi|(L\cap
-     G_0)=1`. We write
+   G_0)=1`. We write
 
    .. math::
 
       \prod_{\chi\in G_0^\perp}(1-\chi(p)z)^{\chi(a)}
-          =\prod_{\substack{\psi'\in\widehat{L{} G_0},\\ \psi'|G_0=1}}(1-\psi(p)z)^{f'(\psi')},
+      =\prod_{\substack{\psi'\in\widehat{L{} G_0},\\ \psi'|G_0=1}}(1-\psi(p)z)^{f'(\psi')},
 
    where
 
    .. math::
 
       \label{eq:76}
-          f'(\psi')=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L{} G_0 = \psi}}\chi(a).
+      f'(\psi')=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L{} G_0 = \psi}}\chi(a).
 
    When :math:`a` lies outside :math:`L{} G_0`, this sum vanishes;
    otherwise it equals :math:`|G/(L{} G_0)|\psi'(a)`. The characters of
@@ -1228,8 +1212,8 @@ would be to *invert* them in some sense.
    .. math::
 
       \prod_{\substack{\psi'\in\widehat{L{} G_0},\\ \psi'|G_0=1}}(1-\psi(p)z)
-          =
-          1-z^{|(L{} G_0)/G_0|},
+      =
+      1-z^{|(L{} G_0)/G_0|},
 
    and this proves our formula. ◻
 
@@ -1267,7 +1251,7 @@ zeta-function associated with an abelian field :math:`K` is given by
 .. math::
 
    \label{defZetaDedekind}
-     \zeta_K(s)=\prod_{\chi\in X(K)}L(s,\chi)
+   \zeta_K(s)=\prod_{\chi\in X(K)}L(s,\chi)
 
 as per :raw-latex:`\cite[Theorem 8.6]{Narkiewicz*04}`. The group
 :math:`X(K)` is the group of characters attached to :math:`K`, see
@@ -1290,10 +1274,10 @@ factors of :math:`q` are all at most :math:`P`, that
 .. math::
 
    \prod_{\chi\in X(K)}L_P(s,\chi)
-     =
-     \prod_{\substack{H_q(K)\subset K\subset G_q}}
-     \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{H_q(K)} =K}}
-     \Bigl(1-p^{-|K/H_q(K)|s}\Bigr)^{-|G_q/K|}.
+   =
+   \prod_{\substack{H_q(K)\subset K\subset G_q}}
+   \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{H_q(K)} =K}}
+   \Bigl(1-p^{-|K/H_q(K)|s}\Bigr)^{-|G_q/K|}.
 
 The proof we provide of Lemma `Lemma 23 <#dede>`__ is much simpler, but
 the above analysis establishes that the identities stemming from both
@@ -1308,7 +1292,7 @@ consider the vector, for any positive integer :math:`t`:
 .. math::
 
    \label{defGammaoft}
-     \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in G_0^\perp}L_P(ts,\chi)\Bigr)_{G_0\in\mathscr{G}}.
+   \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in G_0^\perp}L_P(ts,\chi)\Bigr)_{G_0\in\mathscr{G}}.
 
 The rows of :math:`\Gamma_{P,s}(t)` are indexed by the cyclic subgroups
 of :math:`G`. An approximate value of this vector is provided by the
@@ -1318,14 +1302,14 @@ Hurwitz zeta function. We next define
 .. math::
 
    \label{defVsoft}
-     V_s(t)=\bigl(\log\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
+   V_s(t)=\bigl(\log\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
 
 The rows of :math:`V_s(t)` are indexed by classes. We also define
 
 .. math::
 
    \label{defGammaoft}
-     \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in K^\perp}L_P(ts,\chi)\Bigr)_{K\in\mathscr{G}}.
+   \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in K^\perp}L_P(ts,\chi)\Bigr)_{K\in\mathscr{G}}.
 
 The function ``GetLatticeInvariantClasses`` of the script ``LIEP.sage``
 gives the two lists: the one of the cyclic subgroups and the one of
@@ -1432,7 +1416,6 @@ The computations of the Euler products of Theorem `Theorem 2 <#PM1>`__
 which point onwards we use the usual Euler product or the expression of
 the theorem) is implemented in:
 
-.
 
 The parameter ``bigP`` may be increased by the script to ensure that
 :math:`P\ge2\beta` (a condition that is usually satisfied). We reused
@@ -1462,15 +1445,16 @@ first fifty digits of the constant they call :math:`A` and which are
 .. math::
 
    \begin{aligned}
-     \label{eq:7}  \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
-     = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
-           \\&25267
-     \,08497\,71894\,30550\,80726\,33188\,94627
-     \\&61381\,60369
-     \,39924\,26646\,98594\,38665\cdots
-     %Gourdon-Sebah:1.9504911124462870744465855658095536925267084977189
-     %GetEulerProds(4,1, 1-2*x-7*x\^2-4*x\^3, 1-2*x+x\^2, 200, 400) %%aa=RR(0.395252136393835889460756928905363164796388518074402091654243254249709985041953055656738117362419073310)
-     %% LaTeXForNumber(RR(aa*pi^2/2),100,8)\end{aligned}
+   \label{eq:7}  \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
+   = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
+   \\&25267
+   \,08497\,71894\,30550\,80726\,33188\,94627
+   \\&61381\,60369
+   \,39924\,26646\,98594\,38665\cdots
+   %Gourdon-Sebah:1.9504911124462870744465855658095536925267084977189
+   %GetEulerProds(4,1, 1-2*x-7*x\^2-4*x\^3, 1-2*x+x\^2, 200, 400) 
+   %%aa=RR(0.395252136393835889460756928905363164796388518074402091654243254249709985041953055656738117362419073310)
+   %% LaTeXForNumber(RR(aa*pi^2/2),100,8)\end{aligned}
 
 Our result matches that of :raw-latex:`\cite{Gourdon-Sebah*10}`.
 
@@ -1523,129 +1507,129 @@ required, a value that is on the whole controlled by
 
    .. table:: Time used when asking for 100 digits
 
-      +---------+---------+---------+---------+---------+---------+------+
-      | :m      | :mat    | :m      | :math:  | :mat    | :m      | time |
-      | ath:`q` | h:`\var | ath:`r` | `\#m's` | h:`|G^\ | ath:`M` | s/10 |
-      |         | phi(q)` |         |         | sharp|` |         |      |
-      +---------+---------+---------+---------+---------+---------+------+
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+------+
+      |           |                      |           |               |                   |           | time |
+      | :math:`q` | :mat h:`\var phi(q)` | :math:`r` | :math:`\#m's` | :math:`|G^sharp|` | :math:`M` | s/10 |
+      |           |                      |           |               |                   |           |      |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+------+
 
  
 
 .. container::
-   :name: HundredDigits
+   :name: HundredDigitsbis
 
    .. table:: Time used when asking for 100 digits
 
-      +---------+---------+---------+---------+---------+---------+------+
-      | :m      | :mat    | :m      | :math:  | :mat    | :m      | time |
-      | ath:`q` | h:`\var | ath:`r` | `\#m's` | h:`|G^\ | ath:`M` | s/10 |
-      |         | phi(q)` |         |         | sharp|` |         |      |
-      +---------+---------+---------+---------+---------+---------+------+
+      +-----------+---------------------+-----------+---------------+-------------------+-----------+------+
+      |           |                     |           |               |                   |           | time |
+      | :math:`q` | :math:`\var phi(q)` | :math:`r` | :math:`\#m's` | :math:`|G^sharp|` | :math:`M` | s/10 |
+      |           |                     |           |               |                   |           |      |
+      +-----------+---------------------+-----------+---------------+-------------------+-----------+------+
 
 .. container::
    :name: ThousandDigits
 
-   .. table:: Time used when asking for 1000 digits for :math:`q\le 16`
+   .. table:: Time used when asking for 1000 digits for :math:`q \le 16`
 
-      +---------+---------+---------+---------+---------+---------+---------+
-      | :m      | :mat    | :m      | :math:  | :mat    | :m      | Time    |
-      | ath:`q` | h:`\var | ath:`r` | `\#m's` | h:`|G^\ | ath:`M` | (s/10)  |
-      |         | phi(q)` |         |         | sharp|` |         |         |
-      +=========+=========+=========+=========+=========+=========+=========+
-      | 3       | 2       | 1       | 8       | 2       | 218     | 10      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 4       | 2       | 1       | 8       | 2       | 218     | 7       |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 5       | 4       | 1       | 8       | 3       | 218     | 14      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 7       | 6       | 2       | 26      | 4       | 218     | 69      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 8       | 4       | 1       | 8       | 4       | 218     | 12      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 9       | 6       | 2       | 26      | 4       | 218     | 67      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 11      | 10      | 2       | 19      | 4       | 218     | 81      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 12      | 4       | 1       | 8       | 4       | 218     | 14      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 13      | 12      | 2       | 26      | 6       | 218     | 135     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 15      | 8       | 1       | 8       | 6       | 218     | 26      |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 16      | 8       | 1       | 8       | 6       | 218     | 24      |
-      +---------+---------+---------+---------+---------+---------+---------+
+
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |           |                     |           |               |                     |           | Time    |
+      | :math:`q` | :math:`\var phi(q)` | :math:`r` | :math:`\#m's` | :math:`\|G^sharp\|` | :math:`M` | (s/10)  |
+      |           |                     |           |               |                     |           |         |
+      +===========+=====================+===========+===============+=====================+===========+=========+
+      |    3      |           2         |   1       |       8       |           2         |   218     | 10      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |    4      |           2         |   1       |       8       |           2         |   218     | 7       |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |    5      |           4         |   1       |       8       |           3         |   218     | 14      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |    7      |           6         |   2       |      26       |           4         |   218     | 69      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |    8      |           4         |   1       |       8       |           4         |   218     | 12      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |    9      |           6         |   2       |      26       |           4         |   218     | 67      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   11      |          10         |   2       |      19       |           4         |   218     | 81      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   12      |           4         |   1       |       8       |           4         |   218     | 14      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   13      |          12         |   2       |      26       |           6         |   218     | 135     |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   15      |           8         |   1       |       8       |           6         |   218     | 26      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   16      |           8         |   1       |       8       |           6         |   218     | 24      |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+
 
 .. container::
    :name: ThousandDigitsbis
 
-   .. table:: Time used when asking for 1000 digits for
-   :math:`90<q\le 100`
+   .. table:: Time used when asking for 1000 digits for  :math:`90 <q \le 100`
 
-      +---------+---------+---------+---------+---------+---------+---------+
-      | :m      | :mat    | :m      | :math:  | :mat    | :m      | Time    |
-      | ath:`q` | h:`\var | ath:`r` | `\#m's` | h:`|G^\ | ath:`M` | (s/10)  |
-      |         | phi(q)` |         |         | sharp|` |         |         |
-      +=========+=========+=========+=========+=========+=========+=========+
-      | 91      | 72      | 2       | 26      | 30      | 219     | 910     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 92      | 44      | 2       | 14      | 8       | 218     | 286     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 93      | 60      | 3       | 47      | 16      | 219     | 1388    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 95      | 72      | 2       | 26      | 18      | 218     | 912     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 96      | 32      | 1       | 8       | 16      | 218     | 114     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 97      | 96      | 2       | 26      | 12      | 218     | 1257    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 99      | 60      | 3       | 47      | 16      | 219     | 1399    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 100     | 40      | 2       | 19      | 12      | 218     | 363     |
-      +---------+---------+---------+---------+---------+---------+---------+
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |           |                      |           |               |                   |           | Time    |
+      | :math:`q` | :math:`\var  phi(q)` | :math:`r` | :math:`\#m's` | :math:`|G^sharp|` | :math:`M` | (s/10)  |
+      |           |                      |           |               |                   |           |         |
+      +===========+======================+===========+===============+===================+===========+=========+
+      |   91      |          72          |   2       |       26      |           30      |   219     | 910     |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |   92      |          44          |   2       |       14      |           8       |   218     | 286     |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |   93      |          60          |   3       |       47      |          16       |   219     | 1388    |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |   95      |          72          |   2       |       26      |          18       |   218     | 912     |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |   96      |          32          |   1       |        8      |          16       |   218     | 114     |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |   97      |          96          |   2       |       26      |          12       |   218     | 1257    |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |   99      |          60          |   3       |       47      |          16       |   219     | 1399    |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
+      |   100     |          40          |   2       |       19      |          12       |   218     | 363     |
+      +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
 
 .. container::
    :name: ThousandDigitster
 
-   .. table:: Time used when asking for 1000 digits for
-   :math:`200\le q\le 220`
+   .. table:: Time used when asking for 1000 digits for  :math:`200 \le q \le 220`
 
-      +---------+---------+---------+---------+---------+---------+---------+
-      | :m      | :mat    | :m      | :math:  | :mat    | :m      | Time    |
-      | ath:`q` | h:`\var | ath:`r` | `\#m's` | h:`|G^\ | ath:`M` | (s/10)  |
-      |         | phi(q)` |         |         | sharp|` |         |         |
-      +=========+=========+=========+=========+=========+=========+=========+
-      | 200     | 80      | 2       | 19      | 24      | 218     | 759     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 201     | 132     | 3       | 37      | 16      | 218     | 2543    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 203     | 168     | 3       | 42      | 24      | 219     | 3767    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 204     | 64      | 1       | 8       | 20      | 218     | 240     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 205     | 160     | 2       | 19      | 28      | 219     | 1573    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 207     | 132     | 3       | 37      | 16      | 218     | 2520    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 208     | 96      | 2       | 26      | 40      | 219     | 1259    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 209     | 180     | 3       | 47      | 24      | 219     | 4552    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 211     | 210     | 4       | 69      | 16      | 219     | 8406    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 212     | 104     | 2       | 14      | 12      | 218     | 743     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 213     | 140     | 3       | 31      | 16      | 218     | 2271    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 215     | 168     | 3       | 42      | 24      | 219     | 3807    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 216     | 72      | 2       | 26      | 24      | 219     | 930     |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 217     | 180     | 3       | 47      | 40      | 219     | 4517    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 219     | 144     | 2       | 26      | 24      | 219     | 1970    |
-      +---------+---------+---------+---------+---------+---------+---------+
-      | 220     | 80      | 2       | 19      | 24      | 218     | 753     |
-      +---------+---------+---------+---------+---------+---------+---------+
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |           |                     |           |               |                     |           | Time    |
+      | :math:`q` | :math:`\var phi(q)` | :math:`r` | :math:`\#m's` | :math:`\|G^sharp\|` | :math:`M` | (s/10)  |
+      |           |                     |           |               |                     |           |         |
+      +===========+=====================+===========+===============+=====================+===========+=========+
+      |   200     |          80         |   2       |       19      |          24         |   218     | 759     |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   201     |         132         |   3       |       37      |          16         |   218     | 2543    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   203     |         168         |   3       |       42      |          24         |   219     | 3767    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   204     |          64         |   1       |        8      |          20         |   218     | 240     |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   205     |         160         |   2       |       19      |          28         |   219     | 1573    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   207     |         132         |   3       |       37      |          16         |   218     | 2520    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   208     |          96         |   2       |       26      |          40         |   219     | 1259    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   209     |         180         |   3       |       47      |          24         |   219     | 4552    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   211     |         210         |   4       |       69      |          16         |   219     | 8406    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   212     |         104         |   2       |       14      |          12         |   218     | 743     |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   213     |         140         |   3       |       31      |          16         |   218     | 2271    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   215     |         168         |   3       |       42      |          24         |   219     | 3807    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   216     |          72         |   2       |       26      |          24         |   219     | 930     |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   217     |         180         |   3       |       47      |          40         |   219     | 4517    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   219     |         144         |   2       |       26      |          24         |   219     | 1970    |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
+      |   220     |          80         |   2       |       19      |          24         |   218     | 753     |
+      +-----------+---------------------+-----------+---------------+---------------------+-----------+---------+
 
 Table `6 <#FiveThousandDigits>`__ gives some data about the running time
 when asking for 5000 decimal digits, which essentially sets the horizon
