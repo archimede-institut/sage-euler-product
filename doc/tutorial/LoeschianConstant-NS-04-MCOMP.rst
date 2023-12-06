@@ -1516,7 +1516,7 @@ required, a value that is on the whole controlled by
  
 
 .. container::
-   :name: HundredDigits
+   :name: HundredDigitsbis
 
    .. table:: Time used when asking for 100 digits
 
