@@ -664,19 +664,19 @@
 <span class="sd">    - &#39;&#39;borne&#39;&#39; : int, optional</span>
 <span class="sd">        [description], by default 10000</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1">### Computes an approximate value of the list (zeta(s; q, A))</span>
-    <span class="c1">### for A in the lattice-invariant classes.</span>
+    <span class="c1">#  Computes an approximate value of the list (zeta(s; q, A))</span>
+    <span class="c1">#  for A in the lattice-invariant classes.</span>
     <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
-    <span class="c1">#(theSGTuple, theClassTuple, nbclasses, theExponent,</span>
+    <span class="c1">#  (theSGTuple, theClassTuple, nbclasses, theExponent,</span>
     <span class="c1">#  phiq, characterGroup, invertibles, invariantCharacters) = structure</span>
     <span class="n">vs_approx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">prod</span><span class="p">([</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span><span class="n">p</span><span class="o">**</span><span class="n">s</span>
                         <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">())</span> <span class="ow">and</span> <span class="p">(</span><span class="n">w</span><span class="o">%</span><span class="n">q</span> <span class="ow">in</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
                                         <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">borne</span><span class="p">))])</span>
                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p mod &quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="s2">&quot; in &quot;</span><span class="p">,</span>  <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of 1/(1-p^{-&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;}) is about&quot;</span><span class="p">,</span> <span class="n">vs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></div>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p mod &quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="s2">&quot; in &quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of 1/(1-p^{-&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;}) is about&quot;</span><span class="p">,</span> <span class="n">vs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></div>
 
 </pre></div>
         </article>
