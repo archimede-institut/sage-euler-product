@@ -1564,8 +1564,7 @@ required, a value that is on the whole controlled by
 .. container::
    :name: ThousandDigitsbis
 
-   .. table:: Time used when asking for 1000 digits for
-   :math:`90<q \le 100`
+   .. table:: Time used when asking for 1000 digits for  :math:`90 <q \le 100`
 
       +-----------+----------------------+-----------+---------------+-------------------+-----------+---------+
       |           |                      |           |               |                   |           | Time    |
