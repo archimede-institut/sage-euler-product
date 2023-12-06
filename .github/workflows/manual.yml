@@ -28,10 +28,9 @@ jobs:
           sphinx-build -b html -n doc html/sage-euler-product --color -a -E -W
           touch html/sage-euler-product/.nojekyll
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/
-          force_orphan: true
+          folder:  html/sage-euler-product
