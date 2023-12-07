@@ -11,9 +11,9 @@ AUTHORS:
 - Dominique Benielli (2023-02_15) :
   Aix Marseille Université ,
   Integration as  SageMath package.
-  Cellule de developpement Institut Archimède
+  Cellule de developement Institut Archimède
 
-WARNING:
+...WARNING:
 
   Needs Sage version at least 9.0
   CAREFUL, this is Python 3 code!
@@ -90,7 +90,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     [type]
         [description]
 
-    EXAMPLES:
+    EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
         sage: get_vs(3, 1, 100)
@@ -149,11 +149,11 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     log_err = R(cte * (1 + big_p / (big_m * s)) / big_p**(s * big_m))
 
     if verbose >= 2:
-        print("done: we use bigM =", big_m, ".")
+        print("done: we use big_m =", big_m, ".\n")
 
     #  Build the set of indices di:
     if verbose >= 2:
-        sys.stdout.write("Building indices ... ")
+        sys.stdout.write("Building indices ... /n")
 
     my_indices = [m for m in filter(lambda w:
                                     set(prime_factors(w)).issubset(allowed_primes),
@@ -161,7 +161,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     #  1 is indeed in my_indices.
     CAKm = structure.get_CA_Km(my_indices=my_indices)
     if verbose >= 2:
-        print("done: there are", len(my_indices), "summands.")
+        print("done: there are", len(my_indices), "summands.\n")
     vs_approx = [R(0)] * structure.nb_class
     for m in my_indices:
         # print(q, m, s, bigP, prec)
@@ -177,22 +177,22 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     if verbose >= 2:
         for i in range(0, structure.nb_class):
             nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])  # type: ignore
-            print("-------------------")
-            print("For p + " + str(q) + "ZZ in", structure.the_Class_tuple[i])
-            print("the product of 1 / (1 - p^{-" + str(s) + "}) is between")
+            print("-------------------\n")
+            print("For p + " + str(q) + "ZZ in", structure.the_Class_tuple[i],"\n")
+            print("the product of 1 / (1 - p^{-" + str(s) + "}) is between \n")
             print(eulerProds[i][0])  # type: ignore
-            print("and")
+            print("and\n")
             print(eulerProds[i][1])  # type: ignore
             if with_laTeX == 1:
                 print("LaTeX format:")
                 how_many = min(nb_decimals, nb_digits)
                 print(laTeX_for_number(eulerProds[i][0], how_many, 10))  # type: ignore
-            print("(Obtained: ", nb_digits, " correct decimal digits)")
+            print("(Obtained: ", nb_digits, " correct decimal digits)\n")
 
     end = timer()
 
     if verbose >= 1:
-        print("Time taken:", end - start, "seconds.")
+        print("Time taken:", end - start, "seconds.\n")
     # print(my_indices)
     if verbose == -1:
         return([big_p, structure.phi_q, len(my_indices), structure.nb_class, big_m, end - start,
@@ -252,7 +252,8 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
 
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
         sage: get_euler_products(3, 1, 1-x^2, 100)
-        GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)
+        
+        sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)
     """
     start = timer()
     # assert F[0] = H[0] = 1
@@ -447,6 +448,6 @@ def get_vs_checker(q, s, borne=10000):
                                            range(2, borne))])
                  for i in range(0, structure.nb_class)]
     for i in range(0, structure.nb_class):
-        print("-------------------")
-        print("For p mod ", q, " in ", structure.the_Class_tuple[i])
+        print("-------------------\n")
+        print("For p mod ", q, " in ", structure.the_Class_tuple[i], "\n")
         print("the product of 1/(1-p^{-", s, "}) is about", vs_approx[i])
