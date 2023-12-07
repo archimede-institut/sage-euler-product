@@ -8,7 +8,6 @@ channels:
   - conda-forge
 dependencies:
   - sphinx
-  - jupyter-sphinx
   - jupytext
   - myst-nb
   - furo
