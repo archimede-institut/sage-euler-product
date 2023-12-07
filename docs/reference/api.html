@@ -215,9 +215,9 @@ Computing some structural invariants</p>
 <li><p>Dominique Benielli (2023-02_15) :
 Aix Marseille Université ,
 Integration as  SageMath package.
-Cellule de developpement Institut Archimède</p></li>
+Cellule de developement Institut Archimède</p></li>
 </ul>
-<p>WARNING:</p>
+<p>…WARNING:</p>
 <blockquote>
 <div><p>Needs Sage version at least 9.0
 CAREFUL, this is Python 3 code!</p>
@@ -290,7 +290,8 @@ We compute directly what happens for primes &lt; big_p.</p>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">GetEulerProds</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -351,25 +352,25 @@ Main Engines GetVs(12, 2, 100, 110)</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
-<blockquote>
-<div><p>sage: from euler_product.lattice_invariant_euler_products import get_vs
-sage: get_vs(3, 1, 100)
-Computing the structural invariants …  done.
-Computing big m … Computing the finite product for p &lt; 100 …  done.
-done: we use bigM = 51 .
-Building indices … done: there are 6 summands.
-——————-
-For p+3ZZ in frozenset({0, 3})
-the product of 1/(1-p^{-1}) is between
-1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601
-and
-1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011
-(Obtained:  100  correct decimal digits)
-Time taken: 0.06389763701008633 seconds.
-((frozenset({0, 3}),),
-((1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601,
-1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011),))</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_vs</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">Computing</span> <span class="n">the</span> <span class="n">structural</span> <span class="n">invariants</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
+<span class="n">Computing</span> <span class="n">big</span> <span class="n">m</span> <span class="o">...</span> <span class="n">Computing</span> <span class="n">the</span> <span class="n">finite</span> <span class="n">product</span> <span class="k">for</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
+<span class="n">done</span><span class="p">:</span> <span class="n">we</span> <span class="n">use</span> <span class="n">bigM</span> <span class="o">=</span> <span class="mi">51</span> <span class="o">.</span>
+<span class="n">Building</span> <span class="n">indices</span> <span class="o">...</span> <span class="n">done</span><span class="p">:</span> <span class="n">there</span> <span class="n">are</span> <span class="mi">6</span> <span class="n">summands</span><span class="o">.</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span><span class="o">+</span><span class="mi">3</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601</span>
+<span class="ow">and</span>
+<span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">100</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="n">Time</span> <span class="n">taken</span><span class="p">:</span> <span class="mf">0.06389763701008633</span> <span class="n">seconds</span><span class="o">.</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">}),),</span>
+<span class="p">((</span><span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601</span><span class="p">,</span>
+<span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011</span><span class="p">),))</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">

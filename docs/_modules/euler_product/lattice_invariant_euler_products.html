@@ -214,9 +214,9 @@
 <span class="sd">- Dominique Benielli (2023-02_15) :</span>
 <span class="sd">  Aix Marseille Université ,</span>
 <span class="sd">  Integration as  SageMath package.</span>
-<span class="sd">  Cellule de developpement Institut Archimède</span>
+<span class="sd">  Cellule de developement Institut Archimède</span>
 
-<span class="sd">WARNING:</span>
+<span class="sd">...WARNING:</span>
 
 <span class="sd">  Needs Sage version at least 9.0</span>
 <span class="sd">  CAREFUL, this is Python 3 code!</span>
@@ -295,7 +295,7 @@
 <span class="sd">    [type]</span>
 <span class="sd">        [description]</span>
 
-<span class="sd">    EXAMPLES:</span>
+<span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
 <span class="sd">        sage: get_vs(3, 1, 100)</span>
@@ -354,11 +354,11 @@
     <span class="n">log_err</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">cte</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">big_p</span> <span class="o">/</span> <span class="p">(</span><span class="n">big_m</span> <span class="o">*</span> <span class="n">s</span><span class="p">))</span> <span class="o">/</span> <span class="n">big_p</span><span class="o">**</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">big_m</span><span class="p">))</span>
 
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done: we use bigM =&quot;</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done: we use big_m =&quot;</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="s2">&quot;.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="c1">#  Build the set of indices di:</span>
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Building indices ... &quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Building indices ... /n&quot;</span><span class="p">)</span>
 
     <span class="n">my_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span>
                                     <span class="nb">set</span><span class="p">(</span><span class="n">prime_factors</span><span class="p">(</span><span class="n">w</span><span class="p">))</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">allowed_primes</span><span class="p">),</span>
@@ -366,7 +366,7 @@
     <span class="c1">#  1 is indeed in my_indices.</span>
     <span class="n">CAKm</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_CA_Km</span><span class="p">(</span><span class="n">my_indices</span><span class="o">=</span><span class="n">my_indices</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done: there are&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_indices</span><span class="p">),</span> <span class="s2">&quot;summands.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done: there are&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_indices</span><span class="p">),</span> <span class="s2">&quot;summands.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">vs_approx</span> <span class="o">=</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span> <span class="o">*</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span>
     <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">my_indices</span><span class="p">:</span>
         <span class="c1"># print(q, m, s, bigP, prec)</span>
@@ -382,22 +382,22 @@
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
             <span class="n">nb_digits</span> <span class="o">=</span> <span class="n">nb_common_digits</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># type: ignore</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;ZZ in&quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of 1 / (1 - p^{-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}) is between&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;ZZ in&quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of 1 / (1 - p^{-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}) is between </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># type: ignore</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;and&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;and</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># type: ignore</span>
             <span class="k">if</span> <span class="n">with_laTeX</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LaTeX format:&quot;</span><span class="p">)</span>
                 <span class="n">how_many</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">nb_decimals</span><span class="p">,</span> <span class="n">nb_digits</span><span class="p">)</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">laTeX_for_number</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">how_many</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># type: ignore</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Obtained: &quot;</span><span class="p">,</span> <span class="n">nb_digits</span><span class="p">,</span> <span class="s2">&quot; correct decimal digits)&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Obtained: &quot;</span><span class="p">,</span> <span class="n">nb_digits</span><span class="p">,</span> <span class="s2">&quot; correct decimal digits)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
     <span class="n">end</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
 
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time taken:&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time taken:&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="c1"># print(my_indices)</span>
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span><span class="p">([</span><span class="n">big_p</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">phi_q</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_indices</span><span class="p">),</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span>
@@ -460,7 +460,8 @@
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
 <span class="sd">        sage: get_euler_products(3, 1, 1-x^2, 100)</span>
-<span class="sd">        GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)</span>
+<span class="sd">        </span>
+<span class="sd">        sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
     <span class="c1"># assert F[0] = H[0] = 1</span>
@@ -661,8 +662,8 @@
                                            <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">borne</span><span class="p">))])</span>
                  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p mod &quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="s2">&quot; in &quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p mod &quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="s2">&quot; in &quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of 1/(1-p^{-&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;}) is about&quot;</span><span class="p">,</span> <span class="n">vs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></div>
 
 </pre></div>
