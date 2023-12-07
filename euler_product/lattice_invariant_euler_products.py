@@ -428,8 +428,6 @@ def get_vs_checker(q, s, borne=10000):
 
     INPUT:
 
-    - # The above code is an empty Python string. It does not perform any specific action or have any
-    # functionality.
     - ``q`` -- [type]
         [description]
 
