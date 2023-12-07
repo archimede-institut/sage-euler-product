@@ -1,0 +1,3 @@
+[codespell]
+skip = doc/references.rst
+ignore-words-list = developpement, institut, archimède
