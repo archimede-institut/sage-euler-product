@@ -11,7 +11,7 @@ AUTHORS:
 - Dominique Benielli (2023-02_15) :
   Aix Marseille Université ,
   Integration as  SageMath package.
-  Cellule de developement Institut Archimède
+  Cellule de developpement Institut Archimède
 
 ...WARNING:
 
