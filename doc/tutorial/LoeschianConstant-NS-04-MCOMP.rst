@@ -864,7 +864,7 @@ Proof of Theorem `Theorem 2 <#PM1>`__ in general
 
 Let us recall the Witt decomposition. The readers will find in
 :raw-latex:`\cite[Lemma 1]{Moree*00}` a result of the same flavour. We
-have simply modified the proof and setting as to accomodate polynomials
+have simply modified the proof and setting as to accommodate polynomials
 having real numbers for coefficients.
 
 .. container:: lem

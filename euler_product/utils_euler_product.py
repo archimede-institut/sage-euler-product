@@ -578,7 +578,7 @@ def get_vector_sf(coeffs_f, how_many):
 
     ann_i = coeffs_f + ((how_many - len(coeffs_f)) * [0])
     s_f = [0 for i in range(0, how_many)]
-    s_f[0] = len(coeffs_f) - 1  # = degres of F
+    s_f[0] = len(coeffs_f) - 1  # = degrees of F
 
     for k in range(1, how_many):
         s_f[k] = -k * ann_i[k] - add(ann_i[i] * s_f[k - i] for i in range(1, k))
