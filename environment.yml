@@ -4,6 +4,7 @@
 name: sage-eulerproduct-build
 channels:
   - conda-forge
+  - defaults
 dependencies:
   - c-compiler
   - cxx-compiler
@@ -15,12 +16,12 @@ dependencies:
   - gap-defaults
   - sympy
   - sagemath-db-conway-polynomials
-  - sagelib
+  - sagelib>=8.8
   # sagelib<9.2 does not explicitly install libiconv which is needed in lots of places.
   - libiconv
+  - ruff=0.0.292
   # Work around https://github.com/conda-forge/givaro-feedstock/issues/13
   - givaro=4.1.1=h192cbe9_1
-  - sage-flatsurf  # optional: sage_flatsurf
   - pyeantic >=1.0.0,<2  # optional: pyeantic
   - pyintervalxt >=3.1.0,<4  # optional: pyintervalxt
   - gmpxxyy >=1.0.1,<2  # optional: gmpxxyy

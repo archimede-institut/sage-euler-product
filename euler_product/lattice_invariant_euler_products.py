@@ -57,7 +57,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     Computes an approximate value of the list (zeta(s; q, A))
     for A in the lattice-invariant classes.
     We compute directly what happens for primes < big_p.
-     Main Engines GetVs(12, 2, 100, 110)
+    Main Engines GetVs(12, 2, 100, 110)
 
     ... WARNING ...
         Don't try me and avoid to select a prime number for big_p.
