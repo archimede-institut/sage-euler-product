@@ -8,13 +8,11 @@ INPUT:
 
 {{#args}}
 
-- ''{{var}}'' -- {{typePlaceholder}}
-    {{descriptionPlaceholder}}
+- ``{{var}}`` -- {{typePlaceholder}}  {{descriptionPlaceholder}}
 {{/args}}
 {{#kwargs}}
 
-- ''{{var}}'' : {{typePlaceholder}}, optional
-    {{descriptionPlaceholder}}, by default {{&default}}
+- ``{{var}}`` : {{typePlaceholder}}, optional  {{descriptionPlaceholder}}, by default {{&default}}
 {{/kwargs}}
 {{/parametersExist}}
 
@@ -23,25 +21,26 @@ INPUT:
 OUTPUT:
 
 {{#returns}}
-{{typePlaceholder}}
-    {{descriptionPlaceholder}}
+{{typePlaceholder}}  {{descriptionPlaceholder}}
 {{/returns}}
 {{/returnsExist}}
-{{#yieldsExist}}
 
-Yields
-------
-''{{#yields}}''
-{{typePlaceholder}}
-    {{descriptionPlaceholder}}
+
+{{#yieldsExist}}
+YIELD_OUTPUT:
+
+``{{#yields}}``
+{{typePlaceholder}}  {{descriptionPlaceholder}}
 {{/yields}}
 {{/yieldsExist}}
 {{#exceptionsExist}}
 
-Raises
-------
+EXCEPTIONS:
+----------
 {{#exceptions}}
-{{type}}
-    {{descriptionPlaceholder}}
+{{type}}  {{descriptionPlaceholder}}
 {{/exceptions}}
 {{/exceptionsExist}}
+
+EXAMPLES::
+

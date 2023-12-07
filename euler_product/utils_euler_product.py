@@ -8,7 +8,7 @@ AUTHORS:
 
 - Olivier Ramaré (2023-01-008) : initial version
 - Dominique Benielli(2023-02_15) :
-    AMU University <dominique.benielli@univ-amu.fr>,
+    Aix Marseille Université,
     Integration as  SageMath package.
     Cellule de developpement Institut Archimède
 
@@ -58,10 +58,10 @@ def nb_common_digits(a, b):
 
     INPUT:
 
-    - ''a'' -- [float]
+    - ``a`` -- [float]
         [first float to compare]
 
-    - ''b'' -- [float]
+    - ``b`` -- [float]
         [second float to compare]
 
     OUTPUT:
@@ -90,14 +90,14 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
 
     INPUT:
 
-    - ''w'' -- [float]
+    - ``w`` -- [float]
         [w is a real number with a (short) integer part and a floating point]
 
-    - ''how_many'' -- [int]
+    - ``how_many`` -- [int]
         [number of decimal,decimals, separated every 5 of them by \'\\,\'
-        et every block of ''nb_block_sto_cut'', on a different line. '\cdots' ends the string]
+        et every block of ``nb_block_sto_cut``, on a different line. '\cdots' ends the string]
 
-    - ''nb_block_sto_cut'' -- [int]
+    - ``nb_block_sto_cut`` -- [int]
         [description]
 
     OUTPUT:
@@ -138,10 +138,10 @@ def sub_group_generated(n, q):
 
     INPUT:
 
-    - ''n'' -- int
+    - ``n`` -- int
         [description]
 
-    - ''q'' -- int
+    - ``q`` -- int
         [description]
 
     OUTPUT:
@@ -192,7 +192,7 @@ class LatticeInvariantClasses():
 
         INPUT:
 
-        - ''q'' -- [int]
+        - ``q`` -- [int]
             [description]
 
         OUTPUT:
@@ -294,7 +294,7 @@ class ComponentStructure():
 
         INPUT:
 
-        - ''q'' -- int
+        - ``q`` -- int
             [description]
 
         OUTPUT:
@@ -337,7 +337,7 @@ class ComponentStructure():
 
         INPUT:
 
-        - ''my_indices'' -- list
+        - ``my_indices`` -- list
             [list of indices]
 
         OUTPUT:
@@ -377,7 +377,7 @@ class ComponentStructure():
 
         INPUT:
 
-        - ''my_indices'' -- [int]
+        - ``my_indices`` -- [int]
             [description]
 
         OUTPUT:
@@ -414,16 +414,16 @@ class ComponentStructure():
         INPUT:
 
 
-        - ''m'' -- [ComplexIntervalFieldElement>]
+        - ``m`` -- [ComplexIntervalFieldElement>]
             [description]
 
-        - ''big_p'' -- [type]
+        - ``big_p`` -- [type]
             [description]
 
-        - ''CIF'' -- [type]
+        - ``CIF`` -- [type]
             [description]
 
-        - ''CF'' -- [type]
+        - ``CF`` -- [type]
             [description]
 
         OUTPUT:
@@ -466,16 +466,16 @@ class ComponentStructure():
 
         INPUT:
 
-        - ''structure'' -- [type]
+        - ``structure`` -- [type]
             [description]
 
-        - ''my_indices'' -- [list]
+        - ``my_indices`` -- [list]
             [list of indices]
 
-        - ''coeff_sf'' -- [type]
+        - ``coeff_sf`` -- [type]
             [description]
 
-        - ''coeff_sh'' -- [type]
+        - ``coeff_sh`` -- [type]
             [description]
 
         OUTPUT
@@ -517,16 +517,16 @@ class ComponentStructure():
 
         INPUT:
 
-        - ''t'' -- [type]
+        - ``t`` -- [type]
             [description]
 
-        - ''s'' -- [type]
+        - ``s`` -- [type]
             [description]
 
-        - ''big_p'' -- [int]
+        - ``big_p`` -- [int]
             [description]
 
-        - ''prec'' -- [int]
+        - ``prec`` -- [int]
             [number of digits]
 
         OUTPUT:
@@ -564,10 +564,10 @@ def get_vector_sf(coeffs_f, how_many):
 
     INPUT:
 
-    - ''coeffs_f'' -- [type]
+    - ``coeffs_f`` -- [type]
         coefficient f
 
-    - ''how_many'' -- [type]
+    - ``how_many`` -- [type]
         [description]
 
     OUTPUT
@@ -591,10 +591,10 @@ def get_vector_bf(coeffs_f, how_many):
 
     INPUT:
 
-    - ''coeffs_f'' -- [type]
+    - ``coeffs_f`` -- [type]
         [description]
 
-    - ''how_many'' -- int
+    - ``how_many`` -- int
         number of coefficients bf
 
     OUTPUT
@@ -622,19 +622,19 @@ def check_get_L_values(q, m, s, big_p, prec):
 
     INPUT:
 
-    - ''q'' -- [type]
+    - ``q`` -- [type]
         [description]
 
-    - ''m'' -- [type]
+    - ``m`` -- [type]
         [description]
 
-    - ''s'' -- [type]
+    - ``s`` -- [type]
         [description]
 
-    - ''big_p'' -- [type]
+    - ``big_p`` -- [type]
         [description]
 
-    - ''prec'' -- [type]
+    - ``prec`` -- [type]
         [description]
 
     OUTPUT:
@@ -669,18 +669,7 @@ def check_get_L_values(q, m, s, big_p, prec):
 
 
 def get_beta(F):
-    """summary for get_beta
 
-    INPUT:
-
-    - ''F'' -- [type]
-        [description]
-
-    OUTPUT:
-
-    [type]
-        [description]
-    """
     my_roots = F.roots(multiplicities=False)
     # my_root must be never 0
     return max(1, max([1 / abs(c) for c in my_roots if c != 0.0], default=1))
@@ -691,7 +680,7 @@ def get_beta_rough(coeffs_f):
 
     INPUT:
 
-    - ''coeffs_f'' -- [type]
+    - ``coeffs_f`` -- [type]
         [description]
 
     OUTPUT:

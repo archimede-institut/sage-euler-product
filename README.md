@@ -1,2 +1,3 @@
 # euler_product
-SageMath external paackage for Euler product computation
+
+SageMath external package for Euler product computation
