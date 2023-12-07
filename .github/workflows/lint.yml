@@ -24,4 +24,4 @@ jobs:
       - name: Run pycodestyle
         shell: bash -l {0}
         # We currently only check for some warnings. We should enable & fix more of them.
-        run: pycodestyle --select=W2,W3 euler_product/
+        run: pycodestyle --ignore=E203,W503  --max-line-length=256 --select=W2,W3   euler_product/
