@@ -5,7 +5,8 @@
 [![Lint](https://github.com/archimede-institut/sage-euler-product/actions/workflows/lint.yml/badge.svg)](https://github.com/archimede-institut/sage-euler-product/actions/workflows/lint.yml)|
 
 [![pages-build-deployment](https://github.com/archimede-institut/sage-euler-product/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/archimede-institut/sage-euler-product/actions/workflows/pages/pages-build-deployment)|
-
+| :--------------- |:---------------:| ------------------:|
+|                  |                 |                    |
 
 # Euler Product for SageMath
 
