@@ -252,7 +252,6 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
 
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
         sage: get_euler_products(3, 1, 1-x^2, 100)
-        
         sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)
     """
     start = timer()
