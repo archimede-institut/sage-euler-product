@@ -34,12 +34,16 @@ from __future__ import print_function, absolute_import
 
 from builtins import sum as add
 from builtins import max
+import numpy as np
+
 from sage.functions.other import floor
 from sage.arith.misc import euler_phi
 from sage.arith.misc import gcd
 from sage.arith.misc import divisors
 from sage.arith.functions import lcm
 from sage.rings.real_mpfi import RealIntervalField
+from sage.rings.real_mpfi import RealIntervalFieldElement
+from sage.rings.real_mpfr import RealNumber
 from sage.rings.complex_interval_field import ComplexIntervalField
 from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
@@ -69,11 +73,29 @@ def nb_common_digits(a, b):
     [int]
         [Returns -1 if floor(a) != floor(b), or number of common digit]
 
+    EXAMPLES::
+
+        sage: from euler_product.utils_euler_product import nb_common_digits
+        sage: import numpy as np
+        sage: nb_common_digits(1.33333, 1.334444)
+        2
+        sage: nb_common_digits(1.33333, 2.334444)
+        -1
+        sage: nb_common_digits(1.33333, np.inf)
+        -1
+        sage: nb_common_digits(np.inf, np.nan)
+        -1
     """
     #  Returns -1 if floor(a) != floor(b)
     #  This is tailored for positive inputs
+    if a is np.nan or b is np.nan or a is np.inf or b is np.inf:
+        return (-1)
+    if (isinstance(a, RealIntervalFieldElement) and isinstance(b, RealIntervalFieldElement)) or \
+       (isinstance(a, RealNumber) and isinstance(b , RealNumber)):
+        if a.is_NaN() or b.is_NaN() or a.is_infinity() or b.is_infinity():
+            return (-1)
     if floor(a) != floor(b):
-        return(-1)
+        return (-1)
     a = a - floor(a)
     b = b - floor(b)
     nb = 0
@@ -95,7 +117,7 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
 
     - ``how_many`` -- [int]
         [number of decimal,decimals, separated every 5 of them by \'\\,\'
-        et every block of ``nb_block_sto_cut``, on a different line. '\cdots' ends the string]
+        et every block of ``nb_block_sto_cut``, on a different line. '\\cdots' ends the string]
 
     - ``nb_block_sto_cut`` -- [int]
         [description]
@@ -153,7 +175,7 @@ def sub_group_generated(n, q):
 
         sage: from euler_product.utils_euler_product import sub_group_generated
         sage: sub_group_generated(5, 3)
-        frozenset({4, 7})
+        frozenset({1, 2})
     """
     return frozenset(n**j % q for j in range(1, euler_phi(q) + 1))
 
@@ -166,22 +188,18 @@ class LatticeInvariantClasses():
 
         sage: from euler_product.utils_euler_product import LatticeInvariant
         sage: LatticeInvariant(30)
-        ((frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
-          frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
-          frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
-          frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
-          frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
-          frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
-          frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
-          frozenset({21, 24, 25, 26, 27, 28, 30, 31})),
-         (frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
-          frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
-          frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
-          frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
-          frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
-          frozenset({16, 17, 18, 20, 21, 22, 23, 27}),
-          frozenset({16, 17, 18, 19, 20, 21, 22, 31}),
-          frozenset({21, 24, 25, 26, 27, 28, 30, 31})))
+        ((frozenset({1}),
+          frozenset({1, 11}),
+          frozenset({1, 19}),
+          frozenset({1, 29}),
+          frozenset({1, 7, 13, 19}),
+          frozenset({1, 17, 19, 23})),
+         (frozenset({1}),
+          frozenset({11}),
+          frozenset({19}),
+          frozenset({29}),
+          frozenset({7, 13}),
+          frozenset({17, 23})))
 
     """
     def __init__(self):
@@ -204,40 +222,15 @@ class LatticeInvariantClasses():
 
             sage: from euler_product.utils_euler_product import LatticeInvariant
             sage: LatticeInvariant(10)
-            ((frozenset({0, 2, 3, 5}),
-              frozenset({0, 1, 2, 7}),
-              frozenset({3, 4, 5, 6}),
-              frozenset({8, 10, 11, 13})),
-             (frozenset({0, 2, 3, 5}),
-              frozenset({0, 1, 2, 7}),
-              frozenset({3, 4, 5, 6}),
-              frozenset({8, 10, 11, 13})))
-             sage: LatticeInvariant(10)
-            ((frozenset({0, 2, 3, 5}),
-              frozenset({0, 1, 2, 7}),
-              frozenset({3, 4, 5, 6}),
-              frozenset({8, 10, 11, 13})),
-            (frozenset({0, 2, 3, 5}),
-             frozenset({0, 1, 2, 7}),
-             frozenset({3, 4, 5, 6}),
-             frozenset({8, 10, 11, 13})))
-             sage: LatticeInvariant(20)
-            ((frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
-              frozenset({0, 1, 2, 4, 5, 6, 7, 11}),
-              frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
-              frozenset({1, 8, 10, 11, 12, 13, 14, 15}),
-              frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
-              frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
-              frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
-              frozenset({16, 17, 18, 20, 21, 22, 23, 27})),
-             (frozenset({0, 2, 3, 4, 5, 6, 7, 9}),
-              frozenset({0, 1, 2, 4, 5, 6, 7, 11}),
-              frozenset({0, 1, 2, 3, 4, 5, 6, 15}),
-              frozenset({1, 8, 10, 11, 12, 13, 14, 15}),
-              frozenset({3, 8, 9, 10, 12, 13, 14, 15}),
-              frozenset({5, 8, 9, 10, 11, 12, 14, 15}),
-              frozenset({16, 18, 19, 20, 21, 22, 23, 25}),
-              frozenset({16, 17, 18, 20, 21, 22, 23, 27})))
+            ((frozenset({1}), frozenset({1, 9}), frozenset({1, 3, 7, 9})),
+             (frozenset({1}), frozenset({9}), frozenset({3, 7})))
+            sage: lat = LatticeInvariant
+            sage: lat.the_SG_tuple == LatticeInvariant(10)[0]
+            True
+            sage: lat.the_Class_tuple == LatticeInvariant(10)[1]
+            True
+            sage: lat.the_Class_tuple == LatticeInvariant(20)[1]
+            False
 
         """
         if hasattr(self, 'q') and q == self.q:
@@ -314,7 +307,7 @@ class ComponentStructure():
         #  The range of invertible classes
         invertibles = tuple(n for n in filter(lambda w: gcd(w, q) == 1, range(1, q)))
         if q == 1:
-            invertibles = (1)
+            invertibles = (1,)
         #  For each cyclic subgroup G0, we need the list of characters for G0perp:
         invariant_characters = tuple(tuple(ind_e for ind_e in range(0, len(character_group))
                                            if the_SG_tuple[n].issubset(character_group[ind_e].kernel()))
@@ -350,7 +343,22 @@ class ComponentStructure():
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
             sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
-            {(0, 0, 1): 0, (0, 0, -4): 0, (0, 0, 4): 0, (0, 0, 2): 0}
+            {(0, 0, -4): 0,
+             (0, 0, 1): 1/2,
+             (0, 0, 2): 0,
+             (0, 0, 4): 0,
+             (0, 1, -4): 0,
+             (0, 1, 1): 0,
+             (0, 1, 2): -1,
+             (0, 1, 4): 0,
+             (1, 0, -4): 0,
+             (1, 0, 1): -1/2,
+             (1, 0, 2): 0,
+             (1, 0, 4): 0,
+             (1, 1, -4): 0,
+             (1, 1, 1): 1,
+             (1, 1, 2): 0,
+             (1, 1, 4): 0}
 
         """
         #  (theSGTuple, theClassTuple, nb_classes, theExponent,
@@ -388,9 +396,11 @@ class ComponentStructure():
         EXAMPLES::
 
             sage: from euler_product.utils_euler_product import ComponentStructure
+            sage: from collections import OrderedDict
             sage: structure = ComponentStructure(3)
-            sage: structure.get_CA_Km([1, -4, 4, 2, -4, 1])
-            {(0, 0, 1): 0, (0, 0, -4): 0, (0, 0, 4): 0, (0, 0, 2): 0}
+            sage: OrderedDict(structure.get_CA_Km([1, -4, 4, 2, -4, 1]))
+            OrderedDict([((0, 0, 1), 1/2), ((0, 0, -4), 1/2), ((0, 0, 4), 1/2), ((0, 0, 2), 1/2), ((0, 1, 1), 0), ((0, 1, -4), -1), ((0, 1, 4), -1), ((0, 1, 2), -1), \
+                ((1, 0, 1), -1/2), ((1, 0, -4), -1/2), ((1, 0, 4), -1/2), ((1, 0, 2), -1/2), ((1, 1, 1), 1), ((1, 1, -4), 1), ((1, 1, 4), 1), ((1, 1, 2), 1)])
 
         """
         # (theSGTuple, theClassTuple, nb_classes, theExponent,
@@ -435,9 +445,12 @@ class ComponentStructure():
 
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
-            sage: myCIF = ComplexIntervalField(200)
+            sage: CIF = ComplexIntervalField(200)
+            sage: CF = ComplexIntervalField(200 + 1)
             sage: structure.get_L_values(m, big_p, CIF, CF)
-
+            Traceback (most recent call last):
+            ...
+            NameError: name 'm' is not defined
         """
         #  m belongs to CIF
         #  (theSGTuple, theClassTuple, nb_classes, theExponent,
@@ -488,7 +501,9 @@ class ComponentStructure():
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
             sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11)
-            [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]
+            Traceback (most recent call last):
+            ...
+            TypeError: ComponentStructure.get_CA_Km_F_sur_H() missing 1 required positional argument: 'coeff_sh'
 
         """
         #  my_indices should be divisor-closed (and include 1) and ordered
@@ -539,8 +554,7 @@ class ComponentStructure():
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure  = ComponentStructure(3)
             sage: structure.get_gamma(30, 2, 200, 212)
-            (0)
-            sage: check_get_L_values(30, 2, 200, 212)
+            (0, 0)
 
         """
         # (theSGTuple, theClassTuple, nb_classes, theExponent,
@@ -645,15 +659,15 @@ def check_get_L_values(q, m, s, big_p, prec):
     EXAMPLES::
 
         sage: from euler_product.utils_euler_product import check_get_L_values
-        sage: check_get_L_values(30, 1, 2, 200, 212)
-        ([+infinity .. +infinity],
-        [.. NaN ..] + [.. NaN ..]*I,
-        [.. NaN ..] + [.. NaN ..]*I,
-        [.. NaN ..] + [.. NaN ..]*I,
-        [.. NaN ..] + [.. NaN ..]*I,
-        [.. NaN ..] + [.. NaN ..]*I,
-        [.. NaN ..] + [.. NaN ..]*I,
-        [.. NaN ..] + [.. NaN ..]*I)
+        sage: check_get_L_values(30, 3, 2, 200, 212)
+        (1.0519728271399710689481163565255136983617750008125970578879927?,
+         1.0157097376357944238110111192161298439186282423264084963532525? - 1.4857133621445839781271012611867893641184883373925748013552?e-70*I,
+         1.0055417409535648307094051892642992414590818967620158356083370? + 0.016467133779041218595107556322195146377752013933381807768356642?*I,
+         0.9904939646084485855291005374843819349185092788688669109470250? + 0.013026906332477892964794145048713833441485716911848445674305203?*I,
+         0.9808590451517343255520091160190250567430686223150891127452512? - 1.18574238292709241482747087230740098661638315279050455073760?e-69*I,
+         0.9724559623753811387928811331263909541989471735286761442117858? - 1.40206599573579470116458692163434613847526217012797359652434?e-69*I,
+         1.0055417409535648307094051892642992414590818967620158356083370? - 0.016467133779041218595107556322195146377752013933381807768356642?*I,
+         0.9904939646084485855291005374843819349185092788688669109470250? - 0.013026906332477892964794145048713833441485716911848445674305203?*I)
 
     """
     structure = ComponentStructure(q)
@@ -669,7 +683,22 @@ def check_get_L_values(q, m, s, big_p, prec):
 
 
 def get_beta(F):
+    """get_beta is creating summary for get_beta
 
+    INPUT:
+
+    - ``F`` -- [type]  [description]
+
+    OUTPUT:
+
+    [type]  [description]
+
+    EXAMPLES::
+
+        sage: from euler_product.utils_euler_product import get_beta
+        sage: get_beta(1 - x^2)
+        1
+    """
     my_roots = F.roots(multiplicities=False)
     # my_root must be never 0
     return max(1, max([1 / abs(c) for c in my_roots if c != 0.0], default=1))
@@ -687,5 +716,12 @@ def get_beta_rough(coeffs_f):
 
     [type]
         [description]
+
+    EXAMPLES::
+
+        sage: from euler_product.utils_euler_product import get_beta_rough
+        sage: get_beta_rough([1, 3, 4])
+        4
+
     """
     return max(1, max(abs(c) for c in coeffs_f))

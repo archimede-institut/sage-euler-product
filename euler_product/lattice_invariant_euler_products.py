@@ -73,13 +73,13 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     - ``nb_decimals`` -- [type]
         [description], by default 100
 
-    - ``big_p`` : int, optional
+    - ``big_p`` -- int, optional
         [description], by default 100
 
-    - ``verbose`` : int, optional
+    - ``verbose`` -- int, optional
         [description], by default 2
 
-    - ``with_laTeX`` : int, optional
+    - ``with_laTeX`` -- int, optional
         [description], by default 0
 
     - ``digits_offset`` : int, optional
@@ -93,22 +93,72 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
+        sage: get_vs(8, 3, 100)
+        Computing the structural invariants ...  done.
+        Computing big m ... Computing the finite product for p < 100 ...  done.
+        done: we use big_m = 18 .
+        Building indices ... done: there are 5 summands.
+        -------------------
+        For p + 8ZZ in frozenset({1})
+        the product of 1 / (1 - p^{-3}) is between
+        1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357
+        and
+        1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376
+        (Obtained:  105  correct decimal digits)
+        -------------------
+        For p + 8ZZ in frozenset({3})
+        the product of 1 / (1 - p^{-3}) is between
+        1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993
+        and
+        1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008
+        (Obtained:  103  correct decimal digits)
+        -------------------
+        For p + 8ZZ in frozenset({5})
+        the product of 1 / (1 - p^{-3}) is between
+        1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961
+        and
+        1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975
+        (Obtained:  105  correct decimal digits)
+        -------------------
+        For p + 8ZZ in frozenset({7})
+        the product of 1 / (1 - p^{-3}) is between
+        1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702
+        and
+        1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716
+        (Obtained:  105  correct decimal digits)
+        ((frozenset({1}), frozenset({3}), frozenset({5}), frozenset({7})),
+        ((1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357,
+        1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376),
+        (1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993,
+        1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008),
+        (1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961,
+        1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975),
+        (1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702,
+        1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716)))
+
+    TESTS::
+
+        sage: from euler_product.lattice_invariant_euler_products import get_vs
         sage: get_vs(3, 1, 100)
         Computing the structural invariants ...  done.
         Computing big m ... Computing the finite product for p < 100 ...  done.
-        done: we use bigM = 51 .
+        done: we use big_m = 52 .
         Building indices ... done: there are 6 summands.
         -------------------
-        For p+3ZZ in frozenset({0, 3})
-        the product of 1/(1-p^{-1}) is between
-        1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601
+        For p + 3ZZ in frozenset({1})
+        the product of 1 / (1 - p^{-1}) is between
+        NaN
         and
-        1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011
-        (Obtained:  100  correct decimal digits)
-        Time taken: 0.06389763701008633 seconds.
-        ((frozenset({0, 3}),),
-        ((1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601,
-        1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011),))
+        NaN
+        (Obtained:  -1  correct decimal digits)
+        -------------------
+        For p + 3ZZ in frozenset({2})
+        the product of 1 / (1 - p^{-1}) is between
+        NaN
+        and
+        NaN
+        (Obtained:  -1  correct decimal digits)
+        ((frozenset({1}), frozenset({2})), ((NaN, NaN), (NaN, NaN)))
 
     """
     start = timer()
@@ -149,11 +199,11 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     log_err = R(cte * (1 + big_p / (big_m * s)) / big_p**(s * big_m))
 
     if verbose >= 2:
-        print("done: we use big_m =", big_m, ".\n")
+        print("done: we use big_m =", big_m, ".")
 
     #  Build the set of indices di:
     if verbose >= 2:
-        sys.stdout.write("Building indices ... /n")
+        sys.stdout.write("Building indices ... ")
 
     my_indices = [m for m in filter(lambda w:
                                     set(prime_factors(w)).issubset(allowed_primes),
@@ -161,38 +211,38 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     #  1 is indeed in my_indices.
     CAKm = structure.get_CA_Km(my_indices=my_indices)
     if verbose >= 2:
-        print("done: there are", len(my_indices), "summands.\n")
+        print("done: there are", len(my_indices), "summands.")
     vs_approx = [R(0)] * structure.nb_class
     for m in my_indices:
-        # print(q, m, s, bigP, prec)
+        # print(q, m, s, bigP, prec)|-|
         aux = structure.get_gamma(m, s, big_p, prec)
         for ind_a in range(0, structure.nb_class):
             for ind_k in range(0, structure.nb_class):
                 vs_approx[ind_a] += aux[ind_k] * CAKm[ind_a, ind_k, m] / m
     #  We now have to get the Euler products:
-    eulerProds = ((R(euler_prod_ini[i] * exp(vs_approx[i] - log_err)).lower(),
-                   R(euler_prod_ini[i] * exp(vs_approx[i] + log_err)).upper())
-                  for i in range(0, structure.nb_class))
+    eulerProds = tuple([(R(euler_prod_ini[i] * exp(vs_approx[i] - log_err)).lower(),
+                       R(euler_prod_ini[i] * exp(vs_approx[i] + log_err)).upper())
+                        for i in range(0, structure.nb_class)])
 
     if verbose >= 2:
         for i in range(0, structure.nb_class):
             nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])  # type: ignore
-            print("-------------------\n")
-            print("For p + " + str(q) + "ZZ in", structure.the_Class_tuple[i],"\n")
-            print("the product of 1 / (1 - p^{-" + str(s) + "}) is between \n")
+            print("-------------------")
+            print("For p + " + str(q) + "ZZ in", structure.the_Class_tuple[i])
+            print("the product of 1 / (1 - p^{-" + str(s) + "}) is between")
             print(eulerProds[i][0])  # type: ignore
-            print("and\n")
+            print("and")
             print(eulerProds[i][1])  # type: ignore
             if with_laTeX == 1:
                 print("LaTeX format:")
                 how_many = min(nb_decimals, nb_digits)
                 print(laTeX_for_number(eulerProds[i][0], how_many, 10))  # type: ignore
-            print("(Obtained: ", nb_digits, " correct decimal digits)\n")
+            print("(Obtained: ", nb_digits, " correct decimal digits)")
 
     end = timer()
 
-    if verbose >= 1:
-        print("Time taken:", end - start, "seconds.\n")
+    if verbose == 1:
+        print("Time taken:", end - start, "seconds.")
     # print(my_indices)
     if verbose == -1:
         return([big_p, structure.phi_q, len(my_indices), structure.nb_class, big_m, end - start,
@@ -251,8 +301,23 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
-        sage: get_euler_products(3, 1, 1-x^2, 100)
-        sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)
+        sage: get_euler_products(3, 1, 1-x^2, 1, 100, verbose=0)
+        ((frozenset({1}), frozenset({2})),
+         ((0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974344,
+           0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974475),
+          (0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821107,
+           0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821228)))
+        sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 0, 0)
+        ((frozenset({1}), frozenset({3}), frozenset({5}), frozenset({7})),
+        ((0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120693625020812276103159906625162986027780621959661661058242880638494733,
+          0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120698715116910955482476415178562075800144085574035025387260631491020912),
+         (-1.1744975454490034177155999666151209160615842743206296883125115013500947685793723674107330894468690657084850070249226110372932226333018435422450675119284554631204742715594780,
+          -1.1744975454490034177155999666151209160615842743206296883125115013500947685793723674107330894468690657084850694977072727918933849576550337569751438204088603874573384648809813),
+         (0.41303522430115813462933064104403132614973953141027630692477294245200590806656802414019031361757979375573715775187373750238649707664458852273214341861159234461302771883822062,
+          0.41303522430115813462933064104403132614973953141027630692477294245200590806656802414019031361757979375573717972166689137936668012188844661293239520403935555328934054712625207),
+         (0.73440531676250743047848787987972815324702590578219161532691471695315326661191699963756307237940693554033848218351377181727690073086294638978098135674230697193936653008013195,
+        0.73440531676250743047848787987972815324702590578219161532691471695315326661191699963756307237940693554033852124733175620467822747169360181588443153429051853637559530089233888)))
+
     """
     start = timer()
     # assert F[0] = H[0] = 1
@@ -272,12 +337,14 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     R0X = R0['x']
     (x,) = R0X._first_ngens(1)
     F0, H0 = R0X(f_init), R0X(h_init)
+    if F0[0] != H0[0] or F0[0] != 1:
+        raise ValueError("f_init[0] and h_init[0] must be equal to 1")
     my_delta = (F0 - H0).valuation()
     #  Get my_beta, myDelta and big_p:
     my_beta = max(2, get_beta(F0), get_beta(H0))
 
     if verbose >= 2:
-        print("We have Delta  =", my_delta, "and beta =", my_beta)
+        print("We have Delta =", my_delta, "and beta =", my_beta)
 
     #  Getting bigM, prec and bigP:
     big_p = max(big_p, 2 * my_beta)
@@ -292,7 +359,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     prec = ceil(nb_decimals * log(10) / log(2) + 10) + ceil(float(big_m * log(my_beta) / log(2)))
 
     if verbose >= 2:
-        print("We use big_m =", big_m, ", big_p =", big_p, "and working prec =", prec, ".")
+        print("We use big_m =", big_m, ", big_p =", big_p, "and working prec =", prec)
     #  The precision has changed! Change the ring:
     R = RealIntervalField(prec)
     RF = RealField(prec + 1)
@@ -329,7 +396,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
 
     #  Compute CA(K, m, F/H):
     if verbose >= 1:
-        sys.stdout.write("Computing C_A(K, m, F/H) ... ")
+        sys.stdout.write("Computing C_A(K, m, F/H) ...\n")
 
     my_indices = [i for i in range(1, big_m + 1)]
     CAKmF_sur_H = structure.get_CA_Km_F_sur_H(my_indices, F.list(), H.list())
@@ -352,13 +419,13 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
         for i in range(0, structure.nb_class):
             nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])
             print("-------------------")
-            print("For p+" + str(q) + "ZZ in ", structure.the_Class_tuple[i])
+            print("For p + " + str(q) + " ZZ in ", structure.the_Class_tuple[i])
             print("For F(x) =", f_init)
             print("and H(x) =", h_init)
             if s == 1:
-                print("the product of F(1/p)/H(1/p) is between")
+                print("the product of F(1 / p) / H( 1 / p) is between")
             else:
-                print("the product of F(1/p^" + str(s) + ")/H(1/p^" + str(s) + ") is between")
+                print("the product of F(1 / p^" + str(s) + ")/H(1 / p^" + str(s) + ") is between")
             print(eulerProds[i][0])
             print("and")
             print(eulerProds[i][1])
@@ -386,17 +453,46 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
     - ``max_q`` -- [type]
         [description]
 
-    - ``nb_decimals`` : int, optional
+    - ``nb_decimals`` -- int, optional
         [description], by default 100
 
-    - ``big_p`` : int, optional
+    - ``big_p`` -- int, optional
         [description], by default 300
 
     EXAMPLES:
 
         sage: from euler_product.lattice_invariant_euler_products import table_performance
-        sage: table_performance(1, 5)
-
+        sage: table_performance(10, 30)
+        11 102 digits for the first product
+        12 102 digits for the first product
+        13 102 digits for the first product
+        15 102 digits for the first product
+        16 102 digits for the first product
+        17 102 digits for the first product
+        19 102 digits for the first product
+        20 102 digits for the first product
+        21 102 digits for the first product
+        23 102 digits for the first product
+        24 102 digits for the first product
+        25 102 digits for the first product
+        27 102 digits for the first product
+        28 102 digits for the first product
+        29 102 digits for the first product
+        11& 10& 2& 8& 4& 21& 4 \\
+        12& 4& 1& 5& 4& 21& 1 \\
+        13& 12& 2& 10& 6& 21& 5 \\
+        15& 8& 1& 5& 6& 21& 2 \\
+        16& 8& 1& 5& 6& 21& 2 \\
+        17& 16& 1& 5& 5& 21& 4 \\
+        19& 18& 2& 10& 6& 21& 8 \\
+        20& 8& 1& 5& 6& 21& 2 \\
+        21& 12& 2& 10& 8& 21& 6 \\
+        23& 22& 2& 6& 4& 21& 6 \\
+        24& 8& 1& 5& 8& 21& 2 \\
+        25& 20& 2& 8& 6& 21& 8 \\
+        27& 18& 2& 10& 6& 21& 8 \\
+        28& 12& 2& 10& 8& 21& 6 \\
+        29& 28& 2& 7& 6& 21& 9 \\
     """
     ref_time = 0.1  # approximate time is s for q = 3
     res = {}
@@ -436,6 +532,24 @@ def get_vs_checker(q, s, borne=10000):
 
     - ``borne`` -- int, optional
         boundary of computation, by default 10000
+
+    EXAMPLES::
+
+        sage: from euler_product.lattice_invariant_euler_products import get_vs_checker
+        sage: get_vs_checker(8, 1)
+        -------------------
+        For p mod  8  in  frozenset({1})
+        the product of 1/(1-p^{- 1 }) is about 1.3126486598837095
+        -------------------
+        For p mod  8  in  frozenset({3})
+        the product of 1/(1-p^{- 1 }) is about 2.217318868012348
+        -------------------
+        For p mod  8  in  frozenset({5})
+        the product of 1/(1-p^{- 1 }) is about 1.7913334693038976
+        -------------------
+        For p mod  8  in  frozenset({7})
+        the product of 1/(1-p^{- 1 }) is about 1.5751024072482105
+
     """
     #  Computes an approximate value of the list (zeta(s; q, A))
     #  for A in the lattice-invariant classes.
@@ -447,6 +561,6 @@ def get_vs_checker(q, s, borne=10000):
                                            range(2, borne))])
                  for i in range(0, structure.nb_class)]
     for i in range(0, structure.nb_class):
-        print("-------------------\n")
-        print("For p mod ", q, " in ", structure.the_Class_tuple[i], "\n")
+        print("-------------------")
+        print("For p mod ", q, " in ", structure.the_Class_tuple[i])
         print("the product of 1/(1-p^{-", s, "}) is about", vs_approx[i])
