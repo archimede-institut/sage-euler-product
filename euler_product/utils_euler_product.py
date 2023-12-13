@@ -473,7 +473,7 @@ class ComponentStructure():
             hurwitz_values = tuple(CIF(hurwitz_zeta(s=m_new,
                                                 x=CIF(a / self.q))._complex_mpfi_(CF)) / CIF(self.q)**m
                                for a in self.invertibles)  # type: ignore
-        except AttributeError:
+        except AttributeError, TypeError:
             try:
                 hurwitz_values = tuple(RF(hurwitz_zeta(s=m_new,
                                                 x=CIF(a / self.q))._real_mpfi_(RF)) / CIF(self.q)**m
