@@ -399,7 +399,7 @@ class ComponentStructure():
             sage: from collections import OrderedDict
             sage: structure = ComponentStructure(3)
             sage: OrderedDict(structure.get_CA_Km([1, -4, 4, 2, -4, 1]))  # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
-            OrderedDict([((0, 0, 1), 1/2), ((0, 0, -4), 1/2), ((0, 0, 4), 1/2), ((0, 0, 2), 1/2), ((0, 1, 1), 0), ((0, 1, -4), -1), ((0, 1, 4), -1), ((0, 1, 2), -1), \
+            OrderedDict([((0, 0, 1), 1/2), ((0, 0, -4), 1/2), ((0, 0, 4), 1/2), ((0, 0, 2), 1/2), ((0, 1, 1), 0), ((0, 1, -4), -1), ((0, 1, 4), -1), ((0, 1, 2), -1),
                 ((1, 0, 1), -1/2), ((1, 0, -4), -1/2), ((1, 0, 4), -1/2), ((1, 0, 2), -1/2), ((1, 1, 1), 1), ((1, 1, -4), 1), ((1, 1, 4), 1), ((1, 1, 2), 1)])
 
         """
