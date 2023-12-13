@@ -447,10 +447,17 @@ class ComponentStructure():
             sage: structure = ComponentStructure(3)
             sage: CIF = ComplexIntervalField(200)
             sage: CF = ComplexIntervalField(200 + 1)
-            sage: structure.get_L_values(3, 212, CIF, CF)
-            Traceback (most recent call last):
-            ...
-            NameError: name 'm' is not defined
+            sage: m = CIF(60)
+            sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
+            (1.0000000000000000000000000000000000000000000000000000000001?,
+            1.0000000000000000000000000000000000000000000000000000000001? - 1.?e-181*I,
+            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,
+            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,
+            1.0000000000000000000000000000000000000000000000000000000001? + 8.849708?e-163*I,
+            1.0000000000000000000000000000000000000000000000000000000001? + 8.849708?e-163*I,
+            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,
+            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I)
+
         """
         #  m belongs to CIF
         #  (theSGTuple, theClassTuple, nb_classes, theExponent,
