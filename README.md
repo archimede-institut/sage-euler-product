@@ -119,7 +119,7 @@ Assuming you have the program git on your computer, you can install the developm
 
 
 Authors
-Olivier Ramaré: see https://ramare-olivier.github.io/Maths/mcom3630.pdf for complite Mathematical references
+Olivier Ramar\'e: see https://ramare-olivier.github.io/Maths/mcom3630.pdf for complite Mathematical references
 Dominique Benielli: maintainerDeveloppement Cell, Institut Archimède Aix-Marseille Université
 
 
