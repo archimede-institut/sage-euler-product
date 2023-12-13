@@ -289,8 +289,22 @@ We compute directly what happens for primes &lt; big_p.</p>
 </dl>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">2</span><span class="p">})),</span>
+ <span class="p">((</span><span class="mf">0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974344</span><span class="p">,</span>
+   <span class="mf">0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974475</span><span class="p">),</span>
+  <span class="p">(</span><span class="mf">0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821107</span><span class="p">,</span>
+   <span class="mf">0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821228</span><span class="p">)))</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="mi">7</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">})),</span>
+<span class="p">((</span><span class="mf">0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120693625020812276103159906625162986027780621959661661058242880638494733</span><span class="p">,</span>
+  <span class="mf">0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120698715116910955482476415178562075800144085574035025387260631491020912</span><span class="p">),</span>
+ <span class="p">(</span><span class="o">-</span><span class="mf">1.1744975454490034177155999666151209160615842743206296883125115013500947685793723674107330894468690657084850070249226110372932226333018435422450675119284554631204742715594780</span><span class="p">,</span>
+  <span class="o">-</span><span class="mf">1.1744975454490034177155999666151209160615842743206296883125115013500947685793723674107330894468690657084850694977072727918933849576550337569751438204088603874573384648809813</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">0.41303522430115813462933064104403132614973953141027630692477294245200590806656802414019031361757979375573715775187373750238649707664458852273214341861159234461302771883822062</span><span class="p">,</span>
+  <span class="mf">0.41303522430115813462933064104403132614973953141027630692477294245200590806656802414019031361757979375573717972166689137936668012188844661293239520403935555328934054712625207</span><span class="p">),</span>
+ <span class="p">(</span><span class="mf">0.73440531676250743047848787987972815324702590578219161532691471695315326661191699963756307237940693554033848218351377181727690073086294638978098135674230697193936653008013195</span><span class="p">,</span>
+<span class="mf">0.73440531676250743047848787987972815324702590578219161532691471695315326661191699963756307237940693554033852124733175620467822747169360181588443153429051853637559530089233888</span><span class="p">)))</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -325,17 +339,17 @@ Main Engines GetVs(12, 2, 100, 110)</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code><span class="classifier">int, optional</span></dt><dd><p>[description], by default 100</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int, optional</dt><dd><p>[description], by default 100</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code><span class="classifier">int, optional</span></dt><dd><p>[description], by default 2</p>
+<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int, optional</dt><dd><p>[description], by default 2</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code><span class="classifier">int, optional</span></dt><dd><p>[description], by default 0</p>
+<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int, optional</dt><dd><p>[description], by default 0</p>
 </dd>
 </dl>
 </li>
@@ -352,22 +366,72 @@ Main Engines GetVs(12, 2, 100, 110)</p>
 </dl>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_vs</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">Computing</span> <span class="n">the</span> <span class="n">structural</span> <span class="n">invariants</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
+<span class="n">Computing</span> <span class="n">big</span> <span class="n">m</span> <span class="o">...</span> <span class="n">Computing</span> <span class="n">the</span> <span class="n">finite</span> <span class="n">product</span> <span class="k">for</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
+<span class="n">done</span><span class="p">:</span> <span class="n">we</span> <span class="n">use</span> <span class="n">big_m</span> <span class="o">=</span> <span class="mi">18</span> <span class="o">.</span>
+<span class="n">Building</span> <span class="n">indices</span> <span class="o">...</span> <span class="n">done</span><span class="p">:</span> <span class="n">there</span> <span class="n">are</span> <span class="mi">5</span> <span class="n">summands</span><span class="o">.</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357</span>
+<span class="ow">and</span>
+<span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">105</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993</span>
+<span class="ow">and</span>
+<span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">103</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961</span>
+<span class="ow">and</span>
+<span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">105</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702</span>
+<span class="ow">and</span>
+<span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">105</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">})),</span>
+<span class="p">((</span><span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357</span><span class="p">,</span>
+<span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993</span><span class="p">,</span>
+<span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961</span><span class="p">,</span>
+<span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975</span><span class="p">),</span>
+<span class="p">(</span><span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702</span><span class="p">,</span>
+<span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>TESTS:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">get_vs</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">Computing</span> <span class="n">the</span> <span class="n">structural</span> <span class="n">invariants</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
 <span class="n">Computing</span> <span class="n">big</span> <span class="n">m</span> <span class="o">...</span> <span class="n">Computing</span> <span class="n">the</span> <span class="n">finite</span> <span class="n">product</span> <span class="k">for</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
-<span class="n">done</span><span class="p">:</span> <span class="n">we</span> <span class="n">use</span> <span class="n">bigM</span> <span class="o">=</span> <span class="mi">51</span> <span class="o">.</span>
+<span class="n">done</span><span class="p">:</span> <span class="n">we</span> <span class="n">use</span> <span class="n">big_m</span> <span class="o">=</span> <span class="mi">52</span> <span class="o">.</span>
 <span class="n">Building</span> <span class="n">indices</span> <span class="o">...</span> <span class="n">done</span><span class="p">:</span> <span class="n">there</span> <span class="n">are</span> <span class="mi">6</span> <span class="n">summands</span><span class="o">.</span>
 <span class="o">-------------------</span>
-<span class="n">For</span> <span class="n">p</span><span class="o">+</span><span class="mi">3</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">})</span>
-<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
-<span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601</span>
+<span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">3</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="n">NaN</span>
 <span class="ow">and</span>
-<span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011</span>
-<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">100</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
-<span class="n">Time</span> <span class="n">taken</span><span class="p">:</span> <span class="mf">0.06389763701008633</span> <span class="n">seconds</span><span class="o">.</span>
-<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">}),),</span>
-<span class="p">((</span><span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803822023724871773601</span><span class="p">,</span>
-<span class="mf">1.499999999999999833466546306226537425382715903839089779090898009273915659667285674281826982924750803848670783695303011</span><span class="p">),))</span>
+<span class="n">NaN</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="o">-</span><span class="mi">1</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">3</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">2</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">1</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="n">NaN</span>
+<span class="ow">and</span>
+<span class="n">NaN</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="o">-</span><span class="mi">1</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">2</span><span class="p">})),</span> <span class="p">((</span><span class="n">NaN</span><span class="p">,</span> <span class="n">NaN</span><span class="p">),</span> <span class="p">(</span><span class="n">NaN</span><span class="p">,</span> <span class="n">NaN</span><span class="p">)))</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -395,6 +459,23 @@ Checking Engines</p>
 </dl>
 </li>
 </ul>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs_checker</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_vs_checker</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="n">mod</span>  <span class="mi">8</span>  <span class="ow">in</span>  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span> <span class="mi">1</span> <span class="p">})</span> <span class="ow">is</span> <span class="n">about</span> <span class="mf">1.3126486598837095</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="n">mod</span>  <span class="mi">8</span>  <span class="ow">in</span>  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span> <span class="mi">1</span> <span class="p">})</span> <span class="ow">is</span> <span class="n">about</span> <span class="mf">2.217318868012348</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="n">mod</span>  <span class="mi">8</span>  <span class="ow">in</span>  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span> <span class="mi">1</span> <span class="p">})</span> <span class="ow">is</span> <span class="n">about</span> <span class="mf">1.7913334693038976</span>
+<span class="o">-------------------</span>
+<span class="n">For</span> <span class="n">p</span> <span class="n">mod</span>  <span class="mi">8</span>  <span class="ow">in</span>  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span> <span class="mi">1</span> <span class="p">})</span> <span class="ow">is</span> <span class="n">about</span> <span class="mf">1.5751024072482105</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -415,21 +496,35 @@ Table Makers</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code><span class="classifier">int, optional</span></dt><dd><p>[description], by default 100</p>
+<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – int, optional</dt><dd><p>[description], by default 100</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code><span class="classifier">int, optional</span></dt><dd><p>[description], by default 300</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int, optional</dt><dd><p>[description], by default 300</p>
 </dd>
 </dl>
 </li>
 </ul>
-<p>EXAMPLES:</p>
-<blockquote>
-<div><p>sage: from euler_product.lattice_invariant_euler_products import table_performance
-sage: table_performance(1, 5)</p>
-</div></blockquote>
+<p class="rubric">Examples</p>
+<p>sage: from euler_product.lattice_invariant_euler_products import table_performance
+sage: table_performance(10, 30)
+11 102 digits for the first product
+12 102 digits for the first product
+13 102 digits for the first product
+15 102 digits for the first product
+16 102 digits for the first product
+17 102 digits for the first product
+19 102 digits for the first product
+20 102 digits for the first product
+21 102 digits for the first product
+23 102 digits for the first product
+24 102 digits for the first product
+25 102 digits for the first product
+27 102 digits for the first product
+28 102 digits for the first product
+29 102 digits for the first product
+11&amp; 10&amp; 2&amp; 8&amp; 4&amp; 21&amp; 4 12&amp; 4&amp; 1&amp; 5&amp; 4&amp; 21&amp; 1 13&amp; 12&amp; 2&amp; 10&amp; 6&amp; 21&amp; 5 15&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 16&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 17&amp; 16&amp; 1&amp; 5&amp; 5&amp; 21&amp; 4 19&amp; 18&amp; 2&amp; 10&amp; 6&amp; 21&amp; 8 20&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 21&amp; 12&amp; 2&amp; 10&amp; 8&amp; 21&amp; 6 23&amp; 22&amp; 2&amp; 6&amp; 4&amp; 21&amp; 6 24&amp; 8&amp; 1&amp; 5&amp; 8&amp; 21&amp; 2 25&amp; 20&amp; 2&amp; 8&amp; 6&amp; 21&amp; 8 27&amp; 18&amp; 2&amp; 10&amp; 6&amp; 21&amp; 8 28&amp; 12&amp; 2&amp; 10&amp; 8&amp; 21&amp; 6 29&amp; 28&amp; 2&amp; 7&amp; 6&amp; 21&amp; 9 </p>
 </dd></dl>
 
 </section>
@@ -449,11 +544,11 @@ Cellule de developpement Institut Archimède</p>
 </dl>
 </li>
 </ul>
-<p>WARNING:</p>
-<blockquote>
-<div><p>Needs Sage version at least 9.0
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Needs Sage version at least 9.0
 CAREFUL, this is Python 3 code!</p>
-</div></blockquote>
+</div>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span>  <span class="n">LatticeInvariantClasses</span>
 </pre></div>
@@ -487,9 +582,10 @@ CAREFUL, this is Python 3 code!</p>
 </dl>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
+<span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_CA_Km</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="mi">0</span><span class="p">}</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">get_CA_Km</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]))</span>
+<span class="n">OrderedDict</span><span class="p">([((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>                 <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">)])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -526,13 +622,13 @@ CAREFUL, this is Python 3 code!</p>
 <dt>[type]</dt><dd><p>[description]</p>
 </dd>
 </dl>
-<p>EXAMPLES:</p>
-<blockquote>
-<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+<p class="rubric">Examples</p>
+<p>sage: from euler_product.utils_euler_product import ComponentStructure
 sage: structure = ComponentStructure(3)
 sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11)
-[0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]</p>
-</div></blockquote>
+Traceback (most recent call last):
+…
+TypeError: ComponentStructure.get_CA_Km_F_sur_H() missing 1 required positional argument: ‘coeff_sh’</p>
 </dd></dl>
 
 <dl class="py method">
@@ -571,8 +667,12 @@ Computing Gamma</p>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">myCIF</span> <span class="o">=</span> <span class="n">ComplexIntervalField</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">CIF</span> <span class="o">=</span> <span class="n">ComplexIntervalField</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">CF</span> <span class="o">=</span> <span class="n">ComplexIntervalField</span><span class="p">(</span><span class="mi">200</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_L_values</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="n">CIF</span><span class="p">,</span> <span class="n">CF</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="o">...</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;m&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -613,8 +713,7 @@ Computing Gamma</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">structure</span>  <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_gamma</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">check_get_L_values</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -636,13 +735,26 @@ Computing Gamma</p>
 <dt>[set]</dt><dd><p>[description]</p>
 </dd>
 </dl>
-<p>EXAMPLES:</p>
-<blockquote>
-<div><p>sage: from euler_product.utils_euler_product import ComponentStructure
+<p class="rubric">Examples</p>
+<p>sage: from euler_product.utils_euler_product import ComponentStructure
 sage: structure = ComponentStructure(3)
-sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
-{(0, 0, 1): 0, (0, 0, -4): 0, (0, 0, 4): 0, (0, 0, 2): 0}</p>
-</div></blockquote>
+sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])  # doctest: +NORMALIZE_WHITESPACE
+{(0, 0, -4): 0,
+(0, 0, 1): 1/2,
+(0, 0, 2): 0,
+(0, 0, 4): 0,
+(0, 1, -4): 0,
+(0, 1, 1): 0,
+(0, 1, 2): -1,
+(0, 1, 4): 0,
+(1, 0, -4): 0,
+(1, 0, 1): -1/2,
+(1, 0, 2): 0,
+(1, 0, 4): 0,
+(1, 1, -4): 0,
+(1, 1, 1): 1,
+(1, 1, 2): 0,
+(1, 1, 4): 0}</p>
 </dd></dl>
 
 </dd></dl>
@@ -655,22 +767,18 @@ sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">LatticeInvariant</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">LatticeInvariant</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">27</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">31</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">})),</span>
- <span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">27</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">31</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">})))</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">19</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">})),</span>
+ <span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">11</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">19</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">29</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">})))</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -714,16 +822,16 @@ GetLvalues(30 ,1 ,strut,2, 200, 212), strut = GetStructure(30)</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">check_get_L_values</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">check_get_L_values</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span>
-<span class="p">([</span><span class="o">+</span><span class="n">infinity</span> <span class="o">..</span> <span class="o">+</span><span class="n">infinity</span><span class="p">],</span>
-<span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">,</span>
-<span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">,</span>
-<span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">,</span>
-<span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">,</span>
-<span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">,</span>
-<span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">,</span>
-<span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="o">..</span> <span class="n">NaN</span> <span class="o">..</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sage: from euler_product.utils_euler_product import check_get_L_values
+sage: check_get_L_values(30, 3, 2, 200, 212)
+(1.0519728271399710689481163565255136983617750008125970578879927?,
+ 1.0157097376357944238110111192161298439186282423264084963532525? - 1.4857133621445839781271012611867893641184883373925748013552?e-70*I,
+ 1.0055417409535648307094051892642992414590818967620158356083370? + 0.016467133779041218595107556322195146377752013933381807768356642?*I,
+ 0.9904939646084485855291005374843819349185092788688669109470250? + 0.013026906332477892964794145048713833441485716911848445674305203?*I,
+ 0.9808590451517343255520091160190250567430686223150891127452512? - 1.18574238292709241482747087230740098661638315279050455073760?e-69*I,
+ 0.9724559623753811387928811331263909541989471735286761442117858? - 1.40206599573579470116458692163434613847526217012797359652434?e-69*I,
+ 1.0055417409535648307094051892642992414590818967620158356083370? - 0.016467133779041218595107556322195146377752013933381807768356642?*I,
+ 0.9904939646084485855291005374843819349185092788688669109470250? - 0.013026906332477892964794145048713833441485716911848445674305203?*I)
 </pre></div>
 </div>
 </dd></dl>
@@ -731,7 +839,20 @@ GetLvalues(30 ,1 ,strut,2, 200, 212), strut = GetStructure(30)</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta">
 <span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_beta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_beta" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
+<dd><p>get_beta is creating summary for get_beta</p>
+<p>INPUT:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> – [type]  [description]</p></li>
+</ul>
+<p>OUTPUT:</p>
+<p>[type]  [description]</p>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">get_beta</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_beta</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="mi">1</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta_rough">
@@ -750,6 +871,12 @@ GetLvalues(30 ,1 ,strut,2, 200, 212), strut = GetStructure(30)</p>
 <dt>[type]</dt><dd><p>[description]</p>
 </dd>
 </dl>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">get_beta_rough</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_beta_rough</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="mi">4</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -823,7 +950,7 @@ Return a character string int(w).digits where digits concerns the first</p>
 </li>
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – [int]</dt><dd><p>[number of decimal,decimals, separated every 5 of them by '\,'
-et every block of <code class="docutils literal notranslate"><span class="pre">nb_block_sto_cut</span></code>, on a different line. ‘cdots’ ends the string]</p>
+et every block of <code class="docutils literal notranslate"><span class="pre">nb_block_sto_cut</span></code>, on a different line. ‘\cdots’ ends the string]</p>
 </dd>
 </dl>
 </li>
@@ -869,6 +996,19 @@ Returns -1 if floor(a) != floor(b)</p>
 <dt>[int]</dt><dd><p>[Returns -1 if floor(a) != floor(b), or number of common digit]</p>
 </dd>
 </dl>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">nb_common_digits</span>
+<span class="n">sage</span><span class="p">:</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">nb_common_digits</span><span class="p">(</span><span class="mf">1.33333</span><span class="p">,</span> <span class="mf">1.334444</span><span class="p">)</span>
+<span class="mi">2</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">nb_common_digits</span><span class="p">(</span><span class="mf">1.33333</span><span class="p">,</span> <span class="mf">2.334444</span><span class="p">)</span>
+<span class="o">-</span><span class="mi">1</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">nb_common_digits</span><span class="p">(</span><span class="mf">1.33333</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="o">-</span><span class="mi">1</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">nb_common_digits</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+<span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -897,7 +1037,7 @@ Main Engines function</p>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">sub_group_generated</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">sub_group_generated</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">frozenset</span><span class="p">({</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">})</span>
+<span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">})</span>
 </pre></div>
 </div>
 </dd></dl>
