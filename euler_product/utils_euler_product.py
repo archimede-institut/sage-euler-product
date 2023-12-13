@@ -444,7 +444,7 @@ class ComponentStructure():
         EXAMPLES::
 
             sage: from euler_product.utils_euler_product import ComponentStructure
-            sage: structure = ComponentStructure(3)
+            sage: structure = ComponentStructure(30)
             sage: CIF = ComplexIntervalField(200)
             sage: CF = ComplexIntervalField(200 + 1)
             sage: m = CIF(60)
@@ -467,10 +467,17 @@ class ComponentStructure():
             m_new = ZZ(m)
         else:
             m_new = m
-        hurwitz_values = tuple(CIF(hurwitz_zeta(s=m_new,
+        prec = CF.prec()
+        RF = RealIntervalField(prec)
+        try:
+            hurwitz_values = tuple(CIF(hurwitz_zeta(s=m_new,
                                                 x=CIF(a / self.q))._complex_mpfi_(CF)) / CIF(self.q)**m
                                for a in self.invertibles)  # type: ignore
-
+        except AttributeError:
+            try:
+                hurwitz_values = tuple(RF(hurwitz_zeta(s=m_new,
+                                                x=CIF(a / self.q))._real_mpfi_(RF)) / CIF(self.q)**m
+                               for a in self.invertibles)  # type: ignore
         aux0 = [[1 - CIF(e(p)) / CIF(p)**m
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
                 for e in CG]
