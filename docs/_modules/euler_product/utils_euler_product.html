@@ -669,7 +669,7 @@
 <span class="sd">        EXAMPLES::</span>
 
 <span class="sd">            sage: from euler_product.utils_euler_product import ComponentStructure</span>
-<span class="sd">            sage: structure = ComponentStructure(3)</span>
+<span class="sd">            sage: structure = ComponentStructure(30)</span>
 <span class="sd">            sage: CIF = ComplexIntervalField(200)</span>
 <span class="sd">            sage: CF = ComplexIntervalField(200 + 1)</span>
 <span class="sd">            sage: m = CIF(60)</span>
@@ -692,10 +692,19 @@
             <span class="n">m_new</span> <span class="o">=</span> <span class="n">ZZ</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">m_new</span> <span class="o">=</span> <span class="n">m</span>
-        <span class="n">hurwitz_values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">CIF</span><span class="p">(</span><span class="n">hurwitz_zeta</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">m_new</span><span class="p">,</span>
+        <span class="n">prec</span> <span class="o">=</span> <span class="n">CF</span><span class="o">.</span><span class="n">prec</span><span class="p">()</span>
+        <span class="n">RF</span> <span class="o">=</span> <span class="n">RealIntervalField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">hurwitz_values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">CIF</span><span class="p">(</span><span class="n">hurwitz_zeta</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">m_new</span><span class="p">,</span>
                                                 <span class="n">x</span><span class="o">=</span><span class="n">CIF</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">q</span><span class="p">))</span><span class="o">.</span><span class="n">_complex_mpfi_</span><span class="p">(</span><span class="n">CF</span><span class="p">))</span> <span class="o">/</span> <span class="n">CIF</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="n">m</span>
                                <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">invertibles</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
-
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">hurwitz_values</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">RF</span><span class="p">(</span><span class="n">hurwitz_zeta</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">m_new</span><span class="p">,</span>
+                                                <span class="n">x</span><span class="o">=</span><span class="n">CIF</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">q</span><span class="p">))</span><span class="o">.</span><span class="n">_real_mpfi_</span><span class="p">(</span><span class="n">RF</span><span class="p">))</span> <span class="o">/</span> <span class="n">CIF</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">q</span><span class="p">)</span><span class="o">**</span><span class="n">m</span>
+                               <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">invertibles</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
         <span class="n">aux0</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="o">-</span> <span class="n">CIF</span><span class="p">(</span><span class="n">e</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">/</span> <span class="n">CIF</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">m</span>
                 <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">()),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">big_p</span><span class="p">))]</span>
                 <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">CG</span><span class="p">]</span>
