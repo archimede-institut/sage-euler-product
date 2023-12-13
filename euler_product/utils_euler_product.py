@@ -480,7 +480,7 @@ class ComponentStructure():
                                for a in self.invertibles)  # type: ignore
             except Exception as error:
                 raise Exception(error)
-        aux0 = [[1 - CIF(e(p)) / CIF(p)**m
+        aux0 = [[((1 - CIF(e(p))) / (CIF(p)**m))
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
                 for e in CG]
         aux1 = [prod(v) for v in aux0]
