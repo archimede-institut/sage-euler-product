@@ -398,7 +398,7 @@ class ComponentStructure():
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: from collections import OrderedDict
             sage: structure = ComponentStructure(3)
-            sage: OrderedDict(structure.get_CA_Km([1, -4, 4, 2, -4, 1]))  # doctest: +NORMALIZE_WHITESPACE
+            sage: OrderedDict(structure.get_CA_Km([1, -4, 4, 2, -4, 1]))  # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
             OrderedDict([((0, 0, 1), 1/2), ((0, 0, -4), 1/2), ((0, 0, 4), 1/2), ((0, 0, 2), 1/2), ((0, 1, 1), 0), ((0, 1, -4), -1), ((0, 1, 4), -1), ((0, 1, 2), -1), \
                 ((1, 0, 1), -1/2), ((1, 0, -4), -1/2), ((1, 0, 4), -1/2), ((1, 0, 2), -1/2), ((1, 1, 1), 1), ((1, 1, -4), 1), ((1, 1, 4), 1), ((1, 1, 2), 1)])
 
@@ -447,7 +447,7 @@ class ComponentStructure():
             sage: structure = ComponentStructure(3)
             sage: CIF = ComplexIntervalField(200)
             sage: CF = ComplexIntervalField(200 + 1)
-            sage: structure.get_L_values(m, big_p, CIF, CF)
+            sage: structure.get_L_values(3, 212, CIF, CF)
             Traceback (most recent call last):
             ...
             NameError: name 'm' is not defined
@@ -500,7 +500,7 @@ class ComponentStructure():
 
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
-            sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11)
+            sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11, 14)
             Traceback (most recent call last):
             ...
             TypeError: ComponentStructure.get_CA_Km_F_sur_H() missing 1 required positional argument: 'coeff_sh'
