@@ -672,10 +672,17 @@
 <span class="sd">            sage: structure = ComponentStructure(3)</span>
 <span class="sd">            sage: CIF = ComplexIntervalField(200)</span>
 <span class="sd">            sage: CF = ComplexIntervalField(200 + 1)</span>
-<span class="sd">            sage: structure.get_L_values(3, 212, CIF, CF)</span>
-<span class="sd">            Traceback (most recent call last):</span>
-<span class="sd">            ...</span>
-<span class="sd">            NameError: name &#39;m&#39; is not defined</span>
+<span class="sd">            sage: m = CIF(60)</span>
+<span class="sd">            sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">            (1.0000000000000000000000000000000000000000000000000000000001?,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? - 1.?e-181*I,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 8.849708?e-163*I,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 8.849708?e-163*I,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I)</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1">#  m belongs to CIF</span>
         <span class="c1">#  (theSGTuple, theClassTuple, nb_classes, theExponent,</span>
