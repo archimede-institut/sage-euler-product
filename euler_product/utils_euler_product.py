@@ -467,19 +467,19 @@ class ComponentStructure():
             m_new = ZZ(m)
         else:
             m_new = m
-        prec = CF.prec()
-        RF = RealIntervalField(prec)
-        try:
-            hurwitz_values = tuple(CIF(hurwitz_zeta(s=m_new,
+        # prec = CF.prec()
+        # RF = RealIntervalField(prec)
+        # try:
+        hurwitz_values = tuple(CIF(hurwitz_zeta(s=m_new,
                                                 x=CIF(a / self.q))._complex_mpfi_(CF)) / CIF(self.q)**m
                                for a in self.invertibles)  # type: ignore
-        except (AttributeError, TypeError):
-            try:
-                hurwitz_values = tuple(RF(hurwitz_zeta(s=m_new,
-                                                x=CIF(a / self.q))._real_mpfi_(RF)) / CIF(self.q)**m
-                               for a in self.invertibles)  # type: ignore
-            except Exception as error:
-                raise Exception(error)
+        # except (AttributeError, TypeError):
+        #    try:
+        #        hurwitz_values = tuple(RF(hurwitz_zeta(s=m_new,
+        #                                        x=CIF(a / self.q))._real_mpfi_(RF)) / CIF(self.q)**m
+        #                       for a in self.invertibles)  # type: ignore
+        #    except Exception as error:
+        #        raise Exception(error)
         aux0 = [[((1 - CIF(e(p))) / (CIF(p)**m))
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
                 for e in CG]
