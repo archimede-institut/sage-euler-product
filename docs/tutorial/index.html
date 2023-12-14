@@ -215,20 +215,19 @@
 <ul class="simple">
 <li><p>Definition Lattice Invariant</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">LatticeInvariant</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">LatticeInvariant</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
-<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">19</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">})),</span>
- <span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">11</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">19</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">29</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">}),</span>
-  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">})))</span>
+<p>We subdivide the multiplicative group <span class="math notranslate nohighlight">\(G=(\mathbb{Z}/q\mathbb{Z})^\times\)</span> in classes called  <cite>LatticeInvariantClasses</cite>
+When <span class="math notranslate nohighlight">\(q = 15\)</span> these classes are obtained by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LatticeInvariant</span><span class="p">(</span><span class="mi">15</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">4</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">11</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">14</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">}))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      sage: from euler_product.utils_euler_product import LatticeInvariant
+      sage: LatticeInvariant(15)
+      ((frozenset({1}), frozenset({1, 4}), frozenset({1, 11}), frozenset({1, 14}), frozenset({8, 1, 2, 4}), frozenset({1, 4, 13, 7})),
+       (frozenset({1}), frozenset({4}), frozenset({11}), frozenset({14}), frozenset({8, 2}), frozenset({13, 7})))
+
+
+Two points are in the same class if and only if they generate the same subgroup modulo `q`
 </pre></div>
 </div>
 </section>
@@ -307,5 +306,7 @@
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
