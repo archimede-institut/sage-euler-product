@@ -341,13 +341,13 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     R0X = R0['x']
     (x,) = R0X._first_ngens(1)
     F0, H0 = R0X(f_init), R0X(h_init)
-    if Integer(H0[0]) != 1 or Integer(F0[0]) != 1:
+    if Integer(H0[0]) != Integer(F0[0]):
         raise ValueError("f_init[0] and h_init[0] must be equal to 1")
     my_delta = (F0 - H0).valuation()
     if my_delta * s <= 1:
       raise ValueError('non convergent product')
     #  Get my_beta, myDelta and big_p:
-    my_beta = max(2, get_beta(F0), get_beta(H0))
+    my_beta = max(2, get_beta(F0 / F0[0]), get_beta(H0 / H0[0]))
 
     if verbose >= 2:
         print("We have Delta =", my_delta, "and beta =", my_beta)
@@ -372,7 +372,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     log_err = R(cte * (my_beta / (big_p**s))**(big_m + 1))
     RX = R['x']
     (x,) = RX._first_ngens(1)
-    F, H = RX(f_init), RX(h_init)
+    F, H = RX(f_init / Integer(F0[0])), RX(h_init / Integer(H0[0]))
 
     #  Initial computations:
     if verbose >= 2:
