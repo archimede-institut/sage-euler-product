@@ -442,8 +442,8 @@ class ComponentStructure():
             [description]
 
         EXCEPTIONS:
-
-            ValueError parameter ``m` not belows of ``CIF``   
+        
+            ValueError parameter ``m` not belows of ``CIF``
 
         EXAMPLES::
 
@@ -474,7 +474,7 @@ class ComponentStructure():
            RF = RealIntervalField(prec)
            hurwitz_values = tuple(CIF(RF(hurwitz_zeta(s=ZZ(m),
                                                 x=CIF(a / self.q)))) / CIF(self.q)**m
-                               for a in self.invertibles)  # type: ignore    
+                               for a in self.invertibles)  # type: ignore
         else:
             hurwitz_values = tuple(CIF(hurwitz_zeta(s=m,
                                                 x=CIF(a / self.q))) / CIF(self.q)**m
@@ -604,11 +604,9 @@ def get_vector_sf(coeffs_f, how_many):
     list
         list des coefficient f
     """
-
     ann_i = coeffs_f + ((how_many - len(coeffs_f)) * [0])
     s_f = [0 for i in range(0, how_many)]
     s_f[0] = len(coeffs_f) - 1  # = degrees of F
-
     for k in range(1, how_many):
         s_f[k] = -k * ann_i[k] - add(ann_i[i] * s_f[k - i] for i in range(1, k))
     return s_f
@@ -634,7 +632,7 @@ def get_vector_bf(coeffs_f, how_many):
     EXAMPLES::
 
         sage: from euler_product.utils_euler_product import get_vector_bf
-        sage: get_vector_bf([1, -4, 4, 2, -4, 1], 11)
+        sage: get_vector_bf([1, -4, 4, 2, -4, 1], [11])
         [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]
 
     """
