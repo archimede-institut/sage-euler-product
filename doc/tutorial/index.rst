@@ -36,6 +36,6 @@ When :math:`q = 15` these classes are obtained by
          (frozenset({1}), frozenset({4}), frozenset({11}), frozenset({14}), frozenset({8, 2}), frozenset({13, 7})))
 
 
-  Two points are in the same class if and only if they generate the same subgroup modulo `q`
+Two points are in the same class if and only if they generate the same subgroup modulo `q`
 
 
