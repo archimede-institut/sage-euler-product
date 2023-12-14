@@ -221,15 +221,13 @@ When <span class="math notranslate nohighlight">\(q = 15\)</span> these classes 
 <span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">4</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">11</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">14</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">}))</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      sage: from euler_product.utils_euler_product import LatticeInvariant
-      sage: LatticeInvariant(15)
-      ((frozenset({1}), frozenset({1, 4}), frozenset({1, 11}), frozenset({1, 14}), frozenset({8, 1, 2, 4}), frozenset({1, 4, 13, 7})),
-       (frozenset({1}), frozenset({4}), frozenset({11}), frozenset({14}), frozenset({8, 2}), frozenset({13, 7})))
-
-
-Two points are in the same class if and only if they generate the same subgroup modulo `q`
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">LatticeInvariant</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">LatticeInvariant</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">})),</span>
+ <span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">4</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">11</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">14</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">})))</span>
 </pre></div>
 </div>
+<p>Two points are in the same class if and only if they generate the same subgroup modulo <cite>q</cite></p>
 </section>
 </section>
 
