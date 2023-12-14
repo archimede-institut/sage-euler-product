@@ -298,6 +298,10 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     [tuple]
         [return tuple of (the_Class_tuple, euler_prods)]
 
+    EXCEPTIONS:
+        ValueError   ('non convergent product')
+        ValueError("f_init[0] and h_init[0] must be equal to 1")
+
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
@@ -340,6 +344,8 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     if H0[0] != 1 or F0[0] != 1:
         raise ValueError("f_init[0] and h_init[0] must be equal to 1")
     my_delta = (F0 - H0).valuation()
+    if my_delta * s <= 1:
+      raise ValueError('non convergent product')
     #  Get my_beta, myDelta and big_p:
     my_beta = max(2, get_beta(F0), get_beta(H0))
 
