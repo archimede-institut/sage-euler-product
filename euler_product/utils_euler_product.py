@@ -442,7 +442,7 @@ class ComponentStructure():
             [description]
 
         EXCEPTIONS:
-        
+
             ValueError parameter ``m` not belows of ``CIF``
 
         EXAMPLES::
