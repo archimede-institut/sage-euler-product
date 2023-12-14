@@ -441,6 +441,10 @@ class ComponentStructure():
         [type]
             [description]
 
+        EXCEPTIONS:
+
+            ValueError parameter ``m` not belows of ``CIF``   
+
         EXAMPLES::
 
             sage: from euler_product.utils_euler_product import ComponentStructure
@@ -462,24 +466,19 @@ class ComponentStructure():
         #  m belongs to CIF
         #  (theSGTuple, theClassTuple, nb_classes, theExponent,
         #  phi_q, characterGroup, invertibles, invariantCharacters) = structure
+        if not m in CIF:
+            raise ValueError("m parameter must belongs to CIF parameter")
         CG = self.character_group.change_ring(CF)
-        if m in ZZ:
-            m_new = ZZ(m)
+        if m in ZZ  and m > 1:
+           prec = CIF.prec()
+           RF = RealIntervalField(prec)
+           hurwitz_values = tuple(CIF(RF(hurwitz_zeta(s=ZZ(m),
+                                                x=CIF(a / self.q)))) / CIF(self.q)**m
+                               for a in self.invertibles)  # type: ignore    
         else:
-            m_new = m
-        # prec = CF.prec()
-        # RF = RealIntervalField(prec)
-        # try:
-        hurwitz_values = tuple(CIF(hurwitz_zeta(s=m_new,
-                                                x=CIF(a / self.q))._complex_mpfi_(CF)) / CIF(self.q)**m
+            hurwitz_values = tuple(CIF(hurwitz_zeta(s=m,
+                                                x=CIF(a / self.q))) / CIF(self.q)**m
                                for a in self.invertibles)  # type: ignore
-        # except (AttributeError, TypeError):
-        #    try:
-        #        hurwitz_values = tuple(RF(hurwitz_zeta(s=m_new,
-        #                                        x=CIF(a / self.q))._real_mpfi_(RF)) / CIF(self.q)**m
-        #                       for a in self.invertibles)  # type: ignore
-        #    except Exception as error:
-        #        raise Exception(error)
         aux0 = [[1 - CIF(e(p)) / CIF(p)**m
                 for p in filter(lambda w: (w in Primes()), range(2, big_p))]
                 for e in CG]
