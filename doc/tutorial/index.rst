@@ -10,7 +10,11 @@ Euler Product over every primes
 
 .. code-block:: default
      
-    import euler_product.util
+     sage: from euler_product.utils_euler_product import ComponentStructure
+     sage: structure = ComponentStructure(3)
+     sage: from euler_product.lattice_invariant_euler_products import get_euler_products
+     sage: get_euler_products(1, 1, 1-x^2, 1+x^3, 100, verbose=0)
+
 
 
 Euler Product over primes in arithmetic progression
@@ -37,5 +41,6 @@ When :math:`q = 15` these classes are obtained by
 
 
 Two points are in the same class if and only if they generate the same subgroup modulo `q`
+
 
 
