@@ -206,7 +206,10 @@
 <span id="index"></span><h1>Tutorial Euler Product<a class="headerlink" href="#tutorial-euler-product" title="Link to this heading">#</a></h1>
 <section id="euler-product-over-every-primes">
 <h2>Euler Product over every primes<a class="headerlink" href="#euler-product-over-every-primes" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">euler_product.util</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
