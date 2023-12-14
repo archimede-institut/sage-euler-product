@@ -506,6 +506,10 @@
 <span class="sd">    [tuple]</span>
 <span class="sd">        [return tuple of (the_Class_tuple, euler_prods)]</span>
 
+<span class="sd">    EXCEPTIONS:</span>
+<span class="sd">        ValueError   (&#39;non convergent product&#39;)</span>
+<span class="sd">        ValueError(&quot;f_init[0] and h_init[0] must be equal to 1&quot;)</span>
+
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
@@ -548,6 +552,8 @@
     <span class="k">if</span> <span class="n">H0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">F0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;f_init[0] and h_init[0] must be equal to 1&quot;</span><span class="p">)</span>
     <span class="n">my_delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">F0</span> <span class="o">-</span> <span class="n">H0</span><span class="p">)</span><span class="o">.</span><span class="n">valuation</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">my_delta</span> <span class="o">*</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;non convergent product&#39;</span><span class="p">)</span>
     <span class="c1">#  Get my_beta, myDelta and big_p:</span>
     <span class="n">my_beta</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">get_beta</span><span class="p">(</span><span class="n">F0</span><span class="p">),</span> <span class="n">get_beta</span><span class="p">(</span><span class="n">H0</span><span class="p">))</span>
 
