@@ -341,7 +341,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     R0X = R0['x']
     (x,) = R0X._first_ngens(1)
     F0, H0 = R0X(f_init), R0X(h_init)
-    if H0[0] != 1 or F0[0] != 1:
+    if Integer(H0[0]) != 1 or Integer(F0[0]) != 1:
         raise ValueError("f_init[0] and h_init[0] must be equal to 1")
     my_delta = (F0 - H0).valuation()
     if my_delta * s <= 1:
