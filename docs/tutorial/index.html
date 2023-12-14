@@ -204,9 +204,31 @@
         <article role="main">
           <section id="tutorial-euler-product">
 <span id="index"></span><h1>Tutorial Euler Product<a class="headerlink" href="#tutorial-euler-product" title="Link to this heading">#</a></h1>
-<section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<section id="euler-product-over-every-primes">
+<h2>Euler Product over every primes<a class="headerlink" href="#euler-product-over-every-primes" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">euler_product.util</span>
+</pre></div>
+</div>
+</section>
+<section id="euler-product-over-primes-in-arithmetic-progression">
+<h2>Euler Product over primes in arithmetic progression<a class="headerlink" href="#euler-product-over-primes-in-arithmetic-progression" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Definition Lattice Invariant</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">LatticeInvariant</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">LatticeInvariant</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">19</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">19</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">23</span><span class="p">})),</span>
+ <span class="p">(</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">11</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">19</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">29</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">}),</span>
+  <span class="nb">frozenset</span><span class="p">({</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">})))</span>
 </pre></div>
 </div>
 </section>
@@ -268,7 +290,8 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Tutorial Euler Product</a><ul>
-<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#euler-product-over-every-primes">Euler Product over every primes</a></li>
+<li><a class="reference internal" href="#euler-product-over-primes-in-arithmetic-progression">Euler Product over primes in arithmetic progression</a></li>
 </ul>
 </li>
 </ul>
