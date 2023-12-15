@@ -298,7 +298,7 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
-<span class="sd">        sage: get_vs(8, 3, 100)</span>
+<span class="sd">        sage: get_vs(8, 3, 100)  # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">        Computing the structural invariants ...  done.</span>
 <span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
 <span class="sd">        done: we use big_m = 18 .</span>
@@ -344,7 +344,7 @@
 <span class="sd">    TESTS::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
-<span class="sd">        sage: get_vs(3, 1, 100)</span>
+<span class="sd">        sage: get_vs(3, 1, 100)  # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">        Computing the structural invariants ...  done.</span>
 <span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
 <span class="sd">        done: we use big_m = 52 .</span>
@@ -513,13 +513,13 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
-<span class="sd">        sage: get_euler_products(3, 1, 1-x^2, 1, 100, verbose=0)</span>
+<span class="sd">        sage: get_euler_products(3, 1, 1-x^2, 1, 100, verbose=0)  # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">        ((frozenset({1}), frozenset({2})),</span>
 <span class="sd">         ((0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974344,</span>
 <span class="sd">           0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974475),</span>
 <span class="sd">          (0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821107,</span>
 <span class="sd">           0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821228)))</span>
-<span class="sd">        sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 0, 0)</span>
+<span class="sd">        sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 0, 0)  # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">        ((frozenset({1}), frozenset({3}), frozenset({5}), frozenset({7})),</span>
 <span class="sd">        ((0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120693625020812276103159906625162986027780621959661661058242880638494733,</span>
 <span class="sd">          0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120698715116910955482476415178562075800144085574035025387260631491020912),</span>
