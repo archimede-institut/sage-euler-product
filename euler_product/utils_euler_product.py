@@ -44,6 +44,7 @@ from sage.arith.functions import lcm
 from sage.rings.real_mpfi import RealIntervalField
 from sage.rings.real_mpfi import RealIntervalFieldElement
 from sage.rings.real_mpfr import RealNumber
+from sage.rings.real_mpfr import RealField
 from sage.rings.complex_interval_field import ComplexIntervalField
 from sage.rings.complex_mpfr import ComplexField
 from sage.modular.dirichlet import DirichletGroup
@@ -517,11 +518,8 @@ class ComponentStructure():
 
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
-            sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11, 14)
-            Traceback (most recent call last):
-            ...
-            TypeError: ComponentStructure.get_CA_Km_F_sur_H() missing 1 required positional argument: 'coeff_sh'
-
+            sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], [11], [14])
+            
         """
         #  my_indices should be divisor-closed (and include 1) and ordered
         # (the_SG_tuple, the_Class_tuple, nb_classes, the_exponent,
@@ -634,7 +632,7 @@ def get_vector_bf(coeffs_f, how_many):
     EXAMPLES::
 
         sage: from euler_product.utils_euler_product import get_vector_bf
-        sage: get_vector_bf([1, -4, 4, 2, -4, 1], [11])
+        sage: get_vector_bf([1, -4, 4, 2, -4, 1], 11)
         [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]
 
     """
