@@ -27,4 +27,4 @@ jobs:
       - name: Run doctests
         shell: bash -l {0}
         run: |
-          PYTHONPATH=`pwd`/.github/workflows/disable-pytest sage -tp --force-lib --long euler_product doc
+          PYTHONPATH=`pwd`/.github/workflows/disable-pytest sage -tp --force-lib --long optional=sage,pplpy,gmpxxyy euler_product doc
