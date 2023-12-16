@@ -745,8 +745,31 @@
 
 <span class="sd">            sage: from euler_product.utils_euler_product import ComponentStructure</span>
 <span class="sd">            sage: structure = ComponentStructure(3)</span>
-<span class="sd">            sage: structure.get_CA_Km_F_sur_H([1, 2, 3, 4, 5, 6], [1], [1, 0, -1])</span>
-
+<span class="sd">            sage: structure.get_CA_Km_F_sur_H([1, 2, 3, 4, 5, 6], [1], [1, 0, -1])   # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">            {(0, 0, 1): 0,</span>
+<span class="sd">            (0, 0, 2): 1,</span>
+<span class="sd">            (0, 0, 3): 0,</span>
+<span class="sd">            (0, 0, 4): 1,</span>
+<span class="sd">            (0, 0, 5): 0,</span>
+<span class="sd">            (0, 0, 6): 0,</span>
+<span class="sd">            (0, 1, 1): 0,</span>
+<span class="sd">            (0, 1, 2): 0,</span>
+<span class="sd">            (0, 1, 3): 0,</span>
+<span class="sd">            (0, 1, 4): -2,</span>
+<span class="sd">            (0, 1, 5): 0,</span>
+<span class="sd">            (0, 1, 6): 0,</span>
+<span class="sd">            (1, 0, 1): 0,</span>
+<span class="sd">            (1, 0, 2): -1,</span>
+<span class="sd">            (1, 0, 3): 0,</span>
+<span class="sd">            (1, 0, 4): -1,</span>
+<span class="sd">            (1, 0, 5): 0,</span>
+<span class="sd">            (1, 0, 6): 0,</span>
+<span class="sd">            (1, 1, 1): 0,</span>
+<span class="sd">            (1, 1, 2): 2,</span>
+<span class="sd">            (1, 1, 3): 0,</span>
+<span class="sd">            (1, 1, 4): 2,</span>
+<span class="sd">            (1, 1, 5): 0,</span>
+<span class="sd">            (1, 1, 6): 0}</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1">#  my_indices should be divisor-closed (and include 1) and ordered</span>
         <span class="c1"># (the_SG_tuple, the_Class_tuple, nb_classes, the_exponent,</span>
