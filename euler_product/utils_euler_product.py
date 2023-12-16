@@ -474,7 +474,6 @@ class ComponentStructure():
            prec = CIF.prec()
            RIF = RealIntervalField(prec)
            RF = RealField(prec)
-           x_interval = RF(0.5, 1.5)
            hurwitz_values = tuple(CIF(RIF(hurwitz_zeta(s=ZZ(m),
                                                 x=CIF(a / self.q)))) / CIF(self.q)**m
                                for a in self.invertibles)  # type: ignore
