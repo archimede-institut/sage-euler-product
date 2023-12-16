@@ -629,10 +629,7 @@ CAREFUL, this is Python 3 code!</p>
 <p class="rubric">Examples</p>
 <p>sage: from euler_product.utils_euler_product import ComponentStructure
 sage: structure = ComponentStructure(3)
-sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11, 14)
-Traceback (most recent call last):
-…
-TypeError: ComponentStructure.get_CA_Km_F_sur_H() missing 1 required positional argument: ‘coeff_sh’</p>
+sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], [11], [14])</p>
 </dd></dl>
 
 <dl class="py method">
@@ -918,7 +915,7 @@ Not used in the main program</p>
 </dl>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">get_vector_bf</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">get_vector_bf</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_vector_bf</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">11</span><span class="p">)</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">53</span><span class="p">]</span>
 </pre></div>
 </div>

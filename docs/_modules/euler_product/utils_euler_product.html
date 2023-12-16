@@ -247,6 +247,7 @@
 <span class="kn">from</span> <span class="nn">sage.rings.real_mpfi</span> <span class="kn">import</span> <span class="n">RealIntervalField</span>
 <span class="kn">from</span> <span class="nn">sage.rings.real_mpfi</span> <span class="kn">import</span> <span class="n">RealIntervalFieldElement</span>
 <span class="kn">from</span> <span class="nn">sage.rings.real_mpfr</span> <span class="kn">import</span> <span class="n">RealNumber</span>
+<span class="kn">from</span> <span class="nn">sage.rings.real_mpfr</span> <span class="kn">import</span> <span class="n">RealField</span>
 <span class="kn">from</span> <span class="nn">sage.rings.complex_interval_field</span> <span class="kn">import</span> <span class="n">ComplexIntervalField</span>
 <span class="kn">from</span> <span class="nn">sage.rings.complex_mpfr</span> <span class="kn">import</span> <span class="n">ComplexField</span>
 <span class="kn">from</span> <span class="nn">sage.modular.dirichlet</span> <span class="kn">import</span> <span class="n">DirichletGroup</span>
@@ -745,11 +746,8 @@
 
 <span class="sd">            sage: from euler_product.utils_euler_product import ComponentStructure</span>
 <span class="sd">            sage: structure = ComponentStructure(3)</span>
-<span class="sd">            sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], 11, 14)</span>
-<span class="sd">            Traceback (most recent call last):</span>
-<span class="sd">            ...</span>
-<span class="sd">            TypeError: ComponentStructure.get_CA_Km_F_sur_H() missing 1 required positional argument: &#39;coeff_sh&#39;</span>
-
+<span class="sd">            sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], [11], [14])</span>
+<span class="sd">            </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1">#  my_indices should be divisor-closed (and include 1) and ordered</span>
         <span class="c1"># (the_SG_tuple, the_Class_tuple, nb_classes, the_exponent,</span>
@@ -872,7 +870,7 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.utils_euler_product import get_vector_bf</span>
-<span class="sd">        sage: get_vector_bf([1, -4, 4, 2, -4, 1], [11])</span>
+<span class="sd">        sage: get_vector_bf([1, -4, 4, 2, -4, 1], 11)</span>
 <span class="sd">        [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
