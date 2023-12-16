@@ -519,7 +519,7 @@ class ComponentStructure():
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
             sage: structure.get_CA_Km_F_sur_H([1, -4, 4, 2, -4, 1], [11], [14])
-            
+
         """
         #  my_indices should be divisor-closed (and include 1) and ordered
         # (the_SG_tuple, the_Class_tuple, nb_classes, the_exponent,
