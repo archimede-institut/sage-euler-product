@@ -517,8 +517,31 @@ class ComponentStructure():
 
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
-            sage: structure.get_CA_Km_F_sur_H([1, 2, 3, 4, 5, 6], [1], [1, 0, -1])
-
+            sage: structure.get_CA_Km_F_sur_H([1, 2, 3, 4, 5, 6], [1], [1, 0, -1])   # doctest: +NORMALIZE_WHITESPACE
+            {(0, 0, 1): 0,
+            (0, 0, 2): 1,
+            (0, 0, 3): 0,
+            (0, 0, 4): 1,
+            (0, 0, 5): 0,
+            (0, 0, 6): 0,
+            (0, 1, 1): 0,
+            (0, 1, 2): 0,
+            (0, 1, 3): 0,
+            (0, 1, 4): -2,
+            (0, 1, 5): 0,
+            (0, 1, 6): 0,
+            (1, 0, 1): 0,
+            (1, 0, 2): -1,
+            (1, 0, 3): 0,
+            (1, 0, 4): -1,
+            (1, 0, 5): 0,
+            (1, 0, 6): 0,
+            (1, 1, 1): 0,
+            (1, 1, 2): 2,
+            (1, 1, 3): 0,
+            (1, 1, 4): 2,
+            (1, 1, 5): 0,
+            (1, 1, 6): 0}
         """
         #  my_indices should be divisor-closed (and include 1) and ordered
         # (the_SG_tuple, the_Class_tuple, nb_classes, the_exponent,
