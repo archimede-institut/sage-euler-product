@@ -14,7 +14,7 @@ dependencies:
   - matplotlib-base
   - gap-defaults
   - sympy
-  - sagelib
+  - sagelib=10.1
   # sagelib<9.2 does not explicitly install libiconv which is needed in lots of places.
   - libiconv
   # Work around https://github.com/conda-forge/givaro-feedstock/issues/13
