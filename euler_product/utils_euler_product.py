@@ -713,7 +713,7 @@ def get_beta(F):
     """
     my_roots = F.roots(multiplicities=False)
     # my_root must be never 0
-    return max(1, max([1 / abs(c) for c in my_roots if c != 0.0], default=1))
+    return max(1, max([1 / abs(c) for c in my_roots if c != 0], default=1))
 
 
 def get_beta_rough(coeffs_f):
