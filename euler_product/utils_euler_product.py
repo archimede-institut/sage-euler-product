@@ -731,7 +731,11 @@ def get_beta(F):
     EXAMPLES::
 
         sage: from euler_product.utils_euler_product import get_beta
-        sage: get_beta(1 - x^2)
+        sage: R0 = RealField(30)
+        sage: R0X = R0['x']
+        sage: (x,) = R0X._first_ngens(1)
+        sage: F0 = R0X(1 - x^2)
+        sage: get_beta(F0)
         1
     """
     my_roots = F.roots(multiplicities=False)
