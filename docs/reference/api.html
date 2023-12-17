@@ -883,7 +883,11 @@ sage: check_get_L_values(30, 3, 2, 200, 212)
 <p>[type]  [description]</p>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">get_beta</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">get_beta</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">R0</span> <span class="o">=</span> <span class="n">RealField</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">R0X</span> <span class="o">=</span> <span class="n">R0</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">sage</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,)</span> <span class="o">=</span> <span class="n">R0X</span><span class="o">.</span><span class="n">_first_ngens</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">F0</span> <span class="o">=</span> <span class="n">R0X</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">get_beta</span><span class="p">(</span><span class="n">F0</span><span class="p">)</span>
 <span class="mi">1</span>
 </pre></div>
 </div>

@@ -975,7 +975,11 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.utils_euler_product import get_beta</span>
-<span class="sd">        sage: get_beta(1 - x^2)</span>
+<span class="sd">        sage: R0 = RealField(30)</span>
+<span class="sd">        sage: R0X = R0[&#39;x&#39;]</span>
+<span class="sd">        sage: (x,) = R0X._first_ngens(1)</span>
+<span class="sd">        sage: F0 = R0X(1 - x^2)</span>
+<span class="sd">        sage: get_beta(F0)</span>
 <span class="sd">        1</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">my_roots</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">roots</span><span class="p">(</span><span class="n">multiplicities</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
