@@ -449,7 +449,7 @@ class ComponentStructure():
         EXAMPLES::
 
             sage: from euler_product.utils_euler_product import ComponentStructure
-            sage: structure = ComponentStructure(30)
+            sage: structure = ComponentStructure(3)
             sage: CIF = ComplexIntervalField(200)
             sage: CF = ComplexIntervalField(200 + 1)
             sage: m = CIF(60)
