@@ -452,12 +452,12 @@ class ComponentStructure():
             sage: structure = ComponentStructure(10)
             sage: CIF = ComplexIntervalField(200)
             sage: CF = ComplexIntervalField(200 + 1)
-            sage: m = CIF(30)
+            sage: m = CIF(60)
             sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
-            (1.0000000000000000000000000000000000000000000000000000000000?,
-            1.000000000000000000000000000000000000000000000000000000000? - 2.4?e-71*I,
-            1.0000000000000000000000000000000000000000000000000000000000? + 0.?e-74*I,
-            1.000000000000000000000000000000000000000000000000000000000? + 2.4?e-71*I)
+            (1.0000000000000000000000000000000000000000000000000000000001?,
+            1.000000000000000000000000000000000000000000000000000000000? + 0.?e-86*I,
+            1.000000000000000000000000000000000000000000000000000000000? + 0.?e-88*I,
+            1.000000000000000000000000000000000000000000000000000000000? + 0.?e-86*I)
 
         """
         #  m belongs to CIF
@@ -466,7 +466,7 @@ class ComponentStructure():
         if not m in CIF:
             raise ValueError("m parameter must belongs to CIF parameter")
         CG = self.character_group.change_ring(CF)
-        if m in ZZ  and m > 1:
+        if m in ZZ and m > 1:
            prec = CIF.prec()
            RIF = RealIntervalField(prec)
            RF = RealField(prec)
