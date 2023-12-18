@@ -468,6 +468,7 @@ class ComponentStructure():
         if m in ZZ and m > 1:
            preci = CF.prec()
            RIF = RealIntervalField(preci)
+           RF = RealField(preci)
            CField = ComplexField(preci)
            CG = self.character_group.change_ring(CField)
            hurwitz_values = tuple(CIF(hurwitz_zeta(s=ZZ(m),
