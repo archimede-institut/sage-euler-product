@@ -677,12 +677,12 @@
 <span class="sd">            sage: structure = ComponentStructure(10)</span>
 <span class="sd">            sage: CIF = ComplexIntervalField(200)</span>
 <span class="sd">            sage: CF = ComplexIntervalField(200 + 1)</span>
-<span class="sd">            sage: m = CIF(30)</span>
+<span class="sd">            sage: m = CIF(60)</span>
 <span class="sd">            sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE</span>
-<span class="sd">            (1.0000000000000000000000000000000000000000000000000000000000?,</span>
-<span class="sd">            1.000000000000000000000000000000000000000000000000000000000? - 2.4?e-71*I,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000000? + 0.?e-74*I,</span>
-<span class="sd">            1.000000000000000000000000000000000000000000000000000000000? + 2.4?e-71*I)</span>
+<span class="sd">            (1.0000000000000000000000000000000000000000000000000000000001?,</span>
+<span class="sd">            1.000000000000000000000000000000000000000000000000000000000? + 0.?e-86*I,</span>
+<span class="sd">            1.000000000000000000000000000000000000000000000000000000000? + 0.?e-88*I,</span>
+<span class="sd">            1.000000000000000000000000000000000000000000000000000000000? + 0.?e-86*I)</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1">#  m belongs to CIF</span>
@@ -691,7 +691,7 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">CIF</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;m parameter must belongs to CIF parameter&quot;</span><span class="p">)</span>
         <span class="n">CG</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">character_group</span><span class="o">.</span><span class="n">change_ring</span><span class="p">(</span><span class="n">CF</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ZZ</span>  <span class="ow">and</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">ZZ</span> <span class="ow">and</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
            <span class="n">prec</span> <span class="o">=</span> <span class="n">CIF</span><span class="o">.</span><span class="n">prec</span><span class="p">()</span>
            <span class="n">RIF</span> <span class="o">=</span> <span class="n">RealIntervalField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
            <span class="n">RF</span> <span class="o">=</span> <span class="n">RealField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
