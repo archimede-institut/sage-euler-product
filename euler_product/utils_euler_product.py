@@ -467,9 +467,9 @@ class ComponentStructure():
             raise ValueError("m parameter must belongs to CIF parameter")
         CG = self.character_group.change_ring(CF)
         if m in ZZ and m > 1:
-           prec = CIF.prec()
-           RIF = RealIntervalField(prec)
-           RF = RealField(prec)
+           precision = CIF.prec()
+           RIF = RealIntervalField(precision)
+           RF = RealField(precision)
            hurwitz_values = tuple(CIF(hurwitz_zeta(s=ZZ(m),
                                                 x=CIF(a / self.q))._eval_self(RF)) / CIF(self.q)**m
                                for a in self.invertibles)  # type: ignore
