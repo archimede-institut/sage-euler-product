@@ -674,19 +674,15 @@
 <span class="sd">        EXAMPLES::</span>
 
 <span class="sd">            sage: from euler_product.utils_euler_product import ComponentStructure</span>
-<span class="sd">            sage: structure = ComponentStructure(3)</span>
+<span class="sd">            sage: structure = ComponentStructure(10)</span>
 <span class="sd">            sage: CIF = ComplexIntervalField(200)</span>
 <span class="sd">            sage: CF = ComplexIntervalField(200 + 1)</span>
-<span class="sd">            sage: m = CIF(60)</span>
+<span class="sd">            sage: m = CIF(30)</span>
 <span class="sd">            sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE</span>
-<span class="sd">            (1.0000000000000000000000000000000000000000000000000000000001?,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? - 1.?e-181*I,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 8.849708?e-163*I,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 8.849708?e-163*I,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I,</span>
-<span class="sd">            1.0000000000000000000000000000000000000000000000000000000001? + 0.?e-108*I)</span>
+<span class="sd">            (1.0000000000000000000000000000000000000000000000000000000000?,</span>
+<span class="sd">            1.000000000000000000000000000000000000000000000000000000000? - 2.4?e-71*I,</span>
+<span class="sd">            1.0000000000000000000000000000000000000000000000000000000000? + 0.?e-74*I,</span>
+<span class="sd">            1.000000000000000000000000000000000000000000000000000000000? + 2.4?e-71*I)</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1">#  m belongs to CIF</span>
