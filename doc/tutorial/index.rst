@@ -12,7 +12,7 @@ Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the pr
 Euler products over rational functions as :math:`E_2` is inferred from simpler Euler products of the shape 
 
 .. math::
-\prod_{p\in\mathcal{A}\mod q}(1-1/p^s),
+   \prod_{p\in\mathcal{A}\mod q}(1-1/p^s),
 
 where
 
