@@ -225,12 +225,11 @@ Here are two examples  <span class="math notranslate nohighlight">\(E_1=\prod_{p
 <p>In case <span class="math notranslate nohighlight">\(q=1\)</span>, the notion of lattice invariant classes is trivial. Let us start by describing this case.</p>
 <section id="euler-product-over-every-primes">
 <h2>Euler Product over every primes<a class="headerlink" href="#euler-product-over-every-primes" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
-<span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
-<span class="n">get_euler_products</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
+<span class="n">get_euler_products</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.1</span> <span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>This computes the Euler product :math: <cite>prod_{pge2}frac{1-1/p^{2s}}{1+1/p^{3s}}</cite> where <span class="math notranslate nohighlight">\(s=2.1\)</span> with</p>
 </section>
 <section id="euler-product-over-primes-in-arithmetic-progression">
 <h2>Euler Product over primes in arithmetic progression<a class="headerlink" href="#euler-product-over-primes-in-arithmetic-progression" title="Link to this heading">#</a></h2>
@@ -250,6 +249,28 @@ When <span class="math notranslate nohighlight">\(q = 15\)</span> these classes 
 </pre></div>
 </div>
 <p>Two points are in the same class if and only if they generate the same subgroup modulo <span class="math notranslate nohighlight">\(q\)</span></p>
+<ul class="simple">
+<li><p>Low level functions</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
+<span class="n">mystructure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This class proposes several quantities. It is used by the high level function <code class="code docutils literal notranslate"><span class="pre">get_vs</span></code> and <code class="code docutils literal notranslate"><span class="pre">get_euler_products</span></code>, so the user does not have to worry about it. However the quantities computed may have interest.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.q</span></code>: the modulus <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.phi_q</span></code>: the value of the Euler phi-function at <span class="math notranslate nohighlight">\(q\)</span>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.the_exponent</span></code>: the exponent of the group <span class="math notranslate nohighlight">\(G=(\mathbb{Z}/q\mathbb{Z})^\times\)</span>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.invertibles</span></code>: the tuple of invertibles in <span class="math notranslate nohighlight">\((\mathbb{Z}/q\mathbb{Z})\)</span>, i.e. an enumeration of <span class="math notranslate nohighlight">\(G=(\mathbb{Z}/q\mathbb{Z})^\times\)</span>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.the_SG_tuple</span></code>: the tuple of the subgroups of <span class="math notranslate nohighlight">\(G=(\mathbb{Z}/q\mathbb{Z})^\times\)</span> that are generated by a single elements.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.the_Class_tuple</span></code>: the tuple of the lattice invariant classes.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.nb_class</span></code>: the number of lattice invariant classes.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.character_group</span></code>: the character group of <span class="math notranslate nohighlight">\(G=(\mathbb{Z}/q\mathbb{Z})^\times\)</span>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">mystructure.invariant_characters</span></code>: for each monogenic subgroup in <code class="code docutils literal notranslate"><span class="pre">mystructure.the_SG_tuple</span></code>, the list of the indices of the characters that has this subgroup in its kernel. The order of <code class="code docutils literal notranslate"><span class="pre">mystructure.invariant_characters</span></code> is the same as the one in <code class="code docutils literal notranslate"><span class="pre">mystructure.the_SG_tuple</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<p>Some methods are also available.</p>
 </section>
 </section>
 
