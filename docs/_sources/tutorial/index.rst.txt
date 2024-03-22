@@ -4,8 +4,8 @@
 Tutorial Euler Product
 ======================
 
-The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus :math: `q`
-Here are two examples: :math: `E_1 = \prod_{p=3,5[7]}(1-1/p^2)`and :math: `E_2 = \prod_{p=1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2`, the so-called Shanks's constant. 
+The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus :math:`q`.
+Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the product is taken over every prime congruent to 3 or 5 modulo 7, and :math:`E_2 = \prod_{p\equiv 1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2`, the so-called Shanks's constant, where the product is taken over every prime congruent to 1 modulo 8.
 
 Euler Product over every primes
 -------------------------------
@@ -42,7 +42,7 @@ When :math:`q = 15` these classes are obtained by
          (frozenset({1}), frozenset({4}), frozenset({11}), frozenset({14}), frozenset({8, 2}), frozenset({13, 7})))
 
 
-Two points are in the same class if and only if they generate the same subgroup modulo `q`
+Two points are in the same class if and only if they generate the same subgroup modulo :math:`q`
 
 
 
