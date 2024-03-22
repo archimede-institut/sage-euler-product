@@ -13,7 +13,7 @@ Euler products over rational functions as :math:`E_2` is inferred from simpler E
 .. math:: \prod_{p\in\mathcal{A}\mod q}(1-1/p^s),
 where
 * :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
-* :math:`q` is a positive integer, the so-called "modulus".
+* :math:`q` is a positive integer, the so-called "modulus". We have :math:`q=7` for :math:`E_1`.
 * :math:`s` is a real parameter that strictly larger than 1. A typical choice is :math:`s=2`.
 
 
