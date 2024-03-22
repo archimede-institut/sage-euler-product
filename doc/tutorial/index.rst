@@ -12,9 +12,9 @@ Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the pr
 Euler products over rational functions as :math:`E_2` is inferred from simpler Euler products of the shape 
 .. math:: \prod_{p\in\mathcal{A}\mod q}(1-1/p^s),
 where
- * :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
- * :math:`q` is a positive integer, the so-called "modulus".
- * :math:`s` is a real parameter that strictly larger than 1. A typical choice is :math:`s=2`.
+* :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
+* :math:`q` is a positive integer, the so-called "modulus".
+* :math:`s` is a real parameter that strictly larger than 1. A typical choice is :math:`s=2`.
 
 
 Euler Product over every primes
