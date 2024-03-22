@@ -5,7 +5,7 @@ Tutorial Euler Product
 ======================
 
 The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus :math:`q`.
-Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the product is taken over every prime congruent to 3 or 5 modulo 7, and :math:`E_2 = \prod_{p\equiv 1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2`, the so-called Shanks's constant, where the product is taken over every prime congruent to 1 modulo 8.
+Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the product is taken over every prime congruent to 3 or 5 modulo 7, and :math:`E_2 = \prod_{p\equiv 1[8]}\bigl(1-\frac{4}{p}\biggr)\bigl(\frac{p+1}{p-1}\bigr)^2`, the so-called Shanks's constant, where the product is taken over every prime congruent to 1 modulo 8.
 
 Euler Product over every primes
 -------------------------------
