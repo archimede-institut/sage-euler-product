@@ -18,7 +18,7 @@ where
 
  * :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
  * :math:`q` is a positive integer, the so-called "modulus". We have :math:`q=7` for :math:`E_1`.
- * :math:`s` is a real parameter that is strictly larger than 1. A typical choice is :math:`s=2`.
+ * :math:`s` is a real parameter that is strictly larger than 1, a typical choice being :math:`s=2`.
 
 
 Euler Product over every primes
