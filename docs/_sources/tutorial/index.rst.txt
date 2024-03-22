@@ -20,6 +20,7 @@ where
  * :math:`q` is a positive integer, the so-called "modulus". We have :math:`q=7` for :math:`E_1`.
  * :math:`s` is a real parameter that is strictly larger than 1, a typical choice being :math:`s=2`.
 
+In case :math:`q=1`, the notion of lattice invariant classes is trivial. Let us start by describing this case.
 
 Euler Product over every primes
 -------------------------------
