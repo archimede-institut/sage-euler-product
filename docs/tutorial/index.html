@@ -213,7 +213,7 @@ Here are two examples  <span class="math notranslate nohighlight">\(E_1=\prod_{p
 <div class="math notranslate nohighlight">
 \[\prod_{p\in\mathcal{A}\mod q}(1-1/p^s),\]</div>
 </div>
-<p>where</p>
+<p>by following the 2021 paper of Ettahri, Surel and Ramaré,  where</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathcal{A}\)</span> is some subset of <span class="math notranslate nohighlight">\(G=(\mathbb{Z}/q\mathbb{Z})^\times\)</span>. The subset <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> has to be the union of “lattice invariant classes”, as described below.</p></li>
@@ -221,6 +221,10 @@ Here are two examples  <span class="math notranslate nohighlight">\(E_1=\prod_{p
 <li><p><span class="math notranslate nohighlight">\(s\)</span> is a real parameter that is strictly positif and *in this example* strictly larger than 1. A typical choice is <span class="math notranslate nohighlight">\(s=2\)</span>.</p></li>
 </ul>
 </div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The mathematical proof of this software is taken from the paper ** Fast multi-precision computation of some Euler products ** by Salma Ettahri, Olivier Ramaré and Léon Surel, published in *Mathematics of Computations* in volume 90 of 2021, pages 2247 to 2265.</p>
+</div>
 <p>In case <span class="math notranslate nohighlight">\(q=1\)</span>, the notion of lattice invariant classes is trivial. Let us start by describing this case.</p>
 </section>
 <section id="euler-product-over-every-primes">
@@ -236,7 +240,7 @@ Here are two examples  <span class="math notranslate nohighlight">\(E_1=\prod_{p
 <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">103</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>give the same answer, which is readily seen to be an approximation of <span class="math notranslate nohighlight">\(1/\zeta(4)\)</span>, where <span class="math notranslate nohighlight">\(zeta\)</span> is the Riemann-zeta function. Recall that we have <span class="math notranslate nohighlight">\(\zeta(4)=\pi^4/90\)</span>, a fact that we may use to check our code.</p>
+<p>give the same answer, which is readily seen to be an approximation of <span class="math notranslate nohighlight">\(1/\zeta(4)\)</span>, where <span class="math notranslate nohighlight">\(\zeta\)</span> is the Riemann-zeta function. Recall that we have <span class="math notranslate nohighlight">\(\zeta(4)=\pi^4/90\)</span>, a fact that we may use to check our code.</p>
 </section>
 <section id="euler-product-over-primes-in-arithmetic-progression">
 <h2>Euler Product over primes in arithmetic progression<a class="headerlink" href="#euler-product-over-primes-in-arithmetic-progression" title="Link to this heading">#</a></h2>
