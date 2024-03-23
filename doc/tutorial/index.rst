@@ -99,16 +99,16 @@ Euler Product over primes in arithmetic progression
 We start with the three data:
 
 * A modulus :math:`q\ge 1`.
-* A rational fraction given in the form :math:`F(x)/H(x)` where :math:`F(x)` and :math:`H(x)` are two polynomials with real coefficients and such that :\math:`F(0)=H(0)=1`.
+* A rational fraction given in the form :math:`F(x)/H(x)` where :math:`F(x)` and :math:`H(x)` are two polynomials with real coefficients and such that :math:`F(0)=H(0)=1`.
 * A parameter :math:`s`.
 * A wanted precision :code:`nb_decimals`, given as a number of decimal digits.
 
 We have access to the lattice invariant classes, as per the preceding paragraph. For each of these classes :math:`(\mathcal{A})`, we compute 
 
 .. math::
-   \prod_{p\in\mathcal{A}\mod q}\frac{F(1/p^s)}{H(1/p^s)}.
+   \prod_{p\in\mathcal{A}}\frac{F(1/p^s)}{H(1/p^s)}.
 
-There is a condition for this product to converge absolutely: if we write :math:`F(x)-H(x)=x^\Delta T(x)` for a :math:`\Delta\ge1` and a polynomial :math:`T(x)`, we need that :math:`\Delta s >1`. We assume this condition to hold.
+There is a condition for this product to converge absolutely: on writing :math:`F(x)-H(x)=x^\Delta T(x)` for a :math:`\Delta\ge1` and a polynomial :math:`T(x)`, we need that :math:`\Delta s >1`. We assume this condition to hold.
 
 .. code-block:: default
      
@@ -128,8 +128,7 @@ answers a couple whose first component is the tuple of the lattice invariant cla
      (0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449, 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849),
 
 which means that
-.. math:
-     
+.. math::
      0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449 
      
      \le \prod_{p\equiv 1[5]} \frac{1-1/p^2}{1+1/p^3}
