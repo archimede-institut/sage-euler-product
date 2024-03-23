@@ -86,7 +86,7 @@ This class proposes several quantities. It is used by the high level function :c
  * :code:`mystructure.the_Class_tuple`: the tuple of the lattice invariant classes.
  * :code:`mystructure.nb_class`: the number of lattice invariant classes.
  * :code:`mystructure.character_group`: the character group of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`.
- * :code:`mystructure.invariant_characters`: for each monogenic subgroup in :code:`mystructure.the_SG_tuple`, the list of the indices of the characters that has this subgroup in its kernel. The order of :code:`mystructure.invariant_characters` is the same as the one in :code:`mystructure.the_SG_tuple`.
+ * :code:`mystructure.invariant_characters`: for each monogenic subgroup in :code:`mystructure.the_SG_tuple`, the list of (the indices of) the characters that has this subgroup in its kernel. The order of :code:`mystructure.invariant_characters` is the same as the one in :code:`mystructure.the_SG_tuple`.
 
 Some methods are also available.
 
