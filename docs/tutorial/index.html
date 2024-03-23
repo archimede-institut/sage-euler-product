@@ -324,17 +324,15 @@ Two points are in the same class if and only if they generate the same subgroup 
 <span class="n">get_vs</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">nb_decimals</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">digits_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The output is similar to the one of <code class="code docutils literal notranslate"><span class="pre">get_euler_products</span></code>, with the same effect of the available parameters. However, there is the additional possible value <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">-1</span></code>. In that case the output takes the shape
-:code`
-.. code:: default</p>
-<blockquote>
-<div><p>[big_p, phi_q, r, nb_invariant_class, big_m, time_end - time_start, difference]</p>
-</div></blockquote>
-<p>which is rather explicit. The parameter <code class="code docutils literal notranslate"><span class="pre">big_m</span></code> is introduced in the reference paper and <code class="code docutils literal notranslate"><span class="pre">r</span></code> is the number of values of <span class="math notranslate nohighlight">\(m\)</span> as per Eq. (5) of the reference paper that are being used. The timing is given in seconds, and <code class="code docutils literal notranslate"><span class="pre">difference</span></code> is an approximation of the number of correct decimals given.</p>
+<p>The output is similar to the one of <code class="code docutils literal notranslate"><span class="pre">get_euler_products</span></code>, with the same effect of the available parameters. However, there is the additional possible value <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">-1</span></code>. In that case the output takes the shape</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">big_p</span><span class="p">,</span> <span class="n">phi_q</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">nb_invariant_class</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="n">time_end</span> <span class="o">-</span> <span class="n">time_start</span><span class="p">,</span> <span class="n">difference</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>which is rather explicit. The parameter <code class="code docutils literal notranslate"><span class="pre">big_m</span></code> is introduced in the reference paper and <code class="code docutils literal notranslate"><span class="pre">r</span></code> is the number of values of <span class="math notranslate nohighlight">\(m\)</span>, as per Eq. (5) of the reference paper, that are being used. The timing is given in seconds, and <code class="code docutils literal notranslate"><span class="pre">difference</span></code> is an approximation of the number of correct decimals given.</p>
 <ul class="simple">
 <li><p>Auxiliaries</p></li>
 </ul>
-<p>We finally provide two auxiliairy functions.</p>
+<p>We finally provide two auxiliary functions.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">table_performance</span>
 <span class="n">table_performance</span><span class="p">(</span><span class="n">min_q</span><span class="p">,</span> <span class="n">max_q</span><span class="p">,</span> <span class="n">nb_decimals</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span>
 </pre></div>
