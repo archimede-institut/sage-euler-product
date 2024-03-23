@@ -4,10 +4,11 @@
 Tutorial Euler Product
 ======================
 
-- Introduction and principles
+Introduction and principles
+---------------------------
 
 The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus :math:`q`.
-Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the product is taken over every prime congruent to 3 or 5 modulo 7, and :math:`E_2 = \prod_{p\equiv 1[8]}\bigl(1-\frac{4}{p}\bigr)\bigl(\frac{p+1}{p-1}\bigr)^2`, the so-called Shanks's constant, where the product is taken over every prime congruent to 1 modulo 8.
+Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the product is taken over every prime :math:`p` congruent to 3 or 5 modulo 7, and :math:`E_2 = \prod_{p\equiv 1[8]}\bigl(1-\frac{4}{p}\bigr)\bigl(\frac{p+1}{p-1}\bigr)^2`, the so-called Shanks's constant, where the product is taken over every prime congruent to 1 modulo 8.
 
 Euler products over rational functions such as :math:`E_2` are inferred from simpler Euler products of the shape 
 
@@ -18,7 +19,7 @@ where
 
  * :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
  * :math:`q` is a positive integer, the so-called "modulus". We have :math:`q=7` for :math:`E_1`.
- * :math:`s` is a real parameter that is strictly larger than 1, a typical choice being :math:`s=2`.
+ * :math:`s` is a real parameter that is strictly positif and *in this example* strictly larger than 1. A typical choice is :math:`s=2`.
 
 In case :math:`q=1`, the notion of lattice invariant classes is trivial. Let us start by describing this case.
 
@@ -34,6 +35,14 @@ This computes the Euler product :math:`\prod_{p\ge2}\frac{1-1/p^{2s}}{1+1/p^{3s}
 
 The parameter :code:`digits_offset` is not used as of now.
 
+On the effect of the choice of :math:`s`, notice that the two calls
+
+.. code-block:: default
+     
+     get_euler_products(1, 1 , 1-x^4, 1, 103)
+     get_euler_products(1, 2 , 1-x^2, 1, 103)
+
+give the same answer, which is readily seen to be an approximation of :math:`1/\zeta(4)`, where :math:`zeta` is the Riemann-zeta function. Recall that we have :math:`\zeta(4)=\pi^4/90`, a fact that we may use to check our code.
 
 Euler Product over primes in arithmetic progression
 ---------------------------------------------------
