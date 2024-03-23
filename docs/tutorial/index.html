@@ -319,6 +319,32 @@ Two points are in the same class if and only if they generate the same subgroup 
 \[ \begin{align}\begin{aligned}0.&amp;9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449\\&amp;\le \prod_{p\equiv 1[5]} \frac{1-1/p^2}{1+1/p^3}\\&amp;\le 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849\end{aligned}\end{align} \]</div>
 </div>
 <p>With <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">1</span></code> or <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">2</span></code>, the results are more explicitly written.</p>
+<p>To compute the specific quantities <span class="math notranslate nohighlight">\(\prod_{p\in\mathcal{A}}(1-1/p^s)^{-1}\)</span> where the rational fraction is thus fixed, we have a shortcut:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs</span>
+<span class="n">get_vs</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">nb_decimals</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">digits_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output is similar to the one of <code class="code docutils literal notranslate"><span class="pre">get_euler_products</span></code>, with the same effect of the available parameters. However, there is the additional possible value <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">-1</span></code>. In that case the output takes the shape
+:code`
+.. code:: default</p>
+<blockquote>
+<div><p>[big_p, phi_q, r, nb_invariant_class, big_m, time_end - time_start, difference]</p>
+</div></blockquote>
+<p>which is rather explicit. The parameter <code class="code docutils literal notranslate"><span class="pre">big_m</span></code> is introduced in the reference paper and <code class="code docutils literal notranslate"><span class="pre">r</span></code> is the number of values of <span class="math notranslate nohighlight">\(m\)</span> as per Eq. (5) of the refence paper that are being used. The timing is given in seconds, and <code class="code docutils literal notranslate"><span class="pre">difference</span></code> is an approximation of the number of correct decimals given.</p>
+<ul class="simple">
+<li><p>Auxiliaries</p></li>
+</ul>
+<p>We finally provide two auxiliairy functions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">table_performance</span>
+<span class="n">table_performance</span><span class="p">(</span><span class="n">min_q</span><span class="p">,</span> <span class="n">max_q</span><span class="p">,</span> <span class="n">nb_decimals</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This gives some timing info for <code class="code docutils literal notranslate"><span class="pre">get_vs(q,</span> <span class="pre">2,</span> <span class="pre">nb_decimals,</span> <span class="pre">big_p,</span> <span class="pre">-1)</span></code>. The output has a LaTeX format of an array, the columns being <code class="code docutils literal notranslate"><span class="pre">q</span></code>, <code class="code docutils literal notranslate"><span class="pre">phi_q</span></code>, <code class="code docutils literal notranslate"><span class="pre">nb_prime_factors_phi_q</span></code>, <code class="code docutils literal notranslate"><span class="pre">r</span></code>, <code class="code docutils literal notranslate"><span class="pre">nb_invariant_class</span></code>, <code class="code docutils literal notranslate"><span class="pre">big_m</span></code> and finally <code class="code docutils literal notranslate"><span class="pre">time_end</span> <span class="pre">-</span> <span class="pre">time_start</span></code> in seconds / 10.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs_checker</span>
+<span class="n">get_vs_checker</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">borne</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>This is a simple sanity check. The output <code class="code docutils literal notranslate"><span class="pre">get_vs</span></code> displays the Euler products computed by <code class="code docutils literal notranslate"><span class="pre">get_vs</span></code>, except that these products are only approximated by the truncated Euler product up to <code class="code docutils literal notranslate"><span class="pre">borne</span></code>.</p>
 </section>
 </section>
 

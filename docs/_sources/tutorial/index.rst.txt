@@ -137,3 +137,36 @@ which means that
    &\le 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849
 
 With :code:`verbose = 1` or :code:`verbose = 2`, the results are more explicitly written.
+
+To compute the specific quantities :math:`\prod_{p\in\mathcal{A}}(1-1/p^s)^{-1}` where the rational fraction is thus fixed, we have a shortcut:
+
+.. code:: default
+
+   from euler_product.lattice_invariant_euler_products import get_vs
+   get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10)
+
+The output is similar to the one of :code:`get_euler_products`, with the same effect of the available parameters. However, there is the additional possible value :code:`verbose = -1`. In that case the output takes the shape
+:code`
+.. code:: default
+
+   [big_p, phi_q, r, nb_invariant_class, big_m, time_end - time_start, difference]
+
+which is rather explicit. The parameter :code:`big_m` is introduced in the reference paper and :code:`r` is the number of values of :math:`m` as per Eq. (5) of the refence paper that are being used. The timing is given in seconds, and :code:`difference` is an approximation of the number of correct decimals given.
+
+- Auxiliaries
+
+We finally provide two auxiliairy functions.
+
+.. code:: default
+
+   from euler_product.lattice_invariant_euler_products import table_performance
+   table_performance(min_q, max_q, nb_decimals = 100, big_p = 300)
+
+This gives some timing info for :code:`get_vs(q, 2, nb_decimals, big_p, -1)`. The output has a LaTeX format of an array, the columns being :code:`q`, :code:`phi_q`, :code:`nb_prime_factors_phi_q`, :code:`r`, :code:`nb_invariant_class`, :code:`big_m` and finally :code:`time_end - time_start` in seconds / 10.
+
+.. code:: default
+
+   from euler_product.lattice_invariant_euler_products import get_vs_checker
+   get_vs_checker(q, s, borne = 10000):
+
+This is a simple sanity check. The output :code:`get_vs` displays the Euler products computed by :code:`get_vs`, except that these products are only approximated by the truncated Euler product up to :code:`borne`.
