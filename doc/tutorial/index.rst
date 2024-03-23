@@ -98,9 +98,9 @@ Euler Product over primes in arithmetic progression
 
 We start with the three data:
 
-* A modulus :math:`q\ge 1`.
+* A modulus :code:`q`:math:`\ge 1`.
 * A rational fraction given in the form :math:`F(x)/H(x)` where :math:`F(x)` and :math:`H(x)` are two polynomials with real coefficients and such that :math:`F(0)=H(0)=1`.
-* A parameter :math:`s`.
+* A parameter :code:`s`.
 * A wanted precision :code:`nb_decimals`, given as a number of decimal digits.
 
 We have access to the lattice invariant classes, as per the preceding paragraph. For each of these classes :math:`(\mathcal{A})`, we compute 
