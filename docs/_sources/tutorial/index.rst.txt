@@ -73,6 +73,8 @@ When :math:`q = 15` these classes are obtained by
         ((frozenset({1}), frozenset({1, 4}), frozenset({1, 11}), frozenset({1, 14}), frozenset({8, 1, 2, 4}), frozenset({1, 4, 13, 7})), 
          (frozenset({1}), frozenset({4}), frozenset({11}), frozenset({14}), frozenset({8, 2}), frozenset({13, 7})))
 
+The output is a couple whose first element is the tuple of the monogenic subgroups of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` and whose second element is the tuple of lattice invariant classes.
+
 - Low level tools
 
 .. code-block:: default
