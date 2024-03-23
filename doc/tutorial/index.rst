@@ -48,13 +48,15 @@ On the effect of the choice of :math:`s`, notice that the two calls
 
 give the same answer, which is readily seen to be an approximation of :math:`1/\zeta(4)`, where :math:`\zeta` is the Riemann-zeta function. Recall that we have :math:`\zeta(4)=\pi^4/90`, a fact that we may use to check our code.
 
-Euler Product over primes in arithmetic progression
----------------------------------------------------
+Lattice Invariant Classes modulo :math:`q`
+------------------------------------------
 
 
-- Definition Lattice Invariant
+- Definition of Lattice Invariant Classes
 
-We subdivide the multiplicative group :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` in classes called  `LatticeInvariantClasses`
+We subdivide the multiplicative group :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` in classes called `Lattice Invariant Classes`.
+Two points are in the same class if and only if they generate the same subgroup modulo :math:`q`.
+
 When :math:`q = 15` these classes are obtained by
 
 .. code-block:: default
@@ -69,9 +71,6 @@ When :math:`q = 15` these classes are obtained by
         LatticeInvariant(15)
         ((frozenset({1}), frozenset({1, 4}), frozenset({1, 11}), frozenset({1, 14}), frozenset({8, 1, 2, 4}), frozenset({1, 4, 13, 7})), 
          (frozenset({1}), frozenset({4}), frozenset({11}), frozenset({14}), frozenset({8, 2}), frozenset({13, 7})))
-
-
-Two points are in the same class if and only if they generate the same subgroup modulo :math:`q`
 
 - Low level tools
 
@@ -91,6 +90,10 @@ This class proposes several quantities. It is used by the high level function :c
  * :code:`mystructure.nb_class`: the number of lattice invariant classes.
  * :code:`mystructure.character_group`: the character group of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`.
  * :code:`mystructure.invariant_characters`: for each monogenic subgroup in :code:`mystructure.the_SG_tuple`, the list of (the indices of) the characters that has this subgroup in its kernel. The order of :code:`mystructure.invariant_characters` is the same as the one in :code:`mystructure.the_SG_tuple`.
+ * Some methods are also available.
 
-Some methods are also available.
+Euler Product over primes in arithmetic progression
+---------------------------------------------------
+
+
 
