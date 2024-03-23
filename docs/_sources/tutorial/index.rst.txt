@@ -19,7 +19,7 @@ where
 
  * :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
  * :math:`q` is a positive integer, the so-called "modulus". We have :math:`q=7` for :math:`E_1`.
- * :math:`s` is a real parameter that is strictly positif and \*in this example\* strictly larger than 1. A typical choice is :math:`s=2`.
+ * :math:`s` is a real parameter that is strictly positif and *in this example* strictly larger than 1. A typical choice is :math:`s=2`.
 
 In case :math:`q=1`, the notion of lattice invariant classes is trivial. Let us start by describing this case.
 
@@ -69,10 +69,10 @@ When :math:`q = 15` these classes are obtained by
 
 Two points are in the same class if and only if they generate the same subgroup modulo :math:`q`
 
-- Low level functions
+- Low level tools
 
 .. code-block:: default
-
+       
        from euler_product.utils_euler_product import ComponentStructure
        mystructure = ComponentStructure(3)
 
