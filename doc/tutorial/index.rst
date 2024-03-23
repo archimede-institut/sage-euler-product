@@ -135,4 +135,4 @@ which means that
 
    \le 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849
 
-With :code:`verbose = 1` or :code:`verbose = 2`, the results are more explicitely written.
+With :code:`verbose = 1` or :code:`verbose = 2`, the results are more explicitly written.
