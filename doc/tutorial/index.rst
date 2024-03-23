@@ -146,16 +146,16 @@ To compute the specific quantities :math:`\prod_{p\in\mathcal{A}}(1-1/p^s)^{-1}`
    get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10)
 
 The output is similar to the one of :code:`get_euler_products`, with the same effect of the available parameters. However, there is the additional possible value :code:`verbose = -1`. In that case the output takes the shape
-:code`
+
 .. code:: default
 
    [big_p, phi_q, r, nb_invariant_class, big_m, time_end - time_start, difference]
 
-which is rather explicit. The parameter :code:`big_m` is introduced in the reference paper and :code:`r` is the number of values of :math:`m` as per Eq. (5) of the reference paper that are being used. The timing is given in seconds, and :code:`difference` is an approximation of the number of correct decimals given.
+which is rather explicit. The parameter :code:`big_m` is introduced in the reference paper and :code:`r` is the number of values of :math:`m`, as per Eq. (5) of the reference paper, that are being used. The timing is given in seconds, and :code:`difference` is an approximation of the number of correct decimals given.
 
 - Auxiliaries
 
-We finally provide two auxiliairy functions.
+We finally provide two auxiliary functions.
 
 .. code:: default
 
