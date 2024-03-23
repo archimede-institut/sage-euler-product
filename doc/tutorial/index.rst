@@ -15,11 +15,15 @@ Euler products over rational functions such as :math:`E_2` are inferred from sim
 .. math::
    \prod_{p\in\mathcal{A}\mod q}(1-1/p^s),
 
-where
+by following the 2021 paper of Ettahri, Surel and Ramaré,  where
 
  * :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
  * :math:`q` is a positive integer, the so-called "modulus". We have :math:`q=7` for :math:`E_1`.
  * :math:`s` is a real parameter that is strictly positif and \*in this example\* strictly larger than 1. A typical choice is :math:`s=2`.
+
+.. seealso::
+
+  The mathematical proof of this software is taken from the paper \*\* Fast multi-precision computation of some Euler products \*\* by Salma Ettahri, Olivier Ramaré and Léon Surel, published in \*Mathematics of Computations\* in volume 90 of 2021, pages 2247 to 2265. 
 
 In case :math:`q=1`, the notion of lattice invariant classes is trivial. Let us start by describing this case.
 
@@ -42,7 +46,7 @@ On the effect of the choice of :math:`s`, notice that the two calls
      get_euler_products(1, 1 , 1-x^4, 1, 103)
      get_euler_products(1, 2 , 1-x^2, 1, 103)
 
-give the same answer, which is readily seen to be an approximation of :math:`1/\zeta(4)`, where :math:`zeta` is the Riemann-zeta function. Recall that we have :math:`\zeta(4)=\pi^4/90`, a fact that we may use to check our code.
+give the same answer, which is readily seen to be an approximation of :math:`1/\zeta(4)`, where :math:`\zeta` is the Riemann-zeta function. Recall that we have :math:`\zeta(4)=\pi^4/90`, a fact that we may use to check our code.
 
 Euler Product over primes in arithmetic progression
 ---------------------------------------------------
