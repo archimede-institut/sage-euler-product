@@ -7,10 +7,11 @@ Tutorial Euler Product
 Introduction and principles
 ---------------------------
 
-The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus :math:`q`.
+The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus :math:`q`. The computations are done with interval arithmetic, the results are certified and given in the form :code:`(lower_bound, upper_bound)`.
+An Euler product is a product over all the (positive integer) primes, possibly in some subsequence. 
 Here are two examples  :math:`E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)`, where the product is taken over every prime :math:`p` congruent to 3 or 5 modulo 7, and :math:`E_2 = \prod_{p\equiv 1[8]}\bigl(1-\frac{4}{p}\bigr)\bigl(\frac{p+1}{p-1}\bigr)^2`, the so-called Shanks's constant, where the product is taken over every prime congruent to 1 modulo 8.
 
-Euler products over rational functions such as :math:`E_2` are inferred from simpler Euler products of the shape 
+During the computations, Euler products over rational functions such as :math:`E_2` are inferred from simpler Euler products of the shape 
 
 .. math::
    \prod_{p\in\mathcal{A}\mod q}(1-1/p^s),
@@ -25,7 +26,7 @@ by following the 2021 paper of Ettahri, Surel and Ramaré,  where
 
    The mathematical proof of this software is taken from the paper \*\* Fast multi-precision computation of some Euler products \*\* by Salma Ettahri, Olivier Ramaré and Léon Surel, published in 2021, in volume 90 of \*Mathematics of Computations\*, pages 2247 to 2265. 
 
-In case :math:`q=1`, the notion of lattice invariant classes is trivial. Let us start by describing this case.
+In case :math:`q = 1`, the notion of lattice invariant classes is trivial. Let us start by describing this case.
 
 Euler Product over every primes
 -------------------------------
@@ -95,5 +96,44 @@ This class proposes several quantities. It is used by the high level function :c
 Euler Product over primes in arithmetic progression
 ---------------------------------------------------
 
+We start with the three data:
 
+* A modulus :math:`q\ge 1`.
+* A rational fraction given in the form :math:`F(x)/H(x)` where :math:`F(x)` and :math:`H(x)` are two polynomials with real coefficients and such that :\math:`F(0)=H(0)=1`.
+* A parameter :math:`s`.
+* A wanted precision :code:`nb_decimals`, given as a number of decimal digits.
 
+We have access to the lattice invariant classes, as per the preceding paragraph. For each of these classes :math:`(\mathcal{A})`, we compute 
+
+.. math::
+   \prod_{p\in\mathcal{A}\mod q}\frac{F(1/p^s)}{H(1/p^s)}.
+
+There is a condition for this product to converge absolutely: if we write :math:`F(x)-H(x)=x^\Delta T(x)` for a :math:`\Delta\ge1` and a polynomial :math:`T(x)`, we need that :math:`\Delta s >1`. We assume this condition to hold.
+
+.. code-block:: default
+     
+     from euler_product.lattice_invariant_euler_products import get_euler_products
+     get_euler_products(q, s, F(x) , H(x), nb_decimals, big_p = 300, verbose = 0, with_Latex = 0, digits_offset = 10)
+
+answers a couple whose first component is the tuple of the lattice invariant classes :math:`(\mathcal{A})`, and second component is the tuple of the values :math:`\prod_{p\in\mathcal{A}}\frac{F(1/p^s)}{H(1/p^s)}`, for example
+
+.. code-block:: default
+     
+     from euler_product.lattice_invariant_euler_products import get_euler_products
+     result = get_euler_products(5, 1, 1-x^2 , 1+x^3, 100, 300, 0)
+     
+     result[0][0]
+     frozenset({1})
+     result[1][0]
+     (0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449, 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849),
+
+which means that
+.. math:
+     
+     0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449 
+     
+     \le \prod_{p\equiv 1[5]} \frac{1-1/p^2}{1+1/p^3}
+     
+     \le 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849
+
+With :code:`verbose = 1` or :code:`verbose = 2`, the results are more explicitly written.

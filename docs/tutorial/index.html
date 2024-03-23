@@ -206,9 +206,10 @@
 <span id="index"></span><h1>Tutorial Euler Product<a class="headerlink" href="#tutorial-euler-product" title="Link to this heading">#</a></h1>
 <section id="introduction-and-principles">
 <h2>Introduction and principles<a class="headerlink" href="#introduction-and-principles" title="Link to this heading">#</a></h2>
-<p>The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus <span class="math notranslate nohighlight">\(q\)</span>.
+<p>The main object of this software is to compute in a very fast manner Euler products with rational local factors over primes in some collections of arithmetic progressions modulo some fixed modulus <span class="math notranslate nohighlight">\(q\)</span>. The computations are done with interval arithmetic, the results are certified and given in the form <code class="code docutils literal notranslate"><span class="pre">(lower_bound,</span> <span class="pre">upper_bound)</span></code>.
+An Euler product is a product over all the (positive integer) primes, possibly in some subsequence.
 Here are two examples  <span class="math notranslate nohighlight">\(E_1=\prod_{p\equiv 3,5[7]}(1-1/p^2)\)</span>, where the product is taken over every prime <span class="math notranslate nohighlight">\(p\)</span> congruent to 3 or 5 modulo 7, and <span class="math notranslate nohighlight">\(E_2 = \prod_{p\equiv 1[8]}\bigl(1-\frac{4}{p}\bigr)\bigl(\frac{p+1}{p-1}\bigr)^2\)</span>, the so-called Shanks’s constant, where the product is taken over every prime congruent to 1 modulo 8.</p>
-<p>Euler products over rational functions such as <span class="math notranslate nohighlight">\(E_2\)</span> are inferred from simpler Euler products of the shape</p>
+<p>During the computations, Euler products over rational functions such as <span class="math notranslate nohighlight">\(E_2\)</span> are inferred from simpler Euler products of the shape</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\prod_{p\in\mathcal{A}\mod q}(1-1/p^s),\]</div>
@@ -225,7 +226,7 @@ Here are two examples  <span class="math notranslate nohighlight">\(E_1=\prod_{p
 <p class="admonition-title">See also</p>
 <p>The mathematical proof of this software is taken from the paper ** Fast multi-precision computation of some Euler products ** by Salma Ettahri, Olivier Ramaré and Léon Surel, published in 2021, in volume 90 of *Mathematics of Computations*, pages 2247 to 2265.</p>
 </div>
-<p>In case <span class="math notranslate nohighlight">\(q=1\)</span>, the notion of lattice invariant classes is trivial. Let us start by describing this case.</p>
+<p>In case <span class="math notranslate nohighlight">\(q = 1\)</span>, the notion of lattice invariant classes is trivial. Let us start by describing this case.</p>
 </section>
 <section id="euler-product-over-every-primes">
 <h2>Euler Product over every primes<a class="headerlink" href="#euler-product-over-every-primes" title="Link to this heading">#</a></h2>
@@ -285,6 +286,41 @@ Two points are in the same class if and only if they generate the same subgroup 
 </section>
 <section id="euler-product-over-primes-in-arithmetic-progression">
 <h2>Euler Product over primes in arithmetic progression<a class="headerlink" href="#euler-product-over-primes-in-arithmetic-progression" title="Link to this heading">#</a></h2>
+<p>We start with the three data:</p>
+<ul class="simple">
+<li><p>A modulus <span class="math notranslate nohighlight">\(q\ge 1\)</span>.</p></li>
+<li><p>A rational fraction given in the form <span class="math notranslate nohighlight">\(F(x)/H(x)\)</span> where <span class="math notranslate nohighlight">\(F(x)\)</span> and <span class="math notranslate nohighlight">\(H(x)\)</span> are two polynomials with real coefficients and such that :math:<cite>F(0)=H(0)=1</cite>.</p></li>
+<li><p>A parameter <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+<li><p>A wanted precision <code class="code docutils literal notranslate"><span class="pre">nb_decimals</span></code>, given as a number of decimal digits.</p></li>
+</ul>
+<p>We have access to the lattice invariant classes, as per the preceding paragraph. For each of these classes <span class="math notranslate nohighlight">\((\mathcal{A})\)</span>, we compute</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\prod_{p\in\mathcal{A}\mod q}\frac{F(1/p^s)}{H(1/p^s)}.\]</div>
+</div>
+<p>There is a condition for this product to converge absolutely: if we write <span class="math notranslate nohighlight">\(F(x)-H(x)=x^\Delta T(x)\)</span> for a <span class="math notranslate nohighlight">\(\Delta\ge1\)</span> and a polynomial <span class="math notranslate nohighlight">\(T(x)\)</span>, we need that <span class="math notranslate nohighlight">\(\Delta s &gt;1\)</span>. We assume this condition to hold.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
+<span class="n">get_euler_products</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">,</span> <span class="n">H</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">nb_decimals</span><span class="p">,</span> <span class="n">big_p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">with_Latex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">digits_offset</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>answers a couple whose first component is the tuple of the lattice invariant classes <span class="math notranslate nohighlight">\((\mathcal{A})\)</span>, and second component is the tuple of the values <span class="math notranslate nohighlight">\(\prod_{p\in\mathcal{A}}\frac{F(1/p^s)}{H(1/p^s)}\)</span>, for example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_euler_products</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">get_euler_products</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">(</span><span class="mf">0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449</span><span class="p">,</span> <span class="mf">0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849</span><span class="p">),</span>
+</pre></div>
+</div>
+<p>which means that
+.. math:</p>
+<blockquote>
+<div><p>0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449</p>
+<p>le prod_{pequiv 1[5]} frac{1-1/p^2}{1+1/p^3}</p>
+<p>le 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849</p>
+</div></blockquote>
+<p>With <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">1</span></code> or <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">2</span></code>, the results are more explicitly written.</p>
 </section>
 </section>
 
