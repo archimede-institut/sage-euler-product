@@ -23,7 +23,7 @@ by following the 2021 paper of Ettahri, Surel and Ramaré,  where
 
 .. seealso::
 
-   The mathematical proof of this software is taken from the paper \*\* Fast multi-precision computation of some Euler products \*\* by Salma Ettahri, Olivier Ramaré and Léon Surel, published in \*Mathematics of Computations\* in volume 90 of 2021, pages 2247 to 2265. 
+   The mathematical proof of this software is taken from the paper \*\* Fast multi-precision computation of some Euler products \*\* by Salma Ettahri, Olivier Ramaré and Léon Surel, published in 2021, in volume 90 of \*Mathematics of Computations\*, pages 2247 to 2265. 
 
 In case :math:`q=1`, the notion of lattice invariant classes is trivial. Let us start by describing this case.
 
