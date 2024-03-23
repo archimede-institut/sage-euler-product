@@ -151,7 +151,7 @@ The output is similar to the one of :code:`get_euler_products`, with the same ef
 
    [big_p, phi_q, r, nb_invariant_class, big_m, time_end - time_start, difference]
 
-which is rather explicit. The parameter :code:`big_m` is introduced in the reference paper and :code:`r` is the number of values of :math:`m` as per Eq. (5) of the refence paper that are being used. The timing is given in seconds, and :code:`difference` is an approximation of the number of correct decimals given.
+which is rather explicit. The parameter :code:`big_m` is introduced in the reference paper and :code:`r` is the number of values of :math:`m` as per Eq. (5) of the reference paper that are being used. The timing is given in seconds, and :code:`difference` is an approximation of the number of correct decimals given.
 
 - Auxiliaries
 
@@ -162,7 +162,7 @@ We finally provide two auxiliairy functions.
    from euler_product.lattice_invariant_euler_products import table_performance
    table_performance(min_q, max_q, nb_decimals = 100, big_p = 300)
 
-This gives some timing info for :code:`get_vs(q, 2, nb_decimals, big_p, -1)`. The output has a LaTeX format of an array, the columns being :code:`q`, :code:`phi_q`, :code:`nb_prime_factors_phi_q`, :code:`r`, :code:`nb_invariant_class`, :code:`big_m` and finally :code:`time_end - time_start` in seconds / 10.
+This gives some timing info for :code:`get_vs(q, 2, nb_decimals, big_p, -1)`. The output has a LaTeX format of an array, the columns being :code:`q`, :code:`phi_q`, :code:`nb_prime_factors_phi_q`, :code:`r`, :code:`nb_invariant_class`, :code:`big_m` and finally :code:`time_end - time_start` in seconds / 10. The meanings are the same as in :code:`get_vs`.
 
 .. code:: default
 
