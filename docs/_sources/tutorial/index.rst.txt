@@ -145,7 +145,7 @@ To compute the specific quantities :math:`\prod_{p\in\mathcal{A}}(1-1/p^s)^{-1}`
 .. code:: default
 
    from euler_product.lattice_invariant_euler_products import get_vs
-   get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10)
+   get_vs(q, s, nb_decimals = 100, big_p = 100, verbose = 2, with_laTeX = 0, digits_offset = 10)
 
 The output is similar to the one of :code:`get_euler_products`, with the same effect of the available parameters. However, there is the additional possible value :code:`verbose = -1`. In that case the output takes the shape
 
