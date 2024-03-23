@@ -35,7 +35,7 @@ Euler Product over every primes
      from euler_product.lattice_invariant_euler_products import get_euler_products
      get_euler_products(1, 2.1 , 1-x^2, 1+x^3, 103, 20, verbose = 0, with_Latex = 0, digits_offset = 10)
 
-This computes the Euler product :math:`\prod_{p\ge2}\frac{1-1/p^{2s}}{1+1/p^{3s}}` where :math:`s=2.1` with potentially 103 correct digits and by computing directly the Euler product for all the primes less than :math:`P=20`. This value of :math:`P` is 100 by default. The level of comments :code:`verbose` can be set to 0, 1 or 2. The additionnal parameter :code:`with_Latex` is either equal to 1 or not equal to 1, with an obvious meaning. If the output does not have enough correct digits, the user is asked to increase the value 103 to 110 for instance. We decided not to automate this behaviour.
+This computes the Euler product :math:`\prod_{p\ge2}\frac{1-1/p^{2s}}{1+1/p^{3s}}` where :math:`s=2.1` with potentially 103 correct digits and by computing directly the Euler product for all the primes less than :math:`P=20`. This value of :math:`P` is 100 by default. The level of comments :code:`verbose` can be set to 0, 1 or 2. The additional parameter :code:`with_Latex` is either equal to 1 or not equal to 1, with an obvious meaning. If the output does not have enough correct digits, the user is asked to increase the value 103 to 110 for instance. We decided not to automate this behaviour.
 
 The parameter :code:`digits_offset` is not used as of now.
 
