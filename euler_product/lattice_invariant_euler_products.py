@@ -71,7 +71,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
         A real number > 1
 
     - ``nb_decimals`` -- [type]
-        The number of decimals that are being sought by the final result, by default 100. 
+        The number of decimals that are being sought by the final result, by default 100.
         The function aims at such a number of decimals but a final tuning may be required
 
     - ``big_p`` -- int, optional
