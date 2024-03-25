@@ -295,7 +295,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, ver
 
     - ``h_init`` -- pol
         A polynomial with real coefficients and such that h_init(0) = 1
-  
+
     - ``nb_decimals`` -- [type]
         The number of decimals that are being sought by the final result, by default 100.
         The function aims at such a number of decimals but a final tuning may be required
