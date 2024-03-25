@@ -76,17 +76,17 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 
     - ``big_p`` -- int, optional
         This is an internal parameter that is described in the accompanying paper, by default 100.
-        In short: the Euler products up to big_p are computed directly.
+        In short: the Euler products up to big_p are computed directly
 
     - ``verbose`` -- int, optional
         Defines the amount of output shown, by default 2.
         It may take the usual values 0, 1, 2, towards more explanations.
         When get_vs is used inside another function, verbose = 0 is usually what is required.
-        The value -1 is special and the effect is fully described in the tutorial.
+        The value -1 is special and the effect is fully described in the tutorial
 
     - ``with_laTeX`` -- int, optional
         This parameter takes the value 1 or not 1, by default 0.
-        As of now, this has effect only when verbose = 2.
+        As of now, this has effect only when verbose = 2
 
     - ``digits_offset`` : int, optional
         Not used yet, by default 10
@@ -94,8 +94,8 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     OUTPUT:
 
     pair of tuples
-        The output is a pair whose first component is the tuple of lattice invariant classes (A) 
-        and second component is the corresponding tuple of values (zeta(s; q, A)).
+        The output is a pair whose first component is the tuple of lattice invariant classes (A)
+        and second component is the corresponding tuple of values (zeta(s; q, A))
 
     EXAMPLES::
 
