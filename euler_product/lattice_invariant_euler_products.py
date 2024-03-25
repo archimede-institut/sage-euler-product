@@ -52,17 +52,16 @@ from euler_product.utils_euler_product import laTeX_for_number
 from euler_product.utils_euler_product import nb_common_digits
 
 
-def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10):
-    """summary for get_vs
-    Computes an approximate value of the list (zeta(s; q, A))
-    for A in the lattice-invariant classes.
+def get_vs(q, s, nb_decimals = 100, big_p = 100, verbose = 2, with_laTeX = 0, digits_offset = 10):
+    """
+    Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
+    of the lattice-invariant classes modulo q
+    and approx_zeta(s; q, A) is an arithmetic interval approximation
+    of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).
+    We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
+    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly. 
     We compute directly what happens for primes < big_p.
     Main Engines GetVs(12, 2, 100, 110)
-
-    ... WARNING ...
-        Don't try me and avoid to select a prime number for big_p.
-
-    INPUT:
 
     - ``q`` -- int
         The products are taken over classes modulo q
@@ -95,7 +94,8 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 
     pair of tuples
         The output is a pair whose first component is the tuple of lattice invariant classes (A)
-        and second component is the corresponding tuple of values (zeta(s; q, A))
+        and second component is the corresponding tuple of values (zeta(s; q, A)) where
+        each value is given in interval arithmetic as a pair (lower_bound, upper_bound)
 
     EXAMPLES::
 
@@ -258,53 +258,73 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
         return structure.the_Class_tuple, eulerProds
 
 
-def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose=2, with_laTeX=0):
+def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, verbose = 2, with_laTeX = 0, digital_offset = 10):
     r"""Summary for get_euler_products
-    Computes an approximate value of the list ()
-    for A in the lattice-invariant classes, ``LatticeInvariantClasses``.
-    Careful! bigP may increase in the proof!
+    Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) )
+    where (A) is the tuple of the lattice-invariant classes modulo q
+    and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation
+    of the product over every prime in the class A modulo q of the quotient
+    f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).
+    We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
+    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
     We compute directly what happens for primes < big_p.
-
+    We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
+    and that Delta s > 1 where Delta is the order of the zero of f_init-h_init at 0.
+    This last condition is to ensure the Euler products converge absolutely
+    
     to do
 
     assert F[0] = H[0] = 1
 
-    GetEulerProds(3, 1, 1-x^2, 100)
+    GetEulerProds(3, 1, 1-x^2, 1, 100)
     (q, s, Finit, Hinit, nbdecimals, bigP= 00, Verbose=2, WithLaTeX=0)
     (q, s, F, H, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0)
 
 
     INPUT:
 
-    - ``q`` -- [type]
+    - ``q`` -- int
+        The products are taken over classes modulo q
+
+    - ``s`` -- real
+        A real number > 0. 
+        Additional conditions may be required for the Euler products to be absolutely convergent
+
+    - ``f_init`` -- pol
         [description]
 
-    - ``s`` -- [type]
+    - ``h_init`` -- pol
         [description]
-
-    - ``f_init`` -- [type]
-        [description]
-
-    - ``h_init`` -- [type]
-        [description]
-
+        
     - ``nb_decimals`` -- [type]
-        [description]
+        The number of decimals that are being sought by the final result, by default 100.
+        The function aims at such a number of decimals but a final tuning may be required
 
-    - ``big_p`` : int, optional
-        [description], by default 100
+    - ``big_p`` -- int, optional
+        This is an internal parameter that is described in the accompanying paper, by default 100.
+        In short: the Euler products up to big_p are computed directly
 
-    - ``verbose`` : int, optional
-        [description], by default 2
+    - ``verbose`` -- int, optional
+        Defines the amount of output shown, by default 2.
+        It may take the usual values 0, 1, 2, towards more explanations.
+        When get_vs is used inside another function, verbose = 0 is usually what is required.
+        The value -1 is special and the effect is fully described in the tutorial
 
-    - ``with_laTeX`` : int, optional
-        [description], by default 0
+    - ``with_laTeX`` -- int, optional
+        This parameter takes the value 1 or not 1, by default 0.
+        As of now, this has effect only when verbose = 2
 
+    - ``digits_offset`` : int, optional
+        Not used yet, by default 10
+    
     OUTPUT:
 
-    [tuple]
-        [return tuple of (the_Class_tuple, euler_prods)]
-
+    pair of tuples
+        The output is a pair whose first component is the tuple of lattice invariant classes (A)
+        and second component is the corresponding tuple of values 
+        (prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) where
+        each value is given in interval arithmetic as a pair (lower_bound, upper_bound)
+    
     EXCEPTIONS:
         ValueError   ('non convergent product')
         ValueError("f_init[0] and h_init[0] must be equal to 1")
@@ -453,23 +473,24 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     return structure.the_Class_tuple, eulerProds
 
 
-def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
-    """Summary for table_performance
-    Table Makers
+def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
+    """
+    The behaviour of this function is described in the attached tutorial
 
     INPUT:
 
-    - ``min_q`` -- [type]
-        [description]
+    - ``min_q`` -- int
+        The modulus q goes through all the values in [min_q, max_q]
+        that are not twice an odd integer.
 
-    - ``max_q`` -- [type]
+    - ``max_q`` -- int
         [description]
 
     - ``nb_decimals`` -- int, optional
-        [description], by default 100
+        Same as in get_vs, by default 100
 
     - ``big_p`` -- int, optional
-        [description], by default 300
+        Same as in get_vs, by default 300
 
     EXAMPLES:
 
@@ -530,17 +551,18 @@ def table_performance(min_q, max_q, nb_decimals=100, big_p=300):
     return
 
 
-def get_vs_checker(q, s, borne=10000):
-    """summary for get_vs_checker
-    Checking Engines
+def get_vs_checker(q, s, borne = 10000):
+    """
+    This is a low level sanity check engine describe in the tutorial.
+    It is to be used by developpers only
 
     INPUT:
 
-    - ``q`` -- [type]
-        [description]
+    - ``q`` -- int
+        The products are taken over lattice invariant classes modulo q
 
-    - ``s`` -- [type]
-        [description]
+    - ``s`` -- real
+        A real number > 1
 
     - ``borne`` -- int, optional
         boundary of computation, by default 10000
