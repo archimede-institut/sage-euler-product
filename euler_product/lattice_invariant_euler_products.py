@@ -10,7 +10,7 @@ AUTHORS:
 - Olivier Ramaré (2023-01-008) : initial version
 - Dominique Benielli (2023-02_15) :
   Aix Marseille Université ,
-  Integration as  SageMath package.
+  Integration as SageMath package.
   Cellule de developpement Institut Archimède
 
 ...WARNING:
@@ -291,10 +291,10 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, ver
         Additional conditions may be required for the Euler products to be absolutely convergent
 
     - ``f_init`` -- pol
-        [description]
+        A polynomial with real coefficients and such that f_init(0) = 1
 
     - ``h_init`` -- pol
-        [description]
+        A polynomial with real coefficients and such that h_init(0) = 1
   
     - ``nb_decimals`` -- [type]
         The number of decimals that are being sought by the final result, by default 100.
