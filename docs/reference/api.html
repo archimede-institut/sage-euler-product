@@ -327,44 +327,51 @@ Main Engines GetVs(12, 2, 100, 110)</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over classes modulo q</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – real</dt><dd><p>A real number &gt; 1</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – [type]</dt><dd><p>[description], by default 100</p>
+<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – [type]</dt><dd><p>The number of decimals that are being sought by the final result, by default 100.
+The function aims at such a number of decimals but a final tuning may be required</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int, optional</dt><dd><p>[description], by default 100</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int, optional</dt><dd><p>This is an internal parameter that is described in the accompanying paper, by default 100.
+In short: the Euler products up to big_p are computed directly.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int, optional</dt><dd><p>[description], by default 2</p>
+<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int, optional</dt><dd><p>Defines the amount of output shown, by default 2.
+It may take the usual values 0, 1, 2, towards more explanations.
+When get_vs is used inside another function, verbose = 0 is usually what is required.
+The value -1 is special and the effect is fully described in the tutorial.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int, optional</dt><dd><p>[description], by default 0</p>
+<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int, optional</dt><dd><p>This parameter takes the value 1 or not 1, by default 0.
+As of now, this has effect only when verbose = 2.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code><span class="classifier">int, optional</span></dt><dd><p>[description], by default 10</p>
+<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code><span class="classifier">int, optional</span></dt><dd><p>Not used yet, by default 10</p>
 </dd>
 </dl>
 </li>
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
+<dt>pair of tuples</dt><dd><p>The output is a pair whose first component is the tuple of lattice invariant classes (A)
+and second component is the corresponding tuple of values (zeta(s; q, A)).</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>

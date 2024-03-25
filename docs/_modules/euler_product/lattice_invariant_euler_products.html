@@ -269,31 +269,38 @@
 
 <span class="sd">    INPUT:</span>
 
-<span class="sd">    - ``q`` -- [type]</span>
-<span class="sd">        [description]</span>
+<span class="sd">    - ``q`` -- int</span>
+<span class="sd">        The products are taken over classes modulo q</span>
 
-<span class="sd">    - ``s`` -- [type]</span>
-<span class="sd">        [description]</span>
+<span class="sd">    - ``s`` -- real</span>
+<span class="sd">        A real number &gt; 1</span>
 
 <span class="sd">    - ``nb_decimals`` -- [type]</span>
-<span class="sd">        [description], by default 100</span>
+<span class="sd">        The number of decimals that are being sought by the final result, by default 100. </span>
+<span class="sd">        The function aims at such a number of decimals but a final tuning may be required</span>
 
 <span class="sd">    - ``big_p`` -- int, optional</span>
-<span class="sd">        [description], by default 100</span>
+<span class="sd">        This is an internal parameter that is described in the accompanying paper, by default 100.</span>
+<span class="sd">        In short: the Euler products up to big_p are computed directly.</span>
 
 <span class="sd">    - ``verbose`` -- int, optional</span>
-<span class="sd">        [description], by default 2</span>
+<span class="sd">        Defines the amount of output shown, by default 2.</span>
+<span class="sd">        It may take the usual values 0, 1, 2, towards more explanations.</span>
+<span class="sd">        When get_vs is used inside another function, verbose = 0 is usually what is required.</span>
+<span class="sd">        The value -1 is special and the effect is fully described in the tutorial.</span>
 
 <span class="sd">    - ``with_laTeX`` -- int, optional</span>
-<span class="sd">        [description], by default 0</span>
+<span class="sd">        This parameter takes the value 1 or not 1, by default 0.</span>
+<span class="sd">        As of now, this has effect only when verbose = 2.</span>
 
 <span class="sd">    - ``digits_offset`` : int, optional</span>
-<span class="sd">        [description], by default 10</span>
+<span class="sd">        Not used yet, by default 10</span>
 
 <span class="sd">    OUTPUT:</span>
 
-<span class="sd">    [type]</span>
-<span class="sd">        [description]</span>
+<span class="sd">    pair of tuples</span>
+<span class="sd">        The output is a pair whose first component is the tuple of lattice invariant classes (A) </span>
+<span class="sd">        and second component is the corresponding tuple of values (zeta(s; q, A)).</span>
 
 <span class="sd">    EXAMPLES::</span>
 
