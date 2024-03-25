@@ -59,7 +59,7 @@ def get_vs(q, s, nb_decimals = 100, big_p = 100, verbose = 2, with_laTeX = 0, di
     and approx_zeta(s; q, A) is an arithmetic interval approximation
     of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
-    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly. 
+    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
     We compute directly what happens for primes < big_p.
     Main Engines GetVs(12, 2, 100, 110)
 
@@ -271,7 +271,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, ver
     We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
     and that Delta s > 1 where Delta is the order of the zero of f_init-h_init at 0.
     This last condition is to ensure the Euler products converge absolutely
-    
+
     to do
 
     assert F[0] = H[0] = 1
@@ -287,7 +287,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, ver
         The products are taken over classes modulo q
 
     - ``s`` -- real
-        A real number > 0. 
+        A real number > 0.
         Additional conditions may be required for the Euler products to be absolutely convergent
 
     - ``f_init`` -- pol
@@ -295,7 +295,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, ver
 
     - ``h_init`` -- pol
         [description]
-        
+  
     - ``nb_decimals`` -- [type]
         The number of decimals that are being sought by the final result, by default 100.
         The function aims at such a number of decimals but a final tuning may be required
@@ -316,15 +316,15 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, ver
 
     - ``digits_offset`` : int, optional
         Not used yet, by default 10
-    
+
     OUTPUT:
 
     pair of tuples
         The output is a pair whose first component is the tuple of lattice invariant classes (A)
-        and second component is the corresponding tuple of values 
+        and second component is the corresponding tuple of values
         (prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) where
         each value is given in interval arithmetic as a pair (lower_bound, upper_bound)
-    
+
     EXCEPTIONS:
         ValueError   ('non convergent product')
         ValueError("f_init[0] and h_init[0] must be equal to 1")
