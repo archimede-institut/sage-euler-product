@@ -554,7 +554,7 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
 def get_vs_checker(q, s, borne = 10000):
     """
     This is a low level sanity check engine describe in the tutorial.
-    It is to be used by developpers only
+    It is to be used by developers only
 
     INPUT:
 
