@@ -1,8 +1,11 @@
 """
 Lattice Invariant
 
-lattice_invariant_euler_product.py defines  class.
-Computing some structural invariants
+lattice_invariant_euler_product.py defines the class ComponentStructure.
+Computing with interval arithmetic and with a proven precision
+Euler products of rational functions over primes in special sets modulo some fixed q.
+These special sets are the lattice invariant classes modulo q, and the software also enables
+the user to use them through the class ComponentStructure.
 
 
 AUTHORS:
