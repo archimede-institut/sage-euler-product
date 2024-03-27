@@ -266,7 +266,7 @@ def get_vs(q, s, nb_decimals = 100, big_p = 100, verbose = 2, with_laTeX = 0, di
 
 
 def get_euler_products(q, s, f_init, h_init, nb_decimals = 100, big_p = 300, verbose = 2, with_laTeX = 0, digital_offset = 10):
-    r"""Summary for get_euler_products
+    r"""
     Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) )
     where (A) is the tuple of the lattice-invariant classes modulo q
     and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation
@@ -577,19 +577,19 @@ def get_vs_checker(q, s, borne = 10000):
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs_checker
-        sage: get_vs_checker(8, 1)
+        sage: get_vs_checker(8, 2)
         -------------------
         For p mod  8  in  frozenset({1})
-        the product of 1/(1-p^{- 1 }) is about 1.3126486598837095
+        the product of 1/(1-p^{- 2 }) is about 1.0048326237351608
         -------------------
         For p mod  8  in  frozenset({3})
-        the product of 1/(1-p^{- 1 }) is about 2.217318868012348
+        the product of 1/(1-p^{- 2 }) is about 1.1394159722583108
         -------------------
         For p mod  8  in  frozenset({5})
-        the product of 1/(1-p^{- 1 }) is about 1.7913334693038976
+        the product of 1/(1-p^{- 2 }) is about 1.0510974216618003
         -------------------
-        For p mod  8  in  frozenset({7})
-        the product of 1/(1-p^{- 1 }) is about 1.5751024072482105
+         For p mod  8  in  frozenset({7})
+         the product of 1/(1-p^{- 2 }) is about 1.0251478255836493
 
     """
     #  Computes an approximate value of the list (zeta(s; q, A))
