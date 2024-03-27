@@ -149,26 +149,30 @@ def get_vs(q, s, nb_decimals = 100, big_p = 100, verbose = 2, with_laTeX = 0, di
     TESTS::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
-        sage: get_vs(3, 1, 100)  # doctest: +NORMALIZE_WHITESPACE
+        sage: get_vs(3, 2, 100)  # doctest: +NORMALIZE_WHITESPACE
         Computing the structural invariants ...  done.
         Computing big m ... Computing the finite product for p < 100 ...  done.
-        done: we use big_m = 52 .
-        Building indices ... done: there are 6 summands.
+        done: we use big_m = 26 .
+        Building indices ... done: there are 5 summands.
         -------------------
         For p + 3ZZ in frozenset({1})
-        the product of 1 / (1 - p^{-1}) is between
-        NaN
+        the product of 1 / (1 - p^{-2}) is between
+        1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074335751973
         and
-        NaN
-        (Obtained:  -1  correct decimal digits)
+        1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074339378982
+        (Obtained:  102  correct decimal digits)
         -------------------
         For p + 3ZZ in frozenset({2})
-        the product of 1 / (1 - p^{-1}) is between
-        NaN
+        the product of 1 / (1 - p^{-2}) is between
+        1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252818405878
         and
-        NaN
-        (Obtained:  -1  correct decimal digits)
-        ((frozenset({1}), frozenset({2})), ((NaN, NaN), (NaN, NaN)))
+        1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252823365985
+        (Obtained:  101  correct decimal digits)
+        ((frozenset({1}), frozenset({2})),
+         ((1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074335751973,
+           1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074339378982),
+         (1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252818405878,
+           1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252823365985)))
 
     """
     start = timer()
