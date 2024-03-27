@@ -474,7 +474,7 @@
 <div class="viewcode-block" id="get_euler_products">
 <a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.get_euler_products">[docs]</a>
 <span class="k">def</span> <span class="nf">get_euler_products</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">f_init</span><span class="p">,</span> <span class="n">h_init</span><span class="p">,</span> <span class="n">nb_decimals</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">digital_offset</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Summary for get_euler_products</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) )</span>
 <span class="sd">    where (A) is the tuple of the lattice-invariant classes modulo q</span>
 <span class="sd">    and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation</span>
@@ -791,19 +791,19 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs_checker</span>
-<span class="sd">        sage: get_vs_checker(8, 1)</span>
+<span class="sd">        sage: get_vs_checker(8, 2)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p mod  8  in  frozenset({1})</span>
-<span class="sd">        the product of 1/(1-p^{- 1 }) is about 1.3126486598837095</span>
+<span class="sd">        the product of 1/(1-p^{- 2 }) is about 1.0048326237351608</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p mod  8  in  frozenset({3})</span>
-<span class="sd">        the product of 1/(1-p^{- 1 }) is about 2.217318868012348</span>
+<span class="sd">        the product of 1/(1-p^{- 2 }) is about 1.1394159722583108</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p mod  8  in  frozenset({5})</span>
-<span class="sd">        the product of 1/(1-p^{- 1 }) is about 1.7913334693038976</span>
+<span class="sd">        the product of 1/(1-p^{- 2 }) is about 1.0510974216618003</span>
 <span class="sd">        -------------------</span>
-<span class="sd">        For p mod  8  in  frozenset({7})</span>
-<span class="sd">        the product of 1/(1-p^{- 1 }) is about 1.5751024072482105</span>
+<span class="sd">         For p mod  8  in  frozenset({7})</span>
+<span class="sd">         the product of 1/(1-p^{- 2 }) is about 1.0251478255836493</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">#  Computes an approximate value of the list (zeta(s; q, A))</span>
