@@ -110,11 +110,11 @@ def nb_common_digits(a, b):
 def laTeX_for_number(w, how_many, nb_block_sto_cut):
     r"""
     Return a character string representing the real number ``w`` made of its
-    integer part followed by every decimal up to the``how_many``-th decimals,
-    where every block of 5 decimal is separated by \'\\,\',
-    and every succession of ``how_many`` blocks is separated by \'\n\'.
+    integer part followed by every decimal up to the``how_many`` -th decimals,
+    where every block of 5 decimal is separated by \'\\\\,\',
+    and every succession of ``how_many`` blocks is separated by \'\\n\'.
     The string has a \`&\` after the decimal point and ends with
-    the string \`\\cdots\`.
+    the string \`\\\\cdots\`.
 
     INPUT:
 
@@ -177,7 +177,7 @@ def sub_group_generated(n, q):
     OUTPUT:
 
     [frozenset]
-        immutable set of the powers of ``n`` modu ``q``
+        immutable set of the powers of ``n`` modulo ``q``
 
     EXAMPLES::
 
@@ -282,8 +282,16 @@ LatticeInvariant = LatticeInvariantClasses()
 
 class ComponentStructure():
     """
-    creating summary for ComponentStructure
-
+    This class takes a positive integer ``q`` and creates the following list of accessors:
+    *``phi_q``: the value of the Euler-phi function at ``q``.
+    *``the_exponent``: the exponent of the multiplicative group :math:(\mathbb{Z}/q\mathbb{Z})^*`.
+    *``character_group``: the group of Dirichlet characters modulo ``q``, see this function for its description.
+    *``invertibles``: the tuple of the integers between 1 and ``q`` that are prime to ``q``.
+    *``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.
+    *``nb_class``: the number of Lattice Invariant classes.
+    *``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves
+    this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in
+    ``the_SG_tuple``.
 
     EXAMPLES::
 
