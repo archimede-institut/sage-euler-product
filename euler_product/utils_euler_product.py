@@ -58,7 +58,7 @@ from sage.modules.free_module_element import vector
 
 
 def nb_common_digits(a, b):
-    r"""summary for nb_common_digits
+    r"""
     Returns -1 if floor(a) != floor(b)
 
     INPUT:
@@ -284,13 +284,13 @@ class ComponentStructure():
     """
     This class takes a positive integer ``q`` and creates the following list of accessors:
 
-    *``phi_q``: the value of the Euler-phi function at ``q``.
-    *``the_exponent``: the exponent of the multiplicative group :math:`(\mathbb{Z}/q\mathbb{Z})^*`.
-    *``character_group``: the group of Dirichlet characters modulo ``q``, see this function for its description.
-    *``invertibles``: the tuple of the integers between 1 and ``q`` that are prime to ``q``.
-    *``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.
-    *``nb_class``: the number of Lattice Invariant classes.
-    *``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves
+    - ``phi_q``: the value of the Euler-phi function at ``q``.
+    - ``the_exponent``: the exponent of the multiplicative group :math:`(\mathbb{Z}/q\mathbb{Z})^*`.
+    - ``character_group``: the group of Dirichlet characters modulo ``q``, see this function for its description.
+    - ``invertibles``: the tuple of the integers between 1 and ``q`` that are prime to ``q``.
+    - ``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.
+    - ``nb_class``: the number of Lattice Invariant classes.
+    - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves
     this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in
     ``the_SG_tuple``.
 
