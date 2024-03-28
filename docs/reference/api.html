@@ -595,7 +595,21 @@ CAREFUL, this is Python 3 code!</p>
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">ComponentStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>creating summary for ComponentStructure</p>
+<p>This class takes a positive integer <code class="docutils literal notranslate"><span class="pre">q</span></code> and creates the following list of accessors:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">phi_q</span></code>: the value of the Euler-phi function at <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">the_exponent</span></code>: the exponent of the multiplicative group <span class="math notranslate nohighlight">\((\mathbb{Z}/q\mathbb{Z})^*\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">character_group</span></code>: the group of Dirichlet characters modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>, see this function for its description.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">invertibles</span></code>: the tuple of the integers between 1 and <code class="docutils literal notranslate"><span class="pre">q</span></code> that are prime to <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code> as in the class LatticeInvariantClass.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nb_class</span></code>: the number of Lattice Invariant classes.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">invariant_characters</span></code>: given a subgroup in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>, the tuple of the characters that leaves</dt><dd><p>this subgroup invariant is created. <code class="docutils literal notranslate"><span class="pre">invariant_characters</span></code> is this list of tuples, arranged as in
+<code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1015,11 +1029,11 @@ myCIF = ComplexIntervalField(200)</p>
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.laTeX_for_number">
 <span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">laTeX_for_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_block_sto_cut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#laTeX_for_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.laTeX_for_number" title="Link to this definition">#</a></dt>
 <dd><p>Return a character string representing the real number <code class="docutils literal notranslate"><span class="pre">w</span></code> made of its
-integer part followed by every decimal up to the``how_many``-th decimals,
-where every block of 5 decimal is separated by '\,',
-and every succession of <code class="docutils literal notranslate"><span class="pre">how_many</span></code> blocks is separated by 'n'.
+integer part followed by every decimal up to the``how_many`` -th decimals,
+where every block of 5 decimal is separated by '\\,',
+and every succession of <code class="docutils literal notranslate"><span class="pre">how_many</span></code> blocks is separated by '\n'.
 The string has a `&amp;` after the decimal point and ends with
-the string `\cdots`.</p>
+the string `\\cdots`.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -1056,8 +1070,7 @@ version of the decimal expansion of w, see the description of the function]</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.nb_common_digits">
 <span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">nb_common_digits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#nb_common_digits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.nb_common_digits" title="Link to this definition">#</a></dt>
-<dd><p>summary for nb_common_digits
-Returns -1 if floor(a) != floor(b)</p>
+<dd><p>Returns -1 if floor(a) != floor(b)</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -1111,7 +1124,7 @@ It is expected that <code class="docutils literal notranslate"><span class="pre"
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[frozenset]</dt><dd><p>immutable set of the powers of <code class="docutils literal notranslate"><span class="pre">n</span></code> modu <code class="docutils literal notranslate"><span class="pre">q</span></code></p>
+<dt>[frozenset]</dt><dd><p>immutable set of the powers of <code class="docutils literal notranslate"><span class="pre">n</span></code> modulo <code class="docutils literal notranslate"><span class="pre">q</span></code></p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
