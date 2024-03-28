@@ -131,7 +131,7 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
     OUTPUT:
 
     [str]
-        [a character string int(w).separated_decimals where separated_decimals is LaTeX formated
+        [a character string int(w).separated_decimals where separated_decimals is LaTeX formatted
         version of the decimal expansion of w, see the description of the function]
 
     EXAMPLES::
