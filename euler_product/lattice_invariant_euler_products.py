@@ -491,7 +491,8 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
         that are not twice an odd integer.
 
     - ``max_q`` -- int
-        [description]
+        The modulus q goes through all the values in [min_q, max_q]
+        that are not twice an odd integer.
 
     - ``nb_decimals`` -- int, optional
         Same as in get_vs, by default 100
