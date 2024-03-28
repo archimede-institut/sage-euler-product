@@ -284,7 +284,7 @@ class ComponentStructure():
     """
     This class takes a positive integer ``q`` and creates the following list of accessors:
     *``phi_q``: the value of the Euler-phi function at ``q``.
-    *``the_exponent``: the exponent of the multiplicative group :math:(\mathbb{Z}/q\mathbb{Z})^*`.
+    *``the_exponent``: the exponent of the multiplicative group :math:`(\mathbb{Z}/q\mathbb{Z})^*`.
     *``character_group``: the group of Dirichlet characters modulo ``q``, see this function for its description.
     *``invertibles``: the tuple of the integers between 1 and ``q`` that are prime to ``q``.
     *``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.
