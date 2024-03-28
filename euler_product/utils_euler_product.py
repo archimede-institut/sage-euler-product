@@ -290,9 +290,7 @@ class ComponentStructure():
     - ``invertibles``: the tuple of the integers between 1 and ``q`` that are prime to ``q``.
     - ``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.
     - ``nb_class``: the number of Lattice Invariant classes.
-    - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves
-        this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in
-        ``the_SG_tuple``.
+    - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in ``the_SG_tuple``.
 
     EXAMPLES::
 
