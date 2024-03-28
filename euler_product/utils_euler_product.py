@@ -283,7 +283,7 @@ LatticeInvariant = LatticeInvariantClasses()
 class ComponentStructure():
     """
     This class takes a positive integer ``q`` and creates the following list of accessors:
-    
+
     *``phi_q``: the value of the Euler-phi function at ``q``.
     *``the_exponent``: the exponent of the multiplicative group :math:`(\mathbb{Z}/q\mathbb{Z})^*`.
     *``character_group``: the group of Dirichlet characters modulo ``q``, see this function for its description.
