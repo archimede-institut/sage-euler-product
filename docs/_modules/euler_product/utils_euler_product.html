@@ -316,8 +316,13 @@
 <div class="viewcode-block" id="laTeX_for_number">
 <a class="viewcode-back" href="../../reference/api.html#euler_product.utils_euler_product.laTeX_for_number">[docs]</a>
 <span class="k">def</span> <span class="nf">laTeX_for_number</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">how_many</span><span class="p">,</span> <span class="n">nb_block_sto_cut</span><span class="p">):</span>
-<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;summary for laTeX_for_number</span>
-<span class="sd">    Return a character string int(w).digits where digits concerns the first</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return a character string representing the real number ``w`` made of its</span>
+<span class="sd">    integer part followed by every decimal up to the``how_many``-th decimals,</span>
+<span class="sd">    where every block of 5 decimal is separated by \&#39;\\,\&#39;,</span>
+<span class="sd">    and every succession of ``how_many`` blocks is separated by \&#39;\n\&#39;.</span>
+<span class="sd">    The string has a \`&amp;\` after the decimal point and ends with</span>
+<span class="sd">    the string \`\\cdots\`.</span>
 
 <span class="sd">    INPUT:</span>
 
@@ -325,16 +330,17 @@
 <span class="sd">        [w is a real number with a (short) integer part and a floating point]</span>
 
 <span class="sd">    - ``how_many`` -- [int]</span>
-<span class="sd">        [number of decimal,decimals, separated every 5 of them by \&#39;\\,\&#39;</span>
-<span class="sd">        et every block of ``nb_block_sto_cut``, on a different line. &#39;\\cdots&#39; ends the string]</span>
+<span class="sd">        [number of decimals, separated every 5 of them by \&#39;\\,\&#39;</span>
+<span class="sd">        and every block of ``nb_block_sto_cut``, on a different line. &#39;\\cdots&#39; ends the string]</span>
 
 <span class="sd">    - ``nb_block_sto_cut`` -- [int]</span>
-<span class="sd">        [description]</span>
+<span class="sd">        [See above]</span>
 
 <span class="sd">    OUTPUT:</span>
 
 <span class="sd">    [str]</span>
-<span class="sd">        [a character string int(w).digits where digits concerns the first]</span>
+<span class="sd">        [a character string int(w).separated_decimals where separated_decimals is LaTeX formated</span>
+<span class="sd">        version of the decimal expansion of w, see the description of the function]</span>
 
 <span class="sd">    EXAMPLES::</span>
 
