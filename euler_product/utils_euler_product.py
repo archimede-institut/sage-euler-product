@@ -108,8 +108,13 @@ def nb_common_digits(a, b):
 
 
 def laTeX_for_number(w, how_many, nb_block_sto_cut):
-    r"""summary for laTeX_for_number
-    Return a character string int(w).digits where digits concerns the first
+    r"""
+    Return a character string representing the real number ``w`` made of its
+    integer part followed by every decimal up to the``how_many``-th decimals,
+    where every block of 5 decimal is separated by \'\\,\',
+    and every succession of ``how_many`` blocks is separated by \'\n\'.
+    The string has a \`&\` after the decimal point and ends with
+    the string \`\\cdots\`.
 
     INPUT:
 
@@ -117,16 +122,17 @@ def laTeX_for_number(w, how_many, nb_block_sto_cut):
         [w is a real number with a (short) integer part and a floating point]
 
     - ``how_many`` -- [int]
-        [number of decimal,decimals, separated every 5 of them by \'\\,\'
-        et every block of ``nb_block_sto_cut``, on a different line. '\\cdots' ends the string]
+        [number of decimals, separated every 5 of them by \'\\,\'
+        and every block of ``nb_block_sto_cut``, on a different line. '\\cdots' ends the string]
 
     - ``nb_block_sto_cut`` -- [int]
-        [description]
+        [See above]
 
     OUTPUT:
 
     [str]
-        [a character string int(w).digits where digits concerns the first]
+        [a character string int(w).separated_decimals where separated_decimals is LaTeX formated
+        version of the decimal expansion of w, see the description of the function]
 
     EXAMPLES::
 
