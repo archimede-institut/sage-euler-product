@@ -232,7 +232,7 @@ CAREFUL, this is Python 3 code!</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.get_euler_products">
 <span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_euler_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_laTeX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digital_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_euler_products"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_euler_products" title="Link to this definition">#</a></dt>
-<dd><p>Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) )
+<dd><p>Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) )
 where (A) is the tuple of the lattice-invariant classes modulo q
 and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation
 of the product over every prime in the class A modulo q of the quotient
@@ -242,63 +242,60 @@ but this is not guaranteed. In case it does not happen, increase nb_decimals sli
 We compute directly what happens for primes &lt; big_p.
 We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
 and that Delta s &gt; 1 where Delta is the order of the zero of f_init-h_init at 0.
-This last condition is to ensure the Euler products converge absolutely</p>
+This last condition is to ensure the Euler products converge absolutely.</p>
 <p>to do</p>
 <p>assert F[0] = H[0] = 1</p>
-<p>GetEulerProds(3, 1, 1-x^2, 1, 100)
-(q, s, Finit, Hinit, nbdecimals, bigP= 00, Verbose=2, WithLaTeX=0)
-(q, s, F, H, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0)</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over classes modulo q</p>
+<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over classes modulo q.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – real</dt><dd><p>A real number &gt; 0.
-Additional conditions may be required for the Euler products to be absolutely convergent</p>
+Additional conditions may be required for the Euler products to be absolutely convergent.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">f_init</span></code> – pol</dt><dd><p>A polynomial with real coefficients and such that f_init(0) = 1</p>
+<dt><code class="docutils literal notranslate"><span class="pre">f_init</span></code> – pol</dt><dd><p>A polynomial with real coefficients and such that f_init(0) = 1.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">h_init</span></code> – pol</dt><dd><p>A polynomial with real coefficients and such that h_init(0) = 1</p>
+<dt><code class="docutils literal notranslate"><span class="pre">h_init</span></code> – pol</dt><dd><p>A polynomial with real coefficients and such that h_init(0) = 1.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – [type]</dt><dd><p>The number of decimals that are being sought by the final result, by default 100.
+<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – int (default: <cite>100</cite>), optional</dt><dd><p>The number of decimals that are being sought by the final result.
 The function aims at such a number of decimals but a final tuning may be required</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int, optional</dt><dd><p>This is an internal parameter that is described in the accompanying paper, by default 100.
-In short: the Euler products up to big_p are computed directly</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int (default:<cite>300</cite>), optional</dt><dd><p>This is an internal parameter that is described in the accompanying paper.
+In short: the Euler products up to <code class="docutils literal notranslate"><span class="pre">big_p</span></code> are computed directly.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int, optional</dt><dd><p>Defines the amount of output shown, by default 2.
+<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int (default: <cite>2</cite>), optional</dt><dd><p>Defines the amount of output shown.
 It may take the usual values 0, 1, 2, towards more explanations.
-When get_vs is used inside another function, verbose = 0 is usually what is required.
-The value -1 is special and the effect is fully described in the tutorial</p>
+When get_vs is used inside another function, <code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">0</span></code> is usually what is required.
+The value -1 is special and the effect is fully described in the tutorial.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int, optional</dt><dd><p>This parameter takes the value 1 or not 1, by default 0.
-As of now, this has effect only when verbose = 2</p>
+<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int (default: <cite>0</cite>), optional</dt><dd><p>This parameter takes the value 1 or not 1.
+As of now, this has effect only when <code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">==</span> <span class="pre">2</span></code>.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code><span class="classifier">int, optional</span></dt><dd><p>Not used yet, by default 10</p>
+<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code> – int (default: <cite>10</cite>), optional</dt><dd><p>Not used yet.</p>
 </dd>
 </dl>
 </li>
@@ -308,7 +305,7 @@ As of now, this has effect only when verbose = 2</p>
 <dt>pair of tuples</dt><dd><p>The output is a pair whose first component is the tuple of lattice invariant classes (A)
 and second component is the corresponding tuple of values
 (prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) where
-each value is given in interval arithmetic as a pair (lower_bound, upper_bound)</p>
+each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</p>
 </dd>
 <dt>EXCEPTIONS:</dt><dd><p>ValueError   (‘non convergent product’)
 ValueError(“f_init[0] and h_init[0] must be equal to 1”)</p>
@@ -347,7 +344,7 @@ of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).</p>
 but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
 We compute directly what happens for primes &lt; big_p.</p>
 <p>INPUT:</p>
-<ul>
+<ul class="simple">
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over classes modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 </dd>
@@ -380,12 +377,12 @@ The value -1 is special and the effect is fully described in the tutorial.</p>
 </li>
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int (default: <cite>0</cite>), optional</dt><dd><p>This parameter takes the value 1 or not 1.
-As of now, this has effect only when verbose = 2.</p>
+As of now, this has effect only when <code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">==</span> <span class="pre">2</span></code>.</p>
 </dd>
 </dl>
 </li>
-<li><dl>
-<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code><span class="classifier">int (default: <cite>10</cite>), optional</span></dt><dd><p>Not used yet.</p>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code> – int (default: <cite>10</cite>), optional</dt><dd><p>Not used yet.</p>
 </dd>
 </dl>
 </li>
@@ -394,7 +391,7 @@ As of now, this has effect only when verbose = 2.</p>
 <dl class="simple">
 <dt>pair of tuples</dt><dd><p>The output is a pair whose first component is the tuple of lattice invariant classes (A)
 and second component is the corresponding tuple of values (zeta(s; q, A)) where
-each value is given in interval arithmetic as a pair (lower_bound, upper_bound)</p>
+each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
@@ -477,21 +474,21 @@ each value is given in interval arithmetic as a pair (lower_bound, upper_bound)<
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.get_vs_checker">
 <span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_vs_checker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_vs_checker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_vs_checker" title="Link to this definition">#</a></dt>
 <dd><p>This is a low level sanity check engine describe in the tutorial.
-It is to be used by developers only</p>
+It is to be used by developers only.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over lattice invariant classes modulo q</p>
+<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over lattice invariant classes modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – real</dt><dd><p>A real number &gt; 1</p>
+<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – real</dt><dd><p>A real number &gt; 1.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">borne</span></code> – int, optional</dt><dd><p>boundary of computation, by default 10000</p>
+<dt><code class="docutils literal notranslate"><span class="pre">borne</span></code> – int (default: <cite>1000</cite>), optional</dt><dd><p>boundary of computation.</p>
 </dd>
 </dl>
 </li>
@@ -518,28 +515,28 @@ It is to be used by developers only</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.table_performance">
 <span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">table_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#table_performance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.table_performance" title="Link to this definition">#</a></dt>
-<dd><p>The behaviour of this function is described in the attached tutorial</p>
+<dd><p>The behaviour of this function is described in the attached tutorial.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">min_q</span></code> – int</dt><dd><p>The modulus q goes through all the values in [min_q, max_q]
+<dt><code class="docutils literal notranslate"><span class="pre">min_q</span></code> – int</dt><dd><p>The modulus q goes through all the values in <code class="docutils literal notranslate"><span class="pre">[min_q,</span> <span class="pre">max_q]</span></code>
 that are not twice an odd integer.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">max_q</span></code> – int</dt><dd><p>The modulus q goes through all the values in [min_q, max_q]
+<dt><code class="docutils literal notranslate"><span class="pre">max_q</span></code> – int</dt><dd><p>The modulus q goes through all the values in <code class="docutils literal notranslate"><span class="pre">[min_q,</span> <span class="pre">max_q]</span></code>
 that are not twice an odd integer.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – int, optional</dt><dd><p>Same as in get_vs, by default 100</p>
+<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – int (default: <cite>100</cite>), optional</dt><dd><p>Same as in <code class="docutils literal notranslate"><span class="pre">get_vs</span></code>.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int, optional</dt><dd><p>Same as in get_vs, by default 300</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int (default: <cite>300</cite>), optional</dt><dd><p>Same as in <code class="docutils literal notranslate"><span class="pre">get_vs</span></code>.</p>
 </dd>
 </dl>
 </li>

@@ -295,9 +295,9 @@
 
 <span class="sd">    - ``with_laTeX`` -- int (default: `0`), optional</span>
 <span class="sd">        This parameter takes the value 1 or not 1.</span>
-<span class="sd">        As of now, this has effect only when verbose = 2.</span>
+<span class="sd">        As of now, this has effect only when ``verbose == 2``.</span>
 
-<span class="sd">    - ``digits_offset`` : int (default: `10`), optional</span>
+<span class="sd">    - ``digits_offset`` -- int (default: `10`), optional</span>
 <span class="sd">        Not used yet.</span>
 
 <span class="sd">    OUTPUT:</span>
@@ -305,7 +305,7 @@
 <span class="sd">    pair of tuples</span>
 <span class="sd">        The output is a pair whose first component is the tuple of lattice invariant classes (A)</span>
 <span class="sd">        and second component is the corresponding tuple of values (zeta(s; q, A)) where</span>
-<span class="sd">        each value is given in interval arithmetic as a pair (lower_bound, upper_bound)</span>
+<span class="sd">        each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</span>
 
 <span class="sd">    EXAMPLES::</span>
 
@@ -475,9 +475,9 @@
 
 <div class="viewcode-block" id="get_euler_products">
 <a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.get_euler_products">[docs]</a>
-<span class="k">def</span> <span class="nf">get_euler_products</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">f_init</span><span class="p">,</span> <span class="n">h_init</span><span class="p">,</span> <span class="n">nb_decimals</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">digital_offset</span> <span class="o">=</span> <span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_euler_products</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">f_init</span><span class="p">,</span> <span class="n">h_init</span><span class="p">,</span> <span class="n">nb_decimals</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">digital_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) )</span>
+<span class="sd">    Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) )</span>
 <span class="sd">    where (A) is the tuple of the lattice-invariant classes modulo q</span>
 <span class="sd">    and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation</span>
 <span class="sd">    of the product over every prime in the class A modulo q of the quotient</span>
@@ -487,52 +487,47 @@
 <span class="sd">    We compute directly what happens for primes &lt; big_p.</span>
 <span class="sd">    We assume that f_init(0) = h_init(0) = 1, that s is a positive real number</span>
 <span class="sd">    and that Delta s &gt; 1 where Delta is the order of the zero of f_init-h_init at 0.</span>
-<span class="sd">    This last condition is to ensure the Euler products converge absolutely</span>
+<span class="sd">    This last condition is to ensure the Euler products converge absolutely.</span>
 
 <span class="sd">    to do</span>
 
 <span class="sd">    assert F[0] = H[0] = 1</span>
 
-<span class="sd">    GetEulerProds(3, 1, 1-x^2, 1, 100)</span>
-<span class="sd">    (q, s, Finit, Hinit, nbdecimals, bigP= 00, Verbose=2, WithLaTeX=0)</span>
-<span class="sd">    (q, s, F, H, nbdecimals, bigP = 100, Verbose = 2, WithLaTeX = 0)</span>
-
-
 <span class="sd">    INPUT:</span>
 
 <span class="sd">    - ``q`` -- int</span>
-<span class="sd">        The products are taken over classes modulo q</span>
+<span class="sd">        The products are taken over classes modulo q.</span>
 
 <span class="sd">    - ``s`` -- real</span>
 <span class="sd">        A real number &gt; 0.</span>
-<span class="sd">        Additional conditions may be required for the Euler products to be absolutely convergent</span>
+<span class="sd">        Additional conditions may be required for the Euler products to be absolutely convergent.</span>
 
 <span class="sd">    - ``f_init`` -- pol</span>
-<span class="sd">        A polynomial with real coefficients and such that f_init(0) = 1</span>
+<span class="sd">        A polynomial with real coefficients and such that f_init(0) = 1.</span>
 
 <span class="sd">    - ``h_init`` -- pol</span>
-<span class="sd">        A polynomial with real coefficients and such that h_init(0) = 1</span>
+<span class="sd">        A polynomial with real coefficients and such that h_init(0) = 1.</span>
 
-<span class="sd">    - ``nb_decimals`` -- [type]</span>
-<span class="sd">        The number of decimals that are being sought by the final result, by default 100.</span>
+<span class="sd">    - ``nb_decimals`` -- int (default: `100`), optional</span>
+<span class="sd">        The number of decimals that are being sought by the final result.</span>
 <span class="sd">        The function aims at such a number of decimals but a final tuning may be required</span>
 
-<span class="sd">    - ``big_p`` -- int, optional</span>
-<span class="sd">        This is an internal parameter that is described in the accompanying paper, by default 100.</span>
-<span class="sd">        In short: the Euler products up to big_p are computed directly</span>
+<span class="sd">    - ``big_p`` -- int (default:`300`), optional</span>
+<span class="sd">        This is an internal parameter that is described in the accompanying paper.</span>
+<span class="sd">        In short: the Euler products up to ``big_p`` are computed directly.</span>
 
-<span class="sd">    - ``verbose`` -- int, optional</span>
-<span class="sd">        Defines the amount of output shown, by default 2.</span>
+<span class="sd">    - ``verbose`` -- int (default: `2`), optional</span>
+<span class="sd">        Defines the amount of output shown.</span>
 <span class="sd">        It may take the usual values 0, 1, 2, towards more explanations.</span>
-<span class="sd">        When get_vs is used inside another function, verbose = 0 is usually what is required.</span>
-<span class="sd">        The value -1 is special and the effect is fully described in the tutorial</span>
+<span class="sd">        When get_vs is used inside another function, ``verbose = 0`` is usually what is required.</span>
+<span class="sd">        The value -1 is special and the effect is fully described in the tutorial.</span>
 
-<span class="sd">    - ``with_laTeX`` -- int, optional</span>
-<span class="sd">        This parameter takes the value 1 or not 1, by default 0.</span>
-<span class="sd">        As of now, this has effect only when verbose = 2</span>
+<span class="sd">    - ``with_laTeX`` -- int (default: `0`), optional</span>
+<span class="sd">        This parameter takes the value 1 or not 1.</span>
+<span class="sd">        As of now, this has effect only when ``verbose == 2``.</span>
 
-<span class="sd">    - ``digits_offset`` : int, optional</span>
-<span class="sd">        Not used yet, by default 10</span>
+<span class="sd">    - ``digits_offset`` -- int (default: `10`), optional</span>
+<span class="sd">        Not used yet.</span>
 
 <span class="sd">    OUTPUT:</span>
 
@@ -540,7 +535,7 @@
 <span class="sd">        The output is a pair whose first component is the tuple of lattice invariant classes (A)</span>
 <span class="sd">        and second component is the corresponding tuple of values</span>
 <span class="sd">        (prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) where</span>
-<span class="sd">        each value is given in interval arithmetic as a pair (lower_bound, upper_bound)</span>
+<span class="sd">        each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</span>
 
 <span class="sd">    EXCEPTIONS:</span>
 <span class="sd">        ValueError   (&#39;non convergent product&#39;)</span>
@@ -695,23 +690,23 @@
 <a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.table_performance">[docs]</a>
 <span class="k">def</span> <span class="nf">table_performance</span><span class="p">(</span><span class="n">min_q</span><span class="p">,</span> <span class="n">max_q</span><span class="p">,</span> <span class="n">nb_decimals</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    The behaviour of this function is described in the attached tutorial</span>
+<span class="sd">    The behaviour of this function is described in the attached tutorial.</span>
 
 <span class="sd">    INPUT:</span>
 
 <span class="sd">    - ``min_q`` -- int</span>
-<span class="sd">        The modulus q goes through all the values in [min_q, max_q]</span>
+<span class="sd">        The modulus q goes through all the values in ``[min_q, max_q]``</span>
 <span class="sd">        that are not twice an odd integer.</span>
 
 <span class="sd">    - ``max_q`` -- int</span>
-<span class="sd">        The modulus q goes through all the values in [min_q, max_q]</span>
+<span class="sd">        The modulus q goes through all the values in ``[min_q, max_q]``</span>
 <span class="sd">        that are not twice an odd integer.</span>
 
-<span class="sd">    - ``nb_decimals`` -- int, optional</span>
-<span class="sd">        Same as in get_vs, by default 100</span>
+<span class="sd">    - ``nb_decimals`` -- int (default: `100`), optional</span>
+<span class="sd">        Same as in ``get_vs``.</span>
 
-<span class="sd">    - ``big_p`` -- int, optional</span>
-<span class="sd">        Same as in get_vs, by default 300</span>
+<span class="sd">    - ``big_p`` -- int (default: `300`), optional</span>
+<span class="sd">        Same as in ``get_vs``.</span>
 
 <span class="sd">    EXAMPLES:</span>
 
@@ -778,18 +773,18 @@
 <span class="k">def</span> <span class="nf">get_vs_checker</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">borne</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This is a low level sanity check engine describe in the tutorial.</span>
-<span class="sd">    It is to be used by developers only</span>
+<span class="sd">    It is to be used by developers only.</span>
 
 <span class="sd">    INPUT:</span>
 
 <span class="sd">    - ``q`` -- int</span>
-<span class="sd">        The products are taken over lattice invariant classes modulo q</span>
+<span class="sd">        The products are taken over lattice invariant classes modulo ``q``.</span>
 
 <span class="sd">    - ``s`` -- real</span>
-<span class="sd">        A real number &gt; 1</span>
+<span class="sd">        A real number &gt; 1.</span>
 
-<span class="sd">    - ``borne`` -- int, optional</span>
-<span class="sd">        boundary of computation, by default 10000</span>
+<span class="sd">    - ``borne`` -- int (default: `1000`), optional</span>
+<span class="sd">        boundary of computation.</span>
 
 <span class="sd">    EXAMPLES::</span>
 
