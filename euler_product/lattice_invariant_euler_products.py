@@ -55,43 +55,45 @@ from euler_product.utils_euler_product import laTeX_for_number
 from euler_product.utils_euler_product import nb_common_digits
 
 
-def get_vs(q, s, nb_decimals = 100, big_p = 100, verbose = 2, with_laTeX = 0, digits_offset = 10):
+def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10):
     """
     Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
     of the lattice-invariant classes modulo q
     and approx_zeta(s; q, A) is an arithmetic interval approximation
     of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).
+
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
     but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
     We compute directly what happens for primes < big_p.
-    Main Engines GetVs(12, 2, 100, 110)
+
+    INPUT:
 
     - ``q`` -- int
-        The products are taken over classes modulo q
+        The products are taken over classes modulo ``q``.
 
     - ``s`` -- real
-        A real number > 1
+        A real number > 1.
 
-    - ``nb_decimals`` -- [type]
-        The number of decimals that are being sought by the final result, by default 100.
-        The function aims at such a number of decimals but a final tuning may be required
+    - ``nb_decimals`` -- int (default: `100`)
+        The number of decimals that are being sought by the final result.
+        The function aims at such a number of decimals but a final tuning may be required.
 
-    - ``big_p`` -- int, optional
-        This is an internal parameter that is described in the accompanying paper, by default 100.
-        In short: the Euler products up to big_p are computed directly
+    - ``big_p`` -- int (default: `100`), optional
+        This is an internal parameter that is described in the accompanying paper.
+        In short: the Euler products up to ``big_p`` are computed directly.
 
-    - ``verbose`` -- int, optional
-        Defines the amount of output shown, by default 2.
+    - ``verbose`` -- int (default: `2`), optional
+        Defines the amount of output shown.
         It may take the usual values 0, 1, 2, towards more explanations.
-        When get_vs is used inside another function, verbose = 0 is usually what is required.
-        The value -1 is special and the effect is fully described in the tutorial
+        When ``get_vs`` is used inside another function, ``verbose = 0`` is usually what is required.
+        The value -1 is special and the effect is fully described in the tutorial.
 
-    - ``with_laTeX`` -- int, optional
-        This parameter takes the value 1 or not 1, by default 0.
-        As of now, this has effect only when verbose = 2
+    - ``with_laTeX`` -- int (default: `0`), optional
+        This parameter takes the value 1 or not 1.
+        As of now, this has effect only when verbose = 2.
 
-    - ``digits_offset`` : int, optional
-        Not used yet, by default 10
+    - ``digits_offset`` : int (default: `10`), optional
+        Not used yet.
 
     OUTPUT:
 
