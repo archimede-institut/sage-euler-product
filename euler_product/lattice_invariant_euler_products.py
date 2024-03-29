@@ -71,7 +71,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     - ``q`` -- int
         The products are taken over classes modulo ``q``.
 
-    - ``s`` -- real
+    - ``s`` -- float
         A real number > 1.
 
     - ``nb_decimals`` -- int (default: `100`)
@@ -290,7 +290,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     - ``q`` -- int
         The products are taken over classes modulo q.
 
-    - ``s`` -- real
+    - ``s`` -- float
         A real number > 0.
         Additional conditions may be required for the Euler products to be absolutely convergent.
 
