@@ -342,50 +342,50 @@ ValueError(“f_init[0] and h_init[0] must be equal to 1”)</p>
 <dd><p>Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
 of the lattice-invariant classes modulo q
 and approx_zeta(s; q, A) is an arithmetic interval approximation
-of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).
-We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)
+of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).</p>
+<p>We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)
 but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
-We compute directly what happens for primes &lt; big_p.
-Main Engines GetVs(12, 2, 100, 110)</p>
-<ul class="simple">
+We compute directly what happens for primes &lt; big_p.</p>
+<p>INPUT:</p>
+<ul>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over classes modulo q</p>
+<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over classes modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – real</dt><dd><p>A real number &gt; 1</p>
+<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – real</dt><dd><p>A real number &gt; 1.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – [type]</dt><dd><p>The number of decimals that are being sought by the final result, by default 100.
-The function aims at such a number of decimals but a final tuning may be required</p>
+<dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – int (default: <cite>100</cite>)</dt><dd><p>The number of decimals that are being sought by the final result.
+The function aims at such a number of decimals but a final tuning may be required.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int, optional</dt><dd><p>This is an internal parameter that is described in the accompanying paper, by default 100.
-In short: the Euler products up to big_p are computed directly</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int (default: <cite>100</cite>), optional</dt><dd><p>This is an internal parameter that is described in the accompanying paper.
+In short: the Euler products up to <code class="docutils literal notranslate"><span class="pre">big_p</span></code> are computed directly.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int, optional</dt><dd><p>Defines the amount of output shown, by default 2.
+<dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int (default: <cite>2</cite>), optional</dt><dd><p>Defines the amount of output shown.
 It may take the usual values 0, 1, 2, towards more explanations.
-When get_vs is used inside another function, verbose = 0 is usually what is required.
-The value -1 is special and the effect is fully described in the tutorial</p>
+When <code class="docutils literal notranslate"><span class="pre">get_vs</span></code> is used inside another function, <code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">0</span></code> is usually what is required.
+The value -1 is special and the effect is fully described in the tutorial.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int, optional</dt><dd><p>This parameter takes the value 1 or not 1, by default 0.
-As of now, this has effect only when verbose = 2</p>
+<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int (default: <cite>0</cite>), optional</dt><dd><p>This parameter takes the value 1 or not 1.
+As of now, this has effect only when verbose = 2.</p>
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code><span class="classifier">int, optional</span></dt><dd><p>Not used yet, by default 10</p>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">digits_offset</span></code><span class="classifier">int (default: <cite>10</cite>), optional</span></dt><dd><p>Not used yet.</p>
 </dd>
 </dl>
 </li>
