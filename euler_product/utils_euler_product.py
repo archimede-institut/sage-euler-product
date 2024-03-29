@@ -59,20 +59,20 @@ from sage.modules.free_module_element import vector
 
 def nb_common_digits(a, b):
     r"""
-    Returns -1 if floor(a) != floor(b)
+    Returns -1 if floor(a) != floor(b).
 
     INPUT:
 
-    - ``a`` -- [float]
-        [first float to compare]
+    - ``a`` -- float
+        First float to compare.
 
-    - ``b`` -- [float]
-        [second float to compare]
+    - ``b`` -- float
+        Second float to compare.
 
     OUTPUT:
 
-    [int]
-        [Returns -1 if floor(a) != floor(b), or number of common digit]
+    int
+        Returns -1 if floor(a) != floor(b), or the number of common digits.
 
     EXAMPLES::
 
