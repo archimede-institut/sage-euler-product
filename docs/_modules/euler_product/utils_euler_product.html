@@ -519,6 +519,7 @@
 <span class="sd">    - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.</span>
 <span class="sd">      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.</span>
 <span class="sd">      The function ``get_CA_Km_F_sur_H``answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.</span>
+<span class="sd">      When ``F == 1-X``and ``H == 1``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.</span>
 <span class="sd">    - ``get_L_values``: a method used only for ``get_gamma``.</span>
 <span class="sd">    - ``get_gamma``: a method.</span>
 
