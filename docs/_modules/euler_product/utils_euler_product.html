@@ -326,21 +326,21 @@
 
 <span class="sd">    INPUT:</span>
 
-<span class="sd">    - ``w`` -- [float]</span>
-<span class="sd">        [w is a real number with a (short) integer part and a floating point]</span>
+<span class="sd">    - ``w`` -- float</span>
+<span class="sd">        ``w`` is a real number with a (short) integer part and a floating point.</span>
 
-<span class="sd">    - ``how_many`` -- [int]</span>
-<span class="sd">        [number of decimals, separated every 5 of them by \&#39;\\,\&#39;</span>
-<span class="sd">        and every block of ``nb_block_sto_cut``, on a different line. &#39;\\cdots&#39; ends the string]</span>
+<span class="sd">    - ``how_many`` -- int</span>
+<span class="sd">        number of decimals, separated every 5 of them by \&#39;\\,\&#39;</span>
+<span class="sd">        and every block of ``nb_block_sto_cut``, on a different line. &#39;\\cdots&#39; ends the string.</span>
 
-<span class="sd">    - ``nb_block_sto_cut`` -- [int]</span>
-<span class="sd">        [See above]</span>
+<span class="sd">    - ``nb_block_sto_cut`` -- int</span>
+<span class="sd">        See above.</span>
 
 <span class="sd">    OUTPUT:</span>
 
-<span class="sd">    [str]</span>
-<span class="sd">        [a character string int(w).separated_decimals where separated_decimals is LaTeX formatted</span>
-<span class="sd">        version of the decimal expansion of w, see the description of the function]</span>
+<span class="sd">    str</span>
+<span class="sd">        a character string int(w).separated_decimals where separated_decimals is LaTeX formatted</span>
+<span class="sd">        version of the decimal expansion of ``w``, see the description of the function.</span>
 
 <span class="sd">    EXAMPLES::</span>
 
@@ -380,14 +380,14 @@
 <span class="sd">    INPUT:</span>
 
 <span class="sd">    - ``n`` -- int</span>
-<span class="sd">        [An integer, expected to be coprime to ``q``]</span>
+<span class="sd">        An integer, expected to be coprime to ``q``.</span>
 
 <span class="sd">    - ``q`` -- int</span>
-<span class="sd">        [A positive integer]</span>
+<span class="sd">        A positive integer.</span>
 
 <span class="sd">    OUTPUT:</span>
 
-<span class="sd">    [frozenset]</span>
+<span class="sd">    frozenset</span>
 <span class="sd">        immutable set of the powers of ``n`` modulo ``q``</span>
 
 <span class="sd">    EXAMPLES::</span>
@@ -437,13 +437,13 @@
 
 <span class="sd">        INPUT:</span>
 
-<span class="sd">        - ``q`` -- [int]</span>
-<span class="sd">            [description]</span>
+<span class="sd">        - ``q`` -- int</span>
+<span class="sd">          A positive integer.</span>
 
 <span class="sd">        OUTPUT:</span>
 
-<span class="sd">        [tuple]</span>
-<span class="sd">            [tuple of tuple, the_SG_tuple, the_Class_tuple]</span>
+<span class="sd">        pair</span>
+<span class="sd">            pair of the tuples: the_SG_tuple, the_Class_tuple.</span>
 
 <span class="sd">        EXAMPLES::</span>
 
@@ -508,6 +508,19 @@
 <span class="sd">    - ``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.</span>
 <span class="sd">    - ``nb_class``: the number of Lattice Invariant classes.</span>
 <span class="sd">    - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in ``the_SG_tuple``.</span>
+<span class="sd">    - ``getr_A_Kt``: a method used only for `get_CA_Km`` and `get_CA_Km_F_sur_H``. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).</span>
+<span class="sd">      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.</span>
+<span class="sd">      The function ``get_r_A_K_t``answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).</span>
+<span class="sd">      The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.</span>
+<span class="sd">      This list is the same as the list of necessary values of ``m̀``.</span>
+<span class="sd">    - ``get_CA_Km``: a method used for ``get_vs``. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by ``getr_A_K_t``.</span>
+<span class="sd">      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``. </span>
+<span class="sd">      The function ``get_CA_Km``answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.</span>
+<span class="sd">    - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.</span>
+<span class="sd">      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``. </span>
+<span class="sd">      The function ``get_CA_Km_F_sur_H``answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.</span>
+<span class="sd">    - ``get_L_values``: a method used only for ``get_gamma``.</span>
+<span class="sd">    - ``get_gamma``: a method.</span>
 
 <span class="sd">    EXAMPLES::</span>
 

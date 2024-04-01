@@ -601,6 +601,19 @@ CAREFUL, this is Python 3 code!</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code> as in the class LatticeInvariantClass.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nb_class</span></code>: the number of Lattice Invariant classes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">invariant_characters</span></code>: given a subgroup in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>, the tuple of the characters that leaves this subgroup invariant is created. <code class="docutils literal notranslate"><span class="pre">invariant_characters</span></code> is this list of tuples, arranged as in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getr_A_Kt</span></code>: a method used only for <cite>get_CA_Km`</cite> and <cite>get_CA_Km_F_sur_H`</cite>. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
+The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
+The function <code class="docutils literal notranslate"><span class="pre">get_r_A_K_t``answers</span> <span class="pre">a</span> <span class="pre">dictionary</span> <span class="pre">which</span> <span class="pre">to</span> <span class="pre">every</span> <span class="pre">``(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">t)</span></code> associates this f(t) (with the moebius factor).
+The list of <code class="docutils literal notranslate"><span class="pre">t</span></code> is of course limited and given as the input parameter of <code class="docutils literal notranslate"><span class="pre">get_r_A_K_t</span></code>. This is the list of elements that form a divisor-closed subset of integers.
+This list is the same as the list of necessary values of <code class="docutils literal notranslate"><span class="pre">m̀</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code>: a method used for <code class="docutils literal notranslate"><span class="pre">get_vs</span></code>. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by <code class="docutils literal notranslate"><span class="pre">getr_A_K_t</span></code>.
+The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
+The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km``answers</span> <span class="pre">a</span> <span class="pre">dictionary</span> <span class="pre">which</span> <span class="pre">to</span> <span class="pre">every</span> <span class="pre">``(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>: a method used for <code class="docutils literal notranslate"><span class="pre">get_euler_products`.</span> <span class="pre">The</span> <span class="pre">coefficient</span> <span class="pre">C(A,K,m,</span> <span class="pre">F/H)</span> <span class="pre">are</span> <span class="pre">a</span> <span class="pre">sum</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">variable</span> <span class="pre">t</span> <span class="pre">of</span> <span class="pre">s(F/H,</span> <span class="pre">m/t)</span> <span class="pre">times</span> <span class="pre">a</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">computed</span> <span class="pre">by</span> <span class="pre">``getr_A_K_t</span></code>.
+The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
+The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H``answers</span> <span class="pre">a</span> <span class="pre">dictionary</span> <span class="pre">which</span> <span class="pre">to</span> <span class="pre">every</span> <span class="pre">``(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_L_values</span></code>: a method used only for <code class="docutils literal notranslate"><span class="pre">get_gamma</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_gamma</span></code>: a method.</p></li>
 </ul>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
@@ -1029,26 +1042,26 @@ the string `\\cdots`.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">w</span></code> – [float]</dt><dd><p>[w is a real number with a (short) integer part and a floating point]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">w</span></code> – float</dt><dd><p><code class="docutils literal notranslate"><span class="pre">w</span></code> is a real number with a (short) integer part and a floating point.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – [int]</dt><dd><p>[number of decimals, separated every 5 of them by '\,'
-and every block of <code class="docutils literal notranslate"><span class="pre">nb_block_sto_cut</span></code>, on a different line. ‘\cdots’ ends the string]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – int</dt><dd><p>number of decimals, separated every 5 of them by '\,'
+and every block of <code class="docutils literal notranslate"><span class="pre">nb_block_sto_cut</span></code>, on a different line. ‘\cdots’ ends the string.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">nb_block_sto_cut</span></code> – [int]</dt><dd><p>[See above]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">nb_block_sto_cut</span></code> – int</dt><dd><p>See above.</p>
 </dd>
 </dl>
 </li>
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[str]</dt><dd><p>[a character string int(w).separated_decimals where separated_decimals is LaTeX formatted
-version of the decimal expansion of w, see the description of the function]</p>
+<dt>str</dt><dd><p>a character string int(w).separated_decimals where separated_decimals is LaTeX formatted
+version of the decimal expansion of <code class="docutils literal notranslate"><span class="pre">w</span></code>, see the description of the function.</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
@@ -1104,19 +1117,19 @@ It is expected that <code class="docutils literal notranslate"><span class="pre"
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">n</span></code> – int</dt><dd><p>[An integer, expected to be coprime to <code class="docutils literal notranslate"><span class="pre">q</span></code>]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">n</span></code> – int</dt><dd><p>An integer, expected to be coprime to <code class="docutils literal notranslate"><span class="pre">q</span></code>.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>[A positive integer]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>A positive integer.</p>
 </dd>
 </dl>
 </li>
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[frozenset]</dt><dd><p>immutable set of the powers of <code class="docutils literal notranslate"><span class="pre">n</span></code> modulo <code class="docutils literal notranslate"><span class="pre">q</span></code></p>
+<dt>frozenset</dt><dd><p>immutable set of the powers of <code class="docutils literal notranslate"><span class="pre">n</span></code> modulo <code class="docutils literal notranslate"><span class="pre">q</span></code></p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
