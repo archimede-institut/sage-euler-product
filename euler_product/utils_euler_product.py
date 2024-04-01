@@ -304,7 +304,7 @@ class ComponentStructure():
       The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
       When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
     - ``get_L_values``: a method used only for ``get_gamma`` .
-    - ``get_gamma``: a method. The output is 
+    - ``get_gamma``: a method. The output is
 
     EXAMPLES::
 
@@ -366,7 +366,7 @@ class ComponentStructure():
         The function ``get_r_A_K_t`` answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
         The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
         This list is the same as the list of necessary values of ``m`` .
-        
+
         INPUT:
 
         - ``my_indices`` -- list
@@ -534,7 +534,7 @@ class ComponentStructure():
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
         The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
         When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
-      
+
         INPUT:
 
         - ``structure`` -- [type]
@@ -608,7 +608,7 @@ class ComponentStructure():
     def get_gamma(self, t, s, big_p, prec):
         """
         Outputs the tuple defined in (5.1): for every cyclic subgroup G_0 in ``the_SG_tuple``, we compute Log L_P(t*s, chi).
-        The output is the list of these values computed with ``prec`` correct binary digits. 
+        The output is the list of these values computed with ``prec`` correct binary digits.
 
         INPUT:
 
