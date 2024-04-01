@@ -297,10 +297,10 @@ class ComponentStructure():
       The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
       This list is the same as the list of necessary values of ``m̀``.
     - ``get_CA_Km``: a method used for ``get_vs``. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by ``getr_A_K_t``.
-      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``. 
+      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
       The function ``get_CA_Km``answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
     - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
-      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``. 
+      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
       The function ``get_CA_Km_F_sur_H``answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
     - ``get_L_values``: a method used only for ``get_gamma``.
     - ``get_gamma``: a method.
