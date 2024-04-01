@@ -370,7 +370,7 @@ class ComponentStructure():
         INPUT:
 
         - ``my_indices`` -- list
-            List of indices ``t``necessary.
+            List of indices ``t`` necessary.
 
         OUTPUT:
 
