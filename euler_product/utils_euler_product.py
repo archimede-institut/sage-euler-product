@@ -295,16 +295,16 @@ class ComponentStructure():
       The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
       The function ``get_r_A_K_t``answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
       The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
-      This list is the same as the list of necessary values of ``m̀``.
+      This list is the same as the list of necessary values of ``m``.
     - ``get_CA_Km``: a method used for ``get_vs``. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by ``getr_A_K_t``.
       The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
       The function ``get_CA_Km`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
     - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
       The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
       The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
-      When ``F == 1``and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
-    - ``get_L_values``: a method used only for ``get_gamma``.
-    - ``get_gamma``: a method.
+      When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
+    - ``get_L_values``: a method used only for ``get_gamma`` .
+    - ``get_gamma``: a method. The output is 
 
     EXAMPLES::
 
@@ -363,9 +363,9 @@ class ComponentStructure():
         """
         ``getr_A_Kt`` is a method used only for `get_CA_Km`` and `get_CA_Km_F_sur_H``. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
-        The function ``get_r_A_K_t``answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
+        The function ``get_r_A_K_t`` answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
         The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
-        This list is the same as the list of necessary values of ``m̀``.
+        This list is the same as the list of necessary values of ``m`` .
         
         INPUT:
 
@@ -529,8 +529,12 @@ class ComponentStructure():
         return res
 
     def get_CA_Km_F_sur_H(self, my_indices, coeff_sf, coeff_sh):
-        """summary for get_CA_Km_F_sur_H
-
+        """
+        ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
+        The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
+        The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
+        When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
+      
         INPUT:
 
         - ``structure`` -- [type]
@@ -602,21 +606,23 @@ class ComponentStructure():
         return CAKmF_sur_H
 
     def get_gamma(self, t, s, big_p, prec):
-        """summary for get_gamma
+        """
+        Outputs the tuple defined in (5.1): for every cyclic subgroup G_0 in ``the_SG_tuple``, we compute Log L_P(t*s, chi).
+        The output is the list of these values computed with ``prec`` correct binary digits. 
 
         INPUT:
 
-        - ``t`` -- [type]
+        - ``t`` -- int
             [description]
 
-        - ``s`` -- [type]
+        - ``s`` -- float
             [description]
 
-        - ``big_p`` -- [int]
+        - ``big_p`` -- int
             [description]
 
-        - ``prec`` -- [int]
-            [number of digits]
+        - ``prec`` -- int
+            Number of binary digits.
 
         OUTPUT:
 
@@ -626,9 +632,11 @@ class ComponentStructure():
         EXAMPLES::
 
             sage: from euler_product.utils_euler_product import ComponentStructure
-            sage: structure  = ComponentStructure(3)
-            sage: structure.get_gamma(30, 2, 200, 212)
-            (0, 0)
+            sage: structure  = ComponentStructure(5)
+            sage: structure.invariant_characters
+            ((0, 1, 2, 3), (0, 2), (0,))
+            sage: structure.get_gamma(1, 1.2, 20, 100)
+            (0.412058674847838475387476473?, 0.3959326495526308567412224144?, 0.4113672762131896194520237806?)
 
         """
         # (theSGTuple, theClassTuple, nb_classes, theExponent,
@@ -652,16 +660,16 @@ def get_vector_sf(coeffs_f, how_many):
 
     INPUT:
 
-    - ``coeffs_f`` -- [type]
-        coefficient f
+    - ``coeffs_f`` -- list[float]
+        Coefficients of the polynomial f.
 
-    - ``how_many`` -- [type]
-        [description]
+    - ``how_many`` -- int
+        Number of computed coefficients.
 
     OUTPUT
 
     list
-        list des coefficient f
+        list des coefficient s_f(m) over ``m <= how_many``.
     """
     ann_i = coeffs_f + ((how_many - len(coeffs_f)) * [0])
     s_f = [0 for i in range(0, how_many)]
@@ -700,59 +708,6 @@ def get_vector_bf(coeffs_f, how_many):
     for k in range(1, how_many):
         b_f[k] = add(moebius(k / d) * s_f[d] for d in divisors(k)) / k  # type: ignore
     return b_f
-
-
-def check_get_L_values(q, m, s, big_p, prec):
-    """summary for check_get_L_values
-    GetLvalues(30 ,1 ,strut,2, 200, 212), strut = GetStructure(30)
-
-    INPUT:
-
-    - ``q`` -- [type]
-        [description]
-
-    - ``m`` -- [type]
-        [description]
-
-    - ``s`` -- [type]
-        [description]
-
-    - ``big_p`` -- [type]
-        [description]
-
-    - ``prec`` -- [type]
-        [description]
-
-    OUTPUT:
-
-    [type]
-        [description]
-
-    EXAMPLES::
-
-        sage: from euler_product.utils_euler_product import check_get_L_values
-        sage: check_get_L_values(30, 3, 2, 200, 212)
-        (1.0519728271399710689481163565255136983617750008125970578879927?,
-         1.0157097376357944238110111192161298439186282423264084963532525? - 1.4857133621445839781271012611867893641184883373925748013552?e-70*I,
-         1.0055417409535648307094051892642992414590818967620158356083370? + 0.016467133779041218595107556322195146377752013933381807768356642?*I,
-         0.9904939646084485855291005374843819349185092788688669109470250? + 0.013026906332477892964794145048713833441485716911848445674305203?*I,
-         0.9808590451517343255520091160190250567430686223150891127452512? - 1.18574238292709241482747087230740098661638315279050455073760?e-69*I,
-         0.9724559623753811387928811331263909541989471735286761442117858? - 1.40206599573579470116458692163434613847526217012797359652434?e-69*I,
-         1.0055417409535648307094051892642992414590818967620158356083370? - 0.016467133779041218595107556322195146377752013933381807768356642?*I,
-         0.9904939646084485855291005374843819349185092788688669109470250? - 0.013026906332477892964794145048713833441485716911848445674305203?*I)
-
-    """
-    structure = ComponentStructure(q)
-    # (theSGTuple, theClassTuple, nb_classes, theExponent,
-    # phi_q, characterGroup, invertibles, invariantCharacters) = structure
-    CIF = ComplexIntervalField(prec)
-    CF = ComplexField(prec + 1)
-    l_val = structure.get_L_values(m=m, big_p=big_p, CIF=CIF, CF=CF)  # type: ignore
-    return_tuple = tuple(CIF(u) for u in [l_val[index] / prod([1 - structure.character_group[index](p) / p**s
-                                                              for p in filter(lambda w: (w in Primes()), range(2, big_p))])
-                                          for index in range(0, structure.phi_q)])
-    return return_tuple
-
 
 def get_beta(F):
     """get_beta is creating summary for get_beta
