@@ -601,20 +601,20 @@ CAREFUL, this is Python 3 code!</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code> as in the class LatticeInvariantClass.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nb_class</span></code>: the number of Lattice Invariant classes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">invariant_characters</span></code>: given a subgroup in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>, the tuple of the characters that leaves this subgroup invariant is created. <code class="docutils literal notranslate"><span class="pre">invariant_characters</span></code> is this list of tuples, arranged as in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">getr_A_Kt</span></code>: a method used only for <cite>get_CA_Km`</cite> and <cite>get_CA_Km_F_sur_H`</cite>. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
+<li><p><code class="docutils literal notranslate"><span class="pre">getr_A_Kt</span></code>: a method used only for <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> and <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
 The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
 The function <code class="docutils literal notranslate"><span class="pre">get_r_A_K_t``answers</span> <span class="pre">a</span> <span class="pre">dictionary</span> <span class="pre">which</span> <span class="pre">to</span> <span class="pre">every</span> <span class="pre">``(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">t)</span></code> associates this f(t) (with the moebius factor).
 The list of <code class="docutils literal notranslate"><span class="pre">t</span></code> is of course limited and given as the input parameter of <code class="docutils literal notranslate"><span class="pre">get_r_A_K_t</span></code>. This is the list of elements that form a divisor-closed subset of integers.
-This list is the same as the list of necessary values of <code class="docutils literal notranslate"><span class="pre">m̀</span></code>.</p></li>
+This list is the same as the list of necessary values of <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code>: a method used for <code class="docutils literal notranslate"><span class="pre">get_vs</span></code>. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by <code class="docutils literal notranslate"><span class="pre">getr_A_K_t</span></code>.
 The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
 The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>: a method used for <code class="docutils literal notranslate"><span class="pre">get_euler_products`.</span> <span class="pre">The</span> <span class="pre">coefficient</span> <span class="pre">C(A,K,m,</span> <span class="pre">F/H)</span> <span class="pre">are</span> <span class="pre">a</span> <span class="pre">sum</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">variable</span> <span class="pre">t</span> <span class="pre">of</span> <span class="pre">s(F/H,</span> <span class="pre">m/t)</span> <span class="pre">times</span> <span class="pre">a</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">computed</span> <span class="pre">by</span> <span class="pre">``getr_A_K_t</span></code>.
 The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
 The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.
-When <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">==</span> <span class="pre">1-X``and</span> <span class="pre">``H</span> <span class="pre">==</span> <span class="pre">1</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> is the same as the one of <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_L_values</span></code>: a method used only for <code class="docutils literal notranslate"><span class="pre">get_gamma</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_gamma</span></code>: a method.</p></li>
+When <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">==</span> <span class="pre">1-X</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> is the same as the one of <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_L_values</span></code>: a method used only for <code class="docutils literal notranslate"><span class="pre">get_gamma</span></code> .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_gamma</span></code>: a method. The output is</p></li>
 </ul>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
@@ -624,18 +624,17 @@ When <code class="docutils literal notranslate"><span class="pre">F</span> <span
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_CA_Km">
 <span class="sig-name descname"><span class="pre">get_CA_Km</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_CA_Km"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km" title="Link to this definition">#</a></dt>
-<dd><p>summary for get_CA_Km</p>
+<dd><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> is a method used for <code class="docutils literal notranslate"><span class="pre">get_vs</span></code>. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by <code class="docutils literal notranslate"><span class="pre">getr_A_K_t</span></code>.
+The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
+The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.</p>
 <p>INPUT:</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">my_indices</span></code> – [int]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">my_indices</span></code> – [int]
+List of indices <cite>m̀`</cite> that are necessary.</p></li>
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[set]</dt><dd><p>[description]</p>
+<dt>dictionary</dt><dd><p>Outputs the dictionary (ind_A, ind_K, m) –&gt; value, see above.</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
@@ -652,7 +651,10 @@ When <code class="docutils literal notranslate"><span class="pre">F</span> <span
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H">
 <span class="sig-name descname"><span class="pre">get_CA_Km_F_sur_H</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sh</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_CA_Km_F_sur_H"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H" title="Link to this definition">#</a></dt>
-<dd><p>summary for get_CA_Km_F_sur_H</p>
+<dd><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>: a method used for <code class="docutils literal notranslate"><span class="pre">get_euler_products`.</span> <span class="pre">The</span> <span class="pre">coefficient</span> <span class="pre">C(A,K,m,</span> <span class="pre">F/H)</span> <span class="pre">are</span> <span class="pre">a</span> <span class="pre">sum</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">variable</span> <span class="pre">t</span> <span class="pre">of</span> <span class="pre">s(F/H,</span> <span class="pre">m/t)</span> <span class="pre">times</span> <span class="pre">a</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">computed</span> <span class="pre">by</span> <span class="pre">``getr_A_K_t</span></code>.
+The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
+The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.
+When <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">==</span> <span class="pre">1-X</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> is the same as the one of <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code>.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -661,7 +663,7 @@ When <code class="docutils literal notranslate"><span class="pre">F</span> <span
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">my_indices</span></code> – [list]</dt><dd><p>[list of indices]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">my_indices</span></code> – [list]</dt><dd><p>List of indices <cite>m̀`</cite> that are necessary.</p>
 </dd>
 </dl>
 </li>
@@ -766,26 +768,27 @@ sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_gamma">
 <span class="sig-name descname"><span class="pre">get_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_gamma" title="Link to this definition">#</a></dt>
-<dd><p>summary for get_gamma</p>
+<dd><p>Outputs the tuple defined in (5.1): for every cyclic subgroup G_0 in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>, we compute Log L_P(t*s, chi).
+The output is the list of these values computed with <code class="docutils literal notranslate"><span class="pre">prec</span></code> correct binary digits.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">t</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">t</span></code> – int</dt><dd><p>[description]</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – float</dt><dd><p>[description]</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – [int]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int</dt><dd><p>[description]</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">prec</span></code> – [int]</dt><dd><p>[number of digits]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">prec</span></code> – int</dt><dd><p>Number of binary digits.</p>
 </dd>
 </dl>
 </li>
@@ -796,10 +799,12 @@ sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
 </dd>
 </dl>
 <p>EXAMPLES:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">structure</span>  <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_gamma</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">212</span><span class="p">)</span>
-<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sage: from euler_product.utils_euler_product import ComponentStructure
+sage: structure  = ComponentStructure(5)
+sage: structure.invariant_characters
+((0, 1, 2, 3), (0, 2), (0,))
+sage: structure.get_gamma(1, 1.2, 20, 100)
+(0.412058674847838475387476473?, 0.3959326495526308567412224144?, 0.4113672762131896194520237806?)
 </pre></div>
 </div>
 </dd></dl>
@@ -807,18 +812,22 @@ sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.getr_A_Kt">
 <span class="sig-name descname"><span class="pre">getr_A_Kt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.getr_A_Kt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.getr_A_Kt" title="Link to this definition">#</a></dt>
-<dd><p>summary for getr_A_Kt</p>
+<dd><p>This method is used only for <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> and <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
+The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
+The function <code class="docutils literal notranslate"><span class="pre">get_r_A_K_t</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">t)</span></code> associates this f(t) (with the moebius factor).
+The list of <code class="docutils literal notranslate"><span class="pre">t</span></code> is of course limited and given as the input parameter of <code class="docutils literal notranslate"><span class="pre">get_r_A_K_t</span></code>. This is the list of elements that form a divisor-closed subset of integers.
+This list is the same as the list of necessary values of <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">my_indices</span></code> – list</dt><dd><p>[list of indices]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">my_indices</span></code> – list</dt><dd><p>List of indices <code class="docutils literal notranslate"><span class="pre">t</span></code> necessary.</p>
 </dd>
 </dl>
 </li>
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[set]</dt><dd><p>[description]</p>
+<dt>dictionary</dt><dd><p>Output is a the dictionary (ind_A, ind_K, t) -&gt; value, see above.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -870,59 +879,6 @@ made by the smallest non-empty intersections of elements of <code class="docutil
   <span class="nb">frozenset</span><span class="p">({</span><span class="mi">29</span><span class="p">}),</span>
   <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">}),</span>
   <span class="nb">frozenset</span><span class="p">({</span><span class="mi">17</span><span class="p">,</span> <span class="mi">23</span><span class="p">})))</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="euler_product.utils_euler_product.check_get_L_values">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">check_get_L_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#check_get_L_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.check_get_L_values" title="Link to this definition">#</a></dt>
-<dd><p>summary for check_get_L_values
-GetLvalues(30 ,1 ,strut,2, 200, 212), strut = GetStructure(30)</p>
-<p>INPUT:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – [type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">m</span></code> – [type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – [type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – [type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">prec</span></code> – [type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>OUTPUT:</p>
-<dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-<p>EXAMPLES:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sage: from euler_product.utils_euler_product import check_get_L_values
-sage: check_get_L_values(30, 3, 2, 200, 212)
-(1.0519728271399710689481163565255136983617750008125970578879927?,
- 1.0157097376357944238110111192161298439186282423264084963532525? - 1.4857133621445839781271012611867893641184883373925748013552?e-70*I,
- 1.0055417409535648307094051892642992414590818967620158356083370? + 0.016467133779041218595107556322195146377752013933381807768356642?*I,
- 0.9904939646084485855291005374843819349185092788688669109470250? + 0.013026906332477892964794145048713833441485716911848445674305203?*I,
- 0.9808590451517343255520091160190250567430686223150891127452512? - 1.18574238292709241482747087230740098661638315279050455073760?e-69*I,
- 0.9724559623753811387928811331263909541989471735286761442117858? - 1.40206599573579470116458692163434613847526217012797359652434?e-69*I,
- 1.0055417409535648307094051892642992414590818967620158356083370? - 0.016467133779041218595107556322195146377752013933381807768356642?*I,
- 0.9904939646084485855291005374843819349185092788688669109470250? - 0.013026906332477892964794145048713833441485716911848445674305203?*I)
 </pre></div>
 </div>
 </dd></dl>
@@ -1014,19 +970,19 @@ myCIF = ComplexIntervalField(200)</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code> – [type]</dt><dd><p>coefficient f</p>
+<dt><code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code> – list[float]</dt><dd><p>Coefficients of the polynomial f.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – int</dt><dd><p>Number of computed coefficients.</p>
 </dd>
 </dl>
 </li>
 </ul>
 <p>OUTPUT</p>
 <dl class="simple">
-<dt>list</dt><dd><p>list des coefficient f</p>
+<dt>list</dt><dd><p>list des coefficient s_f(m) over <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">&lt;=</span> <span class="pre">how_many</span></code>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1209,7 +1165,6 @@ It is expected that <code class="docutils literal notranslate"><span class="pre"
 </ul>
 </li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.LatticeInvariantClasses"><code class="docutils literal notranslate"><span class="pre">LatticeInvariantClasses</span></code></a></li>
-<li><a class="reference internal" href="#euler_product.utils_euler_product.check_get_L_values"><code class="docutils literal notranslate"><span class="pre">check_get_L_values()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.get_beta"><code class="docutils literal notranslate"><span class="pre">get_beta()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.get_beta_rough"><code class="docutils literal notranslate"><span class="pre">get_beta_rough()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.get_vector_bf"><code class="docutils literal notranslate"><span class="pre">get_vector_bf()</span></code></a></li>
