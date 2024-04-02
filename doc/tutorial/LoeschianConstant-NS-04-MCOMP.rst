@@ -1422,7 +1422,7 @@ attached postscript file on the same page, gives in section 4.4 the
 first fifty digits of the constant they call :math:`A` and which are
 
 .. math::
-   :latex: eq-7
+   :label: eq-7
 
    \begin{aligned}
    \frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
