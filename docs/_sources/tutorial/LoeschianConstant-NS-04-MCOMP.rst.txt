@@ -1425,7 +1425,7 @@ first fifty digits of the constant they call :math:`A` and which are
    :label: eq-7
 
    \begin{aligned}
-   \frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
+   \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
    = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
    \\&25267
    \,08497\,71894\,30550\,80726\,33188\,94627
@@ -1440,7 +1440,7 @@ Some observations on the running time and complexity
 
 We tried several large computations to get an idea of the limitations of
 our script with the choice :math:`s=2` in
-Corollary `Corollary 8 <#superfast>`__. We present five tables:
+Corollary 8. We present five tables:
 
 -  A first table for :math:`3\le q\le 100` with the uniform choice
    :math:`P=100` and asking for 100 decimal digits.
@@ -1468,7 +1468,7 @@ Corollary `Corollary 8 <#superfast>`__. The time is given in tenth of a
 second, indicated by “s/10”. The column with the tag “\ :math:`\#m's`"
 contains the number of indices :math:`m\le M` such that
 :math:`m|\varphi(q)^\infty`. We otherwise follow the notation of
-Theorem `Theorem 2 <#PM1>`__.
+Theorem 2.
 
 It seems likely, when looking at
 Tables `2 <#HundredDigits>`__, `3 <#ThousandDigits>`__, `4 <#ThousandDigitsbis>`__
