@@ -685,32 +685,36 @@
 <div class="viewcode-block" id="ComponentStructure.get_L_values">
 <a class="viewcode-back" href="../../reference/api.html#euler_product.utils_euler_product.ComponentStructure.get_L_values">[docs]</a>
     <span class="k">def</span> <span class="nf">get_L_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="n">CIF</span><span class="p">,</span> <span class="n">CF</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;summary for get_L_values</span>
-<span class="sd">        Computing Gamma</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        for every Dirichlet character :math:`\chi` modulo ``q``, we compute</span>
+<span class="sd">        the L-series :math:`L_P(m, \chi)` associated to :math:\chi:,</span>
+<span class="sd">        save that we remove the Euler factors for primes below ``P==big_p``.</span>
+<span class="sd">        The output is the list of these values computed with ``prec`` correct binary digits.</span>
 
 <span class="sd">        INPUT:</span>
 
 
-<span class="sd">        - ``m`` -- [ComplexIntervalFieldElement&gt;]</span>
+<span class="sd">        - ``m`` -- [ComplexIntervalFieldElement]</span>
+<span class="sd">            the point where the L-series are computed. The real part should be &gt; 1 .</span>
+
+<span class="sd">        - ``big_p`` -- int</span>
+<span class="sd">            a positive integer. The Euler products are computed for primes above ``big_p``. </span>
+
+<span class="sd">        - ``CIF`` -- Complex Interval Field</span>
 <span class="sd">            [description]</span>
 
-<span class="sd">        - ``big_p`` -- [type]</span>
-<span class="sd">            [description]</span>
-
-<span class="sd">        - ``CIF`` -- [type]</span>
-<span class="sd">            [description]</span>
-
-<span class="sd">        - ``CF`` -- [type]</span>
-<span class="sd">            [description]</span>
+<span class="sd">        - ``CF`` -- Complex Field</span>
+<span class="sd">            not used.</span>
 
 <span class="sd">        OUTPUT:</span>
 
-<span class="sd">        [type]</span>
-<span class="sd">            [description]</span>
+<span class="sd">        tuple</span>
+<span class="sd">            the tuple of the values of :math:`L_P(m,\chi)`, where :math:`\chi` varies on the Dirichlet characters,</span>
+<span class="sd">            values computed with ``prec`` correct binary digits.</span>
 
 <span class="sd">        EXCEPTIONS:</span>
 
-<span class="sd">            ValueError parameter ``m` not belows of ``CIF``</span>
+<span class="sd">            ValueError parameter ``m` not in ``CIF``</span>
 
 <span class="sd">        EXAMPLES::</span>
 
@@ -761,7 +765,6 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.</span>
 <span class="sd">        The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.</span>
-<span class="sd">        The polynomial ``F`` is given by its coefficients list ``coeff_sf``, and the polynomial ``H`` is given by its coefficients list ``coeff_sh``.</span>
 <span class="sd">        The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.</span>
 <span class="sd">        When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.</span>
 
@@ -771,10 +774,10 @@
 <span class="sd">            list of indices (positive integers) ``m``. It should be divisor-closed (and include 1) and ordered increasingly.</span>
 
 <span class="sd">        - ``coeff_sf`` -- list[float]</span>
-<span class="sd">            the list of the coefficients (the ones of a polynomial F).</span>
+<span class="sd">            the list of the sum of the m-th power of the inverses of the roots of F.</span>
 
 <span class="sd">        - ``coeff_sh`` -- [type]</span>
-<span class="sd">            the list of the coefficients (the ones of a polynomial H).</span>
+<span class="sd">            the list of the sum of the m-th power of the inverses of the roots of F.</span>
 
 <span class="sd">        OUTPUT</span>
 
@@ -837,9 +840,9 @@
 <a class="viewcode-back" href="../../reference/api.html#euler_product.utils_euler_product.ComponentStructure.get_gamma">[docs]</a>
     <span class="k">def</span> <span class="nf">get_gamma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="n">prec</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup G_0 in ``the_SG_tuple``,</span>
+<span class="sd">        Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup :math:`G_0` in ``the_SG_tuple``,</span>
 <span class="sd">        we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:\chi:,</span>
-<span class="sd">        save that we remove the Euler factors for primes below ``big_p``.</span>
+<span class="sd">        save that we remove the Euler factors for primes below ``P==big_p``.</span>
 <span class="sd">        The output is the list of these values computed with ``prec`` correct binary digits.</span>
 
 <span class="sd">        INPUT:</span>
@@ -891,17 +894,20 @@
 <a class="viewcode-back" href="../../reference/api.html#euler_product.utils_euler_product.get_vector_sf">[docs]</a>
 <span class="k">def</span> <span class="nf">get_vector_sf</span><span class="p">(</span><span class="n">coeffs_f</span><span class="p">,</span> <span class="n">how_many</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Witt Decomposition</span>
+<span class="sd">    A polynomial F is given by its list of coefficients, the first one being 1.</span>
+<span class="sd">    The output is the list :math:`s_F(m)` for m less than ``how_many``, where :math:`s_F(m)`</span>
+<span class="sd">    is the sum of the m-th power of the inverses of the roots of F.</span>
+<span class="sd">    </span>
 <span class="sd">    [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]</span>
 <span class="sd">    myCIF = ComplexIntervalField(200)</span>
 
 <span class="sd">    INPUT:</span>
 
 <span class="sd">    - ``coeffs_f`` -- list[float]</span>
-<span class="sd">        Coefficients of the polynomial f.</span>
+<span class="sd">        coefficients of the polynomial f, starting by 1.</span>
 
 <span class="sd">    - ``how_many`` -- int</span>
-<span class="sd">        Number of computed coefficients.</span>
+<span class="sd">        number of computed coefficients.</span>
 
 <span class="sd">    OUTPUT</span>
 

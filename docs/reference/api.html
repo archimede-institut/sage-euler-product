@@ -665,7 +665,6 @@ The function <code class="docutils literal notranslate"><span class="pre">get_CA
 <span class="sig-name descname"><span class="pre">get_CA_Km_F_sur_H</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sh</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_CA_Km_F_sur_H"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H" title="Link to this definition">#</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>: a method used for <code class="docutils literal notranslate"><span class="pre">get_euler_products`.</span> <span class="pre">The</span> <span class="pre">coefficient</span> <span class="pre">C(A,K,m,</span> <span class="pre">F/H)</span> <span class="pre">are</span> <span class="pre">a</span> <span class="pre">sum</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">variable</span> <span class="pre">t</span> <span class="pre">of</span> <span class="pre">s(F/H,</span> <span class="pre">m/t)</span> <span class="pre">times</span> <span class="pre">a</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">computed</span> <span class="pre">by</span> <span class="pre">``getr_A_K_t</span></code>.
 The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
-The polynomial <code class="docutils literal notranslate"><span class="pre">F</span></code> is given by its coefficients list <code class="docutils literal notranslate"><span class="pre">coeff_sf</span></code>, and the polynomial <code class="docutils literal notranslate"><span class="pre">H</span></code> is given by its coefficients list <code class="docutils literal notranslate"><span class="pre">coeff_sh</span></code>.
 The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.
 When <code class="docutils literal notranslate"><span class="pre">F</span> <span class="pre">==</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">==</span> <span class="pre">1-X</span></code>, the output of <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> is the same as the one of <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code>.</p>
 <p>INPUT:</p>
@@ -676,12 +675,12 @@ When <code class="docutils literal notranslate"><span class="pre">F</span> <span
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">coeff_sf</span></code> – list[float]</dt><dd><p>the list of the coefficients (the ones of a polynomial F).</p>
+<dt><code class="docutils literal notranslate"><span class="pre">coeff_sf</span></code> – list[float]</dt><dd><p>the list of the sum of the m-th power of the inverses of the roots of F.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">coeff_sh</span></code> – [type]</dt><dd><p>the list of the coefficients (the ones of a polynomial H).</p>
+<dt><code class="docutils literal notranslate"><span class="pre">coeff_sh</span></code> – [type]</dt><dd><p>the list of the sum of the m-th power of the inverses of the roots of F.</p>
 </dd>
 </dl>
 </li>
@@ -724,39 +723,42 @@ sage: structure.get_CA_Km_F_sur_H([1, 2, 3, 4, 5, 6], [1], [1, 0, -1])   # docte
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_L_values">
 <span class="sig-name descname"><span class="pre">get_L_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CIF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CF</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_L_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_L_values" title="Link to this definition">#</a></dt>
-<dd><p>summary for get_L_values
-Computing Gamma</p>
+<dd><p>for every Dirichlet character <span class="math notranslate nohighlight">\(\chi\)</span> modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>, we compute
+the L-series <span class="math notranslate nohighlight">\(L_P(m, \chi)\)</span> associated to :math:chi:,
+save that we remove the Euler factors for primes below <code class="docutils literal notranslate"><span class="pre">P==big_p</span></code>.
+The output is the list of these values computed with <code class="docutils literal notranslate"><span class="pre">prec</span></code> correct binary digits.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">m</span></code> – [ComplexIntervalFieldElement&gt;]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">m</span></code> – [ComplexIntervalFieldElement]</dt><dd><p>the point where the L-series are computed. The real part should be &gt; 1 .</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">big_p</span></code> – int</dt><dd><p>a positive integer. The Euler products are computed for primes above <code class="docutils literal notranslate"><span class="pre">big_p</span></code>.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">CIF</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">CIF</span></code> – Complex Interval Field</dt><dd><p>[description]</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">CF</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">CF</span></code> – Complex Field</dt><dd><p>not used.</p>
 </dd>
 </dl>
 </li>
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
+<dt>tuple</dt><dd><p>the tuple of the values of <span class="math notranslate nohighlight">\(L_P(m,\chi)\)</span>, where <span class="math notranslate nohighlight">\(\chi\)</span> varies on the Dirichlet characters,
+values computed with <code class="docutils literal notranslate"><span class="pre">prec</span></code> correct binary digits.</p>
 </dd>
 </dl>
 <p>EXCEPTIONS:</p>
 <blockquote>
-<div><p>ValueError parameter <code class="docutils literal notranslate"><span class="pre">m`</span> <span class="pre">not</span> <span class="pre">belows</span> <span class="pre">of</span> <span class="pre">``CIF</span></code></p>
+<div><p>ValueError parameter <code class="docutils literal notranslate"><span class="pre">m`</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">``CIF</span></code></p>
 </div></blockquote>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sage: from euler_product.utils_euler_product import ComponentStructure
@@ -776,9 +778,9 @@ sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_gamma">
 <span class="sig-name descname"><span class="pre">get_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_gamma" title="Link to this definition">#</a></dt>
-<dd><p>Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup G_0 in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>,
+<dd><p>Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup <span class="math notranslate nohighlight">\(G_0\)</span> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>,
 we compute <span class="math notranslate nohighlight">\(\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)\)</span>, where <span class="math notranslate nohighlight">\(L_P(x,\chi)\)</span> is the L-series associated to :math:chi:,
-save that we remove the Euler factors for primes below <code class="docutils literal notranslate"><span class="pre">big_p</span></code>.
+save that we remove the Euler factors for primes below <code class="docutils literal notranslate"><span class="pre">P==big_p</span></code>.
 The output is the list of these values computed with <code class="docutils literal notranslate"><span class="pre">prec</span></code> correct binary digits.</p>
 <p>INPUT:</p>
 <ul class="simple">
@@ -974,18 +976,20 @@ Not used in the main program</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_vector_sf">
 <span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_vector_sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_vector_sf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_vector_sf" title="Link to this definition">#</a></dt>
-<dd><p>Witt Decomposition
-[real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
+<dd><p>A polynomial F is given by its list of coefficients, the first one being 1.
+The output is the list <span class="math notranslate nohighlight">\(s_F(m)\)</span> for m less than <code class="docutils literal notranslate"><span class="pre">how_many</span></code>, where <span class="math notranslate nohighlight">\(s_F(m)\)</span>
+is the sum of the m-th power of the inverses of the roots of F.</p>
+<p>[real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
 myCIF = ComplexIntervalField(200)</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code> – list[float]</dt><dd><p>Coefficients of the polynomial f.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code> – list[float]</dt><dd><p>coefficients of the polynomial f, starting by 1.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – int</dt><dd><p>Number of computed coefficients.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – int</dt><dd><p>number of computed coefficients.</p>
 </dd>
 </dl>
 </li>
