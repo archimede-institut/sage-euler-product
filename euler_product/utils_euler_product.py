@@ -629,7 +629,7 @@ class ComponentStructure():
 
         tuple
             the list of values of :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, see the function description.
-            
+    
 
         EXAMPLES::
 
