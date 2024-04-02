@@ -680,7 +680,7 @@ When <code class="docutils literal notranslate"><span class="pre">F</span> <span
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">coeff_sh</span></code> – [type]</dt><dd><p>the list of the sum of the m-th power of the inverses of the roots of F.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">coeff_sh</span></code> – [type]</dt><dd><p>the list of the sum of the m-th power of the inverses of the roots of H.</p>
 </dd>
 </dl>
 </li>
@@ -779,7 +779,7 @@ sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_gamma">
 <span class="sig-name descname"><span class="pre">get_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_gamma" title="Link to this definition">#</a></dt>
 <dd><p>Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup <span class="math notranslate nohighlight">\(G_0\)</span> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>,
-we compute <span class="math notranslate nohighlight">\(\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)\)</span>, where <span class="math notranslate nohighlight">\(L_P(x,\chi)\)</span> is the L-series associated to :math:chi:,
+we compute <span class="math notranslate nohighlight">\(\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)\)</span>, where <span class="math notranslate nohighlight">\(L_P(x,\chi)\)</span> is the L-series associated to <span class="math notranslate nohighlight">\(\chi\)</span>,
 save that we remove the Euler factors for primes below <code class="docutils literal notranslate"><span class="pre">P==big_p</span></code>.
 The output is the list of these values computed with <code class="docutils literal notranslate"><span class="pre">prec</span></code> correct binary digits.</p>
 <p>INPUT:</p>
@@ -898,13 +898,20 @@ made by the smallest non-empty intersections of elements of <code class="docutil
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta">
 <span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_beta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_beta" title="Link to this definition">#</a></dt>
-<dd><p>get_beta is creating summary for get_beta</p>
+<dd><p>Outputs the maximum of 1 and of the inverse of the norm of the non-zero roots of the polynomial <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p>
 <p>INPUT:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> – [type]  [description]</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">F</span></code> – pol</dt><dd><p>a polynomial with RealField coefficients.</p>
+</dd>
+</dl>
+</li>
 </ul>
 <p>OUTPUT:</p>
-<p>[type]  [description]</p>
+<dl class="simple">
+<dt>float</dt><dd><p>the maximum of 1 and of the inverse of the norm of the non-zero roots of <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p>
+</dd>
+</dl>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">get_beta</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">R0</span> <span class="o">=</span> <span class="n">RealField</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
@@ -920,18 +927,20 @@ made by the smallest non-empty intersections of elements of <code class="docutil
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta_rough">
 <span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta_rough</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_beta_rough"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_beta_rough" title="Link to this definition">#</a></dt>
-<dd><p>summary for get_BetaRough</p>
+<dd><p>Outputs the maximum of 1 and of the sum of the norm of the coefficients of the polynomial <code class="docutils literal notranslate"><span class="pre">F</span></code>,
+which is precisely given as the list <code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code>. This is intended to be an easy upper bound when the function
+<code class="docutils literal notranslate"><span class="pre">get_beta</span></code> takes too much time.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code> – [type]</dt><dd><p>[description]</p>
+<dt><code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code> – float</dt><dd><p>a list of floats, supposedly representing a polynomial <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p>
 </dd>
 </dl>
 </li>
 </ul>
 <p>OUTPUT:</p>
 <dl class="simple">
-<dt>[type]</dt><dd><p>[description]</p>
+<dt>float</dt><dd><p>Outputs the maximum of 1 and of the sum of the norm of the elements of <code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code>.</p>
 </dd>
 </dl>
 <p>EXAMPLES:</p>
@@ -943,44 +952,11 @@ made by the smallest non-empty intersections of elements of <code class="docutil
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="euler_product.utils_euler_product.get_vector_bf">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_vector_bf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_vector_bf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_vector_bf" title="Link to this definition">#</a></dt>
-<dd><p>get_vector_bf give the vector of coefficient bf
-Not used in the main program</p>
-<p>INPUT:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code> – [type]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">how_many</span></code> – int</dt><dd><p>number of coefficients bf</p>
-</dd>
-</dl>
-</li>
-</ul>
-<p>OUTPUT</p>
-<dl class="simple">
-<dt>[list]</dt><dd><p>[description]</p>
-</dd>
-</dl>
-<p>EXAMPLES:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">get_vector_bf</span>
-<span class="n">sage</span><span class="p">:</span> <span class="n">get_vector_bf</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">11</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">53</span><span class="p">]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_vector_sf">
 <span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_vector_sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_vector_sf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_vector_sf" title="Link to this definition">#</a></dt>
 <dd><p>A polynomial F is given by its list of coefficients, the first one being 1.
 The output is the list <span class="math notranslate nohighlight">\(s_F(m)\)</span> for m less than <code class="docutils literal notranslate"><span class="pre">how_many</span></code>, where <span class="math notranslate nohighlight">\(s_F(m)\)</span>
 is the sum of the m-th power of the inverses of the roots of F.</p>
-<p>[real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
-myCIF = ComplexIntervalField(200)</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -994,7 +970,7 @@ myCIF = ComplexIntervalField(200)</p>
 </dl>
 </li>
 </ul>
-<p>OUTPUT</p>
+<p>OUTPUT:</p>
 <dl class="simple">
 <dt>list</dt><dd><p>list des coefficient s_f(m) over <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">&lt;=</span> <span class="pre">how_many</span></code>.</p>
 </dd>
@@ -1181,7 +1157,6 @@ It is expected that <code class="docutils literal notranslate"><span class="pre"
 <li><a class="reference internal" href="#euler_product.utils_euler_product.LatticeInvariantClasses"><code class="docutils literal notranslate"><span class="pre">LatticeInvariantClasses</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.get_beta"><code class="docutils literal notranslate"><span class="pre">get_beta()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.get_beta_rough"><code class="docutils literal notranslate"><span class="pre">get_beta_rough()</span></code></a></li>
-<li><a class="reference internal" href="#euler_product.utils_euler_product.get_vector_bf"><code class="docutils literal notranslate"><span class="pre">get_vector_bf()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.get_vector_sf"><code class="docutils literal notranslate"><span class="pre">get_vector_sf()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.laTeX_for_number"><code class="docutils literal notranslate"><span class="pre">laTeX_for_number()</span></code></a></li>
 <li><a class="reference internal" href="#euler_product.utils_euler_product.nb_common_digits"><code class="docutils literal notranslate"><span class="pre">nb_common_digits()</span></code></a></li>

@@ -777,7 +777,7 @@
 <span class="sd">            the list of the sum of the m-th power of the inverses of the roots of F.</span>
 
 <span class="sd">        - ``coeff_sh`` -- [type]</span>
-<span class="sd">            the list of the sum of the m-th power of the inverses of the roots of F.</span>
+<span class="sd">            the list of the sum of the m-th power of the inverses of the roots of H.</span>
 
 <span class="sd">        OUTPUT</span>
 
@@ -841,7 +841,7 @@
     <span class="k">def</span> <span class="nf">get_gamma</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="n">prec</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup :math:`G_0` in ``the_SG_tuple``,</span>
-<span class="sd">        we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:\chi:,</span>
+<span class="sd">        we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:`\chi`,</span>
 <span class="sd">        save that we remove the Euler factors for primes below ``P==big_p``.</span>
 <span class="sd">        The output is the list of these values computed with ``prec`` correct binary digits.</span>
 
@@ -898,9 +898,6 @@
 <span class="sd">    The output is the list :math:`s_F(m)` for m less than ``how_many``, where :math:`s_F(m)`</span>
 <span class="sd">    is the sum of the m-th power of the inverses of the roots of F.</span>
 
-<span class="sd">    [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]</span>
-<span class="sd">    myCIF = ComplexIntervalField(200)</span>
-
 <span class="sd">    INPUT:</span>
 
 <span class="sd">    - ``coeffs_f`` -- list[float]</span>
@@ -909,7 +906,7 @@
 <span class="sd">    - ``how_many`` -- int</span>
 <span class="sd">        number of computed coefficients.</span>
 
-<span class="sd">    OUTPUT</span>
+<span class="sd">    OUTPUT:</span>
 
 <span class="sd">    list</span>
 <span class="sd">        list des coefficient s_f(m) over ``m &lt;= how_many``.</span>
@@ -922,52 +919,21 @@
     <span class="k">return</span> <span class="n">s_f</span></div>
 
 
-
-<div class="viewcode-block" id="get_vector_bf">
-<a class="viewcode-back" href="../../reference/api.html#euler_product.utils_euler_product.get_vector_bf">[docs]</a>
-<span class="k">def</span> <span class="nf">get_vector_bf</span><span class="p">(</span><span class="n">coeffs_f</span><span class="p">,</span> <span class="n">how_many</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;get_vector_bf give the vector of coefficient bf</span>
-<span class="sd">    Not used in the main program</span>
-
-<span class="sd">    INPUT:</span>
-
-<span class="sd">    - ``coeffs_f`` -- [type]</span>
-<span class="sd">        [description]</span>
-
-<span class="sd">    - ``how_many`` -- int</span>
-<span class="sd">        number of coefficients bf</span>
-
-<span class="sd">    OUTPUT</span>
-
-<span class="sd">    [list]</span>
-<span class="sd">        [description]</span>
-
-<span class="sd">    EXAMPLES::</span>
-
-<span class="sd">        sage: from euler_product.utils_euler_product import get_vector_bf</span>
-<span class="sd">        sage: get_vector_bf([1, -4, 4, 2, -4, 1], 11)</span>
-<span class="sd">        [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">b_f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">how_many</span><span class="p">)]</span>  <span class="c1"># bf[0] is not used</span>
-    <span class="n">s_f</span> <span class="o">=</span> <span class="n">get_vector_sf</span><span class="p">(</span><span class="n">coeffs_f</span><span class="p">,</span> <span class="n">how_many</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">how_many</span><span class="p">):</span>
-        <span class="n">b_f</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">moebius</span><span class="p">(</span><span class="n">k</span> <span class="o">/</span> <span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="n">s_f</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">divisors</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">/</span> <span class="n">k</span>  <span class="c1"># type: ignore</span>
-    <span class="k">return</span> <span class="n">b_f</span></div>
-
-
 <div class="viewcode-block" id="get_beta">
 <a class="viewcode-back" href="../../reference/api.html#euler_product.utils_euler_product.get_beta">[docs]</a>
 <span class="k">def</span> <span class="nf">get_beta</span><span class="p">(</span><span class="n">F</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;get_beta is creating summary for get_beta</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Outputs the maximum of 1 and of the inverse of the norm of the non-zero roots of the polynomial ``F``.</span>
 
 <span class="sd">    INPUT:</span>
 
-<span class="sd">    - ``F`` -- [type]  [description]</span>
+<span class="sd">    - ``F`` -- pol</span>
+<span class="sd">        a polynomial with RealField coefficients.</span>
 
 <span class="sd">    OUTPUT:</span>
 
-<span class="sd">    [type]  [description]</span>
+<span class="sd">    float</span>
+<span class="sd">       the maximum of 1 and of the inverse of the norm of the non-zero roots of ``F``.</span>
 
 <span class="sd">    EXAMPLES::</span>
 
@@ -988,17 +954,20 @@
 <div class="viewcode-block" id="get_beta_rough">
 <a class="viewcode-back" href="../../reference/api.html#euler_product.utils_euler_product.get_beta_rough">[docs]</a>
 <span class="k">def</span> <span class="nf">get_beta_rough</span><span class="p">(</span><span class="n">coeffs_f</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;summary for get_BetaRough</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Outputs the maximum of 1 and of the sum of the norm of the coefficients of the polynomial ``F``,</span>
+<span class="sd">    which is precisely given as the list ``coeffs_f``. This is intended to be an easy upper bound when the function</span>
+<span class="sd">    ``get_beta`` takes too much time.</span>
 
 <span class="sd">    INPUT:</span>
 
-<span class="sd">    - ``coeffs_f`` -- [type]</span>
-<span class="sd">        [description]</span>
+<span class="sd">    - ``coeffs_f`` -- float</span>
+<span class="sd">        a list of floats, supposedly representing a polynomial ``F``.</span>
 
 <span class="sd">    OUTPUT:</span>
 
-<span class="sd">    [type]</span>
-<span class="sd">        [description]</span>
+<span class="sd">    float</span>
+<span class="sd">        Outputs the maximum of 1 and of the sum of the norm of the elements of ``coeffs_f``.</span>
 
 <span class="sd">    EXAMPLES::</span>
 
@@ -1007,7 +976,7 @@
 <span class="sd">        4</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coeffs_f</span><span class="p">))</span></div>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coeffs_f</span><span class="p">))</span></div>
 
 </pre></div>
         </article>
