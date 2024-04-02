@@ -23,9 +23,8 @@ In formula (16) of :raw-latex:`\cite{Shanks*64b}`, D. Shanks obtained
 the following closed expression to compute the Landau-Ramanujan
 constant:
 
-.. _label mirs:
-
 .. math::
+   :label: mirs
 
      \prod_{p\equiv 3[4]}\frac{1}{1-1/p^{s}}
      =\prod_{k\ge0}\biggl(\frac{\zeta(2^ks)(1-2^{-2^{k}s})}{L(2^{k}s,\chi_{1,4})}\biggr)^{1/2^{k+1}}
