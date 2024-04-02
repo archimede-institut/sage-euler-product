@@ -910,6 +910,14 @@
 
 <span class="sd">    list</span>
 <span class="sd">        list des coefficient s_f(m) over ``m &lt;= how_many``.</span>
+
+<span class="sd">    EXAMPLES::</span>
+
+<span class="sd">            sage: from euler_product.utils_euler_product import get_vector_sf</span>
+<span class="sd">            sage: get_vector_sf([1, -1], 5)</span>
+<span class="sd">            [1, 1, 1, 1, 1]</span>
+<span class="sd">            sage: get_vector_sf([1, 1, 1], 10)</span>
+<span class="sd">            [2, -1, -1, 2, -1, -1, 2, -1, -1, 2]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">ann_i</span> <span class="o">=</span> <span class="n">coeffs_f</span> <span class="o">+</span> <span class="p">((</span><span class="n">how_many</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">coeffs_f</span><span class="p">))</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">s_f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">how_many</span><span class="p">)]</span>
