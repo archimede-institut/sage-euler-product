@@ -290,18 +290,20 @@ class ComponentStructure():
     - ``invertibles``: the tuple of the integers between 1 and ``q`` that are prime to ``q``.
     - ``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.
     - ``nb_class``: the number of Lattice Invariant classes.
-    - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in ``the_SG_tuple``.
+    - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves this subgroup invariant is created.
+      ``invariant_characters`` is this list of tuples, arranged as in ``the_SG_tuple``.
     - ``getr_A_Kt``: a method used only for ``get_CA_Km`` and ``get_CA_Km_F_sur_H``.
         The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
         The function ``get_r_A_K_t`` answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
-        The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
+        The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``.
+        This is the list of elements that form a divisor-closed subset of integers.
         This list is the same as the list of necessary values of ``m``.
     - ``get_CA_Km``: a method used for ``get_vs``.
         The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by ``getr_A_K_t``.
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
         The function ``get_CA_Km`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
-    - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`.
+    - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products``.
         The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
         The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
@@ -388,23 +390,28 @@ class ComponentStructure():
 
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
-            sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
-            {(0, 0, -4): 0,
-            (0, 0, 1): 1/2,
+            sage: structure.getr_A_Kt([1, 2, 3, 4, 6])
+            {(0, 0, 1): 1/2,
             (0, 0, 2): 0,
+            (0, 0, 3): -1/2,
             (0, 0, 4): 0,
-            (0, 1, -4): 0,
+            (0, 0, 6): 0,
             (0, 1, 1): 0,
             (0, 1, 2): -1,
+            (0, 1, 3): 0,
             (0, 1, 4): 0,
-            (1, 0, -4): 0,
+            (0, 1, 6): 1,
             (1, 0, 1): -1/2,
             (1, 0, 2): 0,
+            (1, 0, 3): 1/2,
             (1, 0, 4): 0,
-            (1, 1, -4): 0,
+            (1, 0, 6): 0,
             (1, 1, 1): 1,
             (1, 1, 2): 0,
-            (1, 1, 4): 0}
+            (1, 1, 3): -1,
+            (1, 1, 4): 0,
+            (1, 1, 6): 0}
+
 
         """
         #  (theSGTuple, theClassTuple, nb_classes, theExponent,
