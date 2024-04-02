@@ -473,7 +473,7 @@ class ComponentStructure():
             the point where the L-series are computed. The real part should be > 1 .
 
         - ``big_p`` -- int
-            a positive integer. The Euler products are computed for primes above ``big_p``. 
+            a positive integer. The Euler products are computed for primes above ``big_p``.
 
         - ``CIF`` -- Complex Interval Field
             [description]
@@ -623,7 +623,7 @@ class ComponentStructure():
             the L-series are computed at ``t*s``. The separation of ``t`` and ``s`` is only for readability of the code.
 
         - ``big_p`` -- int
-            a positive integer. The Euler products are computing for primes larger than ``big_p``. 
+            a positive integer. The Euler products are computing for primes larger than ``big_p``.
 
         - ``prec`` -- int
             number of correct binary digits in the output.
@@ -662,7 +662,7 @@ def get_vector_sf(coeffs_f, how_many):
     A polynomial F is given by its list of coefficients, the first one being 1.
     The output is the list :math:`s_F(m)` for m less than ``how_many``, where :math:`s_F(m)`
     is the sum of the m-th power of the inverses of the roots of F.
-    
+
     [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
     myCIF = ComplexIntervalField(200)
 
