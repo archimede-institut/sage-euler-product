@@ -1432,14 +1432,14 @@ first fifty digits of the constant they call :math:`A` and which are
 .. math::
    :latex: eq-7
 
-   \begin{aligned}
+   \begin{align*}
    \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
    = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
    \\&25267
    \,08497\,71894\,30550\,80726\,33188\,94627
    \\&61381\,60369
    \,39924\,26646\,98594\,38665\cdots
-   \end{aligned}
+   \end{align*}
 
 Our result matches that of :raw-latex:`\cite{Gourdon-Sebah*10}`.
 
