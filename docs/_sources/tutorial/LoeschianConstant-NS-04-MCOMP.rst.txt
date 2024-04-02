@@ -46,7 +46,7 @@ restricted class of such products. Let us first introduce the players.
 .. container:: defi
    :name: li
 
-   **Definition 1**. *[mono] Two elements :math:`g_1` and :math:`g_2` of
+   **Definition 1**. *Two elements :math:`g_1` and :math:`g_2` of
    the abelian group :math:`G` are said to be lattice-invariant if and
    only if they generate the same group. This defines an equivalence
    relation.*
@@ -68,8 +68,8 @@ For any Dirichlet character :math:`\chi` modulo :math:`q` and any
 parameter :math:`P\ge2`, we define
 
 .. math::
+   :label: eq-11
 
-   \label{eq:11}
      L_P(s,\chi)=\prod_{p\ge P}(1-\chi(p)/p^s)^{-1}
 
 and correspondingly :math:`\zeta_P(s)=\prod_{p\ge P}(1-1/p^s)^{-1}`.
@@ -102,8 +102,8 @@ Here is the central theorem of this paper.
    For any non-negative integer :math:`d`, we set
 
    .. math::
-
-      \label{defsHF}
+      :label: defsHF
+   
         s_{H/F}(d)=\sum_{1\le i\le \deg H}\rho_i^{-d}
         -\sum_{1\le j\le
           \deg F}\sigma_j^{-d}.
@@ -113,8 +113,8 @@ Here is the central theorem of this paper.
    of :math:`G` and any positive integer :math:`m`,
 
    .. math::
-
-      \label{defCAKkbis}
+      :label: defCAKkbis
+   
           C_{\mathscr{A}}(K,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
               \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
           \frac{\mu(|L|/|K|)}{|G/K|}
@@ -124,8 +124,8 @@ Here is the central theorem of this paper.
    :math:`\mathscr{A}`. We have
 
    .. math::
-
-      \label{exact}
+      :label: exact
+   
       \prod_{\substack{p\ge P,\\
           p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
           = \prod_{m\ge\Delta}\prod_{K\in\mathscr{G}}
@@ -201,13 +201,13 @@ Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
    included in :math:`K` . We then define
 
    .. math::
-
-      \label{defCAKkbiscirc}
+      :label: defCAKkbiscirc
+   
       C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
       \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
       \frac{\varphi(|L|/|S|)}{|G/S|}.
 
-   Formula `[exact] <#exact>`\_\_ becomes:
+   Formula :eq:`exact` becomes:
 
    .. math::
 
@@ -388,8 +388,8 @@ Levesque and M. Waldschmidt. In the notation of that paper, they are
 and
 
 .. math::
+   :label: eq-12
 
-   \label{eq:12}
    \beta_0=\frac{3^{1/4}\sqrt{\pi}}{2^{5/4}}\frac{\log(2+\sqrt{3})^{1/4}}{\Gamma(1/4)}
    \prod_{p\equiv
    5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
@@ -405,8 +405,8 @@ the sequence A003136 entry in :raw-latex:`\cite{OEIS}`) is
 asymptotically approximated by
 
 .. math::
+   :label: eq-1
 
-   \label{eq:1}
    N(x)=\alpha_0^{(3)}\frac{x(1+o(1))}{\sqrt{\log x}}.
 
 This motivates our interest in the first constant. The second one arises
@@ -590,8 +590,8 @@ alia the series of constants :math:`A_\chi` defined six lines after
 Lemma 3, page 452, by
 
 .. math::
+   :label: eq-3
 
-   \label{eq:3}
    A_\chi= \prod_{p\ge2}\biggl(1+\frac{(\chi(p)-1)p}{(p^2-\chi(p))(p-1)}\biggr),
 
 where :math:`\chi` is a Dirichlet character. Our theory applies only
@@ -654,8 +654,8 @@ cyclic subgroup :math:`K\in\mathscr{G}`, any class :math:`\mathscr{A}`
 in :math:`G^\sharp` and any positive integer :math:`m`, the coefficient
 
 .. math::
+   :label: defCAKk
 
-   \label{defCAKk}
    C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)\sum_{\substack{L\in
    \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
    \frac{\mu(|L|/|K|)}{|G/K|}
@@ -879,16 +879,16 @@ having real numbers for coefficients.
    :math:`s_{F}(k)` are integers and satisfy the Newton-Girard recursion
 
    .. math::
-
-      \label{recursionbis}
+      :label: recursionbis
+   
       s_{F}(k)+a_1s_F(k-1)+\ldots+a_{k-1}s_{F}(1)+ka_{k}=0,
 
    where we have defined :math:`a_{\delta+1} =a_{\delta+2}=\ldots=0`.
    Put
 
    .. math::
-
-      \label{bfk}
+      :label: bfk
+   
       b_{F}(k)=\frac{1}{k}\sum_{d|k}\mu({k}/{d})s_{F}(d).
 
    Let :math:`\beta\ge1` be such that
@@ -896,8 +896,8 @@ having real numbers for coefficients.
    segment :math:`\subset (-\beta,\beta)`, we have
 
    .. math::
-
-      \label{Fhatb}
+      :label: Fhatb
+   
       F(t)=\prod_{j=1}^{\infty}(1-t^{j})^{b_{F}(j)}
 
    where the convergence is uniform in the given segment.
@@ -1009,13 +1009,13 @@ simplistic one.
    of `[Fhatb] <#Fhatb>`__, which leads to the identity
 
    .. math::
-
-      \label{formal-FG}
+      :label: formal-FG
+   
       \frac{F(t)}{H(t)}=\prod_{j=\Delta}^\infty(1-t^j)^{b_F(j)-b_H(j)}.
 
    The absence of the term with :math:`j<\Delta` is due to our
    assumption that :math:`(F(X)- H(X))/X^\Delta\in \mathbb{R}[X]`. Up to
-   this point `[formal-FG] <#formal-FG>`__ is only established as a
+   this point :eq:`formal-FG` is only established as a
    formal identity. Our second step is to
    establish `[formal-FG] <#formal-FG>`__ for all :math:`t\in\mathbb{C}`
    with :math:`|t|<1/\beta`. By Lemma `Lemma 20 <#apriorimaj>`__, we
@@ -1023,8 +1023,8 @@ simplistic one.
    Therefore, for any bound :math:`J`, we have
 
    .. math::
-
-      \label{tailJ}
+      :label: tailJ
+   
       \sum_{j\ge J+1}|t^j||b_F(j)-b_H(j)|
       \le
       4\max(\deg F,\deg H)\frac{|t\beta|^{J+1}}{(1-|t\beta|)(J+1)},
@@ -1032,13 +1032,13 @@ simplistic one.
    as soon as :math:`|t|<1/\beta`. We thus have
 
    .. math::
-
-      \label{true-FG}
+      :label: true-FG
+   
       \frac{F(t)}{H(t)}=\prod_{\Delta\le j\le J}(1-t^j)^{b_F(j)-b_H(j)}\times I_1,
 
    where
    :math:`|\log I_1|\le4\max(\deg F,\deg H)|t\beta|^{J+1}/[(1-|t\beta|)(J+1)]`.
-   Now that we have the expansion `[true-FG] <#true-FG>`__ for each
+   Now that we have the expansion :eq:`true-FG` for each
    prime :math:`p`, we may combine them. We readily get
 
    .. math::
@@ -1102,8 +1102,8 @@ simplistic one.
    by `[defCAKkbis] <#defCAKkbis>`__. We have reached
 
    .. math::
-
-      \label{aux}
+      :label: aux
+   
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
       =\prod_{ n\ge \Delta}\prod_{K\in\mathscr{G}}
       \biggl(\prod_{\chi\in K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}.
@@ -1183,8 +1183,8 @@ would be to *invert* them in some sense.
    when :math:`\langle{p}\rangle{}=L` and where
 
    .. math::
-
-      \label{eq:6}
+      :label: eq-6
+   
       f(\psi)=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L = \psi}}\chi(a).
 
    The condition :math:`\chi\in G_0^\perp` can also be written as
@@ -1199,8 +1199,8 @@ would be to *invert* them in some sense.
    where
 
    .. math::
-
-      \label{eq:76}
+      :label: eq-76
+   
       f'(\psi')=\sum_{\substack{\chi\in G_0^\perp,\\ \chi|L{} G_0 = \psi}}\chi(a).
 
    When :math:`a` lies outside :math:`L{} G_0`, this sum vanishes;
