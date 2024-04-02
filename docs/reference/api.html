@@ -745,7 +745,7 @@ The output is the list of these values computed with <code class="docutils liter
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">CF</span></code> – Complex Field</dt><dd><p>not used.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">CF</span></code> – Complex Field</dt><dd><p>not used. Only <code class="docutils literal notranslate"><span class="pre">CR.prec</span></code> is used?</p>
 </dd>
 </dl>
 </li>
@@ -758,19 +758,25 @@ values computed with <code class="docutils literal notranslate"><span class="pre
 </dl>
 <p>EXCEPTIONS:</p>
 <blockquote>
-<div><p>ValueError parameter <code class="docutils literal notranslate"><span class="pre">m`</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">``CIF</span></code></p>
+<div><p>ValueError parameter <code class="docutils literal notranslate"><span class="pre">m</span></code> not in <code class="docutils literal notranslate"><span class="pre">CIF</span></code></p>
 </div></blockquote>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sage: from euler_product.utils_euler_product import ComponentStructure
 sage: structure = ComponentStructure(10)
 sage: CIF = ComplexIntervalField(200)
-sage: CF = ComplexIntervalField(200 + 1)
-sage: m = CIF(60)
-sage: structure.get_L_values(m, 212, CIF, CF)  # doctest: +NORMALIZE_WHITESPACE
-(1.0000000000000000000000000000000000000000000000000000000000?,
-1.0000000000000000000000000000000000000000000000000000000000? + 0.?e-86*I,
-1.0000000000000000000000000000000000000000000000000000000000? + 1.27099293696786096787949633532?e-118*I,
-1.0000000000000000000000000000000000000000000000000000000000? + 0.?e-86*I)
+sage: CF = ComplexField(200 + 1)
+sage: m = CIF(2)
+sage: structure.get_L_values(m, 200, CIF, CF)
+(1.0007481024252386196893654501571877025514323183079093676480?,
+1.0000226377974809104806639790897095274193344466859037418898? - 0.0000131408916900437454874106515694589606441168219958035059?*I,
+0.9999899240511933872962748479693199723956317768469030922497? + 4.14392795471732850815599881400588351007002717820829591633?e-63*I,
+1.0000226377974809104806639790897095274193344466859037418898? + 0.0000131408916900437454874106515694589606441168219958035059?*I)
+sage: m = CIF(2.1)
+sage: structure.get_L_values(m, 200, CIF, CF)
+(1.0004029274879933694024714910876346995176209724918492580239?,
+1.000013330852742794601876671961697811977029714891503324800? - 7.7538957108934769520297959484934618269499996602296768?e-6*I,
+0.9999947644552454506994437910117325481790746758589349726959? + 3.15595539279556818499806833653635488946195252544140357784?e-63*I,
+1.000013330852742794601876671961697811977029714891503324800? + 7.7538957108934769520297959484934618269499996602296768?e-6*I)
 </pre></div>
 </div>
 </dd></dl>
