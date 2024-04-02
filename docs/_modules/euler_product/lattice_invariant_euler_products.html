@@ -706,10 +706,15 @@
 <span class="sd">    - ``big_p`` -- int (default: `300`), optional</span>
 <span class="sd">        Same as in ``get_vs``.</span>
 
-<span class="sd">    EXAMPLES:</span>
+<span class="sd">    OUTPUT:</span>
+
+<span class="sd">    str</span>
+<span class="sd">      the table in Latex is issued.</span>
+
+<span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import table_performance</span>
-<span class="sd">        sage: table_performance(10, 30)  # random</span>
+<span class="sd">        sage: table_performance(10, 30)</span>
 <span class="sd">        11 102 digits for the first product</span>
 <span class="sd">        12 102 digits for the first product</span>
 <span class="sd">        13 102 digits for the first product</span>
@@ -768,9 +773,9 @@
 
 <div class="viewcode-block" id="get_vs_checker">
 <a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.get_vs_checker">[docs]</a>
-<span class="k">def</span> <span class="nf">get_vs_checker</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">borne</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_vs_checker</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">borne</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This is a low level sanity check engine describe in the tutorial.</span>
+<span class="sd">    This is a low level sanity check engine described in the tutorial.</span>
 <span class="sd">    It is to be used by developers only.</span>
 
 <span class="sd">    INPUT:</span>
@@ -781,7 +786,7 @@
 <span class="sd">    - ``s`` -- real</span>
 <span class="sd">        A real number &gt; 1.</span>
 
-<span class="sd">    - ``borne`` -- int (default: `1000`), optional</span>
+<span class="sd">    - ``borne`` -- int (default: `10000`), optional</span>
 <span class="sd">        boundary of computation.</span>
 
 <span class="sd">    EXAMPLES::</span>

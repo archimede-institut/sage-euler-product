@@ -472,7 +472,7 @@ each value is given in interval arithmetic as a pair (lower_bound, upper_bound).
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.get_vs_checker">
 <span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_vs_checker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_vs_checker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_vs_checker" title="Link to this definition">#</a></dt>
-<dd><p>This is a low level sanity check engine describe in the tutorial.
+<dd><p>This is a low level sanity check engine described in the tutorial.
 It is to be used by developers only.</p>
 <p>INPUT:</p>
 <ul class="simple">
@@ -487,7 +487,7 @@ It is to be used by developers only.</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">borne</span></code> – int (default: <cite>1000</cite>), optional</dt><dd><p>boundary of computation.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">borne</span></code> – int (default: <cite>10000</cite>), optional</dt><dd><p>boundary of computation.</p>
 </dd>
 </dl>
 </li>
@@ -540,25 +540,46 @@ that are not twice an odd integer.</p>
 </dl>
 </li>
 </ul>
-<p class="rubric">Examples</p>
-<p>sage: from euler_product.lattice_invariant_euler_products import table_performance
-sage: table_performance(10, 30)  # random
-11 102 digits for the first product
-12 102 digits for the first product
-13 102 digits for the first product
-15 102 digits for the first product
-16 102 digits for the first product
-17 102 digits for the first product
-19 102 digits for the first product
-20 102 digits for the first product
-21 102 digits for the first product
-23 102 digits for the first product
-24 102 digits for the first product
-25 102 digits for the first product
-27 102 digits for the first product
-28 102 digits for the first product
-29 102 digits for the first product
-11&amp; 10&amp; 2&amp; 8&amp; 4&amp; 21&amp; 4 12&amp; 4&amp; 1&amp; 5&amp; 4&amp; 21&amp; 1 13&amp; 12&amp; 2&amp; 10&amp; 6&amp; 21&amp; 5 15&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 16&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 17&amp; 16&amp; 1&amp; 5&amp; 5&amp; 21&amp; 4 19&amp; 18&amp; 2&amp; 10&amp; 6&amp; 21&amp; 8 20&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 21&amp; 12&amp; 2&amp; 10&amp; 8&amp; 21&amp; 6 23&amp; 22&amp; 2&amp; 6&amp; 4&amp; 21&amp; 6 24&amp; 8&amp; 1&amp; 5&amp; 8&amp; 21&amp; 2 25&amp; 20&amp; 2&amp; 8&amp; 6&amp; 21&amp; 8 27&amp; 18&amp; 2&amp; 10&amp; 6&amp; 21&amp; 8 28&amp; 12&amp; 2&amp; 10&amp; 8&amp; 21&amp; 6 29&amp; 28&amp; 2&amp; 7&amp; 6&amp; 21&amp; 9 </p>
+<p>OUTPUT:</p>
+<dl class="simple">
+<dt>str</dt><dd><p>the table in Latex is issued.</p>
+</dd>
+</dl>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">table_performance</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">table_performance</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="mi">11</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">12</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">13</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">15</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">16</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">17</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">19</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">20</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">21</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">23</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">24</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">25</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">27</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">28</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">29</span> <span class="mi">102</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="n">product</span>
+<span class="mi">11</span><span class="o">&amp;</span> <span class="mi">10</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">4</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">4</span> \
+<span class="mi">12</span><span class="o">&amp;</span> <span class="mi">4</span><span class="o">&amp;</span> <span class="mi">1</span><span class="o">&amp;</span> <span class="mi">5</span><span class="o">&amp;</span> <span class="mi">4</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">1</span> \
+<span class="mi">13</span><span class="o">&amp;</span> <span class="mi">12</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">10</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">5</span> \
+<span class="mi">15</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">1</span><span class="o">&amp;</span> <span class="mi">5</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">2</span> \
+<span class="mi">16</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">1</span><span class="o">&amp;</span> <span class="mi">5</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">2</span> \
+<span class="mi">17</span><span class="o">&amp;</span> <span class="mi">16</span><span class="o">&amp;</span> <span class="mi">1</span><span class="o">&amp;</span> <span class="mi">5</span><span class="o">&amp;</span> <span class="mi">5</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">4</span> \
+<span class="mi">19</span><span class="o">&amp;</span> <span class="mi">18</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">10</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">8</span> \
+<span class="mi">20</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">1</span><span class="o">&amp;</span> <span class="mi">5</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">2</span> \
+<span class="mi">21</span><span class="o">&amp;</span> <span class="mi">12</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">10</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">6</span> \
+<span class="mi">23</span><span class="o">&amp;</span> <span class="mi">22</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">4</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">6</span> \
+<span class="mi">24</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">1</span><span class="o">&amp;</span> <span class="mi">5</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">2</span> \
+<span class="mi">25</span><span class="o">&amp;</span> <span class="mi">20</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">8</span> \
+<span class="mi">27</span><span class="o">&amp;</span> <span class="mi">18</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">10</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">8</span> \
+<span class="mi">28</span><span class="o">&amp;</span> <span class="mi">12</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">10</span><span class="o">&amp;</span> <span class="mi">8</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">6</span> \
+<span class="mi">29</span><span class="o">&amp;</span> <span class="mi">28</span><span class="o">&amp;</span> <span class="mi">2</span><span class="o">&amp;</span> <span class="mi">7</span><span class="o">&amp;</span> <span class="mi">6</span><span class="o">&amp;</span> <span class="mi">21</span><span class="o">&amp;</span> <span class="mi">9</span> \
+</pre></div>
+</div>
 </dd></dl>
 
 </section>
