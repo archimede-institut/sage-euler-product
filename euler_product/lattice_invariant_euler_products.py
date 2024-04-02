@@ -60,11 +60,11 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
     of the lattice-invariant classes modulo q
     and approx_zeta(s; q, A) is an arithmetic interval approximation
-    of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).
+    of :math:`\zeta(s; q; A)` given in the form of a pair (lower_bound, upper_bound).
 
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
     but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
-    We compute directly what happens for primes < big_p.
+    We compute directly what happens for primes < ``big_p``.
 
     INPUT:
 
@@ -99,7 +99,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 
     pair of tuples
         The output is a pair whose first component is the tuple of lattice invariant classes (A)
-        and second component is the corresponding tuple of values (zeta(s; q, A)) where
+        and second component is the corresponding tuple of values :math:`(\zeta(s; q, A))` where
         each value is given in interval arithmetic as a pair (lower_bound, upper_bound).
 
     EXAMPLES::
@@ -275,10 +275,10 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     of the product over every prime in the class A modulo q of the quotient
     f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
-    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
-    We compute directly what happens for primes < big_p.
+    but this is not guaranteed. In case it does not happen, increase ``nb_decimals`` slightly.
+    We compute directly what happens for primes < ``big_p``.
     We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
-    and that Delta s > 1 where Delta is the order of the zero of f_init-h_init at 0.
+    and that :math:`\Delta s > 1` where :math:`\Delta` is the order of the zero of f_init-h_init at 0.
     This last condition is to ensure the Euler products converge absolutely.
 
     to do
