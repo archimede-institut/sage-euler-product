@@ -135,9 +135,9 @@ Here is the central theorem of this paper.
    holds true:
 
    .. math::
+      :label: fineq
 
       \begin{gathered}
-      \label{fineq}
         \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
         \biggl(\prod_{\chi\in
                  K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
@@ -152,7 +152,7 @@ Theorem `Theorem 18 <#mainspe>`__ and is the heart of this paper. Our
 result applies in particular to :math:`\mathcal{A}=\{1\}` and to
 :math:`\mathcal{A}=\{-1\}`. When :math:`q=4` and
 :math:`\mathcal{A}=\{-1\}`, we readily find that only :math:`t=1`
-matters in `[defCAKkbis] <#defCAKkbis>`__, that
+matters in :eq:`defCAKkbis`, that
 :math:`C_{\{-1\}}(\{1\},2^k,1/(1-X))=-1/2` and that
 :math:`C_{\{-1\}}(\{\pm 1\},2^k,1/(1-X))=1`. On recalling
 Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
@@ -217,7 +217,7 @@ Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
       \biggl(\prod_{\chi\in S^{\perp\circ}}L_P(ms,\chi)
       \biggr)^{{C^\circ_{\mathscr{A}}(S,m,F/H)}/{m}}
 
-   and the bound `[fineq] <#fineq>`__ holds to estimate the tail of this
+   and the bound :eq:`fineq` holds to estimate the tail of this
    product, as we only shuffled terms with a fixed index :math:`m`.
 
 Super fast evaluations
@@ -1290,8 +1290,8 @@ Let :math:`s>1` be a real number and :math:`P\ge2` be a parameter. We
 consider the vector, for any positive integer :math:`t`:
 
 .. math::
+   :label: defGammaoft
 
-   \label{defGammaoft}
    \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in G_0^\perp}L_P(ts,\chi)\Bigr)_{G_0\in\mathscr{G}}.
 
 The rows of :math:`\Gamma_{P,s}(t)` are indexed by the cyclic subgroups
@@ -1300,16 +1300,9 @@ function ``GetGamma`` of the script ``LIEP.sage`` from the values of the
 Hurwitz zeta function. We next define
 
 .. math::
+   :label: defVsoft
 
-   \label{defVsoft}
    V_s(t)=\bigl(\log\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
-
-The rows of :math:`V_s(t)` are indexed by classes. We also define
-
-.. math::
-
-   \label{defGammaoft}
-   \Gamma_{P,s}(t)=\Bigl(\log\prod_{\chi\in K^\perp}L_P(ts,\chi)\Bigr)_{K\in\mathscr{G}}.
 
 The function ``GetLatticeInvariantClasses`` of the script ``LIEP.sage``
 gives the two lists: the one of the cyclic subgroups and the one of
