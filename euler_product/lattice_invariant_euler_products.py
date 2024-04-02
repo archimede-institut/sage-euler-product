@@ -286,7 +286,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     INPUT:
 
     - ``q`` -- int
-        a poitive integer. The products are taken over classes modulo q.
+        a positive integer. The products are taken over classes modulo q.
 
     - ``s`` -- float
         a real number > 0.
