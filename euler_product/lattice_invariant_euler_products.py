@@ -1,11 +1,11 @@
 """
 Lattice Invariant
 
-lattice_invariant_euler_product.py defines the class ComponentStructure.
+lattice_invariant_euler_product.py defines the class ``ComponentStructure``.
 Computing with interval arithmetic and with a proven precision
-Euler products of rational functions over primes in special sets modulo some fixed q.
-These special sets are the lattice invariant classes modulo q, and the software also enables
-the user to use them through the class ComponentStructure.
+Euler products of rational functions over primes in special sets modulo some fixed ``q``.
+These special sets are the lattice invariant classes modulo ``q``, and the software also enables
+the user to use them through the class ``ComponentStructure``.
 
 
 AUTHORS:
@@ -58,7 +58,7 @@ from euler_product.utils_euler_product import nb_common_digits
 def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10):
     """
     Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
-    of the lattice-invariant classes modulo q
+    of the lattice-invariant classes modulo ``q``
     and approx_zeta(s; q, A) is an arithmetic interval approximation
     of :math:`\zeta(s; q; A)` given in the form of a pair (lower_bound, upper_bound).
 
