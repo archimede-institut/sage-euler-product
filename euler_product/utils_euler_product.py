@@ -460,32 +460,36 @@ class ComponentStructure():
         return C_A_Km
 
     def get_L_values(self, m, big_p, CIF, CF):
-        """summary for get_L_values
-        Computing Gamma
+        """
+        for every Dirichlet character :math:`\chi` modulo ``q``, we compute
+        the L-series :math:`L_P(m, \chi)` associated to :math:\chi:,
+        save that we remove the Euler factors for primes below ``P==big_p``.
+        The output is the list of these values computed with ``prec`` correct binary digits.
 
         INPUT:
 
 
-        - ``m`` -- [ComplexIntervalFieldElement>]
+        - ``m`` -- [ComplexIntervalFieldElement]
+            the point where the L-series are computed. The real part should be > 1 .
+
+        - ``big_p`` -- int
+            a positive integer. The Euler products are computed for primes above ``big_p``. 
+
+        - ``CIF`` -- Complex Interval Field
             [description]
 
-        - ``big_p`` -- [type]
-            [description]
-
-        - ``CIF`` -- [type]
-            [description]
-
-        - ``CF`` -- [type]
-            [description]
+        - ``CF`` -- Complex Field
+            not used.
 
         OUTPUT:
 
-        [type]
-            [description]
+        tuple
+            the tuple of the values of :math:`L_P(m,\chi)`, where :math:`\chi` varies on the Dirichlet characters,
+            values computed with ``prec`` correct binary digits.
 
         EXCEPTIONS:
 
-            ValueError parameter ``m` not belows of ``CIF``
+            ValueError parameter ``m` not in ``CIF``
 
         EXAMPLES::
 
@@ -533,7 +537,6 @@ class ComponentStructure():
         """
         ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
-        The polynomial ``F`` is given by its coefficients list ``coeff_sf``, and the polynomial ``H`` is given by its coefficients list ``coeff_sh``.
         The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
         When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
 
@@ -543,10 +546,10 @@ class ComponentStructure():
             list of indices (positive integers) ``m``. It should be divisor-closed (and include 1) and ordered increasingly.
 
         - ``coeff_sf`` -- list[float]
-            the list of the coefficients (the ones of a polynomial F).
+            the list of the sum of the m-th power of the inverses of the roots of F.
 
         - ``coeff_sh`` -- [type]
-            the list of the coefficients (the ones of a polynomial H).
+            the list of the sum of the m-th power of the inverses of the roots of F.
 
         OUTPUT
 
@@ -606,9 +609,9 @@ class ComponentStructure():
 
     def get_gamma(self, t, s, big_p, prec):
         """
-        Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup G_0 in ``the_SG_tuple``,
+        Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup :math:`G_0` in ``the_SG_tuple``,
         we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:\chi:,
-        save that we remove the Euler factors for primes below ``big_p``.
+        save that we remove the Euler factors for primes below ``P==big_p``.
         The output is the list of these values computed with ``prec`` correct binary digits.
 
         INPUT:
@@ -656,17 +659,20 @@ class ComponentStructure():
 
 def get_vector_sf(coeffs_f, how_many):
     """
-    Witt Decomposition
+    A polynomial F is given by its list of coefficients, the first one being 1.
+    The output is the list :math:`s_F(m)` for m less than ``how_many``, where :math:`s_F(m)`
+    is the sum of the m-th power of the inverses of the roots of F.
+    
     [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
     myCIF = ComplexIntervalField(200)
 
     INPUT:
 
     - ``coeffs_f`` -- list[float]
-        Coefficients of the polynomial f.
+        coefficients of the polynomial f, starting by 1.
 
     - ``how_many`` -- int
-        Number of computed coefficients.
+        number of computed coefficients.
 
     OUTPUT
 
