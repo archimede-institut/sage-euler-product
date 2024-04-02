@@ -155,7 +155,7 @@ result applies in particular to :math:`\mathcal{A}=\{1\}` and to
 matters in :eq:`defCAKkbis`, that
 :math:`C_{\{-1\}}(\{1\},2^k,1/(1-X))=-1/2` and that
 :math:`C_{\{-1\}}(\{\pm 1\},2^k,1/(1-X))=1`. On recalling
-Lemma `Lemma 16 <#simpi>`__, this results in `[mirs] <#mirs>`__.
+Lemma `Lemma 16 <#simpi>`__, this results in :eq:`mirs`.
 
 .. container:: remark
 
@@ -630,7 +630,7 @@ power.
 .. container:: proof
 
    *Proof.* Indeed, since :math:`\mathscr{A}_0` generates :math:`G`, the
-   only index :math:`t` in `[defCAKkbiscirc] <#defCAKkbiscirc>`__ is
+   only index :math:`t` in :eq:`defCAKkbiscirc` is
    :math:`t=1`. Hence, only :math:`L=G` is possible. 
 
 Thanks
@@ -917,7 +917,7 @@ having real numbers for coefficients.
    This series is absolutely convergent in any disc
    :math:`|t|\le b<1/\beta` where :math:`\beta=\max_j(1/|\alpha_j|)`. We
    proceed by expressing :math:`s_F` in terms of :math:`b_F`
-   via `[bfk] <#bfk>`__ in a disc of radius :math:`b<1/\beta`. After
+   via :eq:`bfk` in a disc of radius :math:`b<1/\beta`. After
    some shuffling of the terms, we reach the expression
 
    .. math:: 
@@ -1006,7 +1006,7 @@ simplistic one.
 
    *Proof of Theorem*  `Theorem 2 <#PM1>`__\  .  The proof requires
    several steps. The very first one is a direct consequence
-   of `[Fhatb] <#Fhatb>`__, which leads to the identity
+   of :eq:`Fhatb`, which leads to the identity
 
    .. math::
       :label: formal-FG
@@ -1017,7 +1017,7 @@ simplistic one.
    assumption that :math:`(F(X)- H(X))/X^\Delta\in \mathbb{R}[X]`. Up to
    this point :eq:`formal-FG` is only established as a
    formal identity. Our second step is to
-   establish `[formal-FG] <#formal-FG>`__ for all :math:`t\in\mathbb{C}`
+   establish :eq:`formal-FG`__ for all :math:`t\in\mathbb{C}`
    with :math:`|t|<1/\beta`. By Lemma `Lemma 20 <#apriorimaj>`__, we
    know that :math:`|b_F(j)-b_H(j)|\le 4\max(\deg F,\deg H)\beta^j/j`.
    Therefore, for any bound :math:`J`, we have
@@ -1085,8 +1085,8 @@ simplistic one.
    Notice that we have :math:`s_H(j)-s_F(j)=0` (and hence
    :math:`b_H(j)-b_F(j)=0`) when :math:`j<\Delta` by our assumption on
    :math:`\Delta`. Let us glue the variables :math:`m` and :math:`j` in
-   :math:`n`. On using the definitions `[defCAKk] <#defCAKk>`__
-   and `[bfk] <#bfk>`__, we see that the functions
+   :math:`n`. On using the definitions :eq:`defCAKk`
+   and :eq:`bfk`, we see that the functions
    :math:`m\mapsto C_{\mathscr{A}}(K,m,1-X)/{m}` and
    :math:`j\mapsto (b_H(j)-b_F(j))` are of the form
    :math:`(1\!\!\!1\star r)(m)/m`, respectively
@@ -1099,7 +1099,7 @@ simplistic one.
 
    We replace :math:`r(t)` by its value to conclude that this sum is
    :math:`C_{\mathscr{A}}(K,m,F/H)`, as defined
-   by `[defCAKkbis] <#defCAKkbis>`__. We have reached
+   by :eq:`defCAKkbis`. We have reached
 
    .. math::
       :label: aux
@@ -1109,7 +1109,7 @@ simplistic one.
       \biggl(\prod_{\chi\in K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}.
 
    The final task is to control the tail of this product, but prior to
-   that, we change the variable :math:`n` in `[aux] <#aux>`__ in
+   that, we change the variable :math:`n` in :eq:`aux` in
    :math:`m` again. To control the tail, we check that, by
    Lemma `Lemma 17 <#basic>`__,
 
@@ -1129,12 +1129,6 @@ simplistic one.
       \sum_{m\ge M+1}
       \frac{\beta^m}{1-(1/\beta)}
       \frac{s+P}{P^{ms}}
-      % \end{align*}
-      % We swiftly simplify this bound in
-      % \begin{align*}
-      %   \pm\log\prod_{ n\ge N+1}\prod_{K\in\mathscr{G}}
-      %   \biggl(&\prod_{\chi\in
-      %            K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}
       \\&\le (\deg F+\deg H)|\mathscr{G}|^2
       \frac{\beta(s+P)}{\beta-1}\frac{1}{1-(\beta/P^s)}
       \biggl(\frac{\beta}{P^s}\biggr)^{M+1}
@@ -1256,7 +1250,7 @@ zeta-function associated with an abelian field :math:`K` is given by
 as per :raw-latex:`\cite[Theorem 8.6]{Narkiewicz*04}`. The group
 :math:`X(K)` is the group of characters attached to :math:`K`, see
 :raw-latex:`\cite[Proposition 8.4]{Narkiewicz*04}`. This
-equality `[defZetaDedekind] <#defZetaDedekind>`__ is proved prime per
+equality :eq:`defZetaDedekind` is proved prime per
 prime, and we can restrict to ideals whose norm is prime to some
 integer. In particular, we can restrict it to the primes that are prime
 to :math:`q`, which excludes at least the ramified primes. Let
@@ -1337,7 +1331,7 @@ subgroups.
       :name: initialization
       :class: unnumbered
 
-   Find ``M`` so that the right-hand side of `[fineq] <#fineq>`__ is
+   Find ``M`` so that the right-hand side of :eq:`fineq` is
    less than :math:`10^{-\texttt{nbdecimals}-10}`.
 
    .. rubric:: Precomputation-2
@@ -1356,7 +1350,7 @@ subgroups.
 
    For :math:`m\in\mathscr{M}`, add the contribution of this index to
    the sum approximating :math:`V_s(1)` from the right-hand side
-   of `[exact] <#exact>`__ with :math:`P=\texttt{bigP}`.
+   of :eq:`exact` with :math:`P=\texttt{bigP}`.
 
    .. rubric:: Post-computation
       :name: post-computation
@@ -1436,18 +1430,16 @@ attached postscript file on the same page, gives in section 4.4 the
 first fifty digits of the constant they call :math:`A` and which are
 
 .. math::
+   :latex: eq-7
 
    \begin{aligned}
-   \label{eq:7}  \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
+   \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
    = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
    \\&25267
    \,08497\,71894\,30550\,80726\,33188\,94627
    \\&61381\,60369
    \,39924\,26646\,98594\,38665\cdots
-   %Gourdon-Sebah:1.9504911124462870744465855658095536925267084977189
-   %GetEulerProds(4,1, 1-2*x-7*x\^2-4*x\^3, 1-2*x+x\^2, 200, 400) 
-   %%aa=RR(0.395252136393835889460756928905363164796388518074402091654243254249709985041953055656738117362419073310)
-   %% LaTeXForNumber(RR(aa*pi^2/2),100,8)\end{aligned}
+   \end{aligned}
 
 Our result matches that of :raw-latex:`\cite{Gourdon-Sebah*10}`.
 
