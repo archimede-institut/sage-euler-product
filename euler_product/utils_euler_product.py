@@ -549,7 +549,7 @@ class ComponentStructure():
             the list of the sum of the m-th power of the inverses of the roots of F.
 
         - ``coeff_sh`` -- [type]
-            the list of the sum of the m-th power of the inverses of the roots of F.
+            the list of the sum of the m-th power of the inverses of the roots of H.
 
         OUTPUT
 
@@ -610,7 +610,7 @@ class ComponentStructure():
     def get_gamma(self, t, s, big_p, prec):
         """
         Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup :math:`G_0` in ``the_SG_tuple``,
-        we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:\chi:,
+        we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:`\chi`,
         save that we remove the Euler factors for primes below ``P==big_p``.
         The output is the list of these values computed with ``prec`` correct binary digits.
 
@@ -663,9 +663,6 @@ def get_vector_sf(coeffs_f, how_many):
     The output is the list :math:`s_F(m)` for m less than ``how_many``, where :math:`s_F(m)`
     is the sum of the m-th power of the inverses of the roots of F.
 
-    [real(u) for u in GetGamma(30, myCIF(2), GetStructure(30), 200, myCIF)]
-    myCIF = ComplexIntervalField(200)
-
     INPUT:
 
     - ``coeffs_f`` -- list[float]
@@ -674,7 +671,7 @@ def get_vector_sf(coeffs_f, how_many):
     - ``how_many`` -- int
         number of computed coefficients.
 
-    OUTPUT
+    OUTPUT:
 
     list
         list des coefficient s_f(m) over ``m <= how_many``.
@@ -686,47 +683,19 @@ def get_vector_sf(coeffs_f, how_many):
         s_f[k] = -k * ann_i[k] - add(ann_i[i] * s_f[k - i] for i in range(1, k))
     return s_f
 
-
-def get_vector_bf(coeffs_f, how_many):
-    """get_vector_bf give the vector of coefficient bf
-    Not used in the main program
-
-    INPUT:
-
-    - ``coeffs_f`` -- [type]
-        [description]
-
-    - ``how_many`` -- int
-        number of coefficients bf
-
-    OUTPUT
-
-    [list]
-        [description]
-
-    EXAMPLES::
-
-        sage: from euler_product.utils_euler_product import get_vector_bf
-        sage: get_vector_bf([1, -4, 4, 2, -4, 1], 11)
-        [0, 4, 2, 2, 2, 3, 1, 0, -8, -22, -53]
-
-    """
-    b_f = [0 for i in range(0, how_many)]  # bf[0] is not used
-    s_f = get_vector_sf(coeffs_f, how_many)
-    for k in range(1, how_many):
-        b_f[k] = add(moebius(k / d) * s_f[d] for d in divisors(k)) / k  # type: ignore
-    return b_f
-
 def get_beta(F):
-    """get_beta is creating summary for get_beta
+    """
+    Outputs the maximum of 1 and of the inverse of the norm of the non-zero roots of the polynomial ``F``.
 
     INPUT:
 
-    - ``F`` -- [type]  [description]
+    - ``F`` -- pol
+        a polynomial with RealField coefficients.
 
     OUTPUT:
 
-    [type]  [description]
+    float
+       the maximum of 1 and of the inverse of the norm of the non-zero roots of ``F``.
 
     EXAMPLES::
 
@@ -744,17 +713,20 @@ def get_beta(F):
 
 
 def get_beta_rough(coeffs_f):
-    """summary for get_BetaRough
+    """
+    Outputs the maximum of 1 and of the sum of the norm of the coefficients of the polynomial ``F``,
+    which is precisely given as the list ``coeffs_f``. This is intended to be an easy upper bound when the function
+    ``get_beta`` takes too much time.
 
     INPUT:
 
-    - ``coeffs_f`` -- [type]
-        [description]
+    - ``coeffs_f`` -- float
+        a list of floats, supposedly representing a polynomial ``F``.
 
     OUTPUT:
 
-    [type]
-        [description]
+    float
+        Outputs the maximum of 1 and of the sum of the norm of the elements of ``coeffs_f``.
 
     EXAMPLES::
 
@@ -763,4 +735,4 @@ def get_beta_rough(coeffs_f):
         4
 
     """
-    return max(1, max(abs(c) for c in coeffs_f))
+    return max(1, add(abs(c) for c in coeffs_f))
