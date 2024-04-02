@@ -1013,12 +1013,12 @@ simplistic one.
    
       \frac{F(t)}{H(t)}=\prod_{j=\Delta}^\infty(1-t^j)^{b_F(j)-b_H(j)}.
 
-   The absence of the term with :math:`j<\Delta` is due to our
+   The absence of the term with :math:`j < \Delta` is due to our
    assumption that :math:`(F(X)- H(X))/X^\Delta\in \mathbb{R}[X]`. Up to
    this point :eq:`formal-FG` is only established as a
    formal identity. Our second step is to
-   establish :eq:`formal-FG`__ for all :math:`t\in\mathbb{C}`
-   with :math:`|t|<1/\beta`. By Lemma `Lemma 20 <#apriorimaj>`__, we
+   establish :eq:`formal-FG` for all :math:`t\in\mathbb{C}`
+   with :math:`|t| < 1/\beta`. By Lemma `Lemma 20 <#apriorimaj>`__, we
    know that :math:`|b_F(j)-b_H(j)|\le 4\max(\deg F,\deg H)\beta^j/j`.
    Therefore, for any bound :math:`J`, we have
 
@@ -1029,7 +1029,7 @@ simplistic one.
       \le
       4\max(\deg F,\deg H)\frac{|t\beta|^{J+1}}{(1-|t\beta|)(J+1)},
 
-   as soon as :math:`|t|<1/\beta`. We thus have
+   as soon as :math:`|t| < 1/\beta`. We thus have
 
    .. math::
       :label: true-FG
