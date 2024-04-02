@@ -377,11 +377,11 @@ class ComponentStructure():
         dictionary
             output is a the dictionary (ind_A, ind_K, t) --> value, see above.
 
-        EXAMPLES:
+        EXAMPLES::
 
             sage: from euler_product.utils_euler_product import ComponentStructure
             sage: structure = ComponentStructure(3)
-            sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])  # doctest: +NORMALIZE_WHITESPACE
+            sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])
             {(0, 0, -4): 0,
             (0, 0, 1): 1/2,
             (0, 0, 2): 0,
