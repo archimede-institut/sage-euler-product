@@ -495,10 +495,15 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
     - ``big_p`` -- int (default: `300`), optional
         Same as in ``get_vs``.
 
-    EXAMPLES:
+    OUTPUT:
+
+    str
+      the table in Latex is issued.
+
+    EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import table_performance
-        sage: table_performance(10, 30)  # random
+        sage: table_performance(10, 30)
         11 102 digits for the first product
         12 102 digits for the first product
         13 102 digits for the first product
@@ -554,9 +559,9 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
     return
 
 
-def get_vs_checker(q, s, borne = 10000):
+def get_vs_checker(q, s, borne=10000):
     """
-    This is a low level sanity check engine describe in the tutorial.
+    This is a low level sanity check engine described in the tutorial.
     It is to be used by developers only.
 
     INPUT:
@@ -567,7 +572,7 @@ def get_vs_checker(q, s, borne = 10000):
     - ``s`` -- real
         A real number > 1.
 
-    - ``borne`` -- int (default: `1000`), optional
+    - ``borne`` -- int (default: `10000`), optional
         boundary of computation.
 
     EXAMPLES::
