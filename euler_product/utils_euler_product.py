@@ -291,20 +291,27 @@ class ComponentStructure():
     - ``the_SG_tuple`` and ``the_Class_tuple`` as in the class LatticeInvariantClass.
     - ``nb_class``: the number of Lattice Invariant classes.
     - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in ``the_SG_tuple``.
-    - ``getr_A_Kt``: a method used only for ``get_CA_Km`` and ``get_CA_Km_F_sur_H``. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
+    - ``getr_A_Kt``: a method used only for ``get_CA_Km`` and ``get_CA_Km_F_sur_H``. 
+        The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
-        The function ``get_r_A_K_t``answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
+        The function ``get_r_A_K_t`` answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
         The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
         This list is the same as the list of necessary values of ``m``.
-    - ``get_CA_Km``: a method used for ``get_vs``. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by ``getr_A_K_t``.
+    - ``get_CA_Km``: a method used for ``get_vs``. 
+        The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by ``getr_A_K_t``.
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
         The function ``get_CA_Km`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
-    - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
+    - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. 
+        The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
         The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
         When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
     - ``get_L_values``: a method used only for ``get_gamma`` .
-    - ``get_gamma``: a method. The output is
+    - ``get_gamma``: outputs the tuple defined in (5.1) of the corresponding paper.
+        For every cyclic subgroup :math:`G_0` in ``the_SG_tuple``,
+        we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:`\chi`,
+        save that we remove the Euler factors for primes below ``P==big_p``.
+        The output is the list of these values computed with ``prec`` correct binary digits.
 
     EXAMPLES::
 
