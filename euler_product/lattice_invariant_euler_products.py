@@ -500,7 +500,7 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
     str
       the table in Latex is issued.
 
-    EXAMPLES:
+    EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import table_performance
         sage: table_performance(10, 30) #random
