@@ -265,11 +265,11 @@
 <span class="sd">    Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple</span>
 <span class="sd">    of the lattice-invariant classes modulo q</span>
 <span class="sd">    and approx_zeta(s; q, A) is an arithmetic interval approximation</span>
-<span class="sd">    of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).</span>
+<span class="sd">    of :math:`\zeta(s; q; A)` given in the form of a pair (lower_bound, upper_bound).</span>
 
 <span class="sd">    We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)</span>
 <span class="sd">    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.</span>
-<span class="sd">    We compute directly what happens for primes &lt; big_p.</span>
+<span class="sd">    We compute directly what happens for primes &lt; ``big_p``.</span>
 
 <span class="sd">    INPUT:</span>
 
@@ -304,7 +304,7 @@
 
 <span class="sd">    pair of tuples</span>
 <span class="sd">        The output is a pair whose first component is the tuple of lattice invariant classes (A)</span>
-<span class="sd">        and second component is the corresponding tuple of values (zeta(s; q, A)) where</span>
+<span class="sd">        and second component is the corresponding tuple of values :math:`(\zeta(s; q, A))` where</span>
 <span class="sd">        each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</span>
 
 <span class="sd">    EXAMPLES::</span>
@@ -483,10 +483,10 @@
 <span class="sd">    of the product over every prime in the class A modulo q of the quotient</span>
 <span class="sd">    f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).</span>
 <span class="sd">    We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)</span>
-<span class="sd">    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.</span>
-<span class="sd">    We compute directly what happens for primes &lt; big_p.</span>
+<span class="sd">    but this is not guaranteed. In case it does not happen, increase ``nb_decimals`` slightly.</span>
+<span class="sd">    We compute directly what happens for primes &lt; ``big_p``.</span>
 <span class="sd">    We assume that f_init(0) = h_init(0) = 1, that s is a positive real number</span>
-<span class="sd">    and that Delta s &gt; 1 where Delta is the order of the zero of f_init-h_init at 0.</span>
+<span class="sd">    and that :math:`\Delta s &gt; 1` where :math:`\Delta` is the order of the zero of f_init-h_init at 0.</span>
 <span class="sd">    This last condition is to ensure the Euler products converge absolutely.</span>
 
 <span class="sd">    to do</span>

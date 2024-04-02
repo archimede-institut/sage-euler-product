@@ -238,10 +238,10 @@ and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic i
 of the product over every prime in the class A modulo q of the quotient
 f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).
 We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)
-but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
-We compute directly what happens for primes &lt; big_p.
+but this is not guaranteed. In case it does not happen, increase <code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> slightly.
+We compute directly what happens for primes &lt; <code class="docutils literal notranslate"><span class="pre">big_p</span></code>.
 We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
-and that Delta s &gt; 1 where Delta is the order of the zero of f_init-h_init at 0.
+and that <span class="math notranslate nohighlight">\(\Delta s &gt; 1\)</span> where <span class="math notranslate nohighlight">\(\Delta\)</span> is the order of the zero of f_init-h_init at 0.
 This last condition is to ensure the Euler products converge absolutely.</p>
 <p>to do</p>
 <p>assert F[0] = H[0] = 1</p>
@@ -339,10 +339,10 @@ ValueError(“f_init[0] and h_init[0] must be equal to 1”)</p>
 <dd><p>Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
 of the lattice-invariant classes modulo q
 and approx_zeta(s; q, A) is an arithmetic interval approximation
-of zeta(s; q; A) given in the form of a pair (lower_bound, upper_bound).</p>
+of <span class="math notranslate nohighlight">\(\zeta(s; q; A)\)</span> given in the form of a pair (lower_bound, upper_bound).</p>
 <p>We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)
 but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
-We compute directly what happens for primes &lt; big_p.</p>
+We compute directly what happens for primes &lt; <code class="docutils literal notranslate"><span class="pre">big_p</span></code>.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -390,7 +390,7 @@ As of now, this has effect only when <code class="docutils literal notranslate">
 <p>OUTPUT:</p>
 <dl class="simple">
 <dt>pair of tuples</dt><dd><p>The output is a pair whose first component is the tuple of lattice invariant classes (A)
-and second component is the corresponding tuple of values (zeta(s; q, A)) where
+and second component is the corresponding tuple of values <span class="math notranslate nohighlight">\((\zeta(s; q, A))\)</span> where
 each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</p>
 </dd>
 </dl>
