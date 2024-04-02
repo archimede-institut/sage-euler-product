@@ -108,7 +108,7 @@ Here is the central theorem of this paper.
         -\sum_{1\le j\le
           \deg F}\sigma_j^{-d}.
 
-   Let :math:`P` and :math:`s>1/\Delta` be two real parameters such that
+   Let :math:`P` and :math:`s > 1/\Delta` be two real parameters such that
    :math:`P^s\ge 2\beta`. We define, for any cyclic subgroup :math:`K`
    of :math:`G` and any positive integer :math:`m`,
 
@@ -148,18 +148,18 @@ Here is the central theorem of this paper.
    *
 
 In the case :math:`H/F=1-X`, the relevant identity is proved in
-Theorem `Theorem 18 <#mainspe>`__ and is the heart of this paper. Our
+Theorem 18 and is the heart of this paper. Our
 result applies in particular to :math:`\mathcal{A}=\{1\}` and to
 :math:`\mathcal{A}=\{-1\}`. When :math:`q=4` and
 :math:`\mathcal{A}=\{-1\}`, we readily find that only :math:`t=1`
 matters in :eq:`defCAKkbis`, that
 :math:`C_{\{-1\}}(\{1\},2^k,1/(1-X))=-1/2` and that
 :math:`C_{\{-1\}}(\{\pm 1\},2^k,1/(1-X))=1`. On recalling
-Lemma `Lemma 16 <#simpi>`__, this results in :eq:`mirs`.
+Lemma 16, this results in :eq:`mirs`.
 
 .. container:: remark
 
-   *Remark 3*. Lemma `Lemma 21 <#easybeta>`__ ensures that we may select
+   *Remark 3*. Lemma 21 ensures that we may select
 
    .. math:: \beta = \max\Bigl(2, \sum_{1\le k\le\deg F}|a_k|, \sum_{1\le k\le\deg H}|b_k|\Bigr)
 
@@ -170,11 +170,11 @@ Lemma `Lemma 16 <#simpi>`__, this results in :eq:`mirs`.
 .. container:: remark
 
    *Remark 4*. The numbers :math:`s_{H/F}(n)` may be computed via the
-   Girard-Newton relations recalled in Lemma `Lemma 19 <#Wittpoly>`__.
+   Girard-Newton relations recalled in Lemma 19.
 
 .. container:: remark
 
-   *Remark 5*. We prove in Lemma `Lemma 22 <#boundedt>`__ that, when
+   *Remark 5*. We prove in Lemma 22 that, when
    :math:`K` and :math:`\mathscr{A}` are fixed, the quantity
    :math:`\sum_{\substack{L\in
    \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
@@ -256,8 +256,8 @@ data at the end of this paper.
 
 .. container:: proof
 
-   *Proof of Corollary *\ `Corollary 8 <#superfast>`__\ *.*
-   Lemma `Lemma 16 <#simpi>`__ tells us that
+   *Proof of Corollary 8.*
+   Lemma 16 tells us that
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor
    of :math:`m` is coprime with :math:`\varphi(q)`. Let us decompose
    :math:`\varphi(q)` in prime factors:
@@ -294,7 +294,7 @@ we may expect cancellations to happen. Since the sum defining
 values), it is dominated by the term :math:`t=1` when :math:`m` is large
 enough; no cancellation due to the Möbius factor can be expected either.
 We are then left with the case of cyclotomic polynomials, but they can
-be easily dealt with using Corollary `Corollary 8 <#superfast>`__;
+be easily dealt with using Corollary 8;
 indeed, if we denote by :math:`\Phi_n` the :math:`n`-th cyclotomic
 polynomial, the identity :math:`\prod_{d|n}\Phi_d(X)=X^n-1` gets
 inverted to :math:`\Phi_n(X)=\prod_{d|n}(X^d-1)^{\mu(n/d)}`.
@@ -318,7 +318,7 @@ The function ``GetEulerProds(q, s, F, H, nbdecimals)`` gives all these
 Euler products. The polynomials :math:`F` and :math:`H` are to be given
 as polynomial expressions with the variable :math:`x`. The special
 function ``GetVs(q, s, nbdecimals)`` gives all the Euler products of
-Corollary `Corollary 8 <#superfast>`__.
+Corollary 8.
 
 Some historical pointers
 ------------------------
@@ -330,7 +330,7 @@ modulo 4 (resp. to 1 modulo 8 in both instances), by using an identity
 (Lemma of section 2 for :raw-latex:`\cite{Shanks*60}`, Equation (5) in
 :raw-latex:`\cite{Shanks*61}` and the Lemma of section 3
 in :raw-latex:`\cite{Shanks*67}`) that is a precursor of our
-Lemma `Lemma 19 <#Wittpoly>`__.
+Lemma 19.
 
 In these three examples, the author has only been able to compute the
 first five digits, and this is due to three facts: the lack of an
@@ -365,7 +365,7 @@ proof. However, we did not come up with the coefficients
 :math:`C_{\mathscr{A}}(K,m,F/H)` by some lucky strike! There is a path
 leading from abelian field theory to our expression that is much closer
 to D. Shanks’s approach. We say more on this subject in
-section `4 <#More>`__.
+section 4.
 
 Application to some constants
 -----------------------------
@@ -380,10 +380,6 @@ Levesque and M. Waldschmidt. In the notation of that paper, they are
    \alpha_0^{(3)}
    =\frac{1}{3^{1/4}\sqrt{2}}\prod_{p\equiv
    2[3]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}
-   % RR=RealIntervalField(400)
-   % aa=RR(1.41406439089214763756550181907982937990769506939316217503992496242392810699208849945375485850247511419)
-   % LaTeXForNumber(RR(sqrt(aa/2)/3^(1/4)), 100,10)
-   % GetVs(3, 2, 100, 100, 2, 1)
 
 and
 
@@ -393,10 +389,6 @@ and
    \beta_0=\frac{3^{1/4}\sqrt{\pi}}{2^{5/4}}\frac{\log(2+\sqrt{3})^{1/4}}{\Gamma(1/4)}
    \prod_{p\equiv
    5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
-   % aa5=RR(1.04820190360076993683493743489579267348041367449481525810737614495241617157143788235940499088566949682)
-   % aa7=RR(1.02620214683123370070720186696636157236110932131334951481040066496546032939386454192999178263867916092)
-   % aa11=R(1.01177863685033258370511941026733127805840123089520870283595940756150164170456300544421959132980627277)
-   %RR(sqrt(aa5*aa7*aa11*RR(pi))*3^(1/4)/2^(5/4)*(log(2+sqrt(3)))^(1/4)/gamma(1/4))
 
 Both occur in number theory as densities. The number of integers
 :math:`n` of the shape :math:`n=x^2-xy+y^2`, where :math:`x` and
@@ -1004,7 +996,7 @@ simplistic one.
 
 .. container:: proof
 
-   *Proof of Theorem*  `Theorem 2 <#PM1>`__\  .  The proof requires
+   *Proof of Theorem 2.*  The proof requires
    several steps. The very first one is a direct consequence
    of :eq:`Fhatb`, which leads to the identity
 
@@ -1063,7 +1055,7 @@ simplistic one.
       (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),\end{aligned}
 
    since :math:`P\ge2` and :math:`J\ge3`. Letting :math:`J` go to
-   infinity, we see that when :math:`P^s>\beta` and :math:`s>1/\Delta`,
+   infinity, we see that when :math:`P^s > \beta` and :math:`s > 1/\Delta`,
 
    .. math::
 
@@ -1073,7 +1065,7 @@ simplistic one.
       p+q\mathbb{Z}\in\mathcal{A}}}(1-p^{-js})^{b_F(j)-b_H(j)}=
       \prod_{ j\ge 2}\zeta_P(js;q,\mathscr{A})^{b_H(j)-b_F(j)}
 
-   in the notation of Theorem `Theorem 18 <#mainspe>`__. We use this
+   in the notation of Theorem 18. We use this
    theorem to infer that
 
    .. math::
@@ -1111,7 +1103,7 @@ simplistic one.
    The final task is to control the tail of this product, but prior to
    that, we change the variable :math:`n` in :eq:`aux` in
    :math:`m` again. To control the tail, we check that, by
-   Lemma `Lemma 17 <#basic>`__,
+   Lemma 17,
 
    .. math::
 
@@ -1213,13 +1205,13 @@ would be to *invert* them in some sense.
 
 .. _notes-on-the-scope-of-lemma-dede:
 
-Notes on the scope of Lemma `Lemma 23 <#dede>`__
-------------------------------------------------
+Notes on the scope of Lemma 23
+------------------------------
 
 From a metholodogical viewpoint, a moment’s thought discloses that two
 residue classes modulo :math:`q` that fall inside the same
 lattice-invariant class cannot be distinguished by the set of identities
-of Lemma `Lemma 23 <#dede>`__. This implies that we indeed extract the
+of Lemma 23. This implies that we indeed extract the
 maximum information from our setting. This could be formalized in the
 following manner: consider the vector space :math:`\mathscr{F}[G]` of
 functions from :math:`G` to :math:`\mathbb{C}`, and the sub-space
@@ -1243,8 +1235,8 @@ rephrased form. For the general case, we follow
 zeta-function associated with an abelian field :math:`K` is given by
 
 .. math::
+   :label: defZetaDedekind
 
-   \label{defZetaDedekind}
    \zeta_K(s)=\prod_{\chi\in X(K)}L(s,\chi)
 
 as per :raw-latex:`\cite[Theorem 8.6]{Narkiewicz*04}`. The group
@@ -1280,7 +1272,7 @@ approaches are the same.
 Timing and implementation notes
 ===============================
 
-Let :math:`s>1` be a real number and :math:`P\ge2` be a parameter. We
+Let :math:`s > 1` be a real number and :math:`P\ge2` be a parameter. We
 consider the vector, for any positive integer :math:`t`:
 
 .. math::
@@ -1357,7 +1349,7 @@ subgroups.
       :class: unnumbered
 
    Complete the products with the values for primes
-   :math:`p< \texttt{bigP}`.
+   :math:`p < \texttt{bigP}`.
 
    .. rubric:: Output
       :name: output
@@ -1398,7 +1390,7 @@ for inclusion in a LaTeX-file. The digits presented in LaTeX-format when
 hundred decimal digits of every Euler product over a lattice invariant
 class when the modulus is at most 16.
 
-The computations of the Euler products of Theorem `Theorem 2 <#PM1>`__
+The computations of the Euler products of Theorem 2
 (with :math:`P=2`, the parameter ``bigP`` being used to decide from
 which point onwards we use the usual Euler product or the expression of
 the theorem) is implemented in:
@@ -1432,14 +1424,14 @@ first fifty digits of the constant they call :math:`A` and which are
 .. math::
    :latex: eq-7
 
-   \begin{align*}
-   \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
+   \begin{aligned}
+   \frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
    = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
    \\&25267
    \,08497\,71894\,30550\,80726\,33188\,94627
    \\&61381\,60369
    \,39924\,26646\,98594\,38665\cdots
-   \end{align*}
+   \end{aligned}
 
 Our result matches that of :raw-latex:`\cite{Gourdon-Sebah*10}`.
 
