@@ -675,6 +675,14 @@ def get_vector_sf(coeffs_f, how_many):
 
     list
         list des coefficient s_f(m) over ``m <= how_many``.
+
+    EXAMPLES::
+
+            sage: from euler_product.utils_euler_product import get_vector_sf
+            sage: get_vector_sf([1, -1], 5)
+            [1, 1, 1, 1, 1]
+            sage: get_vector_sf([1, 1, 1], 10)
+            [2, -1, -1, 2, -1, -1, 2, -1, -1, 2]
     """
     ann_i = coeffs_f + ((how_many - len(coeffs_f)) * [0])
     s_f = [0 for i in range(0, how_many)]
