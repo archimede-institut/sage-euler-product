@@ -842,26 +842,28 @@ This list is the same as the list of necessary values of <code class="docutils l
 <dt>dictionary</dt><dd><p>output is a the dictionary (ind_A, ind_K, t) –&gt; value, see above.</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<p>sage: from euler_product.utils_euler_product import ComponentStructure
-sage: structure = ComponentStructure(3)
-sage: structure.getr_A_Kt([1, -4, 4, 2, -4, 1])  # doctest: +NORMALIZE_WHITESPACE
-{(0, 0, -4): 0,
-(0, 0, 1): 1/2,
-(0, 0, 2): 0,
-(0, 0, 4): 0,
-(0, 1, -4): 0,
-(0, 1, 1): 0,
-(0, 1, 2): -1,
-(0, 1, 4): 0,
-(1, 0, -4): 0,
-(1, 0, 1): -1/2,
-(1, 0, 2): 0,
-(1, 0, 4): 0,
-(1, 1, -4): 0,
-(1, 1, 1): 1,
-(1, 1, 2): 0,
-(1, 1, 4): 0}</p>
+<p>EXAMPLES:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.utils_euler_product</span> <span class="kn">import</span> <span class="n">ComponentStructure</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">structure</span><span class="o">.</span><span class="n">getr_A_Kt</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="p">{(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span> <span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
