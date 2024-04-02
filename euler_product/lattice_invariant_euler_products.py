@@ -1,12 +1,10 @@
 """
-Lattice Invariant
 
-lattice_invariant_euler_product.py defines the class ``ComponentStructure``.
-Computing with interval arithmetic and with a proven precision
+The main function of this package is ``get_euler_products`` which computes
+with interval arithmetic and a proven precision
 Euler products of rational functions over primes in special sets modulo some fixed ``q``.
 These special sets are the lattice invariant classes modulo ``q``, and the software also enables
 the user to use them through the class ``ComponentStructure``.
-
 
 AUTHORS:
 
@@ -288,21 +286,21 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     INPUT:
 
     - ``q`` -- int
-        The products are taken over classes modulo q.
+        a poitive integer. The products are taken over classes modulo q.
 
     - ``s`` -- float
-        A real number > 0.
+        a real number > 0.
         Additional conditions may be required for the Euler products to be absolutely convergent.
 
     - ``f_init`` -- pol
-        A polynomial with real coefficients and such that f_init(0) = 1.
+        a polynomial with real coefficients and such that f_init(0) = 1.
 
     - ``h_init`` -- pol
-        A polynomial with real coefficients and such that h_init(0) = 1.
+        a polynomial with real coefficients and such that h_init(0) = 1.
 
     - ``nb_decimals`` -- int (default: `100`), optional
         The number of decimals that are being sought by the final result.
-        The function aims at such a number of decimals but a final tuning may be required
+        The function aims at such a number of decimals but a final tuning may be required.
 
     - ``big_p`` -- int (default:`300`), optional
         This is an internal parameter that is described in the accompanying paper.
@@ -311,11 +309,11 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     - ``verbose`` -- int (default: `2`), optional
         Defines the amount of output shown.
         It may take the usual values 0, 1, 2, towards more explanations.
-        When get_vs is used inside another function, ``verbose = 0`` is usually what is required.
+        When ``get_vs`` is used inside another function, ``verbose == 0`` is usually what is required.
         The value -1 is special and the effect is fully described in the tutorial.
 
     - ``with_laTeX`` -- int (default: `0`), optional
-        This parameter takes the value 1 or not 1.
+        This parameter takes the value either 1 or not 1.
         As of now, this has effect only when ``verbose == 2``.
 
     - ``digits_offset`` -- int (default: `10`), optional
