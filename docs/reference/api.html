@@ -206,9 +206,8 @@
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading">#</a></h1>
 <section id="module-euler_product.lattice_invariant_euler_products">
 <span id="euler-product-lattice-invariant-euler-products"></span><h2>euler_product.lattice_invariant_euler_products<a class="headerlink" href="#module-euler_product.lattice_invariant_euler_products" title="Link to this heading">#</a></h2>
-<p>Lattice Invariant</p>
-<p>lattice_invariant_euler_product.py defines the class <code class="docutils literal notranslate"><span class="pre">ComponentStructure</span></code>.
-Computing with interval arithmetic and with a proven precision
+<p>The main function of this package is <code class="docutils literal notranslate"><span class="pre">get_euler_products</span></code> which computes
+with interval arithmetic and a proven precision
 Euler products of rational functions over primes in special sets modulo some fixed <code class="docutils literal notranslate"><span class="pre">q</span></code>.
 These special sets are the lattice invariant classes modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>, and the software also enables
 the user to use them through the class <code class="docutils literal notranslate"><span class="pre">ComponentStructure</span></code>.</p>
@@ -248,29 +247,29 @@ This last condition is to ensure the Euler products converge absolutely.</p>
 <p>INPUT:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>The products are taken over classes modulo q.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">q</span></code> – int</dt><dd><p>a poitive integer. The products are taken over classes modulo q.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – float</dt><dd><p>A real number &gt; 0.
+<dt><code class="docutils literal notranslate"><span class="pre">s</span></code> – float</dt><dd><p>a real number &gt; 0.
 Additional conditions may be required for the Euler products to be absolutely convergent.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">f_init</span></code> – pol</dt><dd><p>A polynomial with real coefficients and such that f_init(0) = 1.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">f_init</span></code> – pol</dt><dd><p>a polynomial with real coefficients and such that f_init(0) = 1.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">h_init</span></code> – pol</dt><dd><p>A polynomial with real coefficients and such that h_init(0) = 1.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">h_init</span></code> – pol</dt><dd><p>a polynomial with real coefficients and such that h_init(0) = 1.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">nb_decimals</span></code> – int (default: <cite>100</cite>), optional</dt><dd><p>The number of decimals that are being sought by the final result.
-The function aims at such a number of decimals but a final tuning may be required</p>
+The function aims at such a number of decimals but a final tuning may be required.</p>
 </dd>
 </dl>
 </li>
@@ -283,13 +282,13 @@ In short: the Euler products up to <code class="docutils literal notranslate"><s
 <li><dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">verbose</span></code> – int (default: <cite>2</cite>), optional</dt><dd><p>Defines the amount of output shown.
 It may take the usual values 0, 1, 2, towards more explanations.
-When get_vs is used inside another function, <code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">0</span></code> is usually what is required.
+When <code class="docutils literal notranslate"><span class="pre">get_vs</span></code> is used inside another function, <code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">==</span> <span class="pre">0</span></code> is usually what is required.
 The value -1 is special and the effect is fully described in the tutorial.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int (default: <cite>0</cite>), optional</dt><dd><p>This parameter takes the value 1 or not 1.
+<dt><code class="docutils literal notranslate"><span class="pre">with_laTeX</span></code> – int (default: <cite>0</cite>), optional</dt><dd><p>This parameter takes the value either 1 or not 1.
 As of now, this has effect only when <code class="docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">==</span> <span class="pre">2</span></code>.</p>
 </dd>
 </dl>

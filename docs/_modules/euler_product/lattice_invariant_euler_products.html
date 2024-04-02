@@ -202,14 +202,12 @@
         <article role="main">
           <h1>Source code for euler_product.lattice_invariant_euler_products</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Lattice Invariant</span>
 
-<span class="sd">lattice_invariant_euler_product.py defines the class ``ComponentStructure``.</span>
-<span class="sd">Computing with interval arithmetic and with a proven precision</span>
+<span class="sd">The main function of this package is ``get_euler_products`` which computes</span>
+<span class="sd">with interval arithmetic and a proven precision</span>
 <span class="sd">Euler products of rational functions over primes in special sets modulo some fixed ``q``.</span>
 <span class="sd">These special sets are the lattice invariant classes modulo ``q``, and the software also enables</span>
 <span class="sd">the user to use them through the class ``ComponentStructure``.</span>
-
 
 <span class="sd">AUTHORS:</span>
 
@@ -496,21 +494,21 @@
 <span class="sd">    INPUT:</span>
 
 <span class="sd">    - ``q`` -- int</span>
-<span class="sd">        The products are taken over classes modulo q.</span>
+<span class="sd">        a poitive integer. The products are taken over classes modulo q.</span>
 
 <span class="sd">    - ``s`` -- float</span>
-<span class="sd">        A real number &gt; 0.</span>
+<span class="sd">        a real number &gt; 0.</span>
 <span class="sd">        Additional conditions may be required for the Euler products to be absolutely convergent.</span>
 
 <span class="sd">    - ``f_init`` -- pol</span>
-<span class="sd">        A polynomial with real coefficients and such that f_init(0) = 1.</span>
+<span class="sd">        a polynomial with real coefficients and such that f_init(0) = 1.</span>
 
 <span class="sd">    - ``h_init`` -- pol</span>
-<span class="sd">        A polynomial with real coefficients and such that h_init(0) = 1.</span>
+<span class="sd">        a polynomial with real coefficients and such that h_init(0) = 1.</span>
 
 <span class="sd">    - ``nb_decimals`` -- int (default: `100`), optional</span>
 <span class="sd">        The number of decimals that are being sought by the final result.</span>
-<span class="sd">        The function aims at such a number of decimals but a final tuning may be required</span>
+<span class="sd">        The function aims at such a number of decimals but a final tuning may be required.</span>
 
 <span class="sd">    - ``big_p`` -- int (default:`300`), optional</span>
 <span class="sd">        This is an internal parameter that is described in the accompanying paper.</span>
@@ -519,11 +517,11 @@
 <span class="sd">    - ``verbose`` -- int (default: `2`), optional</span>
 <span class="sd">        Defines the amount of output shown.</span>
 <span class="sd">        It may take the usual values 0, 1, 2, towards more explanations.</span>
-<span class="sd">        When get_vs is used inside another function, ``verbose = 0`` is usually what is required.</span>
+<span class="sd">        When ``get_vs`` is used inside another function, ``verbose == 0`` is usually what is required.</span>
 <span class="sd">        The value -1 is special and the effect is fully described in the tutorial.</span>
 
 <span class="sd">    - ``with_laTeX`` -- int (default: `0`), optional</span>
-<span class="sd">        This parameter takes the value 1 or not 1.</span>
+<span class="sd">        This parameter takes the value either 1 or not 1.</span>
 <span class="sd">        As of now, this has effect only when ``verbose == 2``.</span>
 
 <span class="sd">    - ``digits_offset`` -- int (default: `10`), optional</span>
