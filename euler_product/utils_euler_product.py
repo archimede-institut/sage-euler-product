@@ -732,7 +732,7 @@ def get_beta_rough(coeffs_f):
 
         sage: from euler_product.utils_euler_product import get_beta_rough
         sage: get_beta_rough([1, 3, 4])
-        4
+        8
 
     """
     return max(1, add(abs(c) for c in coeffs_f))
