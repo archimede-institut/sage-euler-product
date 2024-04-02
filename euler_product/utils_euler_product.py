@@ -64,10 +64,10 @@ def nb_common_digits(a, b):
     INPUT:
 
     - ``a`` -- float
-        First float to compare.
+        first float to compare.
 
     - ``b`` -- float
-        Second float to compare.
+        second float to compare.
 
     OUTPUT:
 
@@ -169,10 +169,10 @@ def sub_group_generated(n, q):
     INPUT:
 
     - ``n`` -- int
-        An integer, expected to be coprime to ``q``.
+        an integer, expected to be coprime to ``q``.
 
     - ``q`` -- int
-        A positive integer.
+        a positive integer.
 
     OUTPUT:
 
@@ -292,17 +292,17 @@ class ComponentStructure():
     - ``nb_class``: the number of Lattice Invariant classes.
     - ``invariant_characters``: given a subgroup in ``the_SG_tuple``, the tuple of the characters that leaves this subgroup invariant is created. ``invariant_characters`` is this list of tuples, arranged as in ``the_SG_tuple``.
     - ``getr_A_Kt``: a method used only for ``get_CA_Km`` and ``get_CA_Km_F_sur_H``. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
-      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
-      The function ``get_r_A_K_t``answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
-      The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
-      This list is the same as the list of necessary values of ``m``.
+        The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
+        The function ``get_r_A_K_t``answers a dictionary which to every ``(ind_A, ind_K, t)`` associates this f(t) (with the moebius factor).
+        The list of ``t`` is of course limited and given as the input parameter of ``get_r_A_K_t``. This is the list of elements that form a divisor-closed subset of integers.
+        This list is the same as the list of necessary values of ``m``.
     - ``get_CA_Km``: a method used for ``get_vs``. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by ``getr_A_K_t``.
-      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
-      The function ``get_CA_Km`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
+        The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
+        The function ``get_CA_Km`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
     - ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
-      The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
-      The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
-      When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
+        The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
+        The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
+        When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
     - ``get_L_values``: a method used only for ``get_gamma`` .
     - ``get_gamma``: a method. The output is
 
@@ -322,12 +322,12 @@ class ComponentStructure():
         INPUT:
 
         - ``q`` -- int
-            [description]
+            the modulus, i.e. a positive integer.
 
         OUTPUT:
 
         namedtuple
-            [description]
+            see description of the class ``ComponentStructure``.
         """
         (the_SG_tuple, the_Class_tuple) = LatticeInvariant(q)
         #  size of our matrices:
@@ -370,12 +370,12 @@ class ComponentStructure():
         INPUT:
 
         - ``my_indices`` -- list
-            List of indices ``t`` necessary.
+            list of indices (positive integers) ``t``. It should be divisor-closed (and include 1) and ordered increasingly.
 
         OUTPUT:
 
         dictionary
-            Output is a the dictionary (ind_A, ind_K, t) -> value, see above.
+            output is a the dictionary (ind_A, ind_K, t) --> value, see above.
 
         EXAMPLES:
 
@@ -428,12 +428,12 @@ class ComponentStructure():
         INPUT:
 
         - ``my_indices`` -- [int]
-          List of indices `m̀`` that are necessary.
+            list of indices (positive integers) ``m``. It should be divisor-closed (and include 1) and ordered increasingly.
 
         OUTPUT:
 
         dictionary
-            Outputs the dictionary (ind_A, ind_K, m) --> value, see above.
+            outputs the dictionary (ind_A, ind_K, m) --> value, see above.
 
         EXAMPLES::
 
@@ -533,27 +533,25 @@ class ComponentStructure():
         """
         ``get_CA_Km_F_sur_H``: a method used for ``get_euler_products`. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H, m/t) times a function of the value computed by ``getr_A_K_t``.
         The lattice class A in given by its index ``ind_A`` in ``the_Class_tuple``, the subgroup K is given by its index ``ind_K`` in ``the_SG_tuple``.
+        The polynomial ``F`` is given by its coefficients list ``coeff_sf``, and the polynomial ``H`` is given by its coefficients list ``coeff_sh``.
         The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
         When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
 
         INPUT:
 
-        - ``structure`` -- [type]
-            [description]
+        - ``my_indices`` -- list[int]
+            list of indices (positive integers) ``m``. It should be divisor-closed (and include 1) and ordered increasingly.
 
-        - ``my_indices`` -- [list]
-            List of indices `m̀`` that are necessary.
-
-        - ``coeff_sf`` -- [type]
-            [description]
+        - ``coeff_sf`` -- list[float]
+            the list of the coefficients (the ones of a polynomial F).
 
         - ``coeff_sh`` -- [type]
-            [description]
+            the list of the coefficients (the ones of a polynomial H).
 
         OUTPUT
 
-        [type]
-            [description]
+        dictionary
+            outputs the dictionary (ind_A, ind_K, m) --> value, see above.
 
         EXAMPLES:
 
@@ -608,27 +606,30 @@ class ComponentStructure():
 
     def get_gamma(self, t, s, big_p, prec):
         """
-        Outputs the tuple defined in (5.1): for every cyclic subgroup G_0 in ``the_SG_tuple``, we compute Log L_P(t*s, chi).
+        Outputs the tuple defined in (5.1) of the corresponding paper: for every cyclic subgroup G_0 in ``the_SG_tuple``,
+        we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:\chi:,
+        save that we remove the Euler factors for primes below ``big_p``.
         The output is the list of these values computed with ``prec`` correct binary digits.
 
         INPUT:
 
         - ``t`` -- int
-            [description]
+            the L-series are computed at ``t*s``.
 
         - ``s`` -- float
-            [description]
+            the L-series are computed at ``t*s``. The separation of ``t`` and ``s`` is only for readability of the code.
 
         - ``big_p`` -- int
-            [description]
+            a positive integer. The Euler products are computing for primes larger than ``big_p``. 
 
         - ``prec`` -- int
-            Number of binary digits.
+            number of correct binary digits in the output.
 
         OUTPUT:
 
-        [type]
-            [description]
+        tuple
+            the list of values of :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, see the function description.
+            
 
         EXAMPLES::
 
