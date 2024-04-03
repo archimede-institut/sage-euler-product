@@ -16,6 +16,12 @@ Fast multi-precision computation of some Euler products
    :format: latex
 ..
 
+.. note:: Origin
+
+   This file is a web version of the paper *Fast multi-precision computation of some Euler products* by the same authors
+   and which appeared in Math. Comp. **90** (2021), no. 331, pages 2247–2265. The modifications concerns the numbering and the
+   elements conerning the produced code.
+
 Introduction
 ============
 
@@ -46,14 +52,14 @@ restricted class of such products. Let us first introduce the players.
 .. container:: defi
    :name: li
 
-   **Definition _`1`**. *Two elements* :math:`g_1` *and* :math:`g_2` *of
+   **Definition** _`1`. *Two elements* :math:`g_1` *and* :math:`g_2` *of
    the abelian group* :math:`G` *are said to be lattice-invariant if and
    only if they generate the same group. This defines an equivalence
    relation.*
 
-   *We denote the set of lattice invariant classes by :math:`G^\sharp`
-   and the set of cyclic subgroups of :math:`G` by :math:`\mathscr{G}`.
-   The map between :math:`\mathscr{G}` and :math:`G^\sharp` which, to a
+   *We denote the set of lattice invariant classes by* :math:`G^\sharp`
+   *and the set of cyclic subgroups of* :math:`G` by :math:`\mathscr{G}`.
+   *The map between* :math:`\mathscr{G}` *and* :math:`G^\sharp` *which, to a
    subgroup, associates the subset of its generators, is one-to-one.*
 
 The cardinality of :math:`G^\sharp` can be swiftly inferred from
@@ -256,7 +262,7 @@ data at the end of this paper.
 
 .. container:: proof
 
-   *Proof of Corollary 8.*
+   *Proof of Corollary* :ref:`8<8>`.
    Lemma :ref:`16<16>` tells us that
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor
    of :math:`m` is coprime with :math:`\varphi(q)`. Let us decompose
@@ -302,22 +308,13 @@ inverted to :math:`\Phi_n(X)=\prod_{d|n}(X^d-1)^{\mu(n/d)}`.
 A Sage script
 -------------
 
-The material of this paper has been used to write a Sage script *using
-Python 3* which can be found on the webpage of the second author:
+The material of this paper has been used to write the Sage script *using
+Python 3*.
 
-http://iml.univ-mrs.fr/~ramare/Maths/LatticeInvariantEulerProducts-06.sage
-
-We shorten this name throughout this paper in ``LIEP.sage``. We give
-some details about this script when developing the proof below. We also
-provide on the second author’s webpage the first hundred digits of
-several Euler products:
-
-http://iml.univ-mrs.fr/~ramare/Maths/SomeEulerProducts-02.pdf
-
-The function ``GetEulerProds(q, s, F, H, nbdecimals)`` gives all these
+The function ``get_euler_products(q, s, F, H, nbdecimals)`` gives all these
 Euler products. The polynomials :math:`F` and :math:`H` are to be given
 as polynomial expressions with the variable :math:`x`. The special
-function ``GetVs(q, s, nbdecimals)`` gives all the Euler products of
+function ``get_vs(q, s, nbdecimals)`` gives all the Euler products of
 Corollary :ref:`8<8>`.
 
 Some historical pointers
@@ -492,7 +489,7 @@ obtained with the call
 
 .. container:: center
 
-   ``GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)``.
+   ``get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 2, 1)``.
 
 A note is required here: the script evaluates loosely the required
 working precision in order to get say 100 correct digits at the end. The
@@ -558,12 +555,12 @@ call
 
 .. container:: center
 
-   ``GetEulerProds(8, 1, 1-8*x, 1-8*x+16*x^2, 110, 50, 2, 1)``.
+   ``get_euler_products(8, 1, 1-8*x, 1-8*x+16*x^2, 110, 50, 2, 1)``.
 
 If this call requires about 2 seconds on a usual desktop computer, this
 time increases to 4 minutes when we ask for a thousand digits. We did
 not try to get 5000 digits as we did for the products of
-Corollary `Corollary 8 <#superfast>`__.
+Corollary :ref:`8<8>`.
 
 We close this section by mentioning another series of challenging
 constants. In `[10]`_, P. Moree computes inter
@@ -629,7 +626,7 @@ and the corresponding script.
 Proof of Theorem :ref:`2<2>` when :math:`F/H=1/(1-X)`
 ==============================================================
 
-We follow the notation introduced in `[defCAKkbis] <#defCAKkbis>`__.
+We follow the notation introduced in :eq:`defCAKkbis`.
 Since here :math:`F/H=1/(1-X)`, this leads us to consider, for any
 cyclic subgroup :math:`K\in\mathscr{G}`, any class :math:`\mathscr{A}`
 in :math:`G^\sharp` and any positive integer :math:`m`, the coefficient
@@ -686,7 +683,7 @@ Here is the fundamental property satisfied by these coefficients.
       S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ B^{[h]}
       \subset  K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
 
-   Next, we introduce the expression given in `[defCAKk] <#defCAKk>`__,
+   Next, we introduce the expression given in :eq:`defCAKk`,
    shuffle the summations and get
 
    .. math::
@@ -1214,7 +1211,7 @@ not need this fact.
 Link with abelian field theory
 ------------------------------
 
-The case :math:`G_0=\{1\}` in the identity of Lemma `Lemma 23 <#dede>`__
+The case :math:`G_0=\{1\}` in the identity of Lemma :ref:`23<23>`
 is classical in Dedekind zeta function theory for the field
 :math:`\mathbb{Q}(\zeta_q)`, where :math:`\zeta_q=\exp(2i\pi/q)`, and
 can be found in Proposition 13 of `[13]`_ in a
@@ -1270,7 +1267,7 @@ consider the vector, for any positive integer :math:`t`:
 
 The rows of :math:`\Gamma_{P,s}(t)` are indexed by the cyclic subgroups
 of :math:`G`. An approximate value of this vector is provided by the
-function ``GetGamma`` of the script ``LIEP.sage`` from the values of the
+function ``ComponentStructure.get_gamma`` from the values of the
 Hurwitz zeta function. We next define
 
 .. math::
@@ -1278,22 +1275,22 @@ Hurwitz zeta function. We next define
 
    V_s(t)=\bigl(\log\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
 
-The function ``GetLatticeInvariantClasses`` of the script ``LIEP.sage``
+The class ``LatticeInvariant``
 gives the two lists: the one of the cyclic subgroups and the one of
 their generators, ordered similarly and in increasing size of the
 subgroups.
 
 .. container:: mdframed
 
-   The algorithm (function ``GetVs``):
+   The algorithm (function ``get_vs``):
 
    .. rubric:: Input
       :name: input
       :class: unnumbered
 
-   Input the four parameters ``q``, ``s``, ``nbdecimals`` and ``bigP``
-   as well as the two parameters that control the output ``Verbose`` and
-   ``WithLaTeX``.
+   Input the four parameters ``q``, ``s``, ``nbdecimals`` and ``big_p``
+   as well as the two parameters that control the output ``verbose`` and
+   ``with_laTeX``.
 
    .. rubric:: Precomputation-1
       :name: precomputation-1
@@ -1304,8 +1301,8 @@ subgroups.
    tuple of its lattice-invariant classes, the exponent of :math:`G`,
    its character group, an enumeration of the elements of :math:`G` and,
    for each cyclic subgroup of :math:`G`, the set of characters
-   of :math:`G` that are trivial on it. This is done by the function
-   ``GetStructure``.
+   of :math:`G` that are trivial on it. This is done by the class
+   ``ComponentStructure``.
 
    .. rubric:: Initialization
       :name: initialization
@@ -1330,14 +1327,14 @@ subgroups.
 
    For :math:`m\in\mathscr{M}`, add the contribution of this index to
    the sum approximating :math:`V_s(1)` from the right-hand side
-   of :eq:`exact` with :math:`P=\texttt{bigP}`.
+   of :eq:`exact` with :math:`P=\texttt{big_p}`.
 
    .. rubric:: Post-computation
       :name: post-computation
       :class: unnumbered
 
    Complete the products with the values for primes
-   :math:`p < \texttt{bigP}`.
+   :math:`p < \texttt{big_p}`.
 
    .. rubric:: Output
       :name: output
@@ -1346,12 +1343,12 @@ subgroups.
    Return the tuple of lattice-invariant classes and the tuple of
    couples of lower/upper bounds for the wanted Euler products.
 
-Once the script is loaded via ``load(’LIEP.sage’)``, a typical call will
+Once the script is loaded, a typical call will
 be
 
 .. container:: center
 
-   ``GetVs(12, 2, 100, 110)``
+   ``get_vs(12, 2, 100, 110)``
 
 to compute modulo 12 the possible constants with :math:`s=2`, asking for
 100 decimal digits and using :math:`P=110`. The output is self
@@ -1359,34 +1356,34 @@ explanatory. The number of decimal digits asked for is roughly handled
 and one may lose precision in between, but this is indicated at the end.
 Note that we expect the final result to be of size roughly unity, so
 what we ask for is not the relative precision but the number of
-decimals. Hence, in the function ``GetGamma``, we replace by an
+decimals. Hence, in the function ``get_gamma``, we replace by an
 approximation of 0 the values that we know are insignificantly small.
 This is a true time-saver.
 
-There are two subsequent optional parameters ``Verbose`` and
-``WithLaTeX``. The first one may take the values 0, 1 and 2; when equal
+There are two subsequent optional parameters ``verbose`` and
+``with_laTeX``. The first one may take the values 0, 1 and 2; when equal
 to 0, the function will simply do its job and return the tuple of the
 invariant classes and the one of the computed lower and upper values.
 When equal to 1, the time taken will also be printed. And when equal to
 2, its default value, some information on the computation is given. When
-the parameter ``Verbose`` is at least 2 and ``WithLaTeX`` is 1, the
+the parameter ``verbose`` is at least 2 and ``with_laTeX`` is 1, the
 values of the constants will be further presented in a format suitable
 for inclusion in a LaTeX-file. The digits presented in LaTeX-format when
-``WithLaTeX`` :math:`=1` are always accurate. For instance, the call
-``GetVs(12, 2, 100, 100, 2, 1)`` is the one used to prepare the addendum
+``with_laTeX`` :math:`=1` are always accurate. For instance, the call
+``get_vs(12, 2, 100, 100, 2, 1)`` is the one used to prepare the addendum
 `[2]`_ in which we give the first
 hundred decimal digits of every Euler product over a lattice invariant
 class when the modulus is at most 16.
 
 The computations of the Euler products of Theorem :ref:`2<2>`
-(with :math:`P=2`, the parameter ``bigP`` being used to decide from
+(with :math:`P=2`, the parameter ``big_p`` being used to decide from
 which point onwards we use the usual Euler product or the expression of
 the theorem) is implemented in:
 
 
-The parameter ``bigP`` may be increased by the script to ensure that
+The parameter ``big_p`` may be increased by the script to ensure that
 :math:`P\ge2\beta` (a condition that is usually satisfied). We reused
-the same structure as the one for the function ``GetVs`` except that the
+the same structure as the one for the function ``get_vs`` except that the
 set of indices :math:`m` is now a full interval. Since the coefficients
 :math:`|b_F(j)-b_G(j)|` may increase like :math:`\beta^j`, we increase
 the working precision by :math:`J\log\beta /\log 2`.
@@ -1396,7 +1393,7 @@ Checking
 
 The values given here have been checked in several ways. The co-authors
 of this paper have run several independent scripts. We also provide the
-function ``GetVsChecker(q, s, borne = 10000)`` which computes
+function ``get_vs_checker(q, s, borne = 10000)`` which computes
 approximate values of the same Euler products by simply truncating the
 Euler product representation. We checked with positive result the
 stability of our results with respect of the variation of the
@@ -1451,8 +1448,8 @@ Table `2 <#HundredDigits>`__ may be reproduced with the call:
 ``TablePerformance(3, 51, 100, 100)``
 
 In these tables, :math:`r=\omega(\varphi(q))` is the number of distinct
-prime divisors of :math:`q` as in
-Corollary `Corollary 8 <#superfast>`__. The time is given in tenth of a
+prime divisors of :math:`\varphi(q)` as in
+Corollary :ref:`8<8>`. The time is given in tenth of a
 second, indicated by “s/10”. The column with the tag “\ :math:`\#m's`"
 contains the number of indices :math:`m\le M` such that
 :math:`m|\varphi(q)^\infty`. We otherwise follow the notation of
