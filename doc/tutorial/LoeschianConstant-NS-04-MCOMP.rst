@@ -12,7 +12,7 @@ Fast multi-precision computation of some Euler products
 :Author: O. Ramaré
 :Author: L. Surel
 
-.. note:: Origin
+.. note:: 
 
    This file is a web version of the paper *Fast multi-precision computation of some Euler products* by the same authors
    and which appeared in Math. Comp. **90** (2021), no. 331, pages 2247–2265. The modifications concerns the numbering and the
@@ -204,7 +204,7 @@ Lemma 16, this results in :eq:`mirs`.
    :math:`T^\perp` , for :math:`T\varsubsetneq S`. It can be readily
    checked that any :math:`K^\perp` is the union of
    :math:`S^{\perp\circ}` where :math:`S` ranges the subgroups that are
-   included in :math:`K` . We then define
+   included in :math:`K`. We then define
 
    .. math::
       :label: defCAKkbiscirc
@@ -1445,7 +1445,7 @@ timing, these tables have to be taken with a pinch of salt. The
 processor was an Intel Core i5-2500 at 3.30 GHz. The first half of
 Table `2 <#HundredDigits>`__ may be reproduced with the call:
 
-``TablePerformance(3, 51, 100, 100)``
+``table_performance(3, 51, 100, 100)``
 
 In these tables, :math:`r=\omega(\varphi(q))` is the number of distinct
 prime divisors of :math:`\varphi(q)` as in
@@ -1462,7 +1462,7 @@ zeta-function to be computed is the main determining factor of the time
 consumption. This number is controlled by :math:`\varphi(q)`, since this
 is the number of characters, and by the number of :math:`m`\ ’s
 required, a value that is on the whole controlled by
-:math:`r=\omega(\varphi(q))`
+:math:`r=\omega(\varphi(q))`.
 
 .. container::
    :name: ThousandDigits
