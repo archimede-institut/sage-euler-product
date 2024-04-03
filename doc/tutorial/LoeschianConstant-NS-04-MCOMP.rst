@@ -244,7 +244,8 @@ Super fast evaluations
 .. container:: cor
    :name: superfast
 
-   **Corollary** _`8`. For every positive integer :math:`m` , the constant
+   |begthm| Corollary _`8`.
+   |midthm| For every positive integer :math:`m` , the constant
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor of
    :math:`m` is coprime with :math:`\varphi(q)` . As a consequence and
    under the hypotheses of Theorem :ref:`2<2>` with
@@ -254,6 +255,8 @@ Super fast evaluations
 
       \prod_{\substack{p\ge P,\\
       p+q\mathbb{Z}\in\mathcal{A}}}\biggl(1-\frac1{p^s}\biggr)
+
+   |endthm|
 
 may be computed by :math:`\mathcal{O}((\log D)^{r})` computations of
 :math:`L` -functions to get :math:`D`-decimal digits, where :math:`r` 
@@ -424,7 +427,8 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
 
 .. container:: cor
 
-   **Corollary 9**. We have
+   |begthm| Corollary _`9`.
+   |midthm| We have
 
    .. math::
 
@@ -443,6 +447,7 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
       \\&96454\,58867\,84128\,88654\,48752\,41051\,08994\,87467\,81397\,92727\cdots
       \end{aligned}
 
+   |endthm|
 
 This follows from Theorem :ref:`2<2>` with the choices
 :math:`q=3` and :math:`\mathcal{A}=\{2\}` for :math:`\alpha_0^{(3)}`,
@@ -453,7 +458,8 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
 .. container:: cor
    :name: sha
 
-   **Corollary** _`10` (Shanks’ Constant). We have
+   |begthm| Corollary _`10` (Shanks’ Constant). 
+   |midthm| We have
 
    .. math::
 
@@ -484,6 +490,7 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
       \end{aligned}
       \end{aligned}
 
+   |endthm|
 
 We deduce this Corollary from Theorem :ref:`2<2>` by selecting
 the parameters :math:`q=8`, :math:`\mathcal{A}=\{1\}`,
@@ -517,7 +524,8 @@ digits), see the implementation notes at the end of this paper.
 
 .. container:: cor
 
-   **Corollary** _`11` (Lal’s Constant). We have
+   |begthm| Corollary _`11` (Lal’s Constant). 
+   |midthm| We have
 
    .. math::
 
@@ -548,6 +556,7 @@ digits), see the implementation notes at the end of this paper.
      \end{aligned} 
      \end{aligned}
 
+   |endthm|
 
 We deduce the first value given in this Corollary by using
 Theorem :ref`2<2>` with the parameters :math:`q=8`,
