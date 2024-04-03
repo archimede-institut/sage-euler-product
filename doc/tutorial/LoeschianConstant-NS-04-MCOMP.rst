@@ -855,7 +855,7 @@ Proof of Theorem 2 in general
 ================================================
 
 Let us recall the Witt decomposition. The readers will find in
-Lemma 1 of `Moree*00`__ a result of the same flavour. We
+Lemma 1 of `Moree*00`_ a result of the same flavour. We
 have simply modified the proof and setting as to accommodate polynomials
 having real numbers for coefficients.
 
@@ -1664,7 +1664,7 @@ of the present method. The time is counted in minutes.
    with an appendix by gerhard niklasch.*, Manuscripta Matematica
    **101** (2000), no. 3, 385–399.
 
-   __`Moree*00` Pieter Moree, *On the average number of elements in a finite field
+   _`Moree*00` Pieter Moree, *On the average number of elements in a finite field
    with order or index in a prescribed residue class*, Finite Fields
    Appl. **10** (2004), no. 3, 438–463. MR 2067608
 
