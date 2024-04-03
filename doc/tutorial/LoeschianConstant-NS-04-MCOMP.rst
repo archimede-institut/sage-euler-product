@@ -945,7 +945,7 @@ simplistic one.
 .. container:: lem
    :name: easybeta
 
-   **Lemma 21**. Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
+   **Lemma** _`21`. Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
    polynomial of degree :math:`\delta`. Let :math:`\rho` be one of its
    roots. Then either :math:`|\rho|\ge 1` or
    :math:`1/|\rho|\le |a_1|+|a_2|+\ldots+|a_\delta|`.
