@@ -793,8 +793,11 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: simpi
 
-   **Lemma** _`16`. If :math:`m` has a prime factor that does not divide
+   |begthm| Lemma _`16`. 
+   |midthm| If :math:`m` has a prime factor that does not divide
    :math:`\varphi(q)`, we have :math:`C_{\mathscr{A}}(K,m,1-X)=0`.
+
+   |endthm|
 
 .. container:: proof
 
@@ -813,13 +816,15 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: basic
 
-   **Lemma** _`17`. Let :math:`f>1` be a real parameter. We have
+   |begthm| Lemma _`17`. 
+   |midthm| Let :math:`f>1` be a real parameter. We have
 
    .. math::
 
       \bigl|\log \zeta_P(f)\bigr|\le
       \frac{1+P/(f-1)}{P^{f}}.
 
+   |endthm|
 
 .. container:: proof
 
@@ -842,7 +847,8 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: thm
    :name: mainspe
 
-   **Theorem** _`18`. For every :math:`s>1` and every :math:`P\ge2`, we
+   |begthm| Theorem _`18`. 
+   |midthm| For every :math:`s>1` and every :math:`P\ge2`, we
    have
 
    .. math::
@@ -853,6 +859,7 @@ Here is the fundamental property satisfied by these coefficients.
       = \prod_{m\ge1}\prod_{K\in\mathscr{G}}
       \biggl(\prod_{\chi\in K^\perp}L_P(ms,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,1-X)}/{m}}.
 
+   |endthm|
 
 .. container:: proof
 
@@ -877,7 +884,8 @@ having real numbers for coefficients.
 .. container:: lem
    :name: Wittpoly
 
-   **Lemma** _`19`. Let
+   |begthm| Lemma _`19`. 
+   |midthm| Let
    :math:`F(t) = 1+a_1 t+\ldots+a_{\delta}t^{\delta} \in \mathbb{R}[t]`
    be a polynomial of degree :math:`\delta`. Let
    :math:`\alpha_{1},\ldots,\alpha_{\delta}` be the inverses of its
@@ -908,6 +916,8 @@ having real numbers for coefficients.
       F(t)=\prod_{j=1}^{\infty}(1-t^{j})^{b_{F}(j)}
 
    where the convergence is uniform in the given segment.
+
+   |endthm|
 
 .. container:: proof
 
@@ -940,13 +950,15 @@ expansion.
 .. container:: lem
    :name: apriorimaj
 
-   **Lemma** _`20`. We use the hypotheses and notation of
+   |begthm| Lemma _`20`. 
+   |midthm| We use the hypotheses and notation of
    Lemma :ref:`19<19>`. Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
    .. math:: |b_F(k)|\le2\deg F \cdot \beta^k/k.
 
+  |endthm|
 
 .. container:: proof
 
@@ -971,10 +983,13 @@ simplistic one.
 .. container:: lem
    :name: easybeta
 
-   **Lemma** _`21`. Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
+   |begthm| Lemma _`21`. 
+   |midthm| Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
    polynomial of degree :math:`\delta`. Let :math:`\rho` be one of its
    roots. Then either :math:`|\rho|\ge 1` or
    :math:`1/|\rho|\le |a_1|+|a_2|+\ldots+|a_\delta|`.
+
+   |endthm|
 
 .. container:: proof
 
@@ -991,10 +1006,13 @@ simplistic one.
 .. container:: lem
    :name: boundedt
 
-   **Lemma** _`22`. The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
+   |begthm| Lemma _`22`. 
+   |midthm| The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
    where :math:`\mathcal{L}=\{L\in
    \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
    depends only on :math:`\gcd(t,\varphi(q))`.
+
+   |endthm|
 
 .. container:: proof
 
@@ -1117,7 +1135,7 @@ simplistic one.
    The final task is to control the tail of this product, but prior to
    that, we change the variable :math:`n` in :eq:`aux` in
    :math:`m` again. To control the tail, we check that, by
-   Lemma 17,
+   Lemma :ref:`17<17>`,
 
    .. math::
 
@@ -1156,7 +1174,8 @@ A formula
 .. container:: lem
    :name: dede
 
-   **Lemma** _`23`. Let :math:`q>1` be a modulus. We set :math:`G_0` to be
+   |begthm| Lemma _`23`. 
+   |midthm| Let :math:`q>1` be a modulus. We set :math:`G_0` to be
    a subgroup of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` and
    :math:`G_0^\perp` be the subgroup of characters that take the value 1
    on :math:`G_0`. For any integer :math:`b`, we define
@@ -1171,6 +1190,7 @@ A formula
       \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{} G_0=K}}
       \Bigl(1-p^{-|K/G_0|s}\Bigr)^{-|G/K|}.
 
+   |endthm|
 
 The right-hand side of this formula contains products of the kind we
 seek and, if we were to start from such a set of formulas, the problem
@@ -1266,7 +1286,7 @@ such that the automorphism of :math:`\mathbb{Q}(\zeta_q)` defined by
 :math:`X(K)` and :math:`H_q(K)^\perp` are almost equal: :math:`X(K)` is
 made only of primitive characters associated to the characters in
 :math:`H_q(K)^\perp`. We may select :math:`G_0=H_q(K)` in
-Lemma `Lemma 23 <#dede>`__. Some work involving the decomposition law in
+Lemma `23<23>`. Some work involving the decomposition law in
 abelian number fields, which may for instance be found in Theorem 8.2
 `[11]`_, gives us, when the prime
 factors of :math:`q` are all at most :math:`P`, that
