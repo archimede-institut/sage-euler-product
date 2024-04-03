@@ -984,7 +984,7 @@ simplistic one.
 
 .. container:: proof
 
-   *Proof of Theorem* :ref:`2<2>`*.*  The proof requires
+   *Proof of Theorem* :ref:`2<2>` .  The proof requires
    several steps. The very first one is a direct consequence
    of :eq:`Fhatb`, which leads to the identity
 
