@@ -1130,7 +1130,7 @@ A formula
 .. container:: lem
    :name: dede
 
-   **Lemma 23**. Let :math:`q>1` be a modulus. We set :math:`G_0` to be
+   **Lemma** _`23`. Let :math:`q>1` be a modulus. We set :math:`G_0` to be
    a subgroup of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` and
    :math:`G_0^\perp` be the subgroup of characters that take the value 1
    on :math:`G_0`. For any integer :math:`b`, we define
@@ -1193,13 +1193,13 @@ would be to *invert* them in some sense.
 
 .. _notes-on-the-scope-of-lemma-dede:
 
-Notes on the scope of Lemma 23
-------------------------------
+Notes on the scope of Lemma :ref:`23<23>`
+-----------------------------------------
 
 From a metholodogical viewpoint, a moment’s thought discloses that two
 residue classes modulo :math:`q` that fall inside the same
 lattice-invariant class cannot be distinguished by the set of identities
-of Lemma 23. This implies that we indeed extract the
+of Lemma :ref:`23<23>`. This implies that we indeed extract the
 maximum information from our setting. This could be formalized in the
 following manner: consider the vector space :math:`\mathscr{F}[G]` of
 functions from :math:`G` to :math:`\mathbb{C}`, and the sub-space
@@ -1217,9 +1217,9 @@ Link with abelian field theory
 The case :math:`G_0=\{1\}` in the identity of Lemma `Lemma 23 <#dede>`__
 is classical in Dedekind zeta function theory for the field
 :math:`\mathbb{Q}(\zeta_q)`, where :math:`\zeta_q=\exp(2i\pi/q)`, and
-can be found in :raw-latex:`\cite[Proposition 13]{[13]}` in a
-rephrased form. For the general case, we follow
-:raw-latex:`\cite[Chapter 8]{[11]*04}` by [11]. The Dedekind
+can be found in Proposition 13 of `[13]`_ in a
+rephrased form. For the general case, we follow Chapter 8 of
+`[11]`_ by Narkiewicz. The Dedekind
 zeta-function associated with an abelian field :math:`K` is given by
 
 .. math::
@@ -1227,9 +1227,9 @@ zeta-function associated with an abelian field :math:`K` is given by
 
    \zeta_K(s)=\prod_{\chi\in X(K)}L(s,\chi)
 
-as per :raw-latex:`\cite[Theorem 8.6]{[11]*04}`. The group
+as per Theorem 8.6 of `[11]`_. The group
 :math:`X(K)` is the group of characters attached to :math:`K`, see
-:raw-latex:`\cite[Proposition 8.4]{[11]*04}`. This
+Proposition 8.4 of `[11]`_. This
 equality :eq:`defZetaDedekind` is proved prime per
 prime, and we can restrict to ideals whose norm is prime to some
 integer. In particular, we can restrict it to the primes that are prime
@@ -1241,8 +1241,8 @@ such that the automorphism of :math:`\mathbb{Q}(\zeta_q)` defined by
 made only of primitive characters associated to the characters in
 :math:`H_q(K)^\perp`. We may select :math:`G_0=H_q(K)` in
 Lemma `Lemma 23 <#dede>`__. Some work involving the decomposition law in
-abelian number fields, which may for instance be found in
-:raw-latex:`\cite[Theorem 8.2]{[11]*04}`, gives us, when the prime
+abelian number fields, which may for instance be found in Theorem 8.2
+`[11]`_, gives us, when the prime
 factors of :math:`q` are all at most :math:`P`, that
 
 .. math::
@@ -1253,7 +1253,7 @@ factors of :math:`q` are all at most :math:`P`, that
    \prod_{\substack{p\ge P,\\ \langle{p}\rangle{}{H_q(K)} =K}}
    \Bigl(1-p^{-|K/H_q(K)|s}\Bigr)^{-|G_q/K|}.
 
-The proof we provide of Lemma `Lemma 23 <#dede>`__ is much simpler, but
+The proof we provide of Lemma :ref:`23<23>` is much simpler, but
 the above analysis establishes that the identities stemming from both
 approaches are the same.
 
@@ -1378,7 +1378,7 @@ for inclusion in a LaTeX-file. The digits presented in LaTeX-format when
 hundred decimal digits of every Euler product over a lattice invariant
 class when the modulus is at most 16.
 
-The computations of the Euler products of Theorem 2
+The computations of the Euler products of Theorem :ref:`2<2>`
 (with :math:`P=2`, the parameter ``bigP`` being used to decide from
 which point onwards we use the usual Euler product or the expression of
 the theorem) is implemented in:
@@ -1403,9 +1403,9 @@ stability of our results with respect of the variation of the
 parameter :math:`P`. This proved to be a very discriminating test.
 
 Furthermore, approximate values for Shanks’ and Lal’s constants are
-known (Finch in :raw-latex:`\cite{[4]}` gives 10 digits) and we
+known (Finch in `[4]`_ gives 10 digits) and we
 agree with those. Finally, the web site
-:raw-latex:`\cite{[7]}` by X. Gourdon and P. Sebah, or the
+`[7]`_ by X. Gourdon and P. Sebah, or the
 attached postscript file on the same page, gives in section 4.4 the
 first fifty digits of the constant they call :math:`A` and which are
 
@@ -1421,14 +1421,14 @@ first fifty digits of the constant they call :math:`A` and which are
    \,39924\,26646\,98594\,38665\cdots
    \end{aligned}
 
-Our result matches that of :raw-latex:`\cite{[7]}`.
+Our result matches that of `[7]`_.
 
 Some observations on the running time and complexity
 ----------------------------------------------------
 
 We tried several large computations to get an idea of the limitations of
 our script with the choice :math:`s=2` in
-Corollary 8. We present five tables:
+Corollary :ref:`8<8>`. We present five tables:
 
 -  A first table for :math:`3\le q\le 100` with the uniform choice
    :math:`P=100` and asking for 100 decimal digits.
@@ -1625,7 +1625,7 @@ of the present method. The time is counted in minutes.
    Preprint (2020), 4p, Addendum to ’Fast multi-precision computation of
    some Euler products’.
 
-   _`[3]` J.-H. Evertse, *On sums of* :math:`S`*-units and linear
+   _`[3]` J.-H. Evertse, *On sums of* :math:`S` *-units and linear
    recurrences*, Compositio Math. **53** (1984), no. 2, 225–244. MR
    766298
 
