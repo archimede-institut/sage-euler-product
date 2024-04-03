@@ -90,7 +90,7 @@ is indeed a positive real number because, when
 
 Here is the central theorem of this paper.
 
-.. container:: thm
+.. highlights::
    :name: PM1
 
    **Theorem** _`2`. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
