@@ -19,7 +19,7 @@ Fast multi-precision computation of some Euler products
 Introduction
 ============
 
-In formula (16) of :raw-latex:`\cite{Shanks*64b}`, D. Shanks obtained
+In formula (16) of `Shanks*64b`, D. Shanks obtained
 the following closed expression to compute the Landau-Ramanujan
 constant:
 
@@ -354,7 +354,7 @@ sources also deal with constants that are sums over primes and a similar
 extension of our work is possible, but kept for later. It should be
 noticed that Equation (20) from :raw-latex:`\cite{Flajolet-Vardi*96}` is
 in fact the formula given as Equation (16)
-in :raw-latex:`\cite{Shanks*64b}` for the Landau-Ramanujan constant.
+in `Shanks*64b` for the Landau-Ramanujan constant.
 
 On the methodology
 ------------------
@@ -543,16 +543,12 @@ digits), see the implementation notes at the end of this paper.
      \begin{aligned}[t]
      0.&79220\,82381\,67541\,66877\,54555\,66579\,02410\,11289\,32250\,98622
      \\&11172\,27973\,45256\,95141\,54944\,12490\,66029\,53883\,98027\,52927\cdots
-     \end{aligned} %%%%
-     % LaTeXForNumber(RR(ll
-     %*
-     % (ss)^2
-     % *pi^4/2^7/(log(1+sqrt(2)))^2), 100,10)
+     \end{aligned} 
      \end{aligned}
 
 
 We deduce the first value given in this Corollary by using
-Theorem `Theorem 2 <#PM1>`__ with the parameters :math:`q=8`,
+Theorem 2 with the parameters :math:`q=8`,
 :math:`\mathcal{A}=\{1\}`, :math:`F(X)=1-8X`, :math:`H(X)=1-8X+16X^2`,
 :math:`s=1`, :math:`\Delta=2` and :math:`\beta=8`. The value of Lal’s
 constant :math:`\lambda` is then deduced by combining the value obtained
@@ -897,7 +893,7 @@ having real numbers for coefficients.
 .. container:: proof
 
    *Proof.* Since we follow the proof of
-   :raw-latex:`\cite[Lemma 1]{Moree*00}`, we shall be rather sketchy. We
+   Lemma 1 of  `Moree*00`_, we shall be rather sketchy. We
    write :math:`F(t)=\prod_{i}(1-\alpha_it)`. By logarithmic
    differentiation, we obtain
 
@@ -1629,8 +1625,6 @@ of the present method. The time is counted in minutes.
       ========= ========= ====
 
 .. container:: thebibliography
-
-   10
 
    H. Cohen, *High precision computations of Hardy-Littlewood
    constants*, preprint (1996), 1–19.
