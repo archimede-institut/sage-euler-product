@@ -46,7 +46,7 @@ restricted class of such products. Let us first introduce the players.
 .. container:: defi
    :name: li
 
-   **Definition 1**. *Two elements :math:`g_1` and :math:`g_2` of
+   **Definition _`1`**. *Two elements :math:`g_1` and :math:`g_2` of
    the abelian group :math:`G` are said to be lattice-invariant if and
    only if they generate the same group. This defines an equivalence
    relation.*
@@ -87,7 +87,7 @@ Here is the central theorem of this paper.
 .. container:: thm
    :name: PM1
 
-   **Theorem 2**. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
+   **Theorem _`2`**. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
    be a lattice-invariant class of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. Let
    :math:`F,H\in \mathbb R[X]` be two polynomials satisfying
@@ -229,7 +229,7 @@ Super fast evaluations
    **Corollary 8**. For every positive integer :math:`m` , the constant
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor of
    :math:`m` is coprime with :math:`\varphi(q)` . As a consequence and
-   under the hypotheses of Theorem 2 with
+   under the hypotheses of Theorem :ref:`2<2>` with
    :math:`\Delta=1`, the products
 
    .. math::
@@ -850,13 +850,13 @@ Here is the fundamental property satisfied by these coefficients.
 Proof of Theorem 2 in general
 ================================================
 
-Let us recall the [21] decomposition. The readers will find in
+Let us recall the Witt decomposition. The readers will find in
 Lemma 1 of `[9]`_ a result of the same flavour. We
 have simply modified the proof and setting as to accommodate polynomials
 having real numbers for coefficients.
 
 .. container:: lem
-   :name: [21]poly
+   :name: Wittpoly
 
    **Lemma 19**. Let
    :math:`F(t) = 1+a_1 t+\ldots+a_{\delta}t^{\delta} \in \mathbb{R}[t]`
@@ -914,8 +914,7 @@ having real numbers for coefficients.
 
    The lemma follows readily by integrating the above relation.
 
-How does the mathematician E. [21] enter the scene? In the paper
-:raw-latex:`\cite{[21]*37}` on Lie algebras, [21] produced in equation
+How does the mathematician E. Witt enter the scene? In the paper
 :math:`(11)` therein a decomposition that is the prototype of the above
 expansion.
 
@@ -923,7 +922,7 @@ expansion.
    :name: apriorimaj
 
    **Lemma 20**. We use the hypotheses and notation of
-   Lemma * `Lemma 19 <#[21]poly>` \__ * . Let :math:`\beta\ge2` be larger
+   Lemma 19. Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
@@ -1698,5 +1697,5 @@ of the present method. The time is counted in minutes.
    sequences*, Bull. Austral. Math. Soc. **44** (1991), no. 2, 215–223.
    MR 1126359
 
-   _`[21]` E. [21], *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
+   _`[21]` E. Witt, *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
    **177** (1937), 152–160. MR 1581553
