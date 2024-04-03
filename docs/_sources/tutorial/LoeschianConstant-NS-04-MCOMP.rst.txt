@@ -1453,7 +1453,7 @@ Corollary :ref:`8<8>`. The time is given in tenth of a
 second, indicated by “s/10”. The column with the tag “\ :math:`\#m's`"
 contains the number of indices :math:`m\le M` such that
 :math:`m|\varphi(q)^\infty`. We otherwise follow the notation of
-Theorem 2.
+Theorem :ref:`2<2>`.
 
 It seems likely, when looking at
 Tables `2 <#HundredDigits>`__, `3 <#ThousandDigits>`__, `4 <#ThousandDigitsbis>`__
@@ -1463,30 +1463,6 @@ consumption. This number is controlled by :math:`\varphi(q)`, since this
 is the number of characters, and by the number of :math:`m`\ ’s
 required, a value that is on the whole controlled by
 :math:`r=\omega(\varphi(q))`
-
-.. container::
-   :name: HundredDigits
-
-   .. table:: Time used when asking for 100 digits
-
-      +-----------+---------------------+-----------+---------------+--------------------+-----------+------+
-      |           |                     |           |               |                    |           | time |
-      | :math:`q` | :mat h:`\varphi(q)` | :math:`r` | :math:`\#m's` | :math:`|G^\sharp|` | :math:`M` | s/10 |
-      |           |                     |           |               |                    |           |      |
-      +-----------+---------------------+-----------+---------------+--------------------+-----------+------+
-
- 
-
-.. container::
-   :name: HundredDigitsbis
-
-   .. table:: Time used when asking for 100 digits
-
-      +-----------+--------------------+-----------+---------------+--------------------+-----------+------+
-      |           |                    |           |               |                    |           | time |
-      | :math:`q` | :math:`\varphi(q)` | :math:`r` | :math:`\#m's` | :math:`|G^\sharp|` | :math:`M` | s/10 |
-      |           |                    |           |               |                    |           |      |
-      +-----------+--------------------+-----------+---------------+--------------------+-----------+------+
 
 .. container::
    :name: ThousandDigits
