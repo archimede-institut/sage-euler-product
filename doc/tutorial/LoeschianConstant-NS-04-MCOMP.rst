@@ -46,8 +46,8 @@ restricted class of such products. Let us first introduce the players.
 .. container:: defi
    :name: li
 
-   **Definition _`1`**. *Two elements :math:`g_1` and :math:`g_2` of
-   the abelian group :math:`G` are said to be lattice-invariant if and
+   **Definition _`1`**. *Two elements* :math:`g_1` *and* :math:`g_2` *of
+   the abelian group* :math:`G` *are said to be lattice-invariant if and
    only if they generate the same group. This defines an equivalence
    relation.*
 
@@ -87,7 +87,7 @@ Here is the central theorem of this paper.
 .. container:: thm
    :name: PM1
 
-   **Theorem 2**. _`2` Let :math:`q` be some modulus and :math:`\mathcal{A}` 
+   **Theorem** _`2`. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
    be a lattice-invariant class of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. Let
    :math:`F,H\in \mathbb R[X]` be two polynomials satisfying
@@ -148,7 +148,7 @@ Here is the central theorem of this paper.
    *
 
 In the case :math:`H/F=1-X`, the relevant identity is proved in
-Theorem 18 and is the heart of this paper. Our
+Theorem :ref:`18<18>` and is the heart of this paper. Our
 result applies in particular to :math:`\mathcal{A}=\{1\}` and to
 :math:`\mathcal{A}=\{-1\}`. When :math:`q=4` and
 :math:`\mathcal{A}=\{-1\}`, we readily find that only :math:`t=1`
@@ -159,7 +159,7 @@ Lemma 16, this results in :eq:`mirs`.
 
 .. container:: remark
 
-   *Remark 3*. Lemma 21 ensures that we may select
+   *Remark 3*. Lemma :ref:`21<21>` ensures that we may select
 
    .. math:: \beta = \max\Bigl(2, \sum_{1\le k\le\deg F}|a_k|, \sum_{1\le k\le\deg H}|b_k|\Bigr)
 
@@ -170,11 +170,11 @@ Lemma 16, this results in :eq:`mirs`.
 .. container:: remark
 
    *Remark 4*. The numbers :math:`s_{H/F}(n)` may be computed via the
-   Girard-Newton relations recalled in Lemma 19.
+   Girard-Newton relations recalled in Lemma :ref:`19<19>`.
 
 .. container:: remark
 
-   *Remark 5*. We prove in Lemma 22 that, when
+   *Remark 5*. We prove in Lemma :ref:`22<22>` that, when
    :math:`K` and :math:`\mathscr{A}` are fixed, the quantity
    :math:`\sum_{\substack{L\in
    \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
@@ -226,7 +226,7 @@ Super fast evaluations
 .. container:: cor
    :name: superfast
 
-   **Corollary 8**. For every positive integer :math:`m` , the constant
+   **Corollary** _`8`. For every positive integer :math:`m` , the constant
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor of
    :math:`m` is coprime with :math:`\varphi(q)` . As a consequence and
    under the hypotheses of Theorem :ref:`2<2>` with
@@ -257,7 +257,7 @@ data at the end of this paper.
 .. container:: proof
 
    *Proof of Corollary 8.*
-   Lemma 16 tells us that
+   Lemma :ref:`16<16>` tells us that
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor
    of :math:`m` is coprime with :math:`\varphi(q)`. Let us decompose
    :math:`\varphi(q)` in prime factors:
@@ -318,7 +318,7 @@ The function ``GetEulerProds(q, s, F, H, nbdecimals)`` gives all these
 Euler products. The polynomials :math:`F` and :math:`H` are to be given
 as polynomial expressions with the variable :math:`x`. The special
 function ``GetVs(q, s, nbdecimals)`` gives all the Euler products of
-Corollary 8.
+Corollary :ref:`8<8>`.
 
 Some historical pointers
 ------------------------
@@ -359,7 +359,7 @@ in `[16]`_ for the Landau-Ramanujan constant.
 On the methodology
 ------------------
 
-We decided to prove Theorem 2 directly, by giving the
+We decided to prove Theorem :ref:`2<2>` directly, by giving the
 formula and shuffling terms. This gives a short and self-contained
 proof. However, we did not come up with the coefficients
 :math:`C_{\mathscr{A}}(K,m,F/H)` by some lucky strike! There is a path
@@ -435,7 +435,7 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
       \end{aligned}
 
 
-This follows from Theorem `Theorem 2 <#PM1>`__ with the choices
+This follows from Theorem :ref:`2<2>` with the choices
 :math:`q=3` and :math:`\mathcal{A}=\{2\}` for :math:`\alpha_0^{(3)}`,
 and :math:`q=12` and :math:`\mathcal{A}=\{5,7,11\}` for :math:`\beta_0`.
 The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
@@ -444,7 +444,7 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
 .. container:: cor
    :name: sha
 
-   **Corollary 10** (Shanks’ Constant). We have
+   **Corollary** _`10` (Shanks’ Constant). We have
 
    .. math::
 
@@ -455,9 +455,6 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
       \\&74977\,29139
       14789\,05432\,60424\,60170\,16444\,88885
       \\&94814\,40512\,03907\,95084\cdots
-      %% (1-4*x)*(1/x+1)^2/(1/x-1)^2=(1-2*x-7*x^2-4*x^3)/(1-2*x+x^2)
-      %% GetEulerProds(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50,2,1)
-      %% ss=RR(0.9569453478516011834369670572738918287531749772913914789054326042460170164448888594814405120390795084312069)
       \end{aligned}
 
    As a consequence Shanks’ constant satisfies
@@ -479,7 +476,7 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
       \end{aligned}
 
 
-We deduce this Corollary from Theorem `Theorem 2 <#PM1>`__ by selecting
+We deduce this Corollary from Theorem :ref:`2<2>` by selecting
 the parameters :math:`q=8`, :math:`\mathcal{A}=\{1\}`,
 :math:`F(X)=1-2X-7X^2-4X^3`, :math:`H(X)=1-2X+X^2`, :math:`s=1`,
 :math:`\Delta=2` and :math:`\beta=4`. As explained in
@@ -511,16 +508,12 @@ digits), see the implementation notes at the end of this paper.
 
 .. container:: cor
 
-   **Corollary 11** (Lal’s Constant). We have
+   **Corollary** _`11` (Lal’s Constant). We have
 
    .. math::
 
       \prod_{p\equiv 1[8]}\frac{p(p-8)}{(p-4)^2}
       =
-      % (1/x)*(1/x-8)/(1/x-4)^2 = (1-8*x)/(1-8*x+16*x^2)
-      %% 0.88307
-      %% 
-      ll=RR(0.883071004743946671417834299003108534676888834880973470719295159395211946990656596885799383286037916462)
       \begin{aligned}[t]
       0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768
       \\&88834\,88097
@@ -548,11 +541,11 @@ digits), see the implementation notes at the end of this paper.
 
 
 We deduce the first value given in this Corollary by using
-Theorem 2 with the parameters :math:`q=8`,
+Theorem :ref`2<2>` with the parameters :math:`q=8`,
 :math:`\mathcal{A}=\{1\}`, :math:`F(X)=1-8X`, :math:`H(X)=1-8X+16X^2`,
 :math:`s=1`, :math:`\Delta=2` and :math:`\beta=8`. The value of Lal’s
 constant :math:`\lambda` is then deduced by combining the value obtained
-in Corollary `Corollary 10 <#sha>`__ together with this one. This
+in Corollary :ref:`10<10>` together with this one. This
 splitting of the computation in two introduces smaller polynomials and
 this leads to a lesser running time. As explained in
 `[17]`_, the number of primes :math:`\le X` of the
@@ -597,7 +590,7 @@ power.
 
 .. container:: cor
 
-   **Corollary 12**. Let :math:`\mathscr{A}_0` be the subset of
+   **Corollary** _`12`. Let :math:`\mathscr{A}_0` be the subset of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` consisting of all the
    multiplicative generators of :math:`G`. Assume :math:`q` is such that
    such an :math:`\mathscr{A}_0` is not empty. For any real parameter
@@ -633,7 +626,7 @@ and the corresponding script.
 
 .. _proof-of-theorem-pm1-when-fh11-x:
 
-Proof of Theorem `Theorem 2 <#PM1>`__ when :math:`F/H=1/(1-X)`
+Proof of Theorem :ref:`2<2>` when :math:`F/H=1/(1-X)`
 ==============================================================
 
 We follow the notation introduced in `[defCAKkbis] <#defCAKkbis>`__.
@@ -654,7 +647,7 @@ subgroup of :math:`G`. Let us first note a simple property.
 .. container:: lem
    :name: cyclic
 
-   **Lemma 13**. *In a finite cyclic group :math:`L`, the map that
+   **Lemma** _`13`. *In a finite cyclic group :math:`L`, the map that
    associates to a subgroup of :math:`L` its cardinality is a one-to-one
    map between the set of divisors of :math:`|L|` and the set of its
    subgroups. Furthermore, any subgroup of a cyclic group is cyclic.*
@@ -670,7 +663,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: prop
    :name: funda
 
-   **Proposition 14**. For any positive integer :math:`\ell`, any prime
+   **Proposition** _`14`. For any positive integer :math:`\ell`, any prime
    :math:`p` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
@@ -704,7 +697,7 @@ Here is the fundamental property satisfied by these coefficients.
       \sum_{\substack{K\in \mathscr{G},\\ B^{[h]} \subset
       K}}\mu(|L|/|K|).
 
-   By Lemma `Lemma 13 <#cyclic>`__ and the Möbius function
+   By Lemma :ref:`13<13>` and the Möbius function
    characteristic property, the last summation vanishes when
    :math:`B^{[h]}\neq L` and takes the value 1 otherwise. Since
    :math:`(B^{[h]})^{[t]}=B^{[ht]}`, this gives us
@@ -727,7 +720,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: cor
    :name: life
 
-   **Corollary 15**. For any prime :math:`p`, any positive real number
+   **Corollary** _`15`. For any prime :math:`p`, any positive real number
    :math:`s` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
@@ -765,7 +758,7 @@ Here is the fundamental property satisfied by these coefficients.
       \sum_{\chi\in K^\perp}\sum_{h\ge1}\frac{\chi(p^h)C_{\mathscr{A}}(K,m,1-X)}{mhp^{mhs}}.
 
    We set :math:`\ell=mh` and appeal to
-   Proposition `Proposition 14 <#funda>`__ to infer that
+   Proposition :ref:`14<14>` to infer that
 
    .. math:: S(p)=\sum_{\ell\ge1}\frac{1}{\ell p^{\ell s}}1\!\!\!1_{p\in\mathscr{A}},
 
@@ -774,7 +767,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: simpi
 
-   **Lemma 16**. If :math:`m` has a prime factor that does not divide
+   **Lemma** _`16`. If :math:`m` has a prime factor that does not divide
    :math:`\varphi(q)`, we have :math:`C_{\mathscr{A}}(K,m,1-X)=0`.
 
 .. container:: proof
@@ -794,7 +787,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: lem
    :name: basic
 
-   **Lemma 17**. Let :math:`f>1` be a real parameter. We have
+   **Lemma** _`17`. Let :math:`f>1` be a real parameter. We have
 
    .. math::
 
@@ -823,7 +816,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: thm
    :name: mainspe
 
-   **Theorem 18**. For every :math:`s>1` and every :math:`P\ge2`, we
+   **Theorem** _`18`. For every :math:`s>1` and every :math:`P\ge2`, we
    have
 
    .. math::
@@ -838,7 +831,7 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: proof
 
    *Proof.* This is a simple consequence of
-   Corollary `Corollary 15`. Indeed, we may shuffle our series
+   Corollary :ref:`15<15>`. Indeed, we may shuffle our series
    to our fancy by the absolute summability ensured by the condition
    :math:`s>1` and the bounds :math:`|C_{\mathscr{A}}(K,k)/k|\le |G|`,
    as well as :math:`|\mathscr{G}|\le |G|`. This last bound follows from
@@ -847,7 +840,7 @@ Here is the fundamental property satisfied by these coefficients.
 
 .. _proof-of-theorem-pm1-in-general:
 
-Proof of Theorem 2 in general
+Proof of Theorem :ref:`2<2>` in general
 ================================================
 
 Let us recall the Witt decomposition. The readers will find in
@@ -858,7 +851,7 @@ having real numbers for coefficients.
 .. container:: lem
    :name: Wittpoly
 
-   **Lemma 19**. Let
+   **Lemma** _`19`. Let
    :math:`F(t) = 1+a_1 t+\ldots+a_{\delta}t^{\delta} \in \mathbb{R}[t]`
    be a polynomial of degree :math:`\delta`. Let
    :math:`\alpha_{1},\ldots,\alpha_{\delta}` be the inverses of its
@@ -921,8 +914,8 @@ expansion.
 .. container:: lem
    :name: apriorimaj
 
-   **Lemma 20**. We use the hypotheses and notation of
-   Lemma 19. Let :math:`\beta\ge2` be larger
+   **Lemma** _`20`. We use the hypotheses and notation of
+   Lemma :ref:`19<19>`. Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
@@ -972,7 +965,7 @@ simplistic one.
 .. container:: lem
    :name: boundedt
 
-   **Lemma 22**. The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
+   **Lemma** _`22`. The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
    where :math:`\mathcal{L}=\{L\in
    \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
    depends only on :math:`\gcd(t,\varphi(q))`.
@@ -991,7 +984,7 @@ simplistic one.
 
 .. container:: proof
 
-   *Proof of Theorem 2.*  The proof requires
+   *Proof of Theorem* :ref:`2<2>`*.*  The proof requires
    several steps. The very first one is a direct consequence
    of :eq:`Fhatb`, which leads to the identity
 
@@ -1005,7 +998,7 @@ simplistic one.
    this point :eq:`formal-FG` is only established as a
    formal identity. Our second step is to
    establish :eq:`formal-FG` for all :math:`t\in\mathbb{C}`
-   with :math:`|t| < 1/\beta`. By Lemma `Lemma 20 <#apriorimaj>`__, we
+   with :math:`|t| < 1/\beta`. By Lemma :ref:`20<20>`, we
    know that :math:`|b_F(j)-b_H(j)|\le 4\max(\deg F,\deg H)\beta^j/j`.
    Therefore, for any bound :math:`J`, we have
 
@@ -1060,7 +1053,7 @@ simplistic one.
       p+q\mathbb{Z}\in\mathcal{A}}}(1-p^{-js})^{b_F(j)-b_H(j)}=
       \prod_{ j\ge 2}\zeta_P(js;q,\mathscr{A})^{b_H(j)-b_F(j)}
 
-   in the notation of Theorem 18. We use this
+   in the notation of Theorem :ref:`18<18>`. We use this
    theorem to infer that
 
    .. math::
@@ -1632,7 +1625,7 @@ of the present method. The time is counted in minutes.
    Preprint (2020), 4p, Addendum to ’Fast multi-precision computation of
    some Euler products’.
 
-   _`[3]` J.-H. Evertse, *On sums of :math:`S`-units and linear
+   _`[3]` J.-H. Evertse, *On sums of* :math:`S`*-units and linear
    recurrences*, Compositio Math. **53** (1984), no. 2, 225–244. MR
    766298
 
@@ -1650,7 +1643,7 @@ of the present method. The time is counted in minutes.
    _`[7]` X. Gourdon and P. Sebah, *Constants from number theory*,
    http://numbers.computation.free.fr/Constants/constants.html (2010).
 
-   _`[8]` M. Lal, *Primes of the form :math:`n^{4}+1`*, Math. Comp. **21**
+   _`[8]` M. Lal, *Primes of the form* :math:`n^{4}+1`, Math. Comp. **21**
    (1967), 245–247. MR 0222007
 
    _`[9]` P. Moree, *Approximation of singular series constant and automata.
@@ -1673,14 +1666,14 @@ of the present method. The time is counted in minutes.
    1970. MR 0255476
 
    _`[14]` D. Shanks, *On the conjecture of Hardy & Littlewood concerning the
-   number of primes of the form :math:`n^{2}+a`*, Math. Comp. **14**
+   number of primes of the form* :math:`n^{2}+a`, Math. Comp. **14**
    (1960), 320–332. MR 0120203
 
    _`[15]` D. Shanks, *On numbers of the form :math:`n^{4}+1`*, Math. Comput. **15**
    (1961), 186–189. MR 0120184
 
-   _`[16]` D. Shanks, *The second-order term in the asymptotic expansion of
-   :math:`B(x)`*, Math. Comp. **18** (1964), 75–86. MR 0159174
+   _`[16]` D. Shanks, *The second-order term in the asymptotic expansion of*
+   :math:`B(x)`, Math. Comp. **18** (1964), 75–86. MR 0159174
 
    _`[17]` D. Shanks, *Lal’s constant and generalizations*, Math. Comp. **21**
    (1967), 705–707. MR 0223315
