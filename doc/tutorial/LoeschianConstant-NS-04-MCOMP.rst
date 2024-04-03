@@ -91,7 +91,6 @@ is indeed a positive real number because, when
 Here is the central theorem of this paper.
 
 .. highlights::
-   :name: PM1
 
    **Theorem** _`2`. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
    be a lattice-invariant class of
@@ -151,7 +150,6 @@ Here is the central theorem of this paper.
         (s+P)
         \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{gathered}
 
-   *
 
 In the case :math:`H/F=1-X`, the relevant identity is proved in
 Theorem :ref:`18<18>` and is the heart of this paper. Our
@@ -644,10 +642,12 @@ subgroup of :math:`G`. Let us first note a simple property.
 .. container:: lem
    :name: cyclic
 
-   **Lemma** _`13`. *In a finite cyclic group :math:`L`, the map that
+   |begthm|**Lemma** _`13`.
+   |midthm| *In a finite cyclic group :math:`L`, the map that
    associates to a subgroup of :math:`L` its cardinality is a one-to-one
    map between the set of divisors of :math:`|L|` and the set of its
    subgroups. Furthermore, any subgroup of a cyclic group is cyclic.*
+   |endthm|
 
 .. container:: proof
 
@@ -1665,3 +1665,16 @@ of the present method. The time is counted in minutes.
 
    _`[21]` E. Witt, *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
    **177** (1937), 152–160. MR 1581553
+
+.. |begthm| raw:: html
+
+   <div style="background-color: blue!30; width: 100%; padding: 5px;">
+
+.. |midthm| raw:: html
+
+   </div>
+   <div style="background-color: blue!10; width: 95%; padding: 5px;">
+
+.. |endthm| raw:: html
+
+   </div>
