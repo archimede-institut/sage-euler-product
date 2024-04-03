@@ -19,7 +19,7 @@ Fast multi-precision computation of some Euler products
 Introduction
 ============
 
-In formula (16) of `Shanks*64b`, D. Shanks obtained
+In formula (16) of `Shanks*64b`_, D. Shanks obtained
 the following closed expression to compute the Landau-Ramanujan
 constant:
 
@@ -342,12 +342,12 @@ Complementary to the published papers, three influent preprints on how
 to compute Euler products with high accuracy have been floating on the
 web: `Flajolet-Vardi*96`_ a memo started in 1990 in
 its 1996 version by Ph. Flajolet and I. Vardi,
-`Cohen*96b`_ by H. Cohen and
+`[1]`_ by H. Cohen and
 `Gourdon-Sebah*10`_ by X. Gourdon and P. Sebah.
 Comparing the desired constant with zeta-values is the overarching idea.
 The set of zeta-values is extended to :math:`L`-values of (some)
 quadratic characters in the three, in some way or another, and to the
-values of Dedekind zeta-function in `Cohen*96b`_. No
+values of Dedekind zeta-function in `[1]`_. No
 complete error term analysis is presented, sometimes because the series
 used are simple enough to make this analysis rather easy. These three
 sources also deal with constants that are sums over primes and a similar
@@ -1382,7 +1382,7 @@ values of the constants will be further presented in a format suitable
 for inclusion in a LaTeX-file. The digits presented in LaTeX-format when
 ``WithLaTeX`` :math:`=1` are always accurate. For instance, the call
 ``GetVs(12, 2, 100, 100, 2, 1)`` is the one used to prepare the addendum
-:raw-latex:`\cite{Ettahri-Ramare-Surel*19a}` in which we give the first
+`Ettahri-Ramare-Surel*19a`_ in which we give the first
 hundred decimal digits of every Euler product over a lattice invariant
 class when the modulus is at most 16.
 
@@ -1626,10 +1626,10 @@ of the present method. The time is counted in minutes.
 
 .. container:: thebibliography
 
-   _`Cohen*96b` H. Cohen, *High precision computations of Hardy-Littlewood
+   _`[1]` H. Cohen, *High precision computations of Hardy-Littlewood
    constants*, preprint (1996), 1–19.
 
-   Salma Ettahri, Olivier Ramaré, and Léon Surel, *Some Euler Products*,
+   _`Ettahri-Ramare-Surel*19a` Salma Ettahri, Olivier Ramaré, and Léon Surel, *Some Euler Products*,
    Preprint (2020), 4p, Addendum to ’Fast multi-precision computation of
    some Euler products’.
 
