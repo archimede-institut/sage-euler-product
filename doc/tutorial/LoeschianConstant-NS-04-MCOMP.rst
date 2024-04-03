@@ -87,7 +87,7 @@ Here is the central theorem of this paper.
 .. container:: thm
    :name: PM1
 
-   **Theorem 2**_`2`. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
+   **Theorem 2**. _`2` Let :math:`q` be some modulus and :math:`\mathcal{A}` 
    be a lattice-invariant class of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. Let
    :math:`F,H\in \mathbb R[X]` be two polynomials satisfying
@@ -1628,22 +1628,22 @@ of the present method. The time is counted in minutes.
    _`[1]` H. Cohen, *High precision computations of Hardy-Littlewood
    constants*, preprint (1996), 1–19.
 
-   _`[2]` Salma Ettahri, Olivier Ramaré, and Léon Surel, *Some Euler Products*,
+   _`[2]` S. Ettahri, O. Ramaré and L. Surel, *Some Euler Products*,
    Preprint (2020), 4p, Addendum to ’Fast multi-precision computation of
    some Euler products’.
 
-   _`[3]` Jan-Hendrik Evertse, *On sums of :math:`S`-units and linear
+   _`[3]` J.-H. Evertse, *On sums of :math:`S`-units and linear
    recurrences*, Compositio Math. **53** (1984), no. 2, 225–244. MR
    766298
 
-   _`[4]` Steven R. Finch, *Mathematical constants*, Encyclopedia of
+   _`[4]` S. R. Finch, *Mathematical constants*, Encyclopedia of
    Mathematics and its Applications, vol. 94, Cambridge University
    Press, Cambridge, 2003. MR 2003519
 
    _`[5]` P. Flajolet and I. Vardi, *Zeta function expansions of classical
    constants*, preprint (1996), 1–10.
 
-   _`[6]` Étienne Fouvry, Claude Levesque, and Michel Waldschmidt,
+   _`[6]` É. Fouvry, C. Levesque and M. Waldschmidt,
    *Representation of integers by cyclotomic binary forms*, Acta Arith.
    **184** (2018), no. 1, 67–86. MR 3826641
 
@@ -1657,7 +1657,7 @@ of the present method. The time is counted in minutes.
    with an appendix by Gerhard Niklasch.*, Manuscripta Matematica
    **101** (2000), no. 3, 385–399.
 
-   _`[10]` Pieter Moree, *On the average number of elements in a finite field
+   _`[10]` P. Moree, *On the average number of elements in a finite field
    with order or index in a prescribed residue class*, Finite Fields
    Appl. **10** (2004), no. 3, 438–463. MR 2067608
 
@@ -1668,7 +1668,7 @@ of the present method. The time is counted in minutes.
    _`[12]` OEIS Foundation Inc., *The on-line encyclopedia of integer sequence*,
    2019, http://OEIS.org/.
 
-   _`[13]` Jean-Pierre Serre, *Cours d’arithmétique*, Collection SUP: “Le
+   _`[13]` J.-P. Serre, *Cours d’arithmétique*, Collection SUP: “Le
    Mathématicien”, vol. 2, Presses Universitaires de France, Paris,
    1970. MR 0255476
 
@@ -1689,7 +1689,7 @@ of the present method. The time is counted in minutes.
    functions of several variables*, Rend. Semin. Mat. Univ. Politec.
    Torino **69** (2011), no. 1, 97–110. MR 2884710
 
-   _`[19]` László Tóth, *On the number of cyclic subgroups of a finite Abelian
+   _`[19]` L. Tóth, *On the number of cyclic subgroups of a finite Abelian
    group*, Bull. Math. Soc. Sci. Math. Roumanie (N.S.) **55(103)**
    (2012), no. 4, 423–428. MR 2963406
 
