@@ -19,7 +19,7 @@ Fast multi-precision computation of some Euler products
 Introduction
 ============
 
-In formula (16) of `Shanks*64b`_, D. Shanks obtained
+In formula (16) of `[16]`_, D. Shanks obtained
 the following closed expression to compute the Landau-Ramanujan
 constant:
 
@@ -57,8 +57,8 @@ restricted class of such products. Let us first introduce the players.
    subgroup, associates the subset of its generators, is one-to-one.*
 
 The cardinality of :math:`G^\sharp` can be swiftly inferred from
-Theorem 3 of `Toth*11`_ or from
-Theorem 1 of `Toth*12`_, both by L. Tóth. When
+Theorem 3 of `[18]`_ or from
+Theorem 1 of `[19]`_, both by L. Tóth. When
 :math:`\mathcal{A}` is a subset of
 :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`, we define
 :math:`\langle{\mathcal{A}}\rangle{}` to be the (multiplicative)
@@ -267,7 +267,7 @@ data at the end of this paper.
    :math:`m=p_1^{\beta_1}\cdots
    p_r^{\beta_r}` with :math:`\beta_i\le (\log M)/\log p_i` for
    :math:`i\le r`. In particular, there are at most
-   :math:`((\log M)/\log 2)^r` such integers. By `[fineq] <#fineq>`__,
+   :math:`((\log M)/\log 2)^r` such integers. By `fineq`,
    the contribution of the integers :math:`m>M` to the Euler product to
    be computed is :math:`1+\mathcal{O}((\beta/P^s)^M)`, which is
    :math:`1+\mathcal{O}(2^{-M})` by the assumption :math:`P^s\ge2\beta`.
@@ -284,9 +284,9 @@ coefficients :math:`s_{H/F}(m)` satisfy a linear recurrence (of degree
 at most :math:`\max(\deg F,\deg H)`) and as such are expected to grow
 exponentially fast if they are not roots of unity. When for instance the
 coefficients of the recurrence belong to some number field, this is
-proved by Evertse in `Evertse*84`_ and independently by
+proved by Evertse in `[3]`_ and independently by
 van der Poorten and Schlickewei in
-`vanderPoorten-Schlickewei*91`_. This is the case where
+`[20]`_. This is the case where
 we may expect cancellations to happen. Since the sum defining
 :math:`C_{\mathscr{A}}(K,m,F/H)` is of the form
 :math:`\sum_{t|m}\mu(t)r_0(t)s_{H/F}(m/t)` for some function
@@ -323,13 +323,13 @@ Corollary 8.
 Some historical pointers
 ------------------------
 
-D. Shanks in `Shanks*60`_ (resp.
-`Shanks*61`_, resp. `Shanks*67`_) has
+D. Shanks in `[14]`_ (resp.
+`[15]`_, resp. `[17]`_) has
 already been able to compute an Euler product over primes congruent to 1
 modulo 4 (resp. to 1 modulo 8 in both instances), by using an identity
-(Lemma of section 2 for `Shanks*60`_, Equation (5) in
-`Shanks*61`_ and the Lemma of section 3
-in `Shanks*67`_) that is a precursor of our
+(Lemma of section 2 for `[14]`_, Equation (5) in
+`[15]`_ and the Lemma of section 3
+in `[17]`_) that is a precursor of our
 Lemma 19.
 
 In these three examples, the author has only been able to compute the
@@ -340,10 +340,10 @@ complement these results by giving the first hundred decimals.
 
 Complementary to the published papers, three influent preprints on how
 to compute Euler products with high accuracy have been floating on the
-web: `Flajolet-Vardi*96`_ a memo started in 1990 in
+web: `[5]`_ a memo started in 1990 in
 its 1996 version by Ph. Flajolet and I. Vardi,
 `[1]`_ by H. Cohen and
-`Gourdon-Sebah*10`_ by X. Gourdon and P. Sebah.
+`[7]`_ by X. Gourdon and P. Sebah.
 Comparing the desired constant with zeta-values is the overarching idea.
 The set of zeta-values is extended to :math:`L`-values of (some)
 quadratic characters in the three, in some way or another, and to the
@@ -352,9 +352,9 @@ complete error term analysis is presented, sometimes because the series
 used are simple enough to make this analysis rather easy. These three
 sources also deal with constants that are sums over primes and a similar
 extension of our work is possible, but kept for later. It should be
-noticed that Equation (20) from `Flajolet-Vardi*96`_ is
+noticed that Equation (20) from `[5]`_ is
 in fact the formula given as Equation (16)
-in `Shanks*64b`_ for the Landau-Ramanujan constant.
+in `[16]`_ for the Landau-Ramanujan constant.
 
 On the methodology
 ------------------
@@ -372,7 +372,7 @@ Application to some constants
 
 This paper has been inspired by the wish to compute with high numerical
 precision two constants that appear in the paper
-`Fouvry-Levesque-Waldschmidt*18`_ by É. Fouvry, C.
+`[6]`_ by É. Fouvry, C.
 Levesque and M. Waldschmidt. In the notation of that paper, they are
 
 .. math::
@@ -393,7 +393,7 @@ and
 Both occur in number theory as densities. The number of integers
 :math:`n` of the shape :math:`n=x^2-xy+y^2`, where :math:`x` and
 :math:`y` are integers (these are the so-called Loeschian numbers, see
-the sequence A003136 entry in `OEIS`_) is
+the sequence A003136 entry in `[12]`_) is
 asymptotically approximated by
 
 .. math::
@@ -403,12 +403,12 @@ asymptotically approximated by
 
 This motivates our interest in the first constant. The second one arises
 in counting the number of Loeschian numbers that are also sums of two
-squares (see sequence A301430 entry of `OEIS`_), namely
+squares (see sequence A301430 entry of `[12]`_), namely
 we have
 
 .. math:: N'(x)=\beta_0\frac{x(1+o(1))}{(\log x)^{3/4}}.
 
-From the sequence A301429 entry in `OEIS`_, we know
+From the sequence A301429 entry in `[12]`_, we know
 that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
 (many!) more digits. Similarly it is known that
 :math:`\beta_0=0.30231614235\ldots`.
@@ -483,11 +483,11 @@ We deduce this Corollary from Theorem `Theorem 2 <#PM1>`__ by selecting
 the parameters :math:`q=8`, :math:`\mathcal{A}=\{1\}`,
 :math:`F(X)=1-2X-7X^2-4X^3`, :math:`H(X)=1-2X+X^2`, :math:`s=1`,
 :math:`\Delta=2` and :math:`\beta=4`. As explained in
-`Shanks*61`_, the number of primes :math:`\le X` of the
+`[15]`_, the number of primes :math:`\le X` of the
 form :math:`m^4+1` is conjectured to be asymptotically equal to
 :math:`I\cdot
 X^{1/4}/\log X`. The name “Shanks’ constant” comes from Chapter 2, page
-90 of `Finch*03`_.
+90 of `[4]`_.
 
 When using the script that we introduce below, this value is obtained by
 multiplying by :math:`\frac{\pi^2}{16\log(1+\sqrt{2})}` the value
@@ -555,11 +555,11 @@ constant :math:`\lambda` is then deduced by combining the value obtained
 in Corollary `Corollary 10 <#sha>`__ together with this one. This
 splitting of the computation in two introduces smaller polynomials and
 this leads to a lesser running time. As explained in
-`Shanks*67`_, the number of primes :math:`\le X` of the
+`[17]`_, the number of primes :math:`\le X` of the
 form :math:`(m+1)^2+1` and such that :math:`(m-1)^2+1` is also prime, is
 conjectured to be asymptotic to :math:`\lambda\cdot
 X^{1/2}/(\log X)^2`. The name “Lal’s Constant” comes from the papers
-`Lal*67`_ and `Shanks*67`_. When using
+`[8]`_ and `[17]`_. When using
 the script that we introduce below, the first value is obtained with the
 call
 
@@ -573,7 +573,7 @@ not try to get 5000 digits as we did for the products of
 Corollary `Corollary 8 <#superfast>`__.
 
 We close this section by mentioning another series of challenging
-constants. In `Moree*04b`_, P. Moree computes inter
+constants. In `[10]`_, P. Moree computes inter
 alia the series of constants :math:`A_\chi` defined six lines after
 Lemma 3, page 452, by
 
@@ -850,13 +850,13 @@ Here is the fundamental property satisfied by these coefficients.
 Proof of Theorem 2 in general
 ================================================
 
-Let us recall the Witt decomposition. The readers will find in
-Lemma 1 of `Moree*00`_ a result of the same flavour. We
+Let us recall the [21] decomposition. The readers will find in
+Lemma 1 of `[9]`_ a result of the same flavour. We
 have simply modified the proof and setting as to accommodate polynomials
 having real numbers for coefficients.
 
 .. container:: lem
-   :name: Wittpoly
+   :name: [21]poly
 
    **Lemma 19**. Let
    :math:`F(t) = 1+a_1 t+\ldots+a_{\delta}t^{\delta} \in \mathbb{R}[t]`
@@ -893,7 +893,7 @@ having real numbers for coefficients.
 .. container:: proof
 
    *Proof.* Since we follow the proof of
-   Lemma 1 of  `Moree*00`_, we shall be rather sketchy. We
+   Lemma 1 of  `[9]`_, we shall be rather sketchy. We
    write :math:`F(t)=\prod_{i}(1-\alpha_it)`. By logarithmic
    differentiation, we obtain
 
@@ -914,8 +914,8 @@ having real numbers for coefficients.
 
    The lemma follows readily by integrating the above relation.
 
-How does the mathematician E. Witt enter the scene? In the paper
-:raw-latex:`\cite{Witt*37}` on Lie algebras, Witt produced in equation
+How does the mathematician E. [21] enter the scene? In the paper
+:raw-latex:`\cite{[21]*37}` on Lie algebras, [21] produced in equation
 :math:`(11)` therein a decomposition that is the prototype of the above
 expansion.
 
@@ -923,7 +923,7 @@ expansion.
    :name: apriorimaj
 
    **Lemma 20**. We use the hypotheses and notation of
-   Lemma * `Lemma 19 <#Wittpoly>` \__ * . Let :math:`\beta\ge2` be larger
+   Lemma * `Lemma 19 <#[21]poly>` \__ * . Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
    have
 
@@ -1225,9 +1225,9 @@ Link with abelian field theory
 The case :math:`G_0=\{1\}` in the identity of Lemma `Lemma 23 <#dede>`__
 is classical in Dedekind zeta function theory for the field
 :math:`\mathbb{Q}(\zeta_q)`, where :math:`\zeta_q=\exp(2i\pi/q)`, and
-can be found in :raw-latex:`\cite[Proposition 13]{Serre*70}` in a
+can be found in :raw-latex:`\cite[Proposition 13]{[13]}` in a
 rephrased form. For the general case, we follow
-:raw-latex:`\cite[Chapter 8]{Narkiewicz*04}` by Narkiewicz. The Dedekind
+:raw-latex:`\cite[Chapter 8]{[11]*04}` by [11]. The Dedekind
 zeta-function associated with an abelian field :math:`K` is given by
 
 .. math::
@@ -1235,9 +1235,9 @@ zeta-function associated with an abelian field :math:`K` is given by
 
    \zeta_K(s)=\prod_{\chi\in X(K)}L(s,\chi)
 
-as per :raw-latex:`\cite[Theorem 8.6]{Narkiewicz*04}`. The group
+as per :raw-latex:`\cite[Theorem 8.6]{[11]*04}`. The group
 :math:`X(K)` is the group of characters attached to :math:`K`, see
-:raw-latex:`\cite[Proposition 8.4]{Narkiewicz*04}`. This
+:raw-latex:`\cite[Proposition 8.4]{[11]*04}`. This
 equality :eq:`defZetaDedekind` is proved prime per
 prime, and we can restrict to ideals whose norm is prime to some
 integer. In particular, we can restrict it to the primes that are prime
@@ -1250,7 +1250,7 @@ made only of primitive characters associated to the characters in
 :math:`H_q(K)^\perp`. We may select :math:`G_0=H_q(K)` in
 Lemma `Lemma 23 <#dede>`__. Some work involving the decomposition law in
 abelian number fields, which may for instance be found in
-:raw-latex:`\cite[Theorem 8.2]{Narkiewicz*04}`, gives us, when the prime
+:raw-latex:`\cite[Theorem 8.2]{[11]*04}`, gives us, when the prime
 factors of :math:`q` are all at most :math:`P`, that
 
 .. math::
@@ -1382,7 +1382,7 @@ values of the constants will be further presented in a format suitable
 for inclusion in a LaTeX-file. The digits presented in LaTeX-format when
 ``WithLaTeX`` :math:`=1` are always accurate. For instance, the call
 ``GetVs(12, 2, 100, 100, 2, 1)`` is the one used to prepare the addendum
-`Ettahri-Ramare-Surel*19a`_ in which we give the first
+`[2]`_ in which we give the first
 hundred decimal digits of every Euler product over a lattice invariant
 class when the modulus is at most 16.
 
@@ -1411,9 +1411,9 @@ stability of our results with respect of the variation of the
 parameter :math:`P`. This proved to be a very discriminating test.
 
 Furthermore, approximate values for Shanks’ and Lal’s constants are
-known (Finch in :raw-latex:`\cite{Finch*03}` gives 10 digits) and we
+known (Finch in :raw-latex:`\cite{[4]}` gives 10 digits) and we
 agree with those. Finally, the web site
-:raw-latex:`\cite{Gourdon-Sebah*10}` by X. Gourdon and P. Sebah, or the
+:raw-latex:`\cite{[7]}` by X. Gourdon and P. Sebah, or the
 attached postscript file on the same page, gives in section 4.4 the
 first fifty digits of the constant they call :math:`A` and which are
 
@@ -1429,7 +1429,7 @@ first fifty digits of the constant they call :math:`A` and which are
    \,39924\,26646\,98594\,38665\cdots
    \end{aligned}
 
-Our result matches that of :raw-latex:`\cite{Gourdon-Sebah*10}`.
+Our result matches that of :raw-latex:`\cite{[7]}`.
 
 Some observations on the running time and complexity
 ----------------------------------------------------
@@ -1629,74 +1629,74 @@ of the present method. The time is counted in minutes.
    _`[1]` H. Cohen, *High precision computations of Hardy-Littlewood
    constants*, preprint (1996), 1–19.
 
-   _`Ettahri-Ramare-Surel*19a` Salma Ettahri, Olivier Ramaré, and Léon Surel, *Some Euler Products*,
+   _`[2]` Salma Ettahri, Olivier Ramaré, and Léon Surel, *Some Euler Products*,
    Preprint (2020), 4p, Addendum to ’Fast multi-precision computation of
    some Euler products’.
 
-   _`Evertse*84` Jan-Hendrik Evertse, *On sums of :math:`S`-units and linear
+   _`[3]` Jan-Hendrik Evertse, *On sums of :math:`S`-units and linear
    recurrences*, Compositio Math. **53** (1984), no. 2, 225–244. MR
    766298
 
-   _`Finch*03` Steven R. Finch, *Mathematical constants*, Encyclopedia of
+   _`[4]` Steven R. Finch, *Mathematical constants*, Encyclopedia of
    Mathematics and its Applications, vol. 94, Cambridge University
    Press, Cambridge, 2003. MR 2003519
 
-   _`Flajolet-Vardi*96` P. Flajolet and I. Vardi, *Zeta function expansions of classical
+   _`[5]` P. Flajolet and I. Vardi, *Zeta function expansions of classical
    constants*, preprint (1996), 1–10.
 
-   _`Fouvry-Levesque-Waldschmidt*18` Étienne Fouvry, Claude Levesque, and Michel Waldschmidt,
+   _`[6]` Étienne Fouvry, Claude Levesque, and Michel Waldschmidt,
    *Representation of integers by cyclotomic binary forms*, Acta Arith.
    **184** (2018), no. 1, 67–86. MR 3826641
 
-   _`Gourdon-Sebah*10` X. Gourdon and P. Sebah, *Constants from number theory*,
+   _`[7]` X. Gourdon and P. Sebah, *Constants from number theory*,
    http://numbers.computation.free.fr/Constants/constants.html (2010).
 
-   _`Lal*67` M. Lal, *Primes of the form :math:`n^{4}+1`*, Math. Comp. **21**
+   _`[8]` M. Lal, *Primes of the form :math:`n^{4}+1`*, Math. Comp. **21**
    (1967), 245–247. MR 0222007
 
-   _`Moree*00` P. Moree, *Approximation of singular series constant and automata.
+   _`[9]` P. Moree, *Approximation of singular series constant and automata.
    with an appendix by Gerhard Niklasch.*, Manuscripta Matematica
    **101** (2000), no. 3, 385–399.
 
-   _`Moree*04b` Pieter Moree, *On the average number of elements in a finite field
+   _`[10]` Pieter Moree, *On the average number of elements in a finite field
    with order or index in a prescribed residue class*, Finite Fields
    Appl. **10** (2004), no. 3, 438–463. MR 2067608
 
-   _`Narkiewicz` W. Narkiewicz, *Elementary and analytic theory of algebraic numbers*,
+   _`[11]` W. Narkiewicz, *Elementary and analytic theory of algebraic numbers*,
    third ed., Springer Monographs in Mathematics, Springer-Verlag,
    Berlin, 2004. MR 2078267 (2005c:11131)
 
-   _`OEIS` OEIS Foundation Inc., *The on-line encyclopedia of integer sequence*,
-   2019, http://oeis.org/.
+   _`[12]` OEIS Foundation Inc., *The on-line encyclopedia of integer sequence*,
+   2019, http://OEIS.org/.
 
-   _`Serre*70` Jean-Pierre Serre, *Cours d’arithmétique*, Collection SUP: “Le
+   _`[13]` Jean-Pierre Serre, *Cours d’arithmétique*, Collection SUP: “Le
    Mathématicien”, vol. 2, Presses Universitaires de France, Paris,
    1970. MR 0255476
 
-   _`Shanks*60` D. Shanks, *On the conjecture of Hardy & Littlewood concerning the
+   _`[14]` D. Shanks, *On the conjecture of Hardy & Littlewood concerning the
    number of primes of the form :math:`n^{2}+a`*, Math. Comp. **14**
    (1960), 320–332. MR 0120203
 
-   _`Shanks*61` D. Shanks, *On numbers of the form :math:`n^{4}+1`*, Math. Comput. **15**
+   _`[15]` D. Shanks, *On numbers of the form :math:`n^{4}+1`*, Math. Comput. **15**
    (1961), 186–189. MR 0120184
 
-   _`Shanks*64b` D. Shanks, *The second-order term in the asymptotic expansion of
+   _`[16]` D. Shanks, *The second-order term in the asymptotic expansion of
    :math:`B(x)`*, Math. Comp. **18** (1964), 75–86. MR 0159174
 
-   _`Shanks*67` D. Shanks, *Lal’s constant and generalizations*, Math. Comp. **21**
+   _`[17]` D. Shanks, *Lal’s constant and generalizations*, Math. Comp. **21**
    (1967), 705–707. MR 0223315
 
-   _`Toth*11` L. Tóth, *Menon’s identity and arithmetical sums representing
+   _`[18]` L. Tóth, *Menon’s identity and arithmetical sums representing
    functions of several variables*, Rend. Semin. Mat. Univ. Politec.
    Torino **69** (2011), no. 1, 97–110. MR 2884710
 
-   _`Toth*12` László Tóth, *On the number of cyclic subgroups of a finite Abelian
+   _`[19]` László Tóth, *On the number of cyclic subgroups of a finite Abelian
    group*, Bull. Math. Soc. Sci. Math. Roumanie (N.S.) **55(103)**
    (2012), no. 4, 423–428. MR 2963406
 
-   _`vanderPoorten-Schlickewei*91` A. J. van der Poorten and H. P. Schlickewei, *Zeros of recurrence
+   _`[20]` A. J. van der Poorten and H. P. Schlickewei, *Zeros of recurrence
    sequences*, Bull. Austral. Math. Soc. **44** (1991), no. 2, 215–223.
    MR 1126359
 
-   _`Witt` E. Witt, *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
+   _`[21]` E. [21], *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
    **177** (1937), 152–160. MR 1581553
