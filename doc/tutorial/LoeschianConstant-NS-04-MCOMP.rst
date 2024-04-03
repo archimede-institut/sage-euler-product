@@ -1,6 +1,18 @@
 .. LoeschianConstant-NS-04-MCOMP:
 
 
+.. |begthm| raw:: html
+
+   <div style="background-color: blue!30; width: 100%; padding: 5px;">
+
+.. |midthm| raw:: html
+
+   </div>
+   <div style="background-color: blue!10; width: 95%; padding: 5px;">
+
+.. |endthm| raw:: html
+
+   </div>
 
 
 
@@ -642,7 +654,7 @@ subgroup of :math:`G`. Let us first note a simple property.
 .. container:: lem
    :name: cyclic
 
-   |begthm|**Lemma** _`13`.
+   |begthm| **Lemma** _`13`.
    |midthm| *In a finite cyclic group :math:`L`, the map that
    associates to a subgroup of :math:`L` its cardinality is a one-to-one
    map between the set of divisors of :math:`|L|` and the set of its
@@ -1666,15 +1678,3 @@ of the present method. The time is counted in minutes.
    _`[21]` E. Witt, *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
    **177** (1937), 152–160. MR 1581553
 
-.. |begthm| raw:: html
-
-   <div style="background-color: blue!30; width: 100%; padding: 5px;">
-
-.. |midthm| raw:: html
-
-   </div>
-   <div style="background-color: blue!10; width: 95%; padding: 5px;">
-
-.. |endthm| raw:: html
-
-   </div>
