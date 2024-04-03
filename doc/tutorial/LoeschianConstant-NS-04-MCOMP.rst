@@ -49,10 +49,10 @@ below. We obtain closed formulas involving only values of
 over primes in these special sets and deduce fast ways to compute a more
 restricted class of such products. Let us first introduce the players.
 
-.. container:: defi
+.. admonition:: **Definition** _`1`. 
    :name: li
 
-   **Definition** _`1`. *Two elements* :math:`g_1` *and* :math:`g_2` *of
+   *Two elements* :math:`g_1` *and* :math:`g_2` *of
    the abelian group* :math:`G` *are said to be lattice-invariant if and
    only if they generate the same group. This defines an equivalence
    relation.*
