@@ -3,12 +3,12 @@
 
 .. |begthm| raw:: html
 
-   <div style="background-color: #e6f2ff; width: 100%; padding: 5px;">
+   <div style="background-color: #cce5ff; width: 100%; padding: 5px; font-weight: bold;">
 
 .. |midthm| raw:: html
 
    </div>
-   <div style="background-color: #cce6ff; width: 95%; padding: 5px;">
+   <div style="background-color: #e6f2ff; width: 100%; padding: 5px; font-style: italic;">
 
 .. |endthm| raw:: html
 
@@ -654,11 +654,11 @@ subgroup of :math:`G`. Let us first note a simple property.
 .. container:: lem
    :name: cyclic
 
-   |begthm| **Lemma** _`13`.
-   |midthm| *In a finite cyclic group* :math:`L`, *the map that
-   associates to a subgroup of* :math:`L` *its cardinality is a one-to-one
-   map between the set of divisors of* :math:`|L|` *and the set of its
-   subgroups. Furthermore, any subgroup of a cyclic group is cyclic.*
+   |begthm| Lemma _`13`.
+   |midthm| In a finite cyclic group :math:`L`, the map that
+   associates to a subgroup of :math:`L` its cardinality is a one-to-one
+   map between the set of divisors of :math:`|L|` and the set of its
+   subgroups. Furthermore, any subgroup of a cyclic group is cyclic.
    |endthm|
 
 .. container:: proof
