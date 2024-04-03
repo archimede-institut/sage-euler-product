@@ -57,8 +57,8 @@ restricted class of such products. Let us first introduce the players.
    subgroup, associates the subset of its generators, is one-to-one.*
 
 The cardinality of :math:`G^\sharp` can be swiftly inferred from
-:raw-latex:`\cite[Theorem 3]{Toth*11}` or from
-:raw-latex:`\cite[Theorem 1]{Toth*12}`, both by L. Tóth. When
+Theorem 3 of `Toth*11`_ or from
+Theorem 1 of `Toth*12`_, both by L. Tóth. When
 :math:`\mathcal{A}` is a subset of
 :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`, we define
 :math:`\langle{\mathcal{A}}\rangle{}` to be the (multiplicative)
@@ -229,7 +229,7 @@ Super fast evaluations
    **Corollary 8**. For every positive integer :math:`m` , the constant
    :math:`C_{\mathscr{A}}(K,m,1-X)` vanishes when one prime factor of
    :math:`m` is coprime with :math:`\varphi(q)` . As a consequence and
-   under the hypotheses of Theorem  \ `Theorem 2 <#PM1>`\__\  with
+   under the hypotheses of Theorem 2 with
    :math:`\Delta=1`, the products
 
    .. math::
@@ -284,9 +284,9 @@ coefficients :math:`s_{H/F}(m)` satisfy a linear recurrence (of degree
 at most :math:`\max(\deg F,\deg H)`) and as such are expected to grow
 exponentially fast if they are not roots of unity. When for instance the
 coefficients of the recurrence belong to some number field, this is
-proved by Evertse in :raw-latex:`\cite{Evertse*84}` and independently by
+proved by Evertse in `Evertse*84`_ and independently by
 van der Poorten and Schlickewei in
-:raw-latex:`\cite{vanderPoorten-Schlickewei*91}`. This is the case where
+`vanderPoorten-Schlickewei*91`_. This is the case where
 we may expect cancellations to happen. Since the sum defining
 :math:`C_{\mathscr{A}}(K,m,F/H)` is of the form
 :math:`\sum_{t|m}\mu(t)r_0(t)s_{H/F}(m/t)` for some function
@@ -323,13 +323,13 @@ Corollary 8.
 Some historical pointers
 ------------------------
 
-D. Shanks in :raw-latex:`\cite{Shanks*60}` (resp.
-:raw-latex:`\cite{Shanks*61}`, resp. :raw-latex:`\cite{Shanks*67}`) has
+D. Shanks in `Shanks*60`_ (resp.
+`Shanks*61`_, resp. `Shanks*67`_) has
 already been able to compute an Euler product over primes congruent to 1
 modulo 4 (resp. to 1 modulo 8 in both instances), by using an identity
-(Lemma of section 2 for :raw-latex:`\cite{Shanks*60}`, Equation (5) in
-:raw-latex:`\cite{Shanks*61}` and the Lemma of section 3
-in :raw-latex:`\cite{Shanks*67}`) that is a precursor of our
+(Lemma of section 2 for `Shanks*60`_, Equation (5) in
+`Shanks*61`_ and the Lemma of section 3
+in `Shanks*67`_) that is a precursor of our
 Lemma 19.
 
 In these three examples, the author has only been able to compute the
@@ -340,26 +340,26 @@ complement these results by giving the first hundred decimals.
 
 Complementary to the published papers, three influent preprints on how
 to compute Euler products with high accuracy have been floating on the
-web: :raw-latex:`\cite{Flajolet-Vardi*96}` a memo started in 1990 in
+web: `Flajolet-Vardi*96`_ a memo started in 1990 in
 its 1996 version by Ph. Flajolet and I. Vardi,
-:raw-latex:`\cite{Cohen*96b}` by H. Cohen and
-:raw-latex:`\cite{Gourdon-Sebah*10}` by X. Gourdon and P. Sebah.
+`Cohen*96b`_ by H. Cohen and
+`Gourdon-Sebah*10`_ by X. Gourdon and P. Sebah.
 Comparing the desired constant with zeta-values is the overarching idea.
 The set of zeta-values is extended to :math:`L`-values of (some)
 quadratic characters in the three, in some way or another, and to the
-values of Dedekind zeta-function in :raw-latex:`\cite{Cohen*96b}`. No
+values of Dedekind zeta-function in `Cohen*96b`_. No
 complete error term analysis is presented, sometimes because the series
 used are simple enough to make this analysis rather easy. These three
 sources also deal with constants that are sums over primes and a similar
 extension of our work is possible, but kept for later. It should be
-noticed that Equation (20) from :raw-latex:`\cite{Flajolet-Vardi*96}` is
+noticed that Equation (20) from `Flajolet-Vardi*96`_ is
 in fact the formula given as Equation (16)
-in `Shanks*64b` for the Landau-Ramanujan constant.
+in `Shanks*64b`_ for the Landau-Ramanujan constant.
 
 On the methodology
 ------------------
 
-We decided to prove Theorem `Theorem 2 <#PM1>`__ directly, by giving the
+We decided to prove Theorem 2 directly, by giving the
 formula and shuffling terms. This gives a short and self-contained
 proof. However, we did not come up with the coefficients
 :math:`C_{\mathscr{A}}(K,m,F/H)` by some lucky strike! There is a path
@@ -372,7 +372,7 @@ Application to some constants
 
 This paper has been inspired by the wish to compute with high numerical
 precision two constants that appear in the paper
-:raw-latex:`\cite{Fouvry-Levesque-Waldschmidt*18}` by É. Fouvry, C.
+`Fouvry-Levesque-Waldschmidt*18`_ by É. Fouvry, C.
 Levesque and M. Waldschmidt. In the notation of that paper, they are
 
 .. math::
@@ -393,7 +393,7 @@ and
 Both occur in number theory as densities. The number of integers
 :math:`n` of the shape :math:`n=x^2-xy+y^2`, where :math:`x` and
 :math:`y` are integers (these are the so-called Loeschian numbers, see
-the sequence A003136 entry in :raw-latex:`\cite{OEIS}`) is
+the sequence A003136 entry in `OEIS`_) is
 asymptotically approximated by
 
 .. math::
@@ -403,12 +403,12 @@ asymptotically approximated by
 
 This motivates our interest in the first constant. The second one arises
 in counting the number of Loeschian numbers that are also sums of two
-squares (see sequence A301430 entry of :raw-latex:`\cite{OEIS}`), namely
+squares (see sequence A301430 entry of `OEIS`_), namely
 we have
 
 .. math:: N'(x)=\beta_0\frac{x(1+o(1))}{(\log x)^{3/4}}.
 
-From the sequence A301429 entry in :raw-latex:`\cite{OEIS}`, we know
+From the sequence A301429 entry in `OEIS`_, we know
 that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
 (many!) more digits. Similarly it is known that
 :math:`\beta_0=0.30231614235\ldots`.
@@ -483,11 +483,11 @@ We deduce this Corollary from Theorem `Theorem 2 <#PM1>`__ by selecting
 the parameters :math:`q=8`, :math:`\mathcal{A}=\{1\}`,
 :math:`F(X)=1-2X-7X^2-4X^3`, :math:`H(X)=1-2X+X^2`, :math:`s=1`,
 :math:`\Delta=2` and :math:`\beta=4`. As explained in
-:raw-latex:`\cite{Shanks*61}`, the number of primes :math:`\le X` of the
+`Shanks*61`_, the number of primes :math:`\le X` of the
 form :math:`m^4+1` is conjectured to be asymptotically equal to
 :math:`I\cdot
 X^{1/4}/\log X`. The name “Shanks’ constant” comes from Chapter 2, page
-90 of :raw-latex:`\cite{Finch*03}`.
+90 of `Finch*03`_.
 
 When using the script that we introduce below, this value is obtained by
 multiplying by :math:`\frac{\pi^2}{16\log(1+\sqrt{2})}` the value
@@ -555,11 +555,11 @@ constant :math:`\lambda` is then deduced by combining the value obtained
 in Corollary `Corollary 10 <#sha>`__ together with this one. This
 splitting of the computation in two introduces smaller polynomials and
 this leads to a lesser running time. As explained in
-:raw-latex:`\cite{Shanks*67}`, the number of primes :math:`\le X` of the
+`Shanks*67`_, the number of primes :math:`\le X` of the
 form :math:`(m+1)^2+1` and such that :math:`(m-1)^2+1` is also prime, is
 conjectured to be asymptotic to :math:`\lambda\cdot
 X^{1/2}/(\log X)^2`. The name “Lal’s Constant” comes from the papers
-:raw-latex:`\cite{Lal*67}` and :raw-latex:`\cite{Shanks*67}`. When using
+`Lal*67`_ and `Shanks*67`_. When using
 the script that we introduce below, the first value is obtained with the
 call
 
@@ -573,7 +573,7 @@ not try to get 5000 digits as we did for the products of
 Corollary `Corollary 8 <#superfast>`__.
 
 We close this section by mentioning another series of challenging
-constants. In :raw-latex:`\cite{Moree*04b}`, P. Moree computes inter
+constants. In `Moree*04b`_, P. Moree computes inter
 alia the series of constants :math:`A_\chi` defined six lines after
 Lemma 3, page 452, by
 
@@ -1626,77 +1626,77 @@ of the present method. The time is counted in minutes.
 
 .. container:: thebibliography
 
-   H. Cohen, *High precision computations of Hardy-Littlewood
+   _`Cohen*96b` H. Cohen, *High precision computations of Hardy-Littlewood
    constants*, preprint (1996), 1–19.
 
    Salma Ettahri, Olivier Ramaré, and Léon Surel, *Some Euler Products*,
    Preprint (2020), 4p, Addendum to ’Fast multi-precision computation of
    some Euler products’.
 
-   Jan-Hendrik Evertse, *On sums of :math:`S`-units and linear
+   _`Evertse*84` Jan-Hendrik Evertse, *On sums of :math:`S`-units and linear
    recurrences*, Compositio Math. **53** (1984), no. 2, 225–244. MR
    766298
 
-   Steven R. Finch, *Mathematical constants*, Encyclopedia of
+   _`Finch*03` Steven R. Finch, *Mathematical constants*, Encyclopedia of
    Mathematics and its Applications, vol. 94, Cambridge University
    Press, Cambridge, 2003. MR 2003519
 
-   P. Flajolet and I. Vardi, *Zeta function expansions of classical
+   _`Flajolet-Vardi*96` P. Flajolet and I. Vardi, *Zeta function expansions of classical
    constants*, preprint (1996), 1–10.
 
-   Étienne Fouvry, Claude Levesque, and Michel Waldschmidt,
+   _`Fouvry-Levesque-Waldschmidt*18` Étienne Fouvry, Claude Levesque, and Michel Waldschmidt,
    *Representation of integers by cyclotomic binary forms*, Acta Arith.
    **184** (2018), no. 1, 67–86. MR 3826641
 
-   X. Gourdon and P. Sebah, *Constants from number theory*,
+   _`Gourdon-Sebah*10` X. Gourdon and P. Sebah, *Constants from number theory*,
    http://numbers.computation.free.fr/Constants/constants.html (2010).
 
-   M. Lal, *Primes of the form :math:`n^{4}+1`*, Math. Comp. **21**
+   _`Lal*67` M. Lal, *Primes of the form :math:`n^{4}+1`*, Math. Comp. **21**
    (1967), 245–247. MR 0222007
 
-   P. Moree, *Approximation of singular series constant and automata.
-   with an appendix by gerhard niklasch.*, Manuscripta Matematica
+   _`Moree*00` P. Moree, *Approximation of singular series constant and automata.
+   with an appendix by Gerhard Niklasch.*, Manuscripta Matematica
    **101** (2000), no. 3, 385–399.
 
-   _`Moree*00` Pieter Moree, *On the average number of elements in a finite field
+   _`Moree*04b` Pieter Moree, *On the average number of elements in a finite field
    with order or index in a prescribed residue class*, Finite Fields
    Appl. **10** (2004), no. 3, 438–463. MR 2067608
 
-   W. Narkiewicz, *Elementary and analytic theory of algebraic numbers*,
+   _`Narkiewicz` W. Narkiewicz, *Elementary and analytic theory of algebraic numbers*,
    third ed., Springer Monographs in Mathematics, Springer-Verlag,
    Berlin, 2004. MR 2078267 (2005c:11131)
 
-   OEIS Foundation Inc., *The on-line encyclopedia of integer sequence*,
+   _`OEIS` OEIS Foundation Inc., *The on-line encyclopedia of integer sequence*,
    2019, http://oeis.org/.
 
-   Jean-Pierre Serre, *Cours d’arithmétique*, Collection SUP: “Le
+   _`Serre*70` Jean-Pierre Serre, *Cours d’arithmétique*, Collection SUP: “Le
    Mathématicien”, vol. 2, Presses Universitaires de France, Paris,
    1970. MR 0255476
 
-   D. Shanks, *On the conjecture of Hardy & Littlewood concerning the
+   _`Shanks*60` D. Shanks, *On the conjecture of Hardy & Littlewood concerning the
    number of primes of the form :math:`n^{2}+a`*, Math. Comp. **14**
    (1960), 320–332. MR 0120203
 
-   to3em, *On numbers of the form :math:`n^{4}+1`*, Math. Comput. **15**
+   _`Shanks*61` D. Shanks, *On numbers of the form :math:`n^{4}+1`*, Math. Comput. **15**
    (1961), 186–189. MR 0120184
 
-   to3em, *The second-order term in the asymptotic expansion of
+   _`Shanks*64b` D. Shanks, *The second-order term in the asymptotic expansion of
    :math:`B(x)`*, Math. Comp. **18** (1964), 75–86. MR 0159174
 
-   to3em, *Lal’s constant and generalizations*, Math. Comp. **21**
+   _`Shanks*67` D. Shanks, *Lal’s constant and generalizations*, Math. Comp. **21**
    (1967), 705–707. MR 0223315
 
-   L. Tóth, *Menon’s identity and arithmetical sums representing
+   _`Toth*11` L. Tóth, *Menon’s identity and arithmetical sums representing
    functions of several variables*, Rend. Semin. Mat. Univ. Politec.
    Torino **69** (2011), no. 1, 97–110. MR 2884710
 
-   László Tóth, *On the number of cyclic subgroups of a finite Abelian
+   _`Toth*12` László Tóth, *On the number of cyclic subgroups of a finite Abelian
    group*, Bull. Math. Soc. Sci. Math. Roumanie (N.S.) **55(103)**
    (2012), no. 4, 423–428. MR 2963406
 
-   A. J. van der Poorten and H. P. Schlickewei, *Zeros of recurrence
+   _`vanderPoorten-Schlickewei*91` A. J. van der Poorten and H. P. Schlickewei, *Zeros of recurrence
    sequences*, Bull. Austral. Math. Soc. **44** (1991), no. 2, 215–223.
    MR 1126359
 
-   E. Witt, *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
+   _`Witt` E. Witt, *Treue Darstellung Liescher Ringe*, J. Reine Angew. Math.
    **177** (1937), 152–160. MR 1581553
