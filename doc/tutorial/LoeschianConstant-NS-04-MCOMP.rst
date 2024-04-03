@@ -1664,7 +1664,7 @@ of the present method. The time is counted in minutes.
    with an appendix by gerhard niklasch.*, Manuscripta Matematica
    **101** (2000), no. 3, 385–399.
 
-   .. __`Moree*00` Pieter Moree, *On the average number of elements in a finite field
+   __`Moree*00` Pieter Moree, *On the average number of elements in a finite field
    with order or index in a prescribed residue class*, Finite Fields
    Appl. **10** (2004), no. 3, 438–463. MR 2067608
 
