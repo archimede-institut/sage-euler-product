@@ -608,7 +608,8 @@ power.
 
 .. container:: cor
 
-   **Corollary** _`12`. Let :math:`\mathscr{A}_0` be the subset of
+   |begthm| Corollary _`12`. 
+   |midthm| Let :math:`\mathscr{A}_0` be the subset of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times` consisting of all the
    multiplicative generators of :math:`G`. Assume :math:`q` is such that
    such an :math:`\mathscr{A}_0` is not empty. For any real parameter
@@ -625,6 +626,8 @@ power.
    where :math:`m|q^\infty` means that all the prime factors of
    :math:`m` divide :math:`q` and where
    :math:`e(m,q,S)=\frac{|S|\varphi(q/|S|)}{m\varphi(q)}`.
+
+   |endthm|
 
 .. container:: proof
 
@@ -683,7 +686,8 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: prop
    :name: funda
 
-   **Proposition** _`14`. For any positive integer :math:`\ell`, any prime
+   |begthm| Proposition _`14`. 
+   |midthm| For any positive integer :math:`\ell`, any prime
    :math:`p` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
@@ -693,7 +697,7 @@ Here is the fundamental property satisfied by these coefficients.
       K^\perp}}
       \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
 
-
+   |endthm|
 
 .. container:: proof
 
@@ -740,7 +744,8 @@ Here is the fundamental property satisfied by these coefficients.
 .. container:: cor
    :name: life
 
-   **Corollary** _`15`. For any prime :math:`p`, any positive real number
+   |begthm| Corollary _`15`. 
+   |midthm| For any prime :math:`p`, any positive real number
    :math:`s` and any lattice-invariant class :math:`\mathscr{A}`, we
    have
 
@@ -754,6 +759,7 @@ Here is the fundamental property satisfied by these coefficients.
       1&\text{otherwise.}
       \end{cases}
 
+   |endthm|
 
 .. container:: proof
 
