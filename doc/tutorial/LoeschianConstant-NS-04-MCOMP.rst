@@ -943,8 +943,8 @@ having real numbers for coefficients.
 
    The lemma follows readily by integrating the above relation.
 
-How does the mathematician E. Witt enter the scene? In the paper
-:math:`(11)` therein a decomposition that is the prototype of the above
+How does the mathematician E. Witt enter the scene? In the paper `[21]`_,
+:math:`(11)` therein is a decomposition that is the prototype of the above
 expansion.
 
 .. container:: lem
@@ -958,7 +958,7 @@ expansion.
 
    .. math:: |b_F(k)|\le2\deg F \cdot \beta^k/k.
 
-  |endthm|
+   |endthm|
 
 .. container:: proof
 
@@ -983,7 +983,7 @@ simplistic one.
 .. container:: lem
    :name: easybeta
 
-   |begthm| Lemma _`21`. 
+   |begthm| Lemma _`21`.
    |midthm| Let :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` be a
    polynomial of degree :math:`\delta`. Let :math:`\rho` be one of its
    roots. Then either :math:`|\rho|\ge 1` or
