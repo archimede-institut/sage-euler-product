@@ -102,9 +102,8 @@ is indeed a positive real number because, when
 
 Here is the central theorem of this paper.
 
-.. highlights::
-
-   **Theorem** _`2`. Let :math:`q` be some modulus and :math:`\mathcal{A}` 
+   |begthm| Theorem _`2`.
+   |midthm| Let :math:`q` be some modulus and :math:`\mathcal{A}` 
    be a lattice-invariant class of
    :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. Let
    :math:`F,H\in \mathbb R[X]` be two polynomials satisfying
@@ -162,6 +161,7 @@ Here is the central theorem of this paper.
         (s+P)
         \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{gathered}
 
+   |endthm|
 
 In the case :math:`H/F=1-X`, the relevant identity is proved in
 Theorem :ref:`18<18>` and is the heart of this paper. Our
