@@ -950,7 +950,7 @@ expansion.
 .. container:: lem
    :name: apriorimaj
 
-   |begthm| Lemma _`20`. 
+   |begthm| Lemma _`20`.
    |midthm| We use the hypotheses and notation of
    Lemma :ref:`19<19>`. Let :math:`\beta\ge2` be larger
    than the inverse of the modulus of all the roots of :math:`F(t)`. We
@@ -972,7 +972,7 @@ expansion.
       &\le \frac{\deg F}{k}\sum_{1\le j\le k}\beta^j
       \le \frac{\deg F}{k}\beta\frac{\beta^k-1}{\beta-1}
       \\&\le\frac{\deg F}{k}\frac{\beta^k}{1-1/\beta}
-      \le 2\deg F\frac{\beta^k}{k}.\qedhere
+      \le 2\deg F\frac{\beta^k}{k}.
       \end{aligned}
 
 
