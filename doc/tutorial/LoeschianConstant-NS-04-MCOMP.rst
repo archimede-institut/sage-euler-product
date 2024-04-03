@@ -160,6 +160,7 @@ Here is the central theorem of this paper.
         \\\le 4(\deg F+\deg H)|\mathscr{G}|^2
         (s+P)
         \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{gathered}
+
    |endthm|
 
 In the case :math:`H/F=1-X`, the relevant identity is proved in
