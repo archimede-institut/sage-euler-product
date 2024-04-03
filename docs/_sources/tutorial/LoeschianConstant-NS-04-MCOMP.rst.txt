@@ -12,15 +12,15 @@ Fast multi-precision computation of some Euler products
 :Author: O. Ramaré
 :Author: L. Surel
 
-.. role:: raw-latex(raw)
-   :format: latex
-..
-
 .. note:: Origin
 
    This file is a web version of the paper *Fast multi-precision computation of some Euler products* by the same authors
    and which appeared in Math. Comp. **90** (2021), no. 331, pages 2247–2265. The modifications concerns the numbering and the
-   elements conerning the produced code.
+   elements concerning the produced code.
+
+.. role:: raw-latex(raw)
+   :format: latex
+..
 
 Introduction
 ============
