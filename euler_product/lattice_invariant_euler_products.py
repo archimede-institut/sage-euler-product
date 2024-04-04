@@ -207,7 +207,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     R = RealIntervalField(prec)
     #  Empty initial products are allowed:
     euler_prod_ini = tuple([R(1 / prod(
-        flatten([1, [R(1 - 1 / p**s) for p in filter(lambda w: (w in Primes())
+        flatten([1, [R(1 - 1 / R(p)**s) for p in filter(lambda w: (w in Primes())
                 and (w % q in structure.the_Class_tuple[i]), range(2, big_p))]])))
         for i in range(0, structure.nb_class)])
     if verbose >= 2:
@@ -401,7 +401,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     #  The precision has changed! Change the ring:
     R = RealIntervalField(prec)
     RF = RealField(prec + 1)
-    log_err = R(cte * (my_beta / (big_p**s))**(big_m + 1))
+    log_err = R(cte * (my_beta / (R(big_p)**s))**(big_m + 1))
     RX = R['x']
     (x,) = RX._first_ngens(1)
     F, H = RX(f_init / Integer(F0[0])), RX(h_init / Integer(H0[0]))
