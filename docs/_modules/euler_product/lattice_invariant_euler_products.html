@@ -596,22 +596,31 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
-<span class="sd">        sage: get_euler_products(3, 1, 1-x^2, 1, 100, verbose=0)  # doctest: +NORMALIZE_WHITESPACE</span>
-<span class="sd">        ((frozenset({1}), frozenset({2})),</span>
-<span class="sd">        ((0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974345,</span>
-<span class="sd">        0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974477),</span>
-<span class="sd">        (0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821105,</span>
-<span class="sd">        0.7071813747951674302088659938984504109243584468119496848353517677901518159831128643782536704398941052120208041311403202957250160794697319584608281454011743387515885835706146696365506658500107821228)))</span>
-<span class="sd">        sage: get_euler_products(8, 1, 1-2*x-7*x^2-4*x^3, 1-2*x+x^2, 110, 50, 0, 0)  # doctest: +NORMALIZE_WHITESPACE</span>
-<span class="sd">        ((frozenset({1}), frozenset({3}), frozenset({5}), frozenset({7})),</span>
-<span class="sd">        ((0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120693625020812276103159906625162986027780621959661661058242880638494733,</span>
-<span class="sd">        0.95694534785160118343696705727389182875317497729139147890543260424601701644488885948144051203907950843120698715116910955482476415178562075800144085574035025387260631491020912),</span>
-<span class="sd">        (-1.1744975454490034177155999666151209160615842743206296883125115013500947685793723674107330894468690657084850070249226110372932226333018435422450675119284554631204742715594780,</span>
-<span class="sd">        -1.1744975454490034177155999666151209160615842743206296883125115013500947685793723674107330894468690657084850694977072727918933849576550337569751438204088603874573384648809813),</span>
-<span class="sd">        (0.41303522430115813462933064104403132614973953141027630692477294245200590806656802414019031361757979375573715775187373750238649707664458852273214341861159234461302771883822062,</span>
-<span class="sd">        0.41303522430115813462933064104403132614973953141027630692477294245200590806656802414019031361757979375573717972166689137936668012188844661293239520403935555328934054712625207),</span>
-<span class="sd">        (0.73440531676250743047848787987972815324702590578219161532691471695315326661191699963756307237940693554033848218351377181727690073086294638978098135674230697193936653008013195,</span>
-<span class="sd">        0.73440531676250743047848787987972815324702590578219161532691471695315326661191699963756307237940693554033852124733175620467822747169360181588443153429051853637559530089233888)))</span>
+<span class="sd">        sage: get_euler_products(7, 21/10, 1-x^3, 1+2*x^2, 100, 100, 0)  # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        ((frozenset({1}), frozenset({6}), frozenset({2, 4}), frozenset({3, 5})),</span>
+<span class="sd">         ((0.9999982391236771174582758043183901338942364901235699217522601062931335918060239723453736409102740196458132617578911976337827035056548487,</span>
+<span class="sd">           0.9999982391236771174582758043183901338942364901235699217522601062931335918060239723453736409102740196458132617578911976337827035058702859),</span>
+<span class="sd">          (0.9999576136884417398077559625848130088885656351740787265112227071217155682725032721589661739481265973172546756861113391191295834691038278,</span>
+<span class="sd">           0.9999576136884417398077559625848130088885656351740787265112227071217155682725032721589661739481265973172546756861113391191295834695309445),</span>
+<span class="sd">          (0.8903351065070010591619870364916093462000320541037928008286414361647911118617149004528444428927243238343453800105285278416937429697527759,</span>
+<span class="sd">           0.8903351065070010591619870364916093462000320541037928008286414361647911118617149004528444428927243238343453800105285278416937429701294787),</span>
+<span class="sd">          (0.9772686478893137854388184266844545895906115657758499208289733302484239589826603294718981918722254050003289550536985865206208817481509527,</span>
+<span class="sd">           0.9772686478893137854388184266844545895906115657758499208289733302484239589826603294718981918722254050003289550536985865206208817489644518)))</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
+<span class="sd">        sage: from sage.all import RealNumber</span>
+<span class="sd">        sage: ss = RealIntervalField(1000)(2.1)</span>
+<span class="sd">        sage: get_euler_products(7, ss, 1-x^3, 1+2*x^2, 100, 100, 0)  # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        ((frozenset({1}), frozenset({6}), frozenset({2, 4}), frozenset({3, 5})),</span>
+<span class="sd">         ((0.9999982391236771174593563029845165888949925030802468731879907340376417409448258804977425145432276967368069400485351556253529538963227206,</span>
+<span class="sd">           0.9999982391236771174593563029845165888949925030802468731879907340376417409448258804977425145432276967368069400485351556253529538964531787),</span>
+<span class="sd">         (0.9999576136884417398271690198938580248373051070700165881172968559533702467774954223949082638318313973207279942499461484456197967852358670,</span>
+<span class="sd">          0.9999576136884417398271690198938580248373051070700165881172968559533702467774954223949082638318313973207279942499461484456197967854939739),</span>
+<span class="sd">         (0.8903351065070010720688279359417577943450315878955017449322206666706753000624035653585286591685046103123298899332142094572919914905004413,</span>
+<span class="sd">          0.8903351065070010720688279359417577943450315878955017449322206666706753000624035653585286591685046103123298899332142094572919914907258341),</span>
+<span class="sd">         (0.9772686478893137901030489977249098644207078284256772977807607160813875957724686047692999490530968236161711793835695795600577094636101003,</span>
+<span class="sd">          0.9772686478893137901030489977249098644207078284256772977807607160813875957724686047692999490530968236161711793835695795600577094640930035)))</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
     <span class="c1"># assert F[0] = H[0] = 1</span>
@@ -659,7 +668,7 @@
     <span class="c1">#  The precision has changed! Change the ring:</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">RealIntervalField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
     <span class="n">RF</span> <span class="o">=</span> <span class="n">RealField</span><span class="p">(</span><span class="n">prec</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">log_err</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">cte</span> <span class="o">*</span> <span class="p">(</span><span class="n">my_beta</span> <span class="o">/</span> <span class="p">(</span><span class="n">big_p</span><span class="o">**</span><span class="n">s</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="n">big_m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">log_err</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">cte</span> <span class="o">*</span> <span class="p">(</span><span class="n">my_beta</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="n">big_m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
     <span class="n">RX</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
     <span class="p">(</span><span class="n">x</span><span class="p">,)</span> <span class="o">=</span> <span class="n">RX</span><span class="o">.</span><span class="n">_first_ngens</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">F</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">RX</span><span class="p">(</span><span class="n">f_init</span> <span class="o">/</span> <span class="n">Integer</span><span class="p">(</span><span class="n">F0</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="n">RX</span><span class="p">(</span><span class="n">h_init</span> <span class="o">/</span> <span class="n">Integer</span><span class="p">(</span><span class="n">H0</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -681,7 +690,7 @@
     <span class="c1">#                                       range(2, big_p))])</span>
     <span class="c1">#  eulerProdIni = tuple(prod(flatten(prod_list)))</span>
 
-    <span class="n">eulerProdIni</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">prod</span><span class="p">(</span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">Integer</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="n">H</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">Integer</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">))</span>
+    <span class="n">eulerProdIni</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">prod</span><span class="p">(</span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="n">H</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">))</span>
                                            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">())</span>
                                                            <span class="ow">and</span> <span class="p">(</span><span class="n">w</span> <span class="o">%</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
                                            <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">big_p</span><span class="p">))]]))</span>
