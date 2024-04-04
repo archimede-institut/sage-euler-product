@@ -399,6 +399,7 @@ each value is given in interval arithmetic as a pair (lower_bound, upper_bound).
 </dl>
 <p>EXAMPLES:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs</span>
+<span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="n">RealNumber</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">get_vs</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># doctest: +NORMALIZE_WHITESPACE</span>
 <span class="n">Computing</span> <span class="n">the</span> <span class="n">structural</span> <span class="n">invariants</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
 <span class="n">Computing</span> <span class="n">big</span> <span class="n">m</span> <span class="o">...</span> <span class="n">Computing</span> <span class="n">the</span> <span class="n">finite</span> <span class="n">product</span> <span class="k">for</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
@@ -407,44 +408,45 @@ each value is given in interval arithmetic as a pair (lower_bound, upper_bound).
 <span class="o">-------------------</span>
 <span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
 <span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
-<span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357</span>
+<span class="mf">1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838389</span>
 <span class="ow">and</span>
-<span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376</span>
-<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">105</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="mf">1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838407</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">104</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
 <span class="o">-------------------</span>
 <span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">})</span>
 <span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
-<span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993</span>
+<span class="mf">1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052081</span>
 <span class="ow">and</span>
-<span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008</span>
-<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">103</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="mf">1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052096</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">105</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
 <span class="o">-------------------</span>
 <span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">})</span>
 <span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
-<span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961</span>
+<span class="mf">1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811113</span>
 <span class="ow">and</span>
-<span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975</span>
+<span class="mf">1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811127</span>
 <span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">105</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
 <span class="o">-------------------</span>
 <span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">8</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">})</span>
 <span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">3</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
-<span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702</span>
+<span class="mf">1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231117</span>
 <span class="ow">and</span>
-<span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716</span>
+<span class="mf">1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131</span>
 <span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">105</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
 <span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">3</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">5</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">7</span><span class="p">})),</span>
-<span class="p">((</span><span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357</span><span class="p">,</span>
-<span class="mf">1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376</span><span class="p">),</span>
-<span class="p">(</span><span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993</span><span class="p">,</span>
-<span class="mf">1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008</span><span class="p">),</span>
-<span class="p">(</span><span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961</span><span class="p">,</span>
-<span class="mf">1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975</span><span class="p">),</span>
-<span class="p">(</span><span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702</span><span class="p">,</span>
-<span class="mf">1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716</span><span class="p">)))</span>
+ <span class="p">((</span><span class="mf">1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838389</span><span class="p">,</span>
+   <span class="mf">1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838407</span><span class="p">),</span>
+  <span class="p">(</span><span class="mf">1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052081</span><span class="p">,</span>
+   <span class="mf">1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052096</span><span class="p">),</span>
+  <span class="p">(</span><span class="mf">1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811113</span><span class="p">,</span>
+   <span class="mf">1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811127</span><span class="p">),</span>
+  <span class="p">(</span><span class="mf">1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231117</span><span class="p">,</span>
+   <span class="mf">1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131</span><span class="p">)))</span>
 </pre></div>
 </div>
 <p>TESTS:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">euler_product.lattice_invariant_euler_products</span> <span class="kn">import</span> <span class="n">get_vs</span>
+<span class="n">sage</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">sage.all</span> <span class="kn">import</span> <span class="n">RealNumber</span>
 <span class="n">sage</span><span class="p">:</span> <span class="n">get_vs</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># doctest: +NORMALIZE_WHITESPACE</span>
 <span class="n">Computing</span> <span class="n">the</span> <span class="n">structural</span> <span class="n">invariants</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
 <span class="n">Computing</span> <span class="n">big</span> <span class="n">m</span> <span class="o">...</span> <span class="n">Computing</span> <span class="n">the</span> <span class="n">finite</span> <span class="n">product</span> <span class="k">for</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">...</span>  <span class="n">done</span><span class="o">.</span>
@@ -453,22 +455,24 @@ each value is given in interval arithmetic as a pair (lower_bound, upper_bound).
 <span class="o">-------------------</span>
 <span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">3</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
 <span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">2</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
-<span class="mf">1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074335751973</span>
+<span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">3</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
+<span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">2</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
+<span class="mf">1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283</span>
 <span class="ow">and</span>
-<span class="mf">1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074339378982</span>
-<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">102</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="mf">1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">100</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
 <span class="o">-------------------</span>
 <span class="n">For</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">3</span><span class="n">ZZ</span> <span class="ow">in</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">2</span><span class="p">})</span>
 <span class="n">the</span> <span class="n">product</span> <span class="n">of</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="mi">2</span><span class="p">})</span> <span class="ow">is</span> <span class="n">between</span>
-<span class="mf">1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252818405878</span>
+<span class="mf">1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751141999583734</span>
 <span class="ow">and</span>
-<span class="mf">1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252823365985</span>
-<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">101</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
+<span class="mf">1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751142004543841</span>
+<span class="p">(</span><span class="n">Obtained</span><span class="p">:</span>  <span class="mi">99</span>  <span class="n">correct</span> <span class="n">decimal</span> <span class="n">digits</span><span class="p">)</span>
 <span class="p">((</span><span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">}),</span> <span class="nb">frozenset</span><span class="p">({</span><span class="mi">2</span><span class="p">})),</span>
- <span class="p">((</span><span class="mf">1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074335751973</span><span class="p">,</span>
-   <span class="mf">1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074339378982</span><span class="p">),</span>
- <span class="p">(</span><span class="mf">1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252818405878</span><span class="p">,</span>
-   <span class="mf">1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252823365985</span><span class="p">)))</span>
+ <span class="p">((</span><span class="mf">1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283</span><span class="p">,</span>
+   <span class="mf">1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292</span><span class="p">),</span>
+  <span class="p">(</span><span class="mf">1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751141999583734</span><span class="p">,</span>
+   <span class="mf">1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751142004543841</span><span class="p">)))</span>
 </pre></div>
 </div>
 </dd></dl>

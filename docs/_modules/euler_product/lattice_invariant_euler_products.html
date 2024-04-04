@@ -310,6 +310,7 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
+<span class="sd">        sage: from sage.all import RealNumber</span>
 <span class="sd">        sage: get_vs(8, 3, 100) # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">        Computing the structural invariants ...  done.</span>
 <span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
@@ -318,44 +319,45 @@
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 8ZZ in frozenset({1})</span>
 <span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
-<span class="sd">        1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357</span>
+<span class="sd">        1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838389</span>
 <span class="sd">        and</span>
-<span class="sd">        1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376</span>
-<span class="sd">        (Obtained:  105  correct decimal digits)</span>
+<span class="sd">        1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838407</span>
+<span class="sd">        (Obtained:  104  correct decimal digits)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 8ZZ in frozenset({3})</span>
 <span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
-<span class="sd">        1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993</span>
+<span class="sd">        1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052081</span>
 <span class="sd">        and</span>
-<span class="sd">        1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008</span>
-<span class="sd">        (Obtained:  103  correct decimal digits)</span>
+<span class="sd">        1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052096</span>
+<span class="sd">        (Obtained:  105  correct decimal digits)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 8ZZ in frozenset({5})</span>
 <span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
-<span class="sd">        1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961</span>
+<span class="sd">        1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811113</span>
 <span class="sd">        and</span>
-<span class="sd">        1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975</span>
+<span class="sd">        1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811127</span>
 <span class="sd">        (Obtained:  105  correct decimal digits)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 8ZZ in frozenset({7})</span>
 <span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
-<span class="sd">        1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702</span>
+<span class="sd">        1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231117</span>
 <span class="sd">        and</span>
-<span class="sd">        1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716</span>
+<span class="sd">        1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131</span>
 <span class="sd">        (Obtained:  105  correct decimal digits)</span>
 <span class="sd">        ((frozenset({1}), frozenset({3}), frozenset({5}), frozenset({7})),</span>
-<span class="sd">        ((1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946357,</span>
-<span class="sd">        1.00022487189858709876213790850059727367160406698000012383809358224349804195751158838756078343541771445946376),</span>
-<span class="sd">        (1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262944993,</span>
-<span class="sd">        1.03941995442465275247765320826895776436688562576128093245373042938586210850475647986883816951846918262945008),</span>
-<span class="sd">        (1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945961,</span>
-<span class="sd">        1.00859929667035271781603021669885964068116773568938335524379250743431508655959698706547733008351071600945975),</span>
-<span class="sd">        (1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528702,</span>
-<span class="sd">        1.00305724526111080016727462667660715366818826631992203857221002140263476460120525161534802433614351034528716)))</span>
+<span class="sd">         ((1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838389,</span>
+<span class="sd">           1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838407),</span>
+<span class="sd">          (1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052081,</span>
+<span class="sd">           1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052096),</span>
+<span class="sd">          (1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811113,</span>
+<span class="sd">           1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811127),</span>
+<span class="sd">          (1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231117,</span>
+<span class="sd">           1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131)))</span>
 
 <span class="sd">    TESTS::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
+<span class="sd">        sage: from sage.all import RealNumber</span>
 <span class="sd">        sage: get_vs(3, 2, 100)  # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">        Computing the structural invariants ...  done.</span>
 <span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
@@ -364,22 +366,24 @@
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 3ZZ in frozenset({1})</span>
 <span class="sd">        the product of 1 / (1 - p^{-2}) is between</span>
-<span class="sd">        1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074335751973</span>
+<span class="sd">        For p + 3ZZ in frozenset({1})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2}) is between</span>
+<span class="sd">        1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283</span>
 <span class="sd">        and</span>
-<span class="sd">        1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074339378982</span>
-<span class="sd">        (Obtained:  102  correct decimal digits)</span>
+<span class="sd">        1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292</span>
+<span class="sd">        (Obtained:  100  correct decimal digits)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 3ZZ in frozenset({2})</span>
 <span class="sd">        the product of 1 / (1 - p^{-2}) is between</span>
-<span class="sd">        1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252818405878</span>
+<span class="sd">        1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751141999583734</span>
 <span class="sd">        and</span>
-<span class="sd">        1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252823365985</span>
-<span class="sd">        (Obtained:  101  correct decimal digits)</span>
+<span class="sd">        1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751142004543841</span>
+<span class="sd">        (Obtained:  99  correct decimal digits)</span>
 <span class="sd">        ((frozenset({1}), frozenset({2})),</span>
-<span class="sd">         ((1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074335751973,</span>
-<span class="sd">           1.0340148754143419320638106705570396486453374255831232525075298255694199276378060505897424942813455074339378982),</span>
-<span class="sd">         (1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252818405878,</span>
-<span class="sd">           1.4140643908921476331550630214976156797842162182076210188344144236787603450318717260556105084185151252823365985)))</span>
+<span class="sd">         ((1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283,</span>
+<span class="sd">           1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292),</span>
+<span class="sd">          (1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751141999583734,</span>
+<span class="sd">           1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751142004543841)))</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">start</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
@@ -410,6 +414,7 @@
 
     <span class="n">prec</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">nb_decimals</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">/</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digits_offset</span> <span class="o">+</span> <span class="n">ceil</span><span class="p">(</span><span class="n">big_m</span><span class="p">))</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">RealIntervalField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
     <span class="c1">#  Empty initial products are allowed:</span>
     <span class="n">euler_prod_ini</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">prod</span><span class="p">(</span>
         <span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">p</span><span class="o">**</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">())</span>
@@ -417,7 +422,7 @@
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)])</span>
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; done.&quot;</span><span class="p">)</span>
-    <span class="n">log_err</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">cte</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">big_p</span> <span class="o">/</span> <span class="p">(</span><span class="n">big_m</span> <span class="o">*</span> <span class="n">s</span><span class="p">))</span> <span class="o">/</span> <span class="n">big_p</span><span class="o">**</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">big_m</span><span class="p">))</span>
+    <span class="n">log_err</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">cte</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">big_p</span> <span class="o">/</span> <span class="p">(</span><span class="n">big_m</span> <span class="o">*</span> <span class="n">s</span><span class="p">))</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">big_m</span><span class="p">))</span>
 
     <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done: we use big_m =&quot;</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
