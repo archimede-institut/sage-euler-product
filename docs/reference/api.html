@@ -340,7 +340,7 @@ ValueError(“f_init[0] and h_init[0] must be equal to 1”)</p>
 <dd><p>Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
 of the lattice-invariant classes modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>
 and approx_zeta(s; q, A) is an arithmetic interval approximation
-of <span class="math notranslate nohighlight">\(\zeta(s; q; A) = \prod_{p\in A}iggl(1-p^{-s}iggr)^{-1}\)</span>
+of <span class="math notranslate nohighlight">\(\zeta(s; q, A) = \prod_{p\in A}(1-p^{-s})^{-1}\)</span>
 given in the form of a pair (lower_bound, upper_bound).</p>
 <p>We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)
 but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
