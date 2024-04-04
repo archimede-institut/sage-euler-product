@@ -34,8 +34,8 @@ Fast multi-precision computation of some Euler products
    :format: latex
 ..
 
-Introduction
-============
+1. Introduction
+===============
 
 In formula (16) of `[16]`_, D. Shanks obtained
 the following closed expression to compute the Landau-Ramanujan
@@ -647,8 +647,8 @@ and the corresponding script.
 
 .. _proof-of-theorem-pm1-when-fh11-x:
 
-Proof of Theorem :ref:`2<2>` when :math:`F/H=1/(1-X)`
-==============================================================
+2. Proof of Theorem :ref:`2<2>` when :math:`F/H=1/(1-X)`
+========================================================
 
 We follow the notation introduced in :eq:`defCAKkbis`.
 Since here :math:`F/H=1/(1-X)`, this leads us to consider, for any
@@ -873,8 +873,8 @@ Here is the fundamental property satisfied by these coefficients.
 
 .. _proof-of-theorem-pm1-in-general:
 
-Proof of Theorem :ref:`2<2>` in general
-================================================
+3. Proof of Theorem :ref:`2<2>` in general
+===========================================
 
 Let us recall the Witt decomposition. The readers will find in
 Lemma 1 of `[9]`_ a result of the same flavour. We
@@ -1162,8 +1162,8 @@ simplistic one.
 
 .. _More:
 
-Link with two other sets of inequalities
-========================================
+4. Link with two other sets of inequalities
+===========================================
 
 In this section, we develop some elements that are contiguous to our
 topic.
