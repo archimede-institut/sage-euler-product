@@ -63,7 +63,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
     but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
-    We compute directly what happens for primes < ``big_p``. 
+    We compute directly what happens for primes < ``big_p``.
     We ask at the beginning for `digits_offset` more (binary) digits.
 
     INPUT:
