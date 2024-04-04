@@ -278,7 +278,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
     and that :math:`\Delta s > 1` where :math:`\Delta` is the order of the zero of f_init-h_init at 0.
     This last condition is to ensure the Euler products converge absolutely.
-    See Theorem 2 of :doc:`../tutorial/LoeschianConstant-NS-04-MCOMP`.
+    See Theorem 2 of :doc:`the reference paper<../tutorial/LoeschianConstant-NS-04-MCOMP:2>`.
 
     to do
 
