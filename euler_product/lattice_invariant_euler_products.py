@@ -105,7 +105,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
-        sage: get_vs(8, 3, 100) #random # doctest: +NORMALIZE_WHITESPACE
+        sage: get_vs(8, 3, 100) # doctest: +NORMALIZE_WHITESPACE
         Computing the structural invariants ...  done.
         Computing big m ... Computing the finite product for p < 100 ...  done.
         done: we use big_m = 18 .
@@ -151,7 +151,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     TESTS::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
-        sage: get_vs(3, 2, 100)  # random # doctest: +NORMALIZE_WHITESPACE
+        sage: get_vs(3, 2, 100)  # doctest: +NORMALIZE_WHITESPACE
         Computing the structural invariants ...  done.
         Computing big m ... Computing the finite product for p < 100 ...  done.
         done: we use big_m = 26 .
@@ -207,7 +207,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     R = RealIntervalField(prec)
     #  Empty initial products are allowed:
     euler_prod_ini = tuple([R(1 / prod(
-        flatten([1, [R(1 - 1 / R(p)**s) for p in filter(lambda w: (w in Primes())
+        flatten([1, [R(1 - 1 / p**s) for p in filter(lambda w: (w in Primes())
                 and (w % q in structure.the_Class_tuple[i]), range(2, big_p))]])))
         for i in range(0, structure.nb_class)])
     if verbose >= 2:
@@ -338,7 +338,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
-        sage: get_euler_products(3, 1, 1-x^2, 1, 100, verbose=0)  #random # doctest: +NORMALIZE_WHITESPACE
+        sage: get_euler_products(3, 1, 1-x^2, 1, 100, verbose=0)  # doctest: +NORMALIZE_WHITESPACE
         ((frozenset({1}), frozenset({2})),
         ((0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974345,
         0.9671040753637981066150556834173635260473412207450092130719978569438733967843271277395717230016746853806050215621235810749643636399725665325875376146914709362753787689855429317947529895445140974477),
@@ -401,7 +401,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     #  The precision has changed! Change the ring:
     R = RealIntervalField(prec)
     RF = RealField(prec + 1)
-    log_err = R(cte * (my_beta / (R(big_p)**s))**(big_m + 1))
+    log_err = R(cte * (my_beta / (big_p**s))**(big_m + 1))
     RX = R['x']
     (x,) = RX._first_ngens(1)
     F, H = RX(f_init / Integer(F0[0])), RX(h_init / Integer(H0[0]))
