@@ -309,7 +309,7 @@ class ComponentStructure():
         The function ``get_CA_Km_F_sur_H`` answers a dictionary which to every ``(ind_A, ind_K, m)`` associates this value.
         When ``F == 1`` and ``H == 1-X``, the output of ``get_CA_Km_F_sur_H`` is the same as the one of ``get_CA_Km``.
     - ``get_L_values``: a method used only for ``get_gamma``.
-    - ``get_gamma``: outputs the tuple defined in (5.1) of the corresponding paper.
+    - ``get_gamma``: outputs the tuple defined in (22) of the :doc:`corresponding paper<../tutorial/LoeschianConstant-NS-04-MCOMP>`.
         For every cyclic subgroup :math:`G_0` in ``the_SG_tuple``,
         we compute :math:`\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)`, where :math:`L_P(x,\chi)` is the L-series associated to :math:`\chi`,
         save that we remove the Euler factors for primes below ``P==big_p``.
