@@ -58,11 +58,13 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
     of the lattice-invariant classes modulo ``q``
     and approx_zeta(s; q, A) is an arithmetic interval approximation
-    of :math:`\zeta(s; q; A)` given in the form of a pair (lower_bound, upper_bound).
+    of :math:`\zeta(s; q; A) = \prod_{p\in A}\biggl(1-p^{-s}\biggr)^{-1}`
+    given in the form of a pair (lower_bound, upper_bound).
 
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
     but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.
-    We compute directly what happens for primes < ``big_p``.
+    We compute directly what happens for primes < ``big_p``. 
+    We ask at the beginning for `digits_offset` more (binary) digits.
 
     INPUT:
 
@@ -91,7 +93,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
         As of now, this has effect only when ``verbose == 2``.
 
     - ``digits_offset`` -- int (default: `10`), optional
-        Not used yet.
+        We ask for some more digits, see above.
 
     OUTPUT:
 
@@ -201,7 +203,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     if verbose >= 2:
         sys.stdout.write("Computing the finite product for p < " + str(big_p) + " ... ")
 
-    prec = ceil(nb_decimals * log(10) / log(2) + 10 + ceil(big_m))
+    prec = ceil(nb_decimals * log(10) / log(2) + digits_offset + ceil(big_m))
     R = RealIntervalField(prec)
     #  Empty initial products are allowed:
     euler_prod_ini = tuple([R(1 / prod(
@@ -274,11 +276,12 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
     but this is not guaranteed. In case it does not happen, increase ``nb_decimals`` slightly.
+    We ask at the beginning for `digital_offset` more (binary) digits.
     We compute directly what happens for primes < ``big_p``.
     We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
     and that :math:`\Delta s > 1` where :math:`\Delta` is the order of the zero of f_init-h_init at 0.
     This last condition is to ensure the Euler products converge absolutely.
-    See Theorem 2 of :ref:`the reference paper<../tutorial/LoeschianConstant-NS-04-MCOMP:2>`.
+    See Theorem 2 of :doc:`the reference file<../tutorial/LoeschianConstant-NS-04-MCOMP>`.
 
     to do
 
@@ -391,7 +394,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
 
     #  The coefficients CA(K,m,F/H) may increase like beta^m,
     #  This spoils the accuracy and has to be recovered:
-    prec = ceil(nb_decimals * log(10) / log(2) + 10) + ceil(float(big_m * log(my_beta) / log(2)))
+    prec = ceil(nb_decimals * log(10) / log(2) + digital_offset) + ceil(float(big_m * log(my_beta) / log(2)))
 
     if verbose >= 2:
         print("We use big_m =", big_m, ", big_p =", big_p, "and working prec =", prec)
