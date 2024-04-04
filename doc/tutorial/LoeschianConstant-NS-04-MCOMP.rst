@@ -842,7 +842,7 @@ Here is the fundamental property satisfied by these coefficients.
       \Bigl|\log \zeta_P(f)\Bigr|
       \le \sum_{n\ge P}\frac{1}{n^f}\le
       \frac{1}{P^f}+\int_{P}^\infty\frac{dt}{t^f}
-      =\biggl(\frac{f-1}{P}+1\biggr)\frac{1}{(f-1)P^{f-1}}.\qedhere
+      =\biggl(\frac{f-1}{P}+1\biggr)\frac{1}{(f-1)P^{f-1}}.
 
 .. container:: thm
    :name: mainspe
