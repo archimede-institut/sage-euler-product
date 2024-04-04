@@ -463,7 +463,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
             if s == 1:
                 print("the product of F(1 / p) / H( 1 / p) is between")
             else:
-                print("the product of F(1 / p^" + str(s) + ")/H(1 / p^" + str(s) + ") is between")
+                print("the product of F(1 / p^{" + str(s) + "})/H(1 / p^{" + str(s) + "}) is between")
             print(eulerProds[i][0])
             print("and")
             print(eulerProds[i][1])
