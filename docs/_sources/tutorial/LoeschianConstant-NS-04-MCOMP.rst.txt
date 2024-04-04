@@ -20,9 +20,9 @@
 Fast multi-precision computation of some Euler products
 =======================================================
 
-:Author: S. Ettahri
-:Author: O. Ramaré
-:Author: L. Surel
+:Author: Salma Ettahri
+:Author: Olivier Ramaré
+:Author: Léon Surel
 
 .. note:: 
 
@@ -1303,8 +1303,8 @@ The proof we provide of Lemma :ref:`23<23>` is much simpler, but
 the above analysis establishes that the identities stemming from both
 approaches are the same.
 
-Timing and implementation notes
-===============================
+5. Timing and implementation notes
+==================================
 
 Let :math:`s > 1` be a real number and :math:`P\ge2` be a parameter. We
 consider the vector, for any positive integer :math:`t`:
