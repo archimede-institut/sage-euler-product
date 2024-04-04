@@ -250,7 +250,7 @@ class LatticeInvariantClasses():
             return (self.the_SG_tuple, self.the_Class_tuple)
         else:
             the_SG_list = []
-            for n in filter(lambda w: gcd(w, q) == 1, range(1, q)):
+            for n in filter(lambda w: gcd(w, q) == 1, range(1, q+1)):
                 my_sub = sub_group_generated(n=n, q=q)
                 #  print my_sub
                 if my_sub not in the_SG_list:
