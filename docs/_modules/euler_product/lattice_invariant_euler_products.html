@@ -354,6 +354,52 @@
 <span class="sd">          (1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231117,</span>
 <span class="sd">           1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131)))</span>
 
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
+<span class="sd">        sage: from sage.all import RealNumber</span>
+<span class="sd">        sage: get_vs(7, 2.1, 100) # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        Computing the structural invariants ...  done.</span>
+<span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
+<span class="sd">        done: we use big_m = 25 .</span>
+<span class="sd">        Building indices ... done: there are 11 summands.</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({1})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142720127867</span>
+<span class="sd">        and</span>
+<span class="sd">        1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142721524294</span>
+<span class="sd">        (Obtained:  102  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({6})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857899394878</span>
+<span class="sd">        and</span>
+<span class="sd">        1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857900796593</span>
+<span class="sd">        (Obtained:  100  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({2, 4})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874324307818</span>
+<span class="sd">        and</span>
+<span class="sd">        1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874326143261</span>
+<span class="sd">        (Obtained:  102  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({3, 5})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332932502825</span>
+<span class="sd">        and</span>
+<span class="sd">        1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332934116590</span>
+<span class="sd">        (Obtained:  102  correct decimal digits)</span>
+<span class="sd">        ((frozenset({1}), frozenset({6}), frozenset({2, 4}), frozenset({3, 5})),</span>
+<span class="sd">         ((1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142720127867,</span>
+<span class="sd">           1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142721524294),</span>
+<span class="sd">          (1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857899394878,</span>
+<span class="sd">           1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857900796593),</span>
+<span class="sd">          (1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874324307818,</span>
+<span class="sd">           1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874326143261),</span>
+<span class="sd">          (1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332932502825,</span>
+<span class="sd">           1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332934116590)))</span>
+<span class="sd"> </span>
+
 <span class="sd">    TESTS::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
@@ -723,7 +769,7 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import table_performance</span>
-<span class="sd">        sage: table_performance(10, 30) #random</span>
+<span class="sd">        sage: table_performance(10, 30) # random</span>
 
 <span class="sd">        11 102 digits for the first product</span>
 <span class="sd">        12 102 digits for the first product</span>
