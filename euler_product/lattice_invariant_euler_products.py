@@ -58,7 +58,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
     of the lattice-invariant classes modulo ``q``
     and approx_zeta(s; q, A) is an arithmetic interval approximation
-    of :math:`\zeta(s; q; A) = \prod_{p\in A}\biggl(1-p^{-s}\biggr)^{-1}`
+    of :math:`\zeta(s; q, A) = \prod_{p\in A}(1-p^{-s})^{-1}`
     given in the form of a pair (lower_bound, upper_bound).
 
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
