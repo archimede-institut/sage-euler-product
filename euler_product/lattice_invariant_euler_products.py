@@ -212,7 +212,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     s = R(s)
     #  Empty initial products are allowed:
     euler_prod_ini = tuple([R(1 / prod(
-        flatten([1, [R(1 - 1 / p**s) for p in filter(lambda w: (w in Primes())
+        flatten([1, [R(1 - 1 / R(p)**s) for p in filter(lambda w: (w in Primes())
                 and (w % q in structure.the_Class_tuple[i]), range(2, big_p))]])))
         for i in range(0, structure.nb_class)])
     if verbose >= 2:
