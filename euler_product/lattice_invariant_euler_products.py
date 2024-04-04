@@ -389,7 +389,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     cte = 4 * structure.nb_class**2 * (F0.degree() + H0.degree()) * (s + big_p)
     big_m = big_p + 10
 
-    while (float(log(cte) + (big_m + 1) * log(big_p**s / my_beta) - (nb_decimals + 1) * log(10)) < 0):
+    while (float(log(cte) + (big_m + 1) * (s*log(big_p) - log(my_beta)) - (nb_decimals + 1) * log(10)) < 0):
         big_m = big_m + 10
 
     #  The coefficients CA(K,m,F/H) may increase like beta^m,
