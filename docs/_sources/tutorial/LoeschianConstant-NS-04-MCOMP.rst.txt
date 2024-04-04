@@ -166,7 +166,7 @@ Here is the central theorem of this paper.
    |endthm|
 
 In the case :math:`H/F=1-X`, the relevant identity is proved in
-Theorem :ref:`18<18>` and is the heart of this paper. Our
+ :ref:`18<18>` and is the heart of this paper. Our
 result applies in particular to :math:`\mathcal{A}=\{1\}` and to
 :math:`\mathcal{A}=\{-1\}`. When :math:`q=4` and
 :math:`\mathcal{A}=\{-1\}`, we readily find that only :math:`t=1`
@@ -288,7 +288,7 @@ data at the end of this paper.
    :math:`m=p_1^{\beta_1}\cdots
    p_r^{\beta_r}` with :math:`\beta_i\le (\log M)/\log p_i` for
    :math:`i\le r`. In particular, there are at most
-   :math:`((\log M)/\log 2)^r` such integers. By `fineq`,
+   :math:`((\log M)/\log 2)^r` such integers. By :eq:`fineq`,
    the contribution of the integers :math:`m>M` to the Euler product to
    be computed is :math:`1+\mathcal{O}((\beta/P^s)^M)`, which is
    :math:`1+\mathcal{O}(2^{-M})` by the assumption :math:`P^s\ge2\beta`.
@@ -1322,7 +1322,7 @@ Hurwitz zeta function. We next define
 .. math::
    :label: defVsoft
 
-   V_s(t)=\bigl(\log\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
+   V_s(t)=\bigl(\zeta_P(ts;q,\mathcal{A})\bigr)_{\mathcal{A}\in G^\sharp}.
 
 The class ``LatticeInvariant``
 gives the two lists: the one of the cyclic subgroups and the one of
