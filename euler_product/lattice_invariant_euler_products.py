@@ -571,7 +571,7 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import table_performance
-        sage: table_performance(10, 30) #random
+        sage: table_performance(10, 30) # random
         11 102 digits for the first product
         12 102 digits for the first product
         13 102 digits for the first product
@@ -612,7 +612,7 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
         else:
             sys.stdout.write(str(q) + " ")
             sys.stdout.flush()
-            aux = get_vs(q, 2, nb_decimals, big_p, -1)
+            aux = get_vs(q, Integer(2), nb_decimals, big_p, -1)
             sys.stdout.write(str(aux[6]) + " digits for the first product\n")  # type: ignore
             aux[5] = ceil(aux[5] * 1000 / ref_time)  # type: ignore
             res[q] = aux
