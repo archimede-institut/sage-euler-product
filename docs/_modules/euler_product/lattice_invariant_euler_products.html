@@ -782,7 +782,7 @@
 <span class="sd">    EXAMPLES::</span>
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import table_performance</span>
-<span class="sd">        sage: table_performance(10, 30) #random</span>
+<span class="sd">        sage: table_performance(10, 30) # random</span>
 <span class="sd">        11 102 digits for the first product</span>
 <span class="sd">        12 102 digits for the first product</span>
 <span class="sd">        13 102 digits for the first product</span>
@@ -823,7 +823,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-            <span class="n">aux</span> <span class="o">=</span> <span class="n">get_vs</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">nb_decimals</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">aux</span> <span class="o">=</span> <span class="n">get_vs</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">nb_decimals</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">aux</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; digits for the first product</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
             <span class="n">aux</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">aux</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">ref_time</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
             <span class="n">res</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> <span class="o">=</span> <span class="n">aux</span>
