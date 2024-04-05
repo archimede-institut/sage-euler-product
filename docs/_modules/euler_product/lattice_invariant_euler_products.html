@@ -415,8 +415,6 @@
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 3ZZ in frozenset({1})</span>
 <span class="sd">        the product of 1 / (1 - p^{-2}) is between</span>
-<span class="sd">        For p + 3ZZ in frozenset({1})</span>
-<span class="sd">        the product of 1 / (1 - p^{-2}) is between</span>
 <span class="sd">        1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283</span>
 <span class="sd">        and</span>
 <span class="sd">        1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292</span>
@@ -785,7 +783,6 @@
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import table_performance</span>
 <span class="sd">        sage: table_performance(10, 30) #random</span>
-
 <span class="sd">        11 102 digits for the first product</span>
 <span class="sd">        12 102 digits for the first product</span>
 <span class="sd">        13 102 digits for the first product</span>
@@ -816,8 +813,9 @@
 <span class="sd">        27&amp; 18&amp; 2&amp; 10&amp; 6&amp; 21&amp; 8 \\</span>
 <span class="sd">        28&amp; 12&amp; 2&amp; 10&amp; 8&amp; 21&amp; 6 \\</span>
 <span class="sd">        29&amp; 28&amp; 2&amp; 7&amp; 6&amp; 21&amp; 9 \\</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">ref_time</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># approximate time is s for q = 3</span>
+    <span class="n">ref_time</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># approximate time is ref_time for q = 3</span>
     <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_q</span><span class="p">,</span> <span class="n">max_q</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">q</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">q</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
