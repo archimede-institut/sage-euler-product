@@ -20,7 +20,8 @@ by following the 2021 paper of Ettahri, Surel and Ramaré,  where
 
  * :math:`\mathcal{A}` is some subset of :math:`G=(\mathbb{Z}/q\mathbb{Z})^\times`. The subset :math:`\mathcal{A}` has to be the union of "lattice invariant classes", as described below.
  * :math:`q` is a positive integer, the so-called "modulus". We have :math:`q=7` for :math:`E_1`.
- * :math:`s` is a real parameter that is strictly positif and \*in this example\* strictly larger than 1. A typical choice is :math:`s=2`.
+ * :math:`s` is a real parameter that is strictly positif and \*in this example\* strictly larger than 1. A typical choice is :math:`s=2`. Technically, it should be an exact type, like ``2`` or ``21/10``, or an element of a ``RealIntervalField(...)`` with enough precision. Since this precision is given in binary digits, using 10 times the number of decimals asked for the final result is a safe choice. Notice that one may have to import ``RealNumber`` from ``sage.all`` and that ``RealIntervalField(1000)(2.1)`` is maybe not what one would expect: ``2.1`` is understood as a float with 53 binary digits, then extended by adding enough binary digits 0, the result being somewhat different in decimal expansion.
+
 
 .. seealso::
 
