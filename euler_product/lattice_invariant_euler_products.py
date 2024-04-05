@@ -210,8 +210,6 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
         -------------------
         For p + 3ZZ in frozenset({1})
         the product of 1 / (1 - p^{-2}) is between
-        For p + 3ZZ in frozenset({1})
-        the product of 1 / (1 - p^{-2}) is between
         1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283
         and
         1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292
@@ -574,7 +572,6 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
 
         sage: from euler_product.lattice_invariant_euler_products import table_performance
         sage: table_performance(10, 30) #random
-
         11 102 digits for the first product
         12 102 digits for the first product
         13 102 digits for the first product
@@ -605,8 +602,9 @@ def table_performance(min_q, max_q, nb_decimals = 100, big_p = 300):
         27& 18& 2& 10& 6& 21& 8 \\
         28& 12& 2& 10& 8& 21& 6 \\
         29& 28& 2& 7& 6& 21& 9 \\
+
     """
-    ref_time = 0.1  # approximate time is s for q = 3
+    ref_time = 0.1  # approximate time is ref_time for q = 3
     res = {}
     for q in range(min_q, max_q + 1):
         if (q % 2 == 0) and (q % 4 != 0):
