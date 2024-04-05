@@ -276,7 +276,7 @@
 <span class="sd">    - ``q`` -- int</span>
 <span class="sd">        The products are taken over classes modulo ``q``.</span>
 
-<span class="sd">    - ``s`` -- int, rat or real number </span>
+<span class="sd">    - ``s`` -- int, rat or real number</span>
 <span class="sd">        A real number &gt; 1. It should be given with enough precision to enable the computations,</span>
 <span class="sd">        so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.</span>
 <span class="sd">        As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.</span>
@@ -532,7 +532,7 @@
 <span class="k">def</span> <span class="nf">get_euler_products</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">f_init</span><span class="p">,</span> <span class="n">h_init</span><span class="p">,</span> <span class="n">nb_decimals</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">digital_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
 <span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) )</span>
-<span class="sd">    where (A) is the tuple of the lattice-invariant classes modulo q</span>
+<span class="sd">    where (A) is the tuple of the lattice-invariant classes modulo ``q``</span>
 <span class="sd">    and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation</span>
 <span class="sd">    of the product over every prime in the class A modulo q of the quotient</span>
 <span class="sd">    f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).</span>
@@ -554,11 +554,11 @@
 <span class="sd">    - ``q`` -- int</span>
 <span class="sd">        a positive integer. The products are taken over classes modulo q.</span>
 
-<span class="sd">    - ``s`` -- int, rat or real number </span>
+<span class="sd">    - ``s`` -- int, rat or real number</span>
 <span class="sd">        A real number &gt; 0. It should be given with enough precision to enable the computations,</span>
 <span class="sd">        so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.</span>
 <span class="sd">        As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.</span>
-<span class="sd">        Notice that, if you want to have ``s = 2.1``, better use ``21/10``. </span>
+<span class="sd">        Notice that, if you want to have ``s = 2.1``, better use ``21/10``.</span>
 <span class="sd">        Additional conditions may be required for the Euler products to be absolutely convergent.</span>
 
 <span class="sd">    - ``f_init`` -- pol</span>
