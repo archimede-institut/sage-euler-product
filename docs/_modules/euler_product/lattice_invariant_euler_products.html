@@ -356,7 +356,8 @@
 
 <span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
 <span class="sd">        sage: from sage.all import RealNumber</span>
-<span class="sd">        sage: get_vs(7, 2.1, 100) # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        sage: ss = RealIntervalField(1000)(2.1)</span>
+<span class="sd">        sage: get_vs(7, ss, 100) # doctest: +NORMALIZE_WHITESPACE</span>
 <span class="sd">        Computing the structural invariants ...  done.</span>
 <span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
 <span class="sd">        done: we use big_m = 25 .</span>
@@ -459,7 +460,7 @@
 
     <span class="n">prec</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">nb_decimals</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">/</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digits_offset</span> <span class="o">+</span> <span class="n">ceil</span><span class="p">(</span><span class="n">big_m</span><span class="p">))</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">RealIntervalField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="c1"># s = R(s)</span>
     <span class="c1">#  Empty initial products are allowed:</span>
     <span class="n">euler_prod_ini</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">prod</span><span class="p">(</span>
         <span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">())</span>

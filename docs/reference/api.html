@@ -453,7 +453,8 @@ and
 
 sage: from euler_product.lattice_invariant_euler_products import get_vs
 sage: from sage.all import RealNumber
-sage: get_vs(7, 2.1, 100) # doctest: +NORMALIZE_WHITESPACE
+sage: ss = RealIntervalField(1000)(2.1)
+sage: get_vs(7, ss, 100) # doctest: +NORMALIZE_WHITESPACE
 Computing the structural invariants ...  done.
 Computing big m ... Computing the finite product for p &lt; 100 ...  done.
 done: we use big_m = 25 .
