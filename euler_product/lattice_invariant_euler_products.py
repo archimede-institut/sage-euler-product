@@ -71,7 +71,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     - ``q`` -- int
         The products are taken over classes modulo ``q``.
 
-    - ``s`` -- int, rat or real number 
+    - ``s`` -- int, rat or real number
         A real number > 1. It should be given with enough precision to enable the computations,
         so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.
         As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.
@@ -324,7 +324,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose=2, with_laTeX=0, digital_offset=10):
     r"""
     Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) )
-    where (A) is the tuple of the lattice-invariant classes modulo q
+    where (A) is the tuple of the lattice-invariant classes modulo ``q``
     and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation
     of the product over every prime in the class A modulo q of the quotient
     f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).
@@ -346,11 +346,11 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     - ``q`` -- int
         a positive integer. The products are taken over classes modulo q.
 
-    - ``s`` -- int, rat or real number 
+    - ``s`` -- int, rat or real number
         A real number > 0. It should be given with enough precision to enable the computations,
         so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.
         As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.
-        Notice that, if you want to have ``s = 2.1``, better use ``21/10``. 
+        Notice that, if you want to have ``s = 2.1``, better use ``21/10``.
         Additional conditions may be required for the Euler products to be absolutely convergent.
 
     - ``f_init`` -- pol
