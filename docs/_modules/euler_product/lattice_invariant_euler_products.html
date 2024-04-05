@@ -276,8 +276,11 @@
 <span class="sd">    - ``q`` -- int</span>
 <span class="sd">        The products are taken over classes modulo ``q``.</span>
 
-<span class="sd">    - ``s`` -- float</span>
-<span class="sd">        A real number &gt; 1.</span>
+<span class="sd">    - ``s`` -- int, rat or real number </span>
+<span class="sd">        A real number &gt; 1. It should be given with enough precision to enable the computations,</span>
+<span class="sd">        so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.</span>
+<span class="sd">        As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.</span>
+<span class="sd">        Notice that, if you want to have ``s = 2.1``, better use ``21/10``.</span>
 
 <span class="sd">    - ``nb_decimals`` -- int (default: `100`)</span>
 <span class="sd">        The number of decimals that are being sought by the final result.</span>
@@ -364,28 +367,28 @@
 <span class="sd">        Building indices ... done: there are 11 summands.</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 7ZZ in frozenset({1})</span>
-<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
 <span class="sd">        1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142720127867</span>
 <span class="sd">        and</span>
 <span class="sd">        1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142721524294</span>
 <span class="sd">        (Obtained:  102  correct decimal digits)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 7ZZ in frozenset({6})</span>
-<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
 <span class="sd">        1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857899394878</span>
 <span class="sd">        and</span>
 <span class="sd">        1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857900796593</span>
 <span class="sd">        (Obtained:  100  correct decimal digits)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 7ZZ in frozenset({2, 4})</span>
-<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
 <span class="sd">        1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874324307818</span>
 <span class="sd">        and</span>
 <span class="sd">        1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874326143261</span>
 <span class="sd">        (Obtained:  102  correct decimal digits)</span>
 <span class="sd">        -------------------</span>
 <span class="sd">        For p + 7ZZ in frozenset({3, 5})</span>
-<span class="sd">        the product of 1 / (1 - p^{-2.100000000000000088817841970012523233890533447265625000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
 <span class="sd">        1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332932502825</span>
 <span class="sd">        and</span>
 <span class="sd">        1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332934116590</span>
@@ -551,8 +554,11 @@
 <span class="sd">    - ``q`` -- int</span>
 <span class="sd">        a positive integer. The products are taken over classes modulo q.</span>
 
-<span class="sd">    - ``s`` -- float</span>
-<span class="sd">        a real number &gt; 0.</span>
+<span class="sd">    - ``s`` -- int, rat or real number </span>
+<span class="sd">        A real number &gt; 0. It should be given with enough precision to enable the computations,</span>
+<span class="sd">        so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.</span>
+<span class="sd">        As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.</span>
+<span class="sd">        Notice that, if you want to have ``s = 2.1``, better use ``21/10``. </span>
 <span class="sd">        Additional conditions may be required for the Euler products to be absolutely convergent.</span>
 
 <span class="sd">    - ``f_init`` -- pol</span>
