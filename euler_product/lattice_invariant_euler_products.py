@@ -151,7 +151,8 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
         sage: from sage.all import RealNumber
-        sage: get_vs(7, 2.1, 100) # doctest: +NORMALIZE_WHITESPACE
+        sage: ss = RealIntervalField(1000)(2.1)
+        sage: get_vs(7, ss, 100) # doctest: +NORMALIZE_WHITESPACE
         Computing the structural invariants ...  done.
         Computing big m ... Computing the finite product for p < 100 ...  done.
         done: we use big_m = 25 .
@@ -254,7 +255,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 
     prec = ceil(nb_decimals * log(10) / log(2) + digits_offset + ceil(big_m))
     R = RealIntervalField(prec)
-    s = R(s)
+    # s = R(s)
     #  Empty initial products are allowed:
     euler_prod_ini = tuple([R(1 / prod(
         flatten([1, [R(1 - 1 / R(p)**s) for p in filter(lambda w: (w in Primes())
