@@ -54,7 +54,7 @@ from euler_product.utils_euler_product import nb_common_digits
 
 
 def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_offset=10):
-    """
+    r"""
     Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
     of the lattice-invariant classes modulo ``q``
     and approx_zeta(s; q, A) is an arithmetic interval approximation
@@ -487,7 +487,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     #                                       range(2, big_p))])
     #  eulerProdIni = tuple(prod(flatten(prod_list)))
 
-    eulerProdIni = tuple(prod(flatten([1, [R(F(1 / R(p)**s) / H(1 / R(p)**s))
+    eulerProdIni = tuple(prod(flatten([1, [R(F(R(1 / R(p)**s)) / H(R(1 / R(p)**s)))
                                            for p in filter(lambda w: (w in Primes())
                                                            and (w % q in structure.the_Class_tuple[i]),
                                            range(2, big_p))]]))
