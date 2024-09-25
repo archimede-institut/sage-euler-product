@@ -16,18 +16,19 @@ PARI/GP for number field computations
 
 
 Prerequisites
-Installing sage-euler-product requires a working Sage installation (with Cython and gcc). 
+Installing sage-euler-product requires a working Sage installation. 
 
 Installation
 The module is distributed on PyPI and is easily installed through the Python package manager pip. If you downloaded a binary from the SageMath website (including the Cygwin version running on Windows) or compiled from source, run the following command::
 
-$ sage -pip install sage-euler-product [--user]
+    $ sage -pip install sage-euler-product [--user]
+
 The --user option is optional and allows to install the module in your user space (and does not require administrator rights).
 
 If you use Debian or Ubuntu and you installed Sage through the operating system's package manager (that is, the package sagemath), run these two commands::
 
-	$ source /usr/share/sagemath/bin/sage-env
-	$ pip install sage-euler-product --user
+    $ source /usr/share/sagemath/bin/sage-env
+    $ pip install sage-euler-product --user
 
 If you use Arch Linux, you need to install from source (see next section).
 
@@ -40,16 +41,19 @@ If you are an Arch Linux user with the sagemath package installed, use PIP=pip2 
 
 You can install the latest development version in one line with::
 
-$ PIP install git+https://github.com/archimede-institut/sage-euler-product [--user]
+    $ PIP install git+https://github.com/archimede-institut/sage-euler-product [--user]
+
 As before, the --user option is optional and when specified will install the module in your user space.
 
 You can also perform a two stage installation that will allow you to modify the source code. The first step is to clone the repository::
 
-$ git clone https://github.com/archimede-institut/sage-euler-product
+    $ git clone https://github.com/archimede-institut/sage-euler-product
+
 The above command creates a repository sage-euler-product with the source code, documentation and miscellaneous files. You can then change to the directory thus created and install the surface dynamics module with::
 
-$ cd sage-euler-product
-$ PIP install . [--user]
+    $ cd sage-euler-product
+    $ PIP install . [--user]
+	
 Do not forget the . that refers to the current directory.
 
 When you don't want to install the package or you are testing some modifications to the source code, a more convenient way of using  **sage-euler-prodct** is to do everything locally. To do so, you need to compile the module in place via::
