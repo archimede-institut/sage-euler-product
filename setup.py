@@ -20,7 +20,7 @@ class SageTest(TestCommand):
 
 
 setup(
-    name = "euler_product",
+    name = "sage-euler-product",
     version = readfile("VERSION"), # the VERSION file is shared with the documentation
     description='Euler Product perform number theorie of euler product',
     long_description = readfile("README.md"), # get the long description from the README
