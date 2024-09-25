@@ -5,12 +5,12 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Fast multi-precision computation of some Euler products" href="../tutorial/LoeschianConstant-NS-04-MCOMP.html" />
 
-    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
         <title>API Documentation - sage-euler-product 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="https://doc.sagemath.org/html/en/reference/_static/custom-furo.css" />
     
     
@@ -72,7 +72,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -87,22 +87,63 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -115,6 +156,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -133,7 +176,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -187,11 +231,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/reference/api.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -201,11 +251,11 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="api-documentation">
-<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading">#</a></h1>
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Link to this heading">¶</a></h1>
 <section id="module-euler_product.lattice_invariant_euler_products">
-<span id="euler-product-lattice-invariant-euler-products"></span><h2>euler_product.lattice_invariant_euler_products<a class="headerlink" href="#module-euler_product.lattice_invariant_euler_products" title="Link to this heading">#</a></h2>
+<span id="euler-product-lattice-invariant-euler-products"></span><h2>euler_product.lattice_invariant_euler_products<a class="headerlink" href="#module-euler_product.lattice_invariant_euler_products" title="Link to this heading">¶</a></h2>
 <p>The main function of this package is <code class="docutils literal notranslate"><span class="pre">get_euler_products</span></code> which computes
 with interval arithmetic and a proven precision
 Euler products of rational functions over primes in special sets modulo some fixed <code class="docutils literal notranslate"><span class="pre">q</span></code>.
@@ -230,7 +280,7 @@ CAREFUL, this is Python 3 code!</p>
 </div>
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.get_euler_products">
-<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_euler_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_laTeX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digital_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_euler_products"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_euler_products" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_euler_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_laTeX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digital_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_euler_products"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_euler_products" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) )
 where (A) is the tuple of the lattice-invariant classes modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>
 and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation
@@ -347,7 +397,7 @@ ValueError(“f_init[0] and h_init[0] must be equal to 1”)</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.get_vs">
-<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_vs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_laTeX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_vs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_vs" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_vs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_laTeX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_vs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_vs" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple
 of the lattice-invariant classes modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>
 and approx_zeta(s; q, A) is an arithmetic interval approximation
@@ -537,7 +587,7 @@ and
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.get_vs_checker">
-<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_vs_checker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_vs_checker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_vs_checker" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">get_vs_checker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">borne</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#get_vs_checker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.get_vs_checker" title="Link to this definition">¶</a></dt>
 <dd><p>This is a low level sanity check engine described in the tutorial.
 It is to be used by developers only.</p>
 <p>INPUT:</p>
@@ -579,7 +629,7 @@ It is to be used by developers only.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.lattice_invariant_euler_products.table_performance">
-<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">table_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#table_performance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.table_performance" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.lattice_invariant_euler_products.</span></span><span class="sig-name descname"><span class="pre">table_performance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_decimals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/lattice_invariant_euler_products.html#table_performance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.lattice_invariant_euler_products.table_performance" title="Link to this definition">¶</a></dt>
 <dd><p>The behaviour of this function is described in the attached tutorial.</p>
 <p>INPUT:</p>
 <ul class="simple">
@@ -650,7 +700,7 @@ that are not twice an odd integer.</p>
 
 </section>
 <section id="module-euler_product.utils_euler_product">
-<span id="euler-product-utils-euler-product"></span><h2>euler_product.utils_euler_product<a class="headerlink" href="#module-euler_product.utils_euler_product" title="Link to this heading">#</a></h2>
+<span id="euler-product-utils-euler-product"></span><h2>euler_product.utils_euler_product<a class="headerlink" href="#module-euler_product.utils_euler_product" title="Link to this heading">¶</a></h2>
 <p>Utils_euler_product utilities  for Euler Product</p>
 <p>utils_euler_product.py defines  functions
 Main Engines</p>
@@ -676,7 +726,7 @@ CAREFUL, this is Python 3 code!</p>
 </div>
 <dl class="py class">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">ComponentStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">ComponentStructure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class takes a positive integer <code class="docutils literal notranslate"><span class="pre">q</span></code> and creates the following list of accessors:</p>
 <ul class="simple">
@@ -730,7 +780,7 @@ The output is the list of these values computed with <code class="docutils liter
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_CA_Km">
-<span class="sig-name descname"><span class="pre">get_CA_Km</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_CA_Km"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_CA_Km</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_CA_Km"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km" title="Link to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> is a method used for <code class="docutils literal notranslate"><span class="pre">get_vs</span></code>. The coefficient C(A,K,m) are a sum on a variable t of a function of the value computed by <code class="docutils literal notranslate"><span class="pre">getr_A_K_t</span></code>.
 The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
 The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.</p>
@@ -760,7 +810,7 @@ The function <code class="docutils literal notranslate"><span class="pre">get_CA
 
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H">
-<span class="sig-name descname"><span class="pre">get_CA_Km_F_sur_H</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sh</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_CA_Km_F_sur_H"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_CA_Km_F_sur_H</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff_sh</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_CA_Km_F_sur_H"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_CA_Km_F_sur_H" title="Link to this definition">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>: a method used for <code class="docutils literal notranslate"><span class="pre">get_euler_products`.</span> <span class="pre">The</span> <span class="pre">coefficient</span> <span class="pre">C(A,K,m,</span> <span class="pre">F/H)</span> <span class="pre">are</span> <span class="pre">a</span> <span class="pre">sum</span> <span class="pre">on</span> <span class="pre">a</span> <span class="pre">variable</span> <span class="pre">t</span> <span class="pre">of</span> <span class="pre">s(F/H,</span> <span class="pre">m/t)</span> <span class="pre">times</span> <span class="pre">a</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">value</span> <span class="pre">computed</span> <span class="pre">by</span> <span class="pre">``getr_A_K_t</span></code>.
 The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
 The function <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">m)</span></code> associates this value.
@@ -820,7 +870,7 @@ sage: structure.get_CA_Km_F_sur_H([1, 2, 3, 4, 5, 6], [1], [1, 0, -1])   # docte
 
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_L_values">
-<span class="sig-name descname"><span class="pre">get_L_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CIF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CF</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_L_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_L_values" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_L_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CIF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CF</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_L_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_L_values" title="Link to this definition">¶</a></dt>
 <dd><p>for every Dirichlet character <span class="math notranslate nohighlight">\(\chi\)</span> modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>, we compute
 the L-series <span class="math notranslate nohighlight">\(L_P(m, \chi)\)</span> associated to :math:chi:,
 save that we remove the Euler factors for primes below <code class="docutils literal notranslate"><span class="pre">P==big_p</span></code>.
@@ -881,7 +931,7 @@ sage: structure.get_L_values(m, 200, CIF, CF)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.get_gamma">
-<span class="sig-name descname"><span class="pre">get_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_gamma" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.get_gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.get_gamma" title="Link to this definition">¶</a></dt>
 <dd><p>Outputs the tuple defined in (22) of the <a class="reference internal" href="../tutorial/LoeschianConstant-NS-04-MCOMP.html"><span class="doc">corresponding paper</span></a>: for every cyclic subgroup <span class="math notranslate nohighlight">\(G_0\)</span> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>,
 we compute <span class="math notranslate nohighlight">\(\sum_{\chi\in G_0^\perp} \log L_P(t*s, \chi)\)</span>, where <span class="math notranslate nohighlight">\(L_P(x,\chi)\)</span> is the L-series associated to <span class="math notranslate nohighlight">\(\chi\)</span>,
 save that we remove the Euler factors for primes below <code class="docutils literal notranslate"><span class="pre">P==big_p</span></code>.
@@ -927,7 +977,7 @@ sage: structure.get_gamma(1, 1.2, 20, 100)
 
 <dl class="py method">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.ComponentStructure.getr_A_Kt">
-<span class="sig-name descname"><span class="pre">getr_A_Kt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.getr_A_Kt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.getr_A_Kt" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getr_A_Kt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">my_indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#ComponentStructure.getr_A_Kt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.ComponentStructure.getr_A_Kt" title="Link to this definition">¶</a></dt>
 <dd><p>This method is used only for <code class="docutils literal notranslate"><span class="pre">get_CA_Km</span></code> and <code class="docutils literal notranslate"><span class="pre">get_CA_Km_F_sur_H</span></code>. The coefficient C(A,K,m, F/H) are a sum on a variable t of s(F/H,m/t) times a function of t, say f(t).
 The lattice class A in given by its index <code class="docutils literal notranslate"><span class="pre">ind_A</span></code> in <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>, the subgroup K is given by its index <code class="docutils literal notranslate"><span class="pre">ind_K</span></code> in <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code>.
 The function <code class="docutils literal notranslate"><span class="pre">get_r_A_K_t</span></code> answers a dictionary which to every <code class="docutils literal notranslate"><span class="pre">(ind_A,</span> <span class="pre">ind_K,</span> <span class="pre">t)</span></code> associates this f(t) (with the moebius factor).
@@ -978,7 +1028,7 @@ This list is the same as the list of necessary values of <code class="docutils l
 
 <dl class="py class">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.LatticeInvariantClasses">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">LatticeInvariantClasses</span></span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#LatticeInvariantClasses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.LatticeInvariantClasses" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">LatticeInvariantClasses</span></span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#LatticeInvariantClasses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.LatticeInvariantClasses" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class takes a modulus <code class="docutils literal notranslate"><span class="pre">q</span></code> (i.e. a positive integer) and has two named accessors,
 <code class="docutils literal notranslate"><span class="pre">the_SG_tuple</span></code> and <code class="docutils literal notranslate"><span class="pre">the_Class_tuple</span></code>.
@@ -1007,7 +1057,7 @@ made by the smallest non-empty intersections of elements of <code class="docutil
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_beta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_beta" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_beta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_beta" title="Link to this definition">¶</a></dt>
 <dd><p>Outputs the maximum of 1 and of the inverse of the norm of the non-zero roots of the polynomial <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p>
 <p>INPUT:</p>
 <ul class="simple">
@@ -1036,7 +1086,7 @@ made by the smallest non-empty intersections of elements of <code class="docutil
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_beta_rough">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta_rough</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_beta_rough"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_beta_rough" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_beta_rough</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_beta_rough"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_beta_rough" title="Link to this definition">¶</a></dt>
 <dd><p>Outputs the maximum of 1 and of the sum of the norm of the coefficients of the polynomial <code class="docutils literal notranslate"><span class="pre">F</span></code>,
 which is precisely given as the list <code class="docutils literal notranslate"><span class="pre">coeffs_f</span></code>. This is intended to be an easy upper bound when the function
 <code class="docutils literal notranslate"><span class="pre">get_beta</span></code> takes too much time.</p>
@@ -1063,7 +1113,7 @@ which is precisely given as the list <code class="docutils literal notranslate">
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.get_vector_sf">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_vector_sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_vector_sf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_vector_sf" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">get_vector_sf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coeffs_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#get_vector_sf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.get_vector_sf" title="Link to this definition">¶</a></dt>
 <dd><p>A polynomial F is given by its list of coefficients, the first one being 1.
 The output is the list <span class="math notranslate nohighlight">\(s_F(m)\)</span> for m less than <code class="docutils literal notranslate"><span class="pre">how_many</span></code>, where <span class="math notranslate nohighlight">\(s_F(m)\)</span>
 is the sum of the m-th power of the inverses of the roots of F.</p>
@@ -1097,7 +1147,7 @@ is the sum of the m-th power of the inverses of the roots of F.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.laTeX_for_number">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">laTeX_for_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_block_sto_cut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#laTeX_for_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.laTeX_for_number" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">laTeX_for_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">how_many</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nb_block_sto_cut</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#laTeX_for_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.laTeX_for_number" title="Link to this definition">¶</a></dt>
 <dd><p>Return a character string representing the real number <code class="docutils literal notranslate"><span class="pre">w</span></code> made of its
 integer part followed by every decimal up to the``how_many`` -th decimals,
 where every block of 5 decimal is separated by '\\,',
@@ -1139,7 +1189,7 @@ version of the decimal expansion of <code class="docutils literal notranslate"><
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.nb_common_digits">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">nb_common_digits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#nb_common_digits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.nb_common_digits" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">nb_common_digits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#nb_common_digits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.nb_common_digits" title="Link to this definition">¶</a></dt>
 <dd><p>Returns -1 if floor(a) != floor(b).</p>
 <p>INPUT:</p>
 <ul class="simple">
@@ -1176,7 +1226,7 @@ version of the decimal expansion of <code class="docutils literal notranslate"><
 
 <dl class="py function">
 <dt class="sig sig-object py" id="euler_product.utils_euler_product.sub_group_generated">
-<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">sub_group_generated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#sub_group_generated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.sub_group_generated" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">euler_product.utils_euler_product.</span></span><span class="sig-name descname"><span class="pre">sub_group_generated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/euler_product/utils_euler_product.html#sub_group_generated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#euler_product.utils_euler_product.sub_group_generated" title="Link to this definition">¶</a></dt>
 <dd><p>Return the frozenset of the multiplicative subgroup generated by the powers of <code class="docutils literal notranslate"><span class="pre">n</span></code> modulo <code class="docutils literal notranslate"><span class="pre">q</span></code>.
 It is expected that <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">q</span></code> are coprime.</p>
 <p>INPUT:</p>
@@ -1293,9 +1343,9 @@ It is expected that <code class="docutils literal notranslate"><span class="pre"
     </aside>
   </div>
 </div><script src="../_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
