@@ -108,7 +108,6 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     EXAMPLES::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
-        sage: from sage.all import RealNumber
         sage: get_vs(8, 3, 100) # doctest: +NORMALIZE_WHITESPACE
         Computing the structural invariants ...  done.
         Computing big m ... Computing the finite product for p < 100 ...  done.
@@ -153,7 +152,6 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
            1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131)))
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
-        sage: from sage.all import RealNumber
         sage: ss = RealIntervalField(1000)(2.1)
         sage: get_vs(7, ss, 100) # doctest: +NORMALIZE_WHITESPACE
         Computing the structural invariants ...  done.
@@ -201,7 +199,6 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
     TESTS::
 
         sage: from euler_product.lattice_invariant_euler_products import get_vs
-        sage: from sage.all import RealNumber
         sage: get_vs(3, 2, 100)  # doctest: +NORMALIZE_WHITESPACE
         Computing the structural invariants ...  done.
         Computing big m ... Computing the finite product for p < 100 ...  done.
@@ -405,7 +402,6 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
            0.9772686478893137854388184266844545895906115657758499208289733302484239589826603294718981918722254050003289550536985865206208817489644518)))
 
         sage: from euler_product.lattice_invariant_euler_products import get_euler_products
-        sage: from sage.all import RealNumber
         sage: ss = RealIntervalField(1000)(2.1)
         sage: get_euler_products(7, ss, 1-x^3, 1+2*x^2, 100, 100, 0)  # doctest: +NORMALIZE_WHITESPACE
         ((frozenset({1}), frozenset({6}), frozenset({2, 4}), frozenset({3, 5})),
