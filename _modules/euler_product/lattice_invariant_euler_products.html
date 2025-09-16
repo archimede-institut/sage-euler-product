@@ -1,0 +1,971 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+        <title>euler_product.lattice_invariant_euler_products - sage-euler-product 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="https://doc.sagemath.org/html/en/reference/_static/custom-furo.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --color-brand-primary: #0f0fff;
+  --color-brand-content: #0f0fff;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #272822;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">sage-euler-product 0.0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="../../_static/nntdm-small.jpg" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="../../_static/nntdm-small.jpg" alt="Dark Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">sage-euler-product 0.0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial Euler Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/install_dev.html">Installation EULER_PRODUCT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/LoeschianConstant-NS-04-MCOMP.html">Fast multi-precision computation of some Euler products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api.html">API Documentation</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <h1>Source code for euler_product.lattice_invariant_euler_products</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">The main function of this package is ``get_euler_products`` which computes</span>
+<span class="sd">with interval arithmetic and a proven precision</span>
+<span class="sd">Euler products of rational functions over primes in special sets modulo some fixed ``q``.</span>
+<span class="sd">These special sets are the lattice invariant classes modulo ``q``, and the software also enables</span>
+<span class="sd">the user to use them through the class ``ComponentStructure``.</span>
+
+<span class="sd">AUTHORS:</span>
+
+<span class="sd">- Olivier Ramaré (2023-01-008) : initial version</span>
+<span class="sd">- Dominique Benielli (2023-02_15)</span>
+<span class="sd">  Aix Marseille Université ,</span>
+<span class="sd">  Integration as SageMath package.</span>
+<span class="sd">  Cellule de developpement Institut Archimède</span>
+
+<span class="sd">...WARNING:</span>
+
+<span class="sd">  Needs Sage version at least 9.0</span>
+<span class="sd">  CAREFUL, this is Python 3 code!</span>
+
+<span class="sd">EXAMPLES::</span>
+
+<span class="sd">    sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1"># *****************************************************************************</span>
+<span class="c1">#       Copyright (C) 2023 Olivier Ramare</span>
+<span class="c1">#       &lt; olivier . ramare @univ-amu.fr&gt;</span>
+<span class="c1">#</span>
+<span class="c1">#  Distributed under the terms of the GNU General Public License (GPL)</span>
+<span class="c1">#                  http://www.gnu.org/licenses/</span>
+<span class="c1"># *****************************************************************************</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">absolute_import</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">timeit</span><span class="w"> </span><span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.functions.other</span><span class="w"> </span><span class="kn">import</span> <span class="n">ceil</span><span class="p">,</span> <span class="n">floor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.sets.primes</span><span class="w"> </span><span class="kn">import</span> <span class="n">Primes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.modules.free_module_element</span><span class="w"> </span><span class="kn">import</span> <span class="n">vector</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.functions.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">exp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.functions.log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.misc.misc_c</span><span class="w"> </span><span class="kn">import</span> <span class="n">prod</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.misc.flatten</span><span class="w"> </span><span class="kn">import</span> <span class="n">flatten</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.arith.misc</span><span class="w"> </span><span class="kn">import</span> <span class="n">prime_factors</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.arith.misc</span><span class="w"> </span><span class="kn">import</span> <span class="n">prime_divisors</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.rings.integer</span><span class="w"> </span><span class="kn">import</span> <span class="n">Integer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.rings.real_mpfi</span><span class="w"> </span><span class="kn">import</span> <span class="n">RealIntervalField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sage.rings.real_mpfr</span><span class="w"> </span><span class="kn">import</span> <span class="n">RealField</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">euler_product.utils_euler_product</span><span class="w"> </span><span class="kn">import</span> <span class="n">ComponentStructure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">euler_product.utils_euler_product</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_beta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">euler_product.utils_euler_product</span><span class="w"> </span><span class="kn">import</span> <span class="n">laTeX_for_number</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">euler_product.utils_euler_product</span><span class="w"> </span><span class="kn">import</span> <span class="n">nb_common_digits</span>
+
+
+<div class="viewcode-block" id="get_vs">
+<a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.get_vs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_vs</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">nb_decimals</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">digits_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the pair ((A), (approx_zeta(s; q, A))) where (A) is the tuple</span>
+<span class="sd">    of the lattice-invariant classes modulo ``q``</span>
+<span class="sd">    and approx_zeta(s; q, A) is an arithmetic interval approximation</span>
+<span class="sd">    of :math:`\zeta(s; q, A) = \prod_{p\in A}(1-p^{-s})^{-1}`</span>
+<span class="sd">    given in the form of a pair (lower_bound, upper_bound).</span>
+
+<span class="sd">    We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)</span>
+<span class="sd">    but this is not guaranteed. In case it does not happen, increase nb_decimals slightly.</span>
+<span class="sd">    We compute directly what happens for primes &lt; ``big_p``.</span>
+<span class="sd">    We ask at the beginning for `digits_offset` more (binary) digits.</span>
+
+<span class="sd">    INPUT:</span>
+
+<span class="sd">    - ``q`` -- int</span>
+<span class="sd">        The products are taken over classes modulo ``q``.</span>
+
+<span class="sd">    - ``s`` -- int, rat or real number</span>
+<span class="sd">        A real number &gt; 1. It should be given with enough precision to enable the computations,</span>
+<span class="sd">        so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.</span>
+<span class="sd">        As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.</span>
+<span class="sd">        Notice that, if you want to have ``s = 2.1``, better use ``21/10``.</span>
+
+<span class="sd">    - ``nb_decimals`` -- int (default: `100`)</span>
+<span class="sd">        The number of decimals that are being sought by the final result.</span>
+<span class="sd">        The function aims at such a number of decimals but a final tuning may be required.</span>
+
+<span class="sd">    - ``big_p`` -- int (default: `100`), optional</span>
+<span class="sd">        This is an internal parameter that is described in the accompanying paper.</span>
+<span class="sd">        In short: the Euler products up to ``big_p`` are computed directly.</span>
+
+<span class="sd">    - ``verbose`` -- int (default: `2`), optional</span>
+<span class="sd">        Defines the amount of output shown.</span>
+<span class="sd">        It may take the usual values 0, 1, 2, towards more explanations.</span>
+<span class="sd">        When ``get_vs`` is used inside another function, ``verbose = 0`` is usually what is required.</span>
+<span class="sd">        The value -1 is special and the effect is fully described in the tutorial.</span>
+
+<span class="sd">    - ``with_laTeX`` -- int (default: `0`), optional</span>
+<span class="sd">        This parameter takes the value 1 or not 1.</span>
+<span class="sd">        As of now, this has effect only when ``verbose == 2``.</span>
+
+<span class="sd">    - ``digits_offset`` -- int (default: `10`), optional</span>
+<span class="sd">        We ask for some more digits, see above.</span>
+
+<span class="sd">    OUTPUT:</span>
+
+<span class="sd">    pair of tuples</span>
+<span class="sd">        The output is a pair whose first component is the tuple of lattice invariant classes (A)</span>
+<span class="sd">        and second component is the corresponding tuple of values :math:`(\zeta(s; q, A))` where</span>
+<span class="sd">        each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</span>
+
+<span class="sd">    EXAMPLES::</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
+<span class="sd">        sage: get_vs(8, 3, 100) # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        Computing the structural invariants ...  done.</span>
+<span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
+<span class="sd">        done: we use big_m = 18 .</span>
+<span class="sd">        Building indices ... done: there are 5 summands.</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 8ZZ in frozenset({1})</span>
+<span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
+<span class="sd">        1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838389</span>
+<span class="sd">        and</span>
+<span class="sd">        1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838407</span>
+<span class="sd">        (Obtained:  104  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 8ZZ in frozenset({3})</span>
+<span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
+<span class="sd">        1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052081</span>
+<span class="sd">        and</span>
+<span class="sd">        1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052096</span>
+<span class="sd">        (Obtained:  105  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 8ZZ in frozenset({5})</span>
+<span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
+<span class="sd">        1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811113</span>
+<span class="sd">        and</span>
+<span class="sd">        1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811127</span>
+<span class="sd">        (Obtained:  105  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 8ZZ in frozenset({7})</span>
+<span class="sd">        the product of 1 / (1 - p^{-3}) is between</span>
+<span class="sd">        1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231117</span>
+<span class="sd">        and</span>
+<span class="sd">        1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131</span>
+<span class="sd">        (Obtained:  105  correct decimal digits)</span>
+<span class="sd">        ((frozenset({1}), frozenset({3}), frozenset({5}), frozenset({7})),</span>
+<span class="sd">         ((1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838389,</span>
+<span class="sd">           1.00022487189858708836232213399171649391737471516970709876892216031894460446108615250640526399629122151838407),</span>
+<span class="sd">          (1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052081,</span>
+<span class="sd">           1.03941995442465269726466028414808844655561938824520417669418677265825033928903395095004198994772110633052096),</span>
+<span class="sd">          (1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811113,</span>
+<span class="sd">           1.00859929667035262471282393658930645974303187198527123038915644169227273758988775728257540659401768223811127),</span>
+<span class="sd">          (1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231117,</span>
+<span class="sd">           1.00305724526111078841419961903241251128776224554544642576504934327705380373558762279204676597516287864231131)))</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
+<span class="sd">        sage: ss = RealIntervalField(1000)(2.1)</span>
+<span class="sd">        sage: get_vs(7, ss, 100) # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        Computing the structural invariants ...  done.</span>
+<span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
+<span class="sd">        done: we use big_m = 25 .</span>
+<span class="sd">        Building indices ... done: there are 11 summands.</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({1})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142720127867</span>
+<span class="sd">        and</span>
+<span class="sd">        1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142721524294</span>
+<span class="sd">        (Obtained:  102  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({6})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857899394878</span>
+<span class="sd">        and</span>
+<span class="sd">        1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857900796593</span>
+<span class="sd">        (Obtained:  100  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({2, 4})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874324307818</span>
+<span class="sd">        and</span>
+<span class="sd">        1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874326143261</span>
+<span class="sd">        (Obtained:  102  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 7ZZ in frozenset({3, 5})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2.10000000000000008881784197001252323389053344726562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000?}) is between</span>
+<span class="sd">        1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332932502825</span>
+<span class="sd">        and</span>
+<span class="sd">        1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332934116590</span>
+<span class="sd">        (Obtained:  102  correct decimal digits)</span>
+<span class="sd">        ((frozenset({1}), frozenset({6}), frozenset({2, 4}), frozenset({3, 5})),</span>
+<span class="sd">         ((1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142720127867,</span>
+<span class="sd">           1.0015251649887938725660913688010517101666208733880109315688816926296884362067543474803469725091159142721524294),</span>
+<span class="sd">          (1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857899394878,</span>
+<span class="sd">           1.0053143647905533679330453141809294714882943247539536696871604072988921328496577468083535690636615857900796593),</span>
+<span class="sd">          (1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874324307818,</span>
+<span class="sd">           1.3163847262351936805824813658507662946352860144404616097232556176854606556798278964523547342562974874326143261),</span>
+<span class="sd">          (1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332932502825,</span>
+<span class="sd">           1.1573918393315763316569087551275677116540398269978595705035335829359240632731578772727923341501394332934116590)))</span>
+
+<span class="sd">    TESTS::</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs</span>
+<span class="sd">        sage: get_vs(3, 2, 100)  # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        Computing the structural invariants ...  done.</span>
+<span class="sd">        Computing big m ... Computing the finite product for p &lt; 100 ...  done.</span>
+<span class="sd">        done: we use big_m = 26 .</span>
+<span class="sd">        Building indices ... done: there are 5 summands.</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 3ZZ in frozenset({1})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2}) is between</span>
+<span class="sd">        1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283</span>
+<span class="sd">        and</span>
+<span class="sd">        1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292</span>
+<span class="sd">        (Obtained:  100  correct decimal digits)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p + 3ZZ in frozenset({2})</span>
+<span class="sd">        the product of 1 / (1 - p^{-2}) is between</span>
+<span class="sd">        1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751141999583734</span>
+<span class="sd">        and</span>
+<span class="sd">        1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751142004543841</span>
+<span class="sd">        (Obtained:  99  correct decimal digits)</span>
+<span class="sd">        ((frozenset({1}), frozenset({2})),</span>
+<span class="sd">         ((1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962897974283,</span>
+<span class="sd">           1.0340148754143418805390306444130476285789654284890998864168250384212222458710963580496217079826205962901601292),</span>
+<span class="sd">          (1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751141999583734,</span>
+<span class="sd">           1.4140643908921476375655018190798293799076950693931621750399249624239281069920884994537548585024751142004543841)))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
+    <span class="c1">#  Compute the structural invariants:</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Computing the structural invariants ... &quot;</span><span class="p">)</span>
+
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+    <span class="c1"># (theSGTuple, theClassTuple, nb_classes, theExponent,</span>
+    <span class="c1"># phi_q, characterGroup, invertibles, invariantCharacters) = structure</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; done.&quot;</span><span class="p">)</span>
+
+    <span class="c1">#  Getting bigM:</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Computing big m ... &quot;</span><span class="p">)</span>
+
+    <span class="n">allowed_primes</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">prime_factors</span><span class="p">(</span><span class="n">structure</span><span class="o">.</span><span class="n">phi_q</span><span class="p">))</span>
+    <span class="n">cte</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span> <span class="o">*</span> <span class="n">prod</span><span class="p">([</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">allowed_primes</span><span class="p">])</span>
+    <span class="n">big_m</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">cte</span><span class="p">)</span> <span class="o">+</span> <span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">big_p</span> <span class="o">/</span> <span class="p">(</span><span class="n">big_m</span> <span class="o">*</span> <span class="n">s</span><span class="p">))</span> <span class="o">-</span> <span class="n">s</span> <span class="o">*</span> <span class="n">big_m</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span>
+                 <span class="o">+</span> <span class="p">(</span><span class="n">nb_decimals</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">big_m</span> <span class="o">=</span> <span class="n">big_m</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1">#  Initial computations:</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Computing the finite product for p &lt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ... &quot;</span><span class="p">)</span>
+
+    <span class="n">prec</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">nb_decimals</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">/</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digits_offset</span> <span class="o">+</span> <span class="n">ceil</span><span class="p">(</span><span class="n">big_m</span><span class="p">))</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">RealIntervalField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
+    <span class="c1"># s = R(s)</span>
+    <span class="c1">#  Empty initial products are allowed:</span>
+    <span class="n">euler_prod_ini</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">prod</span><span class="p">(</span>
+        <span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">())</span>
+                <span class="ow">and</span> <span class="p">(</span><span class="n">w</span> <span class="o">%</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">big_p</span><span class="p">))]])))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)])</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; done.&quot;</span><span class="p">)</span>
+    <span class="n">log_err</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">cte</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">big_p</span> <span class="o">/</span> <span class="p">(</span><span class="n">big_m</span> <span class="o">*</span> <span class="n">s</span><span class="p">))</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">big_m</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done: we use big_m =&quot;</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+
+    <span class="c1">#  Build the set of indices di:</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Building indices ... &quot;</span><span class="p">)</span>
+
+    <span class="n">my_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span>
+                                    <span class="nb">set</span><span class="p">(</span><span class="n">prime_factors</span><span class="p">(</span><span class="n">w</span><span class="p">))</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">allowed_primes</span><span class="p">),</span>
+                                    <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">big_m</span><span class="p">))]</span>
+    <span class="c1">#  1 is indeed in my_indices.</span>
+    <span class="n">CAKm</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_CA_Km</span><span class="p">(</span><span class="n">my_indices</span><span class="o">=</span><span class="n">my_indices</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done: there are&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_indices</span><span class="p">),</span> <span class="s2">&quot;summands.&quot;</span><span class="p">)</span>
+    <span class="n">vs_approx</span> <span class="o">=</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span> <span class="o">*</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">my_indices</span><span class="p">:</span>
+        <span class="c1"># print(q, m, s, bigP, prec)|-|</span>
+        <span class="n">aux</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_gamma</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="n">prec</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ind_a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">ind_k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
+                <span class="n">vs_approx</span><span class="p">[</span><span class="n">ind_a</span><span class="p">]</span> <span class="o">+=</span> <span class="n">aux</span><span class="p">[</span><span class="n">ind_k</span><span class="p">]</span> <span class="o">*</span> <span class="n">CAKm</span><span class="p">[</span><span class="n">ind_a</span><span class="p">,</span> <span class="n">ind_k</span><span class="p">,</span> <span class="n">m</span><span class="p">]</span> <span class="o">/</span> <span class="n">m</span>
+    <span class="c1">#  We now have to get the Euler products:</span>
+    <span class="n">eulerProds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([(</span><span class="n">R</span><span class="p">(</span><span class="n">euler_prod_ini</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">vs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">log_err</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                       <span class="n">R</span><span class="p">(</span><span class="n">euler_prod_ini</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">vs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">log_err</span><span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)])</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
+            <span class="n">nb_digits</span> <span class="o">=</span> <span class="n">nb_common_digits</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># type: ignore</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;ZZ in&quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of 1 / (1 - p^{-&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}) is between&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># type: ignore</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;and&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># type: ignore</span>
+            <span class="k">if</span> <span class="n">with_laTeX</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LaTeX format:&quot;</span><span class="p">)</span>
+                <span class="n">how_many</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">nb_decimals</span><span class="p">,</span> <span class="n">nb_digits</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">laTeX_for_number</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">how_many</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># type: ignore</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Obtained: &quot;</span><span class="p">,</span> <span class="n">nb_digits</span><span class="p">,</span> <span class="s2">&quot; correct decimal digits)&quot;</span><span class="p">)</span>
+
+    <span class="n">end</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time taken:&quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds.&quot;</span><span class="p">)</span>
+    <span class="c1"># print(my_indices)</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">([</span><span class="n">big_p</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">phi_q</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">my_indices</span><span class="p">),</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span>
+                <span class="o">-</span> <span class="n">floor</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">eulerProds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">))])</span>  <span class="c1"># type: ignore</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">,</span> <span class="n">eulerProds</span></div>
+
+
+
+<div class="viewcode-block" id="get_euler_products">
+<a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.get_euler_products">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_euler_products</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">f_init</span><span class="p">,</span> <span class="n">h_init</span><span class="p">,</span> <span class="n">nb_decimals</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">with_laTeX</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">digital_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) )</span>
+<span class="sd">    where (A) is the tuple of the lattice-invariant classes modulo ``q``</span>
+<span class="sd">    and approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/ps) ) is an arithmetic interval approximation</span>
+<span class="sd">    of the product over every prime in the class A modulo q of the quotient</span>
+<span class="sd">    f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).</span>
+<span class="sd">    We expect the difference upper_bound -  lower bound to be &lt; 10^(-nb_decimals)</span>
+<span class="sd">    but this is not guaranteed. In case it does not happen, increase ``nb_decimals`` slightly.</span>
+<span class="sd">    We ask at the beginning for `digital_offset` more (binary) digits.</span>
+<span class="sd">    We compute directly what happens for primes &lt; ``big_p``.</span>
+<span class="sd">    We assume that f_init(0) = h_init(0) = 1, that s is a positive real number</span>
+<span class="sd">    and that :math:`\Delta s &gt; 1` where :math:`\Delta` is the order of the zero of f_init-h_init at 0.</span>
+<span class="sd">    This last condition is to ensure the Euler products converge absolutely.</span>
+<span class="sd">    See Theorem 2 of :doc:`the reference file&lt;../tutorial/LoeschianConstant-NS-04-MCOMP&gt;`.</span>
+
+<span class="sd">    to do</span>
+
+<span class="sd">    assert F[0] = H[0] = 1</span>
+
+<span class="sd">    INPUT:</span>
+
+<span class="sd">    - ``q`` -- int</span>
+<span class="sd">        a positive integer. The products are taken over classes modulo q.</span>
+
+<span class="sd">    - ``s`` -- int, rat or real number</span>
+<span class="sd">        A real number &gt; 0. It should be given with enough precision to enable the computations,</span>
+<span class="sd">        so either an exact type or a ``RealIntervalField(...)`` number, given with enough precision.</span>
+<span class="sd">        As this precision is given in binary digits, using ``10*nb_decimals`` is a safe choice.</span>
+<span class="sd">        Notice that, if you want to have ``s = 2.1``, better use ``21/10``.</span>
+<span class="sd">        Additional conditions may be required for the Euler products to be absolutely convergent.</span>
+
+<span class="sd">    - ``f_init`` -- pol</span>
+<span class="sd">        a polynomial with real coefficients and such that f_init(0) = 1.</span>
+
+<span class="sd">    - ``h_init`` -- pol</span>
+<span class="sd">        a polynomial with real coefficients and such that h_init(0) = 1.</span>
+
+<span class="sd">    - ``nb_decimals`` -- int (default: `100`), optional</span>
+<span class="sd">        The number of decimals that are being sought by the final result.</span>
+<span class="sd">        The function aims at such a number of decimals but a final tuning may be required.</span>
+
+<span class="sd">    - ``big_p`` -- int (default:`300`), optional</span>
+<span class="sd">        This is an internal parameter that is described in the accompanying paper.</span>
+<span class="sd">        In short: the Euler products up to ``big_p`` are computed directly.</span>
+
+<span class="sd">    - ``verbose`` -- int (default: `2`), optional</span>
+<span class="sd">        Defines the amount of output shown.</span>
+<span class="sd">        It may take the usual values 0, 1, 2, towards more explanations.</span>
+<span class="sd">        When ``get_vs`` is used inside another function, ``verbose == 0`` is usually what is required.</span>
+<span class="sd">        The value -1 is special and the effect is fully described in the tutorial.</span>
+
+<span class="sd">    - ``with_laTeX`` -- int (default: `0`), optional</span>
+<span class="sd">        This parameter takes the value either 1 or not 1.</span>
+<span class="sd">        As of now, this has effect only when ``verbose == 2``.</span>
+
+<span class="sd">    - ``digits_offset`` -- int (default: `10`), optional</span>
+<span class="sd">        Not used yet.</span>
+
+<span class="sd">    OUTPUT:</span>
+
+<span class="sd">    pair of tuples</span>
+<span class="sd">        The output is a pair whose first component is the tuple of lattice invariant classes (A)</span>
+<span class="sd">        and second component is the corresponding tuple of values</span>
+<span class="sd">        (prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) where</span>
+<span class="sd">        each value is given in interval arithmetic as a pair (lower_bound, upper_bound).</span>
+
+<span class="sd">    EXCEPTIONS:</span>
+<span class="sd">        ValueError   (&#39;non convergent product&#39;)</span>
+<span class="sd">        ValueError(&quot;f_init[0] and h_init[0] must be equal to 1&quot;)</span>
+
+<span class="sd">    EXAMPLES::</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
+<span class="sd">        sage: get_euler_products(7, 21/10, 1-x^3, 1+2*x^2, 100, 100, 0)  # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        ((frozenset({1}), frozenset({6}), frozenset({2, 4}), frozenset({3, 5})),</span>
+<span class="sd">         ((0.9999982391236771174582758043183901338942364901235699217522601062931335918060239723453736409102740196458132617578911976337827035056548487,</span>
+<span class="sd">           0.9999982391236771174582758043183901338942364901235699217522601062931335918060239723453736409102740196458132617578911976337827035058702859),</span>
+<span class="sd">          (0.9999576136884417398077559625848130088885656351740787265112227071217155682725032721589661739481265973172546756861113391191295834691038278,</span>
+<span class="sd">           0.9999576136884417398077559625848130088885656351740787265112227071217155682725032721589661739481265973172546756861113391191295834695309445),</span>
+<span class="sd">          (0.8903351065070010591619870364916093462000320541037928008286414361647911118617149004528444428927243238343453800105285278416937429697527759,</span>
+<span class="sd">           0.8903351065070010591619870364916093462000320541037928008286414361647911118617149004528444428927243238343453800105285278416937429701294787),</span>
+<span class="sd">          (0.9772686478893137854388184266844545895906115657758499208289733302484239589826603294718981918722254050003289550536985865206208817481509527,</span>
+<span class="sd">           0.9772686478893137854388184266844545895906115657758499208289733302484239589826603294718981918722254050003289550536985865206208817489644518)))</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_euler_products</span>
+<span class="sd">        sage: ss = RealIntervalField(1000)(2.1)</span>
+<span class="sd">        sage: get_euler_products(7, ss, 1-x^3, 1+2*x^2, 100, 100, 0)  # doctest: +NORMALIZE_WHITESPACE</span>
+<span class="sd">        ((frozenset({1}), frozenset({6}), frozenset({2, 4}), frozenset({3, 5})),</span>
+<span class="sd">         ((0.9999982391236771174593563029845165888949925030802468731879907340376417409448258804977425145432276967368069400485351556253529538963227206,</span>
+<span class="sd">           0.9999982391236771174593563029845165888949925030802468731879907340376417409448258804977425145432276967368069400485351556253529538964531787),</span>
+<span class="sd">         (0.9999576136884417398271690198938580248373051070700165881172968559533702467774954223949082638318313973207279942499461484456197967852358670,</span>
+<span class="sd">          0.9999576136884417398271690198938580248373051070700165881172968559533702467774954223949082638318313973207279942499461484456197967854939739),</span>
+<span class="sd">         (0.8903351065070010720688279359417577943450315878955017449322206666706753000624035653585286591685046103123298899332142094572919914905004413,</span>
+<span class="sd">          0.8903351065070010720688279359417577943450315878955017449322206666706753000624035653585286591685046103123298899332142094572919914907258341),</span>
+<span class="sd">         (0.9772686478893137901030489977249098644207078284256772977807607160813875957724686047692999490530968236161711793835695795600577094636101003,</span>
+<span class="sd">          0.9772686478893137901030489977249098644207078284256772977807607160813875957724686047692999490530968236161711793835695795600577094640930035)))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
+    <span class="c1"># assert F[0] = H[0] = 1</span>
+    <span class="c1">#  Compute the structural invariants:</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Computing the structural invariants ... &quot;</span><span class="p">)</span>
+
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="n">q</span><span class="p">)</span>
+    <span class="c1">#  (theSGTuple, theClassTuple, nb_classes, theExponent,</span>
+    <span class="c1">#  phi_q, characterGroup, invertibles, invariantCharacters) = structure</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; done.&quot;</span><span class="p">)</span>
+
+    <span class="c1">#  A small precision is enough:</span>
+    <span class="n">R0</span> <span class="o">=</span> <span class="n">RealField</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">R0X</span> <span class="o">=</span> <span class="n">R0</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">x</span><span class="p">,)</span> <span class="o">=</span> <span class="n">R0X</span><span class="o">.</span><span class="n">_first_ngens</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">F0</span><span class="p">,</span> <span class="n">H0</span> <span class="o">=</span> <span class="n">R0X</span><span class="p">(</span><span class="n">f_init</span><span class="p">),</span> <span class="n">R0X</span><span class="p">(</span><span class="n">h_init</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">Integer</span><span class="p">(</span><span class="n">H0</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="n">Integer</span><span class="p">(</span><span class="n">F0</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;f_init[0] and h_init[0] must be equal to 1&quot;</span><span class="p">)</span>
+    <span class="n">my_delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">F0</span> <span class="o">-</span> <span class="n">H0</span><span class="p">)</span><span class="o">.</span><span class="n">valuation</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">my_delta</span> <span class="o">*</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;non convergent product&#39;</span><span class="p">)</span>
+    <span class="c1">#  Get my_beta, myDelta and big_p:</span>
+    <span class="n">my_beta</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">get_beta</span><span class="p">(</span><span class="n">F0</span> <span class="o">/</span> <span class="n">F0</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">get_beta</span><span class="p">(</span><span class="n">H0</span> <span class="o">/</span> <span class="n">H0</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We have Delta =&quot;</span><span class="p">,</span> <span class="n">my_delta</span><span class="p">,</span> <span class="s2">&quot;and beta =&quot;</span><span class="p">,</span> <span class="n">my_beta</span><span class="p">)</span>
+
+    <span class="c1">#  Getting bigM, prec and bigP:</span>
+    <span class="n">big_p</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">big_p</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">my_beta</span><span class="p">)</span>
+    <span class="n">cte</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">F0</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span> <span class="o">+</span> <span class="n">H0</span><span class="o">.</span><span class="n">degree</span><span class="p">())</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">big_p</span><span class="p">)</span>
+    <span class="n">big_m</span> <span class="o">=</span> <span class="n">big_p</span> <span class="o">+</span> <span class="mi">10</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="n">cte</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">big_m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">log</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span> <span class="o">-</span> <span class="n">log</span><span class="p">(</span><span class="n">my_beta</span><span class="p">))</span> <span class="o">-</span> <span class="p">(</span><span class="n">nb_decimals</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="n">big_m</span> <span class="o">=</span> <span class="n">big_m</span> <span class="o">+</span> <span class="mi">10</span>
+
+    <span class="c1">#  The coefficients CA(K,m,F/H) may increase like beta^m,</span>
+    <span class="c1">#  This spoils the accuracy and has to be recovered:</span>
+    <span class="n">prec</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">nb_decimals</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">/</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digital_offset</span><span class="p">)</span> <span class="o">+</span> <span class="n">ceil</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">big_m</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">my_beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We use big_m =&quot;</span><span class="p">,</span> <span class="n">big_m</span><span class="p">,</span> <span class="s2">&quot;, big_p =&quot;</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="s2">&quot;and working prec =&quot;</span><span class="p">,</span> <span class="n">prec</span><span class="p">)</span>
+    <span class="c1">#  The precision has changed! Change the ring:</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">RealIntervalField</span><span class="p">(</span><span class="n">prec</span><span class="p">)</span>
+    <span class="n">RF</span> <span class="o">=</span> <span class="n">RealField</span><span class="p">(</span><span class="n">prec</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">log_err</span> <span class="o">=</span> <span class="n">R</span><span class="p">(</span><span class="n">cte</span> <span class="o">*</span> <span class="p">(</span><span class="n">my_beta</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="n">big_m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="n">RX</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+    <span class="p">(</span><span class="n">x</span><span class="p">,)</span> <span class="o">=</span> <span class="n">RX</span><span class="o">.</span><span class="n">_first_ngens</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">F</span><span class="p">,</span> <span class="n">H</span> <span class="o">=</span> <span class="n">RX</span><span class="p">(</span><span class="n">f_init</span> <span class="o">/</span> <span class="n">Integer</span><span class="p">(</span><span class="n">F0</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="n">RX</span><span class="p">(</span><span class="n">h_init</span> <span class="o">/</span> <span class="n">Integer</span><span class="p">(</span><span class="n">H0</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="c1">#  Initial computations:</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Computing the finite products for p &lt; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">big_p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ... &quot;</span><span class="p">)</span>
+    <span class="c1">#  Empty initial products are allowed:</span>
+    <span class="c1">#  print([ p for p in range(2, big_p)])</span>
+    <span class="c1">#  print([F(1/Integer(p)**s) for p in range(2, big_p)])</span>
+    <span class="c1">#  print([H(1/Integer(p)**s) for p in range(2, big_p)])</span>
+    <span class="c1">#  print([F(1/p**s)/H(1/p**s) for p in range(2, big_p)])</span>
+    <span class="c1">#  print([R(F(1/p**s)/H(1/p**s)) for p in Primes()])</span>
+    <span class="c1">#  prod_list = [1]</span>
+    <span class="c1">#  for i in range(0, structure.nb_class):</span>
+    <span class="c1">#      prod_list.append([R(F(1/Integer(p)**s) / H(1/Integer(p)**s))</span>
+    <span class="c1">#                                       for p in filter(lambda w: (w in Primes())</span>
+    <span class="c1">#                                       and (w%q in structure.the_Class_tuple[i]),</span>
+    <span class="c1">#                                       range(2, big_p))])</span>
+    <span class="c1">#  eulerProdIni = tuple(prod(flatten(prod_list)))</span>
+
+    <span class="n">eulerProdIni</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">prod</span><span class="p">(</span><span class="n">flatten</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="n">R</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">))</span> <span class="o">/</span> <span class="n">H</span><span class="p">(</span><span class="n">R</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">R</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="n">s</span><span class="p">)))</span>
+                                           <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">())</span>
+                                                           <span class="ow">and</span> <span class="p">(</span><span class="n">w</span> <span class="o">%</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+                                           <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">big_p</span><span class="p">))]]))</span>
+                         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; done.&quot;</span><span class="p">)</span>
+
+    <span class="c1">#  Compute CA(K, m, F/H):</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Computing C_A(K, m, F/H) ...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">my_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">big_m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
+    <span class="n">CAKmF_sur_H</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_CA_Km_F_sur_H</span><span class="p">(</span><span class="n">my_indices</span><span class="p">,</span> <span class="n">F</span><span class="o">.</span><span class="n">list</span><span class="p">(),</span> <span class="n">H</span><span class="o">.</span><span class="n">list</span><span class="p">())</span>
+    <span class="n">logZs_approx</span> <span class="o">=</span> <span class="n">vector</span><span class="p">([</span><span class="n">R</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span> <span class="o">*</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)</span>
+
+    <span class="c1">#  Most of time is spent here.</span>
+    <span class="c1">#  The main loop in m:</span>
+    <span class="k">for</span> <span class="n">mm</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">my_delta</span><span class="p">,</span> <span class="n">big_m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">aux</span> <span class="o">=</span> <span class="n">structure</span><span class="o">.</span><span class="n">get_gamma</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="n">prec</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ind_a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">ind_k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
+                <span class="n">logZs_approx</span><span class="p">[</span><span class="n">ind_a</span><span class="p">]</span> <span class="o">+=</span> <span class="n">aux</span><span class="p">[</span><span class="n">ind_k</span><span class="p">]</span> <span class="o">*</span> <span class="n">CAKmF_sur_H</span><span class="p">[</span><span class="n">ind_a</span><span class="p">,</span> <span class="n">ind_k</span><span class="p">,</span> <span class="n">mm</span><span class="p">]</span> <span class="o">/</span> <span class="n">mm</span>
+    <span class="c1">#  End of the main loop in m</span>
+    <span class="c1">#  We now have to complete the Euler products:</span>
+    <span class="n">eulerProds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([(</span><span class="n">R</span><span class="p">(</span><span class="n">eulerProdIni</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">logZs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">log_err</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+                        <span class="n">R</span><span class="p">(</span><span class="n">eulerProdIni</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">logZs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">log_err</span><span class="p">))</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)])</span>
+
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
+            <span class="n">nb_digits</span> <span class="o">=</span> <span class="n">nb_common_digits</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p + &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; ZZ in &quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For F(x) =&quot;</span><span class="p">,</span> <span class="n">f_init</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;and H(x) =&quot;</span><span class="p">,</span> <span class="n">h_init</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of F(1 / p) / H( 1 / p) is between&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of F(1 / p^{&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;})/H(1 / p^{&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}) is between&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;and&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">with_laTeX</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LaTeX format:&quot;</span><span class="p">)</span>
+                <span class="n">how_many</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">nb_decimals</span><span class="p">,</span> <span class="n">nb_digits</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">laTeX_for_number</span><span class="p">(</span><span class="n">eulerProds</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">how_many</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Obtained: &quot;</span><span class="p">,</span> <span class="n">nb_digits</span><span class="p">,</span> <span class="s2">&quot; correct decimal digits)&quot;</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time taken: &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">,</span> <span class="s2">&quot;seconds.&quot;</span><span class="p">)</span>
+    <span class="c1">#  print my_indices</span>
+    <span class="k">return</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">,</span> <span class="n">eulerProds</span></div>
+
+
+
+<div class="viewcode-block" id="table_performance">
+<a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.table_performance">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">table_performance</span><span class="p">(</span><span class="n">min_q</span><span class="p">,</span> <span class="n">max_q</span><span class="p">,</span> <span class="n">nb_decimals</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">big_p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The behaviour of this function is described in the attached tutorial.</span>
+
+<span class="sd">    INPUT:</span>
+
+<span class="sd">    - ``min_q`` -- int</span>
+<span class="sd">        The modulus q goes through all the values in ``[min_q, max_q]``</span>
+<span class="sd">        that are not twice an odd integer.</span>
+
+<span class="sd">    - ``max_q`` -- int</span>
+<span class="sd">        The modulus q goes through all the values in ``[min_q, max_q]``</span>
+<span class="sd">        that are not twice an odd integer.</span>
+
+<span class="sd">    - ``nb_decimals`` -- int (default: `100`), optional</span>
+<span class="sd">        Same as in ``get_vs``.</span>
+
+<span class="sd">    - ``big_p`` -- int (default: `300`), optional</span>
+<span class="sd">        Same as in ``get_vs``.</span>
+
+<span class="sd">    OUTPUT:</span>
+
+<span class="sd">    str</span>
+<span class="sd">      the table in Latex is issued.</span>
+
+<span class="sd">    EXAMPLES::</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import table_performance</span>
+<span class="sd">        sage: table_performance(10, 30) # random</span>
+<span class="sd">        11 102 digits for the first product</span>
+<span class="sd">        12 102 digits for the first product</span>
+<span class="sd">        13 102 digits for the first product</span>
+<span class="sd">        15 102 digits for the first product</span>
+<span class="sd">        16 102 digits for the first product</span>
+<span class="sd">        17 102 digits for the first product</span>
+<span class="sd">        19 102 digits for the first product</span>
+<span class="sd">        20 102 digits for the first product</span>
+<span class="sd">        21 102 digits for the first product</span>
+<span class="sd">        23 102 digits for the first product</span>
+<span class="sd">        24 102 digits for the first product</span>
+<span class="sd">        25 102 digits for the first product</span>
+<span class="sd">        27 102 digits for the first product</span>
+<span class="sd">        28 102 digits for the first product</span>
+<span class="sd">        29 102 digits for the first product</span>
+<span class="sd">        11&amp; 10&amp; 2&amp; 8&amp; 4&amp; 21&amp; 4 \\</span>
+<span class="sd">        12&amp; 4&amp; 1&amp; 5&amp; 4&amp; 21&amp; 1 \\</span>
+<span class="sd">        13&amp; 12&amp; 2&amp; 10&amp; 6&amp; 21&amp; 5 \\</span>
+<span class="sd">        15&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 \\</span>
+<span class="sd">        16&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 \\</span>
+<span class="sd">        17&amp; 16&amp; 1&amp; 5&amp; 5&amp; 21&amp; 4 \\</span>
+<span class="sd">        19&amp; 18&amp; 2&amp; 10&amp; 6&amp; 21&amp; 8 \\</span>
+<span class="sd">        20&amp; 8&amp; 1&amp; 5&amp; 6&amp; 21&amp; 2 \\</span>
+<span class="sd">        21&amp; 12&amp; 2&amp; 10&amp; 8&amp; 21&amp; 6 \\</span>
+<span class="sd">        23&amp; 22&amp; 2&amp; 6&amp; 4&amp; 21&amp; 6 \\</span>
+<span class="sd">        24&amp; 8&amp; 1&amp; 5&amp; 8&amp; 21&amp; 2 \\</span>
+<span class="sd">        25&amp; 20&amp; 2&amp; 8&amp; 6&amp; 21&amp; 8 \\</span>
+<span class="sd">        27&amp; 18&amp; 2&amp; 10&amp; 6&amp; 21&amp; 8 \\</span>
+<span class="sd">        28&amp; 12&amp; 2&amp; 10&amp; 8&amp; 21&amp; 6 \\</span>
+<span class="sd">        29&amp; 28&amp; 2&amp; 7&amp; 6&amp; 21&amp; 9 \\</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ref_time</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># approximate time is ref_time for q = 3</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_q</span><span class="p">,</span> <span class="n">max_q</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">q</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">q</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+            <span class="n">aux</span> <span class="o">=</span> <span class="n">get_vs</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">Integer</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">nb_decimals</span><span class="p">,</span> <span class="n">big_p</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">aux</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; digits for the first product</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="n">aux</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">aux</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">/</span> <span class="n">ref_time</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> <span class="o">=</span> <span class="n">aux</span>
+
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">min_q</span><span class="p">,</span> <span class="n">max_q</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">res</span><span class="p">:</span>
+            <span class="n">str_res</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;&amp; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">str_res</span> <span class="o">=</span> <span class="n">str_res</span> <span class="o">+</span> <span class="s2">&quot;&amp; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prime_divisors</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="mi">1</span><span class="p">])))</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+                <span class="n">str_res</span> <span class="o">=</span> <span class="n">str_res</span> <span class="o">+</span> <span class="s2">&quot;&amp; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">str_res</span> <span class="o">=</span> <span class="n">str_res</span> <span class="o">+</span> <span class="s2">&quot;&amp; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ceil</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot; </span><span class="se">\\\\</span><span class="s2">&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">str_res</span><span class="p">)</span>
+    <span class="k">return</span></div>
+
+
+
+<div class="viewcode-block" id="get_vs_checker">
+<a class="viewcode-back" href="../../reference/api.html#euler_product.lattice_invariant_euler_products.get_vs_checker">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_vs_checker</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">borne</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This is a low level sanity check engine described in the tutorial.</span>
+<span class="sd">    It is to be used by developers only.</span>
+
+<span class="sd">    INPUT:</span>
+
+<span class="sd">    - ``q`` -- int</span>
+<span class="sd">        The products are taken over lattice invariant classes modulo ``q``.</span>
+
+<span class="sd">    - ``s`` -- real</span>
+<span class="sd">        A real number &gt; 1.</span>
+
+<span class="sd">    - ``borne`` -- int (default: `10000`), optional</span>
+<span class="sd">        boundary of computation.</span>
+
+<span class="sd">    EXAMPLES::</span>
+
+<span class="sd">        sage: from euler_product.lattice_invariant_euler_products import get_vs_checker</span>
+<span class="sd">        sage: get_vs_checker(8, 2)</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p mod  8  in  frozenset({1})</span>
+<span class="sd">        the product of 1/(1-p^{- 2 }) is about 1.0048326237351608</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p mod  8  in  frozenset({3})</span>
+<span class="sd">        the product of 1/(1-p^{- 2 }) is about 1.1394159722583108</span>
+<span class="sd">        -------------------</span>
+<span class="sd">        For p mod  8  in  frozenset({5})</span>
+<span class="sd">        the product of 1/(1-p^{- 2 }) is about 1.0510974216618003</span>
+<span class="sd">        -------------------</span>
+<span class="sd">         For p mod  8  in  frozenset({7})</span>
+<span class="sd">         the product of 1/(1-p^{- 2 }) is about 1.0251478255836493</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#  Computes an approximate value of the list (zeta(s; q, A))</span>
+    <span class="c1">#  for A in the lattice-invariant classes.</span>
+    <span class="n">structure</span> <span class="o">=</span> <span class="n">ComponentStructure</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+    <span class="c1">#  (theSGTuple, theClassTuple, nb_class, theExponent,</span>
+    <span class="c1">#  phi_q, characterGroup, invertibles, invariantCharacters) = structure</span>
+    <span class="n">vs_approx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="o">/</span> <span class="n">prod</span><span class="p">([</span><span class="mf">1.0</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">p</span><span class="o">**</span><span class="n">s</span>
+                           <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Primes</span><span class="p">())</span> <span class="ow">and</span> <span class="p">(</span><span class="n">w</span> <span class="o">%</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+                                           <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">borne</span><span class="p">))])</span>
+                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">nb_class</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For p mod &quot;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="s2">&quot; in &quot;</span><span class="p">,</span> <span class="n">structure</span><span class="o">.</span><span class="n">the_Class_tuple</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;the product of 1/(1-p^{-&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;}) is about&quot;</span><span class="p">,</span> <span class="n">vs_approx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></div>
+
+</pre></div>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023-2024, the sage-euler-product authors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>
