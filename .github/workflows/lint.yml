@@ -15,7 +15,7 @@ jobs:
       
       - uses: conda-incubator/setup-miniconda@v3
         with:
-          miniforge-variant: Mambaforge
+          miniforge-variant: Miniforge
           miniforge-version: latest
           
       - name: Install dependencies
