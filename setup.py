@@ -42,5 +42,6 @@ setup(
     ], # classifiers list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
     keywords = "SageMath Euler Product Number Theory",
     packages = ['euler_product'],
+    extras_require={'passagemath': ['passagemath-repl', 'passagemath-schemes', 'passagemath-symbolics']},
     cmdclass = {'test': SageTest} # adding a special setup command for tests
 )
