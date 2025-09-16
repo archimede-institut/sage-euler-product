@@ -39,4 +39,3 @@ jobs:
           branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
           folder:  html/sage-euler-product
-          target_folder: docs/
