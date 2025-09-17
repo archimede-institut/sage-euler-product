@@ -11,21 +11,23 @@
 
 The **sage-euler-product** package for SageMath adds functionality related to Number Theory. It is based on SageMath <https://www.sagemath.org>_ and relies heavily on:
 
-gmp or mpir for arbitrary precision arithmetic
-PARI/GP for number field computations
+- gmp or mpir for arbitrary precision arithmetic
+- PARI/GP for number field computations
 
 
-Prerequisites
+## Prerequisites
+
 Installing sage-euler-product requires a working Sage installation. 
 
-Installation
-The module is distributed on PyPI and is easily installed through the Python package manager pip. If you downloaded a binary from the SageMath website (including the Cygwin version running on Windows) or compiled from source, run the following command::
+## Installation
+
+The module is distributed on PyPI and is easily installed through the Python package manager pip. If you downloaded a binary from the SageMath website (including the Cygwin version running on Windows) or compiled from source, run the following command:
 
     $ sage -pip install sage-euler-product [--user]
 
 The --user option is optional and allows to install the module in your user space (and does not require administrator rights).
 
-If you use Debian or Ubuntu and you installed Sage through the operating system's package manager (that is, the package sagemath), run these two commands::
+If you use Debian or Ubuntu and you installed Sage through the operating system's package manager (that is, the package sagemath), run these two commands:
 
     $ source /usr/share/sagemath/bin/sage-env
     $ pip install sage-euler-product --user
@@ -39,28 +41,28 @@ PIP has to be replaced by either pip, pip2, or sage -pip
 PYTHON has to be replaced by either python, python2 or sage -python
 If you are an Arch Linux user with the sagemath package installed, use PIP=pip2 and PYTHON=python2. If you downloaded SageMath as a tarball or installed it from source use PIP='sage -pip' and PYTHON='sage -python'.
 
-You can install the latest development version in one line with::
+You can install the latest development version in one line with:
 
     $ PIP install git+https://github.com/archimede-institut/sage-euler-product [--user]
 
 As before, the --user option is optional and when specified will install the module in your user space.
 
-You can also perform a two stage installation that will allow you to modify the source code. The first step is to clone the repository::
+You can also perform a two stage installation that will allow you to modify the source code. The first step is to clone the repository:
 
     $ git clone https://github.com/archimede-institut/sage-euler-product
 
-The above command creates a repository sage-euler-product with the source code, documentation and miscellaneous files. You can then change to the directory thus created and install the surface dynamics module with::
+The above command creates a repository sage-euler-product with the source code, documentation and miscellaneous files. You can then change to the directory thus created and install the surface dynamics module with:
 
     $ cd sage-euler-product
     $ PIP install . [--user]
 	
 Do not forget the . that refers to the current directory.
 
-When you don't want to install the package or you are testing some modifications to the source code, a more convenient way of using  **sage-euler-prodct** is to do everything locally. To do so, you need to compile the module in place via::
+When you don't want to install the package or you are testing some modifications to the source code, a more convenient way of using  **sage-euler-prodct** is to do everything locally. To do so, you need to compile the module in place via:
 
 	$ PYTHON setup.py build_ext --inplace
 	
-Once done, you can import the sage-euler-product module. To check that you are actually using the right module (i.e. the local one) you can do in a SageMath session::
+Once done, you can import the sage-euler-product module. To check that you are actually using the right module (i.e. the local one) you can do in a SageMath session:
 
 	sage: import euler_product
 	sage: euler_product.__path__        # random
@@ -70,11 +72,13 @@ The result of the command must correspond to the path of the repository created 
 
 If you wish to install your custom version of sage-euler-product just use PIP as indicated before.
 
-Documentation
+## Documentation
 
 complete module documentation: https://archimede-institut.github.io/sage-euler-product/
-Check
-After installing  **sage-euler-product**, check that it works by launching Sage and typing the following commands. You should get the same output as below. ::
+
+## Check
+
+After installing  **sage-euler-product**, check that it works by launching Sage and typing the following commands. You should get the same output as below.
 
 	sage: from euler_product.all import *
 	sage: from euler_product.lattice_invariant_euler_produ import get_euler_products
@@ -114,7 +118,7 @@ After installing  **sage-euler-product**, check that it works by launching Sage 
 
 
 https://github.com/archimede-institut/sage-euler-product
-Assuming you have the program git on your computer, you can install the development version with the command::
+Assuming you have the program git on your computer, you can install the development version with the command:
 
 	$ sage -pip install git+https://github.com/archimede-institut/sage-euler-product [--user]
 
@@ -122,15 +126,19 @@ Assuming you have the program git on your computer, you can install the developm
 
 
 
-Authors
+## Authors
+
 Olivier Ramar\'e: see https://ramare-olivier.github.io/Maths/mcom3630.pdf for complete Mathematical references
+
 Dominique Benielli: maintainerDeveloppement Cell, Institut Archimède Aix-Marseille Université
 
 
-How to cite this project
+## How to cite this project
+
 If you have used this project for please cite us as described on our zenodo site.
 
-Versions
+## Versions
+
 The first release of sage-euler-product will appear soon as a sagemath spkg.
 
 . 
