@@ -19,13 +19,14 @@ The **sage-euler-product** package for SageMath adds functionality related to Nu
 
 Installing sage-euler-product requires a working Sage installation. 
 
-## Installation
+## Installation from PyPI in an existing Sage installation built from source
 
-The module is distributed on PyPI and is easily installed through the Python package manager pip. If you downloaded a binary from the SageMath website (including the Cygwin version running on Windows) or compiled from source, run the following command:
+The module is distributed on PyPI and is easily installed through the Python package manager pip.
+Switch to the source directory (SAGE_ROOT) of your Sage installation, and run the following command:
 
     $ sage -pip install sage-euler-product [--user]
 
-The --user option is optional and allows to install the module in your user space (and does not require administrator rights).
+The `--user` option is optional and allows to install the module in your user space (and does not require administrator rights).
 
 If you use Debian or Ubuntu and you installed Sage through the operating system's package manager (that is, the package sagemath), run these two commands:
 
@@ -34,7 +35,8 @@ If you use Debian or Ubuntu and you installed Sage through the operating system'
 
 If you use Arch Linux, you need to install from source (see next section).
 
-Install and use source version
+## Installation of the development version from GitHub in an existing Sage installation
+
 This section provides detailed instructions on how to download, modify and install the development version of  **sage-euler-product**. In all commands,
 
 PIP has to be replaced by either pip, pip2, or sage -pip
@@ -71,6 +73,30 @@ Once done, you can import the sage-euler-product module. To check that you are a
 The result of the command must correspond to the path of the repository created by the command git clone given above. The compilation step PYTHON setup.py build_ext has to be redone each time you modify a C or Cython source file (i.e. with .c, .h, .pxd or .pyx extension). In other words, it is not needed if you only modify or create Python files (i.e. .py files).
 
 If you wish to install your custom version of sage-euler-product just use PIP as indicated before.
+
+## Installation in a virtual Python environment (no prior Sage installation required)
+
+Create and activate a virtual environment:
+
+    python3 -m venv venv-euler-product
+    . venv-euler-product/bin/activate
+
+Install the package in the virtual environment:
+
+    pip install "sage-euler-product[passagemath] @ git+https://github.com/archimede-institut/sage-euler-product
+
+This automatically installs the modularized parts of the Sage library that are
+needed by the package. (These modularized distributions are provided by
+https://github.com/passagemath.)
+
+Next, start Sage:
+
+    rehash
+    sage
+
+At the Sage prompt, load a modularized top-level environment:
+
+    sage: from sage.all__sagemath_schemes import *
 
 ## Documentation
 
