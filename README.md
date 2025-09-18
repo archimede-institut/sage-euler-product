@@ -60,17 +60,14 @@ The above command creates a repository sage-euler-product with the source code, 
 	
 Do not forget the . that refers to the current directory.
 
-When you don't want to install the package or you are testing some modifications to the source code, a more convenient way of using  **sage-euler-prodct** is to do everything locally. To do so, you need to compile the module in place via:
-
-	$ PYTHON setup.py build_ext --inplace
-	
+When you don't want to install the package or you are testing some modifications to the source code, a more convenient way of using  **sage-euler-prodct** is to do everything locally.
 Once done, you can import the sage-euler-product module. To check that you are actually using the right module (i.e. the local one) you can do in a SageMath session:
 
 	sage: import euler_product
 	sage: euler_product.__path__        # random
 	['/home/you/sage-euler-product/euler_product/']
 
-The result of the command must correspond to the path of the repository created by the command git clone given above. The compilation step PYTHON setup.py build_ext has to be redone each time you modify a C or Cython source file (i.e. with .c, .h, .pxd or .pyx extension). In other words, it is not needed if you only modify or create Python files (i.e. .py files).
+The result of the command must correspond to the path of the repository created by the command git clone given above.
 
 If you wish to install your custom version of sage-euler-product just use PIP as indicated before.
 
