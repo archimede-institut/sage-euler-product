@@ -57,7 +57,7 @@ from sage.sets.primes import Primes
 from sage.modules.free_module_element import vector
 
 
-def nb_common_digits(a, b):
+def nb_common_digits(a, b, max_nb_digits=100):
     r"""
     Returns -1 if floor(a) != floor(b).
 
@@ -68,6 +68,9 @@ def nb_common_digits(a, b):
 
     - ``b`` -- float
         second float to compare.
+
+    - ``max_nb_digits`` -- float
+        maximum of  number of digits.
 
     OUTPUT:
 
@@ -100,7 +103,7 @@ def nb_common_digits(a, b):
     a = a - floor(a)
     b = b - floor(b)
     nb = 0
-    while floor(10 * a) == floor(10 * b):
+    while (floor(10 * a) == floor(10 * b) ) and nb < max_nb_digits:
         a = 10 * a - floor(10 * a)
         b = 10 * b - floor(10 * b)
         nb += 1
