@@ -291,7 +291,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
 
     if verbose >= 2:
         for i in range(0, structure.nb_class):
-            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])  # type: ignore
+            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0], 2*nb_decimals)  # type: ignore
             print("-------------------")
             print("For p + " + str(q) + "ZZ in", structure.the_Class_tuple[i])
             print("the product of 1 / (1 - p^{-" + str(s) + "}) is between")
@@ -515,7 +515,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
 
     if verbose >= 2:
         for i in range(0, structure.nb_class):
-            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0])
+            nb_digits = nb_common_digits(eulerProds[i][1], eulerProds[i][0],  2*nb_decimals)
             print("-------------------")
             print("For p + " + str(q) + " ZZ in ", structure.the_Class_tuple[i])
             print("For F(x) =", f_init)
