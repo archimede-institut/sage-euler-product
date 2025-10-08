@@ -461,7 +461,8 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     #  The precision has changed! Change the ring:
     R = RealIntervalField(prec)
     RF = RealField(prec + 1)
-    log_err = R(RF(cte) * (my_beta / (RF(big_p)**s))**(big_m + 1))
+    log_err = R(RF(cte) * (my_beta / RF(big_p**s))**(big_m + 1))
+    # log_err = R(cte * (my_beta / (RF(big_p)**s))**(big_m + 1))
     RX = R['x']
     (x,) = RX._first_ngens(1)
     F, H = RX(f_init / Integer(F0[0])), RX(h_init / Integer(H0[0]))
