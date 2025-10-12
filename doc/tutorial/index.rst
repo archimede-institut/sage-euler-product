@@ -35,9 +35,9 @@ Euler Product over every primes
 .. code-block:: default
      
      from euler_product.lattice_invariant_euler_products import get_euler_products
-     get_euler_products(1, 21/10 , 1-x^2, 1+x^3, 103, 20, verbose = 0, with_Latex = 0, digits_offset = 10)
+     get_euler_products(1, 21/10 , 1-x^2, 1+x^3, 103, 20, verbose = 0, with_laTeX = 0, digits_offset = 10)
 
-This computes the Euler product :math:`\prod_{p\ge2}\frac{1-1/p^{2s}}{1+1/p^{3s}}` where :math:`s = 2.1` with potentially 103 correct digits and by computing directly the Euler product for all the primes less than :math:`P=20`. This value of :math:`P` is 300 by default. The level of comments :code:`verbose` can be set to 0, 1 or 2. The additional parameter :code:`with_Latex` is either equal to 1 or not equal to 1, with an obvious meaning. If the output does not have enough correct digits, the user is asked to increase the value 103 to 110 for instance. We decided not to automate this behaviour.
+This computes the Euler product :math:`\prod_{p\ge2}\frac{1-1/p^{2s}}{1+1/p^{3s}}` where :math:`s = 2.1` with potentially 103 correct digits and by computing directly the Euler product for all the primes less than :math:`P=20`. This value of :math:`P` is 300 by default. The level of comments :code:`verbose` can be set to 0, 1 or 2. The additional parameter :code:`with_laTeX` is either equal to 1 or not equal to 1, with an obvious meaning. If the output does not have enough correct digits, the user is asked to increase the value 103 to 110 for instance. We decided not to automate this behaviour.
 
 On the effect of the choice of :math:`s`, notice that the two calls
 
@@ -114,7 +114,7 @@ There is a condition for this product to converge absolutely: on writing :math:`
 .. code-block:: default
      
      from euler_product.lattice_invariant_euler_products import get_euler_products
-     get_euler_products(q, s, F(x) , H(x), nb_decimals, big_p = 300, verbose = 0, with_Latex = 0, digits_offset = 10)
+     get_euler_products(q, s, F(x) , H(x), nb_decimals, big_p = 300, verbose = 0, with_laTeX = 0, digits_offset = 10)
 
 answers a couple whose first component is the tuple of the lattice invariant classes :math:`(\mathcal{A})`, and second component is the tuple of the values :math:`\prod_{p\in\mathcal{A}}\frac{F(1/p^s)}{H(1/p^s)}`, for example
 
