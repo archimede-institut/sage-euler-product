@@ -1,8 +1,12 @@
-.. |pdf| image:: static/PDF-Download-blue1.png
-   :target: sage-euler-product-doc.pdf
-   :alt: Download PDF documentation
+.. only:: html
 
-|pdf|
+   .. |pdf| image:: static/PDF-Download-blue1.png
+      :target: sage-euler-product-doc.pdf
+      :alt: Download PDF documentation
+
+   |pdf|
+
+.. only:: html
 
 Welcome to EULER PRODUCT documentation!
 =======================================
