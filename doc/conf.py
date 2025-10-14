@@ -7,7 +7,7 @@ copyright = '2023-2024, the sage-euler-product authors'
 author = 'the sage-euler-product authors'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.0.3'
 
 # -- General configuration ---------------------------------------------------
 
