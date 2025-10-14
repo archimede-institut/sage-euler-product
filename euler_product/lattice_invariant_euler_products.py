@@ -316,7 +316,7 @@ def get_vs(q, s, nb_decimals=100, big_p=100, verbose=2, with_laTeX=0, digits_off
         return structure.the_Class_tuple, eulerProds
 
 
-def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose=2, with_laTeX=0, digital_offset=10):
+def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose=2, with_laTeX=0, digits_offset=10):
     r"""
     Returns the pair ((A), (approx_prod_(p in A mod q) f_init(1/p^s) / h_init(1/p^s) ) )
     where (A) is the tuple of the lattice-invariant classes modulo ``q``
@@ -325,7 +325,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
     f_init(1/p^s) / h_init(1/p^s) given in the form of a pair (lower_bound, upper_bound).
     We expect the difference upper_bound -  lower bound to be < 10^(-nb_decimals)
     but this is not guaranteed. In case it does not happen, increase ``nb_decimals`` slightly.
-    We ask at the beginning for `digital_offset` more (binary) digits.
+    We ask at the beginning for `digits_offset` more (binary) digits.
     We compute directly what happens for primes < ``big_p``.
     We assume that f_init(0) = h_init(0) = 1, that s is a positive real number
     and that :math:`\Delta s > 1` where :math:`\Delta` is the order of the zero of f_init-h_init at 0.
@@ -454,7 +454,7 @@ def get_euler_products(q, s, f_init, h_init, nb_decimals=100, big_p=300, verbose
 
     #  The coefficients CA(K,m,F/H) may increase like beta^m,
     #  This spoils the accuracy and has to be recovered:
-    prec = ceil(nb_decimals * log(10) / log(2) + digital_offset) + ceil(float(big_m * log(my_beta) / log(2)))
+    prec = ceil(nb_decimals * log(10) / log(2) + digits_offset) + ceil(float(big_m * log(my_beta) / log(2)))
 
     if verbose >= 2:
         print("We use big_m =", big_m, ", big_p =", big_p, "and working prec =", prec)
