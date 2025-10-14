@@ -13,9 +13,9 @@ Documentation
 AUTHORS:
 
  - Olivier Ramaré  : initial version
-   CNRS, Institut Mathématique de Marseille, Aix-Marseille Université
+   CNRS, Institut de Mathématique de Marseille, Aix-Marseille Université
  - Dominique Benielli
-   Aix-Marseille Université, Laboratoire Informatique et Systhème
+   Aix-Marseille Université, Laboratoire Informatique et des Systèmes
    Integration as SageMath package.
    Cellule de développement Institut Archimède
 
