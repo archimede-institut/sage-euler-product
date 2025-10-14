@@ -1,6 +1,6 @@
-.. |pdf| image:: https://img.shields.io/badge/PDF-Download-blue
+.. |pdf| image:: static/PDF-Download-blue.png
    :target: sage-euler-product-doc.pdf
-   :alt: Télécharger la documentation PDF
+   :alt: Download PDF documentation
 
 |pdf|
 
