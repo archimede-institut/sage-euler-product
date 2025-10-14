@@ -71,6 +71,7 @@ html_css_files = ["https://doc.sagemath.org/html/en/reference/_static/custom-fur
 html_theme_options["light_logo"] = html_theme_options["dark_logo"] = "nntdm-small.jpg"
 html_favicon = 'static/sagemath.png'
 html_show_sphinx = False
+html_show_copyright = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = "sage-euler-productdoc"
 
