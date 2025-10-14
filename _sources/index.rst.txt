@@ -12,9 +12,10 @@ Documentation
 
 AUTHORS:
 
- - Olivier Ramaré (2023-01-008) : initial version
- - Dominique Benielli (2023-02_15)
-   Aix Marseille Université ,
+ - Olivier Ramaré  : initial version
+   CNRS, Institut Mathématique de Marseille, Aix-Marseille Université
+ - Dominique Benielli
+   Aix-Marseille Université, Laboratoire Informatique et Systhème
    Integration as SageMath package.
    Cellule de developpement Institut Archimède
 
