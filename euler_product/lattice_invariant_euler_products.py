@@ -8,8 +8,8 @@ the user to use them through the class ``ComponentStructure``.
 
 AUTHORS:
 
-- Olivier Ramaré (2023-01-008) : initial version
-- Dominique Benielli (2023-02_15)
+- Olivier Ramaré: initial version
+- Dominique Benielli
   Aix Marseille Université ,
   Integration as SageMath package.
   Cellule de developpement Institut Archimède
