@@ -69,10 +69,10 @@ restricted class of such products. Let us first introduce the players.
    only if they generate the same group. This defines an equivalence
    relation.*
 
-   *We denote the set of lattice invariant classes by* :math:`G^\sharp`
-   *and the set of cyclic subgroups of* :math:`G` by :math:`\mathscr{G}`.
-   *The map between* :math:`\mathscr{G}` *and* :math:`G^\sharp` *which, to a
-   subgroup, associates the subset of its generators, is one-to-one.*
+   We denote the set of lattice invariant classes by :math:`G^\sharp`
+   and the set of cyclic subgroups of :math:`G` by :math:`\mathscr{G}`.
+   The map between :math:`\mathscr{G}` and :math:`G^\sharp` which, to a
+   subgroup, associates the subset of its generators, is one-to-one.
 
 The cardinality of :math:`G^\sharp` can be swiftly inferred from
 Theorem 3 of `[18]`_ or from
