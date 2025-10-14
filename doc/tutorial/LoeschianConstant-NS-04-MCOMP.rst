@@ -19,10 +19,8 @@
 =======================================================
 Fast multi-precision computation of some Euler products
 =======================================================
-
-:Author: Salma Ettahri
-:Author: Olivier Ramaré
-:Author: Léon Surel
+, 
+:Authors: Salma Ettahri, Olivier Ramaré,  Léon Surel
 
 .. note:: 
 
