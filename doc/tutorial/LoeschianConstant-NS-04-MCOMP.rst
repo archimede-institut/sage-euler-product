@@ -430,7 +430,9 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
    |begthm| Corollary _`9`.
    |midthm| We have
 
-   .. math::
+
+.. math::
+   :nowrap:
 
       \begin{aligned}
       \alpha_0^{(3)}=
@@ -440,7 +442,8 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
 
    and
 
-   .. math::
+.. math::
+   :nowrap:
 
       \begin{aligned}
       \beta_0=0.&30231\,61423\,57065\,63794\,77699\,00480\,19971\,56024\,12795\,18936
