@@ -1,5 +1,12 @@
-﻿Welcome to EULER PRODUCT documentation!
-==================================================
+.. |pdf| image:: https://img.shields.io/badge/PDF-Download-blue
+   :target: sage-euler-product-doc.pdf
+   :alt: Télécharger la documentation PDF
+
+|pdf|
+
+Welcome to EULER PRODUCT documentation!
+=======================================
+
 **sage-euler-product** is a Python **SageMath** package implementing Eulerian Product for Number Theory 
 
 
