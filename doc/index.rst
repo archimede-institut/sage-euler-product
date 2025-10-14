@@ -6,7 +6,6 @@
 
    |pdf|
 
-.. only:: html
 
 Welcome to EULER PRODUCT documentation!
 =======================================
