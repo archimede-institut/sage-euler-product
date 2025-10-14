@@ -1,4 +1,4 @@
-.. |pdf| image:: static/PDF-Download-blue.png
+.. |pdf| image:: static/PDF-Download-blue1.png
    :target: sage-euler-product-doc.pdf
    :alt: Download PDF documentation
 
