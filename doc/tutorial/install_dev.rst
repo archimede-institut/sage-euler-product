@@ -5,11 +5,5 @@ Installation EULER_PRODUCT
 ==========================
 
 
-Usage
------
-
-
-
-.. code-block:: default
-     
-    import numpy as np
+.. include:: ../../README.md
+   :parser: myst_parser.sphinx_
