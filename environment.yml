@@ -5,6 +5,8 @@ name: sage-eulerproduct-build
 channels:
   - conda-forge
 dependencies:
+  - pip
+  - setuptools 
   - c-compiler
   - cxx-compiler
   - pytest
