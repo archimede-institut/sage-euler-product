@@ -402,8 +402,7 @@ and
    :label: eq-12
 
    \beta_0=\frac{3^{1/4}\sqrt{\pi}}{2^{5/4}}\frac{\log(2+\sqrt{3})^{1/4}}{\Gamma(1/4)}
-   \prod_{p\equiv
-   5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
+   \prod_{p\equiv 5,7,11[12]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}.
 
 Both occur in number theory as densities. The number of integers
 :math:`n` of the shape :math:`n=x^2-xy+y^2`, where :math:`x` and
