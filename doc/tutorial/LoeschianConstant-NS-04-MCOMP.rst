@@ -64,14 +64,17 @@ restricted class of such products. Let us first introduce the players.
 .. admonition:: **Definition** _`1`. 
    :name: li
 
-   *Two elements* :math:`g_1` *and* :math:`g_2` *of
-   the abelian group* :math:`G` *are said to be lattice-invariant if and
+   *Two elements* :math:`g_1` *and* 
+   :math:`g_2` *of the abelian group* 
+   :math:`G` *are said to be lattice-invariant if and
    only if they generate the same group. This defines an equivalence
    relation.*
 
    We denote the set of lattice invariant classes by :math:`G^\sharp`
-   and the set of cyclic subgroups of :math:`G` by :math:`\mathscr{G}`.
-   The map between :math:`\mathscr{G}` and :math:`G^\sharp` which, to a
+   and the set of cyclic subgroups of :math:`G` 
+   by :math:`\mathscr{G}`.
+   The map between :math:`\mathscr{G}` and 
+   :math:`G^\sharp` which, to a
    subgroup, associates the subset of its generators, is one-to-one.
 
 The cardinality of :math:`G^\sharp` can be swiftly inferred from
