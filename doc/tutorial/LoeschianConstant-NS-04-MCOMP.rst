@@ -1,19 +1,15 @@
 .. LoeschianConstant-NS-04-MCOMP:
 
 
-.. |begthm| raw:: html
+..  raw:: html
 
-   <div style="background-color: #cce5ff; width: 100%; padding: 5px; font-weight: bold;"></div>
-
-.. |midthm| raw:: html
-
-   
-   <div style="background-color: #e6f2ff; width: 100%; padding: 5px; font-style: italic;"> </div>
-
-.. |endthm| raw:: html
-
-  
-
+   |begthm|
+   <div style="background-color: #cce5ff; width: 100%; padding: 5px; font-weight: bold;">
+   |midthm|
+   </div>
+   <div style="background-color: #e6f2ff; width: 100%; padding: 5px; font-style: italic;"> 
+   |endthm|
+   </div>
 
 
 =======================================================
