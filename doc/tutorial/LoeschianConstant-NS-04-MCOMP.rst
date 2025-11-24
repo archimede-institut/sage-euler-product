@@ -136,8 +136,9 @@ Here is the central theorem of this paper.
       :label: defCAKkbis
        
        C_{\mathscr{A}}(K,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)
-       \sum_{\substack{L \in \mathscr{G},
-       \\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
+       \sum_{\substack{L \in \mathscr{G}, \\
+       L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ 
+       K\subset L}}
        \frac{\mu(|L|/|K|)}{|G/K|}
 
    where :math:`L^{[t]}=\{x^t, x\in L\}` and
@@ -147,8 +148,8 @@ Here is the central theorem of this paper.
    .. math::
       :label: exact
    
-      \prod_{\substack{p\ge P,
-      \\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
+      \prod_{\substack{p\ge P, \\
+      p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
       = \prod_{m\ge\Delta}\prod_{K \in \mathscr{G}}
       \biggl(\prod_{\chi\in K^\perp}L_P(m s,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,F/H)}/{m}}.
 
@@ -160,13 +161,13 @@ Here is the central theorem of this paper.
 
       \begin{gathered}
       \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
-      \biggl(\prod_{\chi \in K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
-      \\ \le 4(\deg F+\deg H)|\mathscr{G}|^2
+      \biggl(\prod_{\chi \in K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}} \\
+      \le 4(\deg F+\deg H)|\mathscr{G}|^2
       (s+P)
       \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.
       \end{gathered}
 
-   |endthm|
+|endthm|
 
 In the case :math:`H/F=1-X`, the relevant identity is proved in
  :ref:`18<18>` and is the heart of this paper. Our
@@ -200,9 +201,8 @@ Lemma 16, this results in :eq:`mirs`.
  
    .. math::
 
-      \sum_{\substack{L\in \mathscr{G},
-      \\ L^{[t]}=\langle{\mathscr{A}}\rangle{},
-      \\ K\subset L}} \mu(|L|/|K|)
+      \sum_{\substack{L\in \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}} 
+      \mu(|L|/|K|)
 
 depends only on :math:`\gcd(t,\varphi(q))` .
 
@@ -229,15 +229,15 @@ depends only on :math:`\gcd(t,\varphi(q))` .
    .. math::
       :label: defCAKkbiscirc
    
-      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t) \sum_{\substack{L\in \mathscr{G},
-      \\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
+      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t) \sum_{\substack{L\in \mathscr{G},\\ 
+      L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
       \frac{\varphi(|L|/|S|)}{|G/S|}.
 
    Formula :eq:`exact` becomes:
 
    .. math::
 
-      \prod_{\substack{p\ge P,\\
+      \prod_{\substack{p\ge P,\\ 
       p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
       = \prod_{m\ge\Delta}\prod_{S\in\mathscr{G}}
       \biggl(\prod_{\chi\in S^{\perp\circ}}L_P(ms,\chi)
@@ -261,7 +261,7 @@ Super fast evaluations
 
    .. math::
 
-      \prod_{\substack{p\ge P,\\
+      \prod_{\substack{p\ge P,\\ 
       p+q\mathbb{Z}\in\mathcal{A}}}\biggl(1-\frac1{p^s}\biggr)
 
    |endthm|
