@@ -272,7 +272,7 @@ is the number of prime factors of :math:`\varphi(q)` . The implied
 constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q` .
 
 This leads to very fast computations, and we were for instance able to
-produce 100 (resp. 1000, resp.  5000) digits of these products when
+produce 100 (resp.\,1000, resp.\,5000) digits of these products when
 :math:`q=3` in a third of a second (resp. 12 seconds, resp. 35 minutes
 with :math:`P=400`) on a usual desktop computer. See the implementation
 notes at the end of this paper. Notice however that the number of
