@@ -166,17 +166,16 @@ Here is the central theorem of this paper.
       (s+P)
       \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.
       \end{gathered}
+   |endthm|
 
-|endthm|
-
-In the case :math:`H/F=1-X`, the relevant identity is proved in
- :ref:`18<18>` and is the heart of this paper. Our
-result applies in particular to :math:`\mathcal{A}=\{1\}` and to
-:math:`\mathcal{A}=\{-1\}`. When :math:`q=4` and
-:math:`\mathcal{A}=\{-1\}`, we readily find that only :math:`t=1`
-matters in :eq:`defCAKkbis`, that
-:math:`C_{\{-1\}}(\{1\},2^k,1/(1-X))=-1/2` and that
-:math:`C_{\{-1\}}(\{\pm 1\},2^k,1/(1-X))=1`. On recalling
+In the case :math:`H/F=1-X`, the relevant identity is proved in 
+:ref:`18<18>` and is the heart of this paper. Our 
+result applies in particular to :math:`\mathcal{A}=\{1\}` and to 
+:math:`\mathcal{A}=\{-1\}`. When :math:`q=4` and 
+:math:`\mathcal{A}=\{-1\}`, we readily find that only :math:`t=1` 
+matters in :eq:`defCAKkbis`, that 
+:math:`C_{\{-1\}}(\{1\},2^k,1/(1-X))=-1/2` and that 
+:math:`C_{\{-1\}}(\{\pm 1\},2^k,1/(1-X))=1`. On recalling 
 Lemma 16, this results in :eq:`mirs`.
 
 .. container:: remark
@@ -185,8 +184,8 @@ Lemma 16, this results in :eq:`mirs`.
 
    .. math:: \beta = \max\Bigl(2, \sum_{1\le k\le\deg F}|a_k|, \sum_{1\le k\le\deg H}|b_k|\Bigr)
 
-   when :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` and
-   :math:`H(X)=1+b_1X+\ldots+b_{\delta'} X^{\delta'}`. Notice that our
+   when :math:`F(X)=1+a_1X+\ldots+a_\delta X^\delta` and 
+   :math:`H(X)=1+b_1X+\ldots+b_{\delta'} X^{\delta'}`. Notice that our 
    assumptions imply that :math:`b_i=a_i` when :math:`i< \Delta`.
 
 .. container:: remark
@@ -201,7 +200,7 @@ Lemma 16, this results in :eq:`mirs`.
  
    .. math::
 
-      \sum_{\substack{L\in \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}} 
+      \sum_{\substack{L\in \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
       \mu(|L|/|K|)
 
 depends only on :math:`\gcd(t,\varphi(q))` .
@@ -215,11 +214,11 @@ depends only on :math:`\gcd(t,\varphi(q))` .
 .. container:: remark
 
    *Remark 7*. There is some redundancy in our formula as a same
-   character :math:`\chi` may appear in several sets :math:`K^\perp` 
+   character :math:`\chi` may appear in several sets :math:`K^\perp`
    (for instance, the principal character appears in all of them).
    Disentangling these contributions leads to a slightly more
    complicated formula. We first have to introduce, for any cyclic
-   subgroup :math:`S` , the subset :math:`S^{\perp\circ}\subset S^\perp` 
+   subgroup :math:`S` , the subset :math:`S^{\perp\circ}\subset S^\perp`
    constituted of those elements that do not belong to any
    :math:`T^\perp` , for :math:`T\varsubsetneq S`. It can be readily
    checked that any :math:`K^\perp` is the union of
@@ -229,7 +228,7 @@ depends only on :math:`\gcd(t,\varphi(q))` .
    .. math::
       :label: defCAKkbiscirc
    
-      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t) \sum_{\substack{L\in \mathscr{G},\\ 
+      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t) \sum_{\substack{L\in \mathscr{G},\\
       L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
       \frac{\varphi(|L|/|S|)}{|G/S|}.
 
@@ -237,7 +236,7 @@ depends only on :math:`\gcd(t,\varphi(q))` .
 
    .. math::
 
-      \prod_{\substack{p\ge P,\\ 
+      \prod_{\substack{p\ge P,\\
       p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
       = \prod_{m\ge\Delta}\prod_{S\in\mathscr{G}}
       \biggl(\prod_{\chi\in S^{\perp\circ}}L_P(ms,\chi)
@@ -272,7 +271,7 @@ is the number of prime factors of :math:`\varphi(q)` . The implied
 constant in the :math:`\mathcal{O}`-symbol may depend on :math:`q` .
 
 This leads to very fast computations, and we were for instance able to
-produce 100 (resp. 1000, resp. 5000) digits of these products when
+produce 100 (resp. 1000, resp.  5000) digits of these products when
 :math:`q=3` in a third of a second (resp. 12 seconds, resp. 35 minutes
 with :math:`P=400`) on a usual desktop computer. See the implementation
 notes at the end of this paper. Notice however that the number of
