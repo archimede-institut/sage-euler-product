@@ -100,3 +100,6 @@ nitpick_ignore = [
         # WARNING: py:class reference target not found: surface_dynamics.misc.sql_db.SQLDatabase
         ('py:class', 'surface_dynamics.misc.sql_db.SQLDatabase'),
 ]
+latex_elements = {
+    "preamble": r"\usepackage{mathrsfs}",
+}
