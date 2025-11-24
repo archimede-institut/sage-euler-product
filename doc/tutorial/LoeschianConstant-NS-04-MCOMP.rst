@@ -136,8 +136,8 @@ Here is the central theorem of this paper.
    .. math::
       :label: defCAKkbis
    
-          C_{\mathscr{A}}(K,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
-              \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
+          C_{\mathscr{A}}(K,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)
+          \sum_{\substack{L \in \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
           \frac{\mu(|L|/|K|)}{|G/K|}
 
    where :math:`L^{[t]}=\{x^t, x\in L\}` and
@@ -147,10 +147,10 @@ Here is the central theorem of this paper.
    .. math::
       :label: exact
    
-      \prod_{\substack{p\ge P,\\
-          p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-          = \prod_{m\ge\Delta}\prod_{K\in\mathscr{G}}
-          \biggl(\prod_{\chi\in K^\perp}L_P(m s,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,F/H)}/{m}}.
+      \prod_{\substack{p\ge P,
+      \\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
+      = \prod_{m\ge\Delta}\prod_{K \in \mathscr{G}}
+      \biggl(\prod_{\chi\in K^\perp}L_P(m s,\chi)\biggr)^{{C_{\mathscr{A}}(K,m,F/H)}/{m}}.
 
    For any positive real-valued parameter :math:`M`, the following bound
    holds true:
@@ -159,12 +159,12 @@ Here is the central theorem of this paper.
       :label: fineq
 
       \begin{gathered}
-        \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
-        \biggl(\prod_{\chi\in
-                 K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
-        \\\le 4(\deg F+\deg H)|\mathscr{G}|^2
-        (s+P)
-        \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{gathered}
+      \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
+      \biggl(\prod_{\chi \in K^\perp}L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
+      \\\le 4(\deg F+\deg H)|\mathscr{G}|^2
+      (s+P)
+      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.
+      \end{gathered}
 
    |endthm|
 
@@ -197,9 +197,9 @@ Lemma 16, this results in :eq:`mirs`.
 
    *Remark 5*. We prove in Lemma :ref:`22<22>` that, when
    :math:`K` and :math:`\mathscr{A}` are fixed, the quantity
-   :math:`\sum_{\substack{L\in
-   \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}}
-   \mu(|L|/|K|)` depends only on :math:`\gcd(t,\varphi(q))` .
+   :math:`\sum_{\substack{L\in \mathscr{G},\\ 
+   L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ K\subset L}} \mu(|L|/|K|)` depends only on 
+   :math:`\gcd(t,\varphi(q))` .
 
 .. container:: remark
 
@@ -224,8 +224,8 @@ Lemma 16, this results in :eq:`mirs`.
    .. math::
       :label: defCAKkbiscirc
    
-      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)\sum_{\substack{L\in
-      \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
+      C^{\circ}_{\mathscr{A}}(S,m,F/H)=\sum_{t|m}\mu(t)s_{H/F}(m/t)
+      \sum_{\substack{L\in \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{},\\ S\subset L}}
       \frac{\varphi(|L|/|S|)}{|G/S|}.
 
    Formula :eq:`exact` becomes:
@@ -420,7 +420,9 @@ in counting the number of Loeschian numbers that are also sums of two
 squares (see sequence A301430 entry of `[12]`_), namely
 we have
 
-.. math:: N'(x)=\beta_0\frac{x(1+o(1))}{(\log x)^{3/4}}.
+.. math:: 
+
+   N'(x)=\beta_0\frac{x(1+o(1))}{(\log x)^{3/4}}.
 
 From the sequence A301429 entry in `[12]`_, we know
 that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
@@ -470,7 +472,8 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
 
       \prod_{p\equiv
       1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
-      =\,\begin{aligned}[t]
+      =\,
+      \begin{aligned}[t]
       0.&95694\,53478\,51601\,18343\,69670\,57273\,89182\,87531
       \\&74977\,29139
       14789\,05432\,60424\,60170\,16444\,88885
@@ -550,9 +553,9 @@ digits), see the implementation notes at the end of this paper.
      \begin{aligned}
      \lambda &= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
      1[8]}\biggl(\frac{p+1}{p-1}\biggr)^4\biggl(1-\frac{8}{p}\biggr)
-     \\&= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
-     1[8]}\biggl(1-\frac{4}{p}\biggr)^2\biggl(\frac{p+1}{p-1}\biggr)^4\prod_{p\equiv
-     1[8]}\frac{p(p-8)}{(p-4)^2}
+     \\&= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}
+     \prod_{p\equiv 1[8]}\biggl(1-\frac{4}{p}\biggr)^2\biggl(\frac{p+1}{p-1}\biggr)^4
+     \prod_{p\equiv 1[8]}\frac{p(p-8)}{(p-4)^2}
      %(1-4*x)^2*(1/x+1)^4/(1/x-1)^4*(1/x)*(1/x-8)/(1/x-4)^2
      \\&=%0.7922082381
      \begin{aligned}[t]
@@ -625,8 +628,7 @@ power.
       \zeta_P(s;q,\mathscr{A}_0)=
       \prod_{m|q^\infty}
       \prod_{S\in\mathscr{G}}
-      \biggl(\prod_{\chi\in K^{\perp\circ}}L_P(m s,\chi)
-      \biggr)^{e(m,q,S)},
+      \biggl(\prod_{\chi\in K^{\perp\circ}}L_P(m s,\chi) \biggr)^{e(m,q,S)},
 
    where :math:`m|q^\infty` means that all the prime factors of
    :math:`m` divide :math:`q` and where
@@ -657,14 +659,16 @@ and the corresponding script.
 
 We follow the notation introduced in :eq:`defCAKkbis`.
 Since here :math:`F/H=1/(1-X)`, this leads us to consider, for any
-cyclic subgroup :math:`K\in\mathscr{G}`, any class :math:`\mathscr{A}`
+cyclic subgroup :math:`K\in\mathscr{G}`, 
+any class :math:`\mathscr{A}`
 in :math:`G^\sharp` and any positive integer :math:`m`, the coefficient
 
 .. math::
    :label: defCAKk
 
-   C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)\sum_{\substack{L\in
-   \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+   C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)
+   \sum_{\substack{L\in \mathscr{G},
+   \\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
    \frac{\mu(|L|/|K|)}{|G/K|}
 
 where :math:`L^{[t]}=\{x^t, x\in L\}`. Notice that it is also a cyclic
@@ -698,8 +702,8 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      \sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ \chi\in
-      K^\perp}}
+      \sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},
+      \\ \chi\in K^\perp}}
       \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
 
    |endthm|
@@ -712,8 +716,8 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},\\ B^{[h]}
-      \subset  K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
+      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},
+      \\ B^{[h]} \subset  K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
 
    Next, we introduce the expression given in :eq:`defCAKk`,
    shuffle the summations and get
@@ -721,10 +725,10 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       S= \sum_{hm=\ell}
-      \sum_{t|m}\mu(t)\sum_{\substack{L\in
-      \mathscr{G},\\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
-      \sum_{\substack{K\in \mathscr{G},\\ B^{[h]} \subset
-      K}}\mu(|L|/|K|).
+      \sum_{t|m}\mu(t)\sum_{\substack{L\in \mathscr{G},
+      \\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+      \sum_{\substack{K \in \mathscr{G},
+      \\ B^{[h]} \subset K}}\mu(|L|/|K|).
 
    By Lemma :ref:`13<13>` and the Möbius function
    characteristic property, the last summation vanishes when
@@ -1013,8 +1017,12 @@ simplistic one.
 
    |begthm| Lemma _`22`. 
    |midthm| The sum :math:`\sum_{L\in\mathcal{L}} \mu(|L|/|K|)`
-   where :math:`\mathcal{L}=\{L\in
-   \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}`
+   where 
+
+   .. math::
+
+      \mathcal{L}=\{L \in \mathscr{G}/ L^{[t]}=\langle{\mathscr{A}}\rangle{}\text{ and } K\subset L\}
+
    depends only on :math:`\gcd(t,\varphi(q))`.
 
    |endthm|
@@ -1134,7 +1142,7 @@ simplistic one.
       :label: aux
    
       \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
-      =\prod_{ n\ge \Delta}\prod_{K\in\mathscr{G}}
+      =\prod_{ n\ge \Delta}\prod_{K \in \mathscr{G}}
       \biggl(\prod_{\chi\in K^\perp}L_P(ns,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,n,F/H)}{n}}.
 
    The final task is to control the tail of this product, but prior to
@@ -1151,7 +1159,7 @@ simplistic one.
       \\&\le \sum_{m\ge M+1}\sum_{K\in\mathscr{G}}\frac{|C_{\mathscr{A}}(K,m,F/H)|}{m}
       |G/K|\frac{ms-1+P}{P^{ms}}
       \\&\le \sum_{m\ge M+1}
-      \sum_{K\in\mathscr{G}}\sum_{t|m}\mu^2(t)|\mathscr{G}|
+      \sum_{K \in \mathscr{G}} \sum_{t|m}\mu^2(t)|\mathscr{G}|
       (\deg F+\deg H)\beta^{m/t}
       \frac{ms-1+P}{mP^{ms}}
       \\&\le (\deg F+\deg H)|\mathscr{G}|^2
@@ -1163,7 +1171,8 @@ simplistic one.
       \biggl(\frac{\beta}{P^s}\biggr)^{M+1}
       \\&\le 4(\deg F+\deg H)|\mathscr{G}|^2
       (s+P)
-      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.\end{aligned}
+      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.
+      \end{aligned}
 
 .. _More:
 
