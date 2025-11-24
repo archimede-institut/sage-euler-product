@@ -445,8 +445,8 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
 
       \begin{aligned}
       \alpha_0^{(3)}=
-      0.&63890\,94054\,45343\,88225\,49426\,74928\,24509\,37549\,75508\,02912
-      \\&33454\,21692\,36570\,80763\,10027\,64965\,82468\,97179\,11252\,86643\cdots
+      0.&63890\,94054\,45343\,88225\,49426\,74928\,24509\,37549\,75508\,02912  \\
+      &33454\,21692\,36570\,80763\,10027\,64965\,82468\,97179\,11252\,86643\cdots
       \end{aligned}
 
    and
@@ -455,8 +455,8 @@ that :math:`\alpha_0^{(3)}=0.638909\ldots` but we would like to know
       :nowrap:
 
       \begin{aligned}
-      \beta_0=0.&30231\,61423\,57065\,63794\,77699\,00480\,19971\,56024\,12795\,18936
-      \\&96454\,58867\,84128\,88654\,48752\,41051\,08994\,87467\,81397\,92727\cdots
+      \beta_0=0.&30231\,61423\,57065\,63794\,77699\,00480\,19971\,56024\,12795\,18936  \\
+      &96454\,58867\,84128\,88654\,48752\,41051\,08994\,87467\,81397\,92727\cdots
       \end{aligned}
 
    |endthm|
@@ -479,10 +479,9 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
       1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
       =\,
       \begin{aligned}[t]
-      0.&95694\,53478\,51601\,18343\,69670\,57273\,89182\,87531
-      \\&74977\,29139
-      14789\,05432\,60424\,60170\,16444\,88885
-      \\&94814\,40512\,03907\,95084\cdots
+      0.&95694\,53478\,51601\,18343\,69670\,57273\,89182\,87531  \\
+      &74977\,29139\,14789\,05432\,60424\,60170\,16444\,88885  \\
+      &94814\,40512\,03907\,95084\cdots
       \end{aligned}
 
    As a consequence Shanks’ constant satisfies
@@ -492,12 +491,11 @@ The other parameters are uniformly selected as :math:`F(X)=1-X^2`,
       \begin{aligned}
       I
       &= \frac{\pi^2}{16\log(1+\sqrt{2})}\prod_{p\equiv
-      1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2
-      \\&=\begin{aligned}[t]
-      0.&66974\,09699\,37071\,22053\,89224\,31571\,76440\,66883\,
-      70157\,43648
-      \\& \,24185\,73298\,52284\,52467\,99956\,45714
-      \,72731\,50621\,02143\,59373\cdots
+      1[8]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2  \\
+      &=
+      \begin{aligned}[t]
+      0.&66974\,09699\,37071\,22053\,89224\,31571\,76440\,66883\,70157\,43648  \\
+      & \,24185\,73298\,52284\,52467\,99956\,45714\,72731\,50621\,02143\,59373\cdots
       % RR=RealIntervalField(1000)
       % LaTeXForNumber(RR(pi^2/16/log(1+sqrt(2))*ss), 100,8)
       \end{aligned}
@@ -545,10 +543,9 @@ digits), see the implementation notes at the end of this paper.
       \prod_{p\equiv 1[8]}\frac{p(p-8)}{(p-4)^2}
       =
       \begin{aligned}[t]
-      0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768
-      \\&88834\,88097
-      \,34707\,19295\,15939\,52119\,46990\,65659
-      \\&68857\,99383\,28603\,79164\cdots
+      0.&88307\,10047\,43946\,67141\,78342\,99003\,10853\,46768  \\
+      &88834\,88097\,34707\,19295\,15939\,52119\,46990\,65659    \\
+      &68857\,99383\,28603\,79164\cdots
       \end{aligned}
 
    As a consequence Lal’s constant satisfies
@@ -557,15 +554,15 @@ digits), see the implementation notes at the end of this paper.
 
      \begin{aligned}
      \lambda &= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}\prod_{p\equiv
-     1[8]}\biggl(\frac{p+1}{p-1}\biggr)^4\biggl(1-\frac{8}{p}\biggr)
-     \\&= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}
+     1[8]}\biggl(\frac{p+1}{p-1}\biggr)^4\biggl(1-\frac{8}{p}\biggr)  \\
+     &= \frac{\pi^4}{2^7\log^2(1+\sqrt{2})}
      \prod_{p\equiv 1[8]}\biggl(1-\frac{4}{p}\biggr)^2\biggl(\frac{p+1}{p-1}\biggr)^4
      \prod_{p\equiv 1[8]}\frac{p(p-8)}{(p-4)^2}
-     %(1-4*x)^2*(1/x+1)^4/(1/x-1)^4*(1/x)*(1/x-8)/(1/x-4)^2
-     \\&=%0.7922082381
+     %(1-4*x)^2*(1/x+1)^4/(1/x-1)^4*(1/x)*(1/x-8)/(1/x-4)^2   \\
+     &=%0.7922082381
      \begin{aligned}[t]
-     0.&79220\,82381\,67541\,66877\,54555\,66579\,02410\,11289\,32250\,98622
-     \\&11172\,27973\,45256\,95141\,54944\,12490\,66029\,53883\,98027\,52927\cdots
+     0.&79220\,82381\,67541\,66877\,54555\,66579\,02410\,11289\,32250\,98622  \\
+     &11172\,27973\,45256\,95141\,54944\,12490\,66029\,53883\,98027\,52927\cdots
      \end{aligned} 
      \end{aligned}
 
@@ -672,8 +669,8 @@ in :math:`G^\sharp` and any positive integer :math:`m`, the coefficient
    :label: defCAKk
 
    C_{\mathscr{A}}(K,m, 1-X)=\sum_{t|m}\mu(t)
-   \sum_{\substack{L\in \mathscr{G},
-   \\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+   \sum_{\substack{L\in \mathscr{G},  \\
+   L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
    \frac{\mu(|L|/|K|)}{|G/K|}
 
 where :math:`L^{[t]}=\{x^t, x\in L\}`. Notice that it is also a cyclic
@@ -707,8 +704,8 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      \sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},
-      \\ \chi\in K^\perp}}
+      \sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},  \\
+      \chi\in K^\perp}}
       \chi\bigl(p^h\bigr)C_{\mathscr{A}}(K,m,1-X)=1\!\!\!1_{p\in\mathscr{A}}.
 
    |endthm|
@@ -721,8 +718,8 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math::
 
-      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},
-      \\ B^{[h]} \subset  K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
+      S=\sum_{hm=\ell}\sum_{\substack{K\in \mathscr{G},  \\
+      B^{[h]} \subset  K}}|G/K|C_{\mathscr{A}}(K,m,1-X).
 
    Next, we introduce the expression given in :eq:`defCAKk`,
    shuffle the summations and get
@@ -730,10 +727,10 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       S= \sum_{hm=\ell}
-      \sum_{t|m}\mu(t)\sum_{\substack{L\in \mathscr{G},
-      \\ L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
-      \sum_{\substack{K \in \mathscr{G},
-      \\ B^{[h]} \subset K}}\mu(|L|/|K|).
+      \sum_{t|m}\mu(t)\sum_{\substack{L\in \mathscr{G},  \\
+      L^{[t]}=\langle{\mathscr{A}}\rangle{}}}
+      \sum_{\substack{K \in \mathscr{G},  \\
+      B^{[h]} \subset K}}\mu(|L|/|K|).
 
    By Lemma :ref:`13<13>` and the Möbius function
    characteristic property, the last summation vanishes when
@@ -743,7 +740,8 @@ Here is the fundamental property satisfied by these coefficients.
    .. math::
 
       S= \sum_{hm=\ell}
-      \sum_{\substack{t|m,\\ B^{[ht]}=\langle{A}\rangle{}}}\mu(t).
+      \sum_{\substack{t|m, \\ 
+      B^{[ht]}=\langle{A}\rangle{}}}\mu(t).
 
    We continue in a more classical way:
 
@@ -769,7 +767,7 @@ Here is the fundamental property satisfied by these coefficients.
       \biggl(\prod_{\chi\in K^\perp}\bigl(1-\chi(p)p^{-ms}\bigr)
       \biggr)^{-C_{\mathscr{A}}(K,m,1-X)/m}=
       \begin{cases}
-      (1-p^{-s})^{-1}&\text{when $p\in\langle{\mathscr{A}}\rangle{}$,}\\
+      (1-p^{-s})^{-1}&\text{when $p\in\langle{\mathscr{A}}\rangle{}$,} \\
       1&\text{otherwise.}
       \end{cases}
 
@@ -984,8 +982,8 @@ expansion.
       \begin{aligned}
       |b_F(k)|
       &\le \frac{\deg F}{k}\sum_{1\le j\le k}\beta^j
-      \le \frac{\deg F}{k}\beta\frac{\beta^k-1}{\beta-1}
-      \\&\le\frac{\deg F}{k}\frac{\beta^k}{1-1/\beta}
+      \le \frac{\deg F}{k}\beta\frac{\beta^k-1}{\beta-1}  \\
+      &\le\frac{\deg F}{k}\frac{\beta^k}{1-1/\beta}
       \le 2\deg F\frac{\beta^k}{k}.
       \end{aligned}
 
@@ -1096,11 +1094,11 @@ simplistic one.
       \begin{aligned}
       \log I_2|
       &\le
-      4\max(\deg F,\deg H)\sum_{p\ge P}\frac{\beta^{J+1}}{1-\beta/P^s}\frac{1}{(J+1)p^{(J+1)s}}
-      \\&\le
+      4\max(\deg F,\deg H)\sum_{p\ge P}\frac{\beta^{J+1}}{1-\beta/P^s}\frac{1}{(J+1)p^{(J+1)s}} \\
+      &\le
       \frac{4\max(\deg F,\deg H)\beta^{J+1}}{(1-\beta/P^s)(J+1)}\biggl(
-      \frac{1}{P^{(J+1)s}}+\int_{P}^{\infty}\frac{dt}{t^{(J+1)s}}\biggr)
-      \\&\le
+      \frac{1}{P^{(J+1)s}}+\int_{P}^{\infty}\frac{dt}{t^{(J+1)s}}\biggr) \\
+      &\le
       \frac{4\max(\deg F,\deg H)
       (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),\end{aligned}
 
@@ -1109,9 +1107,10 @@ simplistic one.
 
    .. math::
 
-      \prod_{\substack{p\ge P,\\ p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
+      \prod_{\substack{p\ge P, \\ 
+      p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
       =
-      \prod_{ j\ge \Delta}\prod_{\substack{p\ge P,\\
+      \prod_{ j\ge \Delta}\prod_{\substack{p\ge P, \\
       p+q\mathbb{Z}\in\mathcal{A}}}(1-p^{-js})^{b_F(j)-b_H(j)}=
       \prod_{ j\ge 2}\zeta_P(js;q,\mathscr{A})^{b_H(j)-b_F(j)}
 
@@ -1159,21 +1158,21 @@ simplistic one.
 
       \begin{aligned}
       \pm\log\prod_{ m\ge M+1}\prod_{K\in\mathscr{G}}
-      \biggl(&\prod_{\chi \in K^\perp} L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}
-      \\&\le \sum_{m\ge M+1}\sum_{K\in\mathscr{G}}\frac{|C_{\mathscr{A}}(K,m,F/H)|}{m}
-      |G/K|\frac{ms-1+P}{P^{ms}}
-      \\&\le \sum_{m\ge M+1}
+      \biggl(&\prod_{\chi \in K^\perp} L_P(ms,\chi)\biggr)^{\frac{C_{\mathscr{A}}(K,m,F/H)}{m}}  \\
+      &\le \sum_{m\ge M+1}\sum_{K\in\mathscr{G}}\frac{|C_{\mathscr{A}}(K,m,F/H)|}{m}
+      |G/K|\frac{ms-1+P}{P^{ms}}  \\
+      &\le \sum_{m\ge M+1}
       \sum_{K \in \mathscr{G}} \sum_{t|m}\mu^2(t)|\mathscr{G}|
       (\deg F+\deg H)\beta^{m/t}
-      \frac{ms-1+P}{mP^{ms}}
-      \\&\le (\deg F+\deg H)|\mathscr{G}|^2
+      \frac{ms-1+P}{mP^{ms}} \\
+      &\le (\deg F+\deg H)|\mathscr{G}|^2
       \sum_{m\ge M+1}
       \frac{\beta^m}{1-(1/\beta)}
-      \frac{s+P}{P^{ms}}
-      \\&\le (\deg F+\deg H)|\mathscr{G}|^2
+      \frac{s+P}{P^{ms}} \\
+      &\le (\deg F+\deg H)|\mathscr{G}|^2
       \frac{\beta(s+P)}{\beta-1}\frac{1}{1-(\beta/P^s)}
-      \biggl(\frac{\beta}{P^s}\biggr)^{M+1}
-      \\&\le 4(\deg F+\deg H)|\mathscr{G}|^2
+      \biggl(\frac{\beta}{P^s}\biggr)^{M+1} \\
+      &\le 4(\deg F+\deg H)|\mathscr{G}|^2
       (s+P)
       \biggl(\frac{\beta}{P^s}\biggr)^{M+1}.
       \end{aligned}
@@ -1253,7 +1252,7 @@ would be to *invert* them in some sense.
       =
       1-z^{|(L{} G_0)/G_0|},
 
-   and this proves our formula. ◻
+   and this proves our formula.
 
 .. _notes-on-the-scope-of-lemma-dede:
 
