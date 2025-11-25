@@ -1,7 +1,7 @@
 .. only:: html
 
    .. |pdf| image:: static/PDF-Download-blue1.png
-      :target: sage-euler-product-doc.pdf
+      :target: _static/sage-euler-product-doc.pdf
       :alt: Download PDF documentation
 
    |pdf|
