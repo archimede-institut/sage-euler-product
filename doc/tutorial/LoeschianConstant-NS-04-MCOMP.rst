@@ -397,10 +397,8 @@ Levesque and M. Waldschmidt. In the notation of that paper, they are
 
 .. math::
 
-   \alpha_0^{(3)}
-   = \frac{1}{3^{1/4}\sqrt{2}}
-     \prod_{p\equiv 2[3]}\biggl(1-\frac{1}{p^2}
-     \biggr)^{-1/2}
+   \alpha_0^{(3)} = \frac{1}{3^{1/4}\sqrt{2}}
+   \prod_{p\equiv 2[3]}\biggl(1-\frac{1}{p^2}\biggr)^{-1/2}
 
 and
 
