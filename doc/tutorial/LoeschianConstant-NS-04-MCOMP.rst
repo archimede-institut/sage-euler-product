@@ -147,7 +147,7 @@ Here is the central theorem of this paper.
 
    .. math::
       :label: exact
-   
+
       \prod_{\substack{p\ge P, \\
       p+q\mathbb{Z}\in\mathcal{A}}}\frac{F(1/p^s)}{H(1/p^s)}
       = \prod_{m\ge\Delta}\prod_{K \in \mathscr{G}}
@@ -1394,15 +1394,15 @@ subgroups.
       :name: main-loop
       :class: unnumbered
 
-   For :math:`m\in\mathscr{M}`, add the contribution of this index to
+   For :math:`m \in \mathscr{M}`, add the contribution of this index to
    the sum approximating :math:`V_s(1)` from the right-hand side
-   of :eq:`exact` with :math:`P=\texttt{big_p}`.
+   of :eq:`exact` with :math:`P=\texttt{big_p}`.
 
    .. rubric:: Post-computation
       :name: post-computation
       :class: unnumbered
 
-   Complete the products with the values for primes
+   Complete the products with the values for primes 
    :math:`p < \texttt{big_p}`.
 
    .. rubric:: Output
