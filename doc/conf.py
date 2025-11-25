@@ -102,8 +102,11 @@ nitpick_ignore = [
         ('py:class', 'surface_dynamics.misc.sql_db.SQLDatabase'),
 ]
 
-if builder.name == 'latex':
-    exclude_patterns.append('**/*.svg')
 latex_elements = {
     "preamble": r"\usepackage{mathrsfs}",
 }
+exclude_patterns = []
+
+def setup(app):
+    if app.builder.name == 'latex':
+        exclude_patterns.append('**/*.svg')
