@@ -359,14 +359,17 @@ Two points are in the same class if and only if they generate the same subgroup 
 
 <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">frozenset</span><span class="p">({</span><span class="mi">1</span><span class="p">})</span>
-<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="p">(</span><span class="mf">0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449</span><span class="p">,</span> <span class="mf">0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849</span><span class="p">),</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">](</span><span class="mf">0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449</span><span class="p">,</span> <span class="mf">0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849</span><span class="p">),</span>
 </pre></div>
 </div>
 <p>which means that</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}0.&amp;9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449\\&amp;\le \prod_{p\equiv 1[5]} \frac{1-1/p^2}{1+1/p^3}\\&amp;\le 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849\end{aligned}\end{align} \]</div>
+\[\begin{split}\begin{aligned}
+0.&amp;9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673436742857698303688419181730105231677449  \\
+&amp;\le \prod_{p\equiv 1[5]} \frac{1-1/p^2}{1+1/p^3} \\
+&amp;\le 0.9884028950453419692925625250954713121182210521345380891771586345550561301333511982564965807673437490090286957966947966907374203853849
+\end{aligned}\end{split}\]</div>
 </div>
 <p>With <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">1</span></code> or <code class="code docutils literal notranslate"><span class="pre">verbose</span> <span class="pre">=</span> <span class="pre">2</span></code>, the results are more explicitly written.</p>
 <p>To compute the specific quantities <span class="math notranslate nohighlight">\(\prod_{p\in\mathcal{A}}(1-1/p^s)^{-1}\)</span> where the rational fraction is thus fixed, we have a shortcut:</p>
