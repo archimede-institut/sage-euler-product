@@ -6,7 +6,6 @@ channels:
   - conda-forge
 dependencies:
   - pip:
-      - sphinxcontrib-rsvgconverter
   - setuptools 
   - c-compiler
   - cxx-compiler
