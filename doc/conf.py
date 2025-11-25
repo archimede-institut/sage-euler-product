@@ -1,4 +1,6 @@
 import sage_docbuild.conf
+from sphinx.transforms import SphinxTransform
+from docutils import nodes
 
 # -- Project information -----------------------------------------------------
 
