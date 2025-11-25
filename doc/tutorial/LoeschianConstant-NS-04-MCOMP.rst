@@ -1396,14 +1396,14 @@ subgroups.
 
    For :math:`m \in \mathscr{M}`, add the contribution of this index to
    the sum approximating :math:`V_s(1)` from the right-hand side
-   of :eq:`exact` with :math:`P=\texttt{big_p}`.
+   of :eq:`exact` with ::math:`P=\texttt{big\_p}`.
 
    .. rubric:: Post-computation
       :name: post-computation
       :class: unnumbered
 
    Complete the products with the values for primes 
-   :math:`p < \texttt{big_p}`.
+   :math:`p < \texttt{big\_p}`.
 
    .. rubric:: Output
       :name: output
