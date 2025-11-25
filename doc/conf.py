@@ -1,6 +1,7 @@
 import sage_docbuild.conf
 from sphinx.transforms import SphinxTransform
 from docutils import nodes
+from pathlib import Path
 
 # -- Project information -----------------------------------------------------
 
@@ -9,7 +10,10 @@ copyright = '2023-2024, the sage-euler-product authors'
 author = 'the sage-euler-product authors'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.3'
+# release = '0.0.3'
+version_file = Path(__file__).resolve().parent.parent / "VERSION"
+release = version_file.read_text().strip()
+version = release
 
 # -- General configuration ---------------------------------------------------
 
