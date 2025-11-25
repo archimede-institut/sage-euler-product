@@ -701,8 +701,8 @@ Here is the fundamental property satisfied by these coefficients.
 
    |begthm| Proposition _`14`. 
    |midthm| For any positive integer :math:`\ell`, any prime
-   :math:`p` and any lattice-invariant class :math:`\mathscr{A}`, we
-   have
+   :math:`p` and any lattice-invariant class 
+   :math:`\mathscr{A}`, we have
 
    .. math::
 
@@ -802,7 +802,7 @@ Here is the fundamental property satisfied by these coefficients.
 
    .. math:: S(p)=\sum_{\ell\ge1}\frac{1}{\ell p^{\ell s}}1\!\!\!1_{p\in\mathscr{A}},
 
-   from which our corollary follows readily. ◻
+   from which our corollary follows readily.
 
 .. container:: lem
    :name: simpi
