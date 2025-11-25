@@ -101,6 +101,9 @@ nitpick_ignore = [
         # WARNING: py:class reference target not found: surface_dynamics.misc.sql_db.SQLDatabase
         ('py:class', 'surface_dynamics.misc.sql_db.SQLDatabase'),
 ]
+
+if builder.name == 'latex':
+    exclude_patterns.append('**/*.svg')
 latex_elements = {
     "preamble": r"\usepackage{mathrsfs}",
 }
