@@ -106,8 +106,16 @@ latex_elements = {
 }
 exclude_patterns = []
 
+class RemoveSVGImagesForLatex(SphinxTransform):
+    default_priority = 200
+    def apply(self):
+        if self.app.builder.name != "latex":
+            return
+        for node in self.document.traverse(nodes.image):
+            uri = node.get("uri", "")
+            if uri.lower().endswith(".svg"):
+                replacement = nodes.inline(text="")
+                node.replace_self(replacement)
+
 def setup(app):
-    def on_builder_inited(app):
-        if app.builder.name == 'latex':
-            app.config.exclude_patterns.append('**/*.svg')
-    app.connect("builder-inited", on_builder_inited)
+    app.add_transform(RemoveSVGImagesForLatex)
