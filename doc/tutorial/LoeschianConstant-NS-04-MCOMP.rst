@@ -508,9 +508,8 @@ the parameters :math:`q=8`, :math:`\mathcal{A}=\{1\}`,
 :math:`\Delta=2` and :math:`\beta=4`. As explained in
 `[15]`_, the number of primes :math:`\le X` of the
 form :math:`m^4+1` is conjectured to be asymptotically equal to
-:math:`I\cdot
-X^{1/4}/\log X`. The name “Shanks’ constant” comes from Chapter 2, page
-90 of `[4]`_.
+:math:`I\cdot X^{1/4}/\log X`. The name “Shanks’ constant” comes from Chapter 2,
+page 90 of `[4]`_.
 
 When using the script that we introduce below, this value is obtained by
 multiplying by :math:`\frac{\pi^2}{16\log(1+\sqrt{2})}` the value
@@ -1099,7 +1098,8 @@ simplistic one.
       \frac{1}{P^{(J+1)s}}+\int_{P}^{\infty}\frac{dt}{t^{(J+1)s}}\biggr) \\
       &\le
       \frac{4\max(\deg F,\deg H)
-      (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),\end{aligned}
+      (\beta/P^s)^J\beta}{(1-\beta/P^s)(J+1)}\biggl(\frac{1}{P^s}+\frac{1}{Js+s-1}\biggr),
+      \end{aligned}
 
    since :math:`P\ge2` and :math:`J\ge3`. Letting :math:`J` go to
    infinity, we see that when :math:`P^s > \beta` and :math:`s > 1/\Delta`,
@@ -1476,11 +1476,9 @@ first fifty digits of the constant they call :math:`A` and which are
 
    \begin{aligned}
    \smash{\frac{\pi^2}{2}\prod_{p\equiv1[4]}\biggl(1-\frac{4}{p}\biggr)\biggl(\frac{p+1}{p-1}\biggr)^2}
-   = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369
-   \\&25267
-   \,08497\,71894\,30550\,80726\,33188\,94627
-   \\&61381\,60369
-   \,39924\,26646\,98594\,38665\cdots
+   = 1.&95049\,11124\,46287\,07444\,65855\,65809\,55369 \\
+   &25267\,08497\,71894\,30550\,80726\,33188\,94627 \\
+   &61381\,60369\,39924\,26646\,98594\,38665\cdots
    \end{aligned}
 
 Our result matches that of `[7]`_.
