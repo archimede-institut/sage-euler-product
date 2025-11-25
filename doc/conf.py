@@ -19,7 +19,8 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.extlinks',
-    'myst_nb'
+    'myst_nb',
+    'sphinxcontrib.rsvgconverter'
 ]
 
 # Extensions when rendering .ipynb/.md notebooks
