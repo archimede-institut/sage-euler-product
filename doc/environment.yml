@@ -13,6 +13,6 @@ dependencies:
   - furo
   - pip
   - pip:
-    - git+https://github.com/mikicard/sphinxcontrib-rsvgconverter.git
     - linkchecker
     - sphinx_rtd_theme
+    - https://github.com/mikicard/sphinxcontrib-rsvgconverter/archive/refs/heads/master.zip
