@@ -107,5 +107,7 @@ latex_elements = {
 exclude_patterns = []
 
 def setup(app):
-    if app.builder.name == 'latex':
-        exclude_patterns.append('**/*.svg')
+    def on_builder_inited(app):
+        if app.builder.name == 'latex':
+            app.config.exclude_patterns.append('**/*.svg')
+    app.connect("builder-inited", on_builder_inited)
