@@ -43,7 +43,7 @@ jobs:
         
       - name: copy PDF to HTML output
         run: |
-          cp build/latex/*.pdf html/sage-euler-product/ || true
+          cp build/latex/*.pdf build/html/_static/ || true
           
       - name: build html documentation
         shell: bash -l {0}
