@@ -15,4 +15,4 @@ dependencies:
   - pip:
     - linkchecker
     - sphinx_rtd_theme
-    - https://github.com/mikicard/sphinxcontrib-rsvgconverter/archive/refs/heads/master.zip
+    - https://github.com/mikicard/sphinxcontrib-rsvgconverter/archive/refs/heads/main.zip
