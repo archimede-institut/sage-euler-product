@@ -24,10 +24,12 @@ setup(
     version = readfile("VERSION"), # the VERSION file is shared with the documentation
     description='Euler Product perform number theorie of euler product',
     long_description = readfile("README.md"), # get the long description from the README
+    long_description_content_type="text/markdown",
     url='https://github.com/archimede-institut/sage-euler-product',
     author='Olivier Ramaré, Dominique Benielli',
     author_email='dominique.benielli@univ-amu.fr', # choose a main contact email
-    license='GPLv3.0', # This should be consistent with the LICENCE file
+    license='GPLv3.0',
+    include_package_data=True,
     classifiers=[
       # How mature is this project? Common values are
       #   3 - Alpha
@@ -37,7 +39,7 @@ setup(
       'Intended Audience :: Science/Research',
       'Topic :: Software Development :: Build Tools',
       'Topic :: Scientific/Engineering :: Mathematics',
-      'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+      # 'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
       'Programming Language :: Python :: 3.8',
     ], # classifiers list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
     keywords = "SageMath Euler Product Number Theory",
